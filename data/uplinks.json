@@ -609,5 +609,75 @@
         ]
       }
     ]
+  },
+  "uecs48": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 25G SFP28 (fixed)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 25
+          }
+        ]
+      }
+    ]
+  },
+  "uecs24": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 25G SFP28 (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 25
+          }
+        ]
+      }
+    ]
+  },
+  "uecss": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 25G SFP28 (fixed; 2x 100G QSFP28 reserved for stacking)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 25
+          }
+        ]
+      }
+    ]
+  },
+  "upm4": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 10G SFP+ (fixed)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "upm2": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 10G SFP+ (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
   }
 }

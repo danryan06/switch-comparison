@@ -63,5 +63,59 @@
     "title": "Cisco C9350 Series Smart Switches Data Sheet (C78-5887691-02)",
     "url": "https://www.cisco.com/c/dam/en/us/products/collateral/switches/c9350-series-smart-switches/c9350-series-smart-switches-ds.pdf",
     "retrieved": "2026-09-19"
+  },
+  "ui-switching": {
+    "title": "Ubiquiti UniFi Switching Tech Specs (all models)",
+    "url": "https://techspecs.ui.com/unifi/switching?subcategory=switching-professional-max-xg",
+    "retrieved": "2026-09-19"
+  },
+  "ui-stacking": {
+    "title": "Ubiquiti Help Center: Switch Stacking in UniFi Network (ECS-S Series)",
+    "url": "https://help.ui.com/hc/en-us/articles/42683864129047-Switch-Stacking-in-UniFi-Network-ECS-S-Series",
+    "retrieved": "2026-09-19"
+  },
+  "ui-ecs-24-poe": {
+    "title": "UniFi ECS-24-PoE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/ecs-24-poe?subcategory=all-switching"
+  },
+  "ui-ecs-48-poe": {
+    "title": "UniFi ECS-48-PoE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/ecs-48-poe?subcategory=all-switching"
+  },
+  "ui-ecs-24s": {
+    "title": "UniFi ECS-24S Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/ecs-24s?subcategory=all-switching"
+  },
+  "ui-ecs-24s-poe": {
+    "title": "UniFi ECS-24S-PoE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/ecs-24s-poe?subcategory=all-switching"
+  },
+  "ui-ecs-48s": {
+    "title": "UniFi ECS-48S Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/ecs-48s?subcategory=all-switching"
+  },
+  "ui-ecs-48s-poe": {
+    "title": "UniFi ECS-48S-PoE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/ecs-48s-poe?subcategory=all-switching"
+  },
+  "ui-usw-pro-max-48-poe": {
+    "title": "UniFi USW-Pro-Max-48-PoE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-48-poe?subcategory=all-switching"
+  },
+  "ui-usw-pro-max-48": {
+    "title": "UniFi USW-Pro-Max-48 Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-48?subcategory=all-switching"
+  },
+  "ui-usw-pro-max-24-poe": {
+    "title": "UniFi USW-Pro-Max-24-PoE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-24-poe?subcategory=all-switching"
+  },
+  "ui-usw-pro-max-24": {
+    "title": "UniFi USW-Pro-Max-24 Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-24?subcategory=all-switching"
+  },
+  "ui-usw-pro-max-16-poe": {
+    "title": "UniFi USW-Pro-Max-16-PoE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-16-poe?subcategory=all-switching"
   }
 }

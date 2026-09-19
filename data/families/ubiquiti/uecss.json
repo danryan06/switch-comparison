@@ -1,0 +1,157 @@
+{
+  "id": "uecss",
+  "vendor": "Ubiquiti",
+  "family": "Enterprise Campus S (stacking)",
+  "source": "ui-stacking",
+  "stacking": {
+    "tech": "UniFi Stacking",
+    "bandwidthGbps": null,
+    "maxMembers": 4,
+    "frontPanel": false,
+    "note": "Ring over the dedicated 2x 100G QSFP28 stacking ports. Up to 4 switches today (Ubiquiti says this will increase); all members must have the same port count; requires UniFi Network 10.6 or later"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Inter-VLAN routing, static routes, DHCP server and relay. No dynamic routing (no OSPF or BGP)"
+  },
+  "routeScale": "512 IPv4 static routes",
+  "macTable": "32,000",
+  "macsec": "Not listed",
+  "buffer": "8 MB",
+  "power": {
+    "summary": "Two hot-swap power modules; shared or redundant mode; PoE budget depends on module size, mode, and input voltage",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two hot-swap power modules included; redundant mode reserves one for failover at a lower PoE budget, shared mode pools both"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "No switch licensing; managed from UniFi Network (self-hosted or on a UniFi cloud gateway)",
+  "verify": [],
+  "models": [
+    {
+      "sku": "ECS-24S",
+      "source": "ui-ecs-24s",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 0
+        },
+        {
+          "count": 16,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "uecss",
+      "poeBudgets": [],
+      "switchingGbps": 460,
+      "forwardingMpps": 342
+    },
+    {
+      "sku": "ECS-24S-PoE",
+      "source": "ui-ecs-24s-poe",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        },
+        {
+          "count": 16,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "uecss",
+      "poeBudgets": [
+        {
+          "config": "2x 600W (included), redundant mode",
+          "watts": 450
+        },
+        {
+          "config": "2x 1200W, redundant mode, 100-120V",
+          "watts": 850
+        },
+        {
+          "config": "2x 600W (included), shared mode",
+          "watts": 1050
+        },
+        {
+          "config": "2x 1200W, redundant mode, 200-240V",
+          "watts": 1050
+        },
+        {
+          "config": "2x 1200W, shared mode, 100-120V",
+          "watts": 1850
+        },
+        {
+          "config": "2x 1200W, shared mode, 200-240V",
+          "watts": 2250
+        }
+      ],
+      "switchingGbps": 460,
+      "forwardingMpps": 342
+    },
+    {
+      "sku": "ECS-48S",
+      "source": "ui-ecs-48s",
+      "accessPorts": [
+        {
+          "count": 32,
+          "speedGbps": 2.5,
+          "poeWatts": 0
+        },
+        {
+          "count": 16,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "uecss",
+      "poeBudgets": [],
+      "switchingGbps": 680,
+      "forwardingMpps": 506
+    },
+    {
+      "sku": "ECS-48S-PoE",
+      "source": "ui-ecs-48s-poe",
+      "accessPorts": [
+        {
+          "count": 32,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        },
+        {
+          "count": 16,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "uecss",
+      "poeBudgets": [
+        {
+          "config": "2x 1200W, redundant mode, 100-120V",
+          "watts": 750
+        },
+        {
+          "config": "2x 1200W, redundant mode, 200-240V",
+          "watts": 950
+        },
+        {
+          "config": "2x 1200W, shared mode, 100-120V",
+          "watts": 1750
+        },
+        {
+          "config": "2x 1200W, shared mode, 200-240V",
+          "watts": 2150
+        }
+      ],
+      "switchingGbps": 680,
+      "forwardingMpps": 506
+    }
+  ]
+}

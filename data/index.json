@@ -22,6 +22,9 @@
     "families/juniper/jex4100.json",
     "families/juniper/jex4100f.json",
     "families/juniper/jex4400.json",
-    "families/juniper/jex4000.json"
+    "families/juniper/jex4000.json",
+    "families/ubiquiti/uecs.json",
+    "families/ubiquiti/uecss.json",
+    "families/ubiquiti/upromax.json"
   ]
 }

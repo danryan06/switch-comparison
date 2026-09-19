@@ -1,0 +1,178 @@
+{
+  "id": "upromax",
+  "vendor": "Ubiquiti",
+  "family": "Pro Max",
+  "source": "ui-switching",
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "Not stackable; each switch is managed individually in UniFi Network"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Inter-VLAN routing, static routes, DHCP server and relay. No dynamic routing (no OSPF or BGP)"
+  },
+  "routeScale": "256 IPv4 static routes",
+  "macTable": "32,000",
+  "macsec": "Not listed",
+  "buffer": "2 MB",
+  "power": {
+    "summary": "Single internal PSU with a DC input for UniFi USP RPS backup",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": true,
+      "detail": "External DC backup via UniFi USP RPS, sold separately"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No switch licensing; managed from UniFi Network (self-hosted or on a UniFi cloud gateway)",
+  "verify": [],
+  "models": [
+    {
+      "sku": "USW-Pro-Max-48-PoE",
+      "source": "ui-usw-pro-max-48-poe",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 32
+        },
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 64
+        },
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 32
+        },
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 64
+        }
+      ],
+      "uplinks": "upm4",
+      "poeBudgets": [
+        {
+          "config": "Internal 870W",
+          "watts": 720
+        }
+      ],
+      "switchingGbps": 224,
+      "forwardingMpps": 167
+    },
+    {
+      "sku": "USW-Pro-Max-48",
+      "source": "ui-usw-pro-max-48",
+      "accessPorts": [
+        {
+          "count": 32,
+          "speedGbps": 1,
+          "poeWatts": 0
+        },
+        {
+          "count": 16,
+          "speedGbps": 2.5,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "upm4",
+      "poeBudgets": [],
+      "switchingGbps": 224,
+      "forwardingMpps": 167
+    },
+    {
+      "sku": "USW-Pro-Max-24-PoE",
+      "source": "ui-usw-pro-max-24-poe",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 32
+        },
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 60
+        },
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "upm2",
+      "poeBudgets": [
+        {
+          "config": "Internal 550W",
+          "watts": 400
+        }
+      ],
+      "switchingGbps": 112,
+      "forwardingMpps": 83,
+      "macTable": "16,000",
+      "buffer": "1.5 MB"
+    },
+    {
+      "sku": "USW-Pro-Max-24",
+      "source": "ui-usw-pro-max-24",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 0
+        },
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "upm2",
+      "poeBudgets": [],
+      "switchingGbps": 112,
+      "forwardingMpps": 83,
+      "macTable": "16,000",
+      "buffer": "1.5 MB"
+    },
+    {
+      "sku": "USW-Pro-Max-16-PoE",
+      "source": "ui-usw-pro-max-16-poe",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 32
+        },
+        {
+          "count": 4,
+          "speedGbps": 2.5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "upm2",
+      "poeBudgets": [
+        {
+          "config": "External 210W adapter",
+          "watts": 180
+        }
+      ],
+      "switchingGbps": 84,
+      "forwardingMpps": 62,
+      "macTable": "16,000",
+      "buffer": "1.5 MB",
+      "formFactor": "Compact",
+      "poweredBy": "External 210W AC adapter",
+      "redundancy": {
+        "supported": false,
+        "detail": "External adapter only"
+      },
+      "note": "Rack, desktop, or wall mount"
+    }
+  ]
+}
