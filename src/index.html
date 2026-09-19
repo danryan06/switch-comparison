@@ -12,7 +12,7 @@
   --bg:#EDF0F2;--surface:#FFFFFF;--surface-2:#F5F7F8;--ink:#15202B;--muted:#5A6774;--line:#CFD6DC;
   --accent:#1D5BD0;--accent-soft:#E3ECFB;--accent-ink:#FFFFFF;
   --g1:#8C99A6;--g25:#2A9D8F;--g5:#2F6FD6;--g10:#6D4BC9;--g25x:#B23A7E;--up:#23303C;--upline:#23303C;
-  --poe:#D99A0E;--warn:#A9500E;--warn-soft:#FBEBDD;--ok:#1E7A4C;--ok-soft:#DDF1E6;
+  --poe:#D99A0E;--poe60:#D9541E;--poe90:#C0243A;--warn:#A9500E;--warn-soft:#FBEBDD;--ok:#1E7A4C;--ok-soft:#DDF1E6;
   --chassis:#DDE2E6;
   --sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --cond:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
@@ -22,14 +22,14 @@
     --bg:#10161C;--surface:#18212A;--surface-2:#1E2833;--ink:#E6EBEF;--muted:#98A6B3;--line:#2E3B48;
     --accent:#6C9BF2;--accent-soft:#1D2B45;--accent-ink:#0E1620;
     --g1:#6E7B88;--g25:#35B3A4;--g5:#4D8AEB;--g10:#8B6BE0;--g25x:#D5609E;--up:#0A0F14;--upline:#6E7B88;
-    --poe:#E9B23A;--warn:#E6934F;--warn-soft:#3A2717;--ok:#52C58E;--ok-soft:#173226;--chassis:#26313C;
+    --poe:#E9B23A;--poe60:#F0803F;--poe90:#F0687A;--warn:#E6934F;--warn-soft:#3A2717;--ok:#52C58E;--ok-soft:#173226;--chassis:#26313C;
   }
 }
 :root[data-theme="dark"]{
   --bg:#10161C;--surface:#18212A;--surface-2:#1E2833;--ink:#E6EBEF;--muted:#98A6B3;--line:#2E3B48;
   --accent:#6C9BF2;--accent-soft:#1D2B45;--accent-ink:#0E1620;
   --g1:#6E7B88;--g25:#35B3A4;--g5:#4D8AEB;--g10:#8B6BE0;--g25x:#D5609E;--up:#0A0F14;--upline:#6E7B88;
-  --poe:#E9B23A;--warn:#E6934F;--warn-soft:#3A2717;--ok:#52C58E;--ok-soft:#173226;--chassis:#26313C;
+  --poe:#E9B23A;--poe60:#F0803F;--poe90:#F0687A;--warn:#E6934F;--warn-soft:#3A2717;--ok:#52C58E;--ok-soft:#173226;--chassis:#26313C;
 }
 *{box-sizing:border-box}
 html,body{margin:0}
@@ -109,7 +109,7 @@ details.rej ul{margin:10px 0 0;padding-left:18px;font-size:14px;color:var(--mute
 svg.face .chassis{fill:var(--chassis)}
 svg.face .s25x{fill:var(--g25x)}svg.face .fib{fill:var(--surface);stroke-width:1.6}svg.face .s1{fill:var(--g1)}svg.face .s25{fill:var(--g25)}svg.face .s5{fill:var(--g5)}svg.face .s10{fill:var(--g10)}
 svg.face .upl{fill:var(--up);stroke:var(--upline);stroke-width:1}
-svg.face .pw{fill:var(--poe)}
+svg.face .pw{fill:var(--poe)}svg.face .pw60{fill:var(--poe60)}svg.face .pw90{fill:var(--poe90)}
 .legend{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted);margin-top:6px}
 .legend span{display:inline-flex;align-items:center;gap:5px}
 .legend i{width:11px;height:11px;border-radius:2px;display:inline-block}
@@ -361,14 +361,14 @@ function faceplate(s,scale){
   let out=`<svg class="face" role="img" aria-label="${esc(s.sku)} front panel: ${esc(portsText(s))}" width="${W*scale}" height="${H*scale}" viewBox="0 0 ${W} ${H}"><rect class="chassis" x="0" y="0" width="${W}" height="${H}" rx="4"/>`;
   ports.forEach((p,i)=>{const c=Math.floor(i/2),r=i%2;const x=pad+c*(cw+gap)+Math.floor(c/12)*0,y=pad+r*(ch+gap+2);
     out+=p.f?`<rect class="fib" style="stroke:var(${spdVar(p.g)})" x="${x+0.8}" y="${y+0.8}" width="${cw-1.6}" height="${ch-1.6}" rx="1"/>`:`<rect class="${spdCls(p.g)}" x="${x}" y="${y}" width="${cw}" height="${ch}" rx="1.5"/>`;
-    if(p.w>0){const pw=p.w>=90?cw:p.w>=60?cw*0.66:cw*0.33;out+=`<rect class="pw" x="${x}" y="${r?y+ch-2.4:y}" width="${pw}" height="2.4"/>`}
+    if(p.w>0){const pw=p.w>=90?cw:p.w>=60?cw*0.66:cw*0.33,pc=p.w>=90?"pw pw90":p.w>=60?"pw pw60":"pw";out+=`<rect class="${pc}" x="${x}" y="${r?y+ch-2.4:y}" width="${pw}" height="2.4"/>`}
   });
   let ux=pad+cols*(cw+gap)+(isMod(s)?20:14);
   if(isMod(s)){out+=`<rect x="${ux-8}" y="${pad-3}" width="${upCols*(13+gap)+8}" height="${2*(ch+gap)+8}" rx="3" fill="none" stroke="var(--muted)" stroke-dasharray="3 2"/>`}
   for(let i=0;i<upN;i++){const c=Math.floor(i/2),r=i%2;out+=`<rect class="upl" x="${ux+c*(13+gap)}" y="${pad+r*(ch+gap+2)}" width="13" height="${ch}" rx="1"/>`}
   return out+"</svg>";
 }
-function legendHTML(){return `<span><i style="background:var(--g1)"></i>1G</span><span><i style="background:var(--g25)"></i>2.5G</span><span><i style="background:var(--g5)"></i>5G</span><span><i style="background:var(--g10)"></i>10G</span><span><i style="background:var(--g25x)"></i>25G</span><span><i style="background:transparent;border:2px solid var(--g1)"></i>Fiber (SFP)</span><span><i style="background:var(--poe);height:4px"></i>PoE (bar length: 30, 60, 90W)</span><span><i style="background:var(--up)"></i>Uplinks (dashed box: modular)</span>`}
+function legendHTML(sw){const tiers=[[30,"--poe"],[60,"--poe60"],[90,"--poe90"]].filter(t=>!sw||sw.ports.some(p=>p[2]>=t[0]&&(t[0]===90||p[2]<t[0]+30)));const poe=tiers.length?`<span>PoE per port:</span>${tiers.map(t=>`<span><i style="background:var(${t[1]});height:4px"></i>${t[0]}W</span>`).join("")}`:"";return `<span><i style="background:var(--g1)"></i>1G</span><span><i style="background:var(--g25)"></i>2.5G</span><span><i style="background:var(--g5)"></i>5G</span><span><i style="background:var(--g10)"></i>10G</span><span><i style="background:var(--g25x)"></i>25G</span><span><i style="background:transparent;border:2px solid var(--g1)"></i>Fiber (SFP)</span>${poe}<span><i style="background:var(--up)"></i>Uplinks (dashed box: modular)</span>`}
 
 /* ---------- Sizer ---------- */
 const PRESETS={
@@ -584,7 +584,7 @@ function openDetail(sku){
   const rows=specRows(s).filter(r=>!["Vendor","Family","Description","Front panel"].includes(r[0]));
   $("#dlgBody").innerHTML=`<button class="ghost close" id="dlgClose">Close</button>
     <h3>${esc(s.sku)}</h3><div class="fam">${esc(f.v)} ${esc(f.name)}${s.name?", "+esc(s.name):""}</div>
-    <div class="facewrap">${faceplate(s,1.3)}</div><div class="legend">${legendHTML()}</div>
+    <div class="facewrap">${faceplate(s,1.3)}</div><div class="legend">${legendHTML(s)}</div>
     <dl class="spec">${rows.map(r=>`<dt>${esc(r[0])}</dt><dd>${r[2]?r[1]:esc(r[1])}</dd>`).join("")}</dl>
     <div style="margin-top:16px"><button class="ghost ${cmp.has(s.sku)?"on":""}" id="dlgCmp">${cmp.has(s.sku)?"Remove from compare":"Add to compare"}</button></div>`;
   $("#dlgClose").onclick=()=>$("#dlg").close();
