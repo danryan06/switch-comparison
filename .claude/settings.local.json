@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'Add Needs checking page and redundant power supply data and filter *)"
     ]
   }
 }

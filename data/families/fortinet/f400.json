@@ -21,7 +21,11 @@
   "buffer": "2 MB",
   "power": {
     "summary": "Built-in redundant AC inputs",
-    "psuFieldReplaceable": false
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": true,
+      "detail": "Built-in redundant AC inputs. Nothing extra to buy for the second input."
+    }
   },
   "fansFieldReplaceable": false,
   "licensing": "No license needed when managed by a FortiGate over FortiLink. Dynamic routing needs the Advanced Features license (FS-SW-LIC-xxx). Cloud or standalone management is a separate subscription",

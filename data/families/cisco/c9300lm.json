@@ -21,7 +21,11 @@
   "buffer": "16 MB",
   "power": {
     "summary": "Dual FRU PSUs (C6 family, differs from 9300)",
-    "psuFieldReplaceable": true
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two field-replaceable PSU slots. PoE models list a default of one supply; the second supply is an added option (see PoE budget)."
+    }
   },
   "fansFieldReplaceable": true,
   "licensing": "Cisco DNA or Cisco Networking Subscription (Essentials or Advantage) required with purchase",

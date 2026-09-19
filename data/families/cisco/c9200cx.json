@@ -21,7 +21,11 @@
   "buffer": "6 MB",
   "power": {
     "summary": "Fixed internal PSU or external adapter; some models are PoE powered",
-    "psuFieldReplaceable": false
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Fixed internal PSU or external adapter. No second supply."
+    }
   },
   "fansFieldReplaceable": false,
   "licensing": "Cisco DNA or Cisco Networking Subscription (Essentials or Advantage) required with purchase",

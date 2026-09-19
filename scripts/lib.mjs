@@ -32,6 +32,8 @@ export function validate(data) {
     if (!TIERS.includes(f.routing?.tier)) errors.push(`${at}: routing.tier must be one of ${TIERS.join(', ')}`);
     if (f.stacking?.maxMembers !== null && !(f.stacking?.maxMembers > 0)) errors.push(`${at}: stacking.maxMembers must be a number or null`);
     if (!f.models?.length) errors.push(`${at}: no models`);
+    const badRed = r => typeof r?.supported !== 'boolean' || !r?.detail;
+    if (badRed(f.power?.redundancy)) errors.push(`${at}: power.redundancy needs supported (true/false) and detail`);
     for (const m of f.models || []) {
       const mt = `${m.sku} (${f.id})`;
       if (skus.has(m.sku)) errors.push(`${mt}: duplicate SKU`);
@@ -57,6 +59,7 @@ export function validate(data) {
       }
       if (m.switchingGbps === null) warnings.push(`${mt}: switchingGbps not published (null)`);
       else if (!(m.switchingGbps > 0)) errors.push(`${mt}: switchingGbps missing`);
+      if (m.redundancy && badRed(m.redundancy)) errors.push(`${mt}: redundancy needs supported (true/false) and detail`);
       if (m.formFactor && !FORMS.includes(m.formFactor)) errors.push(`${mt}: formFactor must be one of ${FORMS.join(', ')}`);
       const flagged = (m.verify || []).length || (m.poeBudgets || []).some(b => b.verify);
       if (flagged && !m.verifyNote) warnings.push(`${mt}: flagged for verification without a verifyNote`);

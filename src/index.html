@@ -161,6 +161,9 @@ dialog::backdrop{background:rgba(10,15,20,.5)}
 .psut td{padding:5px 10px;white-space:normal}
 .about{max-width:72ch;font-size:15px}
 .about h3{font-family:var(--cond);font-size:21px;margin:22px 0 6px}
+.footin{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:flex-end}
+.footin>span{flex:1 1 320px}
+.chklink{color:var(--accent);white-space:nowrap;margin-left:auto}
 footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);font-size:14px}
 
 @media (max-width:860px){
@@ -271,6 +274,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
       <div class="fl"><label for="bPorts">Access ports</label><select id="bPorts"><option value="0">Any</option></select></div>
       <div class="fl"><label for="bSpd">Fastest access port</label><select id="bSpd"><option value="0">Any</option><option value="2.5">2.5G or faster</option><option value="5">5G or faster</option><option value="10">10G</option></select></div>
       <div class="fl"><label for="bMed">Access media</label><select id="bMed"><option value="">Any</option><option value="rj45">Copper</option><option value="sfp">Fiber (SFP)</option></select></div>
+      <div class="fl"><label for="bRed">Redundant power supplies</label><select id="bRed"><option value="">Any</option><option value="yes">Yes</option><option value="no">No</option></select></div>
       <div class="fl"><label for="bPoe">PoE per port</label><select id="bPoe"><option value="-1">Any</option><option value="0">Non-PoE only</option><option value="30">30W or more</option><option value="60">60W or more</option><option value="90">90W</option></select></div>
     </div>
     <div class="bar2"><span class="small" id="bCount"></span><span class="small">Tick up to 4 rows to compare. Tap a row for full specs.</span></div>
@@ -287,7 +291,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
   <section class="view" id="v-about">
     <div class="about">
       <h3>Where the numbers come from</h3>
-      <p>Every spec is taken from the vendor's own datasheet, linked on each model. Values that disagree with other published figures, or that were derived rather than stated, are marked <span class="vflag">check</span> until someone confirms them.</p>
+      <p>Every spec is taken from the vendor's own datasheet, linked on each model. Values that disagree with other published figures, or that were derived rather than stated, are marked <span class="vflag">check</span> in Browse and collected on the <a href="#" data-goto="check">Needs checking</a> page until someone confirms them.</p>
       <h3>How PoE budget is modeled</h3>
       <p>A switch model does not have one PoE budget. It has one per power supply configuration, so each model carries every configuration its datasheet lists. The sizer picks the smallest configuration that covers the load, and budgets that are capped by port count (for example 24 ports at 30W is 720W) are shown at the cap.</p>
       <h3>Numbers that are not directly comparable</h3>
@@ -298,9 +302,17 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
       <ul id="srcList"></ul>
     </div>
   </section>
+  <!-- NEEDS CHECKING -->
+  <section class="view" id="v-check">
+    <div class="about" style="max-width:none">
+      <h3 style="margin-top:0">Needs checking</h3>
+      <p>These values disagree between two places in the same vendor datasheet, or had to be derived. They are shown as stated until someone confirms them against a newer datasheet, ordering guide, or written vendor confirmation. See CONTRIBUTING.md for how to clear one.</p>
+      <div id="chkBody"></div>
+    </div>
+  </section>
 </main>
 
-<footer><div class="wrap">Vendor neutral and open source. Always confirm against the current datasheet before quoting a design. <span id="updated"></span></div></footer>
+<footer><div class="wrap footin"><span>Vendor neutral and open source. Always confirm against the current datasheet before quoting a design. <span id="updated"></span></span><a href="#" class="chklink" data-goto="check" id="chkLink">Needs checking</a></div></footer>
 
 <dialog id="dlg"><div class="dlg" id="dlgBody"></div></dialog>
 
@@ -311,8 +323,8 @@ const SRC={};for(const [k,s] of Object.entries(DATA.sources))SRC[k]={t:s.title,u
 const U={};for(const [k,o] of Object.entries(DATA.uplinks))U[k]=o.options.map(x=>({n:x.label,p:x.ports.map(p=>[p.count,p.speedGbps])}));
 const FAM={},SKUS=[];
 for(const f of DATA.families){
-  FAM[f.id]={v:f.vendor,name:f.family,stack:{t:f.stacking.tech,bw:f.stacking.bandwidthGbps,max:f.stacking.maxMembers,fp:f.stacking.frontPanel,note:f.stacking.note},l3:f.routing.tier,l3t:f.routing.summary,bgp:f.routing.bgp,routes:f.routeScale,mac:f.macTable,macsec:f.macsec,buf:f.buffer,psuFru:f.power.psuFieldReplaceable,fanFru:f.fansFieldReplaceable,power:f.power.summary,lic:f.licensing,src:f.source,famVerify:f.verify||[]};
-  for(const m of f.models)SKUS.push({fam:f.id,sku:m.sku,ports:m.accessPorts.map(p=>[p.count,p.speedGbps,p.poeWatts,p.media||"rj45"]),up:m.uplinks,psu:m.poeBudgets.map(b=>[b.config,b.watts,b.verify?1:0]),sw:m.switchingGbps,fwd:m.forwardingMpps,name:m.description||"",note:m.note||"",ff:m.formFactor||"1RU",src:m.source||f.source,fanless:!!m.fanless,pd:m.poweredBy||"",routes:m.routeScale||"",mac:m.macTable||"",buf:m.buffer||"",verify:[...(m.verify||[]),...(f.verify||[])],vnote:m.verifyNote||""});
+  FAM[f.id]={v:f.vendor,name:f.family,stack:{t:f.stacking.tech,bw:f.stacking.bandwidthGbps,max:f.stacking.maxMembers,fp:f.stacking.frontPanel,note:f.stacking.note},l3:f.routing.tier,l3t:f.routing.summary,bgp:f.routing.bgp,routes:f.routeScale,mac:f.macTable,macsec:f.macsec,buf:f.buffer,psuFru:f.power.psuFieldReplaceable,red:f.power.redundancy,fanFru:f.fansFieldReplaceable,power:f.power.summary,lic:f.licensing,src:f.source,famVerify:f.verify||[]};
+  for(const m of f.models)SKUS.push({fam:f.id,sku:m.sku,ports:m.accessPorts.map(p=>[p.count,p.speedGbps,p.poeWatts,p.media||"rj45"]),up:m.uplinks,psu:m.poeBudgets.map(b=>[b.config,b.watts,b.verify?1:0]),sw:m.switchingGbps,fwd:m.forwardingMpps,name:m.description||"",note:m.note||"",ff:m.formFactor||"1RU",src:m.source||f.source,fanless:!!m.fanless,pd:m.poweredBy||"",routes:m.routeScale||"",mac:m.macTable||"",buf:m.buffer||"",verify:[...(m.verify||[]),...(f.verify||[])],own:m.verify||[],red:m.redundancy||f.power.redundancy,vnote:m.verifyNote||""});
 }
 const VENDORS=[...new Set(DATA.families.map(f=>f.vendor))];
 
@@ -431,7 +443,6 @@ function sizeOne(s,req){
     if(req.l3==="bgp"&&s.fam.startsWith("c"))notes.push({t:"BGP needs Network Advantage"});
     if(req.l3==="ospf"&&s.fam.startsWith("c9200"))notes.push({t:"Full OSPF needs Network Advantage"});
     if(isMod(s)&&req.upN>0)notes.push({t:"Uplink module required: "+up.opt.n.split(":")[0]+" (sold separately)"});
-    if(cfg&&cfg[2])notes.push({w:1,t:"This PoE figure needs checking"});
     if(s.note)notes.push({t:s.note});
     return {s,u,cfg,W,up,notes,ports:totalPorts(s)*u};
   }
@@ -498,12 +509,12 @@ const COLS=[
   {k:"sw",t:"Switching",f:s=>s.sw||0,num:1}
 ];
 function renderBrowse(){
-  const med=$("#bMed").value,q=$("#q").value.trim().toLowerCase(),poe=+$("#bPoe").value,spd=+$("#bSpd").value,np=+$("#bPorts").value;
+  const med=$("#bMed").value,q=$("#q").value.trim().toLowerCase(),poe=+$("#bPoe").value,spd=+$("#bSpd").value,np=+$("#bPorts").value,red=$("#bRed").value;
   let rows=SKUS.filter(s=>{const f=FAM[s.fam];
     if(bVend.size&&!bVend.has(f.v))return false;
     if(q&&!(s.sku+" "+s.name+" "+f.name+" "+f.v).toLowerCase().includes(q))return false;
     if(poe===0&&maxW(s)>0)return false;if(poe>0&&maxW(s)<poe)return false;
-    if(np&&totalPorts(s)!==np)return false;if(spd&&maxSpd(s)<spd)return false;if(med&&!s.ports.some(p=>p[3]===med))return false;return true});
+    if(np&&totalPorts(s)!==np)return false;if(red&&(red==="yes")!==s.red.supported)return false;if(spd&&maxSpd(s)<spd)return false;if(med&&!s.ports.some(p=>p[3]===med))return false;return true});
   const col=COLS.find(c=>c.k===sortKey);
   rows.sort((a,b)=>{const x=col.f(a),y=col.f(b);return (x>y?1:x<y?-1:0)*sortDir||a.sku.localeCompare(b.sku)});
   $("#bCount").textContent=`${rows.length} of ${SKUS.length} models`;
@@ -527,7 +538,7 @@ $("#bTable").addEventListener("click",e=>{
   const tr=e.target.closest("tr[data-sku]");if(tr)openDetail(tr.dataset.sku);
 });
 function alertCmp(){const c=$("#bCount");const t=c.textContent;c.textContent="Compare holds 4 models. Untick one first.";c.style.color="var(--warn)";setTimeout(()=>{c.textContent=t;c.style.color=""},2200)}
-["q","bPorts","bSpd","bMed","bPoe"].forEach(id=>$("#"+id).addEventListener("input",renderBrowse));
+["q","bPorts","bSpd","bMed","bPoe","bRed"].forEach(id=>$("#"+id).addEventListener("input",renderBrowse));
 $("#bVendors .mlist").innerHTML=VENDORS.map(v=>`<label><input type="checkbox" value="${esc(v)}">${esc(v)}</label>`).join("");
 $("#bVendors").addEventListener("change",e=>{const v=e.target.value;if(e.target.checked)bVend.add(v);else bVend.delete(v);
   $("#bVendorBtn").textContent=!bVend.size?"All vendors":bVend.size===1?[...bVend][0]:bVend.size+" vendors";renderBrowse()});
@@ -542,15 +553,15 @@ function specRows(s){const f=FAM[s.fam];return [
   ["Vendor",f.v],["Family",f.name],["Description",s.name||"-"],
   ["Front panel",faceplate(s),1],["Form factor",s.ff+(s.fanless?", fanless":"")],["Powered by",s.pd||f.power],
   ["Access ports",portsText(s)],["Max PoE per port",poeLabel(maxW(s))],
-  ["PoE budget",s.psu.length?s.psu.map(p=>`${esc(p[0])}: ${fmt(p[1])} W${p[2]?' <span class="vflag">check</span>':""}`).join("<br>"):"None",1],
+  ["PoE budget",s.psu.length?s.psu.map(p=>`${esc(p[0])}: ${fmt(p[1])} W`).join("<br>"):"None",1],
   ["Uplinks",U[s.up].map(o=>o.n).join("<br>"),1],
   ["Stacking",f.stack.max===1?"Not stackable":f.stack.max?`${f.stack.t}, up to ${f.stack.max} members${f.stack.bw?`, ${f.stack.bw} Gbps`:""}`:`${f.stack.t} (no hardware stacking)`],
   ["Stacking notes",f.stack.note],
   ["Routing",f.l3t],["IPv4 route scale (as stated)",s.routes||f.routes],["MAC table",s.mac||f.mac],["MACsec",f.macsec],["Packet buffer",s.buf||f.buf],
   ["Switching capacity",s.sw===null?"Not published":fmt(s.sw)+" Gbps"],["Forwarding rate",s.fwd===null?"Not published":fmt(s.fwd)+" Mpps"],
+  ["Redundant power supplies",`${s.red.supported?"Yes":"No"}. ${esc(s.red.detail)}`,1],
   ["Fans",s.fanless?"None (fanless)":f.fanFru?"Field replaceable":"Fixed"],
   ["Licensing",f.lic],
-  ["Needs checking",s.verify.length?[s.vnote,...s.verify.map(k=>({macsec:"MACsec support per model",bgp:"BGP support per model",routing:"Dynamic routing support per model"})[k]).filter(Boolean)].filter(Boolean).join(". "):"Nothing flagged"],
   ["Source",`<a href="${SRC[s.src].u}" target="_blank" rel="noopener">${esc(SRC[s.src].t)}</a>`,1]
 ]}
 function renderCompare(){
@@ -583,11 +594,33 @@ function openDetail(sku){
 $("#dlg").addEventListener("click",e=>{if(e.target.id==="dlg")$("#dlg").close()});
 
 /* ---------- Tabs & about ---------- */
-document.querySelectorAll("nav.tabs button").forEach(b=>b.addEventListener("click",()=>{
-  document.querySelectorAll("nav.tabs button").forEach(x=>x.setAttribute("aria-selected",x===b));
-  document.querySelectorAll(".view").forEach(v=>v.classList.toggle("on",v.id==="v-"+b.dataset.v));
-  if(b.dataset.v==="compare")renderCompare();
-}));
+function showView(v){
+  document.querySelectorAll("nav.tabs button").forEach(x=>x.setAttribute("aria-selected",x.dataset.v===v));
+  document.querySelectorAll(".view").forEach(x=>x.classList.toggle("on",x.id==="v-"+v));
+  if(v==="compare")renderCompare();
+  window.scrollTo(0,0);
+}
+document.querySelectorAll("nav.tabs button").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.v)));
+document.addEventListener("click",e=>{const g=e.target.closest("[data-goto]");if(g){e.preventDefault();showView(g.dataset.goto)}});
+
+/* ---------- Needs checking ---------- */
+const OWN_LABEL={psu:"PoE budget",uplinks:"Uplink options",ports:"Access ports"};
+const FAM_LABEL={macsec:"MACsec support varies by model",bgp:"BGP support varies by model",routing:"Dynamic routing support varies by model"};
+(function(){
+  const rows=SKUS.filter(s=>s.own.length||s.psu.some(p=>p[2])).map(s=>{
+    const flagged=s.psu.filter(p=>p[2]).map(p=>`${p[0]}: ${fmt(p[1])} W`);
+    return {s,what:s.own.map(k=>OWN_LABEL[k]||k).join(", ")||"PoE budget",note:[s.vnote,flagged.length?"Affected: "+flagged.join("; "):""].filter(Boolean).join(". ")};
+  });
+  const fams=Object.entries(FAM).filter(([k,f])=>f.famVerify.length);
+  $("#chkLink").textContent=`Needs checking (${rows.length+fams.length})`;
+  let h=`<h3>Models (${rows.length})</h3><div class="tablewrap"><table><thead><tr><th class="nosort">Model</th><th class="nosort">Family</th><th class="nosort">What</th><th class="nosort">Why</th></tr></thead><tbody>`;
+  h+=rows.map(r=>`<tr><td class="sku"><button class="linkbtn" data-open="${esc(r.s.sku)}">${esc(r.s.sku)}</button></td><td>${esc(FAM[r.s.fam].v)} ${esc(FAM[r.s.fam].name)}</td><td>${esc(r.what)}</td><td style="white-space:normal;min-width:280px">${esc(r.note)}</td></tr>`).join("");
+  h+=`</tbody></table></div><h3>Whole families (${fams.length})</h3><div class="tablewrap"><table><thead><tr><th class="nosort">Family</th><th class="nosort">What</th></tr></thead><tbody>`;
+  h+=fams.map(([k,f])=>`<tr><td>${esc(f.v)} ${esc(f.name)}</td><td style="white-space:normal">${esc(f.famVerify.map(x=>FAM_LABEL[x]||x).join(". "))}</td></tr>`).join("");
+  h+="</tbody></table></div>";
+  $("#chkBody").innerHTML=h;
+  $("#chkBody").addEventListener("click",e=>{const b=e.target.closest("[data-open]");if(b)openDetail(b.dataset.open)});
+})();
 const famCounts=Object.entries(FAM).map(([k,f])=>`${f.v} ${f.name} (${SKUS.filter(s=>s.fam===k).length})`);
 $("#coverage").textContent=`${SKUS.length} models across ${Object.keys(FAM).length} families: ${famCounts.join(", ")}. Data center and aggregation-only models, and FortiSwitch models no longer on the current datasheets, are left out for now.`;
 $("#updated").textContent="Data updated "+DATA.updated+".";

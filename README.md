@@ -60,7 +60,7 @@ A few decisions matter more than the rest, because they are where vendors descri
 
 ## Verification flags
 
-Some values disagree between two places in the same datasheet, or had to be derived. These carry `verify: true` on a PoE budget, or a `verify` list plus a `verifyNote` on a model or family, and they show as **check** in the UI until someone confirms them. See CONTRIBUTING.md for the review workflow.
+Some values disagree between two places in the same datasheet, or had to be derived. These carry `verify: true` on a PoE budget, or a `verify` list plus a `verifyNote` on a model or family, and they show as **check** in Browse and are listed on the Needs checking page (linked from the footer) until someone confirms them. See CONTRIBUTING.md for the review workflow.
 
 The validator also warns when a PoE budget exceeds what the ports could physically draw (port count times per-port maximum). Several Catalyst 9200 24-port models currently trip this: Cisco lists 740W with two supplies, while its own footnote says 24-port models are capped at 720W.
 

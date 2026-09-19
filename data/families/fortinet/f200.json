@@ -21,7 +21,11 @@
   "buffer": "1.5 MB",
   "power": {
     "summary": "Fixed PSU; optional FRPS-740 external RPS on PoE models",
-    "psuFieldReplaceable": false
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Fixed internal PSU, no built-in redundancy."
+    }
   },
   "fansFieldReplaceable": false,
   "licensing": "No license needed when managed by a FortiGate over FortiLink. Dynamic routing needs the Advanced Features license (FS-SW-LIC-xxx). Cloud or standalone management is a separate subscription",
@@ -66,7 +70,11 @@
       ],
       "switchingGbps": 56,
       "forwardingMpps": 83,
-      "note": "PoE on 12 of 24 ports"
+      "note": "PoE on 12 of 24 ports",
+      "redundancy": {
+        "supported": true,
+        "detail": "Optional FRPS-740 external redundant power supply, sold separately. Not included with the switch."
+      }
     },
     {
       "sku": "FS-224D-FPOE",
@@ -85,7 +93,11 @@
         }
       ],
       "switchingGbps": 56,
-      "forwardingMpps": 83
+      "forwardingMpps": 83,
+      "redundancy": {
+        "supported": true,
+        "detail": "Optional FRPS-740 external redundant power supply, sold separately. Not included with the switch."
+      }
     },
     {
       "sku": "FS-248D",
@@ -124,7 +136,11 @@
       ],
       "switchingGbps": 104,
       "forwardingMpps": 155,
-      "note": "PoE on 24 of 48 ports"
+      "note": "PoE on 24 of 48 ports",
+      "redundancy": {
+        "supported": true,
+        "detail": "Optional FRPS-740 external redundant power supply, sold separately. Not included with the switch."
+      }
     },
     {
       "sku": "FS-248E-FPOE",
@@ -143,7 +159,11 @@
         }
       ],
       "switchingGbps": 104,
-      "forwardingMpps": 155
+      "forwardingMpps": 155,
+      "redundancy": {
+        "supported": true,
+        "detail": "Optional FRPS-740 external redundant power supply, sold separately. Not included with the switch."
+      }
     }
   ]
 }

@@ -21,7 +21,11 @@
   "buffer": "16 to 32 MB",
   "power": {
     "summary": "Dual FRU PSUs plus StackPower+",
-    "psuFieldReplaceable": true
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two field-replaceable PSU slots. PoE models list a default of one supply; the second supply is an added option (see PoE budget). StackPower+ can also share supplies across stack members."
+    }
   },
   "fansFieldReplaceable": true,
   "licensing": "Cisco DNA or Cisco Networking Subscription (Essentials or Advantage) required with purchase",

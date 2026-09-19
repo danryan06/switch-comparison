@@ -21,7 +21,11 @@
   "buffer": "8 MB",
   "power": {
     "summary": "Dual hot-swap PSUs",
-    "psuFieldReplaceable": true
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two hot-swap PSU slots. Supply options are listed under PoE budget."
+    }
   },
   "fansFieldReplaceable": true,
   "licensing": "On-box features need no license; HPE Aruba Networking Central subscription for cloud management",

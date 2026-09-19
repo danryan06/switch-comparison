@@ -36,8 +36,8 @@
     "buffer": { "type": "string" },
     "power": {
       "type": "object",
-      "required": ["summary", "psuFieldReplaceable"],
-      "properties": { "summary": { "type": "string" }, "psuFieldReplaceable": { "type": "boolean" } }
+      "required": ["summary", "psuFieldReplaceable", "redundancy"],
+      "properties": { "summary": { "type": "string" }, "psuFieldReplaceable": { "type": "boolean" }, "redundancy": { "$ref": "#/$defs/redundancy" } }
     },
     "fansFieldReplaceable": { "type": "boolean" },
     "licensing": { "type": "string" },
@@ -45,6 +45,15 @@
     "models": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/model" } }
   },
   "$defs": {
+    "redundancy": {
+      "type": "object",
+      "required": ["supported", "detail"],
+      "description": "Whether a second power supply (or built-in redundant input) is available, and how it is provided",
+      "properties": {
+        "supported": { "type": "boolean" },
+        "detail": { "type": "string", "description": "How redundancy is delivered: built in, included, or sold separately; internal or external" }
+      }
+    },
     "model": {
       "type": "object",
       "required": ["sku", "accessPorts", "uplinks", "poeBudgets", "switchingGbps", "forwardingMpps"],
@@ -89,6 +98,7 @@
         "routeScale": { "type": "string", "description": "Overrides the family value" },
         "macTable": { "type": "string", "description": "Overrides the family value" },
         "buffer": { "type": "string", "description": "Overrides the family value" },
+        "redundancy": { "$ref": "#/$defs/redundancy", "description": "Overrides the family value" },
         "note": { "type": "string" },
         "verify": { "type": "array", "items": { "type": "string" } },
         "verifyNote": { "type": "string" }

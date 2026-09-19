@@ -21,7 +21,11 @@
   "buffer": "6 MB (12 MB on mGig)",
   "power": {
     "summary": "Dual FRU power supplies",
-    "psuFieldReplaceable": true
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two field-replaceable PSU slots. PoE models list a default of one supply; the second supply is an added option (see PoE budget)."
+    }
   },
   "fansFieldReplaceable": true,
   "licensing": "Cisco DNA or Cisco Networking Subscription (Essentials or Advantage) required with purchase",

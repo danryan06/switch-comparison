@@ -21,7 +21,11 @@
   "buffer": "8 MB",
   "power": {
     "summary": "Fixed internal PSU",
-    "psuFieldReplaceable": false
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Fixed internal PSU. No second supply."
+    }
   },
   "fansFieldReplaceable": false,
   "licensing": "On-box features need no license; HPE Aruba Networking Central subscription for cloud management",
