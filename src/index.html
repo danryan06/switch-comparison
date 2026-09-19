@@ -348,7 +348,9 @@ const fmtN=n=>n===null||n===undefined?null:fmt(n);
 const upText=s=>{const o=U[s.up];return o.length>1?"Modular: "+o.map(x=>x.n.split(": ")[1]).join(", "):o[0].n};
 const isMod=s=>DATA.uplinks[s.up].modular;
 const vendorOf=s=>FAM[s.fam].v;
-const displayName=s=>s.name?s.sku+" ("+s.name+")":s.sku;
+/* Aruba SKUs are opaque part numbers, so lead with the model and demote the SKU. Every other vendor's SKU is its model name and has no s.name. */
+const modelName=s=>s.name||s.sku;
+const modelSub=s=>{const f=FAM[s.fam];return f.v+" "+f.name+(s.name?" · "+s.sku:"")};
 const fmt=n=>n.toLocaleString("en-US");
 
 /* ---------- faceplate ---------- */
@@ -475,10 +477,10 @@ function runSize(){
 let showAll=false,deb;
 function runSizeDebounced(){clearTimeout(deb);deb=setTimeout(runSize,250)}
 function resultCard(r,best){
-  const s=r.s,f=FAM[s.fam];
+  const s=r.s;
   const bud=r.cfg?r.cfg[1]*r.u:0,pct=bud?Math.round(r.W/bud*100):0;
   return `<article class="card ${best?"best":""}">
-    <div class="cardTop"><div><div class="qty"><span class="n">${r.u} x</span> ${esc(s.sku)}</div><div class="fam">${esc(f.v)} ${esc(f.name)}${s.name?" "+esc(s.name.replace(/^\S+ /,"")):""}</div></div>
+    <div class="cardTop"><div><div class="qty"><span class="n">${r.u} x</span> ${esc(modelName(s))}</div><div class="fam">${esc(modelSub(s))}</div></div>
     <button class="linkbtn" data-open="${esc(s.sku)}">Full specs</button></div>
     <div class="facewrap">${faceplate(s)}</div>
     <div class="facts">
@@ -524,7 +526,7 @@ function renderBrowse(){
   $("#bTable tbody").innerHTML=rows.map(s=>{const f=FAM[s.fam];const v=s.verify.length?`<span class="vflag" title="${esc(s.vnote||"Needs verification")}">check</span>`:"";
     return `<tr data-sku="${esc(s.sku)}">
       <td><input type="checkbox" class="cmpbox" aria-label="Compare ${esc(s.sku)}" data-c="${esc(s.sku)}" ${cmp.has(s.sku)?"checked":""}></td>
-      <td class="sku">${esc(s.sku)}${v}${s.name||s.ff!=="1RU"?`<div class="small" style="font-family:var(--sans);font-weight:400">${esc([s.name,s.ff!=="1RU"?s.ff+(s.fanless?", fanless":""):""].filter(Boolean).join(". "))}</div>`:""}</td>
+      <td class="sku">${esc(modelName(s))}${v}${s.name||s.ff!=="1RU"?`<div class="small" style="font-family:var(--sans);font-weight:400">${esc([s.name?s.sku:"",s.ff!=="1RU"?s.ff+(s.fanless?", fanless":""):""].filter(Boolean).join(". "))}</div>`:""}</td>
       <td>${esc(f.v)} ${esc(f.name)}</td>
       <td>${esc(portsText(s))}</td>
       <td>${maxW(s)?maxW(s)+"W":"None"}</td>
@@ -582,10 +584,10 @@ function renderCompare(){
 
 /* ---------- Detail ---------- */
 function openDetail(sku){
-  const s=SKUS.find(x=>x.sku===sku);const f=FAM[s.fam];
+  const s=SKUS.find(x=>x.sku===sku);
   const rows=specRows(s).filter(r=>!["Vendor","Family","Description","Front panel"].includes(r[0]));
   $("#dlgBody").innerHTML=`<button class="ghost close" id="dlgClose">Close</button>
-    <h3>${esc(s.sku)}</h3><div class="fam">${esc(f.v)} ${esc(f.name)}${s.name?", "+esc(s.name):""}</div>
+    <h3>${esc(modelName(s))}</h3><div class="fam">${esc(modelSub(s))}</div>
     <div class="facewrap">${faceplate(s,1.3)}</div><div class="legend">${legendHTML(s)}</div>
     <dl class="spec">${rows.map(r=>`<dt>${esc(r[0])}</dt><dd>${r[2]?r[1]:esc(r[1])}</dd>`).join("")}</dl>
     <div style="margin-top:16px"><button class="ghost ${cmp.has(s.sku)?"on":""}" id="dlgCmp">${cmp.has(s.sku)?"Remove from compare":"Add to compare"}</button></div>`;
@@ -607,7 +609,7 @@ document.addEventListener("click",e=>{const g=e.target.closest("[data-goto]");if
 
 /* ---------- Needs checking ---------- */
 const OWN_LABEL={psu:"PoE budget",poeBudgets:"PoE budget",uplinks:"Uplink options",ports:"Access ports",accessPorts:"Access ports",forwardingMpps:"Forwarding rate",switchingGbps:"Switching capacity",stacking:"Stacking"};
-const FAM_LABEL={macsec:"MACsec support varies by model",bgp:"BGP support varies by model",routing:"Dynamic routing support varies by model"};
+const FAM_LABEL={macsec:"MACsec support varies by model",bgp:"BGP support varies by model",routing:"Dynamic routing support varies by model",routeScale:"Route scale varies by model",macTable:"MAC table size varies by model",buffer:"Packet buffer size varies by model"};
 (function(){
   const rows=SKUS.filter(s=>s.own.length||s.psu.some(p=>p[2])).map(s=>{
     const flagged=s.psu.filter(p=>p[2]).map(p=>`${p[0]}: ${fmt(p[1])} W`);
