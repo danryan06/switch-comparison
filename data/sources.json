@@ -142,5 +142,20 @@
     "title": "HPE Aruba Networking CX 6100 Switch Series Data Sheet",
     "url": "https://www.hpe.com/psnow/doc/a00106853enw",
     "retrieved": "2026-09-19"
+  },
+  "c9300hig": {
+    "title": "Cisco Catalyst 9300 Series Switches Hardware Installation Guide",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/hardware/install/b_c9300_hig/Product-overview.html",
+    "retrieved": "2026-09-19"
+  },
+  "a6300igsg": {
+    "title": "HPE Aruba Networking 6300 Switch Series Installation and Getting Started Guide",
+    "url": "https://arubanetworking.hpe.com/techdocs/hardware/switches/6300/IGSG/igsg_6300.pdf",
+    "retrieved": "2026-09-19"
+  },
+  "jex4400hct": {
+    "title": "Juniper EX4400 Hardware Specifications (Pathfinder Hardware Compatibility Tool)",
+    "url": "https://apps.juniper.net/hct/product/EX4400/hwspecs",
+    "retrieved": "2026-09-19"
   }
 }

@@ -166,11 +166,7 @@
         }
       ],
       "switchingGbps": 424,
-      "forwardingMpps": 315,
-      "verify": [
-        "accessPorts"
-      ],
-      "verifyNote": "Datasheet model table says 16x 2.5G + 36x 1G; the description, port density, and ordering sections all say 32x 1G"
+      "forwardingMpps": 315
     }
   ]
 }

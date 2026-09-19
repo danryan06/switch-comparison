@@ -60,21 +60,15 @@
       "poeBudgets": [
         {
           "config": "JL086A 680W",
-          "watts": 370,
-          "verify": true
+          "watts": 370
         },
         {
           "config": "JL087A 1050W",
-          "watts": 720,
-          "verify": true
+          "watts": 740
         }
       ],
       "switchingGbps": 128,
-      "forwardingMpps": 95.2,
-      "verify": [
-        "psu"
-      ],
-      "verifyNote": "QuickSpecs state max 740W only; per-PSU split derived from 6300M PSU ratings. 24 ports x 30W cap usable PoE at 720W"
+      "forwardingMpps": 95.2
     },
     {
       "sku": "R8Q69A",
@@ -105,13 +99,11 @@
       "poeBudgets": [
         {
           "config": "JL086A 680W",
-          "watts": 370,
-          "verify": true
+          "watts": 370
         },
         {
           "config": "JL087A 1050W",
-          "watts": 740,
-          "verify": true
+          "watts": 740
         },
         {
           "config": "2x JL087A 1050W",
@@ -119,11 +111,7 @@
         }
       ],
       "switchingGbps": 176,
-      "forwardingMpps": 130.9,
-      "verify": [
-        "psu"
-      ],
-      "verifyNote": "QuickSpecs state max 1440W only; per-PSU split derived"
+      "forwardingMpps": 130.9
     },
     {
       "sku": "R8Q71A",
@@ -144,13 +132,11 @@
       "poeBudgets": [
         {
           "config": "JL086A 680W",
-          "watts": 370,
-          "verify": true
+          "watts": 370
         },
         {
           "config": "JL087A 1050W",
-          "watts": 740,
-          "verify": true
+          "watts": 740
         },
         {
           "config": "2x JL087A 1050W",
@@ -158,11 +144,7 @@
         }
       ],
       "switchingGbps": 272,
-      "forwardingMpps": 130.9,
-      "verify": [
-        "psu"
-      ],
-      "verifyNote": "QuickSpecs state max 1440W only; per-PSU split derived"
+      "forwardingMpps": 130.9
     }
   ]
 }

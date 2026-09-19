@@ -64,16 +64,11 @@
       "poeBudgets": [
         {
           "config": "Internal",
-          "watts": 421,
-          "verify": true
+          "watts": 421
         }
       ],
       "switchingGbps": 128,
-      "forwardingMpps": 190,
-      "verify": [
-        "psu"
-      ],
-      "verifyNote": "Spec table says 421W; ordering info says 433.7W, which matches max power draw"
+      "forwardingMpps": 190
     },
     {
       "sku": "FS-M426E-FPOE",
@@ -98,16 +93,14 @@
       "poeBudgets": [
         {
           "config": "Internal",
-          "watts": 421
+          "watts": 421,
+          "verify": true
         }
       ],
       "switchingGbps": 172,
       "forwardingMpps": 255,
       "note": "The two 5G ports have no PoE",
-      "verify": [
-        "ports"
-      ],
-      "verifyNote": "Datasheet lists 24 PoE ports (16 at 30W, 8 at 60W); the 5G ports are assumed non-PoE"
+      "verifyNote": "Spec table lists a 420W PoE budget; the ordering description says 421W"
     }
   ]
 }

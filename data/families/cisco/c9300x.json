@@ -118,11 +118,7 @@
         }
       ],
       "switchingGbps": 960,
-      "forwardingMpps": 714.24,
-      "verify": [
-        "uplinks"
-      ],
-      "verifyNote": "Datasheet says 9300X network module port count is limited on this model"
+      "forwardingMpps": 714.24
     },
     {
       "sku": "C9300X-24HX",

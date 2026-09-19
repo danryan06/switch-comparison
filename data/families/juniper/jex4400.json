@@ -171,13 +171,8 @@
           "watts": 3600
         }
       ],
-      "switchingGbps": null,
-      "forwardingMpps": null,
-      "verify": [
-        "forwardingMpps",
-        "switchingGbps"
-      ],
-      "verifyNote": "Datasheet publishes this figure; not yet captured (switching capacity and forwarding rate)",
+      "switchingGbps": 696,
+      "forwardingMpps": 517,
       "note": "Ships with 250V power cords by default"
     },
     {
@@ -209,11 +204,7 @@
         }
       ],
       "switchingGbps": 1080,
-      "forwardingMpps": null,
-      "verify": [
-        "forwardingMpps"
-      ],
-      "verifyNote": "Datasheet publishes this figure; not yet captured (forwarding rate)"
+      "forwardingMpps": 803
     },
     {
       "sku": "EX4400-48MP",
@@ -249,11 +240,7 @@
         }
       ],
       "switchingGbps": 1020,
-      "forwardingMpps": 758,
-      "verify": [
-        "forwardingMpps"
-      ],
-      "verifyNote": "Forwarding rate entered from a published EX4400 throughput table; not yet cross-checked against the datasheet"
+      "forwardingMpps": 758
     },
     {
       "sku": "EX4400-48MXP",
@@ -290,11 +277,6 @@
       ],
       "switchingGbps": 1020,
       "forwardingMpps": 758,
-      "verify": [
-        "forwardingMpps",
-        "switchingGbps"
-      ],
-      "verifyNote": "Forwarding rate and switching capacity entered from a published EX4400 throughput table; not yet cross-checked against the datasheet",
       "note": "Ships with 250V power cords by default"
     },
     {
@@ -311,11 +293,6 @@
       "poeBudgets": [],
       "switchingGbps": 1080,
       "forwardingMpps": 803,
-      "verify": [
-        "forwardingMpps",
-        "switchingGbps"
-      ],
-      "verifyNote": "Forwarding rate and switching capacity entered from a published EX4400 throughput table; not yet cross-checked against the datasheet",
       "note": "Also positioned as a distribution switch; VC must use HGoE"
     },
     {

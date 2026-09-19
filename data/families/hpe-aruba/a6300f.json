@@ -65,16 +65,11 @@
       "poeBudgets": [
         {
           "config": "Internal 950W",
-          "watts": 720,
-          "verify": true
+          "watts": 370
         }
       ],
       "switchingGbps": 448,
-      "forwardingMpps": 334,
-      "verify": [
-        "psu"
-      ],
-      "verifyNote": "QuickSpecs list a 950W internal PSU and 370W max PoE; 24 ports x 30W cap at 720W, and the prior data sheet listed 740W"
+      "forwardingMpps": 334
     },
     {
       "sku": "JL667A",
