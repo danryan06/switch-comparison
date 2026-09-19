@@ -45,12 +45,11 @@
       "uplinks": "jex4400",
       "poeBudgets": [],
       "switchingGbps": 648,
-      "forwardingMpps": 333,
+      "forwardingMpps": 482,
       "verify": [
-        "forwardingMpps",
-        "switchingGbps"
+        "forwardingMpps"
       ],
-      "verifyNote": "Forwarding rate and switching capacity entered from a published EX4400 throughput table; not yet cross-checked against the datasheet",
+      "verifyNote": "Data sheet and Hardware Compatibility Tool state 482 Mpps; the EX4400 product specs page states 333 Mpps",
       "note": "Also sold as -24T-AFI"
     },
     {
@@ -65,11 +64,11 @@
       "uplinks": "jex4400",
       "poeBudgets": [],
       "switchingGbps": 696,
-      "forwardingMpps": 369,
+      "forwardingMpps": 517,
       "verify": [
         "forwardingMpps"
       ],
-      "verifyNote": "Forwarding rate entered from a published EX4400 throughput table; not yet cross-checked against the datasheet",
+      "verifyNote": "Data sheet and Hardware Compatibility Tool state 517 Mpps; the EX4400 product specs page states 369 Mpps",
       "note": "Also sold as -48T-AFI and -48T-DC"
     },
     {
@@ -101,12 +100,11 @@
         }
       ],
       "switchingGbps": 648,
-      "forwardingMpps": 333,
+      "forwardingMpps": 482,
       "verify": [
-        "forwardingMpps",
-        "switchingGbps"
+        "forwardingMpps"
       ],
-      "verifyNote": "Forwarding rate and switching capacity entered from a published EX4400 throughput table; not yet cross-checked against the datasheet"
+      "verifyNote": "Data sheet and Hardware Compatibility Tool state 482 Mpps; the EX4400 product specs page states 333 Mpps"
     },
     {
       "sku": "EX4400-48P",
@@ -137,11 +135,11 @@
         }
       ],
       "switchingGbps": 696,
-      "forwardingMpps": 369,
+      "forwardingMpps": 517,
       "verify": [
         "forwardingMpps"
       ],
-      "verifyNote": "Forwarding rate entered from a published EX4400 throughput table; not yet cross-checked against the datasheet"
+      "verifyNote": "Data sheet and Hardware Compatibility Tool state 517 Mpps; the EX4400 product specs page states 369 Mpps"
     },
     {
       "sku": "EX4400-48XP",
@@ -314,11 +312,11 @@
       "uplinks": "jex4400",
       "poeBudgets": [],
       "switchingGbps": 912,
-      "forwardingMpps": 714,
+      "forwardingMpps": 678,
       "verify": [
         "forwardingMpps"
       ],
-      "verifyNote": "Forwarding rate entered from a published EX4400 throughput table; not yet cross-checked against the datasheet"
+      "verifyNote": "Data sheet and Hardware Compatibility Tool state 678 Mpps; the EX4400 product specs page states 714 Mpps"
     }
   ]
 }
