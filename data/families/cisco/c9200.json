@@ -1,0 +1,185 @@
+{
+  "id": "c9200",
+  "vendor": "Cisco",
+  "family": "Catalyst 9200",
+  "source": "c9200",
+  "stacking": {
+    "tech": "StackWise-160",
+    "bandwidthGbps": 160,
+    "maxMembers": 8,
+    "frontPanel": false,
+    "note": "Stack kit ordered separately"
+  },
+  "routing": {
+    "tier": "ospf",
+    "bgp": false,
+    "summary": "OSPF, EIGRP, IS-IS (full OSPF needs Network Advantage). No BGP."
+  },
+  "routeScale": "14,000 total (10k direct, 4k indirect)",
+  "macTable": "32,000",
+  "macsec": "AES-128",
+  "buffer": "6 MB (12 MB on mGig)",
+  "power": {
+    "summary": "Dual FRU power supplies",
+    "psuFieldReplaceable": true
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Cisco DNA or Cisco Networking Subscription (Essentials or Advantage) required with purchase",
+  "verify": [],
+  "models": [
+    {
+      "sku": "C9200-24T",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "m9200",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": 95.23
+    },
+    {
+      "sku": "C9200-24P",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "m9200",
+      "poeBudgets": [
+        {
+          "config": "1x 600W (default)",
+          "watts": 370
+        },
+        {
+          "config": "2x 600W",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 95.23
+    },
+    {
+      "sku": "C9200-24PXG",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 10,
+          "poeWatts": 30
+        },
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "m9200x",
+      "poeBudgets": [
+        {
+          "config": "1x 600W (default)",
+          "watts": 370
+        },
+        {
+          "config": "2x 600W",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 352,
+      "forwardingMpps": 261.9
+    },
+    {
+      "sku": "C9200-48T",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "m9200",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": 130.95
+    },
+    {
+      "sku": "C9200-48P",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "m9200",
+      "poeBudgets": [
+        {
+          "config": "1x 1kW (default)",
+          "watts": 740
+        },
+        {
+          "config": "2x 1kW",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 130.95
+    },
+    {
+      "sku": "C9200-48PL",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "m9200",
+      "poeBudgets": [
+        {
+          "config": "1x 600W (default)",
+          "watts": 370
+        },
+        {
+          "config": "2x 600W",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 130.95,
+      "note": "Partial PoE+ model"
+    },
+    {
+      "sku": "C9200-48PXG",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 10,
+          "poeWatts": 30
+        },
+        {
+          "count": 40,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "m9200x",
+      "poeBudgets": [
+        {
+          "config": "1x 1kW (default)",
+          "watts": 740
+        },
+        {
+          "config": "2x 1kW",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 400,
+      "forwardingMpps": 297.61
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "id": "f300",
+  "vendor": "Fortinet",
+  "family": "FortiSwitch 300G",
+  "source": "fcam",
+  "stacking": {
+    "tech": "FortiLink",
+    "bandwidthGbps": null,
+    "maxMembers": null,
+    "frontPanel": false,
+    "note": "No hardware stacking. A FortiGate manages 8 to 300 switches (model dependent) as one fabric with automatic inter-switch links"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Static; OSPF, RIP, VRRP, BGP, IS-IS with Advanced Features license"
+  },
+  "routeScale": "38,000 IPv4 / 38,000 IPv6",
+  "macTable": "32,000",
+  "macsec": "Yes",
+  "buffer": "3 MB",
+  "power": {
+    "summary": "Built-in redundant AC inputs",
+    "psuFieldReplaceable": false
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No license needed when managed by a FortiGate over FortiLink. Dynamic routing needs the Advanced Features license (FS-SW-LIC-xxx). Cloud or standalone management is a separate subscription",
+  "verify": [
+    "bgp"
+  ],
+  "models": [
+    {
+      "sku": "FS-324G",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 2.5,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 200,
+      "forwardingMpps": 297
+    },
+    {
+      "sku": "FS-324G-FPOE",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 420
+        }
+      ],
+      "switchingGbps": 200,
+      "forwardingMpps": 297
+    },
+    {
+      "sku": "FS-348G",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 2.5,
+          "poeWatts": 0
+        },
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 248,
+      "forwardingMpps": 369
+    },
+    {
+      "sku": "FS-348G-FPOE",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        },
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Single AC input",
+          "watts": 780
+        },
+        {
+          "config": "Dual AC inputs",
+          "watts": 1560,
+          "verify": true
+        }
+      ],
+      "switchingGbps": 248,
+      "forwardingMpps": 369,
+      "verify": [
+        "psu"
+      ],
+      "verifyNote": "Spec table says 1560W with dual AC; ordering info says 1540W"
+    }
+  ]
+}

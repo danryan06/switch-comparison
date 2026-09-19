@@ -1,0 +1,201 @@
+{
+  "id": "a6300m",
+  "vendor": "HPE Aruba",
+  "family": "CX 6300M",
+  "source": "a6300",
+  "stacking": {
+    "tech": "VSF",
+    "bandwidthGbps": 200,
+    "maxMembers": 10,
+    "frontPanel": true,
+    "note": "Front-panel stacking over the SFP56 uplinks"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Full L3 incl. BGP, EVPN, VXLAN, VRF. No license needed"
+  },
+  "routeScale": "64,000 IPv4 unicast",
+  "macTable": "32,000",
+  "macsec": "Listed for the series, confirm per model",
+  "buffer": "8 MB",
+  "power": {
+    "summary": "Dual hot-swap PSUs",
+    "psuFieldReplaceable": true
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "On-box features need no license; HPE Aruba Networking Central subscription for cloud management",
+  "verify": [
+    "macsec"
+  ],
+  "models": [
+    {
+      "sku": "JL658A",
+      "description": "6300M 24p SFP+",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "a56",
+      "poeBudgets": [],
+      "switchingGbps": 880,
+      "forwardingMpps": 654
+    },
+    {
+      "sku": "JL659A",
+      "description": "6300M 48p SR5 Class 6 PoE",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "a56",
+      "poeBudgets": [
+        {
+          "config": "JL086A 680W",
+          "watts": 370
+        },
+        {
+          "config": "JL087A 1050W",
+          "watts": 740
+        },
+        {
+          "config": "JL670A 1600W",
+          "watts": 1300
+        },
+        {
+          "config": "2x JL670A 1600W",
+          "watts": 2880
+        }
+      ],
+      "switchingGbps": 880,
+      "forwardingMpps": 654
+    },
+    {
+      "sku": "JL660A",
+      "description": "6300M 24p SR5 Class 6 PoE",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "a56",
+      "poeBudgets": [
+        {
+          "config": "JL086A 680W",
+          "watts": 370
+        },
+        {
+          "config": "JL087A 1050W",
+          "watts": 740
+        },
+        {
+          "config": "JL670A 1600W",
+          "watts": 1440,
+          "verify": true
+        }
+      ],
+      "switchingGbps": 640,
+      "forwardingMpps": 476,
+      "verify": [
+        "psu"
+      ],
+      "verifyNote": "Datasheet lists both 1300W and 1440W for a single JL670A"
+    },
+    {
+      "sku": "JL661A",
+      "description": "6300M 48p 1G Class 4 PoE",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a56",
+      "poeBudgets": [
+        {
+          "config": "JL086A 680W",
+          "watts": 370
+        },
+        {
+          "config": "JL087A 1050W",
+          "watts": 740
+        },
+        {
+          "config": "JL670A 1600W",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 496,
+      "forwardingMpps": 369
+    },
+    {
+      "sku": "JL662A",
+      "description": "6300M 24p 1G Class 4 PoE",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a56",
+      "poeBudgets": [
+        {
+          "config": "JL086A 680W",
+          "watts": 370
+        },
+        {
+          "config": "JL087A 1050W",
+          "watts": 720
+        },
+        {
+          "config": "JL670A 1600W",
+          "watts": 720
+        }
+      ],
+      "switchingGbps": 448,
+      "forwardingMpps": 334,
+      "note": "Budgets above 720W are capped by 24 ports x 30W"
+    },
+    {
+      "sku": "JL663A",
+      "description": "6300M 48p 1G",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "a56",
+      "poeBudgets": [],
+      "switchingGbps": 496,
+      "forwardingMpps": 369
+    },
+    {
+      "sku": "JL664A",
+      "description": "6300M 24p 1G",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "a56",
+      "poeBudgets": [],
+      "switchingGbps": 448,
+      "forwardingMpps": 334
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "id": "f400",
+  "vendor": "Fortinet",
+  "family": "FortiSwitch 400E",
+  "source": "fcam",
+  "stacking": {
+    "tech": "FortiLink",
+    "bandwidthGbps": null,
+    "maxMembers": null,
+    "frontPanel": false,
+    "note": "No hardware stacking. A FortiGate manages 8 to 300 switches (model dependent) as one fabric with automatic inter-switch links"
+  },
+  "routing": {
+    "tier": "ospf",
+    "bgp": false,
+    "summary": "Static; OSPF, RIP, VRRP with Advanced Features license. BGP not confirmed for 400E"
+  },
+  "routeScale": "1,000 IPv4 routes, 5,000 host entries",
+  "macTable": "16,000",
+  "macsec": "Per feature matrix",
+  "buffer": "2 MB",
+  "power": {
+    "summary": "Built-in redundant AC inputs",
+    "psuFieldReplaceable": false
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No license needed when managed by a FortiGate over FortiLink. Dynamic routing needs the Advanced Features license (FS-SW-LIC-xxx). Cloud or standalone management is a separate subscription",
+  "verify": [
+    "bgp"
+  ],
+  "models": [
+    {
+      "sku": "FS-424E-Fiber",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": 190,
+      "routeScale": "16,000 IPv4 / 8,000 IPv6",
+      "macTable": "32,000",
+      "buffer": "4 MB"
+    },
+    {
+      "sku": "FS-424E-FPOE",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 421,
+          "verify": true
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 190,
+      "verify": [
+        "psu"
+      ],
+      "verifyNote": "Spec table says 421W; ordering info says 433.7W, which matches max power draw"
+    },
+    {
+      "sku": "FS-M426E-FPOE",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 60
+        },
+        {
+          "count": 2,
+          "speedGbps": 5,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 421
+        }
+      ],
+      "switchingGbps": 172,
+      "forwardingMpps": 255,
+      "note": "The two 5G ports have no PoE",
+      "verify": [
+        "ports"
+      ],
+      "verifyNote": "Datasheet lists 24 PoE ports (16 at 30W, 8 at 60W); the 5G ports are assumed non-PoE"
+    }
+  ]
+}

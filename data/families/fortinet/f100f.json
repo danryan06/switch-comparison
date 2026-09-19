@@ -1,0 +1,212 @@
+{
+  "id": "f100f",
+  "vendor": "Fortinet",
+  "family": "FortiSwitch 100F",
+  "source": "fsa",
+  "stacking": {
+    "tech": "FortiLink",
+    "bandwidthGbps": null,
+    "maxMembers": null,
+    "frontPanel": false,
+    "note": "No hardware stacking. A FortiGate manages 8 to 300 switches (model dependent) as one fabric with automatic inter-switch links"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 only. Routing is done on the FortiGate"
+  },
+  "routeScale": "None (Layer 2)",
+  "macTable": "32,000",
+  "macsec": "None",
+  "buffer": "2 MB",
+  "power": {
+    "summary": "Fixed internal PSU, no redundancy",
+    "psuFieldReplaceable": false
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No license needed when managed by a FortiGate over FortiLink. Dynamic routing needs the Advanced Features license (FS-SW-LIC-xxx). Cloud or standalone management is a separate subscription",
+  "verify": [],
+  "models": [
+    {
+      "sku": "FS-108F",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g2",
+      "poeBudgets": [],
+      "switchingGbps": 20,
+      "forwardingMpps": 30,
+      "formFactor": "Desktop",
+      "fanless": true,
+      "macTable": "8,000",
+      "buffer": "512 KB",
+      "poweredBy": "Port 8 can be powered by upstream PoE (PD), or 12V adapter"
+    },
+    {
+      "sku": "FS-108F-POE",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g2",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 65
+        }
+      ],
+      "switchingGbps": 20,
+      "forwardingMpps": 30,
+      "formFactor": "Desktop",
+      "fanless": true,
+      "macTable": "8,000",
+      "buffer": "512 KB"
+    },
+    {
+      "sku": "FS-108F-FPOE",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g2",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 130
+        }
+      ],
+      "switchingGbps": 20,
+      "forwardingMpps": 30,
+      "formFactor": "Desktop",
+      "fanless": true,
+      "macTable": "8,000",
+      "buffer": "512 KB"
+    },
+    {
+      "sku": "FS-124F",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": 190
+    },
+    {
+      "sku": "FS-124F-POE",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 185
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 190,
+      "note": "PoE on 12 of 24 ports"
+    },
+    {
+      "sku": "FS-124F-FPOE",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 190
+    },
+    {
+      "sku": "FS-148F",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": 260
+    },
+    {
+      "sku": "FS-148F-POE",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 260,
+      "note": "PoE on 24 of 48 ports"
+    },
+    {
+      "sku": "FS-148F-FPOE",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 260
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "switch-comparison",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Vendor-neutral campus access switch comparison and closet sizing tool",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "npm run build && python3 -m http.server 8080 --directory dist"
+  },
+  "engines": { "node": ">=18" }
+}

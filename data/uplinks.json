@@ -1,0 +1,388 @@
+{
+  "g4": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 1G SFP (fixed)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 1
+          }
+        ]
+      }
+    ]
+  },
+  "x4": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 1/10G SFP+ (fixed)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "y2": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 1/10/25G SFP28 (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 25
+          }
+        ]
+      }
+    ]
+  },
+  "q2": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 40G QSFP+ (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 40
+          }
+        ]
+      }
+    ]
+  },
+  "y4": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 25G SFP28 (fixed)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 25
+          }
+        ]
+      }
+    ]
+  },
+  "a56": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 1/10/25/50G SFP56 (fixed)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 50
+          }
+        ]
+      }
+    ]
+  },
+  "a10": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 1/10G SFP+ (fixed)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "m9200": {
+    "modular": true,
+    "options": [
+      {
+        "label": "C9200-NM-4G: 4x 1G",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 1
+          }
+        ]
+      },
+      {
+        "label": "C9200-NM-4X: 4x 10G",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "m9200x": {
+    "modular": true,
+    "options": [
+      {
+        "label": "C9200-NM-4X: 4x 10G",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 10
+          }
+        ]
+      },
+      {
+        "label": "C9200-NM-2Y: 2x 25G",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 25
+          }
+        ]
+      },
+      {
+        "label": "C9200-NM-2Q: 2x 40G",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 40
+          }
+        ]
+      }
+    ]
+  },
+  "m9300": {
+    "modular": true,
+    "options": [
+      {
+        "label": "C9300-NM-4G: 4x 1G",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 1
+          }
+        ]
+      },
+      {
+        "label": "C9300-NM-4M: 4x mGig 10G",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 10
+          }
+        ]
+      },
+      {
+        "label": "C9300-NM-8X: 8x 10G",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 10
+          }
+        ]
+      },
+      {
+        "label": "C9300-NM-2Y: 2x 25G",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 25
+          }
+        ]
+      },
+      {
+        "label": "C9300-NM-2Q: 2x 40G",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 40
+          }
+        ]
+      }
+    ]
+  },
+  "m9300x": {
+    "modular": true,
+    "options": [
+      {
+        "label": "C9300X-NM-8M: 8x mGig 10G",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 10
+          }
+        ]
+      },
+      {
+        "label": "C9300X-NM-8Y: 8x 25G",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 25
+          }
+        ]
+      },
+      {
+        "label": "C9300X-NM-2C: 2x 100G",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 100
+          }
+        ]
+      }
+    ]
+  },
+  "m9300x4c": {
+    "modular": true,
+    "options": [
+      {
+        "label": "C9300X-NM-8M: 8x mGig 10G",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 10
+          }
+        ]
+      },
+      {
+        "label": "C9300X-NM-8Y: 8x 25G",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 25
+          }
+        ]
+      },
+      {
+        "label": "C9300X-NM-2C: 2x 100G",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 100
+          }
+        ]
+      },
+      {
+        "label": "C9300X-NM-4C: 4x 100G",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 100
+          }
+        ]
+      }
+    ]
+  },
+  "x6": {
+    "modular": false,
+    "options": [
+      {
+        "label": "6x 1/10G SFP+ (fixed)",
+        "ports": [
+          {
+            "count": 6,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "cx12t": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 10G SFP+ and 2x 1G copper, plus 1G PD port (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 10
+          },
+          {
+            "count": 2,
+            "speedGbps": 1
+          }
+        ]
+      }
+    ]
+  },
+  "cx22": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 10G SFP+ and 2x 1G copper (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 10
+          },
+          {
+            "count": 2,
+            "speedGbps": 1
+          }
+        ]
+      }
+    ]
+  },
+  "cx2x": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 10G SFP+ (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "cx2g": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 1G copper, UPOE+ powered (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 1
+          }
+        ]
+      }
+    ]
+  },
+  "a22": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 1/10G SFP+ and 2x 1G copper (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 10
+          },
+          {
+            "count": 2,
+            "speedGbps": 1
+          }
+        ]
+      }
+    ]
+  },
+  "g2": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 1G SFP (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 1
+          }
+        ]
+      }
+    ]
+  }
+}

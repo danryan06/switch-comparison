@@ -1,0 +1,353 @@
+{
+  "id": "c9300l",
+  "vendor": "Cisco",
+  "family": "Catalyst 9300L",
+  "source": "c9300",
+  "stacking": {
+    "tech": "StackWise-320",
+    "bandwidthGbps": 320,
+    "maxMembers": 8,
+    "frontPanel": false,
+    "note": "Stack kit ordered separately. No StackPower"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Full L3 incl. BGP, VRF (Network Advantage)"
+  },
+  "routeScale": "32,000 total (24k direct, 8k indirect)",
+  "macTable": "32,000",
+  "macsec": "AES-256 (Network Advantage)",
+  "buffer": "16 MB",
+  "power": {
+    "summary": "Dual FRU power supplies",
+    "psuFieldReplaceable": true
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Cisco DNA or Cisco Networking Subscription (Essentials or Advantage) required with purchase",
+  "verify": [],
+  "models": [
+    {
+      "sku": "C9300L-24T-4G",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 56,
+      "forwardingMpps": 41.66
+    },
+    {
+      "sku": "C9300L-24T-4X",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": 95.23
+    },
+    {
+      "sku": "C9300L-48T-4G",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 104,
+      "forwardingMpps": 77.38
+    },
+    {
+      "sku": "C9300L-48T-4X",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": 130.95
+    },
+    {
+      "sku": "C9300L-24P-4G",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "1x 715W (default)",
+          "watts": 505
+        },
+        {
+          "config": "2x 715W",
+          "watts": 720
+        }
+      ],
+      "switchingGbps": 56,
+      "forwardingMpps": 41.66
+    },
+    {
+      "sku": "C9300L-24P-4X",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "1x 715W (default)",
+          "watts": 505
+        },
+        {
+          "config": "2x 715W",
+          "watts": 720
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 95.23
+    },
+    {
+      "sku": "C9300L-48P-4G",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "1x 715W (default)",
+          "watts": 505
+        },
+        {
+          "config": "2x 715W",
+          "watts": 1220
+        },
+        {
+          "config": "715W + 1100W",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": 77.38
+    },
+    {
+      "sku": "C9300L-48P-4X",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "1x 715W (default)",
+          "watts": 505
+        },
+        {
+          "config": "2x 715W",
+          "watts": 1220
+        },
+        {
+          "config": "715W + 1100W",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 130.95
+    },
+    {
+      "sku": "C9300L-48PF-4G",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "1x 1100W (default)",
+          "watts": 890
+        },
+        {
+          "config": "1100W + 715W",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": 77.38
+    },
+    {
+      "sku": "C9300L-48PF-4X",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "1x 1100W (default)",
+          "watts": 890
+        },
+        {
+          "config": "1100W + 715W",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 130.95
+    },
+    {
+      "sku": "C9300L-24UXG-4X",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 10,
+          "poeWatts": 60
+        },
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "1x 1100W (default)",
+          "watts": 880
+        },
+        {
+          "config": "1100W + 715W",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 272,
+      "forwardingMpps": 202.38
+    },
+    {
+      "sku": "C9300L-24UXG-2Q",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 10,
+          "poeWatts": 60
+        },
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "q2",
+      "poeBudgets": [
+        {
+          "config": "1x 1100W (default)",
+          "watts": 722
+        },
+        {
+          "config": "1100W + 715W",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 352,
+      "forwardingMpps": 261.9
+    },
+    {
+      "sku": "C9300L-48UXG-4X",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 10,
+          "poeWatts": 60
+        },
+        {
+          "count": 36,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "1x 1100W (default)",
+          "watts": 675
+        },
+        {
+          "config": "1100W + 715W",
+          "watts": 1390
+        },
+        {
+          "config": "2x 1100W",
+          "watts": 1775
+        }
+      ],
+      "switchingGbps": 392,
+      "forwardingMpps": 291.66
+    },
+    {
+      "sku": "C9300L-48UXG-2Q",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 10,
+          "poeWatts": 60
+        },
+        {
+          "count": 36,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "q2",
+      "poeBudgets": [
+        {
+          "config": "1x 1100W (default)",
+          "watts": 675
+        },
+        {
+          "config": "1100W + 715W",
+          "watts": 1390
+        },
+        {
+          "config": "2x 1100W",
+          "watts": 1775
+        }
+      ],
+      "switchingGbps": 472,
+      "forwardingMpps": 351.19
+    }
+  ]
+}

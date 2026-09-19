@@ -1,0 +1,185 @@
+{
+  "id": "c9300x",
+  "vendor": "Cisco",
+  "family": "Catalyst 9300X",
+  "source": "c9300",
+  "stacking": {
+    "tech": "StackWise-1T",
+    "bandwidthGbps": 1000,
+    "maxMembers": 8,
+    "frontPanel": false,
+    "note": "480G when mixed with 9300. StackPower+"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Full L3 incl. BGP, VRF, VXLAN/EVPN, 100G IPsec (Network Advantage)"
+  },
+  "routeScale": "39,000 total (24k direct, 15k indirect)",
+  "macTable": "32,000",
+  "macsec": "AES-256 (Network Advantage)",
+  "buffer": "16 to 32 MB",
+  "power": {
+    "summary": "Dual FRU PSUs plus StackPower+",
+    "psuFieldReplaceable": true
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Cisco DNA or Cisco Networking Subscription (Essentials or Advantage) required with purchase",
+  "verify": [],
+  "models": [
+    {
+      "sku": "C9300X-48HX",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "m9300x4c",
+      "poeBudgets": [
+        {
+          "config": "1x 1100W (default)",
+          "watts": 590
+        },
+        {
+          "config": "1100W + 715W",
+          "watts": 1305
+        },
+        {
+          "config": "1x 1900W",
+          "watts": 1390
+        },
+        {
+          "config": "2x 1100W",
+          "watts": 1690
+        },
+        {
+          "config": "1100W + 1900W",
+          "watts": 2490
+        },
+        {
+          "config": "2x 1900W",
+          "watts": 3290
+        }
+      ],
+      "switchingGbps": 1760,
+      "forwardingMpps": 1309
+    },
+    {
+      "sku": "C9300X-48TX",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "m9300x4c",
+      "poeBudgets": [],
+      "switchingGbps": 1760,
+      "forwardingMpps": 1309
+    },
+    {
+      "sku": "C9300X-48HXN",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 10,
+          "poeWatts": 90
+        },
+        {
+          "count": 40,
+          "speedGbps": 5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "m9300x",
+      "poeBudgets": [
+        {
+          "config": "1x 1100W (default)",
+          "watts": 690
+        },
+        {
+          "config": "1x 1900W",
+          "watts": 1490
+        },
+        {
+          "config": "2x 1100W",
+          "watts": 1790
+        },
+        {
+          "config": "2x 1900W",
+          "watts": 3390
+        }
+      ],
+      "switchingGbps": 960,
+      "forwardingMpps": 714.24,
+      "verify": [
+        "uplinks"
+      ],
+      "verifyNote": "Datasheet says 9300X network module port count is limited on this model"
+    },
+    {
+      "sku": "C9300X-24HX",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "m9300x",
+      "poeBudgets": [
+        {
+          "config": "1x 1100W (default)",
+          "watts": 735
+        },
+        {
+          "config": "1x 1900W",
+          "watts": 1535
+        },
+        {
+          "config": "2x 1100W",
+          "watts": 1835
+        },
+        {
+          "config": "1900W + 1100W",
+          "watts": 2160
+        }
+      ],
+      "switchingGbps": 800,
+      "forwardingMpps": 654.72
+    },
+    {
+      "sku": "C9300X-12Y",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "m9300x",
+      "poeBudgets": [],
+      "switchingGbps": 1000,
+      "forwardingMpps": 744.04
+    },
+    {
+      "sku": "C9300X-24Y",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "m9300x4c",
+      "poeBudgets": [],
+      "switchingGbps": 2000,
+      "forwardingMpps": 1488
+    }
+  ]
+}

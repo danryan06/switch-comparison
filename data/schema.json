@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "switch-comparison/family.schema.json",
+  "title": "Switch family",
+  "description": "One product family from one vendor, with every orderable access model in it. Values come from the vendor datasheet named in `source`.",
+  "type": "object",
+  "required": ["id", "vendor", "family", "source", "stacking", "routing", "routeScale", "macTable", "macsec", "buffer", "power", "fansFieldReplaceable", "licensing", "models"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+$" },
+    "vendor": { "type": "string" },
+    "family": { "type": "string" },
+    "source": { "type": "string", "description": "Key into data/sources.json" },
+    "stacking": {
+      "type": "object",
+      "required": ["tech", "bandwidthGbps", "maxMembers", "frontPanel", "note"],
+      "properties": {
+        "tech": { "type": "string" },
+        "bandwidthGbps": { "type": ["number", "null"] },
+        "maxMembers": { "type": ["integer", "null"], "description": "1 when not stackable; null when there is no hardware stack but switches are managed as a fabric (for example FortiLink)" },
+        "frontPanel": { "type": "boolean", "description": "true when stacking consumes front uplink ports (for example Aruba VSF)" },
+        "note": { "type": "string" }
+      }
+    },
+    "routing": {
+      "type": "object",
+      "required": ["tier", "bgp", "summary"],
+      "properties": {
+        "tier": { "enum": ["l2", "ospf", "full"] },
+        "bgp": { "type": "boolean" },
+        "summary": { "type": "string" }
+      }
+    },
+    "routeScale": { "type": "string", "description": "As the vendor states it. Not normalized." },
+    "macTable": { "type": "string" },
+    "macsec": { "type": "string" },
+    "buffer": { "type": "string" },
+    "power": {
+      "type": "object",
+      "required": ["summary", "psuFieldReplaceable"],
+      "properties": { "summary": { "type": "string" }, "psuFieldReplaceable": { "type": "boolean" } }
+    },
+    "fansFieldReplaceable": { "type": "boolean" },
+    "licensing": { "type": "string" },
+    "verify": { "type": "array", "items": { "type": "string" }, "description": "Family-level fields that still need confirming" },
+    "models": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/model" } }
+  },
+  "$defs": {
+    "model": {
+      "type": "object",
+      "required": ["sku", "accessPorts", "uplinks", "poeBudgets", "switchingGbps", "forwardingMpps"],
+      "properties": {
+        "sku": { "type": "string" },
+        "source": { "type": "string", "description": "Overrides the family source when a model has its own datasheet" },
+        "description": { "type": "string" },
+        "accessPorts": {
+          "type": "array",
+          "minItems": 1,
+          "description": "One entry per group of identical ports",
+          "items": {
+            "type": "object",
+            "required": ["count", "speedGbps", "poeWatts"],
+            "properties": {
+              "count": { "type": "integer", "minimum": 1 },
+              "speedGbps": { "enum": [1, 2.5, 5, 10, 25] },
+              "media": { "enum": ["rj45", "sfp"], "description": "Defaults to rj45 (copper)" },
+              "poeWatts": { "type": "number", "minimum": 0, "description": "Per-port maximum. 0 for no PoE" }
+            }
+          }
+        },
+        "uplinks": { "type": "string", "description": "Key into data/uplinks.json" },
+        "poeBudgets": {
+          "type": "array",
+          "description": "Available PoE for each power supply configuration the datasheet lists, smallest first",
+          "items": {
+            "type": "object",
+            "required": ["config", "watts"],
+            "properties": {
+              "config": { "type": "string" },
+              "watts": { "type": "number", "exclusiveMinimum": 0 },
+              "verify": { "type": "boolean" }
+            }
+          }
+        },
+        "switchingGbps": { "type": ["number", "null"], "description": "null when the datasheet does not publish it" },
+        "forwardingMpps": { "type": ["number", "null"] },
+        "formFactor": { "enum": ["1RU", "Compact", "Desktop"], "description": "Defaults to 1RU" },
+        "fanless": { "type": "boolean" },
+        "poweredBy": { "type": "string", "description": "For switches that can be powered over PoE or by an adapter" },
+        "routeScale": { "type": "string", "description": "Overrides the family value" },
+        "macTable": { "type": "string", "description": "Overrides the family value" },
+        "buffer": { "type": "string", "description": "Overrides the family value" },
+        "note": { "type": "string" },
+        "verify": { "type": "array", "items": { "type": "string" } },
+        "verifyNote": { "type": "string" }
+      }
+    }
+  }
+}

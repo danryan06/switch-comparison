@@ -1,0 +1,149 @@
+{
+  "id": "f200",
+  "vendor": "Fortinet",
+  "family": "FortiSwitch 200",
+  "source": "fsa",
+  "stacking": {
+    "tech": "FortiLink",
+    "bandwidthGbps": null,
+    "maxMembers": null,
+    "frontPanel": false,
+    "note": "No hardware stacking. A FortiGate manages 8 to 300 switches (model dependent) as one fabric with automatic inter-switch links"
+  },
+  "routing": {
+    "tier": "ospf",
+    "bgp": false,
+    "summary": "Static routing; OSPF, RIP, VRRP with Advanced Features license. No BGP"
+  },
+  "routeScale": "64 IPv4 routes, 512 host entries",
+  "macTable": "16,000",
+  "macsec": "Not listed per model",
+  "buffer": "1.5 MB",
+  "power": {
+    "summary": "Fixed PSU; optional FRPS-740 external RPS on PoE models",
+    "psuFieldReplaceable": false
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No license needed when managed by a FortiGate over FortiLink. Dynamic routing needs the Advanced Features license (FS-SW-LIC-xxx). Cloud or standalone management is a separate subscription",
+  "verify": [
+    "routing"
+  ],
+  "models": [
+    {
+      "sku": "FS-224E",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 56,
+      "forwardingMpps": 83
+    },
+    {
+      "sku": "FS-224E-POE",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 180
+        }
+      ],
+      "switchingGbps": 56,
+      "forwardingMpps": 83,
+      "note": "PoE on 12 of 24 ports"
+    },
+    {
+      "sku": "FS-224D-FPOE",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 56,
+      "forwardingMpps": 83
+    },
+    {
+      "sku": "FS-248D",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 104,
+      "forwardingMpps": 155
+    },
+    {
+      "sku": "FS-248E-POE",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": 155,
+      "note": "PoE on 24 of 48 ports"
+    },
+    {
+      "sku": "FS-248E-FPOE",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": 155
+    }
+  ]
+}

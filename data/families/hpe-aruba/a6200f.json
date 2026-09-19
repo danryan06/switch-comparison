@@ -1,0 +1,145 @@
+{
+  "id": "a6200f",
+  "vendor": "HPE Aruba",
+  "family": "CX 6200F",
+  "source": "a6200",
+  "stacking": {
+    "tech": "VSF",
+    "bandwidthGbps": null,
+    "maxMembers": 8,
+    "frontPanel": true,
+    "note": "Front-panel stacking over the SFP+ uplinks"
+  },
+  "routing": {
+    "tier": "ospf",
+    "bgp": false,
+    "summary": "Static, RIP, OSPF. No BGP"
+  },
+  "routeScale": "2,048 IPv4 unicast",
+  "macTable": "16,000",
+  "macsec": "None",
+  "buffer": "8 MB",
+  "power": {
+    "summary": "Fixed internal PSU",
+    "psuFieldReplaceable": false
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "On-box features need no license; HPE Aruba Networking Central subscription for cloud management",
+  "verify": [],
+  "models": [
+    {
+      "sku": "JL724A",
+      "description": "6200F 24G 4SFP+",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": 95.2
+    },
+    {
+      "sku": "JL725A",
+      "description": "6200F 24G Class 4 PoE 370W",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [
+        {
+          "config": "Internal 500W",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 95.2
+    },
+    {
+      "sku": "JL726A",
+      "description": "6200F 48G 4SFP+",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": 130.9
+    },
+    {
+      "sku": "JL727A",
+      "description": "6200F 48G Class 4 PoE 370W",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [
+        {
+          "config": "Internal 500W",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 130.9
+    },
+    {
+      "sku": "JL728A",
+      "description": "6200F 48G Class 4 PoE 740W",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [
+        {
+          "config": "Internal 950W",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 130.9
+    },
+    {
+      "sku": "R8Q72A",
+      "description": "6200F 12G Class 4 PoE 2G/2SFP+ 139W",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a22",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 139
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "VSF stacking uses the SFP+ ports",
+      "source": "a6200f12"
+    }
+  ]
+}

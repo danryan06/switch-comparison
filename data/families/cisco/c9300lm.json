@@ -1,0 +1,123 @@
+{
+  "id": "c9300lm",
+  "vendor": "Cisco",
+  "family": "Catalyst 9300LM",
+  "source": "c9300",
+  "stacking": {
+    "tech": "StackWise-320",
+    "bandwidthGbps": 320,
+    "maxMembers": 8,
+    "frontPanel": false,
+    "note": "C9300L-STACK-KIT2. No StackPower"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Full L3 incl. BGP, VRF (Network Advantage)"
+  },
+  "routeScale": "32,000 total (24k direct, 8k indirect)",
+  "macTable": "32,000",
+  "macsec": "AES-256 (Network Advantage)",
+  "buffer": "16 MB",
+  "power": {
+    "summary": "Dual FRU PSUs (C6 family, differs from 9300)",
+    "psuFieldReplaceable": true
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Cisco DNA or Cisco Networking Subscription (Essentials or Advantage) required with purchase",
+  "verify": [],
+  "models": [
+    {
+      "sku": "C9300LM-48UX-4Y",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 10,
+          "poeWatts": 60
+        },
+        {
+          "count": 40,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [
+        {
+          "config": "1x 1kW (default)",
+          "watts": 790
+        },
+        {
+          "config": "2x 1kW",
+          "watts": 1790
+        }
+      ],
+      "switchingGbps": 440,
+      "forwardingMpps": 327.36
+    },
+    {
+      "sku": "C9300LM-48U-4Y",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [
+        {
+          "config": "1x 1kW (default)",
+          "watts": 790
+        },
+        {
+          "config": "2x 1kW",
+          "watts": 1790
+        }
+      ],
+      "switchingGbps": 296,
+      "forwardingMpps": 220.22
+    },
+    {
+      "sku": "C9300LM-24U-4Y",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [
+        {
+          "config": "1x 600W (default)",
+          "watts": 420
+        },
+        {
+          "config": "1x 1kW",
+          "watts": 820
+        },
+        {
+          "config": "2x 1kW",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 248,
+      "forwardingMpps": 184.51
+    },
+    {
+      "sku": "C9300LM-48T-4Y",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [],
+      "switchingGbps": 296,
+      "forwardingMpps": 220.22
+    }
+  ]
+}

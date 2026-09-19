@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Switch Comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF0F2;--surface:#FFFFFF;--surface-2:#F5F7F8;--ink:#15202B;--muted:#5A6774;--line:#CFD6DC;
+  --accent:#1D5BD0;--accent-soft:#E3ECFB;--accent-ink:#FFFFFF;
+  --g1:#8C99A6;--g25:#2A9D8F;--g5:#2F6FD6;--g10:#6D4BC9;--g25x:#B23A7E;--up:#23303C;--upline:#23303C;
+  --poe:#D99A0E;--warn:#A9500E;--warn-soft:#FBEBDD;--ok:#1E7A4C;--ok-soft:#DDF1E6;
+  --chassis:#DDE2E6;
+  --sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --cond:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#10161C;--surface:#18212A;--surface-2:#1E2833;--ink:#E6EBEF;--muted:#98A6B3;--line:#2E3B48;
+    --accent:#6C9BF2;--accent-soft:#1D2B45;--accent-ink:#0E1620;
+    --g1:#6E7B88;--g25:#35B3A4;--g5:#4D8AEB;--g10:#8B6BE0;--g25x:#D5609E;--up:#0A0F14;--upline:#6E7B88;
+    --poe:#E9B23A;--warn:#E6934F;--warn-soft:#3A2717;--ok:#52C58E;--ok-soft:#173226;--chassis:#26313C;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10161C;--surface:#18212A;--surface-2:#1E2833;--ink:#E6EBEF;--muted:#98A6B3;--line:#2E3B48;
+  --accent:#6C9BF2;--accent-soft:#1D2B45;--accent-ink:#0E1620;
+  --g1:#6E7B88;--g25:#35B3A4;--g5:#4D8AEB;--g10:#8B6BE0;--g25x:#D5609E;--up:#0A0F14;--upline:#6E7B88;
+  --poe:#E9B23A;--warn:#E6934F;--warn-soft:#3A2717;--ok:#52C58E;--ok-soft:#173226;--chassis:#26313C;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}
+a{color:var(--accent)}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+
+header.top{background:var(--surface);border-bottom:1px solid var(--line)}
+.topin{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:18px}
+.brand h1{font-family:var(--cond);font-weight:700;font-size:30px;line-height:1;margin:0;letter-spacing:.01em}
+.brand p{margin:4px 0 14px;color:var(--muted);font-size:15px;max-width:60ch}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;max-width:100%}
+nav.tabs button{white-space:nowrap}
+nav.tabs button{background:none;border:0;border-bottom:3px solid transparent;padding:10px 14px 11px;font-family:var(--cond);font-size:19px;font-weight:600;color:var(--muted);cursor:pointer}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+main{padding:24px 0 48px}
+.view{display:none}.view.on{display:block}
+
+/* sizing */
+.size{display:grid;grid-template-columns:minmax(300px,390px) minmax(0,1fr);gap:24px;align-items:start}
+.size>*{min-width:0}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px}
+.panel h2{font-family:var(--cond);font-size:22px;font-weight:600;margin:0 0 2px}
+.panel .sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+fieldset{border:0;padding:0;margin:0 0 18px}
+legend{font-weight:600;font-size:15px;margin-bottom:8px;padding:0}
+.grp{border:1px solid var(--line);border-radius:8px;padding:10px;margin-bottom:8px;background:var(--surface-2)}
+.grp .row1{display:flex;gap:8px;align-items:center}
+.grp .row1 input[type=text]{flex:1;min-width:0}
+.grp .row2{display:grid;grid-template-columns:60px minmax(0,1.3fr) minmax(0,.8fr);gap:8px;margin-top:8px}
+.grp label{font-size:12px;color:var(--muted);display:block}
+input[type=text],input[type=number],select{width:100%;border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:7px 8px;font-size:15px}
+.x{background:none;border:0;color:var(--muted);cursor:pointer;font-size:20px;line-height:1;padding:2px 6px}
+.presets{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:14px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fl label{font-size:13px;color:var(--muted);display:block;margin-bottom:3px}
+.check{display:flex;gap:8px;align-items:center;font-size:15px;margin-top:6px}
+.check input{width:18px;height:18px;accent-color:var(--accent)}
+.summary{display:flex;gap:18px;flex-wrap:wrap;padding:12px 14px;border-radius:8px;background:var(--accent-soft);margin-bottom:14px}
+.summary div{font-size:13px;color:var(--muted)}
+.summary b{display:block;font-family:var(--cond);font-size:22px;color:var(--ink);font-weight:600;line-height:1.1}
+
+.results h2{font-family:var(--cond);font-size:22px;font-weight:600;margin:0}
+.resHead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.resHead p{margin:0;color:var(--muted);font-size:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.card.best{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.cardTop{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.qty{font-family:var(--cond);font-weight:700;font-size:26px;line-height:1.05}
+.qty .n{color:var(--accent)}
+.fam{color:var(--muted);font-size:14px}
+.facewrap{overflow-x:auto;margin:10px 0 8px}
+.facewrap svg{max-width:100%;height:auto}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:4px}
+.facts div{font-size:13px;color:var(--muted)}
+.facts b{display:block;color:var(--ink);font-size:15px;font-weight:600}
+.bar{height:5px;border-radius:3px;background:var(--line);margin-top:5px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok)}
+.bar i.hi{background:var(--poe)}
+.notes{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.note{font-size:13px;padding:3px 9px;border-radius:6px;background:var(--surface-2);border:1px solid var(--line)}
+.note.w{background:var(--warn-soft);border-color:transparent;color:var(--warn)}
+.linkbtn{background:none;border:0;color:var(--accent);cursor:pointer;padding:0;font-size:14px;font-weight:500}
+.ghost{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:6px 12px;cursor:pointer;font-size:14px}
+.ghost.on{border-color:var(--accent);color:var(--accent);font-weight:600}
+details.rej{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+details.rej summary{cursor:pointer;font-weight:600}
+details.rej ul{margin:10px 0 0;padding-left:18px;font-size:14px;color:var(--muted)}
+.empty{padding:24px;text-align:left;color:var(--muted)}
+
+/* faceplate */
+svg.face .chassis{fill:var(--chassis)}
+svg.face .s25x{fill:var(--g25x)}svg.face .fib{fill:var(--surface);stroke-width:1.6}svg.face .s1{fill:var(--g1)}svg.face .s25{fill:var(--g25)}svg.face .s5{fill:var(--g5)}svg.face .s10{fill:var(--g10)}
+svg.face .upl{fill:var(--up);stroke:var(--upline);stroke-width:1}
+svg.face .pw{fill:var(--poe)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted);margin-top:6px}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend i{width:11px;height:11px;border-radius:2px;display:inline-block}
+
+/* browse */
+.filters{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;margin-bottom:14px}
+.filters .fl{min-width:160px}
+.fchips{display:flex;flex-wrap:wrap;gap:6px}
+.tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:middle}
+th{font-weight:600;color:var(--muted);font-size:13px;background:var(--surface-2);position:sticky;top:0;cursor:pointer;user-select:none}
+th.nosort{cursor:default}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:var(--surface-2)}
+td.sku{font-family:var(--cond);font-weight:600;font-size:16px}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+.vflag{color:var(--warn);font-weight:600;font-size:12px;margin-left:4px}
+.cmpbox{width:18px;height:18px;accent-color:var(--accent);cursor:pointer}
+.bar2{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0}
+.small{font-size:13px;color:var(--muted)}
+
+/* compare */
+.cmpgrid{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.cmpgrid table td,.cmpgrid table th{white-space:normal;min-width:190px;vertical-align:top}
+.cmpgrid table th:first-child,.cmpgrid table td:first-child{min-width:150px;color:var(--muted);font-weight:500;background:var(--surface-2);position:sticky;left:0}
+.cmpgrid .hd{font-family:var(--cond);font-size:19px;font-weight:600}
+td.diff{background:var(--accent-soft)}
+
+/* dialog */
+dialog{border:1px solid var(--line);border-radius:12px;padding:0;max-width:760px;width:calc(100% - 24px);background:var(--surface);color:var(--ink)}
+dialog::backdrop{background:rgba(10,15,20,.5)}
+.dlg{padding:20px}
+.dlg h3{font-family:var(--cond);font-size:28px;margin:0;line-height:1.1}
+.dlg .close{float:right}
+.spec{display:grid;grid-template-columns:170px 1fr;gap:6px 16px;font-size:15px;margin-top:14px}
+.spec dt{color:var(--muted)}
+.spec dd{margin:0}
+.psut{margin-top:4px;font-size:14px;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.psut td{padding:5px 10px;white-space:normal}
+.about{max-width:72ch;font-size:15px}
+.about h3{font-family:var(--cond);font-size:21px;margin:22px 0 6px}
+footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);font-size:14px}
+
+@media (max-width:860px){
+  .size{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .spec{grid-template-columns:1fr;gap:0 0}
+  .spec dt{margin-top:8px}
+}
+@media (max-width:520px){
+  .wrap{padding:0 14px}
+  nav.tabs button{padding:8px 10px 9px;font-size:17px}
+  .brand h1{font-size:26px}
+  .facts{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap topin">
+    <div class="brand">
+      <h1>Switch Comparison</h1>
+      <p>Campus access switches from Cisco, HPE Aruba, and Fortinet, normalized so you can size a closet and compare models on the same terms.</p>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-v="size">Size a closet</button>
+      <button role="tab" aria-selected="false" data-v="browse">Browse</button>
+      <button role="tab" aria-selected="false" data-v="compare">Compare <span id="cmpCount"></span></button>
+      <button role="tab" aria-selected="false" data-v="about">Data</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- SIZE -->
+  <section class="view on" id="v-size">
+    <div class="size">
+      <div class="panel">
+        <h2>What does the closet need?</h2>
+        <p class="sub">Describe the endpoints. Every model that can serve them is sized with the fewest switches and the smallest power supply configuration.</p>
+
+        <fieldset>
+          <legend>Powered devices</legend>
+          <div id="groups"></div>
+          <div class="presets" aria-label="Add a device group">
+            <button class="chip" data-preset="ap7">+ Wi-Fi 7 AP</button>
+            <button class="chip" data-preset="ap6">+ Wi-Fi 6 AP</button>
+            <button class="chip" data-preset="phone">+ IP phone</button>
+            <button class="chip" data-preset="cam">+ Camera</button>
+            <button class="chip" data-preset="ptz">+ PTZ camera</button>
+            <button class="chip" data-preset="custom">+ Custom</button>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Other ports</legend>
+          <div class="fl"><label for="dataPorts">Non-PoE 1G ports (desktops, printers, spares)</label>
+          <input type="number" id="dataPorts" min="0" value="20"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Fiber access ports</legend>
+          <div class="two">
+            <div class="fl"><label for="fibN">SFP access ports</label><input type="number" id="fibN" min="0" value="0"></div>
+            <div class="fl"><label for="fibS">Minimum speed</label>
+              <select id="fibS"><option value="1">1G</option><option value="10">10G</option><option value="25">25G</option></select></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Uplinks and design</legend>
+          <div class="two">
+            <div class="fl"><label for="upN">Uplinks per closet</label><input type="number" id="upN" min="0" value="2"></div>
+            <div class="fl"><label for="upS">Minimum speed</label>
+              <select id="upS"><option value="1">1G</option><option value="10" selected>10G</option><option value="25">25G</option><option value="40">40G</option><option value="100">100G</option></select></div>
+          </div>
+          <div class="two" style="margin-top:10px">
+            <div class="fl"><label for="l3">Routing at the access layer</label>
+              <select id="l3"><option value="l2">Layer 2 only</option><option value="ospf" selected>Routed access (OSPF)</option><option value="bgp">BGP or EVPN</option></select></div>
+            <div class="fl"><label for="head">PoE headroom</label>
+              <select id="head"><option value="0">None</option><option value="10" selected>10%</option><option value="20">20%</option><option value="30">30%</option></select></div>
+          </div>
+          <div class="fl" style="margin-top:10px"><label for="ffSel">Switch form factor</label>
+            <select id="ffSel"><option value="any">Any</option><option value="1RU">Rack mount (1RU) only</option><option value="small">Compact or desktop only</option></select></div>
+          <label class="check"><input type="checkbox" id="stack" checked> Stack the switches as one logical unit</label>
+        </fieldset>
+
+        <fieldset style="margin-bottom:0">
+          <legend>Vendors</legend>
+          <div class="fchips" id="sizeVendors"></div>
+        </fieldset>
+      </div>
+
+      <div class="results">
+        <div class="summary" id="reqSummary"></div>
+        <div class="resHead"><h2 id="resTitle">Results</h2><p id="resSub"></p></div>
+        <div id="resList"></div>
+        <div id="resMore"></div>
+        <details class="rej" id="rejBox"><summary id="rejSum"></summary><ul id="rejList"></ul></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- BROWSE -->
+  <section class="view" id="v-browse">
+    <div class="filters">
+      <div class="fl"><label for="q">Search</label><input type="text" id="q" placeholder="SKU or family"></div>
+      <div class="fl"><label>Vendor</label><div class="fchips" id="bVendors"></div></div>
+      <div class="fl"><label for="bFam">Family</label><select id="bFam"><option value="">All families</option></select></div>
+      <div class="fl"><label for="bPoe">PoE per port</label><select id="bPoe"><option value="-1">Any</option><option value="0">Non-PoE only</option><option value="30">30W or more</option><option value="60">60W or more</option><option value="90">90W</option></select></div>
+      <div class="fl"><label for="bMed">Access media</label><select id="bMed"><option value="">Any</option><option value="rj45">Copper</option><option value="sfp">Fiber (SFP)</option></select></div>
+      <div class="fl"><label for="bFF">Form factor</label><select id="bFF"><option value="">Any</option><option value="1RU">1RU</option><option value="Compact">Compact</option><option value="Desktop">Desktop</option></select></div>
+      <div class="fl"><label for="bSpd">Fastest access port</label><select id="bSpd"><option value="0">Any</option><option value="2.5">2.5G or faster</option><option value="5">5G or faster</option><option value="10">10G</option></select></div>
+    </div>
+    <div class="bar2"><span class="small" id="bCount"></span><span class="small">Tick up to 4 rows to compare. Tap a row for full specs.</span></div>
+    <div class="tablewrap"><table id="bTable"><thead></thead><tbody></tbody></table></div>
+    <div class="legend" id="legend1"></div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="view" id="v-compare">
+    <div id="cmpBody"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="view" id="v-about">
+    <div class="about">
+      <h3>Where the numbers come from</h3>
+      <p>Every spec is taken from the vendor's own datasheet, linked on each model. Values that disagree with other published figures, or that were derived rather than stated, are marked <span class="vflag">check</span> until someone confirms them.</p>
+      <h3>How PoE budget is modeled</h3>
+      <p>A switch model does not have one PoE budget. It has one per power supply configuration, so each model carries every configuration its datasheet lists. The sizer picks the smallest configuration that covers the load, and budgets that are capped by port count (for example 24 ports at 30W is 720W) are shown at the cap.</p>
+      <h3>Numbers that are not directly comparable</h3>
+      <p>Route scale is published differently by each vendor. Cisco states total IPv4 routes as direct plus indirect entries, while HPE Aruba states unicast routes and host table entries separately. They are shown as stated, not converted. Stacking bandwidth is also defined differently: Cisco uses dedicated rear stacking ports, while Aruba VSF stacks over the front uplink ports, which the sizer subtracts from the available uplinks. Fortinet has no hardware stacking at all; a FortiGate manages the switches as one fabric over FortiLink, so there is no member limit or stack bandwidth to compare.</p>
+      <h3>Coverage</h3>
+      <p id="coverage"></p>
+      <h3>Sources</h3>
+      <ul id="srcList"></ul>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Vendor neutral and open source. Always confirm against the current datasheet before quoting a design. <span id="updated"></span></div></footer>
+
+<dialog id="dlg"><div class="dlg" id="dlgBody"></div></dialog>
+
+<script>
+/* ---------- Data (inlined at build time from /data) ---------- */
+const DATA=/*__DATA__*/null;
+const SRC={};for(const [k,s] of Object.entries(DATA.sources))SRC[k]={t:s.title,u:s.url};
+const U={};for(const [k,o] of Object.entries(DATA.uplinks))U[k]=o.options.map(x=>({n:x.label,p:x.ports.map(p=>[p.count,p.speedGbps])}));
+const FAM={},SKUS=[];
+for(const f of DATA.families){
+  FAM[f.id]={v:f.vendor,name:f.family,stack:{t:f.stacking.tech,bw:f.stacking.bandwidthGbps,max:f.stacking.maxMembers,fp:f.stacking.frontPanel,note:f.stacking.note},l3:f.routing.tier,l3t:f.routing.summary,bgp:f.routing.bgp,routes:f.routeScale,mac:f.macTable,macsec:f.macsec,buf:f.buffer,psuFru:f.power.psuFieldReplaceable,fanFru:f.fansFieldReplaceable,power:f.power.summary,lic:f.licensing,src:f.source,famVerify:f.verify||[]};
+  for(const m of f.models)SKUS.push({fam:f.id,sku:m.sku,ports:m.accessPorts.map(p=>[p.count,p.speedGbps,p.poeWatts,p.media||"rj45"]),up:m.uplinks,psu:m.poeBudgets.map(b=>[b.config,b.watts,b.verify?1:0]),sw:m.switchingGbps,fwd:m.forwardingMpps,name:m.description||"",note:m.note||"",ff:m.formFactor||"1RU",src:m.source||f.source,fanless:!!m.fanless,pd:m.poweredBy||"",routes:m.routeScale||"",mac:m.macTable||"",buf:m.buffer||"",verify:[...(m.verify||[]),...(f.verify||[])],vnote:m.verifyNote||""});
+}
+const VENDORS=[...new Set(DATA.families.map(f=>f.vendor))];
+
+/* ---------- helpers ---------- */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const spdLabel=g=>g>=1?(g%1?g:g)+"G":g*1000+"M";
+const spdCls=g=>g>=25?"s25x":g>=10?"s10":g>=5?"s5":g>=2.5?"s25":"s1";
+const totalPorts=s=>s.ports.reduce((a,p)=>a+p[0],0);
+const maxW=s=>Math.max(...s.ports.map(p=>p[2]));
+const maxSpd=s=>Math.max(...s.ports.map(p=>p[1]));
+const maxBudget=s=>s.psu.length?Math.max(...s.psu.map(p=>p[1])):0;
+const defBudget=s=>s.psu.length?s.psu[0][1]:0;
+const poeLabel=w=>w===0?"None":w===30?"30W (PoE+)":w===60?"60W (Class 6 / UPOE)":w===90?"90W (Class 8 / UPOE+)":w+"W";
+const portsText=s=>s.ports.map(p=>p[0]+"x "+spdLabel(p[1])+(p[3]==="sfp"?" SFP":"")).join(" + ");
+const spdVar=g=>g>=25?"--g25x":g>=10?"--g10":g>=5?"--g5":g>=2.5?"--g25":"--g1";
+const hasFiber=s=>s.ports.some(p=>p[3]==="sfp");
+const fmtN=n=>n===null||n===undefined?null:fmt(n);
+const upText=s=>{const o=U[s.up];return o.length>1?"Modular: "+o.map(x=>x.n.split(": ")[1]).join(", "):o[0].n};
+const isMod=s=>DATA.uplinks[s.up].modular;
+const vendorOf=s=>FAM[s.fam].v;
+const displayName=s=>s.name?s.sku+" ("+s.name+")":s.sku;
+const fmt=n=>n.toLocaleString("en-US");
+
+/* ---------- faceplate ---------- */
+function faceplate(s,scale){
+  scale=scale||1;
+  const ports=[];s.ports.forEach(p=>{for(let i=0;i<p[0];i++)ports.push({g:p[1],w:p[2],f:p[3]==="sfp"})});
+  const cols=Math.ceil(ports.length/2),cw=10,ch=10,gap=2,pad=8;
+  const ups=U[s.up];const upN=Math.max(...ups.map(o=>o.p.reduce((a,x)=>a+x[0],0)));
+  const upCols=Math.ceil(upN/2);
+  const W=pad*2+cols*(cw+gap)+(isMod(s)?20:14)+upCols*(13+gap);
+  const H=pad*2+2*(ch+gap)+4;
+  let out=`<svg class="face" role="img" aria-label="${esc(s.sku)} front panel: ${esc(portsText(s))}" width="${W*scale}" height="${H*scale}" viewBox="0 0 ${W} ${H}"><rect class="chassis" x="0" y="0" width="${W}" height="${H}" rx="4"/>`;
+  ports.forEach((p,i)=>{const c=Math.floor(i/2),r=i%2;const x=pad+c*(cw+gap)+Math.floor(c/12)*0,y=pad+r*(ch+gap+2);
+    out+=p.f?`<rect class="fib" style="stroke:var(${spdVar(p.g)})" x="${x+0.8}" y="${y+0.8}" width="${cw-1.6}" height="${ch-1.6}" rx="1"/>`:`<rect class="${spdCls(p.g)}" x="${x}" y="${y}" width="${cw}" height="${ch}" rx="1.5"/>`;
+    if(p.w>0){const pw=p.w>=90?cw:p.w>=60?cw*0.66:cw*0.33;out+=`<rect class="pw" x="${x}" y="${r?y+ch-2.4:y}" width="${pw}" height="2.4"/>`}
+  });
+  let ux=pad+cols*(cw+gap)+(isMod(s)?20:14);
+  if(isMod(s)){out+=`<rect x="${ux-8}" y="${pad-3}" width="${upCols*(13+gap)+8}" height="${2*(ch+gap)+8}" rx="3" fill="none" stroke="var(--muted)" stroke-dasharray="3 2"/>`}
+  for(let i=0;i<upN;i++){const c=Math.floor(i/2),r=i%2;out+=`<rect class="upl" x="${ux+c*(13+gap)}" y="${pad+r*(ch+gap+2)}" width="13" height="${ch}" rx="1"/>`}
+  return out+"</svg>";
+}
+function legendHTML(){return `<span><i style="background:var(--g1)"></i>1G</span><span><i style="background:var(--g25)"></i>2.5G</span><span><i style="background:var(--g5)"></i>5G</span><span><i style="background:var(--g10)"></i>10G</span><span><i style="background:var(--g25x)"></i>25G</span><span><i style="background:transparent;border:2px solid var(--g1)"></i>Fiber (SFP)</span><span><i style="background:var(--poe);height:4px"></i>PoE (bar length: 30, 60, 90W)</span><span><i style="background:var(--up)"></i>Uplinks (dashed box: modular)</span>`}
+
+/* ---------- Sizer ---------- */
+const PRESETS={
+  ap7:{name:"Wi-Fi 7 APs",qty:12,w:60,spd:5},
+  ap6:{name:"Wi-Fi 6 APs",qty:12,w:30,spd:2.5},
+  phone:{name:"IP phones",qty:24,w:7,spd:1},
+  cam:{name:"Cameras",qty:8,w:15.4,spd:1},
+  ptz:{name:"PTZ cameras",qty:2,w:60,spd:1},
+  custom:{name:"Other devices",qty:4,w:30,spd:1}
+};
+const WOPTS=[[7,"Class 2 (7W)"],[15.4,"Class 3 (15.4W)"],[30,"Class 4 (30W)"],[45,"Class 5 (45W)"],[60,"Class 6 (60W)"],[75,"Class 7 (75W)"],[90,"Class 8 (90W)"]];
+const SOPTS=[[1,"1G"],[2.5,"2.5G"],[5,"5G"],[10,"10G"]];
+let groups=[{name:"Wi-Fi 7 APs",qty:12,w:45,spd:5},{name:"IP phones",qty:40,w:7,spd:1}];
+const sizeVend=new Set(VENDORS);
+
+function renderGroups(){
+  $("#groups").innerHTML=groups.map((g,i)=>`<div class="grp">
+    <div class="row1"><input type="text" aria-label="Device group name" value="${esc(g.name)}" data-i="${i}" data-k="name"><button class="x" aria-label="Remove ${esc(g.name)}" data-rm="${i}">&times;</button></div>
+    <div class="row2">
+      <div><label>Qty</label><input type="number" min="0" value="${g.qty}" data-i="${i}" data-k="qty"></div>
+      <div><label>PoE allocation</label><select data-i="${i}" data-k="w">${WOPTS.map(o=>`<option value="${o[0]}" ${o[0]==g.w?"selected":""}>${o[1]}</option>`).join("")}</select></div>
+      <div><label>Port speed</label><select data-i="${i}" data-k="spd">${SOPTS.map(o=>`<option value="${o[0]}" ${o[0]==g.spd?"selected":""}>${o[1]}</option>`).join("")}</select></div>
+    </div></div>`).join("")||`<p class="small" style="margin:0 0 8px">No powered devices yet. Add a group below.</p>`;
+}
+$("#groups").addEventListener("input",e=>{const t=e.target,i=t.dataset.i,k=t.dataset.k;if(i===undefined)return;groups[i][k]=k==="name"?t.value:parseFloat(t.value)||0;if(k!=="name")runSize();else runSizeDebounced()});
+$("#groups").addEventListener("click",e=>{const r=e.target.dataset.rm;if(r!==undefined){groups.splice(+r,1);renderGroups();runSize()}});
+document.querySelectorAll("[data-preset]").forEach(b=>b.addEventListener("click",()=>{groups.push({...PRESETS[b.dataset.preset]});renderGroups();runSize()}));
+
+function readReq(){
+  return {groups:groups.filter(g=>g.qty>0),fibN:+$("#fibN").value||0,fibS:+$("#fibS").value,ff:$("#ffSel").value,data:+$("#dataPorts").value||0,upN:+$("#upN").value||0,upS:+$("#upS").value,l3:$("#l3").value,head:+$("#head").value,stack:$("#stack").checked};
+}
+function portsFeasible(s,dem,u){
+  const inv=s.ports.map(p=>({g:p[1],w:p[2],m:p[3],n:p[0]*u})).sort((a,b)=>a.g-b.g||a.w-b.w);
+  const ds=[...dem].sort((a,b)=>b.spd-a.spd||b.w-a.w);
+  for(const d of ds){let need=d.qty;for(const t of inv){if(need<=0)break;if(t.m===d.m&&t.g>=d.spd&&t.w>=d.w){const k=Math.min(t.n,need);t.n-=k;need-=k}}if(need>0)return false}
+  return true;
+}
+function uplinkAvail(s,req,u){
+  let best=0,opt=null;
+  for(const o of U[s.up]){const n=o.p.reduce((a,x)=>a+(x[1]>=req.upS?x[0]:0),0);if(n>best){best=n;opt=o}}
+  let total=best*u,vsf=0;
+  if(FAM[s.fam].stack.fp&&req.stack&&u>1){vsf=2*u;total=Math.max(0,total-vsf)}
+  return {n:total,opt,vsf,per:best};
+}
+function sizeOne(s,req){
+  const f=FAM[s.fam];
+  if(!sizeVend.has(f.v))return null;
+  if(req.ff==="1RU"&&s.ff!=="1RU")return null;
+  if(req.ff==="small"&&s.ff==="1RU")return null;
+  if(req.l3!=="l2"&&f.l3==="l2")return {rej:"Layer 2 only (routing stays on the firewall or core)"};
+  if(req.l3==="bgp"&&!f.bgp)return {rej:"No BGP or EVPN support"};
+  const dem=[...req.groups.map(g=>({qty:g.qty,w:g.w,spd:g.spd,m:"rj45",name:g.name}))];
+  if(req.data>0)dem.push({qty:req.data,w:0,spd:1,m:"rj45",name:"data ports"});
+  if(req.fibN>0)dem.push({qty:req.fibN,w:0,spd:req.fibS,m:"sfp",name:"fiber ports"});
+  for(const d of dem){if(!s.ports.some(p=>p[3]===d.m&&p[1]>=d.spd&&p[2]>=d.w)){if(d.m==="sfp")return {rej:s.ports.some(p=>p[3]==="sfp")?`No ${spdLabel(d.spd)} SFP access ports`:"No SFP access ports"};if(!s.ports.some(p=>p[3]==="rj45"))return {rej:"No copper access ports"};return {rej:d.w>Math.max(...s.ports.filter(p=>p[3]==="rj45").map(p=>p[2]))?`No ports deliver ${d.w}W`:`No ${spdLabel(d.spd)} copper ports`}}}
+  const W=req.groups.reduce((a,g)=>a+g.qty*g.w,0)*(1+req.head/100);
+  if(W>0&&!s.psu.length)return {rej:"No PoE"};
+  if(req.upN>0&&uplinkAvail(s,req,1).per===0)return {rej:`No ${spdLabel(req.upS)} uplinks`};
+  const cfgs=[...s.psu].sort((a,b)=>a[1]-b[1]);
+  for(let u=1;u<=12;u++){
+    if(!portsFeasible(s,dem,u))continue;
+    const up=uplinkAvail(s,req,u);if(up.n<req.upN)continue;
+    let cfg=null;if(W>0){cfg=cfgs.find(c=>c[1]*u>=W);if(!cfg)continue}
+    const notes=[];
+    if(req.stack&&u>1&&f.stack.max===null)notes.push({t:"No hardware stack: managed as one fabric via FortiLink"});
+    if(req.l3!=="l2"&&f.v==="Fortinet")notes.push({t:"Routing needs Advanced Features license"});
+    if(req.stack&&u>1&&f.stack.max===1)notes.push({w:1,t:"Not stackable: managed as separate switches"});
+    if(s.ff!=="1RU")notes.push({t:s.ff+(s.fanless?", fanless":"")});
+    if(s.pd)notes.push({t:"Can be PoE powered"});
+    if(req.stack&&f.stack.max!==null&&f.stack.max>1&&u>f.stack.max)notes.push({w:1,t:`Exceeds the ${f.stack.max}-member ${f.stack.t} limit`});
+    if(up.vsf)notes.push({w:1,t:`VSF stacking uses ${up.vsf} uplink ports, leaving ${up.n}`});
+    if(req.l3==="bgp"&&s.fam.startsWith("c"))notes.push({t:"BGP needs Network Advantage"});
+    if(req.l3==="ospf"&&s.fam.startsWith("c9200"))notes.push({t:"Full OSPF needs Network Advantage"});
+    if(isMod(s)&&req.upN>0)notes.push({t:"Order "+up.opt.n.split(":")[0]});
+    if(cfg&&cfg[2])notes.push({w:1,t:"This PoE figure needs checking"});
+    if(s.note)notes.push({t:s.note});
+    return {s,u,cfg,W,up,notes,ports:totalPorts(s)*u};
+  }
+  return {rej:"Needs more than 12 switches"};
+}
+function runSize(){
+  const req=readReq();
+  const need=req.groups.reduce((a,g)=>a+g.qty,0)+req.data+req.fibN;
+  const W=req.groups.reduce((a,g)=>a+g.qty*g.w,0);
+  const fast=req.groups.filter(g=>g.spd>1).reduce((a,g)=>a+g.qty,0);
+  $("#reqSummary").innerHTML=`<div><b>${fmt(need)}</b>access ports</div><div><b>${fmt(Math.round(W*(1+req.head/100)))} W</b>PoE ${req.head?`incl. ${req.head}% headroom`:"allocated"}</div><div><b>${fmt(fast)}</b>multigig ports</div><div><b>${req.upN} x ${spdLabel(req.upS)}</b>uplinks</div>`;
+  const ok=[],rej={};
+  for(const s of SKUS){const r=sizeOne(s,req);if(!r)continue;if(r.rej){(rej[r.rej]=rej[r.rej]||[]).push(s.sku)}else ok.push(r)}
+  ok.sort((a,b)=>a.u-b.u||(a.cfg&&b.cfg?a.cfg[1]-b.cfg[1]:0)||a.ports-b.ports||b.s.sw-a.s.sw);
+  $("#resTitle").textContent=ok.length?`${ok.length} models fit`:"Nothing fits yet";
+  $("#resSub").textContent=ok.length?"Sorted by fewest switches, then smallest power supply":"";
+  const show=showAll?ok:ok.slice(0,8);
+  $("#resList").innerHTML=ok.length?show.map((r,i)=>resultCard(r,i===0)).join(""):`<div class="panel empty">No model covers every requirement. The reasons are listed below, so loosen whichever one is blocking the most models.</div>`;
+  $("#resMore").innerHTML=ok.length>8?`<button class="ghost" id="moreBtn">${showAll?"Show top 8":"Show all "+ok.length}</button>`:"";
+  if(ok.length>8)$("#moreBtn").onclick=()=>{showAll=!showAll;runSize()};
+  const keys=Object.keys(rej);
+  const nrej=keys.reduce((a,k)=>a+rej[k].length,0);
+  $("#rejBox").style.display=nrej?"block":"none";
+  $("#rejSum").textContent=`${nrej} models ruled out`;
+  $("#rejList").innerHTML=keys.sort((a,b)=>rej[b].length-rej[a].length).map(k=>`<li><strong>${esc(k)}</strong>: ${rej[k].map(esc).join(", ")}</li>`).join("");
+  document.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>openDetail(b.dataset.open));
+}
+let showAll=false,deb;
+function runSizeDebounced(){clearTimeout(deb);deb=setTimeout(runSize,250)}
+function resultCard(r,best){
+  const s=r.s,f=FAM[s.fam];
+  const bud=r.cfg?r.cfg[1]*r.u:0,pct=bud?Math.round(r.W/bud*100):0;
+  return `<article class="card ${best?"best":""}">
+    <div class="cardTop"><div><div class="qty"><span class="n">${r.u} x</span> ${esc(s.sku)}</div><div class="fam">${esc(f.v)} ${esc(f.name)}${s.name?" "+esc(s.name.replace(/^\S+ /,"")):""}</div></div>
+    <button class="linkbtn" data-open="${esc(s.sku)}">Full specs</button></div>
+    <div class="facewrap">${faceplate(s)}</div>
+    <div class="facts">
+      <div>Access ports<b>${fmt(r.ports)} total</b>${esc(portsText(s))} each</div>
+      <div>PoE${r.cfg?`<b>${fmt(Math.round(r.W))} of ${fmt(bud)} W (${pct}%)</b>${esc(r.cfg[0])} per switch<div class="bar"><i class="${pct>85?"hi":""}" style="width:${Math.min(pct,100)}%"></i></div>`:`<b>Not needed</b>`}</div>
+      <div>Uplinks<b>${r.up.n} available at ${spdLabel(readReq().upS)}+</b>${esc(r.up.opt?r.up.opt.n:"")}</div>
+    </div>
+    ${r.notes.length?`<div class="notes">${r.notes.map(n=>`<span class="note ${n.w?"w":""}">${esc(n.t)}</span>`).join("")}</div>`:""}
+  </article>`;
+}
+["dataPorts","upN","upS","l3","head","stack","fibN","fibS","ffSel"].forEach(id=>$("#"+id).addEventListener("change",runSize));
+$("#dataPorts").addEventListener("input",runSizeDebounced);$("#upN").addEventListener("input",runSizeDebounced);$("#fibN").addEventListener("input",runSizeDebounced);
+$("#sizeVendors").innerHTML=VENDORS.map(v=>`<button class="chip" aria-pressed="true" data-sv="${v}">${v}</button>`).join("");
+$("#sizeVendors").addEventListener("click",e=>{const v=e.target.dataset.sv;if(!v)return;if(sizeVend.has(v)){if(sizeVend.size>1)sizeVend.delete(v)}else sizeVend.add(v);e.target.setAttribute("aria-pressed",sizeVend.has(v));runSize()});
+
+/* ---------- Browse ---------- */
+const cmp=new Set();
+const bVend=new Set(VENDORS);
+let sortKey="fam",sortDir=1;
+const COLS=[
+  {k:"cmp",t:"",ns:1},
+  {k:"sku",t:"Model",f:s=>s.sku},
+  {k:"fam",t:"Family",f:s=>FAM[s.fam].v+" "+FAM[s.fam].name},
+  {k:"ports",t:"Access ports",f:s=>totalPorts(s)*100+maxSpd(s)},
+  {k:"w",t:"PoE per port",f:s=>maxW(s)},
+  {k:"bud",t:"PoE budget (default / max)",f:s=>maxBudget(s),num:1},
+  {k:"up",t:"Uplinks",f:s=>upText(s)},
+  {k:"stk",t:"Stacking",f:s=>FAM[s.fam].stack.t},
+  {k:"l3",t:"BGP",f:s=>FAM[s.fam].bgp?1:0},
+  {k:"sw",t:"Switching",f:s=>s.sw||0,num:1}
+];
+function renderBrowse(){
+  const med=$("#bMed").value,ffb=$("#bFF").value,q=$("#q").value.trim().toLowerCase(),fam=$("#bFam").value,poe=+$("#bPoe").value,spd=+$("#bSpd").value;
+  let rows=SKUS.filter(s=>{const f=FAM[s.fam];
+    if(!bVend.has(f.v))return false;if(fam&&s.fam!==fam)return false;
+    if(q&&!(s.sku+" "+s.name+" "+f.name+" "+f.v).toLowerCase().includes(q))return false;
+    if(poe===0&&maxW(s)>0)return false;if(poe>0&&maxW(s)<poe)return false;
+    if(spd&&maxSpd(s)<spd)return false;if(med&&!s.ports.some(p=>p[3]===med))return false;if(ffb&&s.ff!==ffb)return false;return true});
+  const col=COLS.find(c=>c.k===sortKey);
+  rows.sort((a,b)=>{const x=col.f(a),y=col.f(b);return (x>y?1:x<y?-1:0)*sortDir||a.sku.localeCompare(b.sku)});
+  $("#bCount").textContent=`${rows.length} of ${SKUS.length} models`;
+  $("#bTable thead").innerHTML="<tr>"+COLS.map(c=>`<th class="${c.ns?"nosort":""}" data-sort="${c.ns?"":c.k}" ${c.k===sortKey?`aria-sort="${sortDir>0?"ascending":"descending"}"`:""}>${c.t}${c.k===sortKey?(sortDir>0?" &#9650;":" &#9660;"):""}</th>`).join("")+"</tr>";
+  $("#bTable tbody").innerHTML=rows.map(s=>{const f=FAM[s.fam];const v=s.verify.length?`<span class="vflag" title="${esc(s.vnote||"Needs verification")}">check</span>`:"";
+    return `<tr data-sku="${esc(s.sku)}">
+      <td><input type="checkbox" class="cmpbox" aria-label="Compare ${esc(s.sku)}" data-c="${esc(s.sku)}" ${cmp.has(s.sku)?"checked":""}></td>
+      <td class="sku">${esc(s.sku)}${v}${s.name||s.ff!=="1RU"?`<div class="small" style="font-family:var(--sans);font-weight:400">${esc([s.name,s.ff!=="1RU"?s.ff+(s.fanless?", fanless":""):""].filter(Boolean).join(". "))}</div>`:""}</td>
+      <td>${esc(f.v)} ${esc(f.name)}</td>
+      <td>${esc(portsText(s))}</td>
+      <td>${maxW(s)?maxW(s)+"W":"None"}</td>
+      <td class="num">${s.psu.length?fmt(defBudget(s))+" / "+fmt(maxBudget(s))+" W":"None"}</td>
+      <td>${esc(upText(s))}</td>
+      <td>${f.stack.max===1?"None":esc(f.stack.t)+(f.stack.max?", "+f.stack.max:"")}</td>
+      <td>${f.bgp?"Yes":"No"}</td>
+      <td class="num">${s.sw===null?"Not published":fmt(s.sw)+" Gbps"}</td></tr>`}).join("");
+}
+$("#bTable").addEventListener("click",e=>{
+  const th=e.target.closest("th[data-sort]");if(th&&th.dataset.sort){const k=th.dataset.sort;if(k===sortKey)sortDir*=-1;else{sortKey=k;sortDir=1}renderBrowse();return}
+  if(e.target.classList.contains("cmpbox")){const k=e.target.dataset.c;if(e.target.checked){if(cmp.size>=4){e.target.checked=false;alertCmp();return}cmp.add(k)}else cmp.delete(k);updCmp();return}
+  const tr=e.target.closest("tr[data-sku]");if(tr)openDetail(tr.dataset.sku);
+});
+function alertCmp(){const c=$("#bCount");const t=c.textContent;c.textContent="Compare holds 4 models. Untick one first.";c.style.color="var(--warn)";setTimeout(()=>{c.textContent=t;c.style.color=""},2200)}
+["q","bFam","bPoe","bSpd","bMed","bFF"].forEach(id=>$("#"+id).addEventListener("input",renderBrowse));
+$("#bVendors").innerHTML=VENDORS.map(v=>`<button class="chip" aria-pressed="true" data-bv="${v}">${v}</button>`).join("");
+$("#bVendors").addEventListener("click",e=>{const v=e.target.dataset.bv;if(!v)return;if(bVend.has(v)){if(bVend.size>1)bVend.delete(v)}else bVend.add(v);e.target.setAttribute("aria-pressed",bVend.has(v));renderBrowse()});
+$("#bFam").innerHTML+=Object.entries(FAM).map(([k,f])=>`<option value="${k}">${esc(f.v)} ${esc(f.name)}</option>`).join("");
+$("#legend1").innerHTML=legendHTML();
+
+/* ---------- Compare ---------- */
+function updCmp(){$("#cmpCount").textContent=cmp.size?`(${cmp.size})`:"";renderCompare()}
+function specRows(s){const f=FAM[s.fam];return [
+  ["Vendor",f.v],["Family",f.name],["Description",s.name||"-"],
+  ["Front panel",faceplate(s),1],["Form factor",s.ff+(s.fanless?", fanless":"")],["Powered by",s.pd||f.power],
+  ["Access ports",portsText(s)],["Max PoE per port",poeLabel(maxW(s))],
+  ["PoE budget",s.psu.length?s.psu.map(p=>`${esc(p[0])}: ${fmt(p[1])} W${p[2]?' <span class="vflag">check</span>':""}`).join("<br>"):"None",1],
+  ["Uplinks",U[s.up].map(o=>o.n).join("<br>"),1],
+  ["Stacking",f.stack.max===1?"Not stackable":f.stack.max?`${f.stack.t}, up to ${f.stack.max} members${f.stack.bw?`, ${f.stack.bw} Gbps`:""}`:`${f.stack.t} (no hardware stacking)`],
+  ["Stacking notes",f.stack.note],
+  ["Routing",f.l3t],["IPv4 route scale (as stated)",s.routes||f.routes],["MAC table",s.mac||f.mac],["MACsec",f.macsec],["Packet buffer",s.buf||f.buf],
+  ["Switching capacity",s.sw===null?"Not published":fmt(s.sw)+" Gbps"],["Forwarding rate",s.fwd===null?"Not published":fmt(s.fwd)+" Mpps"],
+  ["Fans",s.fanless?"None (fanless)":f.fanFru?"Field replaceable":"Fixed"],
+  ["Licensing",f.lic],
+  ["Needs checking",s.verify.length?[s.vnote,...s.verify.map(k=>({macsec:"MACsec support per model",bgp:"BGP support per model",routing:"Dynamic routing support per model"})[k]).filter(Boolean)].filter(Boolean).join(". "):"Nothing flagged"],
+  ["Source",`<a href="${SRC[s.src].u}" target="_blank" rel="noopener">${esc(SRC[s.src].t)}</a>`,1]
+]}
+function renderCompare(){
+  const list=[...cmp].map(k=>SKUS.find(s=>s.sku===k));
+  if(!list.length){$("#cmpBody").innerHTML=`<div class="panel empty"><h2 style="font-family:var(--cond);margin:0 0 6px;color:var(--ink)">Pick models to compare</h2><p style="margin:0 0 12px">Tick up to four models in Browse, or use a starting pair below.</p><div class="presets"><button class="chip" data-pair="C9300-48UXM,JL659A">9300-48UXM vs 6300M 48p SR5</button><button class="chip" data-pair="C9200L-48P-4X,JL728A">9200L-48P-4X vs 6200F 48G 740W</button><button class="chip" data-pair="C9300-48P,JL661A,FS-148F-FPOE">48p PoE+ across Cisco, Aruba, Fortinet</button><button class="chip" data-pair="C9300-48H,FS-348G-FPOE,JL659A">48p high-power PoE</button><button class="chip" data-pair="C9300-48S,JL658A,FS-424E-Fiber">Fiber access</button><button class="chip" data-pair="C9200CX-12P-2X2G,R8Q72A,FS-108F-FPOE">Compact PoE</button></div></div>`;
+    document.querySelectorAll("[data-pair]").forEach(b=>b.onclick=()=>{cmp.clear();b.dataset.pair.split(",").forEach(k=>cmp.add(k));updCmp();renderBrowse()});return}
+  const rows=list.map(specRows);
+  let h=`<div class="bar2"><span class="small">Highlighted cells differ across the selection.</span><button class="ghost" id="clrCmp">Clear</button></div><div class="cmpgrid"><table><thead><tr><th class="nosort">Spec</th>${list.map(s=>`<th class="nosort"><span class="hd">${esc(s.sku)}</span><br><button class="linkbtn" data-rmc="${esc(s.sku)}">Remove</button></th>`).join("")}</tr></thead><tbody>`;
+  rows[0].forEach((r,i)=>{const vals=rows.map(x=>x[i][1]);const diff=r[2]?false:new Set(vals).size>1&&list.length>1;
+    h+=`<tr><td>${esc(r[0])}</td>${vals.map(v=>`<td class="${diff?"diff":""}">${r[2]?v:esc(v)}</td>`).join("")}</tr>`});
+  h+="</tbody></table></div>";
+  $("#cmpBody").innerHTML=h;
+  $("#clrCmp").onclick=()=>{cmp.clear();updCmp();renderBrowse()};
+  document.querySelectorAll("[data-rmc]").forEach(b=>b.onclick=()=>{cmp.delete(b.dataset.rmc);updCmp();renderBrowse()});
+}
+
+/* ---------- Detail ---------- */
+function openDetail(sku){
+  const s=SKUS.find(x=>x.sku===sku);const f=FAM[s.fam];
+  const rows=specRows(s).filter(r=>!["Vendor","Family","Description","Front panel"].includes(r[0]));
+  $("#dlgBody").innerHTML=`<button class="ghost close" id="dlgClose">Close</button>
+    <h3>${esc(s.sku)}</h3><div class="fam">${esc(f.v)} ${esc(f.name)}${s.name?", "+esc(s.name):""}</div>
+    <div class="facewrap">${faceplate(s,1.3)}</div><div class="legend">${legendHTML()}</div>
+    <dl class="spec">${rows.map(r=>`<dt>${esc(r[0])}</dt><dd>${r[2]?r[1]:esc(r[1])}</dd>`).join("")}</dl>
+    <div style="margin-top:16px"><button class="ghost ${cmp.has(s.sku)?"on":""}" id="dlgCmp">${cmp.has(s.sku)?"Remove from compare":"Add to compare"}</button></div>`;
+  $("#dlgClose").onclick=()=>$("#dlg").close();
+  $("#dlgCmp").onclick=()=>{if(cmp.has(s.sku))cmp.delete(s.sku);else{if(cmp.size>=4){$("#dlgCmp").textContent="Compare holds 4 models";return}cmp.add(s.sku)}updCmp();renderBrowse();openDetail(sku)};
+  if(!$("#dlg").open)$("#dlg").showModal();
+}
+$("#dlg").addEventListener("click",e=>{if(e.target.id==="dlg")$("#dlg").close()});
+
+/* ---------- Tabs & about ---------- */
+document.querySelectorAll("nav.tabs button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll("nav.tabs button").forEach(x=>x.setAttribute("aria-selected",x===b));
+  document.querySelectorAll(".view").forEach(v=>v.classList.toggle("on",v.id==="v-"+b.dataset.v));
+  if(b.dataset.v==="compare")renderCompare();
+}));
+const famCounts=Object.entries(FAM).map(([k,f])=>`${f.v} ${f.name} (${SKUS.filter(s=>s.fam===k).length})`);
+$("#coverage").textContent=`${SKUS.length} models across ${Object.keys(FAM).length} families: ${famCounts.join(", ")}. Data center and aggregation-only models, and FortiSwitch models no longer on the current datasheets, are left out for now.`;
+$("#updated").textContent="Data updated "+DATA.updated+".";
+$("#srcList").innerHTML=Object.values(SRC).map(s=>`<li><a href="${s.u}" target="_blank" rel="noopener">${esc(s.t)}</a></li>`).join("");
+
+renderGroups();runSize();renderBrowse();updCmp();
+</script>
+</body>
+</html>

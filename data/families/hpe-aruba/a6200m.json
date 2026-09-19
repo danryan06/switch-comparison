@@ -1,0 +1,164 @@
+{
+  "id": "a6200m",
+  "vendor": "HPE Aruba",
+  "family": "CX 6200M",
+  "source": "a6200",
+  "stacking": {
+    "tech": "VSF",
+    "bandwidthGbps": 40,
+    "maxMembers": 8,
+    "frontPanel": true,
+    "note": "Front-panel stacking over the SFP+ uplinks"
+  },
+  "routing": {
+    "tier": "ospf",
+    "bgp": false,
+    "summary": "Static, RIP, OSPF. No BGP"
+  },
+  "routeScale": "2,000 IPv4 unicast",
+  "macTable": "16,000",
+  "macsec": "MACsec-256 on downlinks and 2 uplinks",
+  "buffer": "8 MB",
+  "power": {
+    "summary": "Dual hot-swap PSUs",
+    "psuFieldReplaceable": true
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "On-box features need no license; HPE Aruba Networking Central subscription for cloud management",
+  "verify": [],
+  "models": [
+    {
+      "sku": "R8Q67A",
+      "description": "6200M 24G 4SFP+",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": 95.2
+    },
+    {
+      "sku": "R8Q68A",
+      "description": "6200M 24G Class 4 PoE",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [
+        {
+          "config": "JL086A 680W",
+          "watts": 370,
+          "verify": true
+        },
+        {
+          "config": "JL087A 1050W",
+          "watts": 720,
+          "verify": true
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 95.2,
+      "verify": [
+        "psu"
+      ],
+      "verifyNote": "Datasheet states max 740W only; per-PSU split derived from 6300M PSU ratings"
+    },
+    {
+      "sku": "R8Q69A",
+      "description": "6200M 48G 4SFP+",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": 130.9
+    },
+    {
+      "sku": "R8Q70A",
+      "description": "6200M 48G Class 4 PoE",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [
+        {
+          "config": "JL086A 680W",
+          "watts": 370,
+          "verify": true
+        },
+        {
+          "config": "JL087A 1050W",
+          "watts": 740,
+          "verify": true
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 130.9,
+      "verify": [
+        "psu"
+      ],
+      "verifyNote": "Datasheet states max 1440W only; per-PSU split derived"
+    },
+    {
+      "sku": "R8Q71A",
+      "description": "6200M 36G 12SR5 Class 6 PoE",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 5,
+          "poeWatts": 60
+        },
+        {
+          "count": 36,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [
+        {
+          "config": "JL086A 680W",
+          "watts": 370,
+          "verify": true
+        },
+        {
+          "config": "JL087A 1050W",
+          "watts": 740,
+          "verify": true
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 272,
+      "forwardingMpps": 130.9,
+      "verify": [
+        "psu"
+      ],
+      "verifyNote": "Datasheet states max 1440W only; per-PSU split derived"
+    }
+  ]
+}

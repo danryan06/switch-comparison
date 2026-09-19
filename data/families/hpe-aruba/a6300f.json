@@ -1,0 +1,108 @@
+{
+  "id": "a6300f",
+  "vendor": "HPE Aruba",
+  "family": "CX 6300F",
+  "source": "a6300",
+  "stacking": {
+    "tech": "VSF",
+    "bandwidthGbps": 200,
+    "maxMembers": 10,
+    "frontPanel": true,
+    "note": "Front-panel stacking over the SFP56 uplinks"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Full L3 incl. BGP, EVPN, VXLAN, VRF. No license needed"
+  },
+  "routeScale": "64,000 IPv4 unicast",
+  "macTable": "32,000",
+  "macsec": "Listed for the series, confirm per model",
+  "buffer": "8 MB",
+  "power": {
+    "summary": "Fixed internal PSU",
+    "psuFieldReplaceable": false
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "On-box features need no license; HPE Aruba Networking Central subscription for cloud management",
+  "verify": [
+    "macsec"
+  ],
+  "models": [
+    {
+      "sku": "JL665A",
+      "description": "6300F 48p 1G Class 4 PoE",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a56",
+      "poeBudgets": [
+        {
+          "config": "Internal 900W",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 496,
+      "forwardingMpps": 369
+    },
+    {
+      "sku": "JL666A",
+      "description": "6300F 24p 1G Class 4 PoE",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a56",
+      "poeBudgets": [
+        {
+          "config": "Internal 900W",
+          "watts": 720,
+          "verify": true
+        }
+      ],
+      "switchingGbps": 448,
+      "forwardingMpps": 334,
+      "verify": [
+        "psu"
+      ],
+      "verifyNote": "Datasheet lists 740W; 24 ports x 30W caps at 720W"
+    },
+    {
+      "sku": "JL667A",
+      "description": "6300F 48p 1G",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "a56",
+      "poeBudgets": [],
+      "switchingGbps": 496,
+      "forwardingMpps": 369
+    },
+    {
+      "sku": "JL668A",
+      "description": "6300F 24p 1G",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "a56",
+      "poeBudgets": [],
+      "switchingGbps": 448,
+      "forwardingMpps": 334
+    }
+  ]
+}

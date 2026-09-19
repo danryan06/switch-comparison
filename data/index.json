@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-09-18",
+  "families": [
+    "families/cisco/c9200.json",
+    "families/cisco/c9200l.json",
+    "families/cisco/c9200cx.json",
+    "families/cisco/c9300.json",
+    "families/cisco/c9300x.json",
+    "families/cisco/c9300l.json",
+    "families/cisco/c9300lm.json",
+    "families/hpe-aruba/a6300m.json",
+    "families/hpe-aruba/a6300f.json",
+    "families/hpe-aruba/a6200f.json",
+    "families/hpe-aruba/a6200m.json",
+    "families/fortinet/f100f.json",
+    "families/fortinet/f100g.json",
+    "families/fortinet/f200.json",
+    "families/fortinet/f300.json",
+    "families/fortinet/f400.json"
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "id": "c9200cx",
+  "vendor": "Cisco",
+  "family": "Catalyst 9200CX",
+  "source": "c9200",
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "Not stackable"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "OSPF, EIGRP, IS-IS; basic BGP from IOS XE 17.13.1 (Network Advantage for full OSPF and BGP)"
+  },
+  "routeScale": "14,000 total (10k direct, 4k indirect)",
+  "macTable": "32,000",
+  "macsec": "AES-256",
+  "buffer": "6 MB",
+  "power": {
+    "summary": "Fixed internal PSU or external adapter; some models are PoE powered",
+    "psuFieldReplaceable": false
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Cisco DNA or Cisco Networking Subscription (Essentials or Advantage) required with purchase",
+  "verify": [],
+  "models": [
+    {
+      "sku": "C9200CX-12T-2X2G",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "cx12t",
+      "poeBudgets": [],
+      "switchingGbps": 70,
+      "forwardingMpps": 52.08,
+      "formFactor": "Compact",
+      "fanless": true,
+      "poweredBy": "802.3bt Class 6 on the PD uplink, or optional 80W adapter"
+    },
+    {
+      "sku": "C9200CX-12P-2X2G",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "cx22",
+      "poeBudgets": [
+        {
+          "config": "315W internal",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 68,
+      "forwardingMpps": 50.59,
+      "formFactor": "Compact",
+      "fanless": true
+    },
+    {
+      "sku": "C9200CX-12P-2XGH",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "cx22",
+      "poeBudgets": [
+        {
+          "config": "315W internal",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 68,
+      "forwardingMpps": 50.59,
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "HVDC or AC input"
+    },
+    {
+      "sku": "C9200CX-8P-2X2G",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "cx22",
+      "poeBudgets": [
+        {
+          "config": "315W internal",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 60,
+      "forwardingMpps": 44.64,
+      "formFactor": "Compact",
+      "fanless": true
+    },
+    {
+      "sku": "C9200CX-8P-2XGH",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "cx22",
+      "poeBudgets": [
+        {
+          "config": "315W internal",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 60,
+      "forwardingMpps": 44.64,
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "HVDC or AC input"
+    },
+    {
+      "sku": "C9200CX-8UXG-2X",
+      "accessPorts": [
+        {
+          "count": 4,
+          "speedGbps": 10,
+          "poeWatts": 60
+        },
+        {
+          "count": 4,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "cx2x",
+      "poeBudgets": [
+        {
+          "config": "315W internal",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 95.23,
+      "formFactor": "Compact",
+      "fanless": true
+    },
+    {
+      "sku": "C9200CX-8UXG-2XH",
+      "accessPorts": [
+        {
+          "count": 4,
+          "speedGbps": 10,
+          "poeWatts": 60
+        },
+        {
+          "count": 4,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "cx2x",
+      "poeBudgets": [
+        {
+          "config": "315W internal",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 95.23,
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "HVDC or AC input"
+    },
+    {
+      "sku": "C9200CX-8PT-2G",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "cx2g",
+      "poeBudgets": [
+        {
+          "config": "80W adapter + UPOE+ uplinks",
+          "watts": 180
+        },
+        {
+          "config": "150W adapter + UPOE+ uplinks",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 20,
+      "forwardingMpps": 14.88,
+      "formFactor": "Compact",
+      "fanless": true,
+      "poweredBy": "Pass-through: UPOE+ on the uplinks plus an external adapter"
+    }
+  ]
+}

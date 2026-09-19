@@ -1,0 +1,99 @@
+{
+  "id": "f100g",
+  "vendor": "Fortinet",
+  "family": "FortiSwitch 100G",
+  "source": "fsa",
+  "stacking": {
+    "tech": "FortiLink",
+    "bandwidthGbps": null,
+    "maxMembers": null,
+    "frontPanel": false,
+    "note": "No hardware stacking. A FortiGate manages 8 to 300 switches (model dependent) as one fabric with automatic inter-switch links"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 only. Routing is done on the FortiGate"
+  },
+  "routeScale": "None (Layer 2)",
+  "macTable": "32,000",
+  "macsec": "None",
+  "buffer": "2 MB",
+  "power": {
+    "summary": "Fixed internal PSU, no redundancy",
+    "psuFieldReplaceable": false
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No license needed when managed by a FortiGate over FortiLink. Dynamic routing needs the Advanced Features license (FS-SW-LIC-xxx). Cloud or standalone management is a separate subscription",
+  "verify": [],
+  "models": [
+    {
+      "sku": "FS-110G-FPOE",
+      "accessPorts": [
+        {
+          "count": 2,
+          "speedGbps": 5,
+          "poeWatts": 90
+        },
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "54V adapter",
+          "watts": 200
+        }
+      ],
+      "switchingGbps": 140,
+      "forwardingMpps": 208,
+      "formFactor": "Desktop",
+      "fanless": true,
+      "verify": [
+        "ports"
+      ],
+      "verifyNote": "Spec table lists the 8 PoE+ ports as 2.5G; ordering info says 1GE. The 802.3bt type on the 5G ports is not stated, 90W assumed"
+    },
+    {
+      "sku": "FS-124G",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 2.5,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x6",
+      "poeBudgets": [],
+      "switchingGbps": 240,
+      "forwardingMpps": 355
+    },
+    {
+      "sku": "FS-124G-FPOE",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        },
+        {
+          "count": 16,
+          "speedGbps": 2.5,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x6",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 780
+        }
+      ],
+      "switchingGbps": 240,
+      "forwardingMpps": 355
+    }
+  ]
+}

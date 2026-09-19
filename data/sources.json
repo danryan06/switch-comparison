@@ -1,0 +1,37 @@
+{
+  "c9200": {
+    "title": "Cisco Catalyst 9200 Series Switches Data Sheet (updated Sep 2026)",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html",
+    "retrieved": "2026-09-18"
+  },
+  "c9300": {
+    "title": "Cisco Catalyst 9300 Series Switches Data Sheet (updated Sep 2026)",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9300-series-switches/nb-06-cat9300-ser-data-sheet-cte-en.html",
+    "retrieved": "2026-09-18"
+  },
+  "a6300": {
+    "title": "HPE Aruba Networking CX 6300 Switch Series Data Sheet",
+    "url": "https://www.hpe.com/psnow/doc/a00085162enw",
+    "retrieved": "2026-09-18"
+  },
+  "a6200": {
+    "title": "HPE Aruba Networking CX 6200 Switch Series Data Sheet",
+    "url": "https://www.hpe.com/psnow/doc/a00097415enw",
+    "retrieved": "2026-09-18"
+  },
+  "fsa": {
+    "title": "Fortinet FortiSwitch Secure Access Series Data Sheet (R65, May 2025)",
+    "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortiswitch-secure-access-series.pdf",
+    "retrieved": "2026-09-18"
+  },
+  "fcam": {
+    "title": "Fortinet FortiSwitch Secure Campus Data Sheet (R17, Sep 2026)",
+    "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortiswitch-campus-series.pdf",
+    "retrieved": "2026-09-18"
+  },
+  "a6200f12": {
+    "title": "HPE Aruba Networking CX 6200F 12G Class4 PoE 2G/2SFP+ 139W Switch Data Sheet",
+    "url": "https://www.hpe.com/psnow/doc/PSN1014708953COEN",
+    "retrieved": "2026-09-18"
+  }
+}
