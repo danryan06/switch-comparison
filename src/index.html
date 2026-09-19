@@ -117,6 +117,14 @@ svg.face .pw{fill:var(--poe)}
 .filters{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;margin-bottom:14px}
 .filters .fl{min-width:160px}
 .fchips{display:flex;flex-wrap:wrap;gap:6px}
+.msel{position:relative}
+.msel summary{list-style:none;cursor:pointer;border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:7px 28px 7px 8px;font-size:15px;white-space:nowrap;position:relative}
+.msel summary::-webkit-details-marker{display:none}
+.msel summary::after{content:"";position:absolute;right:10px;top:50%;width:6px;height:6px;border:solid var(--muted);border-width:0 2px 2px 0;transform:translateY(-70%) rotate(45deg)}
+.msel[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.msel .mlist{position:absolute;z-index:20;left:0;right:0;min-width:100%;margin-top:4px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.msel .mlist label{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:5px;cursor:pointer;font-size:15px;color:var(--ink);margin:0;white-space:nowrap}
+.msel .mlist label:hover{background:var(--surface-2)}
 .tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
 table{border-collapse:collapse;width:100%;font-size:14px}
 th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:middle}
@@ -176,9 +184,9 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
       <p>Campus access switches from Cisco, HPE Aruba, and Fortinet, normalized so you can size a closet and compare models on the same terms.</p>
     </div>
     <nav class="tabs" role="tablist">
-      <button role="tab" aria-selected="true" data-v="size">Size a closet</button>
-      <button role="tab" aria-selected="false" data-v="browse">Browse</button>
+      <button role="tab" aria-selected="true" data-v="browse">Browse</button>
       <button role="tab" aria-selected="false" data-v="compare">Compare <span id="cmpCount"></span></button>
+      <button role="tab" aria-selected="false" data-v="size">Size a closet</button>
       <button role="tab" aria-selected="false" data-v="about">Data</button>
     </nav>
   </div>
@@ -186,7 +194,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
 
 <main class="wrap">
   <!-- SIZE -->
-  <section class="view on" id="v-size">
+  <section class="view" id="v-size">
     <div class="size">
       <div class="panel">
         <h2>What does the closet need?</h2>
@@ -255,11 +263,12 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
   </section>
 
   <!-- BROWSE -->
-  <section class="view" id="v-browse">
+  <section class="view on" id="v-browse">
     <div class="filters">
       <div class="fl"><label for="q">Search</label><input type="text" id="q" placeholder="SKU or family"></div>
-      <div class="fl"><label>Vendor</label><div class="fchips" id="bVendors"></div></div>
+      <div class="fl"><label for="bVendorBtn">Vendor</label><details class="msel" id="bVendors"><summary id="bVendorBtn">All vendors</summary><div class="mlist"></div></details></div>
       <div class="fl"><label for="bFam">Family</label><select id="bFam"><option value="">All families</option></select></div>
+      <div class="fl"><label for="bPorts">Access ports</label><select id="bPorts"><option value="0">Any</option></select></div>
       <div class="fl"><label for="bPoe">PoE per port</label><select id="bPoe"><option value="-1">Any</option><option value="0">Non-PoE only</option><option value="30">30W or more</option><option value="60">60W or more</option><option value="90">90W</option></select></div>
       <div class="fl"><label for="bMed">Access media</label><select id="bMed"><option value="">Any</option><option value="rj45">Copper</option><option value="sfp">Fiber (SFP)</option></select></div>
       <div class="fl"><label for="bFF">Form factor</label><select id="bFF"><option value="">Any</option><option value="1RU">1RU</option><option value="Compact">Compact</option><option value="Desktop">Desktop</option></select></div>
@@ -475,7 +484,7 @@ $("#sizeVendors").addEventListener("click",e=>{const v=e.target.dataset.sv;if(!v
 
 /* ---------- Browse ---------- */
 const cmp=new Set();
-const bVend=new Set(VENDORS);
+const bVend=new Set();/* empty = all vendors */
 let sortKey="fam",sortDir=1;
 const COLS=[
   {k:"cmp",t:"",ns:1},
@@ -490,12 +499,12 @@ const COLS=[
   {k:"sw",t:"Switching",f:s=>s.sw||0,num:1}
 ];
 function renderBrowse(){
-  const med=$("#bMed").value,ffb=$("#bFF").value,q=$("#q").value.trim().toLowerCase(),fam=$("#bFam").value,poe=+$("#bPoe").value,spd=+$("#bSpd").value;
+  const med=$("#bMed").value,ffb=$("#bFF").value,q=$("#q").value.trim().toLowerCase(),fam=$("#bFam").value,poe=+$("#bPoe").value,spd=+$("#bSpd").value,np=+$("#bPorts").value;
   let rows=SKUS.filter(s=>{const f=FAM[s.fam];
-    if(!bVend.has(f.v))return false;if(fam&&s.fam!==fam)return false;
+    if(bVend.size&&!bVend.has(f.v))return false;if(fam&&s.fam!==fam)return false;
     if(q&&!(s.sku+" "+s.name+" "+f.name+" "+f.v).toLowerCase().includes(q))return false;
     if(poe===0&&maxW(s)>0)return false;if(poe>0&&maxW(s)<poe)return false;
-    if(spd&&maxSpd(s)<spd)return false;if(med&&!s.ports.some(p=>p[3]===med))return false;if(ffb&&s.ff!==ffb)return false;return true});
+    if(np&&totalPorts(s)!==np)return false;if(spd&&maxSpd(s)<spd)return false;if(med&&!s.ports.some(p=>p[3]===med))return false;if(ffb&&s.ff!==ffb)return false;return true});
   const col=COLS.find(c=>c.k===sortKey);
   rows.sort((a,b)=>{const x=col.f(a),y=col.f(b);return (x>y?1:x<y?-1:0)*sortDir||a.sku.localeCompare(b.sku)});
   $("#bCount").textContent=`${rows.length} of ${SKUS.length} models`;
@@ -519,9 +528,13 @@ $("#bTable").addEventListener("click",e=>{
   const tr=e.target.closest("tr[data-sku]");if(tr)openDetail(tr.dataset.sku);
 });
 function alertCmp(){const c=$("#bCount");const t=c.textContent;c.textContent="Compare holds 4 models. Untick one first.";c.style.color="var(--warn)";setTimeout(()=>{c.textContent=t;c.style.color=""},2200)}
-["q","bFam","bPoe","bSpd","bMed","bFF"].forEach(id=>$("#"+id).addEventListener("input",renderBrowse));
-$("#bVendors").innerHTML=VENDORS.map(v=>`<button class="chip" aria-pressed="true" data-bv="${v}">${v}</button>`).join("");
-$("#bVendors").addEventListener("click",e=>{const v=e.target.dataset.bv;if(!v)return;if(bVend.has(v)){if(bVend.size>1)bVend.delete(v)}else bVend.add(v);e.target.setAttribute("aria-pressed",bVend.has(v));renderBrowse()});
+["q","bFam","bPorts","bPoe","bSpd","bMed","bFF"].forEach(id=>$("#"+id).addEventListener("input",renderBrowse));
+$("#bVendors .mlist").innerHTML=VENDORS.map(v=>`<label><input type="checkbox" value="${esc(v)}">${esc(v)}</label>`).join("");
+$("#bVendors").addEventListener("change",e=>{const v=e.target.value;if(e.target.checked)bVend.add(v);else bVend.delete(v);
+  $("#bVendorBtn").textContent=!bVend.size?"All vendors":bVend.size===1?[...bVend][0]:bVend.size+" vendors";renderBrowse()});
+document.addEventListener("click",e=>{const d=$("#bVendors");if(d.open&&!d.contains(e.target))d.open=false});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")$("#bVendors").open=false});
+$("#bPorts").innerHTML+=[...new Set(SKUS.map(totalPorts))].sort((a,b)=>a-b).map(n=>`<option value="${n}">${n} ports</option>`).join("");
 $("#bFam").innerHTML+=Object.entries(FAM).map(([k,f])=>`<option value="${k}">${esc(f.v)} ${esc(f.name)}</option>`).join("");
 $("#legend1").innerHTML=legendHTML();
 
