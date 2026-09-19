@@ -33,5 +33,35 @@
     "title": "HPE Aruba Networking CX 6200F 12G Class4 PoE 2G/2SFP+ 139W Switch Data Sheet",
     "url": "https://www.hpe.com/psnow/doc/PSN1014708953COEN",
     "retrieved": "2026-09-18"
+  },
+  "jex4100": {
+    "title": "Juniper EX4100 Line of Ethernet Switches Data Sheet (1000746-001-EN)",
+    "url": "https://www.juniper.net/gb/en/products/switches/ex-series/ex4100-line-of-ethernet-switches-datasheet.html",
+    "retrieved": "2026-09-19"
+  },
+  "jex4100f": {
+    "title": "Juniper EX4100-F Line of Ethernet Switches Data Sheet (1000745-001-EN)",
+    "url": "https://www.juniper.net/us/en/products/switches/ex-series/ex4100-f-line-of-ethernet-datasheet.html",
+    "retrieved": "2026-09-19"
+  },
+  "jpoe": {
+    "title": "Juniper Power over Ethernet (PoE) User Guide for EX Series Switches (published 2025-08-18)",
+    "url": "https://www.juniper.net/documentation/us/en/software/junos/poe/poe.pdf",
+    "retrieved": "2026-09-19"
+  },
+  "jex4400": {
+    "title": "Juniper EX4400 Line of Ethernet Switches Data Sheet",
+    "url": "https://www.juniper.net/gb/en/products/switches/ex-series/ex4400-line-of-ethernet-switches-datasheet.html",
+    "retrieved": "2026-09-19"
+  },
+  "jex4000": {
+    "title": "HPE Juniper Networking EX4000 Line of Ethernet Switches Data Sheet (a00150799enw, Rev 1)",
+    "url": "https://www.hpe.com/us/en/collaterals/collateral.a00150799enw.html",
+    "retrieved": "2026-09-19"
+  },
+  "c9350": {
+    "title": "Cisco C9350 Series Smart Switches Data Sheet (C78-5887691-02)",
+    "url": "https://www.cisco.com/c/dam/en/us/products/collateral/switches/c9350-series-smart-switches/c9350-series-smart-switches-ds.pdf",
+    "retrieved": "2026-09-19"
   }
 }

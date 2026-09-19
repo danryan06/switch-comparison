@@ -1,0 +1,486 @@
+{
+  "id": "c9350",
+  "vendor": "Cisco",
+  "family": "C9350 Smart Switch",
+  "source": "c9350",
+  "stacking": {
+    "tech": "StackWise-1.6T",
+    "bandwidthGbps": 1600,
+    "maxMembers": 8,
+    "frontPanel": false,
+    "note": "Dedicated rear stack ports. Stacks only with other C9350 models at the same license level; not compatible with Catalyst 9300 stack or StackPower cables. StackPower+ pools power across up to 4 switches"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Full L3 incl. BGP, VRF, SD-Access, and BGP EVPN (IOS XE 26.1.1 and later); features depend on license tier"
+  },
+  "routeScale": "Up to 192,000 IPv4 / 96,000 IPv6 routes per the scale table (default SDM: 192,000 LPM, 64,000 host); the overview section says 256,000 IPv4",
+  "macTable": "64,000",
+  "macsec": "AES-GCM-256 at line rate; IPsec up to 100G",
+  "buffer": "Up to 36 MB (18 MB per ASIC)",
+  "power": {
+    "summary": "Three hot-swap PSU bays (500W, 850W, 1600W); combined or N+1 mode; StackPower+. The 1600W PSU delivers 1200W on 115V input",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "One PSU included; up to two more sold separately (internal, hot-swap); StackPower+ can pool power across up to 4 switches"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Cisco Networking Subscription (unified licensing and support across Meraki dashboard, Catalyst Center, or CLI management) or Enterprise Agreement",
+  "verify": [
+    "routeScale"
+  ],
+  "models": [
+    {
+      "sku": "C9350-24T",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "m9350",
+      "poeBudgets": [],
+      "switchingGbps": 448,
+      "forwardingMpps": 333.312
+    },
+    {
+      "sku": "C9350-48T",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "m9350",
+      "poeBudgets": [],
+      "switchingGbps": 496,
+      "forwardingMpps": 369.024
+    },
+    {
+      "sku": "C9350-24P",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "m9350",
+      "poeBudgets": [
+        {
+          "config": "1x 850W (default)",
+          "watts": 625
+        },
+        {
+          "config": "1x 1600W",
+          "watts": 720
+        },
+        {
+          "config": "850W + 500W",
+          "watts": 720
+        }
+      ],
+      "switchingGbps": 448,
+      "forwardingMpps": 333.312
+    },
+    {
+      "sku": "C9350-48P",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "m9350",
+      "poeBudgets": [
+        {
+          "config": "1x 850W (default)",
+          "watts": 625
+        },
+        {
+          "config": "850W + 500W",
+          "watts": 1125
+        },
+        {
+          "config": "1x 1600W",
+          "watts": 1375
+        },
+        {
+          "config": "850W + 850W",
+          "watts": 1440
+        },
+        {
+          "config": "1600W + 500W",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 496,
+      "forwardingMpps": 369.024
+    },
+    {
+      "sku": "C9350-24U",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "m9350",
+      "poeBudgets": [
+        {
+          "config": "1x 850W (default)",
+          "watts": 625
+        },
+        {
+          "config": "850W + 500W",
+          "watts": 1125
+        },
+        {
+          "config": "1x 1600W",
+          "watts": 1375
+        },
+        {
+          "config": "850W + 850W",
+          "watts": 1440
+        },
+        {
+          "config": "1600W + 500W",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 448,
+      "forwardingMpps": 333.312
+    },
+    {
+      "sku": "C9350-48U",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "m9350",
+      "poeBudgets": [
+        {
+          "config": "1x 850W (default)",
+          "watts": 625
+        },
+        {
+          "config": "850W + 500W",
+          "watts": 1125
+        },
+        {
+          "config": "1x 1600W",
+          "watts": 1375
+        },
+        {
+          "config": "850W + 850W",
+          "watts": 1475
+        },
+        {
+          "config": "1600W + 500W",
+          "watts": 1875
+        },
+        {
+          "config": "850W + 1600W",
+          "watts": 2225
+        },
+        {
+          "config": "2x 1600W",
+          "watts": 2880
+        }
+      ],
+      "switchingGbps": 496,
+      "forwardingMpps": 369.024
+    },
+    {
+      "sku": "C9350-24HX",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "m9350",
+      "poeBudgets": [
+        {
+          "config": "1x 1600W (default)",
+          "watts": 1265
+        },
+        {
+          "config": "1600W + 500W",
+          "watts": 1765
+        },
+        {
+          "config": "1600W + 850W",
+          "watts": 2115
+        },
+        {
+          "config": "2x 1600W",
+          "watts": 2160
+        }
+      ],
+      "switchingGbps": 880,
+      "forwardingMpps": 654.72
+    },
+    {
+      "sku": "C9350-48HX",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "m9350x",
+      "poeBudgets": [
+        {
+          "config": "1x 1600W (default)",
+          "watts": 1150
+        },
+        {
+          "config": "1600W + 500W",
+          "watts": 1650
+        },
+        {
+          "config": "1600W + 850W",
+          "watts": 2000
+        },
+        {
+          "config": "2x 1600W",
+          "watts": 2750
+        },
+        {
+          "config": "3x 1600W",
+          "watts": 4320
+        }
+      ],
+      "switchingGbps": 1760,
+      "forwardingMpps": 1309.44
+    },
+    {
+      "sku": "C9350-48HXN",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 10,
+          "poeWatts": 90
+        },
+        {
+          "count": 36,
+          "speedGbps": 5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "m9350",
+      "poeBudgets": [
+        {
+          "config": "1x 850W (default)",
+          "watts": 470
+        },
+        {
+          "config": "850W + 500W",
+          "watts": 970
+        },
+        {
+          "config": "1x 1600W",
+          "watts": 1220
+        },
+        {
+          "config": "850W + 850W",
+          "watts": 1320
+        },
+        {
+          "config": "850W + 1600W",
+          "watts": 2070
+        },
+        {
+          "config": "2x 1600W",
+          "watts": 2820
+        },
+        {
+          "config": "3x 1600W",
+          "watts": 4320
+        }
+      ],
+      "switchingGbps": 1000,
+      "forwardingMpps": 744
+    },
+    {
+      "sku": "C9350-48HXG",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 90
+        },
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "m9350",
+      "poeBudgets": [
+        {
+          "config": "1x 850W (default)",
+          "watts": 450
+        },
+        {
+          "config": "850W + 500W",
+          "watts": 950
+        },
+        {
+          "config": "1x 1600W",
+          "watts": 1200
+        },
+        {
+          "config": "850W + 850W",
+          "watts": 1300
+        },
+        {
+          "config": "850W + 1600W",
+          "watts": 2050
+        },
+        {
+          "config": "2x 1600W",
+          "watts": 2800
+        },
+        {
+          "config": "3x 1600W",
+          "watts": 4320
+        }
+      ],
+      "switchingGbps": 928,
+      "forwardingMpps": 690.432,
+      "buffer": "Deep buffer model (adds 8 GB DDR for buffering)",
+      "note": "Adds SyncE port and an 8-core CPU with integrated GPU"
+    },
+    {
+      "sku": "C9350-48HM",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "m9350",
+      "poeBudgets": [
+        {
+          "config": "1x 850W (default)",
+          "watts": 570
+        },
+        {
+          "config": "850W + 500W",
+          "watts": 1070
+        },
+        {
+          "config": "1x 1600W",
+          "watts": 1320
+        },
+        {
+          "config": "850W + 850W",
+          "watts": 1420
+        },
+        {
+          "config": "850W + 1600W",
+          "watts": 2170
+        },
+        {
+          "config": "2x 1600W",
+          "watts": 2920
+        },
+        {
+          "config": "3x 1600W",
+          "watts": 4320
+        }
+      ],
+      "switchingGbps": 640,
+      "forwardingMpps": 476.16
+    },
+    {
+      "sku": "C9350-48TX",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "m9350x",
+      "poeBudgets": [],
+      "switchingGbps": 1760,
+      "forwardingMpps": 1309.44
+    },
+    {
+      "sku": "C9350-24S",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "m9350",
+      "poeBudgets": [],
+      "switchingGbps": 448,
+      "forwardingMpps": 333.312
+    },
+    {
+      "sku": "C9350-48S",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "m9350",
+      "poeBudgets": [],
+      "switchingGbps": 496,
+      "forwardingMpps": 369.024
+    },
+    {
+      "sku": "C9350-12Y",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "m9350",
+      "poeBudgets": [],
+      "switchingGbps": 1000,
+      "forwardingMpps": 744
+    },
+    {
+      "sku": "C9350-24Y",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "m9350x",
+      "poeBudgets": [],
+      "switchingGbps": 2000,
+      "forwardingMpps": 1488
+    }
+  ]
+}

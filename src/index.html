@@ -440,7 +440,7 @@ function sizeOne(s,req){
     if(s.pd)notes.push({t:"Can be PoE powered"});
     if(req.stack&&f.stack.max!==null&&f.stack.max>1&&u>f.stack.max)notes.push({w:1,t:`Exceeds the ${f.stack.max}-member ${f.stack.t} limit`});
     if(up.vsf)notes.push({w:1,t:`VSF stacking uses ${up.vsf} uplink ports, leaving ${up.n}`});
-    if(req.l3==="bgp"&&s.fam.startsWith("c"))notes.push({t:"BGP needs Network Advantage"});
+    if(req.l3==="bgp"&&s.fam.startsWith("c")&&s.fam!=="c9350")notes.push({t:"BGP needs Network Advantage"});
     if(req.l3==="ospf"&&s.fam.startsWith("c9200"))notes.push({t:"Full OSPF needs Network Advantage"});
     if(isMod(s)&&req.upN>0)notes.push({t:"Uplink module required: "+up.opt.n.split(":")[0]+" (sold separately)"});
     if(s.note)notes.push({t:s.note});
@@ -604,7 +604,7 @@ document.querySelectorAll("nav.tabs button").forEach(b=>b.addEventListener("clic
 document.addEventListener("click",e=>{const g=e.target.closest("[data-goto]");if(g){e.preventDefault();showView(g.dataset.goto)}});
 
 /* ---------- Needs checking ---------- */
-const OWN_LABEL={psu:"PoE budget",uplinks:"Uplink options",ports:"Access ports"};
+const OWN_LABEL={psu:"PoE budget",poeBudgets:"PoE budget",uplinks:"Uplink options",ports:"Access ports",accessPorts:"Access ports",forwardingMpps:"Forwarding rate",switchingGbps:"Switching capacity",stacking:"Stacking"};
 const FAM_LABEL={macsec:"MACsec support varies by model",bgp:"BGP support varies by model",routing:"Dynamic routing support varies by model"};
 (function(){
   const rows=SKUS.filter(s=>s.own.length||s.psu.some(p=>p[2])).map(s=>{

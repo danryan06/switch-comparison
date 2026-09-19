@@ -384,5 +384,230 @@
         ]
       }
     ]
+  },
+  "jex4100": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 1/10G SFP+ uplinks + 4x 10/25G SFP28 VC/uplink ports (fixed)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 10
+          },
+          {
+            "count": 4,
+            "speedGbps": 25
+          }
+        ]
+      }
+    ]
+  },
+  "jex4100f": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 1/10G SFP+ uplinks + 4x 10G SFP+ VC/uplink ports (fixed)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 10
+          },
+          {
+            "count": 4,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "jex4100f12": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 10G mGig RJ45 uplinks + 4x 10G SFP+ VC/uplink ports (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 10
+          },
+          {
+            "count": 4,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "jex4400": {
+    "modular": true,
+    "options": [
+      {
+        "label": "No extension module: 2x 100G VC/uplink ports",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 100
+          }
+        ]
+      },
+      {
+        "label": "4x 1/10G SFP+ extension module + 2x 100G VC/uplink ports",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 10
+          },
+          {
+            "count": 2,
+            "speedGbps": 100
+          }
+        ]
+      },
+      {
+        "label": "4x 1/10/25G SFP28 extension module + 2x 100G VC/uplink ports",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 25
+          },
+          {
+            "count": 2,
+            "speedGbps": 100
+          }
+        ]
+      },
+      {
+        "label": "1x 100G QSFP28 extension module + 2x 100G VC/uplink ports",
+        "ports": [
+          {
+            "count": 1,
+            "speedGbps": 100
+          },
+          {
+            "count": 2,
+            "speedGbps": 100
+          }
+        ]
+      }
+    ]
+  },
+  "jex4000": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 1/10G SFP+ uplinks + 2x 10G SFP+ VC/uplink ports (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 10
+          },
+          {
+            "count": 2,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "jex40008p": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 1/10G SFP+ + 2x 1G RJ45 uplinks (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 10
+          },
+          {
+            "count": 2,
+            "speedGbps": 1
+          }
+        ]
+      }
+    ]
+  },
+  "m9350": {
+    "modular": true,
+    "options": [
+      {
+        "label": "C9350-NM-8M: 8x mGig 10G RJ45",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 10
+          }
+        ]
+      },
+      {
+        "label": "C9350-NM-8Y: 8x 25/10/1G (or 4x 50G)",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 25
+          }
+        ]
+      },
+      {
+        "label": "C9350-NM-2C: 2x 100/40G",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 100
+          }
+        ]
+      }
+    ]
+  },
+  "m9350x": {
+    "modular": true,
+    "options": [
+      {
+        "label": "C9350-NM-8M: 8x mGig 10G RJ45",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 10
+          }
+        ]
+      },
+      {
+        "label": "C9350-NM-8Y: 8x 25/10/1G (or 4x 50G)",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 25
+          }
+        ]
+      },
+      {
+        "label": "C9350-NM-2C: 2x 100/40G",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 100
+          }
+        ]
+      },
+      {
+        "label": "C9350-NM-8L: 8x 50/25/10/1G",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 50
+          }
+        ]
+      },
+      {
+        "label": "C9350-NM-4C: 4x 100/40G",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 100
+          }
+        ]
+      }
+    ]
   }
 }

@@ -1,0 +1,347 @@
+{
+  "id": "jex4400",
+  "vendor": "Juniper",
+  "family": "EX4400",
+  "source": "jex4400",
+  "stacking": {
+    "tech": "Virtual Chassis",
+    "bandwidthGbps": null,
+    "maxMembers": 10,
+    "frontPanel": true,
+    "note": "Stacks over 2x 100G ports (rear panel; front on the 24X) that default to Virtual Chassis and can be reconfigured or channelized as uplinks"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "OSPF, BGP, EVPN-VXLAN, VRF. OSPF and BGP need an additional license"
+  },
+  "routeScale": "Not yet captured",
+  "macTable": "112,000",
+  "macsec": "AES-256 on access ports and 25G/100G extension modules",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Dual hot-swap, load-sharing PSU bays; PoE budget depends on PSU model and 110V vs 230V input",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "One PSU included; second sold separately (internal, hot-swap, load-sharing)"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Juniper Flex: Standard included; Advanced or Premium (perpetual or subscription, priced by port class) adds routing features and Mist Wired Assurance",
+  "verify": [
+    "routeScale"
+  ],
+  "models": [
+    {
+      "sku": "EX4400-24T",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "jex4400",
+      "poeBudgets": [],
+      "switchingGbps": 648,
+      "forwardingMpps": 333,
+      "verify": [
+        "forwardingMpps",
+        "switchingGbps"
+      ],
+      "verifyNote": "Forwarding rate and switching capacity entered from a published EX4400 throughput table; not yet cross-checked against the datasheet",
+      "note": "Also sold as -24T-AFI"
+    },
+    {
+      "sku": "EX4400-48T",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "jex4400",
+      "poeBudgets": [],
+      "switchingGbps": 696,
+      "forwardingMpps": 369,
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Forwarding rate entered from a published EX4400 throughput table; not yet cross-checked against the datasheet",
+      "note": "Also sold as -48T-AFI and -48T-DC"
+    },
+    {
+      "sku": "EX4400-24P",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "jex4400",
+      "poeBudgets": [
+        {
+          "config": "1x 1050W AC (included)",
+          "watts": 783
+        },
+        {
+          "config": "1x 1600W AC, 230V input",
+          "watts": 1320
+        },
+        {
+          "config": "2x 1050W AC",
+          "watts": 1806
+        },
+        {
+          "config": "2x 1600W AC, 230V input",
+          "watts": 2160
+        }
+      ],
+      "switchingGbps": 648,
+      "forwardingMpps": 333,
+      "verify": [
+        "forwardingMpps",
+        "switchingGbps"
+      ],
+      "verifyNote": "Forwarding rate and switching capacity entered from a published EX4400 throughput table; not yet cross-checked against the datasheet"
+    },
+    {
+      "sku": "EX4400-48P",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "jex4400",
+      "poeBudgets": [
+        {
+          "config": "1x 1600W AC, 110V input",
+          "watts": 773
+        },
+        {
+          "config": "1x 1600W AC, 230V input",
+          "watts": 1310
+        },
+        {
+          "config": "2x 1600W AC, 110V input",
+          "watts": 1796
+        },
+        {
+          "config": "2x 1600W AC, 230V input",
+          "watts": 2200
+        }
+      ],
+      "switchingGbps": 696,
+      "forwardingMpps": 369,
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Forwarding rate entered from a published EX4400 throughput table; not yet cross-checked against the datasheet"
+    },
+    {
+      "sku": "EX4400-48XP",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "jex4400",
+      "poeBudgets": [
+        {
+          "config": "1x 2000W AC, 110V input",
+          "watts": 724
+        },
+        {
+          "config": "1x 2000W AC, 230V input",
+          "watts": 1650
+        },
+        {
+          "config": "2x 2000W AC, 110V input",
+          "watts": 1748
+        },
+        {
+          "config": "2x 2000W AC, 230V input",
+          "watts": 3600
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "verify": [
+        "forwardingMpps",
+        "switchingGbps"
+      ],
+      "verifyNote": "Datasheet publishes this figure; not yet captured (switching capacity and forwarding rate)",
+      "note": "Ships with 250V power cords by default"
+    },
+    {
+      "sku": "EX4400-24MP",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "jex4400",
+      "poeBudgets": [
+        {
+          "config": "1x 1050W AC (included)",
+          "watts": 753
+        },
+        {
+          "config": "1x 1600W AC, 230V input",
+          "watts": 1290
+        },
+        {
+          "config": "2x 1050W AC",
+          "watts": 1776
+        },
+        {
+          "config": "2x 1600W AC, 230V input",
+          "watts": 2160
+        }
+      ],
+      "switchingGbps": 1080,
+      "forwardingMpps": null,
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Datasheet publishes this figure; not yet captured (forwarding rate)"
+    },
+    {
+      "sku": "EX4400-48MP",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 10,
+          "poeWatts": 90
+        },
+        {
+          "count": 36,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "jex4400",
+      "poeBudgets": [
+        {
+          "config": "1x 1600W AC, 110V input",
+          "watts": 723
+        },
+        {
+          "config": "1x 1600W AC, 230V input",
+          "watts": 1260
+        },
+        {
+          "config": "2x 1600W AC, 110V input",
+          "watts": 1746
+        },
+        {
+          "config": "2x 1600W AC, 230V input",
+          "watts": 2200
+        }
+      ],
+      "switchingGbps": 1020,
+      "forwardingMpps": 758,
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Forwarding rate entered from a published EX4400 throughput table; not yet cross-checked against the datasheet"
+    },
+    {
+      "sku": "EX4400-48MXP",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 10,
+          "poeWatts": 90
+        },
+        {
+          "count": 36,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "jex4400",
+      "poeBudgets": [
+        {
+          "config": "1x 2000W AC, 110V input",
+          "watts": 724
+        },
+        {
+          "config": "1x 2000W AC, 230V input",
+          "watts": 1650
+        },
+        {
+          "config": "2x 2000W AC, 110V input",
+          "watts": 1748
+        },
+        {
+          "config": "2x 2000W AC, 230V input",
+          "watts": 3600
+        }
+      ],
+      "switchingGbps": 1020,
+      "forwardingMpps": 758,
+      "verify": [
+        "forwardingMpps",
+        "switchingGbps"
+      ],
+      "verifyNote": "Forwarding rate and switching capacity entered from a published EX4400 throughput table; not yet cross-checked against the datasheet",
+      "note": "Ships with 250V power cords by default"
+    },
+    {
+      "sku": "EX4400-24X",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "jex4400",
+      "poeBudgets": [],
+      "switchingGbps": 1080,
+      "forwardingMpps": 803,
+      "verify": [
+        "forwardingMpps",
+        "switchingGbps"
+      ],
+      "verifyNote": "Forwarding rate and switching capacity entered from a published EX4400 throughput table; not yet cross-checked against the datasheet",
+      "note": "Also positioned as a distribution switch; VC must use HGoE"
+    },
+    {
+      "sku": "EX4400-48F",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        },
+        {
+          "count": 36,
+          "speedGbps": 1,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "jex4400",
+      "poeBudgets": [],
+      "switchingGbps": 912,
+      "forwardingMpps": 714,
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Forwarding rate entered from a published EX4400 throughput table; not yet cross-checked against the datasheet"
+    }
+  ]
+}

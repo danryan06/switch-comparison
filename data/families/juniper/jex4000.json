@@ -1,0 +1,275 @@
+{
+  "id": "jex4000",
+  "vendor": "Juniper",
+  "family": "EX4000",
+  "source": "jex4000",
+  "stacking": {
+    "tech": "Virtual Chassis",
+    "bandwidthGbps": null,
+    "maxMembers": 6,
+    "frontPanel": true,
+    "note": "Stacks over 2x 10G SFP+ front ports that default to Virtual Chassis and can be reconfigured as network ports. Mixes with any EX4000 model"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "RIP, OSPF, BGP, IS-IS, VRF-lite, but small route tables. OSPF and BGP need a Flex license"
+  },
+  "routeScale": "1,000 IPv4 unicast prefixes, 7,800 host routes; 1,000 IPv6 prefixes",
+  "macTable": "32,000",
+  "macsec": "Not listed",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Fixed internal PSU",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Fixed internal PSU; no redundant option"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Juniper Flex: Standard included. OSPF and BGP need a Flex Advanced or Premium license (perpetual or 1, 3, 5, or 7-year subscription, priced by port class); subscriptions include Mist Wired Assurance",
+  "verify": [],
+  "models": [
+    {
+      "sku": "EX4000-8P",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "jex40008p",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 120
+        }
+      ],
+      "switchingGbps": 60,
+      "forwardingMpps": 44,
+      "verify": [
+        "forwardingMpps",
+        "stacking"
+      ],
+      "verifyNote": "Datasheet marks forwarding rates as under test, and lists 0 VC ports for the 8P while saying VC mixes with any EX4000 model",
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "No dedicated Virtual Chassis ports are listed for this model"
+    },
+    {
+      "sku": "EX4000-12T",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "jex4000",
+      "poeBudgets": [],
+      "switchingGbps": 104,
+      "forwardingMpps": 77,
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Datasheet marks forwarding rates as under test",
+      "formFactor": "Compact",
+      "fanless": true
+    },
+    {
+      "sku": "EX4000-12P",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "jex4000",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": 77,
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Datasheet marks forwarding rates as under test",
+      "formFactor": "Compact",
+      "fanless": true
+    },
+    {
+      "sku": "EX4000-12MP",
+      "accessPorts": [
+        {
+          "count": 4,
+          "speedGbps": 2.5,
+          "poeWatts": 60
+        },
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "jex4000",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 116,
+      "forwardingMpps": 86,
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Datasheet marks forwarding rates as under test",
+      "formFactor": "Compact",
+      "fanless": true
+    },
+    {
+      "sku": "EX4000-24T",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "jex4000",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": 95,
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Datasheet marks forwarding rates as under test"
+    },
+    {
+      "sku": "EX4000-24P",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "jex4000",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 95,
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Datasheet marks forwarding rates as under test"
+    },
+    {
+      "sku": "EX4000-24MP",
+      "accessPorts": [
+        {
+          "count": 4,
+          "speedGbps": 2.5,
+          "poeWatts": 60
+        },
+        {
+          "count": 20,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "jex4000",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 480
+        }
+      ],
+      "switchingGbps": 140,
+      "forwardingMpps": 104,
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Datasheet marks forwarding rates as under test, and lists this one as 104 Mbps (almost certainly Mpps)"
+    },
+    {
+      "sku": "EX4000-48T",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "jex4000",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": 130,
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Datasheet marks forwarding rates as under test"
+    },
+    {
+      "sku": "EX4000-48P",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "jex4000",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 130,
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Datasheet marks forwarding rates as under test"
+    },
+    {
+      "sku": "EX4000-48MP",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 60
+        },
+        {
+          "count": 40,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "jex4000",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 960
+        }
+      ],
+      "switchingGbps": 200,
+      "forwardingMpps": 148,
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Datasheet marks forwarding rates as under test"
+    }
+  ]
+}

@@ -3,7 +3,13 @@
     "allow": [
       "Bash(git push *)",
       "Bash(git add *)",
-      "Bash(git commit -q -m 'Add Needs checking page and redundant power supply data and filter *)"
+      "Bash(git commit -q -m 'Add Needs checking page and redundant power supply data and filter *)",
+      "Read(//Users/dan/Downloads/**)",
+      "Read(//Users/dan/Downloads/data/**)",
+      "Bash(python3 -c ' *)",
+      "Read(//Users/dan/Downloads/data 3/**)",
+      "Bash(xargs ls -la)",
+      "Bash(python3 -)"
     ]
   }
 }
