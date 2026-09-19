@@ -1,0 +1,182 @@
+{
+  "id": "a6300l",
+  "vendor": "HPE Aruba",
+  "family": "CX 6300L",
+  "source": "a6300",
+  "stacking": {
+    "tech": "VSF",
+    "bandwidthGbps": null,
+    "maxMembers": 10,
+    "frontPanel": true,
+    "note": "Front-panel VSF up to 10 members; stacks only with other 6300L models (not 6300M or 6300F)"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 with IPv4 static routing, QoS, ACLs, and User-Based Tunneling. No dynamic routing"
+  },
+  "routeScale": "Not captured",
+  "macTable": "Not captured",
+  "macsec": "MACsec-256 on Smart Rate downlinks and SFP28 uplinks",
+  "buffer": "Not captured",
+  "power": {
+    "summary": "Two hot-swap PSU bays; PoE budget depends on PSU model (JL086A 680W, JL087A 1050W, JL670A 1600W)",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two hot-swap PSU bays; power supplies ordered separately (JL087A and JL758A can be mixed)"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "CX Foundation features included with no license; CX Advanced optional (Edge Insight, flow capture); HPE Aruba Networking Central subscription for cloud management (Class 2)",
+  "verify": [
+    "routeScale",
+    "macTable",
+    "buffer"
+  ],
+  "models": [
+    {
+      "sku": "S3L75A",
+      "description": "6300L 24 Smart Rate 1/2.5/5/10G Class6 PoE 2SFP56 2SFP28 L2",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "a6300n",
+      "poeBudgets": [
+        {
+          "config": "1x JL086A 680W",
+          "watts": 300
+        },
+        {
+          "config": "1x JL087A 1050W",
+          "watts": 600
+        },
+        {
+          "config": "2x JL086A 680W",
+          "watts": 740
+        },
+        {
+          "config": "1x JL670A 1600W",
+          "watts": 1300
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
+        },
+        {
+          "config": "2x JL670A 1600W",
+          "watts": 2880
+        }
+      ],
+      "switchingGbps": 780,
+      "forwardingMpps": 580,
+      "verify": [
+        "poeBudgets",
+        "switchingGbps",
+        "forwardingMpps"
+      ],
+      "verifyNote": "Covered in the CX 6300 QuickSpecs SKU list; per-PSU PoE and performance figures are from the HPE Japan configuration guide"
+    },
+    {
+      "sku": "S3L76A",
+      "description": "6300L 48 Smart Rate 1/2.5/5G Class8 PoE 2SFP56 2SFP28 L2",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "a6300n",
+      "poeBudgets": [
+        {
+          "config": "1x JL086A 680W",
+          "watts": 370
+        },
+        {
+          "config": "1x JL087A 1050W",
+          "watts": 600
+        },
+        {
+          "config": "2x JL086A 680W",
+          "watts": 740
+        },
+        {
+          "config": "1x JL670A 1600W",
+          "watts": 1300
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
+        },
+        {
+          "config": "2x JL670A 1600W",
+          "watts": 2880
+        }
+      ],
+      "switchingGbps": 780,
+      "forwardingMpps": 580,
+      "verify": [
+        "poeBudgets",
+        "switchingGbps",
+        "forwardingMpps"
+      ],
+      "verifyNote": "Covered in the CX 6300 QuickSpecs SKU list; per-PSU PoE and performance figures are from the HPE Japan configuration guide"
+    },
+    {
+      "sku": "S3L77A",
+      "description": "6300L 48 Smart Rate 1/2.5/5G Class6/8 PoE 2SFP56 2SFP+ LRM L2",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 5,
+          "poeWatts": 90
+        },
+        {
+          "count": 36,
+          "speedGbps": 5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "a6300n10",
+      "poeBudgets": [
+        {
+          "config": "1x JL086A 680W",
+          "watts": 370
+        },
+        {
+          "config": "1x JL087A 1050W",
+          "watts": 600
+        },
+        {
+          "config": "2x JL086A 680W",
+          "watts": 740
+        },
+        {
+          "config": "1x JL670A 1600W",
+          "watts": 1300
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
+        },
+        {
+          "config": "2x JL670A 1600W",
+          "watts": 2880
+        }
+      ],
+      "switchingGbps": 720,
+      "forwardingMpps": 535,
+      "verify": [
+        "poeBudgets",
+        "switchingGbps",
+        "forwardingMpps"
+      ],
+      "verifyNote": "Covered in the CX 6300 QuickSpecs SKU list; per-PSU PoE and performance figures are from the HPE Japan configuration guide"
+    }
+  ]
+}

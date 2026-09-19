@@ -1,0 +1,545 @@
+{
+  "id": "a6300m2",
+  "vendor": "HPE Aruba",
+  "family": "CX 6300M (SFP56/SFP28 and QSFP28 models)",
+  "source": "a6300",
+  "stacking": {
+    "tech": "VSF",
+    "bandwidthGbps": 200,
+    "maxMembers": 10,
+    "frontPanel": true,
+    "note": "Front-panel VSF up to 10 members; stacks with other 6300M and 6300F models but not 6300L. QSFP28 models stack at 400 Gbps using QSFP56-to-SFP56 DACs"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Full L3 incl. BGP, EVPN, VXLAN, VRF, OSPF"
+  },
+  "routeScale": "61,000 IPv4 unicast",
+  "macTable": "32,768",
+  "macsec": "MACsec-256 on SFP28 uplink ports and Smart Rate / SR10 ports",
+  "buffer": "16 MB",
+  "power": {
+    "summary": "Two hot-swap PSU bays; PoE budget depends on PSU model (JL086A 680W, JL087A 1050W, JL670A 1600W)",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two hot-swap PSU bays; power supplies ordered separately (JL087A and JL758A can be mixed)"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "CX Foundation features included with no license; CX Advanced optional (Edge Insight, flow capture); HPE Aruba Networking Central subscription for cloud management (Class 3)",
+  "verify": [],
+  "models": [
+    {
+      "sku": "R8S89A",
+      "description": "6300M 24 Smart Rate 1/2.5/5/10G Class6 PoE 2SFP56 2SFP28",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "a6300n",
+      "poeBudgets": [
+        {
+          "config": "1x JL086A 680W",
+          "watts": 300
+        },
+        {
+          "config": "1x JL087A 1050W",
+          "watts": 600
+        },
+        {
+          "config": "2x JL086A 680W",
+          "watts": 740
+        },
+        {
+          "config": "1x JL670A 1600W",
+          "watts": 1300
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
+        },
+        {
+          "config": "2x JL670A 1600W",
+          "watts": 2880
+        }
+      ],
+      "switchingGbps": 880,
+      "forwardingMpps": 654,
+      "verify": [
+        "poeBudgets"
+      ],
+      "verifyNote": "QuickSpecs confirm 880 Gbps / 654 Mpps and max 2880W PoE; per-PSU splits are from the HPE Japan configuration guide"
+    },
+    {
+      "sku": "S6X60A",
+      "description": "6300M 24G Class8 PoE 2SFP56 2SFP28",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "a6300n",
+      "poeBudgets": [
+        {
+          "config": "1x JL086A 680W",
+          "watts": 300
+        },
+        {
+          "config": "1x JL087A 1050W",
+          "watts": 600
+        },
+        {
+          "config": "2x JL086A 680W",
+          "watts": 740
+        },
+        {
+          "config": "1x JL670A 1600W",
+          "watts": 1300
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
+        },
+        {
+          "config": "2x JL670A 1600W",
+          "watts": 2880
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "verify": [
+        "switchingGbps",
+        "forwardingMpps",
+        "poeBudgets"
+      ],
+      "verifyNote": "QuickSpecs list this SKU but mark performance as to be confirmed. Per-PSU PoE figures are from the HPE Japan configuration guide"
+    },
+    {
+      "sku": "S6X58A",
+      "description": "6300M 16G 8 Smart Rate 1/2.5/5/10G Class8 PoE 2SFP56 2SFP28",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 10,
+          "poeWatts": 90
+        },
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "a6300n",
+      "poeBudgets": [
+        {
+          "config": "1x JL086A 680W",
+          "watts": 300
+        },
+        {
+          "config": "1x JL087A 1050W",
+          "watts": 600
+        },
+        {
+          "config": "2x JL086A 680W",
+          "watts": 740
+        },
+        {
+          "config": "1x JL670A 1600W",
+          "watts": 1300
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
+        },
+        {
+          "config": "2x JL670A 1600W",
+          "watts": 2880
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "verify": [
+        "switchingGbps",
+        "forwardingMpps",
+        "poeBudgets"
+      ],
+      "verifyNote": "QuickSpecs list this SKU but do not publish performance. Class 8 PoE on all 24 ports follows the English product name (16x 1G + 8x Smart Rate 10G Class8 PoE). Per-PSU PoE figures are from the HPE Japan configuration guide"
+    },
+    {
+      "sku": "S4P41A",
+      "description": "6300M 16 Smart Rate 5G 32G Class8 PoE 2SFP28 2SFP56",
+      "accessPorts": [
+        {
+          "count": 32,
+          "speedGbps": 1,
+          "poeWatts": 90
+        },
+        {
+          "count": 16,
+          "speedGbps": 5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "a6300n",
+      "poeBudgets": [
+        {
+          "config": "1x JL086A 680W",
+          "watts": 370
+        },
+        {
+          "config": "1x JL087A 1050W",
+          "watts": 600
+        },
+        {
+          "config": "2x JL086A 680W",
+          "watts": 740
+        },
+        {
+          "config": "1x JL670A 1600W",
+          "watts": 1300
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
+        },
+        {
+          "config": "2x JL670A 1600W",
+          "watts": 2880
+        }
+      ],
+      "switchingGbps": 524,
+      "forwardingMpps": 390,
+      "note": "The 16 dual-mode ports run as 16x 5G or 8x 10G (even ports only)",
+      "verify": [
+        "poeBudgets",
+        "switchingGbps",
+        "forwardingMpps"
+      ],
+      "verifyNote": "English QuickSpecs name this as 32x 1G plus 16 Smart Rate 5G Class 8. Per-PSU PoE and performance figures are from the HPE Japan configuration guide"
+    },
+    {
+      "sku": "S4P42A",
+      "description": "6300M 32 Smart Rate 5G Class8 PoE 8SFP+ 2SFP28 2SFP56",
+      "accessPorts": [
+        {
+          "count": 32,
+          "speedGbps": 5,
+          "poeWatts": 90
+        },
+        {
+          "count": 8,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "a6300n",
+      "poeBudgets": [
+        {
+          "config": "1x JL086A 680W",
+          "watts": 370
+        },
+        {
+          "config": "1x JL087A 1050W",
+          "watts": 600
+        },
+        {
+          "config": "2x JL086A 680W",
+          "watts": 740
+        },
+        {
+          "config": "1x JL670A 1600W",
+          "watts": 1300
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
+        },
+        {
+          "config": "2x JL670A 1600W",
+          "watts": 2880
+        }
+      ],
+      "switchingGbps": 780,
+      "forwardingMpps": 580,
+      "note": "8 SFP+ ports support LRM. Dual-mode 5G/10G behaviour is not restated in the English QuickSpecs",
+      "verify": [
+        "poeBudgets",
+        "switchingGbps",
+        "forwardingMpps"
+      ],
+      "verifyNote": "English QuickSpecs name this as 32 Smart Rate 5G Class 8 plus 8 SFP+. Per-PSU PoE and performance figures are from the HPE Japan configuration guide"
+    },
+    {
+      "sku": "R8S90A",
+      "description": "6300M 48 Smart Rate 1/2.5/5G Class8 PoE 2SFP56 2SFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "a6300n",
+      "poeBudgets": [
+        {
+          "config": "1x JL086A 680W",
+          "watts": 370
+        },
+        {
+          "config": "1x JL087A 1050W",
+          "watts": 600
+        },
+        {
+          "config": "2x JL086A 680W",
+          "watts": 740
+        },
+        {
+          "config": "1x JL670A 1600W",
+          "watts": 1300
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
+        },
+        {
+          "config": "2x JL670A 1600W",
+          "watts": 2880
+        }
+      ],
+      "switchingGbps": 880,
+      "forwardingMpps": 654,
+      "verify": [
+        "poeBudgets"
+      ],
+      "verifyNote": "QuickSpecs confirm 880 Gbps / 654 Mpps and max 2880W PoE; per-PSU splits are from the HPE Japan configuration guide"
+    },
+    {
+      "sku": "R8S91A",
+      "description": "6300M 48 Smart Rate 1/2.5/5G Class8 Class6 PoE 2SFP56 2SFP+",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 5,
+          "poeWatts": 90
+        },
+        {
+          "count": 36,
+          "speedGbps": 5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "a6300n10",
+      "poeBudgets": [
+        {
+          "config": "1x JL086A 680W",
+          "watts": 370
+        },
+        {
+          "config": "1x JL087A 1050W",
+          "watts": 600
+        },
+        {
+          "config": "2x JL086A 680W",
+          "watts": 740
+        },
+        {
+          "config": "1x JL670A 1600W",
+          "watts": 1300
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
+        },
+        {
+          "config": "2x JL670A 1600W",
+          "watts": 2880
+        }
+      ],
+      "switchingGbps": 880,
+      "forwardingMpps": 654,
+      "note": "SFP+ ports support LRM and MACsec",
+      "verify": [
+        "poeBudgets"
+      ],
+      "verifyNote": "QuickSpecs list 880 Gbps / 654 Mpps and max 2880W PoE; per-PSU splits are from the HPE Japan configuration guide"
+    },
+    {
+      "sku": "S6X59A",
+      "description": "6300M 48G Class8 PoE 2SFP56 2SFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "a6300n",
+      "poeBudgets": [
+        {
+          "config": "1x JL086A 680W",
+          "watts": 300
+        },
+        {
+          "config": "1x JL087A 1050W",
+          "watts": 600
+        },
+        {
+          "config": "2x JL086A 680W",
+          "watts": 740
+        },
+        {
+          "config": "1x JL670A 1600W",
+          "watts": 1300
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
+        },
+        {
+          "config": "2x JL670A 1600W",
+          "watts": 2880
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "verify": [
+        "switchingGbps",
+        "forwardingMpps",
+        "poeBudgets"
+      ],
+      "verifyNote": "QuickSpecs list this SKU but mark performance as to be confirmed. Per-PSU PoE figures are from the HPE Japan configuration guide",
+      "note": "Also supports the S4V98A 2650W PSU (PoE figures not yet published)"
+    },
+    {
+      "sku": "S0E91A",
+      "description": "6300M 48 Smart Rate 1/2.5/5/10G Class8 PoE 4QSFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "a6300q",
+      "poeBudgets": [
+        {
+          "config": "1x JL086A 680W",
+          "watts": 300
+        },
+        {
+          "config": "1x JL087A 1050W",
+          "watts": 600
+        },
+        {
+          "config": "2x JL086A 680W",
+          "watts": 740
+        },
+        {
+          "config": "1x JL670A 1600W",
+          "watts": 1300
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
+        },
+        {
+          "config": "2x JL670A 1600W",
+          "watts": 2640
+        }
+      ],
+      "switchingGbps": 1760,
+      "forwardingMpps": 1310,
+      "verify": [
+        "poeBudgets"
+      ],
+      "verifyNote": "QuickSpecs confirm 1760 Gbps / 1310 Mpps and max 2640W PoE; per-PSU splits below that are from the HPE Japan configuration guide"
+    },
+    {
+      "sku": "S0E92A",
+      "description": "6300M 48 Smart Rate 1/2.5/5/10G Class8 PoE 4QSFP28 4320W",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "a6300q",
+      "poeBudgets": [
+        {
+          "config": "2x S4V98A 2650W",
+          "watts": 4320
+        }
+      ],
+      "switchingGbps": 1760,
+      "forwardingMpps": 1310
+    },
+    {
+      "sku": "R8S92A",
+      "description": "6300M 24SFP+ 2SFP56 2SFP28",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "a6300n",
+      "poeBudgets": [],
+      "switchingGbps": 880,
+      "forwardingMpps": 654,
+      "note": "SFP+ ports support LRM"
+    },
+    {
+      "sku": "S4P44A",
+      "description": "6300M 24SFP 2SFP28 2SFP56",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "a6300n",
+      "poeBudgets": [],
+      "switchingGbps": 348,
+      "forwardingMpps": 259,
+      "verify": [
+        "switchingGbps",
+        "forwardingMpps"
+      ],
+      "verifyNote": "Performance figures are from the HPE Japan configuration guide; the English QuickSpecs list the SKU but have no spec block"
+    },
+    {
+      "sku": "S4P43A",
+      "description": "6300M 48SFP 2SFP28 2SFP56",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "a6300n",
+      "poeBudgets": [],
+      "switchingGbps": 396,
+      "forwardingMpps": 295,
+      "verify": [
+        "switchingGbps",
+        "forwardingMpps"
+      ],
+      "verifyNote": "Performance figures are from the HPE Japan configuration guide; the English QuickSpecs list the SKU but have no spec block"
+    }
+  ]
+}

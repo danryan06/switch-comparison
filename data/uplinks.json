@@ -679,5 +679,73 @@
         ]
       }
     ]
+  },
+  "a6000g22": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 1G SFP + 2x 1G RJ45 (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 1
+          },
+          {
+            "count": 2,
+            "speedGbps": 1
+          }
+        ]
+      }
+    ]
+  },
+  "a6300n": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 10/25/50G SFP56 + 2x 10/25G SFP28 (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 50
+          },
+          {
+            "count": 2,
+            "speedGbps": 25
+          }
+        ]
+      }
+    ]
+  },
+  "a6300n10": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 10/25/50G SFP56 + 2x 1/10G SFP+ (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 50
+          },
+          {
+            "count": 2,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "a6300q": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 40/100G QSFP28 (fixed; breakout per 2-port block)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 100
+          }
+        ]
+      }
+    ]
   }
 }

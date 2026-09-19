@@ -6,6 +6,7 @@ Corrections and new models are welcome. The one rule: every value must trace to 
 
 1. Find the family file under `data/families/<vendor>/`. If the family is new, copy an existing file from the same vendor and add it to `data/index.json`.
 2. If the datasheet is not already in `data/sources.json`, add it with the title, URL, and the date you retrieved it.
+   Cite the vendor's own English-language document hosted on the vendor's domain. Third-party-hosted or non-English documents may be used only as secondary sources, and values that appear only there must carry a `verify` flag. Mark a non-English source with `"language": "ja"` (or the relevant code); the validator warns about it.
 3. Enter values exactly as the datasheet states them. Do not round, convert, or fill a gap from memory.
 4. If two places in the datasheet disagree, or you had to derive a value, flag it:
    - On a PoE budget: add `"verify": true`.

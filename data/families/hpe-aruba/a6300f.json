@@ -15,9 +15,9 @@
     "bgp": true,
     "summary": "Full L3 incl. BGP, EVPN, VXLAN, VRF. No license needed"
   },
-  "routeScale": "64,000 IPv4 unicast",
-  "macTable": "32,000",
-  "macsec": "Listed for the series, confirm per model",
+  "routeScale": "61,000 IPv4 unicast",
+  "macTable": "32,768",
+  "macsec": "MACsec-256 on Smart Rate, SFP28, and QSFP28 ports where listed",
   "buffer": "8 MB",
   "power": {
     "summary": "Fixed internal PSU",
@@ -29,9 +29,7 @@
   },
   "fansFieldReplaceable": false,
   "licensing": "On-box features need no license; HPE Aruba Networking Central subscription for cloud management",
-  "verify": [
-    "macsec"
-  ],
+  "verify": [],
   "models": [
     {
       "sku": "JL665A",
@@ -46,7 +44,7 @@
       "uplinks": "a56",
       "poeBudgets": [
         {
-          "config": "Internal 900W",
+          "config": "Internal 950W",
           "watts": 740
         }
       ],
@@ -66,7 +64,7 @@
       "uplinks": "a56",
       "poeBudgets": [
         {
-          "config": "Internal 900W",
+          "config": "Internal 950W",
           "watts": 720,
           "verify": true
         }
@@ -76,7 +74,7 @@
       "verify": [
         "psu"
       ],
-      "verifyNote": "Datasheet lists 740W; 24 ports x 30W caps at 720W"
+      "verifyNote": "QuickSpecs list a 950W internal PSU and 370W max PoE; 24 ports x 30W cap at 720W, and the prior data sheet listed 740W"
     },
     {
       "sku": "JL667A",

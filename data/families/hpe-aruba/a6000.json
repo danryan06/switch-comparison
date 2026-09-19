@@ -1,0 +1,188 @@
+{
+  "id": "a6000",
+  "vendor": "HPE Aruba",
+  "family": "CX 6000",
+  "source": "a6000",
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No stacking. Switches are managed individually or from Central"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 with static IPv4/IPv6 routing. No dynamic routing"
+  },
+  "routeScale": "512 IPv4 unicast",
+  "macTable": "8,192",
+  "macsec": "None",
+  "buffer": "12.38 MB (4.5 MB ingress / 7.875 MB egress)",
+  "power": {
+    "summary": "Fixed internal PSU (8-port non-PoE uses an external adapter)",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Fixed internal PSU; no redundant option"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No switch software license required (CX Foundation features included); HPE Aruba Networking Central subscription (Class 1) for cloud management",
+  "verify": [],
+  "models": [
+    {
+      "sku": "R8N89B",
+      "description": "6000 12G Class4 PoE 2G/2SFP 139W",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a6000g22",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 139
+        }
+      ],
+      "switchingGbps": 32,
+      "forwardingMpps": 23.8,
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "Earlier A-suffix SKU: R8N89A (same pattern for R8N85-88A)"
+    },
+    {
+      "sku": "S4R23A",
+      "description": "6000 8G Class4 PoE 2SFP 67W",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g2",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 67
+        }
+      ],
+      "switchingGbps": 20,
+      "forwardingMpps": 14.8,
+      "formFactor": "Compact",
+      "fanless": true
+    },
+    {
+      "sku": "S4R22A",
+      "description": "6000 8G 2SFP",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g2",
+      "poeBudgets": [],
+      "switchingGbps": 20,
+      "forwardingMpps": 14.8,
+      "formFactor": "Compact",
+      "fanless": true,
+      "poweredBy": "External AC adapter (included)"
+    },
+    {
+      "sku": "R8N87B",
+      "description": "6000 24G Class4 PoE 4SFP 370W",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 56,
+      "forwardingMpps": 41.6
+    },
+    {
+      "sku": "R8N88B",
+      "description": "6000 24G 4SFP",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 56,
+      "forwardingMpps": 41.6
+    },
+    {
+      "sku": "R8N85B",
+      "description": "6000 48G Class4 PoE 4SFP 370W",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": 77.3
+    },
+    {
+      "sku": "R9Y03B",
+      "description": "6000 48G Class4 PoE 4SFP 740W",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal 950W",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": 77.3
+    },
+    {
+      "sku": "R8N86B",
+      "description": "6000 48G 4SFP",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 104,
+      "forwardingMpps": 77.3
+    }
+  ]
+}

@@ -10,14 +10,24 @@
     "retrieved": "2026-09-18"
   },
   "a6300": {
+    "title": "HPE Aruba Networking CX 6300 Switch Series QuickSpecs (a00073540enw)",
+    "url": "https://www.hpe.com/us/en/collaterals/collateral.a00073540enw.html",
+    "retrieved": "2026-09-19"
+  },
+  "a6300ds": {
     "title": "HPE Aruba Networking CX 6300 Switch Series Data Sheet",
     "url": "https://www.hpe.com/psnow/doc/a00085162enw",
-    "retrieved": "2026-09-18"
+    "retrieved": "2026-09-19"
   },
   "a6200": {
+    "title": "HPE Aruba Networking CX 6200 Switch Series QuickSpecs (a00059762enw)",
+    "url": "https://www.hpe.com/us/en/collaterals/collateral.a00059762enw.html",
+    "retrieved": "2026-09-19"
+  },
+  "a6200ds": {
     "title": "HPE Aruba Networking CX 6200 Switch Series Data Sheet",
     "url": "https://www.hpe.com/psnow/doc/a00097415enw",
-    "retrieved": "2026-09-18"
+    "retrieved": "2026-09-19"
   },
   "fsa": {
     "title": "Fortinet FortiSwitch Secure Access Series Data Sheet (R65, May 2025)",
@@ -29,19 +39,14 @@
     "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortiswitch-campus-series.pdf",
     "retrieved": "2026-09-18"
   },
-  "a6200f12": {
-    "title": "HPE Aruba Networking CX 6200F 12G Class4 PoE 2G/2SFP+ 139W Switch Data Sheet",
-    "url": "https://www.hpe.com/psnow/doc/PSN1014708953COEN",
-    "retrieved": "2026-09-18"
-  },
   "jex4100": {
-    "title": "Juniper EX4100 Line of Ethernet Switches Data Sheet (1000746-001-EN)",
-    "url": "https://www.juniper.net/gb/en/products/switches/ex-series/ex4100-line-of-ethernet-switches-datasheet.html",
+    "title": "HPE Juniper Networking EX4100 Line of Ethernet Switches Data Sheet (a00150781enw)",
+    "url": "https://www.hpe.com/psnow/doc/a00150781enw",
     "retrieved": "2026-09-19"
   },
   "jex4100f": {
-    "title": "Juniper EX4100-F Line of Ethernet Switches Data Sheet (1000745-001-EN)",
-    "url": "https://www.juniper.net/us/en/products/switches/ex-series/ex4100-f-line-of-ethernet-datasheet.html",
+    "title": "HPE Juniper Networking EX4100-F Line of Ethernet Switches Data Sheet (a00150847enw)",
+    "url": "https://www.hpe.com/psnow/doc/a00150847enw",
     "retrieved": "2026-09-19"
   },
   "jpoe": {
@@ -50,8 +55,8 @@
     "retrieved": "2026-09-19"
   },
   "jex4400": {
-    "title": "Juniper EX4400 Line of Ethernet Switches Data Sheet",
-    "url": "https://www.juniper.net/gb/en/products/switches/ex-series/ex4400-line-of-ethernet-switches-datasheet.html",
+    "title": "HPE Juniper Networking EX4400 Line of Ethernet Switches Data Sheet (a00150783enw)",
+    "url": "https://www.hpe.com/psnow/doc/a00150783enw",
     "retrieved": "2026-09-19"
   },
   "jex4000": {
@@ -117,5 +122,25 @@
   "ui-usw-pro-max-16-poe": {
     "title": "UniFi USW-Pro-Max-16-PoE Tech Specs",
     "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-16-poe?subcategory=all-switching"
+  },
+  "a6000": {
+    "title": "HPE Aruba Networking CX 6000 Switch Series QuickSpecs (a50002592enw)",
+    "url": "https://www.hpe.com/us/en/collaterals/collateral.a50002592enw.html",
+    "retrieved": "2026-09-19"
+  },
+  "a6000ds": {
+    "title": "HPE Aruba Networking CX 6000 Switch Series Data Sheet",
+    "url": "https://www.hpe.com/psnow/doc/a00112996enw",
+    "retrieved": "2026-09-19"
+  },
+  "a6100": {
+    "title": "HPE Aruba Networking CX 6100 Switch Series QuickSpecs (a00021859enw)",
+    "url": "https://www.hpe.com/us/en/collaterals/collateral.a00021859enw.html",
+    "retrieved": "2026-09-19"
+  },
+  "a6100ds": {
+    "title": "HPE Aruba Networking CX 6100 Switch Series Data Sheet",
+    "url": "https://www.hpe.com/psnow/doc/a00106853enw",
+    "retrieved": "2026-09-19"
   }
 }

@@ -15,9 +15,9 @@
     "bgp": true,
     "summary": "Full L3 incl. BGP, EVPN, VXLAN, VRF. No license needed"
   },
-  "routeScale": "64,000 IPv4 unicast",
-  "macTable": "32,000",
-  "macsec": "Listed for the series, confirm per model",
+  "routeScale": "61,000 IPv4 unicast",
+  "macTable": "32,768",
+  "macsec": "MACsec-256 on Smart Rate, SFP28, and QSFP28 ports where listed",
   "buffer": "8 MB",
   "power": {
     "summary": "Dual hot-swap PSUs",
@@ -29,9 +29,7 @@
   },
   "fansFieldReplaceable": true,
   "licensing": "On-box features need no license; HPE Aruba Networking Central subscription for cloud management",
-  "verify": [
-    "macsec"
-  ],
+  "verify": [],
   "models": [
     {
       "sku": "JL658A",
@@ -103,16 +101,11 @@
         },
         {
           "config": "JL670A 1600W",
-          "watts": 1440,
-          "verify": true
+          "watts": 1440
         }
       ],
       "switchingGbps": 640,
-      "forwardingMpps": 476,
-      "verify": [
-        "psu"
-      ],
-      "verifyNote": "Datasheet lists both 1300W and 1440W for a single JL670A"
+      "forwardingMpps": 476
     },
     {
       "sku": "JL661A",

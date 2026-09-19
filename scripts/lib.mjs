@@ -22,6 +22,8 @@ const TIERS = ['l2', 'ospf', 'full'];
 export function validate(data) {
   const errors = [], warnings = [];
   const skus = new Set(), ids = new Set();
+  for (const [k, src] of Object.entries(data.sources))
+    if (src.language && src.language !== 'en') warnings.push(`source ${k}: not in English (${src.language}); add an English primary source and flag values that only appear here`);
   for (const f of data.families) {
     const at = `family ${f.id}`;
     if (ids.has(f.id)) errors.push(`${at}: duplicate family id`);

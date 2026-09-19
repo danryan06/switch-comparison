@@ -1,0 +1,148 @@
+{
+  "id": "a6100",
+  "vendor": "HPE Aruba",
+  "family": "CX 6100",
+  "source": "a6100",
+  "stacking": {
+    "tech": "VSF",
+    "bandwidthGbps": null,
+    "maxMembers": 6,
+    "frontPanel": true,
+    "note": "Front-panel VSF over 1/10G SFP+ (AOS-CX 10.16.1006 or later). 12-port models stack only with other 12-port 6100s; 24- and 48-port models stack with each other. 12-port cannot stack with 24/48-port"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 with static IPv4/IPv6 routing. No dynamic routing"
+  },
+  "routeScale": "512 IPv4 unicast",
+  "macTable": "8,192",
+  "macsec": "None",
+  "buffer": "12.38 MB (4.5 MB ingress / 7.875 MB egress)",
+  "power": {
+    "summary": "Fixed internal PSU",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Fixed internal PSU; no redundant option"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No switch software license required (CX Foundation features included); HPE Aruba Networking Central subscription (Class 1) for cloud management",
+  "verify": [],
+  "models": [
+    {
+      "sku": "JL679A",
+      "description": "6100 12G Class4 PoE 2G/2SFP+ 139W",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a22",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 139
+        }
+      ],
+      "switchingGbps": 68,
+      "forwardingMpps": 45.1,
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "VSF only with other 12-port 6100s"
+    },
+    {
+      "sku": "JL677A",
+      "description": "6100 24G Class4 PoE 4SFP+ 370W",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [
+        {
+          "config": "Internal 500W",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 95.2
+    },
+    {
+      "sku": "JL678A",
+      "description": "6100 24G 4SFP+",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": 95.2
+    },
+    {
+      "sku": "JL675A",
+      "description": "6100 48G Class4 PoE 4SFP+ 370W",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [
+        {
+          "config": "Internal 500W",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 98.6
+    },
+    {
+      "sku": "R9Y04A",
+      "description": "6100 48G Class4 PoE 4SFP+ 740W",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [
+        {
+          "config": "Internal 950W",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 98.6
+    },
+    {
+      "sku": "JL676A",
+      "description": "6100 48G 4SFP+",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "a10",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": 98.6
+    }
+  ]
+}

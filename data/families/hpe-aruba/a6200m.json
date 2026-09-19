@@ -16,9 +16,9 @@
     "summary": "Static, RIP, OSPF. No BGP"
   },
   "routeScale": "2,000 IPv4 unicast",
-  "macTable": "16,000",
+  "macTable": "32,768",
   "macsec": "MACsec-256 on downlinks and 2 uplinks",
-  "buffer": "8 MB",
+  "buffer": "6 MB",
   "power": {
     "summary": "Dual hot-swap PSUs",
     "psuFieldReplaceable": true,
@@ -74,7 +74,7 @@
       "verify": [
         "psu"
       ],
-      "verifyNote": "Datasheet states max 740W only; per-PSU split derived from 6300M PSU ratings"
+      "verifyNote": "QuickSpecs state max 740W only; per-PSU split derived from 6300M PSU ratings. 24 ports x 30W cap usable PoE at 720W"
     },
     {
       "sku": "R8Q69A",
@@ -123,7 +123,7 @@
       "verify": [
         "psu"
       ],
-      "verifyNote": "Datasheet states max 1440W only; per-PSU split derived"
+      "verifyNote": "QuickSpecs state max 1440W only; per-PSU split derived"
     },
     {
       "sku": "R8Q71A",
@@ -162,7 +162,7 @@
       "verify": [
         "psu"
       ],
-      "verifyNote": "Datasheet states max 1440W only; per-PSU split derived"
+      "verifyNote": "QuickSpecs state max 1440W only; per-PSU split derived"
     }
   ]
 }

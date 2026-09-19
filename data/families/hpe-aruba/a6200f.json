@@ -5,10 +5,10 @@
   "source": "a6200",
   "stacking": {
     "tech": "VSF",
-    "bandwidthGbps": null,
+    "bandwidthGbps": 40,
     "maxMembers": 8,
     "frontPanel": true,
-    "note": "Front-panel stacking over the SFP+ uplinks"
+    "note": "Front-panel stacking over the SFP+/SFP uplinks. 12-port models stack only with other 12-port 6200F (20 Gbps). S0M 4SFP models stack at 4 Gbps. 12-port cannot stack with 24/48-port 6200F or 6200M"
   },
   "routing": {
     "tier": "ospf",
@@ -16,9 +16,9 @@
     "summary": "Static, RIP, OSPF. No BGP"
   },
   "routeScale": "2,048 IPv4 unicast",
-  "macTable": "16,000",
+  "macTable": "32,768",
   "macsec": "None",
-  "buffer": "8 MB",
+  "buffer": "6 MB",
   "power": {
     "summary": "Fixed internal PSU",
     "psuFieldReplaceable": false,
@@ -44,7 +44,8 @@
       "uplinks": "a10",
       "poeBudgets": [],
       "switchingGbps": 128,
-      "forwardingMpps": 95.2
+      "forwardingMpps": 95.2,
+      "buffer": "8 MB (6 MB + 2 MB)"
     },
     {
       "sku": "JL725A",
@@ -64,7 +65,8 @@
         }
       ],
       "switchingGbps": 128,
-      "forwardingMpps": 95.2
+      "forwardingMpps": 95.2,
+      "buffer": "8 MB (6 MB + 2 MB)"
     },
     {
       "sku": "JL726A",
@@ -79,7 +81,8 @@
       "uplinks": "a10",
       "poeBudgets": [],
       "switchingGbps": 176,
-      "forwardingMpps": 130.9
+      "forwardingMpps": 130.9,
+      "buffer": "8 MB (6 MB + 2 MB)"
     },
     {
       "sku": "JL727A",
@@ -99,7 +102,8 @@
         }
       ],
       "switchingGbps": 176,
-      "forwardingMpps": 130.9
+      "forwardingMpps": 130.9,
+      "buffer": "8 MB (6 MB + 2 MB)"
     },
     {
       "sku": "JL728A",
@@ -119,7 +123,8 @@
         }
       ],
       "switchingGbps": 176,
-      "forwardingMpps": 130.9
+      "forwardingMpps": 130.9,
+      "buffer": "8 MB (6 MB + 2 MB)"
     },
     {
       "sku": "R8Q72A",
@@ -138,12 +143,106 @@
           "watts": 139
         }
       ],
-      "switchingGbps": null,
-      "forwardingMpps": null,
+      "switchingGbps": 68,
+      "forwardingMpps": 45.1,
       "formFactor": "Compact",
       "fanless": true,
-      "note": "VSF stacking uses the SFP+ ports",
-      "source": "a6200f12"
+      "note": "VSF stacking uses the SFP+ ports and is only with other 12-port 6200F switches (20 Gbps)"
+    },
+    {
+      "sku": "S0M81A",
+      "description": "6200F 24G 4SFP",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 56,
+      "forwardingMpps": 41.7,
+      "note": "Refreshed 6200F with 1G SFP uplinks; VSF stacking bandwidth 4 Gbps"
+    },
+    {
+      "sku": "S0M82A",
+      "description": "6200F 24G Class 4 PoE 4SFP 370W",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 56,
+      "forwardingMpps": 41.7,
+      "note": "Refreshed 6200F with 1G SFP uplinks; VSF stacking bandwidth 4 Gbps"
+    },
+    {
+      "sku": "S0M83A",
+      "description": "6200F 48G 4SFP",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 104,
+      "forwardingMpps": 77.4,
+      "note": "Refreshed 6200F with 1G SFP uplinks; VSF stacking bandwidth 4 Gbps"
+    },
+    {
+      "sku": "S0M84A",
+      "description": "6200F 48G Class 4 PoE 4SFP 370W",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": 77.4,
+      "note": "Refreshed 6200F with 1G SFP uplinks; VSF stacking bandwidth 4 Gbps"
+    },
+    {
+      "sku": "S0M85A",
+      "description": "6200F 48G Class 4 PoE 4SFP 740W",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": 77.4,
+      "note": "Refreshed 6200F with 1G SFP uplinks; VSF stacking bandwidth 4 Gbps"
     }
   ]
 }
