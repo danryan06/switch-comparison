@@ -153,6 +153,11 @@
     "url": "https://arubanetworking.hpe.com/techdocs/hardware/switches/6300/IGSG/igsg_6300.pdf",
     "retrieved": "2026-09-19"
   },
+  "apoe": {
+    "title": "HPE Aruba Networking Power Over Ethernet (PoE) Planning and Implementation Guide for AOS-CX Switches",
+    "url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/Power_Over_Ethernet_Guide-AOS-CX.pdf",
+    "retrieved": "2026-09-19"
+  },
   "jex4400hct": {
     "title": "Juniper EX4400 Hardware Specifications (Pathfinder Hardware Compatibility Tool)",
     "url": "https://apps.juniper.net/hct/product/EX4400/hwspecs",

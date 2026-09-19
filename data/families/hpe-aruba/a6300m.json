@@ -61,11 +61,19 @@
       "poeBudgets": [
         {
           "config": "JL086A 680W",
-          "watts": 370
+          "watts": 300
+        },
+        {
+          "config": "2x JL086A 680W",
+          "watts": 600
         },
         {
           "config": "JL087A 1050W",
-          "watts": 740
+          "watts": 600
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
         },
         {
           "config": "JL670A 1600W",
@@ -73,11 +81,13 @@
         },
         {
           "config": "2x JL670A 1600W",
-          "watts": 2880
+          "watts": 2880,
+          "verify": true
         }
       ],
       "switchingGbps": 880,
-      "forwardingMpps": 654
+      "forwardingMpps": 654,
+      "verifyNote": "The data sheet and QuickSpecs state 2880W of Class 6 PoE with two JL670A supplies, which is also the 48 x 60W port capacity. The PoE planning guide's table gives 2600W for the same configuration, being 2 x 1300W"
     },
     {
       "sku": "JL660A",
@@ -93,15 +103,23 @@
       "poeBudgets": [
         {
           "config": "JL086A 680W",
-          "watts": 370
+          "watts": 300
+        },
+        {
+          "config": "2x JL086A 680W",
+          "watts": 600
         },
         {
           "config": "JL087A 1050W",
-          "watts": 740
+          "watts": 600
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
         },
         {
           "config": "JL670A 1600W",
-          "watts": 1440
+          "watts": 1300
         }
       ],
       "switchingGbps": 640,
@@ -124,8 +142,16 @@
           "watts": 370
         },
         {
+          "config": "2x JL086A 680W",
+          "watts": 740
+        },
+        {
           "config": "JL087A 1050W",
           "watts": 740
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
         },
         {
           "config": "JL670A 1600W",
@@ -152,17 +178,25 @@
           "watts": 370
         },
         {
+          "config": "2x JL086A 680W",
+          "watts": 740
+        },
+        {
           "config": "JL087A 1050W",
-          "watts": 720
+          "watts": 740
+        },
+        {
+          "config": "2x JL087A 1050W",
+          "watts": 1440
         },
         {
           "config": "JL670A 1600W",
-          "watts": 720
+          "watts": 1440
         }
       ],
       "switchingGbps": 448,
       "forwardingMpps": 334,
-      "note": "Budgets above 720W are capped by 24 ports x 30W"
+      "note": "Budgets are the PoE power the supplies make available. 24 ports x 30W caps what this model can actually deliver at 720W"
     },
     {
       "sku": "JL663A",
