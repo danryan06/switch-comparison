@@ -155,5 +155,6 @@
       "switchingGbps": 256,
       "forwardingMpps": 190
     }
-  ]
+  ],
+  "verifyNote": "MACsec listed in the data sheet; cipher and per-model support not stated"
 }

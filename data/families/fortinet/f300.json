@@ -107,16 +107,13 @@
         },
         {
           "config": "Dual AC inputs",
-          "watts": 1560,
-          "verify": true
+          "watts": 1540
         }
       ],
       "switchingGbps": 248,
       "forwardingMpps": 369,
-      "verify": [
-        "psu"
-      ],
-      "verifyNote": "Spec table says 1560W with dual AC; ordering info says 1540W"
+      "note": "Spec table lists 1560W; the lower ordering figure is used for sizing"
     }
-  ]
+  ],
+  "verifyNote": "BGP listed for the campus family; not yet confirmed for 300G models"
 }

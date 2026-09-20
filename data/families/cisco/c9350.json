@@ -29,9 +29,7 @@
   },
   "fansFieldReplaceable": true,
   "licensing": "Cisco Networking Subscription (unified licensing and support across Meraki dashboard, Catalyst Center, or CLI management) or Enterprise Agreement",
-  "verify": [
-    "routeScale"
-  ],
+  "verify": [],
   "models": [
     {
       "sku": "C9350-24T",

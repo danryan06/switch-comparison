@@ -178,5 +178,6 @@
       ],
       "verifyNote": "Covered in the CX 6300 QuickSpecs SKU list; per-PSU PoE and performance figures are from the HPE Japan configuration guide"
     }
-  ]
+  ],
+  "verifyNote": "Route scale, MAC table, and buffer not yet captured from an English source"
 }

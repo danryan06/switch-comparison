@@ -200,7 +200,7 @@
       "verify": [
         "forwardingMpps"
       ],
-      "verifyNote": "Datasheet marks forwarding rates as under test, and lists this one as 104 Mbps (almost certainly Mpps)"
+      "verifyNote": "Datasheet marks forwarding rates as under test"
     },
     {
       "sku": "EX4000-48T",

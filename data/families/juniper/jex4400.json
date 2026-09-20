@@ -15,7 +15,7 @@
     "bgp": true,
     "summary": "OSPF, BGP, EVPN-VXLAN, VRF. OSPF and BGP need an additional license"
   },
-  "routeScale": "Not yet captured",
+  "routeScale": "80,000 IPv4 / 40,000 IPv6 unicast and multicast routes; 24,000 ARP entries",
   "macTable": "112,000",
   "macsec": "AES-256 on access ports and 25G/100G extension modules",
   "buffer": "Not published",
@@ -29,9 +29,7 @@
   },
   "fansFieldReplaceable": true,
   "licensing": "Juniper Flex: Standard included; Advanced or Premium (perpetual or subscription, priced by port class) adds routing features and Mist Wired Assurance",
-  "verify": [
-    "routeScale"
-  ],
+  "verify": [],
   "models": [
     {
       "sku": "EX4400-24T",
@@ -46,11 +44,7 @@
       "poeBudgets": [],
       "switchingGbps": 648,
       "forwardingMpps": 482,
-      "verify": [
-        "forwardingMpps"
-      ],
-      "verifyNote": "Data sheet and Hardware Compatibility Tool state 482 Mpps; the EX4400 product specs page states 333 Mpps",
-      "note": "Also sold as -24T-AFI"
+      "note": "Also sold as -24T-AFI. Juniper's spec page lists 333 Mpps; the data sheet and Hardware Compatibility Tool agree on the stored value"
     },
     {
       "sku": "EX4400-48T",
@@ -65,11 +59,7 @@
       "poeBudgets": [],
       "switchingGbps": 696,
       "forwardingMpps": 517,
-      "verify": [
-        "forwardingMpps"
-      ],
-      "verifyNote": "Data sheet and Hardware Compatibility Tool state 517 Mpps; the EX4400 product specs page states 369 Mpps",
-      "note": "Also sold as -48T-AFI and -48T-DC"
+      "note": "Also sold as -48T-AFI and -48T-DC. Juniper's spec page lists 369 Mpps; the data sheet and Hardware Compatibility Tool agree on the stored value"
     },
     {
       "sku": "EX4400-24P",
@@ -101,10 +91,7 @@
       ],
       "switchingGbps": 648,
       "forwardingMpps": 482,
-      "verify": [
-        "forwardingMpps"
-      ],
-      "verifyNote": "Data sheet and Hardware Compatibility Tool state 482 Mpps; the EX4400 product specs page states 333 Mpps"
+      "note": "Juniper's spec page lists 333 Mpps; the data sheet and Hardware Compatibility Tool agree on the stored value"
     },
     {
       "sku": "EX4400-48P",
@@ -136,10 +123,7 @@
       ],
       "switchingGbps": 696,
       "forwardingMpps": 517,
-      "verify": [
-        "forwardingMpps"
-      ],
-      "verifyNote": "Data sheet and Hardware Compatibility Tool state 517 Mpps; the EX4400 product specs page states 369 Mpps"
+      "note": "Juniper's spec page lists 369 Mpps; the data sheet and Hardware Compatibility Tool agree on the stored value"
     },
     {
       "sku": "EX4400-48XP",
@@ -313,10 +297,10 @@
       "poeBudgets": [],
       "switchingGbps": 912,
       "forwardingMpps": 678,
-      "verify": [
-        "forwardingMpps"
-      ],
-      "verifyNote": "Data sheet and Hardware Compatibility Tool state 678 Mpps; the EX4400 product specs page states 714 Mpps"
+      "note": "Juniper's spec page lists 714 Mpps; the data sheet and Hardware Compatibility Tool agree on the stored value"
     }
+  ],
+  "additionalSources": [
+    "jex4400specs"
   ]
 }

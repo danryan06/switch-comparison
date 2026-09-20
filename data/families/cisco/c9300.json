@@ -239,7 +239,7 @@
       "verify": [
         "psu"
       ],
-      "verifyNote": "Datasheet table shows inconsistent values for 1900W combinations"
+      "verifyNote": "Data sheet 1900W rows are inconsistent, and Cisco sources disagree on the 1100W value (data sheet and TAC document: 490W; a hardware installation guide excerpt: 610W). Confirm with Cisco Power Calculator."
     },
     {
       "sku": "C9300-48UN",

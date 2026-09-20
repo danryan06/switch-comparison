@@ -11,9 +11,9 @@
     "note": "No hardware stacking. A FortiGate manages 8 to 300 switches (model dependent) as one fabric with automatic inter-switch links"
   },
   "routing": {
-    "tier": "ospf",
-    "bgp": false,
-    "summary": "Static; OSPF, RIP, VRRP with Advanced Features license. BGP not confirmed for 400E"
+    "tier": "full",
+    "bgp": true,
+    "summary": "Static; OSPF, RIP, VRRP, BGP (BGP from FortiSwitchOS 7.2.0); dynamic routing needs the Advanced Features license"
   },
   "routeScale": "1,000 IPv4 routes, 5,000 host entries",
   "macTable": "16,000",
@@ -29,9 +29,7 @@
   },
   "fansFieldReplaceable": false,
   "licensing": "No license needed when managed by a FortiGate over FortiLink. Dynamic routing needs the Advanced Features license (FS-SW-LIC-xxx). Cloud or standalone management is a separate subscription",
-  "verify": [
-    "bgp"
-  ],
+  "verify": [],
   "models": [
     {
       "sku": "FS-424E-Fiber",
@@ -93,14 +91,15 @@
       "poeBudgets": [
         {
           "config": "Internal",
-          "watts": 421,
-          "verify": true
+          "watts": 420
         }
       ],
       "switchingGbps": 172,
       "forwardingMpps": 255,
-      "note": "The two 5G ports have no PoE",
-      "verifyNote": "Spec table lists a 420W PoE budget; the ordering description says 421W"
+      "note": "The two 5G ports have no PoE. Ordering description lists 421W"
     }
+  ],
+  "additionalSources": [
+    "fsos720"
   ]
 }

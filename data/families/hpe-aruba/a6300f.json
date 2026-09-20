@@ -101,5 +101,8 @@
       "switchingGbps": 448,
       "forwardingMpps": 334
     }
+  ],
+  "additionalSources": [
+    "aospoe"
   ]
 }

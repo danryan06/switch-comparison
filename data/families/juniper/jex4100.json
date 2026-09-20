@@ -78,16 +78,11 @@
         },
         {
           "config": "2x JPSU-920-AC",
-          "watts": 1440,
-          "verify": true
+          "watts": 1440
         }
       ],
       "switchingGbps": 328,
-      "forwardingMpps": 244,
-      "verify": [
-        "poeBudgets"
-      ],
-      "verifyNote": "Datasheet lists 740W with one PSU and 1440W with two, but 24 ports at 30W cap usable PoE at 720W"
+      "forwardingMpps": 244
     },
     {
       "sku": "EX4100-48P",

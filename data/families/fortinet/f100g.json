@@ -37,7 +37,7 @@
         {
           "count": 2,
           "speedGbps": 5,
-          "poeWatts": 90
+          "poeWatts": 60
         },
         {
           "count": 8,
@@ -59,7 +59,7 @@
       "verify": [
         "ports"
       ],
-      "verifyNote": "Spec table lists the 8 PoE+ ports as 2.5G; ordering info says 1GE. The 802.3bt type on the 5G ports is not stated, 90W assumed"
+      "verifyNote": "802.3bt type on the two 5G ports (Type 3 60W vs Type 4 90W) is not stated; 60W used as the conservative value"
     },
     {
       "sku": "FS-124G",

@@ -165,5 +165,6 @@
         "detail": "Optional FRPS-740 external redundant power supply, sold separately. Not included with the switch."
       }
     }
-  ]
+  ],
+  "verifyNote": "Dynamic routing support per model not yet confirmed against the current feature matrix"
 }
