@@ -58,6 +58,10 @@ A few decisions matter more than the rest, because they are where vendors descri
 
 **Routing tiers.** Every family is `l2` (no routing on the switch), `ospf` (routed access, no BGP), or `full` (BGP available). Licensing needed to unlock routing is described in the family's `licensing` field.
 
+**End-of-sale models stay, but stay out of the way.** A `lifecycle` block records `status` (`current`, `endOfSale`, or `endOfSupport`), the end-of-sale and end-of-support dates, a link to the vendor's EOL notice, and any `replacement` the vendor names. No block means current. The sizer hides anything past end of sale unless you tick "Include end-of-sale models", Browse defaults to current only, and replacements are shown as links to the successor model or family.
+
+**Rugged deployments are described, not inferred.** `ruggedized` marks a model built for harsh environments, with `operatingTempC`, `ipRating`, and `mounting` (`rack`, `desktop`, `wall`, `din`) giving the specifics. Like the other fields, a family value is the default and a model can override it. Browse and the sizer can filter to rugged models only.
+
 ## Verification flags
 
 Some values disagree between two places in the same datasheet, or had to be derived. These carry `verify: true` on a PoE budget, or a `verify` list plus a `verifyNote` on a model or family, and they show as **check** in Browse and are listed on the Needs checking page (linked from the footer) until someone confirms them. See CONTRIBUTING.md for the review workflow.

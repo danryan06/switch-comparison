@@ -41,10 +41,42 @@
     },
     "fansFieldReplaceable": { "type": "boolean" },
     "licensing": { "type": "string" },
+    "additionalSources": { "type": "array", "items": { "type": "string" }, "description": "Further keys into data/sources.json, for vendor documents that supply values the primary source does not" },
     "verify": { "type": "array", "items": { "type": "string" }, "description": "Family-level fields that still need confirming" },
+    "verifyNote": { "type": "string", "description": "Why the family-level fields are flagged" },
+    "lifecycle": { "$ref": "#/$defs/lifecycle", "description": "Family-wide lifecycle state. A model's own lifecycle overrides it" },
+    "ruggedized": { "type": "boolean", "description": "Family default. Overridden per model" },
+    "operatingTempC": { "$ref": "#/$defs/tempRange", "description": "Family default. Overridden per model" },
+    "ipRating": { "type": "string", "description": "Family default, for example IP30. Overridden per model" },
+    "mounting": { "$ref": "#/$defs/mounting", "description": "Family default. Overridden per model" },
     "models": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/model" } }
   },
   "$defs": {
+    "lifecycle": {
+      "type": "object",
+      "description": "Where the product is in its sales and support life. Absent means current.",
+      "required": ["status"],
+      "properties": {
+        "status": { "enum": ["current", "endOfSale", "endOfSupport"], "description": "current: still orderable. endOfSale: no longer orderable but still supported. endOfSupport: past the last day of support" },
+        "endOfSaleDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "Last day the vendor accepts orders. Required once status is endOfSale or endOfSupport" },
+        "endOfSupportDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "Last day of vendor support" },
+        "announcementUrl": { "type": "string", "description": "The vendor's own end-of-life notice" },
+        "replacement": { "type": "array", "items": { "type": "string" }, "description": "SKUs or family ids the vendor names as the successor. Only when the vendor names one" },
+        "note": { "type": "string" }
+      }
+    },
+    "tempRange": {
+      "type": "object",
+      "description": "Operating temperature range in degrees Celsius, as the datasheet states it",
+      "required": ["min", "max"],
+      "properties": { "min": { "type": "number" }, "max": { "type": "number" } }
+    },
+    "mounting": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Every mounting method the datasheet lists",
+      "items": { "enum": ["rack", "desktop", "wall", "din"] }
+    },
     "redundancy": {
       "type": "object",
       "required": ["supported", "detail"],
@@ -99,6 +131,11 @@
         "macTable": { "type": "string", "description": "Overrides the family value" },
         "buffer": { "type": "string", "description": "Overrides the family value" },
         "redundancy": { "$ref": "#/$defs/redundancy", "description": "Overrides the family value" },
+        "lifecycle": { "$ref": "#/$defs/lifecycle", "description": "Overrides the family value" },
+        "ruggedized": { "type": "boolean", "description": "Built for extended temperature, dust, or vibration. Overrides the family value" },
+        "operatingTempC": { "$ref": "#/$defs/tempRange", "description": "Overrides the family value" },
+        "ipRating": { "type": "string", "description": "Overrides the family value, for example IP30" },
+        "mounting": { "$ref": "#/$defs/mounting", "description": "Overrides the family value" },
         "note": { "type": "string" },
         "verify": { "type": "array", "items": { "type": "string" } },
         "verifyNote": { "type": "string" }

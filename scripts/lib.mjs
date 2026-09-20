@@ -18,10 +18,32 @@ const SPEEDS = [1, 2.5, 5, 10, 25];
 const MEDIA = ['rj45', 'sfp'];
 const FORMS = ['1RU', 'Compact', 'Desktop'];
 const TIERS = ['l2', 'ospf', 'full'];
+const STATUSES = ['current', 'endOfSale', 'endOfSupport'];
+const MOUNTS = ['rack', 'desktop', 'wall', 'din'];
+const isDate = s => /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(s));
 
-export function validate(data) {
+export function validate(data, today = new Date().toISOString().slice(0, 10)) {
   const errors = [], warnings = [];
   const skus = new Set(), ids = new Set();
+  const replacements = [];
+
+  /* Lifecycle and rugged fields are allowed on a family (as a default) and on a model (overriding it). */
+  const checkLifecycle = (at, lc) => {
+    if (!lc) return;
+    if (!STATUSES.includes(lc.status)) errors.push(`${at}: lifecycle.status must be one of ${STATUSES.join(', ')}`);
+    for (const k of ['endOfSaleDate', 'endOfSupportDate'])
+      if (lc[k] !== undefined && !isDate(lc[k])) errors.push(`${at}: lifecycle.${k} must be a YYYY-MM-DD date`);
+    if (lc.status !== 'current' && !lc.endOfSaleDate) errors.push(`${at}: lifecycle.status ${lc.status} needs endOfSaleDate`);
+    if (lc.status === 'current' && isDate(lc.endOfSaleDate || '') && lc.endOfSaleDate < today)
+      warnings.push(`${at}: lifecycle.status is current but endOfSaleDate ${lc.endOfSaleDate} has passed`);
+    for (const r of lc.replacement || []) replacements.push([at, r]);
+  };
+  const checkRugged = (at, o) => {
+    if (o.operatingTempC && !(o.operatingTempC.min < o.operatingTempC.max))
+      errors.push(`${at}: operatingTempC.min must be less than max`);
+    for (const m of o.mounting || [])
+      if (!MOUNTS.includes(m)) errors.push(`${at}: mounting "${m}" must be one of ${MOUNTS.join(', ')}`);
+  };
   for (const [k, src] of Object.entries(data.sources))
     if (src.language && src.language !== 'en') warnings.push(`source ${k}: not in English (${src.language}); add an English primary source and flag values that only appear here`);
   for (const f of data.families) {
@@ -31,9 +53,14 @@ export function validate(data) {
     for (const k of ['vendor', 'family', 'source', 'routeScale', 'macTable', 'licensing'])
       if (!f[k]) errors.push(`${at}: missing ${k}`);
     if (!data.sources[f.source]) errors.push(`${at}: unknown source "${f.source}"`);
+    for (const k of f.additionalSources || [])
+      if (!data.sources[k]) errors.push(`${at}: unknown additionalSources entry "${k}"`);
     if (!TIERS.includes(f.routing?.tier)) errors.push(`${at}: routing.tier must be one of ${TIERS.join(', ')}`);
     if (f.stacking?.maxMembers !== null && !(f.stacking?.maxMembers > 0)) errors.push(`${at}: stacking.maxMembers must be a number or null`);
     if (!f.models?.length) errors.push(`${at}: no models`);
+    if ((f.verify || []).length && !f.verifyNote) warnings.push(`${at}: flagged for verification without a verifyNote`);
+    checkLifecycle(at, f.lifecycle);
+    checkRugged(at, f);
     const badRed = r => typeof r?.supported !== 'boolean' || !r?.detail;
     if (badRed(f.power?.redundancy)) errors.push(`${at}: power.redundancy needs supported (true/false) and detail`);
     for (const m of f.models || []) {
@@ -57,7 +84,7 @@ export function validate(data) {
       if (!hasPoe && hasBudget) errors.push(`${mt}: poeBudgets but no PoE ports`);
       for (const b of m.poeBudgets || []) {
         if (!b.config || !(b.watts > 0)) errors.push(`${mt}: each poeBudget needs config and watts > 0`);
-        if (b.watts > cap) warnings.push(`${mt}: "${b.config}" ${b.watts}W exceeds port capacity ${cap}W (ports x per-port max)`);
+        if (b.watts > cap) warnings.push(`${mt}: "${b.config}" ${b.watts}W exceeds port capacity ${cap}W (ports x per-port max); the sizer uses ${cap}W`);
       }
       if (m.switchingGbps === null) warnings.push(`${mt}: switchingGbps not published (null)`);
       else if (!(m.switchingGbps > 0)) errors.push(`${mt}: switchingGbps missing`);
@@ -65,7 +92,11 @@ export function validate(data) {
       if (m.formFactor && !FORMS.includes(m.formFactor)) errors.push(`${mt}: formFactor must be one of ${FORMS.join(', ')}`);
       const flagged = (m.verify || []).length || (m.poeBudgets || []).some(b => b.verify);
       if (flagged && !m.verifyNote) warnings.push(`${mt}: flagged for verification without a verifyNote`);
+      checkLifecycle(mt, m.lifecycle);
+      checkRugged(mt, m);
     }
   }
+  for (const [at, r] of replacements)
+    if (!skus.has(r) && !ids.has(r)) warnings.push(`${at}: lifecycle.replacement "${r}" is not a SKU or family id in the dataset`);
   return { errors, warnings, families: data.families.length, models: skus.size };
 }
