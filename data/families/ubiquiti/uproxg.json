@@ -1,0 +1,203 @@
+{
+  "id": "uproxg",
+  "vendor": "Ubiquiti",
+  "family": "Pro XG",
+  "source": "ui-switching",
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "Not stackable; each switch is managed individually in UniFi Network"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Inter-VLAN routing, static routes, DHCP server and relay. No dynamic routing (no OSPF or BGP)"
+  },
+  "routeScale": "256 IPv4 static routes",
+  "macTable": "32,000",
+  "macsec": "Not listed",
+  "buffer": "2 MB",
+  "power": {
+    "summary": "Single internal PSU with a DC input for UniFi USP RPS backup (the 8-port model uses a single power input)",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": true,
+      "detail": "Single internal PSU; external DC backup via UniFi USP RPS, sold separately"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No switch licensing; managed from UniFi Network (self-hosted or on a UniFi cloud gateway)",
+  "verify": [],
+  "models": [
+    {
+      "sku": "USW-Pro-XG-8-PoE",
+      "source": "ui-usw-pro-xg-8-poe",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 10,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "upm2",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 155
+        }
+      ],
+      "switchingGbps": 200,
+      "forwardingMpps": 149,
+      "formFactor": "Desktop",
+      "redundancy": {
+        "supported": false,
+        "detail": "Single power input; no redundant option"
+      },
+      "note": "Compact desktop or wall mount"
+    },
+    {
+      "sku": "USW-Pro-XG-10-PoE",
+      "source": "ui-usw-pro-xg-10-poe",
+      "accessPorts": [
+        {
+          "count": 10,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "upm2",
+      "poeBudgets": [
+        {
+          "config": "Internal 550W",
+          "watts": 400
+        }
+      ],
+      "switchingGbps": 240,
+      "forwardingMpps": 179
+    },
+    {
+      "sku": "USW-Pro-XG-24",
+      "source": "ui-usw-pro-xg-24",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 0
+        },
+        {
+          "count": 16,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "uecs24",
+      "poeBudgets": [],
+      "switchingGbps": 460,
+      "forwardingMpps": 342,
+      "routeScale": "512 IPv4 static routes",
+      "buffer": "8 MB",
+      "verify": [
+        "routeScale",
+        "macTable"
+      ],
+      "verifyNote": "Ubiquiti's spec page has shown two versions for this model: 32,000 MAC and 512 static routes, or 128,000 MAC, 128,000 ARP, and 256,000 IPv4 routes"
+    },
+    {
+      "sku": "USW-Pro-XG-24-PoE",
+      "source": "ui-usw-pro-xg-24-poe",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        },
+        {
+          "count": 16,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "uecs24",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 720
+        }
+      ],
+      "switchingGbps": 460,
+      "forwardingMpps": 342,
+      "routeScale": "512 IPv4 static routes",
+      "buffer": "8 MB",
+      "verify": [
+        "routeScale",
+        "macTable"
+      ],
+      "verifyNote": "Ubiquiti's spec page has shown two versions for this model: 32,000 MAC and 512 static routes, or 128,000 MAC, 128,000 ARP, and 256,000 IPv4 routes"
+    },
+    {
+      "sku": "USW-Pro-XG-48",
+      "source": "ui-usw-pro-xg-48",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 2.5,
+          "poeWatts": 0
+        },
+        {
+          "count": 32,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "uecs48",
+      "poeBudgets": [],
+      "switchingGbps": 920,
+      "forwardingMpps": 684,
+      "routeScale": "512 IPv4 static routes",
+      "buffer": "8 MB",
+      "verify": [
+        "routeScale",
+        "macTable"
+      ],
+      "verifyNote": "Ubiquiti's spec page has shown two versions for this model: 32,000 MAC and 512 static routes, or 128,000 MAC, 128,000 ARP, and 256,000 IPv4 routes"
+    },
+    {
+      "sku": "USW-Pro-XG-48-PoE",
+      "source": "ui-usw-pro-xg-48-poe",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        },
+        {
+          "count": 32,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "uecs48",
+      "poeBudgets": [
+        {
+          "config": "Internal, 100-120V AC",
+          "watts": 972
+        },
+        {
+          "config": "Internal, 200-240V AC",
+          "watts": 1080
+        }
+      ],
+      "switchingGbps": 920,
+      "forwardingMpps": 684,
+      "routeScale": "512 IPv4 static routes",
+      "buffer": "8 MB",
+      "verify": [
+        "routeScale",
+        "macTable"
+      ],
+      "verifyNote": "Ubiquiti's spec page has shown two versions for this model: 32,000 MAC and 512 static routes, or 128,000 MAC, 128,000 ARP, and 256,000 IPv4 routes"
+    }
+  ]
+}

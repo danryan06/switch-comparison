@@ -1,0 +1,61 @@
+{
+  "id": "ustd",
+  "vendor": "Ubiquiti",
+  "family": "Standard",
+  "source": "ui-switching",
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "Not stackable; each switch is managed individually in UniFi Network"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 only"
+  },
+  "routeScale": "None (Layer 2)",
+  "macTable": "16,000",
+  "macsec": "Not listed",
+  "buffer": "1.5 MB",
+  "power": {
+    "summary": "Single internal PSU",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Single power input; no redundant option"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No switch licensing; managed from UniFi Network (self-hosted or on a UniFi cloud gateway)",
+  "verify": [],
+  "models": [
+    {
+      "sku": "USW-48-POE",
+      "source": "ui-usw-48-poe",
+      "accessPorts": [
+        {
+          "count": 32,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "ustd4g",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 195
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": 77,
+      "note": "PoE+ on 32 of 48 ports"
+    }
+  ]
+}

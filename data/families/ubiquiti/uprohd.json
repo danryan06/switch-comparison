@@ -1,0 +1,82 @@
+{
+  "id": "uprohd",
+  "vendor": "Ubiquiti",
+  "family": "Pro HD",
+  "source": "ui-switching",
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "Not stackable; each switch is managed individually in UniFi Network"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Inter-VLAN routing, static routes, DHCP server and relay. No dynamic routing (no OSPF or BGP)"
+  },
+  "routeScale": "256 IPv4 static routes",
+  "macTable": "32,000",
+  "macsec": "Not listed",
+  "buffer": "2 MB",
+  "power": {
+    "summary": "Single internal PSU with a DC input for UniFi USP RPS backup",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": true,
+      "detail": "Single internal PSU; external DC backup via UniFi USP RPS, sold separately"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No switch licensing; managed from UniFi Network (self-hosted or on a UniFi cloud gateway)",
+  "verify": [],
+  "models": [
+    {
+      "sku": "USW-Pro-HD-24",
+      "source": "ui-usw-pro-hd-24",
+      "accessPorts": [
+        {
+          "count": 22,
+          "speedGbps": 2.5,
+          "poeWatts": 0
+        },
+        {
+          "count": 2,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "upm4",
+      "poeBudgets": [],
+      "switchingGbps": 230,
+      "forwardingMpps": 171.12
+    },
+    {
+      "sku": "USW-Pro-HD-24-PoE",
+      "source": "ui-usw-pro-hd-24-poe",
+      "accessPorts": [
+        {
+          "count": 22,
+          "speedGbps": 2.5,
+          "poeWatts": 60
+        },
+        {
+          "count": 2,
+          "speedGbps": 10,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "upm4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 600
+        }
+      ],
+      "switchingGbps": 230,
+      "forwardingMpps": 171,
+      "routeScale": "12,000 ARP entries, 12,000 IPv4 routes",
+      "note": "Spec page for the PoE model lists an L3 table instead of a static route count"
+    }
+  ]
+}

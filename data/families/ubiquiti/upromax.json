@@ -173,6 +173,34 @@
         "detail": "External adapter only"
       },
       "note": "Rack, desktop, or wall mount"
+    },
+    {
+      "sku": "USW-Pro-Max-16",
+      "source": "ui-usw-pro-max-16",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 0
+        },
+        {
+          "count": 4,
+          "speedGbps": 2.5,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "upm2",
+      "poeBudgets": [],
+      "switchingGbps": 84,
+      "forwardingMpps": 62,
+      "macTable": "16,000",
+      "buffer": "1.5 MB",
+      "formFactor": "Compact",
+      "redundancy": {
+        "supported": false,
+        "detail": "Single power input; no redundant option"
+      },
+      "note": "Rack, desktop, or wall mount"
     }
   ]
 }

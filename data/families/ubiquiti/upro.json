@@ -1,0 +1,129 @@
+{
+  "id": "upro",
+  "vendor": "Ubiquiti",
+  "family": "Pro",
+  "source": "ui-switching",
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "Not stackable; each switch is managed individually in UniFi Network"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Inter-VLAN routing, static routes, DHCP server and relay. No dynamic routing (no OSPF or BGP)"
+  },
+  "routeScale": "256 IPv4 static routes",
+  "macTable": "16,000",
+  "macsec": "Not listed",
+  "buffer": "4 MB",
+  "power": {
+    "summary": "Single internal PSU with a DC input for backup power",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": true,
+      "detail": "Single internal PSU; external DC backup via UniFi USP RPS, sold separately"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No switch licensing; managed from UniFi Network (self-hosted or on a UniFi cloud gateway)",
+  "verify": [],
+  "models": [
+    {
+      "sku": "USW-Pro-24",
+      "source": "ui-usw-pro-24",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "upm2",
+      "poeBudgets": [],
+      "switchingGbps": 88,
+      "forwardingMpps": 65,
+      "buffer": "2 MB",
+      "routeScale": "Listed as 2 IPv4 static routes",
+      "verify": [
+        "routeScale"
+      ],
+      "verifyNote": "Spec page lists 2 static routes, which looks like a display error (the 48-port models list 256)"
+    },
+    {
+      "sku": "USW-Pro-24-POE",
+      "source": "ui-usw-pro-24-poe",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "upm2",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 400
+        }
+      ],
+      "switchingGbps": 88,
+      "forwardingMpps": 65,
+      "buffer": "2 MB",
+      "routeScale": "Listed as 2 IPv4 static routes",
+      "verify": [
+        "routeScale"
+      ],
+      "verifyNote": "Spec page lists 2 static routes, which looks like a display error (the 48-port models list 256)",
+      "note": "Ubiquiti lists PoE+ and PoE++ ports by class; IEEE Class 4 (30W) and Class 6 (60W) values are used"
+    },
+    {
+      "sku": "USW-Pro-48",
+      "source": "ui-usw-pro-48",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "upm4",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": 131
+    },
+    {
+      "sku": "USW-Pro-48-POE",
+      "source": "ui-usw-pro-48-poe",
+      "accessPorts": [
+        {
+          "count": 40,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "upm4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 600
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 131,
+      "note": "Ubiquiti lists PoE+ and PoE++ ports by class; IEEE Class 4 (30W) and Class 6 (60W) values are used"
+    }
+  ]
+}

@@ -747,5 +747,19 @@
         ]
       }
     ]
+  },
+  "ustd4g": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 1G SFP (fixed)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 1
+          }
+        ]
+      }
+    ]
   }
 }

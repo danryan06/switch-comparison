@@ -172,5 +172,75 @@
     "title": "Juniper EX4400 Hardware Specifications (Pathfinder Hardware Compatibility Tool)",
     "url": "https://apps.juniper.net/hct/product/EX4400/hwspecs",
     "retrieved": "2026-09-19"
+  },
+  "ui-usw-pro-xg-8-poe": {
+    "title": "UniFi USW-Pro-XG-8-PoE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-xg-8-poe?subcategory=all-switching",
+    "retrieved": "2026-09-19"
+  },
+  "ui-usw-pro-xg-10-poe": {
+    "title": "UniFi USW-Pro-XG-10-PoE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-xg-10-poe?subcategory=all-switching",
+    "retrieved": "2026-09-19"
+  },
+  "ui-usw-pro-xg-24": {
+    "title": "UniFi USW-Pro-XG-24 Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-xg-24?subcategory=all-switching",
+    "retrieved": "2026-09-19"
+  },
+  "ui-usw-pro-xg-24-poe": {
+    "title": "UniFi USW-Pro-XG-24-PoE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-xg-24-poe?subcategory=all-switching",
+    "retrieved": "2026-09-19"
+  },
+  "ui-usw-pro-xg-48": {
+    "title": "UniFi USW-Pro-XG-48 Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-xg-48?subcategory=all-switching",
+    "retrieved": "2026-09-19"
+  },
+  "ui-usw-pro-xg-48-poe": {
+    "title": "UniFi USW-Pro-XG-48-PoE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-xg-48-poe?subcategory=all-switching",
+    "retrieved": "2026-09-19"
+  },
+  "ui-usw-pro-hd-24": {
+    "title": "UniFi USW-Pro-HD-24 Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-hd-24?subcategory=all-switching",
+    "retrieved": "2026-09-19"
+  },
+  "ui-usw-pro-hd-24-poe": {
+    "title": "UniFi USW-Pro-HD-24-PoE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-hd-24-poe?subcategory=all-switching",
+    "retrieved": "2026-09-19"
+  },
+  "ui-usw-pro-24": {
+    "title": "UniFi USW-Pro-24 Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-24?subcategory=all-switching",
+    "retrieved": "2026-09-19"
+  },
+  "ui-usw-pro-24-poe": {
+    "title": "UniFi USW-Pro-24-POE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-24-poe?subcategory=all-switching",
+    "retrieved": "2026-09-19"
+  },
+  "ui-usw-pro-48": {
+    "title": "UniFi USW-Pro-48 Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-48?subcategory=all-switching",
+    "retrieved": "2026-09-19"
+  },
+  "ui-usw-pro-48-poe": {
+    "title": "UniFi USW-Pro-48-POE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-48-poe?subcategory=all-switching",
+    "retrieved": "2026-09-19"
+  },
+  "ui-usw-48-poe": {
+    "title": "UniFi USW-48-POE Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-48-poe?subcategory=all-switching",
+    "retrieved": "2026-09-19"
+  },
+  "ui-usw-pro-max-16": {
+    "title": "UniFi USW-Pro-Max-16 Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-16?subcategory=all-switching",
+    "retrieved": "2026-09-19"
   }
 }
