@@ -1,0 +1,255 @@
+{
+  "id": "mms150",
+  "vendor": "Cisco Meraki",
+  "family": "MS150",
+  "source": "mms150",
+  "stacking": {
+    "tech": "Meraki physical stacking",
+    "bandwidthGbps": 80,
+    "maxMembers": 8,
+    "frontPanel": false,
+    "note": "Two dedicated rear QSFP28 stacking ports; stacking cables sold separately (MA-CBL-100G)"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 access with static routing. No dynamic routing"
+  },
+  "routeScale": "Not published (static routing only)",
+  "macTable": "Not published",
+  "macsec": "Not listed",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Fixed internal PSU",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Fixed power supply or external adapter; no redundant option"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Meraki license required per switch: Enterprise or Advanced tier (Advanced only adds Adaptive Policy), 1 to 10-year terms, co-term or per-device; also sold as MS100 subscription (Essentials or Advantage). Includes support",
+  "verify": [],
+  "models": [
+    {
+      "sku": "MS150-24T-4G",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 56,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "MS150-24P-4G",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 56,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "MS150-24T-4X",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "MS150-24P-4X",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "MS150-24MP-4X",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 8,
+          "speedGbps": 5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 192,
+      "forwardingMpps": null,
+      "note": "mGig and 60W PoE++ on ports 17-24"
+    },
+    {
+      "sku": "MS150-48T-4G",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 104,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "MS150-48LP-4G",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "MS150-48FP-4G",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "MS150-48T-4X",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "MS150-48LP-4X",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "MS150-48FP-4X",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "MS150-48MP-4X",
+      "accessPorts": [
+        {
+          "count": 32,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 16,
+          "speedGbps": 5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 304,
+      "forwardingMpps": null,
+      "note": "mGig and 60W PoE++ on ports 33-48"
+    }
+  ]
+}

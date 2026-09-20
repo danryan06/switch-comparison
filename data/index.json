@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-09-19",
+  "updated": "2026-09-20",
   "families": [
     "families/cisco/c9200.json",
     "families/cisco/c9200l.json",
@@ -10,6 +10,10 @@
     "families/cisco/c9300l.json",
     "families/cisco/c9300lm.json",
     "families/cisco/c9350.json",
+    "families/cisco-meraki/mms130.json",
+    "families/cisco-meraki/mms150.json",
+    "families/cisco-meraki/mms210.json",
+    "families/cisco-meraki/mms225.json",
     "families/hpe-aruba/a6300m.json",
     "families/hpe-aruba/a6300f.json",
     "families/hpe-aruba/a6200f.json",

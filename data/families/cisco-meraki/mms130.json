@@ -1,0 +1,266 @@
+{
+  "id": "mms130",
+  "vendor": "Cisco Meraki",
+  "family": "MS130",
+  "source": "mms130",
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "Not stackable"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 access"
+  },
+  "routeScale": "None (Layer 2)",
+  "macTable": "Not published",
+  "macsec": "Not listed",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Fixed internal PSU (24 and 48-port); external adapter on most compact models",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Fixed power supply or external adapter; no redundant option"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Meraki license required per switch: Enterprise or Advanced tier (Advanced only adds Adaptive Policy), 1 to 10-year terms, co-term or per-device; also sold as MS100 subscription (Essentials or Advantage). Includes support",
+  "verify": [],
+  "models": [
+    {
+      "sku": "MS130-8",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g2",
+      "poeBudgets": [],
+      "switchingGbps": 20,
+      "forwardingMpps": null,
+      "formFactor": "Desktop",
+      "fanless": true,
+      "poweredBy": "External 30W adapter (MA-PWR-30WAC)",
+      "note": "Desktop or wall mount"
+    },
+    {
+      "sku": "MS130-8P",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g2",
+      "poeBudgets": [
+        {
+          "config": "External 150W adapter",
+          "watts": 120
+        }
+      ],
+      "switchingGbps": 20,
+      "forwardingMpps": null,
+      "formFactor": "Desktop",
+      "fanless": true,
+      "poweredBy": "External 150W adapter (MA-PWR-150WAC-ADP)",
+      "note": "Desktop or wall mount"
+    },
+    {
+      "sku": "MS130-8P-I",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g2",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 120
+        }
+      ],
+      "switchingGbps": 20,
+      "forwardingMpps": null,
+      "formFactor": "Desktop",
+      "fanless": true,
+      "note": "Internal power supply version of the MS130-8P"
+    },
+    {
+      "sku": "MS130-8X",
+      "accessPorts": [
+        {
+          "count": 6,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 2,
+          "speedGbps": 2.5,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "upm2",
+      "poeBudgets": [
+        {
+          "config": "External 150W adapter",
+          "watts": 120
+        }
+      ],
+      "switchingGbps": 62,
+      "forwardingMpps": null,
+      "formFactor": "Desktop",
+      "poweredBy": "External 150W adapter (MA-PWR-150WAC-ADP)"
+    },
+    {
+      "sku": "MS130-12X",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 4,
+          "speedGbps": 2.5,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "upm2",
+      "poeBudgets": [
+        {
+          "config": "External 300W adapter",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 76,
+      "forwardingMpps": null,
+      "formFactor": "Desktop",
+      "poweredBy": "External 300W adapter (MA-PWR-300WAC-ADP)"
+    },
+    {
+      "sku": "MS130-24",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 56,
+      "forwardingMpps": null,
+      "fanless": true
+    },
+    {
+      "sku": "MS130-24P",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 56,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "MS130-24X",
+      "accessPorts": [
+        {
+          "count": 18,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 6,
+          "speedGbps": 2.5,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 146,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "MS130-48",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 104,
+      "forwardingMpps": null,
+      "fanless": true
+    },
+    {
+      "sku": "MS130-48P",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "MS130-48X",
+      "accessPorts": [
+        {
+          "count": 40,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 200,
+      "forwardingMpps": null
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "id": "mms225",
+  "vendor": "Cisco Meraki",
+  "family": "MS225",
+  "source": "mms225",
+  "stacking": {
+    "tech": "Meraki physical stacking",
+    "bandwidthGbps": 80,
+    "maxMembers": 8,
+    "frontPanel": false,
+    "note": "Two dedicated rear QSFP stacking ports. MS210 and MS225 can stack together"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 access with static routing. No dynamic routing"
+  },
+  "routeScale": "Not published (static routing only)",
+  "macTable": "Not published",
+  "macsec": "Not listed",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Fixed internal PSU with optional external RPS",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": true,
+      "detail": "Optional external Cisco RPS-2300 (22-pin connector); the RPS-2300 itself reached end of sale on May 31, 2023 with no replacement"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Meraki Enterprise license required per switch (co-term or per-device); includes support",
+  "verify": [
+    "stacking"
+  ],
+  "verifyNote": "Stack member limit (8) is not stated in these datasheets; confirm against Meraki's Switch Stacks documentation",
+  "lifecycle": {
+    "status": "endOfSale",
+    "endOfSaleDate": "2026-04-30",
+    "endOfSupportDate": "2031-04-30",
+    "announcementUrl": "https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates",
+    "note": "End-of-sale announced October 30, 2025, alongside the MS210"
+  },
+  "models": [
+    {
+      "sku": "MS225-24",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": null,
+      "operatingTempC": {
+        "min": -5,
+        "max": 50
+      },
+      "mounting": [
+        "rack"
+      ],
+      "fanless": true
+    },
+    {
+      "sku": "MS225-24P",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": null,
+      "operatingTempC": {
+        "min": -5,
+        "max": 50
+      },
+      "mounting": [
+        "rack"
+      ]
+    },
+    {
+      "sku": "MS225-48",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": null,
+      "operatingTempC": {
+        "min": -5,
+        "max": 50
+      },
+      "mounting": [
+        "rack"
+      ],
+      "fanless": true
+    },
+    {
+      "sku": "MS225-48LP",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": null,
+      "operatingTempC": {
+        "min": -5,
+        "max": 50
+      },
+      "mounting": [
+        "rack"
+      ]
+    },
+    {
+      "sku": "MS225-48FP",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": null,
+      "operatingTempC": {
+        "min": -5,
+        "max": 50
+      },
+      "mounting": [
+        "rack"
+      ]
+    }
+  ]
+}

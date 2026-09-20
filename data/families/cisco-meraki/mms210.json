@@ -1,0 +1,217 @@
+{
+  "id": "mms210",
+  "vendor": "Cisco Meraki",
+  "family": "MS210",
+  "source": "mms210",
+  "stacking": {
+    "tech": "Meraki physical stacking",
+    "bandwidthGbps": 80,
+    "maxMembers": 8,
+    "frontPanel": false,
+    "note": "Two dedicated rear QSFP stacking ports. MS210 and MS225 can stack together"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 access with static routing. No dynamic routing"
+  },
+  "routeScale": "Not published (static routing only)",
+  "macTable": "Not published",
+  "macsec": "Not listed",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Fixed internal PSU with optional external RPS",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": true,
+      "detail": "Optional external Cisco RPS-2300 (22-pin connector); the RPS-2300 itself reached end of sale on May 31, 2023 with no replacement"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Meraki Enterprise license required per switch (co-term or per-device); includes support",
+  "verify": [
+    "stacking"
+  ],
+  "verifyNote": "Stack member limit (8) is not stated in these datasheets; confirm against Meraki's Switch Stacks documentation",
+  "lifecycle": {
+    "status": "endOfSale",
+    "endOfSaleDate": "2026-04-30",
+    "endOfSupportDate": "2031-04-30",
+    "announcementUrl": "https://documentation.meraki.com/@api/deki/files/35119/MS210_EOS_PDF.pdf?revision=1",
+    "note": "End-of-sale announced October 30, 2025"
+  },
+  "models": [
+    {
+      "sku": "MS210-24",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": null,
+      "operatingTempC": {
+        "min": -5,
+        "max": 50
+      },
+      "mounting": [
+        "rack"
+      ],
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2026-04-30",
+        "endOfSupportDate": "2031-04-30",
+        "announcementUrl": "https://documentation.meraki.com/@api/deki/files/35119/MS210_EOS_PDF.pdf?revision=1",
+        "replacement": [
+          "MS150-24T-4G"
+        ],
+        "note": "End-of-sale announced October 30, 2025"
+      },
+      "fanless": true
+    },
+    {
+      "sku": "MS210-24P",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": null,
+      "operatingTempC": {
+        "min": -5,
+        "max": 50
+      },
+      "mounting": [
+        "rack"
+      ],
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2026-04-30",
+        "endOfSupportDate": "2031-04-30",
+        "announcementUrl": "https://documentation.meraki.com/@api/deki/files/35119/MS210_EOS_PDF.pdf?revision=1",
+        "replacement": [
+          "MS150-24P-4G"
+        ],
+        "note": "End-of-sale announced October 30, 2025"
+      }
+    },
+    {
+      "sku": "MS210-48",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": null,
+      "operatingTempC": {
+        "min": -5,
+        "max": 50
+      },
+      "mounting": [
+        "rack"
+      ],
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2026-04-30",
+        "endOfSupportDate": "2031-04-30",
+        "announcementUrl": "https://documentation.meraki.com/@api/deki/files/35119/MS210_EOS_PDF.pdf?revision=1",
+        "replacement": [
+          "MS150-48T-4G"
+        ],
+        "note": "End-of-sale announced October 30, 2025"
+      },
+      "fanless": true
+    },
+    {
+      "sku": "MS210-48LP",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": null,
+      "operatingTempC": {
+        "min": -5,
+        "max": 50
+      },
+      "mounting": [
+        "rack"
+      ],
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2026-04-30",
+        "endOfSupportDate": "2031-04-30",
+        "announcementUrl": "https://documentation.meraki.com/@api/deki/files/35119/MS210_EOS_PDF.pdf?revision=1",
+        "replacement": [
+          "MS150-48LP-4G"
+        ],
+        "note": "End-of-sale announced October 30, 2025"
+      }
+    },
+    {
+      "sku": "MS210-48FP",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": null,
+      "operatingTempC": {
+        "min": -5,
+        "max": 50
+      },
+      "mounting": [
+        "rack"
+      ],
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2026-04-30",
+        "endOfSupportDate": "2031-04-30",
+        "announcementUrl": "https://documentation.meraki.com/@api/deki/files/35119/MS210_EOS_PDF.pdf?revision=1",
+        "replacement": [
+          "MS150-48FP-4G"
+        ],
+        "note": "End-of-sale announced October 30, 2025"
+      }
+    }
+  ]
+}
