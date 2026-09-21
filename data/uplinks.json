@@ -779,5 +779,37 @@
         ]
       }
     ]
+  },
+  "jex4100h12": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 1/10G SFP+ uplinks + 2x 10G SFP+ VC/uplink ports (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 10
+          },
+          {
+            "count": 2,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "uind2g": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 1G RJ45 non-PoE ports (no SFP)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 1
+          }
+        ]
+      }
+    ]
   }
 }

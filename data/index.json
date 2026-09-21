@@ -26,10 +26,13 @@
     "families/fortinet/f200.json",
     "families/fortinet/f300.json",
     "families/fortinet/f400.json",
+    "families/fortinet/fsr.json",
+    "families/fortinet/fsr424.json",
     "families/juniper/jex4100.json",
     "families/juniper/jex4100f.json",
     "families/juniper/jex4400.json",
     "families/juniper/jex4000.json",
+    "families/juniper/jex4100h.json",
     "families/ubiquiti/uecs.json",
     "families/ubiquiti/uecss.json",
     "families/ubiquiti/upromax.json",
@@ -37,9 +40,11 @@
     "families/ubiquiti/uprohd.json",
     "families/ubiquiti/upro.json",
     "families/ubiquiti/ustd.json",
+    "families/ubiquiti/uind.json",
     "families/hpe-aruba/a6100.json",
     "families/hpe-aruba/a6000.json",
     "families/hpe-aruba/a6300m2.json",
-    "families/hpe-aruba/a6300l.json"
+    "families/hpe-aruba/a6300l.json",
+    "families/hpe-aruba/a4100i.json"
   ]
 }

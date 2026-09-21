@@ -1,0 +1,119 @@
+{
+  "id": "a4100i",
+  "vendor": "HPE Aruba",
+  "family": "CX 4100i",
+  "source": "a4100i",
+  "stacking": {
+    "tech": "VSF",
+    "bandwidthGbps": null,
+    "maxMembers": 4,
+    "frontPanel": true,
+    "note": "Front-plane VSF over the SFP+ ports, up to 4 members, including long-range 10G links between sites"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 with static IPv4/IPv6 routing"
+  },
+  "routeScale": "576 IPv4 and 576 IPv6 unicast routes (static)",
+  "macTable": "8,192",
+  "macsec": "None listed",
+  "buffer": "12.38 MB (4.5 MB ingress / 7.875 MB egress)",
+  "power": {
+    "summary": "12-port: external DIN rail PSUs (sold separately), two inputs, non-sharing. 24-port: fixed internal 300W PSU",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "24-port: fixed internal PSU, no redundancy"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No switch software license required; HPE Aruba Networking Central subscription (Class 1) for cloud management",
+  "ruggedized": true,
+  "operatingTempC": {
+    "min": -40,
+    "max": 70
+  },
+  "ipRating": "IP30",
+  "verify": [
+    "routing",
+    "stacking"
+  ],
+  "verifyNote": "QuickSpecs describes a Layer 2 switch with static routing but also lists \"OSPF support\" under Layer 3 services; modeled as Layer 2. The VSF section also mentions 48-port and modular models that do not exist in the 4100i line, and does not say which ports VSF uses or whether the 12-port model (2 SFP+ only) stacks. Operating temperature is -40 to 60C with no airflow, 70C at 0.2 m/s, -34 to 75C at 1 m/s, derated to 50C with non-industrial optics",
+  "models": [
+    {
+      "sku": "JL817A",
+      "description": "4100i 12G 8p Class4 4p Class6 PoE 2SFP+ DIN",
+      "accessPorts": [
+        {
+          "count": 4,
+          "speedGbps": 1,
+          "poeWatts": 60
+        },
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "cx2x",
+      "poeBudgets": [
+        {
+          "config": "1x JL819A 240W AC DIN PSU, up to 50C",
+          "watts": 180
+        },
+        {
+          "config": "1x JL821A 240W DC DIN PSU (48 to 55V input), up to 50C",
+          "watts": 180
+        },
+        {
+          "config": "1x JL820A 480W AC DIN PSU, up to 50C",
+          "watts": 360
+        }
+      ],
+      "switchingGbps": 64,
+      "forwardingMpps": 46,
+      "formFactor": "Compact",
+      "fanless": true,
+      "mounting": [
+        "din",
+        "rack"
+      ],
+      "redundancy": {
+        "supported": true,
+        "detail": "Two DC power inputs for two external DIN rail PSUs; redundant but not load-sharing. PSUs sold separately"
+      },
+      "note": "PoE derates with temperature (JL820A: 360W to 50C, 320W at 60C, 200W at 70C) and with low DC input on the JL821A (150W at 24V, 60W at 12V). With two PSUs, set the budget to the smaller one. Rack mounting needs the JL822A 3RU kit"
+    },
+    {
+      "sku": "JL818A",
+      "description": "4100i 24G 20p Class4 4p Class6 PoE 4SFP+",
+      "accessPorts": [
+        {
+          "count": 4,
+          "speedGbps": 1,
+          "poeWatts": 60
+        },
+        {
+          "count": 20,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal 300W PSU",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 95,
+      "fanless": true,
+      "mounting": [
+        "rack"
+      ],
+      "note": "240W PoE with no temperature derating"
+    }
+  ]
+}

@@ -297,5 +297,30 @@
     "title": "Cisco Meraki MS Series Switches Family Datasheet (PSU options and box contents)",
     "url": "https://meraki.cisco.com/wp-content/uploads/2020/05/meraki_datasheet_ms_family.pdf",
     "retrieved": "2026-09-21"
+  },
+  "fsr": {
+    "title": "Fortinet FortiSwitch Rugged Series Data Sheet (FSR-DAT-R36-20260827)",
+    "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiSwitchRugged.pdf",
+    "retrieved": "2026-09-21"
+  },
+  "jex4100h": {
+    "title": "HPE Juniper Networking EX4100-H Line of Ethernet Switches Datasheet",
+    "url": "https://www.juniper.net/gb/en/products/switches/ex-series/ex4100-h-line-of-ethernet-switches-datasheet.html",
+    "retrieved": "2026-09-21"
+  },
+  "jex4100hhw": {
+    "title": "Juniper EX4100-H Hardware Guide: System Overview (mounting options)",
+    "url": "https://www.juniper.net/documentation/us/en/hardware/ex4100-h/topics/topic-map/ex4100-h-system-overview.html",
+    "retrieved": "2026-09-21"
+  },
+  "a4100i": {
+    "title": "HPE Aruba Networking CX 4100i Switch Series QuickSpecs (a50002586enw)",
+    "url": "https://www.hpe.com/us/en/collaterals/collateral.a50002586enw.html",
+    "retrieved": "2026-09-21"
+  },
+  "ui-usw-industrial": {
+    "title": "Ubiquiti UniFi Industrial (USW-Industrial) Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching/usw-industrial",
+    "retrieved": "2026-09-21"
   }
 }

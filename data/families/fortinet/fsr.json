@@ -1,0 +1,105 @@
+{
+  "id": "fsr",
+  "vendor": "Fortinet",
+  "family": "FortiSwitch Rugged",
+  "source": "fsr",
+  "stacking": {
+    "tech": "FortiLink",
+    "bandwidthGbps": null,
+    "maxMembers": null,
+    "frontPanel": false,
+    "note": "No hardware stacking. A FortiGate manages 8 to 300 switches (model dependent) as one fabric with automatic inter-switch links"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2. The data sheet lists no hardware routing on these models; routing is done on the FortiGate"
+  },
+  "routeScale": "None (Layer 2)",
+  "macTable": "16,000",
+  "macsec": "Not listed",
+  "buffer": "1.5 MB",
+  "power": {
+    "summary": "External DC power into redundant input terminals; no internal PSU. Optional Fortinet DIN rail PSUs (SP-RGDIN-240-PS, SP-RGDIN-480-PS, sold in pairs)",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two DC input terminals for redundant feeds; the DC supplies are external and sold separately"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No license needed when managed by a FortiGate over FortiLink. Cloud (FortiManagement Cloud) or FortiSwitchNMS management is a separate subscription",
+  "ruggedized": true,
+  "operatingTempC": {
+    "min": -40,
+    "max": 75
+  },
+  "ipRating": "IP40",
+  "mounting": [
+    "din"
+  ],
+  "verify": [],
+  "models": [
+    {
+      "sku": "FSR-108F",
+      "accessPorts": [
+        {
+          "count": 6,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g2",
+      "poeBudgets": [],
+      "switchingGbps": 16,
+      "forwardingMpps": 23.8,
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "Rated -40 to 65C in a sealed enclosure, 70C vented (0.2 m/s), 75C with forced air (1 m/s). DC input +/-12 to +/-57V"
+    },
+    {
+      "sku": "FSR-112F-POE",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "External DC, +/-52 to +/-57V (802.3bt)",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 24,
+      "forwardingMpps": 35.7,
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "PoE needs a +/-44V or higher DC feed (52V or higher for 802.3bt). Rated -40 to 65C sealed, 70C vented, 75C with forced air"
+    },
+    {
+      "sku": "FSR-216F-POE",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "External DC, +/-52 to +/-57V (802.3bt)",
+          "watts": 360
+        }
+      ],
+      "switchingGbps": 112,
+      "forwardingMpps": 166,
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "PoE derates with temperature: 360W up to 60C, 240W up to 75C. Fortinet's ordering text calls this a layer 2/3 switch, but the specifications table lists no hardware routing; modeled as Layer 2"
+    }
+  ]
+}

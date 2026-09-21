@@ -43,6 +43,10 @@
     "rack",
     "desktop"
   ],
+  "verify": [
+    "lifecycle"
+  ],
+  "verifyNote": "Per-model replacement SKUs were read from copies of the Meraki end-of-sale notices, because the notice PDFs on documentation.meraki.com could not be retrieved for review; end-of-sale and end-of-support dates are confirmed on the Meraki EOL products page. Confirm replacements against the linked notices",
   "lifecycle": {
     "status": "endOfSale",
     "endOfSaleDate": "2025-08-08",

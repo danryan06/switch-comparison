@@ -1,0 +1,76 @@
+{
+  "id": "fsr424",
+  "vendor": "Fortinet",
+  "family": "FortiSwitch Rugged 424F",
+  "source": "fsr",
+  "stacking": {
+    "tech": "FortiLink",
+    "bandwidthGbps": null,
+    "maxMembers": null,
+    "frontPanel": false,
+    "note": "No hardware stacking. A FortiGate manages 8 to 300 switches (model dependent) as one fabric with automatic inter-switch links"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Hardware routing. Static; OSPF, RIP, VRRP, BGP, IS-IS per the data sheet feature list; dynamic routing needs the Advanced Features license (FS-SW-LIC-400)"
+  },
+  "routeScale": "16,000 IPv4 / 8,000 IPv6 route entries; 16,000 IPv4 / 7,000 IPv6 host entries",
+  "macTable": "32,000",
+  "macsec": "Not listed",
+  "buffer": "4 MB",
+  "power": {
+    "summary": "External DC power into redundant input terminals (24 to 40V DC non-PoE; 41 to 125V DC for PoE). No AC input",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two DC input terminals for redundant feeds; the DC supplies are external and sold separately"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No license needed when managed by a FortiGate over FortiLink. Dynamic routing needs the Advanced Features license (FS-SW-LIC-400). Cloud or NMS management is a separate subscription",
+  "ruggedized": true,
+  "operatingTempC": {
+    "min": -40,
+    "max": 70
+  },
+  "ipRating": "IP40",
+  "mounting": [
+    "rack"
+  ],
+  "verify": [
+    "routing"
+  ],
+  "verifyNote": "The data sheet lists OSPF, RIP, VRRP, BGP, and IS-IS for FortiSwitchOS generally and refers to the FortiSwitch Feature Matrix for per-model support. BGP on the FSR-424F-POE is not yet confirmed there",
+  "models": [
+    {
+      "sku": "FSR-424F-POE",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 2.5,
+          "poeWatts": 60
+        },
+        {
+          "count": 12,
+          "speedGbps": 2.5,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "x4q2",
+      "poeBudgets": [
+        {
+          "config": "External DC, 41 to 125V, up to 50C",
+          "watts": 420,
+          "verify": true
+        }
+      ],
+      "switchingGbps": 360,
+      "forwardingMpps": 536,
+      "fanless": true,
+      "verifyNote": "The specifications table and ordering text give a 421W PoE budget; the temperature derating table caps PoE at 420W at 50C (315W at 60C, 105W at 70C). Using the lower figure",
+      "note": "PoE is 802.3af/at and 4-pair 60W on the 12 copper ports. The 12 SFP ports take 1G or 2.5G optics"
+    }
+  ]
+}
