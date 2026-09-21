@@ -143,10 +143,12 @@ th{font-weight:600;color:var(--muted);font-size:13px;background:var(--surface-2)
 th.nosort{cursor:default}
 #bTable{table-layout:fixed;width:max-content;min-width:100%;border-collapse:separate;border-spacing:0}
 #bTable th,#bTable td{overflow:hidden;text-overflow:ellipsis;box-sizing:border-box}
+#bTable th[data-col="cmp"],#bTable td.cmp{overflow:visible;text-overflow:clip;padding-left:10px;padding-right:8px;text-align:center}
 #bTable th{position:sticky;top:0;z-index:1}
 #bTable th .col-resizer{position:absolute;top:0;right:0;width:7px;height:100%;cursor:col-resize;user-select:none;z-index:2}
 #bTable th .col-resizer:hover,#bTable.resizing th .col-resizer{background:var(--accent)}
 #bTable.resizing,#bTable.resizing *{cursor:col-resize!important;user-select:none!important}
+#bTable th[data-col="cmp"] .col-resizer{display:none}
 tbody tr{cursor:pointer}
 tbody tr:hover{background:var(--surface-2)}
 td.sku{font-family:var(--cond);font-weight:600;font-size:16px}
@@ -156,6 +158,8 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 .cmpbox{width:18px;height:18px;accent-color:var(--accent);cursor:pointer}
 .bar2{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0}
 .bar2 .barActs{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bar2 .scrollNav{display:inline-flex;gap:4px}
+.bar2 .scrollNav button{min-width:38px;padding-left:10px;padding-right:10px;font-size:18px;line-height:1}
 .small{font-size:13px;color:var(--muted)}
 .colpick{position:relative}
 .colpick .colpanel{display:none;position:absolute;right:0;top:calc(100% + 6px);z-index:30;min-width:220px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
@@ -317,6 +321,11 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
       <div class="barActs">
         <button type="button" class="ghost" id="clrSel" hidden>Clear selection</button>
         <button type="button" class="ghost" id="clrFilters">Clear filters</button>
+        <button type="button" class="ghost" id="exportCsv">Export CSV</button>
+        <span class="scrollNav" role="group" aria-label="Scroll browse table">
+          <button type="button" class="ghost" id="bScrollL" aria-label="Scroll table left" title="Scroll left">&#8592;</button>
+          <button type="button" class="ghost" id="bScrollR" aria-label="Scroll table right" title="Scroll right">&#8594;</button>
+        </span>
         <div class="colpick" id="colPick">
           <button type="button" class="ghost" id="colBtn" aria-expanded="false" aria-controls="colPanel">Choose columns</button>
           <div class="colpanel" id="colPanel" role="group" aria-label="Visible columns"></div>
@@ -591,7 +600,7 @@ const COLS=[
   {k:"l3",t:"BGP",f:s=>FAM[s.fam].bgp?1:0},
   {k:"sw",t:"Switching",f:s=>s.sw||0,num:1}
 ];
-const DEF_W={cmp:44,sku:180,fam:200,ports:150,fab:140,w:110,bud:150,up:190,stk:150,l3:72,sw:130};
+const DEF_W={cmp:52,sku:180,fam:200,ports:150,fab:140,w:110,bud:150,up:190,stk:150,l3:72,sw:130};
 const colW={...DEF_W};
 try{const saved=JSON.parse(localStorage.getItem("sw.colW")||"{}");for(const k of Object.keys(DEF_W))if(typeof saved[k]==="number")colW[k]=saved[k]}catch{}
 const colVisible=c=>c.k==="cmp"||c.k==="sku"||!hiddenCols.has(c.k);
@@ -608,6 +617,7 @@ function applyBrowseWidths(){
 }
 function wireBrowseResizers(){
   $("#bTable thead").querySelectorAll("th[data-col]").forEach(th=>{
+    if(th.dataset.col==="cmp")return;
     if(th.querySelector(".col-resizer"))return;
     const r=document.createElement("span");
     r.className="col-resizer";
@@ -615,7 +625,7 @@ function wireBrowseResizers(){
     th.appendChild(r);
     r.addEventListener("mousedown",e=>{
       e.preventDefault();e.stopPropagation();
-      const k=th.dataset.col,startX=e.clientX,startW=colW[k]||DEF_W[k]||120,min=k==="cmp"?36:60;
+      const k=th.dataset.col,startX=e.clientX,startW=colW[k]||DEF_W[k]||120,min=60;
       const table=$("#bTable");table.classList.add("resizing");
       const onMove=ev=>{colW[k]=Math.max(min,Math.round(startW+ev.clientX-startX));applyBrowseWidths()};
       const onUp=()=>{document.removeEventListener("mousemove",onMove);document.removeEventListener("mouseup",onUp);table.classList.remove("resizing");saveColW()};
@@ -623,9 +633,23 @@ function wireBrowseResizers(){
     });
   });
 }
+function cellText(s,c){
+  const f=FAM[s.fam];
+  if(c.k==="sku")return modelName(s);
+  if(c.k==="fam")return f.v+" "+f.name;
+  if(c.k==="ports")return portsText(s);
+  if(c.k==="fab")return fabricText(s);
+  if(c.k==="w")return maxW(s)?maxW(s)+"W":"None";
+  if(c.k==="bud")return s.psu.length?defBudget(s)+" / "+maxBudget(s)+" W":"None";
+  if(c.k==="up")return upText(s);
+  if(c.k==="stk")return f.stack.max===1?"None":f.stack.t+(f.stack.max?", "+f.stack.max:"");
+  if(c.k==="l3")return f.bgp?"Yes":"No";
+  if(c.k==="sw")return s.sw===null?"Not published":s.sw+" Gbps";
+  return "";
+}
 function cellHTML(s,c){
   const f=FAM[s.fam];
-  if(c.k==="cmp")return `<td><input type="checkbox" class="cmpbox" aria-label="Compare ${esc(s.sku)}" data-c="${esc(s.sku)}" ${cmp.has(s.sku)?"checked":""}></td>`;
+  if(c.k==="cmp")return `<td class="cmp"><input type="checkbox" class="cmpbox" aria-label="Compare ${esc(s.sku)}" data-c="${esc(s.sku)}" ${cmp.has(s.sku)?"checked":""}></td>`;
   if(c.k==="sku"){const v=s.verify.length?`<span class="vflag" title="${esc(s.vnote||"Needs verification")}">check</span>`:"";const e=isCur(s)?"":`<span class="eos" title="${esc(lcShort(s))}">EoS</span>`;
     return `<td class="sku">${esc(modelName(s))}${v}${e}${s.name||s.ff!=="1RU"?`<div class="small" style="font-family:var(--sans);font-weight:400">${esc([s.name?s.sku:"",s.ff!=="1RU"?s.ff+(s.fanless?", fanless":""):""].filter(Boolean).join(". "))}</div>`:""}</td>`}
   if(c.k==="fam")return `<td>${esc(f.v)} ${esc(f.name)}</td>`;
@@ -639,14 +663,7 @@ function cellHTML(s,c){
   if(c.k==="sw")return `<td class="num">${s.sw===null?"Not published":fmt(s.sw)+" Gbps"}</td>`;
   return `<td></td>`;
 }
-function renderColPanel(){
-  const opts=COLS.filter(c=>c.k!=="cmp").map(c=>{
-    const locked=c.k==="sku";
-    return `<label><input type="checkbox" data-col="${c.k}" ${locked?"disabled ":""}${!hiddenCols.has(c.k)?"checked":""}>${esc(c.t)}</label>`;
-  }).join("");
-  $("#colPanel").innerHTML=`${opts}<button type="button" class="ghost colReset" id="colReset">Reset</button>`;
-}
-function renderBrowse(){
+function filteredBrowseRows(){
   const med=$("#bMed").value,q=$("#q").value.trim().toLowerCase(),poe=+$("#bPoe").value,spd=+$("#bSpd").value,np=+$("#bPorts").value,red=$("#bRed").value,life=$("#bLife").value,rug=$("#bRug").value;
   let rows=SKUS.filter(s=>{const f=FAM[s.fam];
     if(bVend.size&&!bVend.has(f.v))return false;
@@ -658,6 +675,17 @@ function renderBrowse(){
   let col=COLS.find(c=>c.k===sortKey&&colVisible(c));
   if(!col){sortKey="fam";col=COLS.find(c=>c.k==="fam")}
   rows.sort((a,b)=>{const x=col.f(a),y=col.f(b);return (x>y?1:x<y?-1:0)*sortDir||a.sku.localeCompare(b.sku)});
+  return rows;
+}
+function renderColPanel(){
+  const opts=COLS.filter(c=>c.k!=="cmp").map(c=>{
+    const locked=c.k==="sku";
+    return `<label><input type="checkbox" data-col="${c.k}" ${locked?"disabled ":""}${!hiddenCols.has(c.k)?"checked":""}>${esc(c.t)}</label>`;
+  }).join("");
+  $("#colPanel").innerHTML=`${opts}<button type="button" class="ghost colReset" id="colReset">Reset</button>`;
+}
+function renderBrowse(){
+  const rows=filteredBrowseRows();
   $("#bCount").textContent=`${rows.length} of ${SKUS.length} models`;
   const cols=visibleCols();
   $("#bTable thead").innerHTML="<tr>"+cols.map(c=>`<th class="${c.ns?"nosort":""}" data-col="${c.k}" data-sort="${c.ns?"":c.k}" ${c.tip?`title="${esc(c.tip)}"`:""} ${c.k===sortKey?`aria-sort="${sortDir>0?"ascending":"descending"}"`:""}>${c.t}${c.k===sortKey?(sortDir>0?" &#9650;":" &#9660;"):""}</th>`).join("")+"</tr>";
@@ -665,6 +693,24 @@ function renderBrowse(){
   applyBrowseWidths();
   wireBrowseResizers();
   $("#clrSel").hidden=!cmp.size;
+}
+function scrollBrowse(dir){
+  const wrap=document.querySelector("#v-browse .tablewrap");
+  if(!wrap)return;
+  wrap.scrollBy({left:dir*Math.max(240,Math.round(wrap.clientWidth*0.7)),behavior:"smooth"});
+}
+function csvEscape(v){const s=String(v??"");return /[",\n\r]/.test(s)?`"${s.replace(/"/g,'""')}"`:s}
+function exportBrowseCsv(){
+  const cols=visibleCols().filter(c=>c.k!=="cmp");
+  const rows=filteredBrowseRows();
+  const lines=[cols.map(c=>csvEscape(c.t)).join(",")];
+  rows.forEach(s=>lines.push(cols.map(c=>csvEscape(cellText(s,c))).join(",")));
+  const blob=new Blob([lines.join("\n")],{type:"text/csv;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="switch-comparison.csv";
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 }
 function clearFilters(){
   $("#q").value="";
@@ -704,6 +750,9 @@ $("#bPorts").innerHTML+=[...new Set(SKUS.map(totalPorts))].sort((a,b)=>a-b).map(
 $("#legend1").innerHTML=legendHTML();
 $("#clrFilters").onclick=clearFilters;
 $("#clrSel").onclick=clearSelection;
+$("#bScrollL").onclick=()=>scrollBrowse(-1);
+$("#bScrollR").onclick=()=>scrollBrowse(1);
+$("#exportCsv").onclick=exportBrowseCsv;
 $("#colBtn").onclick=()=>{const open=$("#colPick").classList.toggle("open");$("#colBtn").setAttribute("aria-expanded",open?"true":"false")};
 $("#colPanel").addEventListener("change",e=>{const k=e.target.dataset.col;if(!k||k==="sku")return;if(e.target.checked)hiddenCols.delete(k);else hiddenCols.add(k);renderBrowse()});
 $("#colPanel").addEventListener("click",e=>{
