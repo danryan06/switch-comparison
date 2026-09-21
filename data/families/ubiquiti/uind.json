@@ -1,0 +1,66 @@
+{
+  "id": "uind",
+  "vendor": "Ubiquiti",
+  "family": "Industrial",
+  "source": "ui-usw-industrial",
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "Not stackable; each switch is managed individually in UniFi Network"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 only"
+  },
+  "routeScale": "None (Layer 2)",
+  "macTable": "4,000",
+  "macsec": "Not listed",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Internal 450W AC PSU",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Single AC input; no redundant option"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No switch licensing; managed from UniFi Network (self-hosted or on a UniFi cloud gateway)",
+  "ruggedized": true,
+  "operatingTempC": {
+    "min": -40,
+    "max": 60
+  },
+  "mounting": [
+    "desktop",
+    "wall"
+  ],
+  "verify": [],
+  "models": [
+    {
+      "sku": "USW-Industrial",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "uind2g",
+      "poeBudgets": [
+        {
+          "config": "Internal 450W PSU",
+          "watts": 430
+        }
+      ],
+      "switchingGbps": 20,
+      "forwardingMpps": 15,
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "Extended temperature, fanless, die-cast and plenum rated, but no IP rating, DIN mounting, or industrial certifications are listed (CE, FCC, IC only). Rated -40 to 50C at full 450W PSU load, 60C at 240W. Ten 1G RJ45 ports, 8 with PoE++; no SFP"
+    }
+  ]
+}

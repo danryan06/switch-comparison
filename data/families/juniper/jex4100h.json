@@ -1,0 +1,216 @@
+{
+  "id": "jex4100h",
+  "vendor": "Juniper",
+  "family": "EX4100-H",
+  "source": "jex4100h",
+  "additionalSources": [
+    "jex4100hhw",
+    "jex4100"
+  ],
+  "stacking": {
+    "tech": "Virtual Chassis",
+    "bandwidthGbps": 40,
+    "maxMembers": 10,
+    "frontPanel": true,
+    "note": "Stacks over the front SFP+ VC ports (2 on the 12MP, 4 on the 24-port models), which can be reconfigured as uplinks. Joining a VC with EX4100 or EX4100-F needs HiGig mode on the EX4100-H, where its uplink ports stop working"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Static, RIP, OSPF, BGP, IS-IS, VRF-lite, EVPN-VXLAN. OSPF and BGP need a Flex license"
+  },
+  "routeScale": "32,650 IPv4 unicast prefixes, 32,150 host routes; 16,200 IPv6 prefixes",
+  "macTable": "64,000",
+  "macsec": "AES-256 on the SFP+ uplink ports (and the four 2.5G ports on the 12MP)",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Dual load-sharing hot-swap PSUs, AC or DC and mixable: external on the 12MP, internal FRU on the 24-port models",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two PSU slots, load sharing; any mix of AC and DC PSUs"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Juniper Flex: Standard features included. OSPF and BGP need a Flex Advanced or Premium license (perpetual or 3 or 5-year subscription, class C1 for 12-port, C2 for 24-port); subscriptions include Mist Wired Assurance",
+  "ruggedized": true,
+  "operatingTempC": {
+    "min": -40,
+    "max": 75
+  },
+  "ipRating": "IP30",
+  "mounting": [
+    "rack"
+  ],
+  "verify": [
+    "routeScale",
+    "macTable"
+  ],
+  "verifyNote": "The EX4100-H data sheet claims feature parity with the EX4100, but its own scale table was not reviewed. Route and MAC scale are taken from the EX4100 data sheet. Operating temperature: -40 to 60C sealed cabinet, 70C vented, 75C blower-equipped",
+  "models": [
+    {
+      "sku": "EX4100-H-12MP",
+      "accessPorts": [
+        {
+          "count": 4,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        },
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "jex4100h12",
+      "poeBudgets": [
+        {
+          "config": "1x JPSU-H-340W-E-AC",
+          "watts": 240
+        },
+        {
+          "config": "2x JPSU-H-340W-E-AC",
+          "watts": 360
+        }
+      ],
+      "switchingGbps": 116,
+      "forwardingMpps": 86,
+      "formFactor": "Compact",
+      "fanless": true,
+      "mounting": [
+        "din",
+        "wall",
+        "rack"
+      ],
+      "note": "External PSUs. DIN rail, magnet, wall, and 2-post rack kits are orderable. Can also run non-PoE from a third-party 12V supply"
+    },
+    {
+      "sku": "EX4100-H-12MP-DC",
+      "accessPorts": [
+        {
+          "count": 4,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        },
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "jex4100h12",
+      "poeBudgets": [
+        {
+          "config": "1x JPSU-H-340W-E-DC",
+          "watts": 240
+        },
+        {
+          "config": "2x JPSU-H-340W-E-DC",
+          "watts": 360
+        }
+      ],
+      "switchingGbps": 116,
+      "forwardingMpps": 86,
+      "formFactor": "Compact",
+      "fanless": true,
+      "mounting": [
+        "din",
+        "wall",
+        "rack"
+      ],
+      "note": "External PSUs. DIN rail, magnet, wall, and 2-post rack kits are orderable. Can also run non-PoE from a third-party 12V supply"
+    },
+    {
+      "sku": "EX4100-H-24MP",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        },
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "jex4100f",
+      "poeBudgets": [
+        {
+          "config": "1x JPSU-H-340W-AC",
+          "watts": 240
+        },
+        {
+          "config": "2x JPSU-H-340W-AC",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 232,
+      "forwardingMpps": 172,
+      "fanless": true
+    },
+    {
+      "sku": "EX4100-H-24MP-DC",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        },
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "jex4100f",
+      "poeBudgets": [
+        {
+          "config": "1x JPSU-H-340W-DC",
+          "watts": 240
+        },
+        {
+          "config": "2x JPSU-H-340W-DC",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 232,
+      "forwardingMpps": 172,
+      "fanless": true
+    },
+    {
+      "sku": "EX4100-H-24F",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "jex4100f",
+      "poeBudgets": [],
+      "switchingGbps": 232,
+      "forwardingMpps": 172,
+      "fanless": true,
+      "note": "24 SFP access ports, no PoE. 90W internal PSUs"
+    },
+    {
+      "sku": "EX4100-H-24F-DC",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "jex4100f",
+      "poeBudgets": [],
+      "switchingGbps": 232,
+      "forwardingMpps": 172,
+      "fanless": true,
+      "note": "24 SFP access ports, no PoE. 90W internal PSUs"
+    }
+  ]
+}
