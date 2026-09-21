@@ -2,7 +2,7 @@
 
 A vendor-neutral comparison and closet sizing tool for campus access switches. Describe what a wiring closet needs to power and connect, and it tells you which models from each vendor can do it, how many switches you need, and which power supply configuration gets you there.
 
-Current coverage: Cisco Catalyst 9200, 9200L, 9200CX, 9300, 9300X, 9300L, and 9300LM, and C9350 Smart Switches; Cisco Meraki MS130, MS150, MS210, and MS225; HPE Aruba CX 6000, 6100, 6200, 6300, and 6300L; Juniper EX4000, EX4100, EX4100-F, and EX4400; Ubiquiti UniFi Enterprise Campus, Enterprise Campus S, Pro Max, Pro XG, Pro HD, Pro, and Standard; and Fortinet FortiSwitch 100 through 400 series. That includes rack-mount, compact, and desktop switches, with copper and fiber access ports. 254 models in total, 10 of them past end of sale.
+Current coverage: Cisco Catalyst 9200, 9200L, 9200CX, 9300, 9300X, 9300L, and 9300LM, and C9350 Smart Switches; Cisco Meraki MS130, MS150, MS210, MS225, MS250, MS350, and MS355; HPE Aruba CX 6000, 6100, 6200, 6300, and 6300L; Juniper EX4000, EX4100, EX4100-F, and EX4400; Ubiquiti UniFi Enterprise Campus, Enterprise Campus S, Pro Max, Pro XG, Pro HD, Pro, and Standard; and Fortinet FortiSwitch 100 through 400 series. That includes rack-mount, compact, and desktop switches, with copper and fiber access ports. 269 models in total, 25 of them past end of sale.
 
 ## What it does
 
