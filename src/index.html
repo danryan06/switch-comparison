@@ -133,8 +133,8 @@ svg.face .pw{fill:var(--poe)}svg.face .pw60{fill:var(--poe60)}svg.face .pw90{fil
 .msel summary::-webkit-details-marker{display:none}
 .msel summary::after{content:"";position:absolute;right:10px;top:50%;width:6px;height:6px;border:solid var(--muted);border-width:0 2px 2px 0;transform:translateY(-70%) rotate(45deg)}
 .msel[open] summary::after{transform:translateY(-30%) rotate(225deg)}
-.msel .mlist{position:absolute;z-index:20;left:0;right:0;min-width:100%;margin-top:4px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
-.msel .mlist label{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:5px;cursor:pointer;font-size:15px;color:var(--ink);margin:0;white-space:nowrap}
+.msel .mlist{position:absolute;z-index:20;left:0;right:auto;min-width:100%;width:max-content;margin-top:4px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.msel .mlist label{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:5px;cursor:pointer;font-size:15px;color:var(--ink);margin:0;white-space:nowrap}
 .msel .mlist label:hover{background:var(--surface-2)}
 .tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
 table{border-collapse:collapse;width:100%;font-size:14px}
@@ -585,7 +585,8 @@ $("#sizeVendors").addEventListener("click",e=>{const v=e.target.dataset.sv;if(!v
 /* ---------- Browse ---------- */
 const cmp=new Set();
 const bVend=new Set();/* empty = all vendors */
-const hiddenCols=new Set();/* column keys hidden via Choose columns; sku always stays visible */
+const DEF_HIDDEN=["fab","stk","l3","sw"];/* default Browse columns: Model, Family, Access ports, PoE per port, PoE budget, Uplinks */
+const hiddenCols=new Set(DEF_HIDDEN);/* sku always stays visible */
 let sortKey="fam",sortDir=1;
 const COLS=[
   {k:"cmp",t:"",ns:1},
@@ -758,6 +759,7 @@ $("#colPanel").addEventListener("change",e=>{const k=e.target.dataset.col;if(!k|
 $("#colPanel").addEventListener("click",e=>{
   if(e.target.id!=="colReset")return;
   hiddenCols.clear();
+  DEF_HIDDEN.forEach(k=>hiddenCols.add(k));
   for(const k of Object.keys(DEF_W))colW[k]=DEF_W[k];
   localStorage.removeItem("sw.colW");
   renderColPanel();renderBrowse();
