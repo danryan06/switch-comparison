@@ -467,7 +467,7 @@ const PRESETS={
 const WOPTS=[[7,"Class 2 (7W)"],[15.4,"Class 3 (15.4W)"],[30,"Class 4 (30W)"],[45,"Class 5 (45W)"],[60,"Class 6 (60W)"],[75,"Class 7 (75W)"],[90,"Class 8 (90W)"]];
 const SOPTS=[[1,"1G"],[2.5,"2.5G"],[5,"5G"],[10,"10G"]];
 let groups=[{name:"Wi-Fi 7 APs",qty:12,w:45,spd:5},{name:"IP phones",qty:40,w:7,spd:1}];
-const sizeVend=new Set(VENDORS);
+const sizeVend=new Set();/* empty = all vendors */
 
 function renderGroups(){
   $("#groups").innerHTML=groups.map((g,i)=>`<div class="grp">
@@ -501,7 +501,7 @@ function uplinkAvail(s,req,u){
 }
 function sizeOne(s,req){
   const f=FAM[s.fam];
-  if(!sizeVend.has(f.v))return null;
+  if(sizeVend.size&&!sizeVend.has(f.v))return null;
   /* Pure fabric / aggregation models have no accessPorts and are not closet-sizing candidates. */
   if(!s.ports.length)return null;
   if(req.ff==="1RU"&&s.ff!=="1RU")return null;
@@ -579,8 +579,8 @@ function resultCard(r,best){
 }
 ["dataPorts","upN","upS","l3","head","stack","fibN","fibS","ffSel","envSel","eos"].forEach(id=>$("#"+id).addEventListener("change",runSize));
 $("#dataPorts").addEventListener("input",runSizeDebounced);$("#upN").addEventListener("input",runSizeDebounced);$("#fibN").addEventListener("input",runSizeDebounced);
-$("#sizeVendors").innerHTML=VENDORS.map(v=>`<button class="chip" aria-pressed="true" data-sv="${v}">${v}</button>`).join("");
-$("#sizeVendors").addEventListener("click",e=>{const v=e.target.dataset.sv;if(!v)return;if(sizeVend.has(v)){if(sizeVend.size>1)sizeVend.delete(v)}else sizeVend.add(v);e.target.setAttribute("aria-pressed",sizeVend.has(v));runSize()});
+$("#sizeVendors").innerHTML=VENDORS.map(v=>`<button class="chip" aria-pressed="false" data-sv="${v}">${v}</button>`).join("");
+$("#sizeVendors").addEventListener("click",e=>{const v=e.target.dataset.sv;if(!v)return;if(sizeVend.has(v))sizeVend.delete(v);else sizeVend.add(v);e.target.setAttribute("aria-pressed",sizeVend.has(v));runSize()});
 
 /* ---------- Browse ---------- */
 const cmp=new Set();
