@@ -352,5 +352,35 @@
     "title": "Juniper Networks EX4650 Ethernet Switch Data Sheet",
     "url": "https://www.juniper.net/us/en/products/switches/ex-series/ex4650-ethernet-switch-datasheet.html",
     "retrieved": "2026-09-21"
+  },
+  "mms130r": {
+    "title": "Cisco Meraki MS130R Datasheet",
+    "url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/MS130R_Datasheet",
+    "retrieved": "2026-09-21"
+  },
+  "mms450": {
+    "title": "Cisco Meraki MS450 Overview and Specifications",
+    "url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/MS450_Overview_and_Specifications",
+    "retrieved": "2026-09-21"
+  },
+  "e5320": {
+    "title": "Extreme Networks 5320 Series Universal Switch Data Sheet",
+    "url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/d474173d28554fb5925dc4e26312c8fe?v=78f49bb9",
+    "retrieved": "2026-09-21"
+  },
+  "e5420": {
+    "title": "Extreme Networks 5420 Series Universal Switch Data Sheet",
+    "url": "https://www.extremenetworks.com/products/switches/universal-switches/5420",
+    "retrieved": "2026-09-21"
+  },
+  "e5520": {
+    "title": "Extreme Networks 5520 Series Universal Switch Data Sheet",
+    "url": "https://www.extremenetworks.com/products/switches/universal-switches/5520",
+    "retrieved": "2026-09-21"
+  },
+  "e5720": {
+    "title": "Extreme Networks 5720 Series Universal Switch Data Sheet",
+    "url": "https://www.extremenetworks.com/products/switches/universal-switches/5720",
+    "retrieved": "2026-09-21"
   }
 }

@@ -1,0 +1,60 @@
+{
+  "id": "mms450",
+  "vendor": "Cisco Meraki",
+  "family": "MS450",
+  "source": "mms450",
+  "stacking": {
+    "tech": "Meraki physical stacking",
+    "bandwidthGbps": 400,
+    "maxMembers": 8,
+    "frontPanel": false,
+    "note": "Two dedicated 100G QSFP28 stacking ports (up to 400G), separate from the data ports. Also supports virtual stacking in the dashboard"
+  },
+  "routing": {
+    "tier": "ospf",
+    "bgp": false,
+    "summary": "Layer 3 aggregation: static and OSPF routing, DHCP server and relay, warm spare (VRRP). OSPF and warm spare do not run concurrently. No BGP"
+  },
+  "routeScale": "Not published (static and OSPF; DHCP server; VRRP warm spare)",
+  "macTable": "80,000",
+  "macsec": "Not listed",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Modular hot-swap power supplies; one included, second slot for an optional redundant PSU",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Second hot-swap PSU slot; the second PSU is sold separately"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Meraki Enterprise license required per switch (co-term or per-device); includes support",
+  "operatingTempC": {
+    "min": 0,
+    "max": 45
+  },
+  "mounting": [
+    "rack"
+  ],
+  "models": [
+    {
+      "sku": "MS450-12-HW",
+      "description": "12x 40G QSFP+ + 2x 100G QSFP28 uplinks",
+      "accessPorts": [],
+      "fabricPorts": [
+        {
+          "count": 12,
+          "speedGbps": 40
+        },
+        {
+          "count": 2,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 1360,
+      "forwardingMpps": null,
+      "note": "Non-blocking 1.36 Tbps fabric. The two 100G QSFP28 uplink ports run at 100G only (no 40G downshift). Two further 100G ports are dedicated to stacking. Designed to aggregate up to 12 MS355 switches"
+    }
+  ]
+}

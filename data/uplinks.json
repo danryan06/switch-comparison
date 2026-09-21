@@ -838,5 +838,107 @@
         ]
       }
     ]
+  },
+  "ext5320": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 1/10G SFP+ (fixed; includes 2 stacking ports)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "ext5420f": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 1/10G SFP+ (fixed built-in)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "ext5420m": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 1/10/25G SFP28 (fixed built-in)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 25
+          }
+        ]
+      }
+    ]
+  },
+  "ext5520vim": {
+    "modular": true,
+    "options": [
+      {
+        "label": "5520-VIM-4X / 4XE: 4x 1/10G SFP+",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 10
+          }
+        ]
+      },
+      {
+        "label": "5520-VIM-4YE: 4x 10/25G SFP28",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 25
+          }
+        ]
+      }
+    ]
+  },
+  "ext5720vim": {
+    "modular": true,
+    "options": [
+      {
+        "label": "5720-VIM-6YE: 6x 1/10/25G SFP28",
+        "ports": [
+          {
+            "count": 6,
+            "speedGbps": 25
+          }
+        ]
+      },
+      {
+        "label": "5720-VIM-2CE: 2x 100G QSFP28",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 100
+          }
+        ]
+      }
+    ]
+  },
+  "ext5320_8xe": {
+    "modular": false,
+    "options": [
+      {
+        "label": "8x 1/10G SFP+ (fixed; includes 2 stacking ports)",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
   }
 }

@@ -1,0 +1,68 @@
+{
+  "id": "mms130r",
+  "vendor": "Cisco Meraki",
+  "family": "MS130R",
+  "source": "mms130r",
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "Not stackable"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 access: 802.1Q VLANs, 802.1X, DHCP snooping, IPv4/IPv6 ACLs. No routing"
+  },
+  "routeScale": "None (Layer 2)",
+  "macTable": "Not published",
+  "macsec": "Not listed",
+  "buffer": "Not published",
+  "power": {
+    "summary": "External AC power adapter (MA-PWR-300W-INDADP) or Cisco DIN rail PSU (PWR-IE240W-PCAC-L or PWR-IE480W-PCAC-L); all sold separately",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Single external supply; no redundant option"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Meraki Enterprise license required per switch (Advanced license optional for Adaptive Policy); includes support",
+  "ruggedized": true,
+  "operatingTempC": {
+    "min": -40,
+    "max": 70
+  },
+  "ipRating": "IP30",
+  "mounting": [
+    "rack",
+    "wall",
+    "din",
+    "desktop"
+  ],
+  "models": [
+    {
+      "sku": "MS130R-8P",
+      "description": "8x 1G RJ45 PoE (802.3bt, 30W cap) + 2x 1G SFP",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g2",
+      "poeBudgets": [
+        {
+          "config": "External AC adapter or DIN rail PSU (sold separately)",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 20,
+      "forwardingMpps": null,
+      "fanless": true,
+      "note": "PoE derates with temperature (for example the 480W DIN rail PSU loses 60W per 5C above 50C). Rated -40 to 70C in a fan/blower enclosure, down to -40 to 55C horizontal desktop"
+    }
+  ]
+}

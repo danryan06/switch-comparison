@@ -1,0 +1,164 @@
+{
+  "id": "e5420m",
+  "vendor": "Extreme Networks",
+  "family": "5420M Universal",
+  "source": "e5420",
+  "stacking": {
+    "tech": "Switch Engine stacking",
+    "bandwidthGbps": 80,
+    "maxMembers": 8,
+    "frontPanel": false,
+    "note": "Up to 8 units over two dedicated SFP-DD stacking ports (80G per unit). Stacking runs in Switch Engine mode only"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Dual persona: Switch Engine (EXOS) or Fabric Engine (VOSS). Static, RIP, OSPF, IS-IS, BGP, PIM, VRF, and EVPN. 5+ OSPF interfaces, 3+ BGP peers, IS-IS, and EVPN need a Premier license"
+  },
+  "routeScale": "Not captured from datasheet",
+  "macTable": "Not captured from datasheet",
+  "macsec": "MACsec 128 and 256-bit AES on access and built-in uplink ports (specific hardware revisions)",
+  "buffer": "Not captured from datasheet",
+  "power": {
+    "summary": "Two field-replaceable, hot-swap power supply slots (primary required; secondary for redundancy and maximum PoE); modular fans",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two field-replaceable PSU slots; second PSU enables maximum PoE budget"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Base software license included (most features); Premier license for advanced routing and MACsec license ordered separately. Managed by ExtremeCloud IQ or Extreme Platform ONE, or on-box via CLI/GUI",
+  "operatingTempC": {
+    "min": 0,
+    "max": 50
+  },
+  "mounting": [
+    "rack"
+  ],
+  "verify": [
+    "switchingGbps",
+    "forwardingMpps",
+    "routeScale",
+    "macTable",
+    "buffer"
+  ],
+  "verifyNote": "PoE budgets, ports, and uplinks are from the 5420 datasheet ordering tables. Per-model switching capacity, forwarding rate, MAC and route scale, and buffer were not captured and need confirming from the 5420 datasheet performance table",
+  "models": [
+    {
+      "sku": "5420M-24T-4YE",
+      "description": "24x 1G RJ45 + 4x 1/10/25G SFP28 (non-PoE)",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "ext5420m",
+      "poeBudgets": [],
+      "switchingGbps": null,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "5420M-24W-4YE",
+      "description": "24x 1G RJ45 90W PoE + 4x 1/10/25G SFP28",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "ext5420m",
+      "poeBudgets": [
+        {
+          "config": "1x 920W PSU",
+          "watts": 720
+        },
+        {
+          "config": "2x 920W PSU",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "5420M-48T-4YE",
+      "description": "48x 1G RJ45 + 4x 1/10/25G SFP28 (non-PoE)",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "ext5420m",
+      "poeBudgets": [],
+      "switchingGbps": null,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "5420M-48W-4YE",
+      "description": "48x 1G RJ45 90W PoE + 4x 1/10/25G SFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "ext5420m",
+      "poeBudgets": [
+        {
+          "config": "1x 920W PSU",
+          "watts": 804
+        },
+        {
+          "config": "2x 920W PSU",
+          "watts": 1558
+        },
+        {
+          "config": "2x 2000W PSU",
+          "watts": 2880
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "5420M-16MW-32P-4YE",
+      "description": "16x 1/2.5G multi-rate 90W + 32x 1G RJ45 30W PoE + 4x 1/10/25G SFP28",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        },
+        {
+          "count": 32,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "ext5420m",
+      "poeBudgets": [
+        {
+          "config": "1x 920W PSU",
+          "watts": 787
+        },
+        {
+          "config": "2x 920W PSU",
+          "watts": 1541
+        },
+        {
+          "config": "2x 2000W PSU",
+          "watts": 2400
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null
+    }
+  ]
+}

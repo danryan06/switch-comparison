@@ -1,0 +1,171 @@
+{
+  "id": "e5720",
+  "vendor": "Extreme Networks",
+  "family": "5720 Universal",
+  "source": "e5720",
+  "stacking": {
+    "tech": "Switch Engine stacking",
+    "bandwidthGbps": 400,
+    "maxMembers": 8,
+    "frontPanel": false,
+    "note": "Up to 8 units (400G per unit) over two built-in QSFP28 ports. Those ports serve as uplinks when not stacking; the VIM slot provides the separate uplinks. Stacking runs in Switch Engine mode only, and can cross-stack with the 5520 at 50G"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Dual persona: Switch Engine (EXOS) or Fabric Engine (VOSS). Static, RIP, OSPF, IS-IS, BGP, PIM, VRF, and EVPN. 5+ OSPF interfaces, 3+ BGP peers, IS-IS, and EVPN need a Premier license"
+  },
+  "routeScale": "Switch Engine IPv4 routes: 166,000 (MW models), 294,000 (MXW models); OSPF and BGP with a Premier license",
+  "macTable": "Switch Engine: 163,000 (MW models), 294,000 (MXW models)",
+  "macsec": "MACsec 256-bit AES on access and VIM uplink ports (MACsec license required)",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Two modular hot-swap power supply slots (one required; second for redundancy and PoE); hot-swap fan modules",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two hot-swap PSU slots; second PSU for redundancy and additional PoE budget"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Base software license included (most features); Premier license for advanced routing and MACsec license ordered separately. Managed by ExtremeCloud IQ or Extreme Platform ONE, or on-box via CLI/GUI",
+  "operatingTempC": {
+    "min": 0,
+    "max": 50
+  },
+  "mounting": [
+    "rack"
+  ],
+  "models": [
+    {
+      "sku": "5720-24MW",
+      "description": "24x 1/2.5/5G multi-rate 90W PoE + VIM uplink",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "ext5720vim",
+      "poeBudgets": [
+        {
+          "config": "1x 715W PSU",
+          "watts": 450
+        },
+        {
+          "config": "1x 1100W PSU",
+          "watts": 835
+        },
+        {
+          "config": "2x 1100W PSU",
+          "watts": 1825
+        },
+        {
+          "config": "2x 2000W PSU (220-264V)",
+          "watts": 2160
+        }
+      ],
+      "switchingGbps": 1040,
+      "forwardingMpps": 774
+    },
+    {
+      "sku": "5720-48MW",
+      "description": "48x 1/2.5/5G multi-rate 90W PoE + VIM uplink",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "ext5720vim",
+      "poeBudgets": [
+        {
+          "config": "1x 715W PSU",
+          "watts": 450
+        },
+        {
+          "config": "1x 1100W PSU",
+          "watts": 835
+        },
+        {
+          "config": "2x 1100W PSU",
+          "watts": 1825
+        },
+        {
+          "config": "2x 2000W PSU (220-264V)",
+          "watts": 3535
+        }
+      ],
+      "switchingGbps": 1280,
+      "forwardingMpps": 810
+    },
+    {
+      "sku": "5720-24MXW",
+      "description": "24x 1/2.5/5/10G multi-rate 90W PoE + VIM uplink (Guest VM capable)",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "ext5720vim",
+      "poeBudgets": [
+        {
+          "config": "1x 715W PSU",
+          "watts": 450
+        },
+        {
+          "config": "1x 1100W PSU",
+          "watts": 835
+        },
+        {
+          "config": "2x 1100W PSU",
+          "watts": 1825
+        },
+        {
+          "config": "2x 2000W PSU (220-264V)",
+          "watts": 2160
+        }
+      ],
+      "switchingGbps": 1280,
+      "forwardingMpps": 810,
+      "note": "Supports Integrated Application Hosting (Guest VM) with an SSD module and Premier license"
+    },
+    {
+      "sku": "5720-48MXW",
+      "description": "48x 1/2.5/5/10G multi-rate 90W PoE + VIM uplink (Guest VM capable)",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "ext5720vim",
+      "poeBudgets": [
+        {
+          "config": "1x 715W PSU",
+          "watts": 450
+        },
+        {
+          "config": "1x 1100W PSU",
+          "watts": 835
+        },
+        {
+          "config": "2x 1100W PSU",
+          "watts": 1825
+        },
+        {
+          "config": "2x 2000W PSU (220-264V)",
+          "watts": 3535
+        }
+      ],
+      "switchingGbps": 1760,
+      "forwardingMpps": 810,
+      "note": "Supports Integrated Application Hosting (Guest VM) with an SSD module and Premier license"
+    }
+  ]
+}
