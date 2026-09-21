@@ -321,15 +321,15 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
       <div class="barActs">
         <button type="button" class="ghost" id="clrSel" hidden>Clear selection</button>
         <button type="button" class="ghost" id="clrFilters">Clear filters</button>
-        <button type="button" class="ghost" id="exportCsv">Export CSV</button>
-        <span class="scrollNav" role="group" aria-label="Scroll browse table">
-          <button type="button" class="ghost" id="bScrollL" aria-label="Scroll table left" title="Scroll left">&#8592;</button>
-          <button type="button" class="ghost" id="bScrollR" aria-label="Scroll table right" title="Scroll right">&#8594;</button>
-        </span>
         <div class="colpick" id="colPick">
           <button type="button" class="ghost" id="colBtn" aria-expanded="false" aria-controls="colPanel">Choose columns</button>
           <div class="colpanel" id="colPanel" role="group" aria-label="Visible columns"></div>
         </div>
+        <span class="scrollNav" role="group" aria-label="Scroll browse table">
+          <button type="button" class="ghost" id="bScrollL" aria-label="Scroll table left" title="Scroll left">&#8592;</button>
+          <button type="button" class="ghost" id="bScrollR" aria-label="Scroll table right" title="Scroll right">&#8594;</button>
+        </span>
+        <button type="button" class="ghost" id="exportCsv">Export CSV</button>
       </div>
     </div>
     <div class="tablewrap"><table id="bTable"><thead></thead><tbody></tbody></table></div>
