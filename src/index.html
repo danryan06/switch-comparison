@@ -149,7 +149,16 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 .eos{color:var(--muted);border:1px solid var(--line);border-radius:4px;font-weight:600;font-size:11px;margin-left:6px;padding:0 4px;white-space:nowrap}
 .cmpbox{width:18px;height:18px;accent-color:var(--accent);cursor:pointer}
 .bar2{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0}
+.bar2 .barActs{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .small{font-size:13px;color:var(--muted)}
+.colpick{position:relative}
+.colpick .colpanel{display:none;position:absolute;right:0;top:calc(100% + 6px);z-index:30;min-width:220px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.colpick.open .colpanel{display:block}
+.colpick .colpanel label{display:flex;align-items:center;gap:8px;padding:5px 4px;font-size:14px;cursor:pointer}
+.colpick .colpanel .colReset{margin-top:8px;width:100%}
+.compare-fab{position:fixed;right:20px;bottom:24px;z-index:40;display:none;align-items:center;justify-content:center;border:0;border-radius:999px;padding:12px 20px;background:var(--accent);color:var(--accent-ink);font-family:var(--cond);font-size:18px;font-weight:600;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.22)}
+.compare-fab:hover{filter:brightness(1.06)}
+.compare-fab.on{display:inline-flex}
 
 /* compare */
 .cmpgrid{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
@@ -297,7 +306,17 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
       <div class="fl"><label for="bLife">Lifecycle</label><select id="bLife"><option value="current">Current only</option><option value="all">Include end of sale</option><option value="eos">End of sale only</option></select></div>
       <div class="fl"><label for="bRug">Environment</label><select id="bRug"><option value="">Any</option><option value="yes">Rugged only</option></select></div>
     </div>
-    <div class="bar2"><span class="small" id="bCount"></span><span class="small">Tick up to 4 rows to compare. Tap a row for full specs.</span></div>
+    <div class="bar2">
+      <span class="small" id="bCount"></span>
+      <div class="barActs">
+        <button type="button" class="ghost" id="clrSel" hidden>Clear selection</button>
+        <button type="button" class="ghost" id="clrFilters">Clear filters</button>
+        <div class="colpick" id="colPick">
+          <button type="button" class="ghost" id="colBtn" aria-expanded="false" aria-controls="colPanel">Choose columns</button>
+          <div class="colpanel" id="colPanel" role="group" aria-label="Visible columns"></div>
+        </div>
+      </div>
+    </div>
     <div class="tablewrap"><table id="bTable"><thead></thead><tbody></tbody></table></div>
     <div class="legend" id="legend1"></div>
   </section>
@@ -333,6 +352,8 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
 </main>
 
 <footer><div class="wrap footin"><span>Vendor neutral and open source. Always confirm against the current datasheet before quoting a design. <span id="updated"></span></span><a class="xlink" href="https://apcomparison.com" target="_blank" rel="noopener">AP Comparison <span class="arr">&#8599;</span></a><a href="#" class="chklink" data-goto="check" id="chkLink">Needs checking</a></div></footer>
+
+<button type="button" class="compare-fab" id="compareFab" aria-label="Open compare">Compare (0)</button>
 
 <dialog id="dlg"><div class="dlg" id="dlgBody"></div></dialog>
 
@@ -408,7 +429,12 @@ function faceplate(s,scale){
   let ux=pad+accessCols*(cw+gap)+gapA;
   fabs.forEach((p,i)=>{const c=Math.floor(i/2),r=i%2;out+=`<rect class="upl" x="${ux+c*(13+gap)}" y="${pad+r*(ch+gap+2)}" width="13" height="${ch}" rx="1"/>`});
   ux+=fabCols*(13+gap)+gapF;
-  if(upN&&isMod(s)){out+=`<rect x="${ux-8}" y="${pad-3}" width="${upCols*(13+gap)+8}" height="${2*(ch+gap)+8}" rx="3" fill="none" stroke="var(--muted)" stroke-dasharray="3 2"/>`}
+  if(upN&&isMod(s)){
+    const inset=4,rowPitch=ch+gap+2;
+    const boxW=upCols*13+(upCols-1)*gap+2*inset;
+    const boxH=ch+rowPitch+2*inset;
+    out+=`<rect x="${ux-inset}" y="${pad-inset}" width="${boxW}" height="${boxH}" rx="3" fill="none" stroke="var(--muted)" stroke-dasharray="3 2"/>`;
+  }
   for(let i=0;i<upN;i++){const c=Math.floor(i/2),r=i%2;out+=`<rect class="upl" x="${ux+c*(13+gap)}" y="${pad+r*(ch+gap+2)}" width="13" height="${ch}" rx="1"/>`}
   return out+"</svg>";
 }
@@ -544,6 +570,7 @@ $("#sizeVendors").addEventListener("click",e=>{const v=e.target.dataset.sv;if(!v
 /* ---------- Browse ---------- */
 const cmp=new Set();
 const bVend=new Set();/* empty = all vendors */
+const hiddenCols=new Set();/* column keys hidden via Choose columns; sku always stays visible */
 let sortKey="fam",sortDir=1;
 const COLS=[
   {k:"cmp",t:"",ns:1},
@@ -558,6 +585,31 @@ const COLS=[
   {k:"l3",t:"BGP",f:s=>FAM[s.fam].bgp?1:0},
   {k:"sw",t:"Switching",f:s=>s.sw||0,num:1}
 ];
+const colVisible=c=>c.k==="cmp"||c.k==="sku"||!hiddenCols.has(c.k);
+const visibleCols=()=>COLS.filter(colVisible);
+function cellHTML(s,c){
+  const f=FAM[s.fam];
+  if(c.k==="cmp")return `<td><input type="checkbox" class="cmpbox" aria-label="Compare ${esc(s.sku)}" data-c="${esc(s.sku)}" ${cmp.has(s.sku)?"checked":""}></td>`;
+  if(c.k==="sku"){const v=s.verify.length?`<span class="vflag" title="${esc(s.vnote||"Needs verification")}">check</span>`:"";const e=isCur(s)?"":`<span class="eos" title="${esc(lcShort(s))}">EoS</span>`;
+    return `<td class="sku">${esc(modelName(s))}${v}${e}${s.name||s.ff!=="1RU"?`<div class="small" style="font-family:var(--sans);font-weight:400">${esc([s.name?s.sku:"",s.ff!=="1RU"?s.ff+(s.fanless?", fanless":""):""].filter(Boolean).join(". "))}</div>`:""}</td>`}
+  if(c.k==="fam")return `<td>${esc(f.v)} ${esc(f.name)}</td>`;
+  if(c.k==="ports")return `<td>${esc(portsText(s))}</td>`;
+  if(c.k==="fab")return `<td>${esc(fabricText(s))}</td>`;
+  if(c.k==="w")return `<td>${maxW(s)?maxW(s)+"W":"None"}</td>`;
+  if(c.k==="bud")return `<td class="num">${s.psu.length?fmt(defBudget(s))+" / "+fmt(maxBudget(s))+" W":"None"}</td>`;
+  if(c.k==="up")return `<td>${esc(upText(s))}</td>`;
+  if(c.k==="stk")return `<td>${f.stack.max===1?"None":esc(f.stack.t)+(f.stack.max?", "+f.stack.max:"")}</td>`;
+  if(c.k==="l3")return `<td>${f.bgp?"Yes":"No"}</td>`;
+  if(c.k==="sw")return `<td class="num">${s.sw===null?"Not published":fmt(s.sw)+" Gbps"}</td>`;
+  return `<td></td>`;
+}
+function renderColPanel(){
+  const opts=COLS.filter(c=>c.k!=="cmp").map(c=>{
+    const locked=c.k==="sku";
+    return `<label><input type="checkbox" data-col="${c.k}" ${locked?"disabled ":""}${!hiddenCols.has(c.k)?"checked":""}>${esc(c.t)}</label>`;
+  }).join("");
+  $("#colPanel").innerHTML=`${opts}<button type="button" class="ghost colReset" id="colReset">Reset</button>`;
+}
 function renderBrowse(){
   const med=$("#bMed").value,q=$("#q").value.trim().toLowerCase(),poe=+$("#bPoe").value,spd=+$("#bSpd").value,np=+$("#bPorts").value,red=$("#bRed").value,life=$("#bLife").value,rug=$("#bRug").value;
   let rows=SKUS.filter(s=>{const f=FAM[s.fam];
@@ -567,24 +619,30 @@ function renderBrowse(){
     if(rug==="yes"&&!s.rug)return false;
     if(poe===0&&maxW(s)>0)return false;if(poe>0&&maxW(s)<poe)return false;
     if(np&&totalPorts(s)!==np)return false;if(red&&(red==="yes")!==s.red.supported)return false;if(spd&&maxSpd(s)<spd)return false;if(med&&!s.ports.some(p=>p[3]===med))return false;return true});
-  const col=COLS.find(c=>c.k===sortKey);
+  let col=COLS.find(c=>c.k===sortKey&&colVisible(c));
+  if(!col){sortKey="fam";col=COLS.find(c=>c.k==="fam")}
   rows.sort((a,b)=>{const x=col.f(a),y=col.f(b);return (x>y?1:x<y?-1:0)*sortDir||a.sku.localeCompare(b.sku)});
   $("#bCount").textContent=`${rows.length} of ${SKUS.length} models`;
-  $("#bTable thead").innerHTML="<tr>"+COLS.map(c=>`<th class="${c.ns?"nosort":""}" data-sort="${c.ns?"":c.k}" ${c.k===sortKey?`aria-sort="${sortDir>0?"ascending":"descending"}"`:""}>${c.t}${c.k===sortKey?(sortDir>0?" &#9650;":" &#9660;"):""}</th>`).join("")+"</tr>";
-  $("#bTable tbody").innerHTML=rows.map(s=>{const f=FAM[s.fam];const v=s.verify.length?`<span class="vflag" title="${esc(s.vnote||"Needs verification")}">check</span>`:"";
-    const e=isCur(s)?"":`<span class="eos" title="${esc(lcShort(s))}">EoS</span>`;
-    return `<tr data-sku="${esc(s.sku)}">
-      <td><input type="checkbox" class="cmpbox" aria-label="Compare ${esc(s.sku)}" data-c="${esc(s.sku)}" ${cmp.has(s.sku)?"checked":""}></td>
-      <td class="sku">${esc(modelName(s))}${v}${e}${s.name||s.ff!=="1RU"?`<div class="small" style="font-family:var(--sans);font-weight:400">${esc([s.name?s.sku:"",s.ff!=="1RU"?s.ff+(s.fanless?", fanless":""):""].filter(Boolean).join(". "))}</div>`:""}</td>
-      <td>${esc(f.v)} ${esc(f.name)}</td>
-      <td>${esc(portsText(s))}</td>
-      <td>${esc(fabricText(s))}</td>
-      <td>${maxW(s)?maxW(s)+"W":"None"}</td>
-      <td class="num">${s.psu.length?fmt(defBudget(s))+" / "+fmt(maxBudget(s))+" W":"None"}</td>
-      <td>${esc(upText(s))}</td>
-      <td>${f.stack.max===1?"None":esc(f.stack.t)+(f.stack.max?", "+f.stack.max:"")}</td>
-      <td>${f.bgp?"Yes":"No"}</td>
-      <td class="num">${s.sw===null?"Not published":fmt(s.sw)+" Gbps"}</td></tr>`}).join("");
+  const cols=visibleCols();
+  $("#bTable thead").innerHTML="<tr>"+cols.map(c=>`<th class="${c.ns?"nosort":""}" data-sort="${c.ns?"":c.k}" ${c.k===sortKey?`aria-sort="${sortDir>0?"ascending":"descending"}"`:""}>${c.t}${c.k===sortKey?(sortDir>0?" &#9650;":" &#9660;"):""}</th>`).join("")+"</tr>";
+  $("#bTable tbody").innerHTML=rows.map(s=>`<tr data-sku="${esc(s.sku)}">${cols.map(c=>cellHTML(s,c)).join("")}</tr>`).join("");
+  $("#clrSel").hidden=!cmp.size;
+}
+function clearFilters(){
+  $("#q").value="";
+  $("#bPorts").value="0";$("#bSpd").value="0";$("#bMed").value="";$("#bRed").value="";$("#bPoe").value="-1";$("#bLife").value="current";$("#bRug").value="";
+  bVend.clear();
+  document.querySelectorAll("#bVendors .mlist input").forEach(i=>i.checked=false);
+  $("#bVendorBtn").textContent="All vendors";
+  renderBrowse();
+}
+function clearSelection(){cmp.clear();updCmp();renderBrowse()}
+function updateCompareFab(){
+  const fab=$("#compareFab");
+  const n=cmp.size;
+  fab.classList.toggle("on",n>=1);
+  fab.textContent=`Compare (${n})`;
+  $("#clrSel").hidden=!n;
 }
 $("#bTable").addEventListener("click",e=>{
   const th=e.target.closest("th[data-sort]");if(th&&th.dataset.sort){const k=th.dataset.sort;if(k===sortKey)sortDir*=-1;else{sortKey=k;sortDir=1}renderBrowse();return}
@@ -596,13 +654,25 @@ function alertCmp(){const c=$("#bCount");const t=c.textContent;c.textContent="Co
 $("#bVendors .mlist").innerHTML=VENDORS.map(v=>`<label><input type="checkbox" value="${esc(v)}">${esc(v)}</label>`).join("");
 $("#bVendors").addEventListener("change",e=>{const v=e.target.value;if(e.target.checked)bVend.add(v);else bVend.delete(v);
   $("#bVendorBtn").textContent=!bVend.size?"All vendors":bVend.size===1?[...bVend][0]:bVend.size+" vendors";renderBrowse()});
-document.addEventListener("click",e=>{const d=$("#bVendors");if(d.open&&!d.contains(e.target))d.open=false});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")$("#bVendors").open=false});
+document.addEventListener("click",e=>{
+  const d=$("#bVendors");if(d.open&&!d.contains(e.target))d.open=false;
+  const cp=$("#colPick");if(cp.classList.contains("open")&&!cp.contains(e.target)){cp.classList.remove("open");$("#colBtn").setAttribute("aria-expanded","false")}
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){$("#bVendors").open=false;$("#colPick").classList.remove("open");$("#colBtn").setAttribute("aria-expanded","false")}
+});
 $("#bPorts").innerHTML+=[...new Set(SKUS.map(totalPorts))].sort((a,b)=>a-b).map(n=>`<option value="${n}">${n} ports</option>`).join("");
 $("#legend1").innerHTML=legendHTML();
+$("#clrFilters").onclick=clearFilters;
+$("#clrSel").onclick=clearSelection;
+$("#colBtn").onclick=()=>{const open=$("#colPick").classList.toggle("open");$("#colBtn").setAttribute("aria-expanded",open?"true":"false")};
+$("#colPanel").addEventListener("change",e=>{const k=e.target.dataset.col;if(!k||k==="sku")return;if(e.target.checked)hiddenCols.delete(k);else hiddenCols.add(k);renderBrowse()});
+$("#colPanel").addEventListener("click",e=>{if(e.target.id==="colReset"){hiddenCols.clear();renderColPanel();renderBrowse()}});
+$("#compareFab").onclick=()=>showView("compare");
+renderColPanel();
 
 /* ---------- Compare ---------- */
-function updCmp(){$("#cmpCount").textContent=cmp.size?`(${cmp.size})`:"";renderCompare()}
+function updCmp(){$("#cmpCount").textContent=cmp.size?`(${cmp.size})`:"";updateCompareFab();renderCompare()}
 function lifecycleHTML(s){
   const lc=s.lc,out=[lc.status==="current"?"Current":lc.status==="endOfSale"?"End of sale":"End of support"];
   if(lc.endOfSaleDate)out.push("Last order "+esc(lc.endOfSaleDate));
