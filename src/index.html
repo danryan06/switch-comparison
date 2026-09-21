@@ -141,6 +141,12 @@ table{border-collapse:collapse;width:100%;font-size:14px}
 th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:middle}
 th{font-weight:600;color:var(--muted);font-size:13px;background:var(--surface-2);position:sticky;top:0;cursor:pointer;user-select:none}
 th.nosort{cursor:default}
+#bTable{table-layout:fixed;width:max-content;min-width:100%;border-collapse:separate;border-spacing:0}
+#bTable th,#bTable td{overflow:hidden;text-overflow:ellipsis;box-sizing:border-box}
+#bTable th{position:sticky;top:0;z-index:1}
+#bTable th .col-resizer{position:absolute;top:0;right:0;width:7px;height:100%;cursor:col-resize;user-select:none;z-index:2}
+#bTable th .col-resizer:hover,#bTable.resizing th .col-resizer{background:var(--accent)}
+#bTable.resizing,#bTable.resizing *{cursor:col-resize!important;user-select:none!important}
 tbody tr{cursor:pointer}
 tbody tr:hover{background:var(--surface-2)}
 td.sku{font-family:var(--cond);font-weight:600;font-size:16px}
@@ -579,14 +585,44 @@ const COLS=[
   {k:"ports",t:"Access ports",f:s=>totalPorts(s)*100+maxSpd(s)},
   {k:"fab",t:"Fabric ports",f:s=>s.fabric.reduce((a,p)=>a+p[0],0)*1000+(s.fabric.length?Math.max(...s.fabric.map(p=>p[1])):0)},
   {k:"w",t:"PoE per port",f:s=>maxW(s)},
-  {k:"bud",t:"PoE budget (default / max)",f:s=>maxBudget(s),num:1},
+  {k:"bud",t:"PoE budget",f:s=>maxBudget(s),num:1,tip:"Default / max PoE budget (W)"},
   {k:"up",t:"Uplinks",f:s=>upText(s)},
   {k:"stk",t:"Stacking",f:s=>FAM[s.fam].stack.t},
   {k:"l3",t:"BGP",f:s=>FAM[s.fam].bgp?1:0},
   {k:"sw",t:"Switching",f:s=>s.sw||0,num:1}
 ];
+const DEF_W={cmp:44,sku:180,fam:200,ports:150,fab:140,w:110,bud:150,up:190,stk:150,l3:72,sw:130};
+const colW={...DEF_W};
+try{const saved=JSON.parse(localStorage.getItem("sw.colW")||"{}");for(const k of Object.keys(DEF_W))if(typeof saved[k]==="number")colW[k]=saved[k]}catch{}
 const colVisible=c=>c.k==="cmp"||c.k==="sku"||!hiddenCols.has(c.k);
 const visibleCols=()=>COLS.filter(colVisible);
+function saveColW(){localStorage.setItem("sw.colW",JSON.stringify(colW))}
+function applyBrowseWidths(){
+  const cols=visibleCols();
+  const tw=cols.reduce((a,c)=>a+(colW[c.k]||DEF_W[c.k]),0);
+  const table=$("#bTable");
+  table.style.width=tw+"px";
+  let cg=table.querySelector("colgroup");
+  if(!cg){cg=document.createElement("colgroup");table.insertBefore(cg,table.firstChild)}
+  cg.innerHTML=cols.map(c=>`<col data-k="${c.k}" style="width:${colW[c.k]||DEF_W[c.k]}px">`).join("");
+}
+function wireBrowseResizers(){
+  $("#bTable thead").querySelectorAll("th[data-col]").forEach(th=>{
+    if(th.querySelector(".col-resizer"))return;
+    const r=document.createElement("span");
+    r.className="col-resizer";
+    r.title="Drag to resize";
+    th.appendChild(r);
+    r.addEventListener("mousedown",e=>{
+      e.preventDefault();e.stopPropagation();
+      const k=th.dataset.col,startX=e.clientX,startW=colW[k]||DEF_W[k]||120,min=k==="cmp"?36:60;
+      const table=$("#bTable");table.classList.add("resizing");
+      const onMove=ev=>{colW[k]=Math.max(min,Math.round(startW+ev.clientX-startX));applyBrowseWidths()};
+      const onUp=()=>{document.removeEventListener("mousemove",onMove);document.removeEventListener("mouseup",onUp);table.classList.remove("resizing");saveColW()};
+      document.addEventListener("mousemove",onMove);document.addEventListener("mouseup",onUp);
+    });
+  });
+}
 function cellHTML(s,c){
   const f=FAM[s.fam];
   if(c.k==="cmp")return `<td><input type="checkbox" class="cmpbox" aria-label="Compare ${esc(s.sku)}" data-c="${esc(s.sku)}" ${cmp.has(s.sku)?"checked":""}></td>`;
@@ -624,8 +660,10 @@ function renderBrowse(){
   rows.sort((a,b)=>{const x=col.f(a),y=col.f(b);return (x>y?1:x<y?-1:0)*sortDir||a.sku.localeCompare(b.sku)});
   $("#bCount").textContent=`${rows.length} of ${SKUS.length} models`;
   const cols=visibleCols();
-  $("#bTable thead").innerHTML="<tr>"+cols.map(c=>`<th class="${c.ns?"nosort":""}" data-sort="${c.ns?"":c.k}" ${c.k===sortKey?`aria-sort="${sortDir>0?"ascending":"descending"}"`:""}>${c.t}${c.k===sortKey?(sortDir>0?" &#9650;":" &#9660;"):""}</th>`).join("")+"</tr>";
+  $("#bTable thead").innerHTML="<tr>"+cols.map(c=>`<th class="${c.ns?"nosort":""}" data-col="${c.k}" data-sort="${c.ns?"":c.k}" ${c.tip?`title="${esc(c.tip)}"`:""} ${c.k===sortKey?`aria-sort="${sortDir>0?"ascending":"descending"}"`:""}>${c.t}${c.k===sortKey?(sortDir>0?" &#9650;":" &#9660;"):""}</th>`).join("")+"</tr>";
   $("#bTable tbody").innerHTML=rows.map(s=>`<tr data-sku="${esc(s.sku)}">${cols.map(c=>cellHTML(s,c)).join("")}</tr>`).join("");
+  applyBrowseWidths();
+  wireBrowseResizers();
   $("#clrSel").hidden=!cmp.size;
 }
 function clearFilters(){
@@ -645,6 +683,7 @@ function updateCompareFab(){
   $("#clrSel").hidden=!n;
 }
 $("#bTable").addEventListener("click",e=>{
+  if(e.target.classList.contains("col-resizer"))return;
   const th=e.target.closest("th[data-sort]");if(th&&th.dataset.sort){const k=th.dataset.sort;if(k===sortKey)sortDir*=-1;else{sortKey=k;sortDir=1}renderBrowse();return}
   if(e.target.classList.contains("cmpbox")){const k=e.target.dataset.c;if(e.target.checked){if(cmp.size>=4){e.target.checked=false;alertCmp();return}cmp.add(k)}else cmp.delete(k);updCmp();return}
   const tr=e.target.closest("tr[data-sku]");if(tr)openDetail(tr.dataset.sku);
@@ -667,7 +706,13 @@ $("#clrFilters").onclick=clearFilters;
 $("#clrSel").onclick=clearSelection;
 $("#colBtn").onclick=()=>{const open=$("#colPick").classList.toggle("open");$("#colBtn").setAttribute("aria-expanded",open?"true":"false")};
 $("#colPanel").addEventListener("change",e=>{const k=e.target.dataset.col;if(!k||k==="sku")return;if(e.target.checked)hiddenCols.delete(k);else hiddenCols.add(k);renderBrowse()});
-$("#colPanel").addEventListener("click",e=>{if(e.target.id==="colReset"){hiddenCols.clear();renderColPanel();renderBrowse()}});
+$("#colPanel").addEventListener("click",e=>{
+  if(e.target.id!=="colReset")return;
+  hiddenCols.clear();
+  for(const k of Object.keys(DEF_W))colW[k]=DEF_W[k];
+  localStorage.removeItem("sw.colW");
+  renderColPanel();renderBrowse();
+});
 $("#compareFab").onclick=()=>showView("compare");
 renderColPanel();
 
