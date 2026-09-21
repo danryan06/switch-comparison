@@ -1,7 +1,7 @@
 {
   "id": "c9350",
   "vendor": "Cisco",
-  "family": "C9350 Smart Switch",
+  "family": "Catalyst 9350",
   "source": "c9350",
   "stacking": {
     "tech": "StackWise-1.6T",

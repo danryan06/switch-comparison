@@ -39,7 +39,6 @@
   "models": [
     {
       "sku": "MS450-12-HW",
-      "description": "12x 40G QSFP+ + 2x 100G QSFP28 uplinks",
       "accessPorts": [],
       "fabricPorts": [
         {

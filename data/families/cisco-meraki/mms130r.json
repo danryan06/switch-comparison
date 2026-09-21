@@ -44,7 +44,6 @@
   "models": [
     {
       "sku": "MS130R-8P",
-      "description": "8x 1G RJ45 PoE (802.3bt, 30W cap) + 2x 1G SFP",
       "accessPorts": [
         {
           "count": 8,

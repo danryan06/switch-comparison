@@ -652,7 +652,11 @@ function cellHTML(s,c){
   const f=FAM[s.fam];
   if(c.k==="cmp")return `<td class="cmp"><input type="checkbox" class="cmpbox" aria-label="Compare ${esc(s.sku)}" data-c="${esc(s.sku)}" ${cmp.has(s.sku)?"checked":""}></td>`;
   if(c.k==="sku"){const v=s.verify.length?`<span class="vflag" title="${esc(s.vnote||"Needs verification")}">check</span>`:"";const e=isCur(s)?"":`<span class="eos" title="${esc(lcShort(s))}">EoS</span>`;
-    return `<td class="sku">${esc(modelName(s))}${v}${e}${s.name||s.ff!=="1RU"?`<div class="small" style="font-family:var(--sans);font-weight:400">${esc([s.name?s.sku:"",s.ff!=="1RU"?s.ff+(s.fanless?", fanless":""):""].filter(Boolean).join(". "))}</div>`:""}</td>`}
+    const sub=[];
+    if(s.name)sub.push(s.sku);
+    if(s.ff==="Compact")sub.push(s.fanless?"Compact, fanless":"Compact");
+    else if(s.fanless)sub.push("Fanless");
+    return `<td class="sku">${esc(modelName(s))}${v}${e}${sub.length?`<div class="small" style="font-family:var(--sans);font-weight:400">${esc(sub.join(". "))}</div>`:""}</td>`}
   if(c.k==="fam")return `<td>${esc(f.v)} ${esc(f.name)}</td>`;
   if(c.k==="ports")return `<td>${esc(portsText(s))}</td>`;
   if(c.k==="fab")return `<td>${esc(fabricText(s))}</td>`;

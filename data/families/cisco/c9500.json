@@ -4,7 +4,7 @@
   "family": "Catalyst 9500",
   "source": "c9500",
   "stacking": {
-    "tech": "Cisco StackWise Virtual",
+    "tech": "StackWise Virtual",
     "bandwidthGbps": null,
     "maxMembers": 2,
     "frontPanel": false,
@@ -13,7 +13,7 @@
   "routing": {
     "tier": "full",
     "bgp": true,
-    "summary": "Full Layer 3: static, RIPv2, OSPFv2/v3, EIGRP, IS-IS, BGP, PIM, MPLS L3VPN, BGP EVPN-VXLAN, and SD-Access. Advanced routing needs Network Advantage"
+    "summary": "Full L3 incl. BGP, VRF, MPLS, VXLAN/EVPN, and SD-Access (Network Advantage)"
   },
   "routeScale": "Up to 256,000 IPv4 routes (indirect + direct) on UADP 3.0 models; see model overrides",
   "macTable": "82,000 (UADP 3.0 distribution template)",
@@ -28,7 +28,7 @@
     }
   },
   "fansFieldReplaceable": true,
-  "licensing": "Cisco DNA / unified switching license (Network Essentials or Advantage), 3, 5, or 7-year subscription; an add-on license is required to order",
+  "licensing": "Cisco DNA or Cisco Networking Subscription (Essentials or Advantage) required with purchase",
   "operatingTempC": {
     "min": 0,
     "max": 40
@@ -40,7 +40,6 @@
   "models": [
     {
       "sku": "C9500-16X",
-      "description": "16-port 1/10G SFP/SFP+ with optional 8x10G or 2x40G module",
       "accessPorts": [
         {
           "count": 16,
@@ -63,11 +62,11 @@
       "verify": [
         "buffer"
       ],
-      "verifyNote": "UADP 2.0 buffer size is not stated on the current 9500 datasheet"
+      "verifyNote": "UADP 2.0 buffer size is not stated on the current 9500 datasheet",
+      "note": "Optional network module: C9500-NM-8X (8x10G) or C9500-NM-2Q (2x40G)"
     },
     {
       "sku": "C9500-24Y4C",
-      "description": "24-port 1/10/25G SFP28 + 4x 40/100G",
       "accessPorts": [
         {
           "count": 24,
@@ -89,7 +88,6 @@
     },
     {
       "sku": "C9500-48Y4C",
-      "description": "48-port 1/10/25G SFP28 + 4x 40/100G",
       "accessPorts": [
         {
           "count": 48,
@@ -111,7 +109,6 @@
     },
     {
       "sku": "C9500-32QC",
-      "description": "32-port 40G (or 16-port 100G) QSFP+/QSFP28",
       "accessPorts": [],
       "fabricPorts": [
         {
@@ -127,7 +124,6 @@
     },
     {
       "sku": "C9500-32C",
-      "description": "32-port 100G QSFP28",
       "accessPorts": [],
       "fabricPorts": [
         {
@@ -142,7 +138,6 @@
     },
     {
       "sku": "C9500X-28C8D",
-      "description": "9500X: 28-port 40/100G QSFP28 + 8-port 40/100/200/400G QSFP-DD",
       "accessPorts": [],
       "fabricPorts": [
         {
@@ -164,11 +159,11 @@
       "operatingTempC": {
         "min": -5,
         "max": 45
-      }
+      },
+      "note": "Silicon One Q200 (9500X)"
     },
     {
       "sku": "C9500X-60L4D",
-      "description": "9500X: 60-port 10/25/50G SFP56 + 4-port 40/100/200/400G QSFP-DD",
       "accessPorts": [],
       "fabricPorts": [
         {
