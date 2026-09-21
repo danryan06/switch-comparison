@@ -1,0 +1,174 @@
+{
+  "vendor": "Juniper",
+  "source": "juniper-optics",
+  "opticsMatrixUrl": "https://apps.juniper.net/hct/",
+  "note": "EX-series Virtual Chassis runs over QSFP+/QSFP28 DACs or the dedicated VCP ports; no separate stacking cable SKU",
+  "parts": [
+    {
+      "sku": "EX-SFP-1GE-SX",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "SX",
+      "media": "MMF",
+      "distanceM": 550
+    },
+    {
+      "sku": "EX-SFP-1GE-LX",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "LX",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "EX-SFP-1GE-T",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 100
+    },
+    {
+      "sku": "EX-SFP-10GE-SR",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 300
+    },
+    {
+      "sku": "EX-SFP-10GE-LR",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "EX-SFP-10GE-LRM",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LRM",
+      "media": "MMF",
+      "distanceM": 220
+    },
+    {
+      "sku": "EX-SFP-10GE-ER",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "ER",
+      "media": "SMF",
+      "distanceM": 40000
+    },
+    {
+      "sku": "JNP-SFP-25G-SR",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 100
+    },
+    {
+      "sku": "JNP-SFP-25G-LR",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "JNP-QSFP-40G-SR4",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 150
+    },
+    {
+      "sku": "JNP-QSFP-40G-LR4",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "JNP-QSFP-100G-SR4",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 100
+    },
+    {
+      "sku": "JNP-QSFP-100G-LR4",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "JNP-SFP-10GE-DAC-1M",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 1
+    },
+    {
+      "sku": "JNP-SFP-10GE-DAC-3M",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 3
+    },
+    {
+      "sku": "JNP-SFP-25G-DAC-1M",
+      "category": "dac",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "DAC",
+      "distanceM": 1
+    },
+    {
+      "sku": "JNP-QSFP-DAC-1M",
+      "category": "dac",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "media": "DAC",
+      "distanceM": 1
+    },
+    {
+      "sku": "JNP-100G-DAC-1M",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 1
+    },
+    {
+      "sku": "JNP-QSFP-DAC-1M",
+      "category": "stacking",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "media": "DAC",
+      "distanceM": 1,
+      "note": "Virtual Chassis over QSFP+ DAC on EX4100/EX4400 (VCP ports)"
+    }
+  ]
+}

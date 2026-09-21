@@ -1,0 +1,117 @@
+{
+  "vendor": "Ubiquiti",
+  "source": "ubiquiti-optics",
+  "opticsMatrixUrl": "https://techspecs.ui.com/unifi/switching",
+  "note": "Ubiquiti UniFi optics ship as matched pairs (-D suffix). No LRM offered, and UniFi switches do not stack",
+  "parts": [
+    {
+      "sku": "UACC-OM-MM-1G-D-2",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "SX",
+      "media": "MMF",
+      "distanceM": 550,
+      "note": "Sold as a pair"
+    },
+    {
+      "sku": "UACC-OM-SM-1G-D-2",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "LX",
+      "media": "SMF",
+      "distanceM": 10000,
+      "note": "Sold as a pair"
+    },
+    {
+      "sku": "UACC-CM-RJ45-1G",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 100
+    },
+    {
+      "sku": "UACC-OM-MM-10G-D-2",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 300,
+      "note": "Sold as a pair"
+    },
+    {
+      "sku": "UACC-OM-SM-10G-D-2",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000,
+      "note": "Sold as a pair"
+    },
+    {
+      "sku": "UACC-CM-RJ45-MG",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 100,
+      "note": "Multi-gig RJ45"
+    },
+    {
+      "sku": "UACC-OM-SFP28-SR",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 100
+    },
+    {
+      "sku": "UACC-OM-QSFP28-SR",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 100
+    },
+    {
+      "sku": "UACC-DAC-SFP10-1M",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 1
+    },
+    {
+      "sku": "UACC-DAC-SFP10-3M",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 3
+    },
+    {
+      "sku": "UACC-DAC-SFP28-1M",
+      "category": "dac",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "DAC",
+      "distanceM": 1
+    },
+    {
+      "sku": "UACC-DAC-QSFP28-0.5M",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 0.5
+    }
+  ]
+}

@@ -131,6 +131,14 @@ svg.face .pw{fill:var(--poe)}svg.face .pw60{fill:var(--poe60)}svg.face .pw90{fil
 .filters .fl{min-width:0}
 .filters input[type=text],.filters select,.filters .msel summary{height:38px;box-sizing:border-box}
 .fchips{display:flex;flex-wrap:wrap;gap:6px}
+.accHead{margin:0 0 14px}
+.accHead p{margin:0 0 8px;color:var(--muted);font-size:14px;max-width:72ch}
+.accHead a{font-weight:500}
+.accSec{margin:18px 0 10px}
+.accSec h3{font-family:var(--cond);font-size:20px;font-weight:600;margin:0 0 8px}
+#v-accessories .tablewrap{margin-bottom:8px}
+#v-accessories tbody tr{cursor:default}
+#v-accessories tbody tr:hover{background:transparent}
 .msel{position:relative}
 .msel summary{list-style:none;cursor:pointer;border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:7px 28px 7px 8px;font-size:15px;white-space:nowrap;position:relative}
 .msel summary::-webkit-details-marker{display:none}
@@ -235,6 +243,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
         <button role="tab" aria-selected="true" data-v="browse">Browse</button>
         <button role="tab" aria-selected="false" data-v="compare">Compare <span id="cmpCount"></span></button>
         <button role="tab" aria-selected="false" data-v="size">Size a closet</button>
+        <button role="tab" aria-selected="false" data-v="accessories">Accessories</button>
         <button role="tab" aria-selected="false" data-v="about">Data</button>
       </nav>
       <a class="xlink" href="https://github.com/danryan06/switch-comparison/issues/new/choose" target="_blank" rel="noopener">Suggest a change <span class="arr" aria-hidden="true">&#8599;</span></a>
@@ -357,6 +366,15 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
     <div id="cmpBody"></div>
   </section>
 
+  <!-- ACCESSORIES -->
+  <section class="view" id="v-accessories">
+    <div class="filters" style="padding-top:0">
+      <div class="fl" style="grid-column:1/-1"><label>Vendor</label><div class="fchips" id="accVendors"></div></div>
+    </div>
+    <div class="accHead" id="accHead"></div>
+    <div id="accBody"></div>
+  </section>
+
   <!-- ABOUT -->
   <section class="view" id="v-about">
     <div class="about">
@@ -408,6 +426,28 @@ for(const f of DATA.families){
     temp:m.operatingTempC||f.operatingTempC||null,ip:m.ipRating||f.ipRating||"",mount:m.mounting||f.mounting||[]});
 }
 const VENDORS=[...new Set(DATA.families.map(f=>f.vendor))];
+const ACCESSORIES=DATA.accessories||[];
+const ACC_BY_ID=Object.fromEntries(ACCESSORIES.map(a=>[a.id,a]));
+const ACC_BY_VENDOR=Object.fromEntries(ACCESSORIES.map(a=>[a.vendor,a]));
+const ACC_CAT_ORDER=["transceiver","dac","aoc","stacking"];
+const ACC_CAT_LABEL={transceiver:"Transceivers",dac:"DACs",aoc:"AOCs",stacking:"Stacking cables"};
+let accId=ACCESSORIES[0]?.id||"";
+function accForSwitch(s){return ACC_BY_VENDOR[vendorOf(s)]||null}
+function stackingCablesHTML(s){
+  const a=accForSwitch(s);if(!a)return "";
+  const parts=a.parts.filter(p=>p.category==="stacking");
+  if(!parts.length)return "";
+  return parts.slice().sort((x,y)=>{
+    const sx=x.speedGbps===null?Infinity:x.speedGbps,sy=y.speedGbps===null?Infinity:y.speedGbps;
+    return sx-sy||x.sku.localeCompare(y.sku);
+  }).map(p=>{
+    const bits=[esc(p.sku),esc(p.formFactor)];
+    const d=distLabel(p.distanceM);if(d)bits.push(esc(d));
+    if(p.speedGbps!==null&&p.speedGbps!==undefined)bits.push(esc(accSpdLabel(p.speedGbps)));
+    if(p.note)bits.push(esc(p.note));
+    return bits.join(" · ");
+  }).join("<br>");
+}
 
 /* ---------- helpers ---------- */
 const $=s=>document.querySelector(s);
@@ -442,6 +482,12 @@ const MOUNT_LABEL={rack:"Rack",desktop:"Desktop",wall:"Wall",din:"DIN rail"};
 const tempText=s=>s.temp?`${s.temp.min} to ${s.temp.max} °C`:"-";
 const mountText=s=>s.mount.length?s.mount.map(m=>MOUNT_LABEL[m]||m).join(", "):"-";
 const fmt=n=>n.toLocaleString("en-US");
+const distLabel=m=>{
+  if(m===0||m===null||m===undefined)return "";
+  if(m>=1000){const km=m/1000;return (Number.isInteger(km)?String(km):String(km))+" km"}
+  return m+" m";
+};
+const accSpdLabel=g=>g===null||g===undefined?"-":spdLabel(g);
 
 /* ---------- faceplate ---------- */
 function faceplate(s,scale){
@@ -812,7 +858,8 @@ function lifecycleHTML(s){
   if(rep.length)out.push("Replaced by "+rep.join(", "));
   return out.join("<br>");
 }
-function specRows(s){const f=FAM[s.fam];return [
+function specRows(s){const f=FAM[s.fam];
+  const rows=[
   ["Vendor",f.v],["Family",f.name],["Role",f.role==="aggregation"?"Aggregation":"Access"],["Description",s.name||"-"],
   ["Front panel",faceplate(s),1],["Form factor",s.ff+(s.fanless?", fanless":"")],["Powered by",s.pd||f.power],
   ["Access ports",portsText(s)],["Fabric ports",fabricText(s)],["Max PoE per port",poeLabel(maxW(s))],
@@ -828,7 +875,14 @@ function specRows(s){const f=FAM[s.fam];return [
   ["Operating temperature",tempText(s)],["IP rating",s.ip||"-"],["Mounting",mountText(s)],
   ["Licensing",f.lic],
   ["Source",[s.src,...FAM[s.fam].xsrc].map(k=>`<a href="${SRC[k].u}" target="_blank" rel="noopener">${esc(SRC[k].t)}</a>`).join("<br>"),1]
-]}
+  ];
+  const cables=stackingCablesHTML(s);
+  if(cables){
+    const i=rows.findIndex(r=>r[0]==="Stacking notes");
+    rows.splice(i+1,0,["Stacking cables",cables,1]);
+  }
+  return rows;
+}
 function specPlain(s){
   return specRows(s).map(r=>{
     if(!r[2])return [r[0],r[1]];
@@ -898,19 +952,69 @@ function openDetail(sku){
   const s=SKUS.find(x=>x.sku===sku);
   const rows=specRows(s).filter(r=>!["Vendor","Family","Description","Front panel"].includes(r[0]));
   const corr=`https://github.com/danryan06/switch-comparison/issues/new?template=correction.yml&title=${encodeURIComponent("Correction: "+s.sku)}`;
+  const acc=accForSwitch(s);
+  const opticsAct=acc?`<button type="button" class="ghost" id="dlgOptics">Transceiver/Optics</button>`:"";
   $("#dlgBody").innerHTML=`<button class="ghost close" id="dlgClose">Close</button>
     <h3>${esc(modelName(s))}</h3><div class="fam">${esc(modelSub(s))}</div>
     <div class="facewrap">${faceplate(s,1.3)}</div><div class="legend">${legendHTML(s)}</div>
     <dl class="spec">${rows.map(r=>`<dt>${esc(r[0])}</dt><dd>${r[2]?r[1]:esc(r[1])}</dd>`).join("")}</dl>
     <div class="suggestActs" style="margin-top:16px">
       <button class="ghost ${cmp.has(s.sku)?"on":""}" id="dlgCmp">${cmp.has(s.sku)?"Remove from compare":"Add to compare"}</button>
+      ${opticsAct}
       <a class="ghost" href="${corr}" target="_blank" rel="noopener">Suggest a correction</a>
     </div>`;
   $("#dlgClose").onclick=()=>$("#dlg").close();
   $("#dlgCmp").onclick=()=>{if(cmp.has(s.sku))cmp.delete(s.sku);else{if(cmp.size>=4){$("#dlgCmp").textContent="Compare holds 4 models";return}cmp.add(s.sku)}updCmp();renderBrowse();writeHash();openDetail(sku)};
+  const optics=$("#dlgOptics");
+  if(optics)optics.onclick=()=>{accId=acc.id;$("#dlg").close();showView("accessories")};
   if(!$("#dlg").open)$("#dlg").showModal();
 }
 $("#dlg").addEventListener("click",e=>{if(e.target.id==="dlg")$("#dlg").close()});
+
+/* ---------- Accessories ---------- */
+function renderAccVendors(){
+  $("#accVendors").innerHTML=ACCESSORIES.map(a=>`<button type="button" class="chip" aria-pressed="${a.id===accId?"true":"false"}" data-acc="${esc(a.id)}">${esc(a.vendor)}</button>`).join("");
+}
+$("#accVendors").addEventListener("click",e=>{
+  const id=e.target.dataset.acc;if(!id||!ACC_BY_ID[id])return;
+  accId=id;renderAccessories();writeHash();
+});
+function renderAccessories(){
+  if(!ACCESSORIES.length){
+    $("#accHead").innerHTML="";
+    $("#accBody").innerHTML=`<div class="panel empty">No accessory catalogs loaded.</div>`;
+    return;
+  }
+  if(!ACC_BY_ID[accId])accId=ACCESSORIES[0].id;
+  renderAccVendors();
+  const a=ACC_BY_ID[accId];
+  const src=SRC[a.source];
+  $("#accHead").innerHTML=`${a.note?`<p>${esc(a.note)}</p>`:""}<p><a href="${esc(a.opticsMatrixUrl)}" target="_blank" rel="noopener">Full optics matrix</a>${src?` · <a href="${esc(src.u)}" target="_blank" rel="noopener">${esc(src.t)}</a>`:""}</p>`;
+  const byCat={};
+  for(const p of a.parts){(byCat[p.category]=byCat[p.category]||[]).push(p)}
+  let h="";
+  for(const cat of ACC_CAT_ORDER){
+    const parts=byCat[cat];if(!parts||!parts.length)continue;
+    parts.sort((x,y)=>{
+      const sx=x.speedGbps===null?Infinity:x.speedGbps,sy=y.speedGbps===null?Infinity:y.speedGbps;
+      return sx-sy||x.sku.localeCompare(y.sku);
+    });
+    h+=`<div class="accSec"><h3>${esc(ACC_CAT_LABEL[cat]||cat)}</h3><div class="tablewrap"><table><thead><tr>
+      <th class="nosort">SKU</th><th class="nosort">Speed</th><th class="nosort">Form factor</th><th class="nosort">Reach</th><th class="nosort">Media</th><th class="nosort">Distance</th><th class="nosort">Note</th>
+    </tr></thead><tbody>`;
+    h+=parts.map(p=>`<tr>
+      <td class="sku">${esc(p.sku)}</td>
+      <td>${esc(accSpdLabel(p.speedGbps))}</td>
+      <td>${esc(p.formFactor)}</td>
+      <td>${esc(p.reach||"-")}</td>
+      <td>${esc(p.media)}</td>
+      <td>${esc(distLabel(p.distanceM))}</td>
+      <td style="white-space:normal;min-width:180px">${esc(p.note||"")}</td>
+    </tr>`).join("");
+    h+=`</tbody></table></div></div>`;
+  }
+  $("#accBody").innerHTML=h||`<div class="panel empty">No parts listed for this vendor.</div>`;
+}
 
 /* ---------- Permalinks (hash-encoded Compare / Size state) ---------- */
 let syncingHash=false,hashDeb;
@@ -935,6 +1039,12 @@ function encodeSizeState(){
 function writeHash(force){
   if(syncingHash&&!force)return;
   const view=currentView();
+  if(view==="accessories"){
+    const id=accId||ACCESSORIES[0]?.id||"";
+    const h=id?"#accessories/"+id:"#accessories";
+    if(location.hash!==h)history.replaceState(null,"",h);
+    return;
+  }
   let p;
   if(view==="compare"&&cmp.size){
     p=new URLSearchParams();p.set("v","compare");p.set("c",[...cmp].join(","));
@@ -981,6 +1091,13 @@ function readHash(){
   if(!raw)return;
   syncingHash=true;
   try{
+    if(raw==="accessories"||raw.startsWith("accessories/")){
+      const id=raw.split("/")[1]||"";
+      if(id&&ACC_BY_ID[id])accId=id;
+      else if(!ACC_BY_ID[accId])accId=ACCESSORIES[0]?.id||"";
+      showView("accessories",true);
+      return;
+    }
     const p=new URLSearchParams(raw);
     const view=p.get("v")||(p.has("c")?"compare":p.has("g")||p.has("d")?"size":"");
     if(p.has("c")){
@@ -999,6 +1116,7 @@ function showView(v,fromHash){
   document.querySelectorAll("nav.tabs button").forEach(x=>x.setAttribute("aria-selected",x.dataset.v===v));
   document.querySelectorAll(".view").forEach(x=>x.classList.toggle("on",x.id==="v-"+v));
   if(v==="compare")renderCompare();
+  if(v==="accessories")renderAccessories();
   window.scrollTo(0,0);
   if(!fromHash)writeHash();
 }

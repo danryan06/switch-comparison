@@ -1,0 +1,208 @@
+{
+  "vendor": "Cisco",
+  "source": "cisco-optics",
+  "opticsMatrixUrl": "https://tmgmatrix.cisco.com/",
+  "parts": [
+    {
+      "sku": "GLC-SX-MMD",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "SX",
+      "media": "MMF",
+      "distanceM": 550
+    },
+    {
+      "sku": "GLC-LH-SMD",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "LX/LH",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "GLC-T",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 100
+    },
+    {
+      "sku": "SFP-10G-SR",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 300
+    },
+    {
+      "sku": "SFP-10G-LR",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "SFP-10G-LRM",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LRM",
+      "media": "MMF",
+      "distanceM": 220
+    },
+    {
+      "sku": "SFP-10G-ER",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "ER",
+      "media": "SMF",
+      "distanceM": 40000
+    },
+    {
+      "sku": "SFP-25G-SR-S",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 100
+    },
+    {
+      "sku": "SFP-25G-LR-S",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "QSFP-40G-SR4",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 150
+    },
+    {
+      "sku": "QSFP-40G-LR4",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "QSFP-100G-SR4-S",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 100
+    },
+    {
+      "sku": "QSFP-100G-LR4-S",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "SFP-H10GB-CU1M",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 1
+    },
+    {
+      "sku": "SFP-H10GB-CU3M",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 3
+    },
+    {
+      "sku": "SFP-H25G-CU3M",
+      "category": "dac",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "DAC",
+      "distanceM": 3
+    },
+    {
+      "sku": "QSFP-H40G-CU3M",
+      "category": "dac",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "media": "DAC",
+      "distanceM": 3
+    },
+    {
+      "sku": "QSFP-100G-CU3M",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 3
+    },
+    {
+      "sku": "SFP-10G-AOC3M",
+      "category": "aoc",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "AOC",
+      "distanceM": 3
+    },
+    {
+      "sku": "STACK-T1-50CM",
+      "category": "stacking",
+      "speedGbps": null,
+      "formFactor": "StackWise-480",
+      "media": "Stack",
+      "distanceM": 0.5,
+      "note": "Catalyst 9300 StackWise-480 (also STACK-T1-1M, STACK-T1-3M)"
+    },
+    {
+      "sku": "STACK-T1-3M",
+      "category": "stacking",
+      "speedGbps": null,
+      "formFactor": "StackWise-480",
+      "media": "Stack",
+      "distanceM": 3,
+      "note": "Catalyst 9300 StackWise-480"
+    },
+    {
+      "sku": "STACK-T4-1M",
+      "category": "stacking",
+      "speedGbps": null,
+      "formFactor": "StackWise-160",
+      "media": "Stack",
+      "distanceM": 1,
+      "note": "Catalyst 9200 (requires C9200-STACK-KIT); also STACK-T4-50CM, STACK-T4-3M"
+    },
+    {
+      "sku": "C9300-STACK-KIT",
+      "category": "stacking",
+      "speedGbps": null,
+      "formFactor": "Kit",
+      "media": "Kit",
+      "distanceM": 0,
+      "note": "StackWise adapter kit for Catalyst 9300 fixed models. 9500 StackWise Virtual runs over standard uplink optics"
+    }
+  ]
+}

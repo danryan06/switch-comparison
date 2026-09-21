@@ -11,18 +11,20 @@ Current coverage: **56 families, 337 models** (25 past end of sale) across Cisco
 - **Browse.** Filter and sort every model by vendor, role (access vs aggregation), ports, PoE, lifecycle, environment, and more. Show or hide columns, sort any visible column, and tick up to four rows to compare. Export the visible table as CSV.
 - **Compare.** Up to four models side by side, with differing cells highlighted. Faceplates show access, fabric, and modular uplink layouts. Export the table as CSV, print it for a design doc, or share a permalink that restores the selection.
 - **Size a closet.** Optional helper: describe endpoints (APs, phones, cameras) plus copper, fiber, and uplink needs. Models that fit are sized with the fewest switches and the smallest PSU configuration; models that do not list why. Pure-fabric aggregation SKUs stay in Browse and Compare but drop out of the sizer. Share a permalink that restores the demand inputs.
+- **Accessories.** Per-vendor shortlist of SR/LR (and related) transceivers, DACs/AOCs, and stacking cables, deep-linked at `#accessories/<vendor>`, with a link out to each vendor's full optics matrix.
 
-A **Needs checking** page (footer link) collects values that disagree inside a datasheet or had to be derived, until someone confirms them.
+A **Needs checking** page (footer link) collects values that disagree inside a datasheet or had to be derived, until someone confirms them. **Accessories** lists a short per-vendor set of SR/LR optics, DACs/AOCs, and stacking cables, with a link to each vendor's full optics matrix.
 
 ## Repository layout
 
 ```
 data/
-  index.json                 list of family files to load, plus the data date
+  index.json                 list of family and accessory files to load, plus the data date
   sources.json               vendor datasheets, keyed by id
   uplinks.json               fixed uplink sets and network module options
-  schema.json                JSON Schema for a family file
+  schema.json                JSON Schema for family and accessory files
   families/<vendor>/<id>.json  one file per product family
+  accessories/<vendor>.json  per-vendor optics, DAC/AOC, and stacking shortlist
 src/index.html               the app, with a placeholder where data is inlined
 scripts/
   validate.mjs               checks the data (runs in CI on every PR)
@@ -30,7 +32,7 @@ scripts/
 .github/workflows/pages.yml  validate on PRs, build and deploy to GitHub Pages on main
 ```
 
-The built site is a single self-contained HTML file. The raw data is also published at `/data/`, including `/data/all.json`, so others can consume it. Permalinks encode Compare and Size state in the URL hash, so there is no backend.
+The built site is a single self-contained HTML file. The raw data is also published at `/data/`, including `/data/all.json`, so others can consume it. Permalinks encode Compare and Size state in the URL hash, and Accessories at `#accessories/<vendor>`, so there is no backend.
 
 ## Building locally
 

@@ -382,5 +382,40 @@
     "title": "Extreme Networks 5720 Series Universal Switch Data Sheet",
     "url": "https://www.extremenetworks.com/products/switches/universal-switches/5720",
     "retrieved": "2026-09-21"
+  },
+  "aruba-optics": {
+    "title": "HPE Aruba Networking Switch Transceiver Guide / CX 8100-8360 datasheets",
+    "url": "https://www.hpe.com/psnow/doc/a00131340enw",
+    "retrieved": "2026-09-21"
+  },
+  "cisco-optics": {
+    "title": "Cisco Optics-to-Device Compatibility Matrix (TMG) and Transceiver Modules datasheets",
+    "url": "https://tmgmatrix.cisco.com/",
+    "retrieved": "2026-09-21"
+  },
+  "meraki-optics": {
+    "title": "Cisco Meraki SFP and Stacking Accessories",
+    "url": "https://documentation.meraki.com/General_Administration/Cross-Platform_Content/SFP_and_Stacking_Accessories",
+    "retrieved": "2026-09-21"
+  },
+  "fortinet-optics": {
+    "title": "Fortinet Transceivers Datasheet",
+    "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/Fortinet_Transceivers.pdf",
+    "retrieved": "2026-09-21"
+  },
+  "juniper-optics": {
+    "title": "Juniper Hardware Compatibility Tool (Transceivers)",
+    "url": "https://apps.juniper.net/hct/",
+    "retrieved": "2026-09-21"
+  },
+  "ubiquiti-optics": {
+    "title": "Ubiquiti UniFi Switching Tech Specs",
+    "url": "https://techspecs.ui.com/unifi/switching",
+    "retrieved": "2026-09-21"
+  },
+  "extreme-optics": {
+    "title": "Extreme Networks Optics Compatibility Tool",
+    "url": "https://optics.extremenetworks.com/",
+    "retrieved": "2026-09-21"
   }
 }

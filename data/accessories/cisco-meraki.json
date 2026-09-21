@@ -1,0 +1,161 @@
+{
+  "vendor": "Cisco Meraki",
+  "source": "meraki-optics",
+  "opticsMatrixUrl": "https://documentation.meraki.com/General_Administration/Cross-Platform_Content/SFP_and_Stacking_Accessories",
+  "note": "Newer Catalyst-based Meraki models (MS130, MS150) also take Cisco GLC/SFP optics per the TMG matrix",
+  "parts": [
+    {
+      "sku": "MA-SFP-1GB-SX",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "SX",
+      "media": "MMF",
+      "distanceM": 550
+    },
+    {
+      "sku": "MA-SFP-1GB-LX10",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "LX",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "MA-SFP-1GB-TX",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 100
+    },
+    {
+      "sku": "MA-SFP-10GB-SR",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 300
+    },
+    {
+      "sku": "MA-SFP-10GB-LR",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "MA-SFP-10GB-LRM",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LRM",
+      "media": "MMF",
+      "distanceM": 220
+    },
+    {
+      "sku": "MA-QSFP-40G-SR4",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 150
+    },
+    {
+      "sku": "MA-QSFP-40G-LR4",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "MA-QSFP-100G-SR4",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 100
+    },
+    {
+      "sku": "MA-QSFP-100G-LR4",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "MA-CBL-TA-1M",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 1,
+      "note": "10G SFP+ Twinax"
+    },
+    {
+      "sku": "MA-CBL-TA-3M",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 3,
+      "note": "10G SFP+ Twinax"
+    },
+    {
+      "sku": "MA-CBL-40G-50CM",
+      "category": "stacking",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "media": "Stack",
+      "distanceM": 0.5,
+      "note": "MS210/MS225/MS250/MS350/MS410/MS425 (also 1M, 3M)"
+    },
+    {
+      "sku": "MA-CBL-40G-1M",
+      "category": "stacking",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "media": "Stack",
+      "distanceM": 1,
+      "note": "MS210/MS225/MS250/MS350/MS410/MS425"
+    },
+    {
+      "sku": "MA-CBL-100G-50CM",
+      "category": "stacking",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "Stack",
+      "distanceM": 0.5,
+      "note": "MS150/MS355/MS450 (also 1M, 3M)"
+    },
+    {
+      "sku": "MA-CBL-100G-1M",
+      "category": "stacking",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "Stack",
+      "distanceM": 1,
+      "note": "MS150/MS355/MS450"
+    },
+    {
+      "sku": "MA-CBL-120G-50CM",
+      "category": "stacking",
+      "speedGbps": 120,
+      "formFactor": "Stack",
+      "media": "Stack",
+      "distanceM": 0.5,
+      "note": "MS390/Catalyst 9300-M 480G StackWise (also 1M, 3M)"
+    }
+  ]
+}

@@ -58,5 +58,14 @@
     "families/hpe-aruba/a8325.json",
     "families/hpe-aruba/a8360.json",
     "families/hpe-aruba/a4100i.json"
+  ],
+  "accessories": [
+    "accessories/hpe-aruba.json",
+    "accessories/cisco.json",
+    "accessories/cisco-meraki.json",
+    "accessories/fortinet.json",
+    "accessories/juniper.json",
+    "accessories/ubiquiti.json",
+    "accessories/extreme.json"
   ]
 }

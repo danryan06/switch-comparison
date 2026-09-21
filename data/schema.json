@@ -158,6 +158,45 @@
         "verify": { "type": "array", "items": { "type": "string" } },
         "verifyNote": { "type": "string" }
       }
+    },
+    "accessoryPart": {
+      "type": "object",
+      "description": "One optic, DAC/AOC, or stacking cable. Values come from the vendor source on the parent catalog file.",
+      "required": ["sku", "category", "speedGbps", "formFactor", "media", "distanceM"],
+      "properties": {
+        "sku": { "type": "string" },
+        "category": { "enum": ["transceiver", "dac", "aoc", "stacking"] },
+        "speedGbps": {
+          "type": ["number", "null"],
+          "description": "1, 10, 20, 25, 40, 50, 100, 120, or 400. Null for stack-fabric cables and kits with no rated data rate."
+        },
+        "formFactor": {
+          "enum": ["SFP", "SFP+", "SFP28", "SFP56", "QSFP+", "QSFP28", "QSFP-DD", "SFP-DD", "StackWise-480", "StackWise-160", "Stack", "Kit"]
+        },
+        "reach": {
+          "enum": ["SR", "LR", "LRM", "ER", "SX", "LX", "LX/LH", "T", "SR4", "LR4"],
+          "description": "Required on transceivers. Omit on DAC, AOC, and stacking. LX/LH is the Cisco 1G long-haul label."
+        },
+        "media": { "enum": ["MMF", "SMF", "Copper", "DAC", "AOC", "Stack", "Kit"] },
+        "distanceM": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Reach in metres. 0 for kits. Fractional values allowed (for example 0.5 or 0.65)."
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "accessoryCatalog": {
+      "type": "object",
+      "description": "Per-vendor accessory shortlist. The full matrix stays behind opticsMatrixUrl.",
+      "required": ["vendor", "source", "opticsMatrixUrl", "parts"],
+      "properties": {
+        "vendor": { "type": "string" },
+        "source": { "type": "string", "description": "Key into data/sources.json" },
+        "opticsMatrixUrl": { "type": "string", "description": "Vendor optics compatibility or transceiver guide" },
+        "note": { "type": "string" },
+        "parts": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/accessoryPart" } }
+      }
     }
   }
 }

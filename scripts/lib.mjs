@@ -11,6 +11,11 @@ export function loadData() {
     sources: read('sources.json'),
     uplinks: read('uplinks.json'),
     families: index.families.map(read),
+    accessories: (index.accessories || []).map(p => {
+      const a = read(p);
+      a.id = p.replace(/^accessories\//, '').replace(/\.json$/, '');
+      return a;
+    }),
   };
 }
 
@@ -23,6 +28,11 @@ const TIERS = ['l2', 'ospf', 'full'];
 const ROLES = ['access', 'aggregation'];
 const STATUSES = ['current', 'endOfSale', 'endOfSupport'];
 const MOUNTS = ['rack', 'desktop', 'wall', 'din'];
+const ACC_CATS = ['transceiver', 'dac', 'aoc', 'stacking'];
+const ACC_SPEEDS = [1, 10, 20, 25, 40, 50, 100, 120, 400];
+const ACC_FORMS = ['SFP', 'SFP+', 'SFP28', 'SFP56', 'QSFP+', 'QSFP28', 'QSFP-DD', 'SFP-DD', 'StackWise-480', 'StackWise-160', 'Stack', 'Kit'];
+const ACC_REACH = ['SR', 'LR', 'LRM', 'ER', 'SX', 'LX', 'LX/LH', 'T', 'SR4', 'LR4'];
+const ACC_MEDIA = ['MMF', 'SMF', 'Copper', 'DAC', 'AOC', 'Stack', 'Kit'];
 const isDate = s => /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(s));
 
 export function validate(data, today = new Date().toISOString().slice(0, 10)) {
@@ -112,5 +122,43 @@ export function validate(data, today = new Date().toISOString().slice(0, 10)) {
   }
   for (const [at, r] of replacements)
     if (!skus.has(r) && !ids.has(r)) warnings.push(`${at}: lifecycle.replacement "${r}" is not a SKU or family id in the dataset`);
-  return { errors, warnings, families: data.families.length, models: skus.size };
+
+  const accIds = new Set();
+  let accParts = 0;
+  for (const a of data.accessories || []) {
+    const at = `accessories ${a.id || a.vendor || '?'}`;
+    if (!a.vendor) errors.push(`${at}: missing vendor`);
+    if (!a.id) errors.push(`${at}: missing id`);
+    else if (accIds.has(a.id)) errors.push(`${at}: duplicate accessories id`);
+    else accIds.add(a.id);
+    if (!a.source) errors.push(`${at}: missing source`);
+    else if (!data.sources[a.source]) errors.push(`${at}: unknown source "${a.source}"`);
+    if (!a.opticsMatrixUrl) errors.push(`${at}: missing opticsMatrixUrl`);
+    if (!a.parts?.length) errors.push(`${at}: no parts`);
+    const partKeys = new Set();
+    for (const p of a.parts || []) {
+      const pt = `${at} ${p.sku || '(no sku)'}`;
+      if (!p.sku) errors.push(`${pt}: missing sku`);
+      else {
+        const key = p.sku + '\0' + (p.category || '');
+        if (partKeys.has(key)) errors.push(`${pt}: duplicate SKU+category in this vendor file`);
+        else partKeys.add(key);
+      }
+      if (!ACC_CATS.includes(p.category)) errors.push(`${pt}: category must be one of ${ACC_CATS.join(', ')}`);
+      if (p.speedGbps !== null && !ACC_SPEEDS.includes(p.speedGbps))
+        errors.push(`${pt}: speedGbps must be null or one of ${ACC_SPEEDS.join('/')}`);
+      if (!ACC_FORMS.includes(p.formFactor)) errors.push(`${pt}: formFactor must be one of ${ACC_FORMS.join(', ')}`);
+      if (!ACC_MEDIA.includes(p.media)) errors.push(`${pt}: media must be one of ${ACC_MEDIA.join(', ')}`);
+      if (!(typeof p.distanceM === 'number') || p.distanceM < 0) errors.push(`${pt}: distanceM must be a number >= 0`);
+      if (p.category === 'transceiver') {
+        if (!p.reach) errors.push(`${pt}: transceiver needs reach`);
+        else if (!ACC_REACH.includes(p.reach)) errors.push(`${pt}: reach must be one of ${ACC_REACH.join(', ')}`);
+      } else if (p.reach !== undefined && p.reach !== null && !ACC_REACH.includes(p.reach)) {
+        errors.push(`${pt}: reach must be one of ${ACC_REACH.join(', ')}`);
+      }
+      accParts++;
+    }
+  }
+
+  return { errors, warnings, families: data.families.length, models: skus.size, accessories: (data.accessories || []).length, accessoryParts: accParts };
 }

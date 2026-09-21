@@ -1,0 +1,177 @@
+{
+  "vendor": "Extreme Networks",
+  "source": "extreme-optics",
+  "opticsMatrixUrl": "https://optics.extremenetworks.com/",
+  "note": "5420 stacks over SFP-DD cables; 5520/5720 stack over the built-in QSFP28 ports using QSFP28 DACs",
+  "parts": [
+    {
+      "sku": "10051H",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "SX",
+      "media": "MMF",
+      "distanceM": 550
+    },
+    {
+      "sku": "10052H",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "LX",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "10065",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 100
+    },
+    {
+      "sku": "10301",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 300
+    },
+    {
+      "sku": "10302",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "10303",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LRM",
+      "media": "MMF",
+      "distanceM": 220
+    },
+    {
+      "sku": "10304",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "ER",
+      "media": "SMF",
+      "distanceM": 40000
+    },
+    {
+      "sku": "10501",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 100
+    },
+    {
+      "sku": "10502",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "10319",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 150
+    },
+    {
+      "sku": "10321",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "AA1405001-E6",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 100
+    },
+    {
+      "sku": "AA1405002-E6",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "10306",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 1,
+      "note": "10G SFP+ passive DAC (also 10307 3m, 10308 5m)"
+    },
+    {
+      "sku": "10520",
+      "category": "dac",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "DAC",
+      "distanceM": 1
+    },
+    {
+      "sku": "10323",
+      "category": "dac",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "media": "DAC",
+      "distanceM": 1
+    },
+    {
+      "sku": "10GB-C01-QSFP28",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 1,
+      "note": "Also used for 5520/5720 QSFP28 stacking"
+    },
+    {
+      "sku": "SFP-DD-DAC-1M",
+      "category": "stacking",
+      "speedGbps": 20,
+      "formFactor": "SFP-DD",
+      "media": "Stack",
+      "distanceM": 1,
+      "note": "5420 SFP-DD stacking cable"
+    },
+    {
+      "sku": "10GB-C01-QSFP28",
+      "category": "stacking",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 1,
+      "note": "5520 (40G) and 5720 (100G) stack over the built-in QSFP28 ports using QSFP28 DACs"
+    }
+  ]
+}

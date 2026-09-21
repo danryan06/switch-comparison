@@ -1,0 +1,183 @@
+{
+  "vendor": "HPE Aruba",
+  "source": "aruba-optics",
+  "opticsMatrixUrl": "https://hpe.com/networking/support (Aruba Switch Transceiver Guide)",
+  "note": "Aruba CX 8100/8325/8360 datasheets state 10G LRM is not supported; use SR or LR",
+  "parts": [
+    {
+      "sku": "J4858D",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "SX",
+      "media": "MMF",
+      "distanceM": 550
+    },
+    {
+      "sku": "J4859D",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "LX",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "J8177D",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 100
+    },
+    {
+      "sku": "J9150D",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 300
+    },
+    {
+      "sku": "J9151E",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "J9153D",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "ER",
+      "media": "SMF",
+      "distanceM": 40000
+    },
+    {
+      "sku": "JL563C",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 30
+    },
+    {
+      "sku": "JL484A",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 100
+    },
+    {
+      "sku": "JL486A",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "JH231A",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 150
+    },
+    {
+      "sku": "JH232A",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "JL309A",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 100
+    },
+    {
+      "sku": "JL310A",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000
+    },
+    {
+      "sku": "J9281D",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 1
+    },
+    {
+      "sku": "J9283D",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 3
+    },
+    {
+      "sku": "JL487A",
+      "category": "dac",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "DAC",
+      "distanceM": 0.65
+    },
+    {
+      "sku": "JL488A",
+      "category": "dac",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "DAC",
+      "distanceM": 3
+    },
+    {
+      "sku": "JL307A",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 3,
+      "note": "Also used for the VSX inter-switch link on CX 8325/8360"
+    },
+    {
+      "sku": "JL856A",
+      "category": "aoc",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "AOC",
+      "distanceM": 2
+    },
+    {
+      "sku": "JL307A",
+      "category": "stacking",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 3,
+      "note": "CX has no dedicated stacking cable; VSF/VSX runs over standard QSFP28 DACs or optics"
+    }
+  ]
+}

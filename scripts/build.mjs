@@ -16,4 +16,4 @@ fs.writeFileSync(path.join(dist, 'index.html'), tpl.replace('/*__DATA__*/null', 
 // Publish the raw data too, so others can consume it directly.
 fs.cpSync(path.join(ROOT, 'data'), path.join(dist, 'data'), { recursive: true });
 fs.writeFileSync(path.join(dist, 'data', 'all.json'), JSON.stringify(data, null, 2) + '\n');
-console.log(`Built dist/index.html with ${r.families} families and ${r.models} models (${r.warnings.length} warnings).`);
+console.log(`Built dist/index.html with ${r.families} families, ${r.models} models, ${r.accessories} accessory catalogs (${r.warnings.length} warnings).`);
