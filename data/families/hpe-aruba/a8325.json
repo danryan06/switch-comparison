@@ -2,6 +2,7 @@
   "id": "a8325",
   "vendor": "HPE Aruba",
   "family": "CX 8325",
+  "role": "aggregation",
   "source": "a8325",
   "stacking": {
     "tech": "VSX",
@@ -15,10 +16,10 @@
     "bgp": true,
     "summary": "AOS-CX Layer 3: static, OSPFv2/v3, BGP, VRF, PIM, and BGP EVPN-VXLAN, plus IPv6"
   },
-  "routeScale": "Not captured from datasheet",
-  "macTable": "Not captured from datasheet",
-  "macsec": "MACsec supported on select ports; port scope and cipher not captured from datasheet",
-  "buffer": "Not captured from datasheet",
+  "routeScale": "131,072 IPv4 unicast routes (32,732 IPv6); 120,000 IPv4 host",
+  "macTable": "98,304",
+  "macsec": "Not listed on datasheet",
+  "buffer": "32MB",
   "power": {
     "summary": "Up to 2 field-replaceable, hot-swappable power supplies (bundles ship with 2); AC or DC",
     "psuFieldReplaceable": true,
@@ -36,13 +37,6 @@
   "mounting": [
     "rack"
   ],
-  "verify": [
-    "routeScale",
-    "macTable",
-    "macsec",
-    "buffer"
-  ],
-  "verifyNote": "The 8325 datasheet was not fully retrieved. Route scale, MAC table, MACsec port scope, and buffer need confirming from the CX 8325 datasheet",
   "models": [
     {
       "sku": "8325-32C",
@@ -91,13 +85,8 @@
         }
       ],
       "poeBudgets": [],
-      "switchingGbps": null,
-      "forwardingMpps": null,
-      "verify": [
-        "switchingGbps",
-        "forwardingMpps"
-      ],
-      "verifyNote": "Datasheet gives the 6.4 Tbps / 2,000 Mpps figure for the 32C; the 48Y8C is not separately published"
+      "switchingGbps": 4000,
+      "forwardingMpps": null
     },
     {
       "sku": "8325H-16C",

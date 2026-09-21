@@ -1,0 +1,64 @@
+name: Correct a value
+description: Fix a wrong, outdated, or incomplete spec already in the catalog.
+title: "Correction: "
+labels: ["data-update"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every change has to trace to the vendor's own datasheet. Link the document and name the table or page where the figure appears.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of update?
+      options:
+        - Wrong value (port count, PoE, switching capacity, etc.)
+        - Outdated datasheet / newer revision
+        - Lifecycle (end of sale, end of support, replacement)
+        - Clear a "Needs checking" flag
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: sku
+    attributes:
+      label: Model SKU or family
+      description: For example C9300-48UXM, or CX 6300M if it is family-wide.
+      placeholder: C9300-48UXM
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What the site shows today
+      placeholder: PoE budget for 2x 1100W is listed as 1,770 W
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: What it should be
+      placeholder: 1,440 W (capped by ports; vendor table lists 1,770 W available from the supplies)
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Datasheet URL
+      description: Prefer the vendor's own English PDF or HTML page on the vendor domain.
+      placeholder: https://www.cisco.com/...
+    validations:
+      required: true
+  - type: input
+    id: source_where
+    attributes:
+      label: Where in the datasheet
+      description: Page, table, or section name.
+      placeholder: Table 3, PoE power supply configurations
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Extra context
+      description: Conflicting figures, revision date, or anything else useful. Optional.

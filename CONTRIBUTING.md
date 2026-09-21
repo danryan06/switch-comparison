@@ -2,9 +2,20 @@
 
 Corrections and new models are welcome. The one rule: every value must trace to a vendor datasheet.
 
+## Suggest without a pull request
+
+Most people should start here. Open a GitHub issue and the maintainers will turn it into a data change:
+
+- [Correct a value](https://github.com/danryan06/switch-comparison/issues/new?template=correction.yml) — wrong figure, newer datasheet, lifecycle, or clearing a Needs checking flag
+- [Request an addition](https://github.com/danryan06/switch-comparison/issues/new?template=add-request.yml) — missing model, family, or vendor line
+
+Link the vendor's own datasheet and name the table or page. You do not need to write JSON.
+
+Prefer to edit the data yourself? Follow the steps below and open a pull request.
+
 ## Adding or correcting a model
 
-1. Find the family file under `data/families/<vendor>/`. If the family is new, copy an existing file from the same vendor and add it to `data/index.json`.
+1. Find the family file under `data/families/<vendor>/`. If the family is new, copy an existing file from the same vendor and add it to `data/index.json`. Set `"role": "aggregation"` for distribution and core fabric lines; omit it (or use `"access"`) for campus access families.
 2. If the datasheet is not already in `data/sources.json`, add it with the title, URL, and the date you retrieved it.
    Cite the vendor's own English-language document hosted on the vendor's domain. Third-party-hosted or non-English documents may be used only as secondary sources, and values that appear only there must carry a `verify` flag. Mark a non-English source with `"language": "ja"` (or the relevant code); the validator warns about it.
 3. Enter values exactly as the datasheet states them. Do not round, convert, or fill a gap from memory.

@@ -4,31 +4,31 @@
   "family": "5320",
   "source": "e5320",
   "stacking": {
-    "tech": "EXOS stacking",
+    "tech": "Switch Engine stacking",
     "bandwidthGbps": 40,
     "maxMembers": 8,
     "frontPanel": true,
-    "note": "Up to 8 members. Two front SFP+ ports are used for stacking (counted in the uplink total). Stacking needs EXOS; not available on VOSS"
+    "note": "Up to 8 units. Two of the SFP+ uplink ports serve as 10G stacking ports (40G per unit). Stacking runs in Switch Engine mode only and does not need the 10G upgrade license"
   },
   "routing": {
     "tier": "full",
     "bgp": true,
-    "summary": "Full L3 incl. BGP, EVPN, VRF, and IS-IS. Advanced routing needs a Premier license. Dual OS: EXOS (Switch Engine) or VOSS (Fabric Engine)"
+    "summary": "Dual persona: Switch Engine (EXOS) or Fabric Engine (VOSS). Static, RIP, OSPF, IS-IS, BGP, PIM, VRF, and EVPN. 5+ OSPF interfaces, 3+ BGP peers, IS-IS, and EVPN need a Premier license"
   },
-  "routeScale": "Not captured from datasheet",
-  "macTable": "Not captured from datasheet",
-  "macsec": "MACsec-capable on access and uplink ports (license ordered separately)",
-  "buffer": "Not captured from datasheet",
+  "routeScale": "12,000 IPv4 routes (48-port models); 8,000 (16 and 24-port), Switch Engine",
+  "macTable": "32,000 (Switch Engine)",
+  "macsec": "MACsec on 10/100/1000 access and uplink ports (MACsec license required)",
+  "buffer": "Not published",
   "power": {
-    "summary": "One fixed internal power supply; optional external Redundant Power Supply (RPS) on supported models",
+    "summary": "One fixed internal power supply; the 16-port model is available in AC or DC",
     "psuFieldReplaceable": false,
     "redundancy": {
-      "supported": true,
-      "detail": "Optional external RPS; the internal PSU is not field-replaceable"
+      "supported": false,
+      "detail": "Single fixed internal PSU"
     }
   },
   "fansFieldReplaceable": false,
-  "licensing": "Base license included; Premier for advanced routing; MACsec license separate. ExtremeCloud IQ optional for cloud management",
+  "licensing": "Base software license included (most features); Premier license for advanced routing and MACsec license ordered separately. Managed by ExtremeCloud IQ or Extreme Platform ONE, or on-box via CLI/GUI",
   "operatingTempC": {
     "min": 0,
     "max": 50
@@ -37,15 +37,14 @@
     "rack"
   ],
   "verify": [
-    "routeScale",
-    "macTable",
-    "buffer"
+    "operatingTempC",
+    "power"
   ],
-  "verifyNote": "MAC table, route scale, and buffer were not captured from the 5320 Series datasheet performance tables. Ports, PoE budgets, switching capacity, and forwarding rate are from the datasheet",
+  "verifyNote": "Built from the 5320 datasheet (rev 46275-1022-05). Extreme's current product page also lists extended-temperature (0 to 60C) 24 and 48-port variants and an optional external RPS that are not in this datasheet revision; confirm and add those SKUs if needed",
   "models": [
     {
       "sku": "5320-16P-4XE",
-      "description": "16x 1G RJ45 30W PoE + 4x 1/10G SFP+ (includes 2 stacking)",
+      "description": "16x 1G RJ45 30W PoE + 4x 1/10G SFP+ (AC)",
       "accessPorts": [
         {
           "count": 16,
@@ -56,28 +55,55 @@
       "uplinks": "ext5320",
       "poeBudgets": [
         {
-          "config": "1x internal fixed PSU",
+          "config": "Fixed internal AC PSU",
           "watts": 185
         }
       ],
       "switchingGbps": 112,
       "forwardingMpps": 83.3,
       "formFactor": "Compact",
-      "fanless": true,
-      "operatingTempC": {
-        "min": 0,
-        "max": 40
-      },
-      "mounting": [
-        "rack",
-        "wall",
-        "desktop"
+      "note": "Silent (fan-off) operation up to 35C. Uplinks are 1G SFP by default, upgradeable to 10G SFP+ via license"
+    },
+    {
+      "sku": "5320-16P-4XE-DC",
+      "description": "16x 1G RJ45 30W PoE + 4x 1/10G SFP+ (DC)",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
       ],
-      "note": "Fan-off mode up to 35C; acoustic tables list operation to 40C. Wall and under-table mounting supported"
+      "uplinks": "ext5320",
+      "poeBudgets": [
+        {
+          "config": "Fixed internal DC PSU",
+          "watts": 185
+        }
+      ],
+      "switchingGbps": 112,
+      "forwardingMpps": 83.3,
+      "formFactor": "Compact",
+      "note": "DC-powered. Silent (fan-off) operation up to 35C"
+    },
+    {
+      "sku": "5320-24T-8XE",
+      "description": "24x 1G RJ45 + 8x 1/10G SFP+ (non-PoE)",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "ext5320x8",
+      "poeBudgets": [],
+      "switchingGbps": 208,
+      "forwardingMpps": 154.8
     },
     {
       "sku": "5320-24P-8XE",
-      "description": "24x 1G RJ45 30W PoE + 8x 1/10G SFP+ (includes 2 stacking)",
+      "description": "24x 1G RJ45 30W PoE + 8x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 24,
@@ -85,10 +111,10 @@
           "poeWatts": 30
         }
       ],
-      "uplinks": "ext5320_8xe",
+      "uplinks": "ext5320x8",
       "poeBudgets": [
         {
-          "config": "1x internal fixed PSU",
+          "config": "Fixed internal AC PSU",
           "watts": 370
         }
       ],
@@ -96,23 +122,23 @@
       "forwardingMpps": 154.8
     },
     {
-      "sku": "5320-24T-8XE",
-      "description": "24x 1G RJ45 + 8x 1/10G SFP+ (includes 2 stacking; non-PoE)",
+      "sku": "5320-48T-8XE",
+      "description": "48x 1G RJ45 + 8x 1/10G SFP+ (non-PoE)",
       "accessPorts": [
         {
-          "count": 24,
+          "count": 48,
           "speedGbps": 1,
           "poeWatts": 0
         }
       ],
-      "uplinks": "ext5320_8xe",
+      "uplinks": "ext5320x8",
       "poeBudgets": [],
-      "switchingGbps": 208,
-      "forwardingMpps": 154.8
+      "switchingGbps": 256,
+      "forwardingMpps": 190.5
     },
     {
       "sku": "5320-48P-8XE",
-      "description": "48x 1G RJ45 30W PoE + 8x 1/10G SFP+ (includes 2 stacking)",
+      "description": "48x 1G RJ45 30W PoE + 8x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 48,
@@ -120,28 +146,13 @@
           "poeWatts": 30
         }
       ],
-      "uplinks": "ext5320_8xe",
+      "uplinks": "ext5320x8",
       "poeBudgets": [
         {
-          "config": "1x internal fixed PSU",
+          "config": "Fixed internal AC PSU",
           "watts": 740
         }
       ],
-      "switchingGbps": 256,
-      "forwardingMpps": 190.5
-    },
-    {
-      "sku": "5320-48T-8XE",
-      "description": "48x 1G RJ45 + 8x 1/10G SFP+ (includes 2 stacking; non-PoE)",
-      "accessPorts": [
-        {
-          "count": 48,
-          "speedGbps": 1,
-          "poeWatts": 0
-        }
-      ],
-      "uplinks": "ext5320_8xe",
-      "poeBudgets": [],
       "switchingGbps": 256,
       "forwardingMpps": 190.5
     }

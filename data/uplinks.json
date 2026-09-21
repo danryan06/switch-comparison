@@ -843,7 +843,7 @@
     "modular": false,
     "options": [
       {
-        "label": "4x 1/10G SFP+ (fixed; includes 2 stacking ports)",
+        "label": "4x 1/10G SFP+ (1G default, 10G via license; 2 shared with 10G stacking)",
         "ports": [
           {
             "count": 4,
@@ -932,6 +932,20 @@
     "options": [
       {
         "label": "8x 1/10G SFP+ (fixed; includes 2 stacking ports)",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "ext5320x8": {
+    "modular": false,
+    "options": [
+      {
+        "label": "8x 1/10G SFP+ (1G default, 10G via license; 2 shared with 10G stacking)",
         "ports": [
           {
             "count": 8,

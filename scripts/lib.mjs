@@ -20,6 +20,7 @@ const FABRIC_SPEEDS = [40, 50, 100, 200, 400];
 const FABRIC_MEDIA = ['sfp', 'qsfp', 'qsfp-dd'];
 const FORMS = ['1RU', 'Compact', 'Desktop'];
 const TIERS = ['l2', 'ospf', 'full'];
+const ROLES = ['access', 'aggregation'];
 const STATUSES = ['current', 'endOfSale', 'endOfSupport'];
 const MOUNTS = ['rack', 'desktop', 'wall', 'din'];
 const isDate = s => /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(s));
@@ -58,6 +59,7 @@ export function validate(data, today = new Date().toISOString().slice(0, 10)) {
     for (const k of f.additionalSources || [])
       if (!data.sources[k]) errors.push(`${at}: unknown additionalSources entry "${k}"`);
     if (!TIERS.includes(f.routing?.tier)) errors.push(`${at}: routing.tier must be one of ${TIERS.join(', ')}`);
+    if (f.role !== undefined && !ROLES.includes(f.role)) errors.push(`${at}: role must be one of ${ROLES.join(', ')}`);
     if (f.stacking?.maxMembers !== null && !(f.stacking?.maxMembers > 0)) errors.push(`${at}: stacking.maxMembers must be a number or null`);
     if (!f.models?.length) errors.push(`${at}: no models`);
     if ((f.verify || []).length && !f.verifyNote) warnings.push(`${at}: flagged for verification without a verifyNote`);

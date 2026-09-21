@@ -2,6 +2,7 @@
   "id": "jex4650",
   "vendor": "Juniper",
   "family": "EX4650",
+  "role": "aggregation",
   "source": "jex4650",
   "stacking": {
     "tech": "Virtual Chassis",
