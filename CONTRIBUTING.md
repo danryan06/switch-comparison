@@ -38,4 +38,4 @@ When a vendor publishes a new datasheet revision:
 
 ## What is out of scope for now
 
-Data center and aggregation-only switches, and models that have dropped off the vendor's current datasheet.
+Models that have dropped off the vendor's current datasheet. High-speed fabric and aggregation models are welcome when they use `fabricPorts` (see the Catalyst 9500 examples).

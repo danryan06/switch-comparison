@@ -2,7 +2,7 @@
 
 A vendor-neutral comparison and closet sizing tool for campus access switches. Describe what a wiring closet needs to power and connect, and it tells you which models from each vendor can do it, how many switches you need, and which power supply configuration gets you there.
 
-Current coverage: Cisco Catalyst 9200, 9200L, 9200CX, 9300, 9300X, 9300L, and 9300LM, and C9350 Smart Switches; Cisco Meraki MS130, MS150, MS210, MS225, MS250, MS350, and MS355; HPE Aruba CX 6000, 6100, 6200, 6300, 6300L, and 4100i; Juniper EX4000, EX4100, EX4100-F, EX4100-H, and EX4400; Ubiquiti UniFi Enterprise Campus, Enterprise Campus S, Pro Max, Pro XG, Pro HD, Pro, Standard, and Industrial; and Fortinet FortiSwitch 100 through 400 series and FortiSwitch Rugged. That includes rack-mount, compact, desktop, and rugged switches, with copper and fiber access ports. 282 models in total, 25 of them past end of sale.
+Current coverage: Cisco Catalyst 9200, 9200L, 9200CX, 9300, 9300X, 9300L, and 9300LM, C9350 Smart Switches, and Catalyst 9500 high-performance (fabricPorts examples); Cisco Meraki MS130, MS150, MS210, MS225, MS250, MS350, and MS355; HPE Aruba CX 6000, 6100, 6200, 6300, 6300L, and 4100i; Juniper EX4000, EX4100, EX4100-F, EX4100-H, and EX4400; Ubiquiti UniFi Enterprise Campus, Enterprise Campus S, Pro Max, Pro XG, Pro HD, Pro, Standard, and Industrial; and Fortinet FortiSwitch 100 through 400 series and FortiSwitch Rugged. That includes rack-mount, compact, desktop, and rugged switches, with copper and fiber access ports plus high-speed fabric ports on aggregation models. 284 models in total, 25 of them past end of sale.
 
 ## What it does
 
@@ -44,9 +44,9 @@ A few decisions matter more than the rest, because they are where vendors descri
 
 **PoE budget belongs to a power supply configuration, not a model.** A Catalyst 9300-48UXM delivers anywhere from 490W to 2,880W depending on which supplies are installed. Each model lists every configuration its datasheet gives, and the sizer picks the smallest one that covers the load.
 
-**Ports are grouped by capability.** Each model lists groups of identical access ports with a speed and a per-port PoE maximum. That handles mixed models like the C9300-48UXM (12x 10G plus 36x 2.5G) and partial-PoE models like the FS-148F-POE (PoE on 24 of 48 ports).
+**Ports are grouped by capability.** Each model lists groups of identical access ports with a speed and a per-port PoE maximum. That handles mixed models like the C9300-48UXM (12x 10G plus 36x 2.5G) and partial-PoE models like the FS-148F-POE (PoE on 24 of 48 ports). Ports above 25G sit in `fabricPorts` instead (for example C9500-32C with 32x 100G QSFP28). The closet sizer only counts `accessPorts`; pure-fabric models appear in Browse and Compare but drop out of Size a closet.
 
-**Copper and fiber ports are kept apart.** Each port group has a `media` of `rj45` (the default) or `sfp`. Powered devices and data ports can only land on copper; fiber demand can only land on SFP ports.
+**Copper and fiber ports are kept apart.** Each access port group has a `media` of `rj45` (the default) or `sfp`. Powered devices and data ports can only land on copper; fiber demand can only land on SFP access ports. Fabric ports use `sfp`, `qsfp` (default), or `qsfp-dd` and never carry PoE.
 
 **Form factor matters for small sites.** Models are `1RU` (the default), `Compact`, or `Desktop`, with a `fanless` flag. Switches that can run on PoE from upstream (Catalyst 9200CX-12T and -8PT, FS-108F) describe it in `poweredBy`.
 

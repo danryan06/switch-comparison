@@ -10,6 +10,7 @@
     "families/cisco/c9300l.json",
     "families/cisco/c9300lm.json",
     "families/cisco/c9350.json",
+    "families/cisco/c9500.json",
     "families/cisco-meraki/mms130.json",
     "families/cisco-meraki/mms150.json",
     "families/cisco-meraki/mms210.json",

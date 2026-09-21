@@ -344,7 +344,7 @@ const U={};for(const [k,o] of Object.entries(DATA.uplinks))U[k]=o.options.map(x=
 const FAM={},SKUS=[];
 for(const f of DATA.families){
   FAM[f.id]={v:f.vendor,name:f.family,stack:{t:f.stacking.tech,bw:f.stacking.bandwidthGbps,max:f.stacking.maxMembers,fp:f.stacking.frontPanel,note:f.stacking.note},l3:f.routing.tier,l3t:f.routing.summary,bgp:f.routing.bgp,routes:f.routeScale,mac:f.macTable,macsec:f.macsec,buf:f.buffer,psuFru:f.power.psuFieldReplaceable,red:f.power.redundancy,fanFru:f.fansFieldReplaceable,power:f.power.summary,lic:f.licensing,src:f.source,xsrc:f.additionalSources||[],famVerify:f.verify||[],fnote:f.verifyNote||""};
-  for(const m of f.models)SKUS.push({fam:f.id,sku:m.sku,ports:m.accessPorts.map(p=>[p.count,p.speedGbps,p.poeWatts,p.media||"rj45"]),up:m.uplinks,psu:m.poeBudgets.map(b=>[b.config,b.watts,b.verify?1:0]),sw:m.switchingGbps,fwd:m.forwardingMpps,name:m.description||"",note:m.note||"",ff:m.formFactor||"1RU",src:m.source||f.source,fanless:!!m.fanless,pd:m.poweredBy||"",routes:m.routeScale||"",mac:m.macTable||"",buf:m.buffer||"",verify:[...(m.verify||[]),...(f.verify||[])],own:m.verify||[],red:m.redundancy||f.power.redundancy,vnote:m.verifyNote||"",
+  for(const m of f.models)SKUS.push({fam:f.id,sku:m.sku,ports:(m.accessPorts||[]).map(p=>[p.count,p.speedGbps,p.poeWatts,p.media||"rj45"]),fabric:(m.fabricPorts||[]).map(p=>[p.count,p.speedGbps,p.media||"qsfp"]),up:m.uplinks||null,psu:(m.poeBudgets||[]).map(b=>[b.config,b.watts,b.verify?1:0]),sw:m.switchingGbps,fwd:m.forwardingMpps,name:m.description||"",note:m.note||"",ff:m.formFactor||"1RU",src:m.source||f.source,fanless:!!m.fanless,pd:m.poweredBy||"",routes:m.routeScale||"",mac:m.macTable||"",buf:m.buffer||"",verify:[...(m.verify||[]),...(f.verify||[])],own:m.verify||[],red:m.redundancy||f.power.redundancy,vnote:m.verifyNote||"",
     lc:m.lifecycle||f.lifecycle||{status:"current"},rug:(m.ruggedized!==undefined?m.ruggedized:f.ruggedized)||false,
     temp:m.operatingTempC||f.operatingTempC||null,ip:m.ipRating||f.ipRating||"",mount:m.mounting||f.mounting||[]});
 }
@@ -356,20 +356,22 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",
 const spdLabel=g=>g>=1?(g%1?g:g)+"G":g*1000+"M";
 const spdCls=g=>g>=25?"s25x":g>=10?"s10":g>=5?"s5":g>=2.5?"s25":"s1";
 const totalPorts=s=>s.ports.reduce((a,p)=>a+p[0],0);
-const maxW=s=>Math.max(...s.ports.map(p=>p[2]));
-const maxSpd=s=>Math.max(...s.ports.map(p=>p[1]));
+const maxW=s=>s.ports.length?Math.max(...s.ports.map(p=>p[2])):0;
+const maxSpd=s=>s.ports.length?Math.max(...s.ports.map(p=>p[1])):0;
 const poeCap=s=>s.ports.reduce((a,p)=>a+p[0]*p[2],0);
 /* Vendors state what the supplies make available, which on some models exceeds what the ports can draw. Sizing uses the lower of the two. */
 const usableW=(s,b)=>Math.min(b[1],poeCap(s));
 const maxBudget=s=>s.psu.length?Math.max(...s.psu.map(p=>usableW(s,p))):0;
 const defBudget=s=>s.psu.length?usableW(s,s.psu[0]):0;
 const poeLabel=w=>w===0?"None":w===30?"30W (PoE+)":w===60?"60W (Class 6 / UPOE)":w===90?"90W (Class 8 / UPOE+)":w+"W";
-const portsText=s=>s.ports.map(p=>p[0]+"x "+spdLabel(p[1])+(p[3]==="sfp"?" SFP":"")).join(" + ");
+const portsText=s=>s.ports.length?s.ports.map(p=>p[0]+"x "+spdLabel(p[1])+(p[3]==="sfp"?" SFP":"")).join(" + "):"-";
+const FAB_MEDIA={sfp:"SFP",qsfp:"QSFP28","qsfp-dd":"QSFP-DD"};
+const fabricText=s=>s.fabric.length?s.fabric.map(p=>p[0]+"x "+spdLabel(p[1])+" "+(FAB_MEDIA[p[2]]||p[2])).join(" + "):"-";
 const spdVar=g=>g>=25?"--g25x":g>=10?"--g10":g>=5?"--g5":g>=2.5?"--g25":"--g1";
 const hasFiber=s=>s.ports.some(p=>p[3]==="sfp");
 const fmtN=n=>n===null||n===undefined?null:fmt(n);
-const upText=s=>{const o=U[s.up];return o.length>1?"Modular: "+o.map(x=>x.n.split(": ")[1]).join(", "):o[0].n};
-const isMod=s=>DATA.uplinks[s.up].modular;
+const upText=s=>{if(!s.up)return "-";const o=U[s.up];return o.length>1?"Modular: "+o.map(x=>x.n.split(": ")[1]).join(", "):o[0].n};
+const isMod=s=>!!(s.up&&DATA.uplinks[s.up].modular);
 const vendorOf=s=>FAM[s.fam].v;
 /* Aruba SKUs are opaque part numbers, so lead with the model and demote the SKU. Every other vendor's SKU is its model name and has no s.name. */
 const modelName=s=>s.name||s.sku;
@@ -386,22 +388,31 @@ const fmt=n=>n.toLocaleString("en-US");
 function faceplate(s,scale){
   scale=scale||1;
   const ports=[];s.ports.forEach(p=>{for(let i=0;i<p[0];i++)ports.push({g:p[1],w:p[2],f:p[3]==="sfp"})});
-  const cols=Math.ceil(ports.length/2),cw=10,ch=10,gap=2,pad=8;
-  const ups=U[s.up];const upN=Math.max(...ups.map(o=>o.p.reduce((a,x)=>a+x[0],0)));
-  const upCols=Math.ceil(upN/2);
-  const W=pad*2+cols*(cw+gap)+(isMod(s)?20:14)+upCols*(13+gap);
+  const fabs=[];s.fabric.forEach(p=>{for(let i=0;i<p[0];i++)fabs.push({g:p[1]})});
+  const cols=Math.max(1,Math.ceil(Math.max(ports.length,1)/2)),cw=10,ch=10,gap=2,pad=8;
+  const accessCols=ports.length?Math.ceil(ports.length/2):0;
+  const fabCols=fabs.length?Math.ceil(fabs.length/2):0;
+  const ups=s.up?U[s.up]:[];
+  const upN=ups.length?Math.max(...ups.map(o=>o.p.reduce((a,x)=>a+x[0],0))):0;
+  const upCols=upN?Math.ceil(upN/2):0;
+  const gapA=accessCols&&(fabCols||upCols)?(isMod(s)?20:14):0;
+  const gapF=fabCols&&upCols?(isMod(s)?20:14):0;
+  const W=pad*2+accessCols*(cw+gap)+gapA+fabCols*(13+gap)+gapF+upCols*(13+gap)||pad*2+cols*(cw+gap);
   const H=pad*2+2*(ch+gap)+4;
-  let out=`<svg class="face" role="img" aria-label="${esc(s.sku)} front panel: ${esc(portsText(s))}" width="${W*scale}" height="${H*scale}" viewBox="0 0 ${W} ${H}"><rect class="chassis" x="0" y="0" width="${W}" height="${H}" rx="4"/>`;
-  ports.forEach((p,i)=>{const c=Math.floor(i/2),r=i%2;const x=pad+c*(cw+gap)+Math.floor(c/12)*0,y=pad+r*(ch+gap+2);
+  const label=esc([portsText(s),fabricText(s)].filter(t=>t&&t!=="-").join("; ")||s.sku);
+  let out=`<svg class="face" role="img" aria-label="${esc(s.sku)} front panel: ${label}" width="${W*scale}" height="${H*scale}" viewBox="0 0 ${W} ${H}"><rect class="chassis" x="0" y="0" width="${W}" height="${H}" rx="4"/>`;
+  ports.forEach((p,i)=>{const c=Math.floor(i/2),r=i%2;const x=pad+c*(cw+gap),y=pad+r*(ch+gap+2);
     out+=p.f?`<rect class="fib" style="stroke:var(${spdVar(p.g)})" x="${x+0.8}" y="${y+0.8}" width="${cw-1.6}" height="${ch-1.6}" rx="1"/>`:`<rect class="${spdCls(p.g)}" x="${x}" y="${y}" width="${cw}" height="${ch}" rx="1.5"/>`;
     if(p.w>0){const pw=p.w>=90?cw:p.w>=60?cw*0.66:cw*0.33,pc=p.w>=90?"pw pw90":p.w>=60?"pw pw60":"pw";out+=`<rect class="${pc}" x="${x}" y="${r?y+ch-2.4:y}" width="${pw}" height="2.4"/>`}
   });
-  let ux=pad+cols*(cw+gap)+(isMod(s)?20:14);
-  if(isMod(s)){out+=`<rect x="${ux-8}" y="${pad-3}" width="${upCols*(13+gap)+8}" height="${2*(ch+gap)+8}" rx="3" fill="none" stroke="var(--muted)" stroke-dasharray="3 2"/>`}
+  let ux=pad+accessCols*(cw+gap)+gapA;
+  fabs.forEach((p,i)=>{const c=Math.floor(i/2),r=i%2;out+=`<rect class="upl" x="${ux+c*(13+gap)}" y="${pad+r*(ch+gap+2)}" width="13" height="${ch}" rx="1"/>`});
+  ux+=fabCols*(13+gap)+gapF;
+  if(upN&&isMod(s)){out+=`<rect x="${ux-8}" y="${pad-3}" width="${upCols*(13+gap)+8}" height="${2*(ch+gap)+8}" rx="3" fill="none" stroke="var(--muted)" stroke-dasharray="3 2"/>`}
   for(let i=0;i<upN;i++){const c=Math.floor(i/2),r=i%2;out+=`<rect class="upl" x="${ux+c*(13+gap)}" y="${pad+r*(ch+gap+2)}" width="13" height="${ch}" rx="1"/>`}
   return out+"</svg>";
 }
-function legendHTML(sw){const tiers=[[30,"--poe"],[60,"--poe60"],[90,"--poe90"]].filter(t=>!sw||sw.ports.some(p=>p[2]>=t[0]&&(t[0]===90||p[2]<t[0]+30)));const poe=tiers.length?`<span>PoE per port:</span>${tiers.map(t=>`<span><i style="background:var(${t[1]});height:4px"></i>${t[0]}W</span>`).join("")}`:"";return `<span><i style="background:var(--g1)"></i>1G</span><span><i style="background:var(--g25)"></i>2.5G</span><span><i style="background:var(--g5)"></i>5G</span><span><i style="background:var(--g10)"></i>10G</span><span><i style="background:var(--g25x)"></i>25G</span><span><i style="background:transparent;border:2px solid var(--g1)"></i>Fiber (SFP)</span>${poe}<span><i style="background:var(--up)"></i>Uplinks (dashed box: modular)</span>`}
+function legendHTML(sw){const tiers=[[30,"--poe"],[60,"--poe60"],[90,"--poe90"]].filter(t=>!sw||sw.ports.some(p=>p[2]>=t[0]&&(t[0]===90||p[2]<t[0]+30)));const poe=tiers.length?`<span>PoE per port:</span>${tiers.map(t=>`<span><i style="background:var(${t[1]});height:4px"></i>${t[0]}W</span>`).join("")}`:"";const fab=!sw||sw.fabric.length?`<span><i style="background:var(--up)"></i>Fabric / high-speed</span>`:"";return `<span><i style="background:var(--g1)"></i>1G</span><span><i style="background:var(--g25)"></i>2.5G</span><span><i style="background:var(--g5)"></i>5G</span><span><i style="background:var(--g10)"></i>10G</span><span><i style="background:var(--g25x)"></i>25G</span><span><i style="background:transparent;border:2px solid var(--g1)"></i>Fiber (SFP)</span>${poe}${fab}<span><i style="background:var(--up)"></i>Uplinks (dashed box: modular)</span>`}
 
 /* ---------- Sizer ---------- */
 const PRESETS={
@@ -440,6 +451,7 @@ function portsFeasible(s,dem,u){
   return true;
 }
 function uplinkAvail(s,req,u){
+  if(!s.up)return {n:0,opt:null,vsf:0,per:0};
   let best=0,opt=null;
   for(const o of U[s.up]){const n=o.p.reduce((a,x)=>a+(x[1]>=req.upS?x[0]:0),0);if(n>best){best=n;opt=o}}
   let total=best*u,vsf=0;
@@ -449,6 +461,8 @@ function uplinkAvail(s,req,u){
 function sizeOne(s,req){
   const f=FAM[s.fam];
   if(!sizeVend.has(f.v))return null;
+  /* Pure fabric / aggregation models have no accessPorts and are not closet-sizing candidates. */
+  if(!s.ports.length)return null;
   if(req.ff==="1RU"&&s.ff!=="1RU")return null;
   if(req.ff==="small"&&s.ff==="1RU")return null;
   if(!req.eos&&!isCur(s))return {rej:"End of sale"};
@@ -536,6 +550,7 @@ const COLS=[
   {k:"sku",t:"Model",f:s=>s.sku},
   {k:"fam",t:"Family",f:s=>FAM[s.fam].v+" "+FAM[s.fam].name},
   {k:"ports",t:"Access ports",f:s=>totalPorts(s)*100+maxSpd(s)},
+  {k:"fab",t:"Fabric ports",f:s=>s.fabric.reduce((a,p)=>a+p[0],0)*1000+(s.fabric.length?Math.max(...s.fabric.map(p=>p[1])):0)},
   {k:"w",t:"PoE per port",f:s=>maxW(s)},
   {k:"bud",t:"PoE budget (default / max)",f:s=>maxBudget(s),num:1},
   {k:"up",t:"Uplinks",f:s=>upText(s)},
@@ -563,6 +578,7 @@ function renderBrowse(){
       <td class="sku">${esc(modelName(s))}${v}${e}${s.name||s.ff!=="1RU"?`<div class="small" style="font-family:var(--sans);font-weight:400">${esc([s.name?s.sku:"",s.ff!=="1RU"?s.ff+(s.fanless?", fanless":""):""].filter(Boolean).join(". "))}</div>`:""}</td>
       <td>${esc(f.v)} ${esc(f.name)}</td>
       <td>${esc(portsText(s))}</td>
+      <td>${esc(fabricText(s))}</td>
       <td>${maxW(s)?maxW(s)+"W":"None"}</td>
       <td class="num">${s.psu.length?fmt(defBudget(s))+" / "+fmt(maxBudget(s))+" W":"None"}</td>
       <td>${esc(upText(s))}</td>
@@ -604,9 +620,9 @@ function lifecycleHTML(s){
 function specRows(s){const f=FAM[s.fam];return [
   ["Vendor",f.v],["Family",f.name],["Description",s.name||"-"],
   ["Front panel",faceplate(s),1],["Form factor",s.ff+(s.fanless?", fanless":"")],["Powered by",s.pd||f.power],
-  ["Access ports",portsText(s)],["Max PoE per port",poeLabel(maxW(s))],
+  ["Access ports",portsText(s)],["Fabric ports",fabricText(s)],["Max PoE per port",poeLabel(maxW(s))],
   ["PoE budget",s.psu.length?s.psu.map(p=>{const u=usableW(s,p);return `${esc(p[0])}: ${fmt(u)} W`+(u<p[1]?` (capped by ports; vendor lists ${fmt(p[1])} W)`:"")}).join("<br>"):"None",1],
-  ["Uplinks",U[s.up].map(o=>o.n).join("<br>"),1],
+  ["Uplinks",s.up?U[s.up].map(o=>o.n).join("<br>"):"-",1],
   ["Stacking",f.stack.max===1?"Not stackable":f.stack.max?`${f.stack.t}, up to ${f.stack.max} members${f.stack.bw?`, ${f.stack.bw} Gbps`:""}`:`${f.stack.t} (no hardware stacking)`],
   ["Stacking notes",f.stack.note],
   ["Routing",f.l3t],["IPv4 route scale (as stated)",s.routes||f.routes],["MAC table",s.mac||f.mac],["MACsec",f.macsec],["Packet buffer",s.buf||f.buf],
@@ -673,7 +689,7 @@ document.addEventListener("click",e=>{
 });
 
 /* ---------- Needs checking ---------- */
-const OWN_LABEL={psu:"PoE budget",poeBudgets:"PoE budget",uplinks:"Uplink options",ports:"Access ports",accessPorts:"Access ports",forwardingMpps:"Forwarding rate",switchingGbps:"Switching capacity",stacking:"Stacking"};
+const OWN_LABEL={psu:"PoE budget",poeBudgets:"PoE budget",uplinks:"Uplink options",ports:"Access ports",accessPorts:"Access ports",fabricPorts:"Fabric ports",forwardingMpps:"Forwarding rate",switchingGbps:"Switching capacity",stacking:"Stacking"};
 const FAM_LABEL={macsec:"MACsec",bgp:"BGP",routing:"Dynamic routing",routeScale:"Route scale",macTable:"MAC table",buffer:"Packet buffer",stacking:"Stacking"};
 (function(){
   const rows=SKUS.filter(s=>s.own.length||s.psu.some(p=>p[2])).map(s=>{
@@ -690,7 +706,7 @@ const FAM_LABEL={macsec:"MACsec",bgp:"BGP",routing:"Dynamic routing",routeScale:
   $("#chkBody").innerHTML=h;
 })();
 const famCounts=Object.entries(FAM).map(([k,f])=>`${f.v} ${f.name} (${SKUS.filter(s=>s.fam===k).length})`);
-$("#coverage").textContent=`${SKUS.length} models across ${Object.keys(FAM).length} families: ${famCounts.join(", ")}. Data center and aggregation-only models, and FortiSwitch models no longer on the current datasheets, are left out for now.`;
+$("#coverage").textContent=`${SKUS.length} models across ${Object.keys(FAM).length} families: ${famCounts.join(", ")}. FortiSwitch models no longer on the current datasheets are left out for now.`;
 $("#updated").textContent="Data updated "+DATA.updated+".";
 $("#srcList").innerHTML=Object.values(SRC).map(s=>`<li><a href="${s.u}" target="_blank" rel="noopener">${esc(s.t)}</a></li>`).join("");
 

@@ -1,0 +1,72 @@
+{
+  "id": "c9500",
+  "vendor": "Cisco",
+  "family": "Catalyst 9500 (high-performance)",
+  "source": "c9500",
+  "stacking": {
+    "tech": "StackWise Virtual",
+    "bandwidthGbps": null,
+    "maxMembers": 2,
+    "frontPanel": false,
+    "note": "StackWise Virtual pairs two fixed Catalyst 9500 high-performance switches over dedicated SVL links. Not compatible with StackWise-480 or StackWise-1T rear stacking"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Full L3 incl. BGP, VRF, MPLS, VXLAN/EVPN, and SD-Access (Network Advantage)"
+  },
+  "routeScale": "Up to 256,000 IPv4 indirect+direct (UADP 3.0 high-performance models; SDM dependent)",
+  "macTable": "Up to 82,000 (UADP 3.0 high-performance models; SDM dependent)",
+  "macsec": "256-bit AES-GCM MACsec",
+  "buffer": "Up to 36 MB unified buffer per UADP 3.0 ASIC",
+  "power": {
+    "summary": "Dual field-replaceable Platinum-rated PSUs",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two field-replaceable PSU slots; second supply sold separately"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Cisco DNA or Cisco Networking Subscription (Essentials or Advantage) required with purchase",
+  "verify": [],
+  "models": [
+    {
+      "sku": "C9500-32C",
+      "description": "9500 high-performance 32-port 100G QSFP28",
+      "accessPorts": [],
+      "fabricPorts": [
+        {
+          "count": 32,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 6400,
+      "forwardingMpps": 2000
+    },
+    {
+      "sku": "C9500-48Y4C",
+      "description": "9500 high-performance 48-port 1/10/25G SFP28 + 4x 40/100G",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 4,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 3200,
+      "forwardingMpps": 1000
+    }
+  ]
+}

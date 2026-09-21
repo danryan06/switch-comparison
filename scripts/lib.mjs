@@ -16,6 +16,8 @@ export function loadData() {
 
 const SPEEDS = [1, 2.5, 5, 10, 25];
 const MEDIA = ['rj45', 'sfp'];
+const FABRIC_SPEEDS = [40, 50, 100, 200, 400];
+const FABRIC_MEDIA = ['sfp', 'qsfp', 'qsfp-dd'];
 const FORMS = ['1RU', 'Compact', 'Desktop'];
 const TIERS = ['l2', 'ospf', 'full'];
 const STATUSES = ['current', 'endOfSale', 'endOfSupport'];
@@ -68,16 +70,26 @@ export function validate(data, today = new Date().toISOString().slice(0, 10)) {
       if (skus.has(m.sku)) errors.push(`${mt}: duplicate SKU`);
       skus.add(m.sku);
       if (m.source && !data.sources[m.source]) errors.push(`${mt}: unknown source "${m.source}"`);
-      if (!data.uplinks[m.uplinks]) errors.push(`${mt}: unknown uplink key "${m.uplinks}"`);
-      if (!m.accessPorts?.length) errors.push(`${mt}: no accessPorts`);
+      if (m.uplinks !== undefined && m.uplinks !== null) {
+        if (!data.uplinks[m.uplinks]) errors.push(`${mt}: unknown uplink key "${m.uplinks}"`);
+      }
+      const access = m.accessPorts || [];
+      const fabric = m.fabricPorts || [];
+      if (!access.length && !fabric.length) errors.push(`model ${m.sku}: needs at least one port (accessPorts or fabricPorts)`);
       let cap = 0;
-      for (const p of m.accessPorts || []) {
+      for (const p of access) {
         if (!(p.count > 0)) errors.push(`${mt}: port group count must be > 0`);
         if (!SPEEDS.includes(p.speedGbps)) errors.push(`${mt}: speedGbps ${p.speedGbps} not in ${SPEEDS.join('/')}`);
         if (!(p.poeWatts >= 0)) errors.push(`${mt}: poeWatts must be >= 0`);
         if (p.media && !MEDIA.includes(p.media)) errors.push(`${mt}: media must be ${MEDIA.join(' or ')}`);
         if (p.media === 'sfp' && p.poeWatts > 0) errors.push(`${mt}: SFP ports cannot carry PoE`);
         cap += p.count * p.poeWatts;
+      }
+      for (const p of fabric) {
+        if (!(p.count >= 1)) errors.push(`${mt}: fabricPorts count must be >= 1`);
+        if (!FABRIC_SPEEDS.includes(p.speedGbps)) errors.push(`${mt}: fabricPorts speedGbps ${p.speedGbps} not in ${FABRIC_SPEEDS.join('/')}`);
+        const media = p.media === undefined ? 'qsfp' : p.media;
+        if (!FABRIC_MEDIA.includes(media)) errors.push(`${mt}: fabricPorts media must be one of ${FABRIC_MEDIA.join(', ')}`);
       }
       const hasPoe = cap > 0, hasBudget = (m.poeBudgets || []).length > 0;
       if (hasPoe && !hasBudget) errors.push(`${mt}: PoE ports but no poeBudgets`);
