@@ -45,11 +45,11 @@
       "poeBudgets": [
         {
           "config": "1x JL086A 680W",
-          "watts": 300
+          "watts": 370
         },
         {
           "config": "1x JL087A 1050W",
-          "watts": 600
+          "watts": 740
         },
         {
           "config": "2x JL086A 680W",
@@ -57,7 +57,7 @@
         },
         {
           "config": "1x JL670A 1600W",
-          "watts": 1300
+          "watts": 740
         },
         {
           "config": "2x JL087A 1050W",
@@ -65,15 +65,12 @@
         },
         {
           "config": "2x JL670A 1600W",
-          "watts": 2880
+          "watts": 1440
         }
       ],
       "switchingGbps": 880,
       "forwardingMpps": 654,
-      "verify": [
-        "poeBudgets"
-      ],
-      "verifyNote": "QuickSpecs confirm 880 Gbps / 654 Mpps and max 2880W PoE; per-PSU splits are from the HPE Japan configuration guide"
+      "verifyNote": "QuickSpecs confirm 880 Gbps / 654 Mpps (system throughput 660 Mpps) and max 2880W PoE; per-PSU splits from the AOS-CX PoE Planning and Implementation Guide"
     },
     {
       "sku": "S6X60A",
@@ -148,11 +145,11 @@
         },
         {
           "config": "2x JL086A 680W",
-          "watts": 740
+          "watts": 600
         },
         {
           "config": "1x JL670A 1600W",
-          "watts": 1300
+          "watts": 600
         },
         {
           "config": "2x JL087A 1050W",
@@ -160,17 +157,16 @@
         },
         {
           "config": "2x JL670A 1600W",
-          "watts": 2880
+          "watts": 1300
         }
       ],
       "switchingGbps": null,
       "forwardingMpps": null,
       "verify": [
         "switchingGbps",
-        "forwardingMpps",
-        "poeBudgets"
+        "forwardingMpps"
       ],
-      "verifyNote": "QuickSpecs list this SKU but do not publish performance. Class 8 PoE on all 24 ports follows the English product name (16x 1G + 8x Smart Rate 10G Class8 PoE). Per-PSU PoE figures are from the HPE Japan configuration guide"
+      "verifyNote": "QuickSpecs list this SKU but do not publish performance. Class 8 PoE on all 24 ports follows the English product name (16x 1G + 8x Smart Rate 10G Class8 PoE). Per-PSU PoE from the AOS-CX PoE Planning and Implementation Guide"
     },
     {
       "sku": "S4P41A",
@@ -203,7 +199,7 @@
         },
         {
           "config": "1x JL670A 1600W",
-          "watts": 1300
+          "watts": 740
         },
         {
           "config": "2x JL087A 1050W",
@@ -211,18 +207,17 @@
         },
         {
           "config": "2x JL670A 1600W",
-          "watts": 2880
+          "watts": 1440
         }
       ],
       "switchingGbps": 524,
       "forwardingMpps": 390,
       "note": "The 16 dual-mode ports run as 16x 5G or 8x 10G (even ports only)",
       "verify": [
-        "poeBudgets",
         "switchingGbps",
         "forwardingMpps"
       ],
-      "verifyNote": "English QuickSpecs name this as 32x 1G plus 16 Smart Rate 5G Class 8. Per-PSU PoE and performance figures are from the HPE Japan configuration guide"
+      "verifyNote": "English QuickSpecs name this as 32x 1G plus 16 Smart Rate 5G Class 8. Per-PSU PoE from the AOS-CX PoE Planning and Implementation Guide; performance figures are from the HPE Japan configuration guide"
     },
     {
       "sku": "S4P42A",
@@ -256,7 +251,7 @@
         },
         {
           "config": "1x JL670A 1600W",
-          "watts": 1300
+          "watts": 740
         },
         {
           "config": "2x JL087A 1050W",
@@ -264,18 +259,17 @@
         },
         {
           "config": "2x JL670A 1600W",
-          "watts": 2880
+          "watts": 1440
         }
       ],
       "switchingGbps": 780,
       "forwardingMpps": 580,
       "note": "8 SFP+ ports support LRM. Dual-mode 5G/10G behaviour is not restated in the English QuickSpecs",
       "verify": [
-        "poeBudgets",
         "switchingGbps",
         "forwardingMpps"
       ],
-      "verifyNote": "English QuickSpecs name this as 32 Smart Rate 5G Class 8 plus 8 SFP+. Per-PSU PoE and performance figures are from the HPE Japan configuration guide"
+      "verifyNote": "English QuickSpecs name this as 32 Smart Rate 5G Class 8 plus 8 SFP+. Per-PSU PoE from the AOS-CX PoE Planning and Implementation Guide; performance figures are from the HPE Japan configuration guide"
     },
     {
       "sku": "R8S90A",
@@ -295,7 +289,7 @@
         },
         {
           "config": "1x JL087A 1050W",
-          "watts": 600
+          "watts": 740
         },
         {
           "config": "2x JL086A 680W",
@@ -303,7 +297,7 @@
         },
         {
           "config": "1x JL670A 1600W",
-          "watts": 1300
+          "watts": 740
         },
         {
           "config": "2x JL087A 1050W",
@@ -311,15 +305,12 @@
         },
         {
           "config": "2x JL670A 1600W",
-          "watts": 2880
+          "watts": 1440
         }
       ],
       "switchingGbps": 880,
       "forwardingMpps": 654,
-      "verify": [
-        "poeBudgets"
-      ],
-      "verifyNote": "QuickSpecs confirm 880 Gbps / 654 Mpps and max 2880W PoE; per-PSU splits are from the HPE Japan configuration guide"
+      "verifyNote": "QuickSpecs confirm 880 Gbps / 654 Mpps (system throughput 660 Mpps) and max 2880W PoE; per-PSU splits from the AOS-CX PoE Planning and Implementation Guide"
     },
     {
       "sku": "R8S91A",
@@ -352,7 +343,7 @@
         },
         {
           "config": "1x JL670A 1600W",
-          "watts": 1300
+          "watts": 740
         },
         {
           "config": "2x JL087A 1050W",
@@ -360,16 +351,13 @@
         },
         {
           "config": "2x JL670A 1600W",
-          "watts": 2880
+          "watts": 1440
         }
       ],
       "switchingGbps": 880,
       "forwardingMpps": 654,
       "note": "SFP+ ports support LRM and MACsec",
-      "verify": [
-        "poeBudgets"
-      ],
-      "verifyNote": "QuickSpecs list 880 Gbps / 654 Mpps and max 2880W PoE; per-PSU splits are from the HPE Japan configuration guide"
+      "verifyNote": "QuickSpecs list 880 Gbps / 654 Mpps (system throughput 660 Mpps) and max 2880W PoE; per-PSU splits from the AOS-CX PoE Planning and Implementation Guide"
     },
     {
       "sku": "S6X59A",
@@ -440,11 +428,11 @@
         },
         {
           "config": "2x JL086A 680W",
-          "watts": 740
+          "watts": 600
         },
         {
           "config": "1x JL670A 1600W",
-          "watts": 1300
+          "watts": 600
         },
         {
           "config": "2x JL087A 1050W",
@@ -452,15 +440,12 @@
         },
         {
           "config": "2x JL670A 1600W",
-          "watts": 2640
+          "watts": 1300
         }
       ],
       "switchingGbps": 1760,
       "forwardingMpps": 1310,
-      "verify": [
-        "poeBudgets"
-      ],
-      "verifyNote": "QuickSpecs confirm 1760 Gbps / 1310 Mpps and max 2640W PoE; per-PSU splits below that are from the HPE Japan configuration guide"
+      "verifyNote": "QuickSpecs confirm 1760 Gbps / 1310 Mpps and list max 2640W PoE; per-PSU splits from the AOS-CX PoE Planning and Implementation Guide (2x JL670A = 1300W)"
     },
     {
       "sku": "S0E92A",
@@ -541,5 +526,8 @@
       ],
       "verifyNote": "Performance figures are from the HPE Japan configuration guide; the English QuickSpecs list the SKU but have no spec block"
     }
+  ],
+  "additionalSources": [
+    "aospoe"
   ]
 }

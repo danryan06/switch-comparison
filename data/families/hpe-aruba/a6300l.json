@@ -57,11 +57,11 @@
         },
         {
           "config": "2x JL086A 680W",
-          "watts": 740
+          "watts": 600
         },
         {
           "config": "1x JL670A 1600W",
-          "watts": 1300
+          "watts": 600
         },
         {
           "config": "2x JL087A 1050W",
@@ -69,17 +69,16 @@
         },
         {
           "config": "2x JL670A 1600W",
-          "watts": 2880
+          "watts": 1300
         }
       ],
       "switchingGbps": 780,
       "forwardingMpps": 580,
       "verify": [
-        "poeBudgets",
         "switchingGbps",
         "forwardingMpps"
       ],
-      "verifyNote": "Covered in the CX 6300 QuickSpecs SKU list; per-PSU PoE and performance figures are from the HPE Japan configuration guide"
+      "verifyNote": "Covered in the CX 6300 QuickSpecs SKU list; per-PSU PoE from the AOS-CX PoE Planning and Implementation Guide. Performance figures are from the HPE Japan configuration guide"
     },
     {
       "sku": "S3L76A",
@@ -95,7 +94,7 @@
       "poeBudgets": [
         {
           "config": "1x JL086A 680W",
-          "watts": 370
+          "watts": 300
         },
         {
           "config": "1x JL087A 1050W",
@@ -103,11 +102,11 @@
         },
         {
           "config": "2x JL086A 680W",
-          "watts": 740
+          "watts": 600
         },
         {
           "config": "1x JL670A 1600W",
-          "watts": 1300
+          "watts": 600
         },
         {
           "config": "2x JL087A 1050W",
@@ -115,17 +114,16 @@
         },
         {
           "config": "2x JL670A 1600W",
-          "watts": 2880
+          "watts": 1300
         }
       ],
       "switchingGbps": 780,
       "forwardingMpps": 580,
       "verify": [
-        "poeBudgets",
         "switchingGbps",
         "forwardingMpps"
       ],
-      "verifyNote": "Covered in the CX 6300 QuickSpecs SKU list; per-PSU PoE and performance figures are from the HPE Japan configuration guide"
+      "verifyNote": "Covered in the CX 6300 QuickSpecs SKU list; per-PSU PoE from the AOS-CX PoE Planning and Implementation Guide. Performance figures are from the HPE Japan configuration guide"
     },
     {
       "sku": "S3L77A",
@@ -146,7 +144,7 @@
       "poeBudgets": [
         {
           "config": "1x JL086A 680W",
-          "watts": 370
+          "watts": 300
         },
         {
           "config": "1x JL087A 1050W",
@@ -154,11 +152,11 @@
         },
         {
           "config": "2x JL086A 680W",
-          "watts": 740
+          "watts": 600
         },
         {
           "config": "1x JL670A 1600W",
-          "watts": 1300
+          "watts": 600
         },
         {
           "config": "2x JL087A 1050W",
@@ -166,18 +164,20 @@
         },
         {
           "config": "2x JL670A 1600W",
-          "watts": 2880
+          "watts": 1300
         }
       ],
       "switchingGbps": 720,
       "forwardingMpps": 535,
       "verify": [
-        "poeBudgets",
         "switchingGbps",
         "forwardingMpps"
       ],
-      "verifyNote": "Covered in the CX 6300 QuickSpecs SKU list; per-PSU PoE and performance figures are from the HPE Japan configuration guide"
+      "verifyNote": "Covered in the CX 6300 QuickSpecs SKU list; per-PSU PoE from the AOS-CX PoE Planning and Implementation Guide. Performance figures are from the HPE Japan configuration guide"
     }
   ],
-  "verifyNote": "Route scale, MAC table, and buffer not yet captured from an English source"
+  "verifyNote": "Route scale, MAC table, and buffer not yet captured from an English source",
+  "additionalSources": [
+    "aospoe"
+  ]
 }
