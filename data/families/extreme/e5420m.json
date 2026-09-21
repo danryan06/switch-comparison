@@ -1,19 +1,19 @@
 {
   "id": "e5420m",
   "vendor": "Extreme Networks",
-  "family": "5420M Universal",
+  "family": "5420M",
   "source": "e5420",
   "stacking": {
-    "tech": "Switch Engine stacking",
+    "tech": "EXOS stacking",
     "bandwidthGbps": 80,
     "maxMembers": 8,
     "frontPanel": false,
-    "note": "Up to 8 units over two dedicated SFP-DD stacking ports (80G per unit). Stacking runs in Switch Engine mode only"
+    "note": "Up to 8 members over two dedicated SFP-DD stacking ports (80G per unit). Stacking needs EXOS"
   },
   "routing": {
     "tier": "full",
     "bgp": true,
-    "summary": "Dual persona: Switch Engine (EXOS) or Fabric Engine (VOSS). Static, RIP, OSPF, IS-IS, BGP, PIM, VRF, and EVPN. 5+ OSPF interfaces, 3+ BGP peers, IS-IS, and EVPN need a Premier license"
+    "summary": "Full L3 incl. BGP, EVPN, VRF, and IS-IS. Advanced routing needs a Premier license. Dual OS: EXOS (Switch Engine) or VOSS (Fabric Engine)"
   },
   "routeScale": "Not captured from datasheet",
   "macTable": "Not captured from datasheet",
@@ -28,7 +28,7 @@
     }
   },
   "fansFieldReplaceable": true,
-  "licensing": "Base software license included (most features); Premier license for advanced routing and MACsec license ordered separately. Managed by ExtremeCloud IQ or Extreme Platform ONE, or on-box via CLI/GUI",
+  "licensing": "Base license included; Premier for advanced routing; MACsec license separate. ExtremeCloud IQ optional for cloud management",
   "operatingTempC": {
     "min": 0,
     "max": 50

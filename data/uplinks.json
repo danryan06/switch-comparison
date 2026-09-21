@@ -857,7 +857,7 @@
     "modular": false,
     "options": [
       {
-        "label": "4x 1/10G SFP+ (fixed built-in)",
+        "label": "4x 1/10G SFP+ (fixed)",
         "ports": [
           {
             "count": 4,
@@ -871,7 +871,7 @@
     "modular": false,
     "options": [
       {
-        "label": "4x 1/10/25G SFP28 (fixed built-in)",
+        "label": "4x 1/10/25G SFP28 (fixed)",
         "ports": [
           {
             "count": 4,
@@ -885,7 +885,7 @@
     "modular": true,
     "options": [
       {
-        "label": "5520-VIM-4X / 4XE: 4x 1/10G SFP+",
+        "label": "5520-VIM-4X: 4x 1/10G SFP+",
         "ports": [
           {
             "count": 4,

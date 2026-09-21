@@ -1,23 +1,23 @@
 {
   "id": "e5520",
   "vendor": "Extreme Networks",
-  "family": "5520 Universal",
+  "family": "5520",
   "source": "e5520",
   "stacking": {
-    "tech": "Switch Engine stacking",
+    "tech": "EXOS stacking",
     "bandwidthGbps": 160,
     "maxMembers": 8,
     "frontPanel": false,
-    "note": "Up to 8 units (160G) over two built-in QSFP28 ports at 40G each. Those QSFP28 ports serve as uplinks when not stacking; the VIM slot provides the separate uplinks. Stacking runs in Switch Engine mode only"
+    "note": "Up to 8 members (160G) over two built-in QSFP28 ports. Those ports become uplinks when not stacking; a network module provides separate uplinks. Stacking needs EXOS"
   },
   "routing": {
     "tier": "full",
     "bgp": true,
-    "summary": "Dual persona: Switch Engine (EXOS) or Fabric Engine (VOSS). Static, RIP, OSPF, IS-IS, BGP, PIM, VRF, and EVPN. 5+ OSPF interfaces, 3+ BGP peers, IS-IS, and EVPN need a Premier license"
+    "summary": "Full L3 incl. BGP, EVPN, VRF, and IS-IS. Advanced routing needs a Premier license. Dual OS: EXOS (Switch Engine) or VOSS (Fabric Engine)"
   },
-  "routeScale": "81,000 IPv4 routes (Switch Engine); OSPF and BGP with a Premier license",
-  "macTable": "114,688 (Switch Engine)",
-  "macsec": "MACsec 256-bit AES on access and VIM uplink ports (MACsec license required)",
+  "routeScale": "81,000 IPv4 routes (EXOS); OSPF and BGP with a Premier license",
+  "macTable": "114,688 (EXOS)",
+  "macsec": "MACsec 256-bit AES on access and modular uplink ports (MACsec license required)",
   "buffer": "Not published",
   "power": {
     "summary": "Two modular hot-swap power supply slots (one required; second for redundancy and PoE); hot-swap fan modules",
@@ -28,7 +28,7 @@
     }
   },
   "fansFieldReplaceable": true,
-  "licensing": "Base software license included (most features); Premier license for advanced routing and MACsec license ordered separately. Managed by ExtremeCloud IQ or Extreme Platform ONE, or on-box via CLI/GUI",
+  "licensing": "Base license included; Premier for advanced routing; MACsec license separate. ExtremeCloud IQ optional for cloud management",
   "operatingTempC": {
     "min": 0,
     "max": 50
@@ -39,7 +39,7 @@
   "models": [
     {
       "sku": "5520-24T",
-      "description": "24x 1G RJ45 + VIM uplink (non-PoE)",
+      "description": "24x 1G RJ45 (non-PoE)",
       "accessPorts": [
         {
           "count": 24,
@@ -54,7 +54,7 @@
     },
     {
       "sku": "5520-24W",
-      "description": "24x 1G RJ45 90W PoE + VIM uplink",
+      "description": "24x 1G RJ45 90W PoE",
       "accessPorts": [
         {
           "count": 24,
@@ -86,7 +86,7 @@
     },
     {
       "sku": "5520-48T",
-      "description": "48x 1G RJ45 + VIM uplink (non-PoE)",
+      "description": "48x 1G RJ45 (non-PoE)",
       "accessPorts": [
         {
           "count": 48,
@@ -101,7 +101,7 @@
     },
     {
       "sku": "5520-48W",
-      "description": "48x 1G RJ45 90W PoE + VIM uplink",
+      "description": "48x 1G RJ45 90W PoE",
       "accessPorts": [
         {
           "count": 48,
@@ -133,7 +133,7 @@
     },
     {
       "sku": "5520-12MW-36W",
-      "description": "12x 1/2.5/5G multi-rate 90W + 36x 1G RJ45 90W PoE + VIM uplink",
+      "description": "12x 1/2.5/5G multi-rate 90W + 36x 1G RJ45 90W PoE",
       "accessPorts": [
         {
           "count": 12,
@@ -170,7 +170,7 @@
     },
     {
       "sku": "5520-48SE",
-      "description": "48x 100M/1G SFP + VIM uplink (non-PoE)",
+      "description": "48x 100M/1G SFP (non-PoE)",
       "accessPorts": [
         {
           "count": 48,
@@ -186,7 +186,7 @@
     },
     {
       "sku": "5520-24X",
-      "description": "24x 1/10G SFP+ + VIM uplink (non-PoE)",
+      "description": "24x 1/10G SFP+ (non-PoE)",
       "accessPorts": [
         {
           "count": 24,

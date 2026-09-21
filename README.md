@@ -4,7 +4,7 @@ A vendor-neutral site for comparing campus and aggregation Ethernet switches. Ev
 
 Live site: [danryan06.github.io/switch-comparison](https://danryan06.github.io/switch-comparison/)
 
-Current coverage: **56 families, 337 models** (25 past end of sale) across Cisco Catalyst (9200 through 9500, including C9350), Cisco Meraki MS (including MS130R and MS450), HPE Aruba CX (6000 through 8360, plus 4100i), Extreme Networks Universal (5320 through 5720), Juniper EX, Ubiquiti UniFi, and Fortinet FortiSwitch (including Rugged). That spans copper and fiber access, high-speed fabric ports on aggregation SKUs, and compact, desktop, and rugged form factors.
+Current coverage: **56 families, 337 models** (25 past end of sale) across Cisco Catalyst (9200 through 9500, including C9350), Cisco Meraki MS (including MS130R and MS450), HPE Aruba CX (6000 through 8360, plus 4100i), Extreme Networks (5320 through 5720), Juniper EX, Ubiquiti UniFi, and Fortinet FortiSwitch (including Rugged). That spans copper and fiber access, high-speed fabric ports on aggregation SKUs, and compact, desktop, and rugged form factors.
 
 ## What it does
 

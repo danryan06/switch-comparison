@@ -1,23 +1,23 @@
 {
   "id": "e5720",
   "vendor": "Extreme Networks",
-  "family": "5720 Universal",
+  "family": "5720",
   "source": "e5720",
   "stacking": {
-    "tech": "Switch Engine stacking",
+    "tech": "EXOS stacking",
     "bandwidthGbps": 400,
     "maxMembers": 8,
     "frontPanel": false,
-    "note": "Up to 8 units (400G per unit) over two built-in QSFP28 ports. Those ports serve as uplinks when not stacking; the VIM slot provides the separate uplinks. Stacking runs in Switch Engine mode only, and can cross-stack with the 5520 at 50G"
+    "note": "Up to 8 members (400G per unit) over two built-in QSFP28 ports. Those ports become uplinks when not stacking; a network module provides separate uplinks. Stacking needs EXOS; can cross-stack with the 5520 at 50G"
   },
   "routing": {
     "tier": "full",
     "bgp": true,
-    "summary": "Dual persona: Switch Engine (EXOS) or Fabric Engine (VOSS). Static, RIP, OSPF, IS-IS, BGP, PIM, VRF, and EVPN. 5+ OSPF interfaces, 3+ BGP peers, IS-IS, and EVPN need a Premier license"
+    "summary": "Full L3 incl. BGP, EVPN, VRF, and IS-IS. Advanced routing needs a Premier license. Dual OS: EXOS (Switch Engine) or VOSS (Fabric Engine)"
   },
-  "routeScale": "Switch Engine IPv4 routes: 166,000 (MW models), 294,000 (MXW models); OSPF and BGP with a Premier license",
-  "macTable": "Switch Engine: 163,000 (MW models), 294,000 (MXW models)",
-  "macsec": "MACsec 256-bit AES on access and VIM uplink ports (MACsec license required)",
+  "routeScale": "IPv4 routes (EXOS): 166,000 (MW models), 294,000 (MXW models); OSPF and BGP with a Premier license",
+  "macTable": "EXOS: 163,000 (MW models), 294,000 (MXW models)",
+  "macsec": "MACsec 256-bit AES on access and modular uplink ports (MACsec license required)",
   "buffer": "Not published",
   "power": {
     "summary": "Two modular hot-swap power supply slots (one required; second for redundancy and PoE); hot-swap fan modules",
@@ -28,7 +28,7 @@
     }
   },
   "fansFieldReplaceable": true,
-  "licensing": "Base software license included (most features); Premier license for advanced routing and MACsec license ordered separately. Managed by ExtremeCloud IQ or Extreme Platform ONE, or on-box via CLI/GUI",
+  "licensing": "Base license included; Premier for advanced routing; MACsec license separate. ExtremeCloud IQ optional for cloud management",
   "operatingTempC": {
     "min": 0,
     "max": 50
@@ -39,7 +39,7 @@
   "models": [
     {
       "sku": "5720-24MW",
-      "description": "24x 1/2.5/5G multi-rate 90W PoE + VIM uplink",
+      "description": "24x 1/2.5/5G multi-rate 90W PoE",
       "accessPorts": [
         {
           "count": 24,
@@ -71,7 +71,7 @@
     },
     {
       "sku": "5720-48MW",
-      "description": "48x 1/2.5/5G multi-rate 90W PoE + VIM uplink",
+      "description": "48x 1/2.5/5G multi-rate 90W PoE",
       "accessPorts": [
         {
           "count": 48,
@@ -103,7 +103,7 @@
     },
     {
       "sku": "5720-24MXW",
-      "description": "24x 1/2.5/5/10G multi-rate 90W PoE + VIM uplink (Guest VM capable)",
+      "description": "24x 1/2.5/5/10G multi-rate 90W PoE",
       "accessPorts": [
         {
           "count": 24,
@@ -132,11 +132,11 @@
       ],
       "switchingGbps": 1280,
       "forwardingMpps": 810,
-      "note": "Supports Integrated Application Hosting (Guest VM) with an SSD module and Premier license"
+      "note": "Application hosting (guest VM) requires an SSD module and a Premier license"
     },
     {
       "sku": "5720-48MXW",
-      "description": "48x 1/2.5/5/10G multi-rate 90W PoE + VIM uplink (Guest VM capable)",
+      "description": "48x 1/2.5/5/10G multi-rate 90W PoE",
       "accessPorts": [
         {
           "count": 48,
@@ -165,7 +165,7 @@
       ],
       "switchingGbps": 1760,
       "forwardingMpps": 810,
-      "note": "Supports Integrated Application Hosting (Guest VM) with an SSD module and Premier license"
+      "note": "Application hosting (guest VM) requires an SSD module and a Premier license"
     }
   ]
 }
