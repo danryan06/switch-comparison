@@ -1,0 +1,171 @@
+{
+  "id": "a8360",
+  "vendor": "HPE Aruba",
+  "family": "CX 8360 v2",
+  "source": "a8360",
+  "stacking": {
+    "tech": "VSX",
+    "bandwidthGbps": null,
+    "maxMembers": 2,
+    "frontPanel": false,
+    "note": "Two-node VSX high availability (active-active) over an inter-switch link built from front-panel ports; not a shared-management stack"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "AOS-CX Layer 3: static, OSPFv2/v3, BGP, VRF, PIM, and BGP EVPN-VXLAN, plus IPv6"
+  },
+  "routeScale": "Not captured from datasheet",
+  "macTable": "Not captured from datasheet",
+  "macsec": "AES-256 low-density MACsec on 4x 1/10/25G ports and 2x 40/100G ports (model-dependent)",
+  "buffer": "Not captured from datasheet",
+  "power": {
+    "summary": "Up to 2 field-replaceable, hot-swappable power supplies (bundles ship with 2); AC or DC",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two hot-swap PSU slots, load sharing; included in bundles"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "No switch software license to operate; HPE Aruba Networking Central subscription (Foundation or Advanced) for cloud management and advanced features",
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "verify": [
+    "routeScale",
+    "macTable",
+    "buffer",
+    "switchingGbps",
+    "forwardingMpps"
+  ],
+  "verifyNote": "Datasheet publishes a family max of 4.8 Tbps and 2,678 Mpps but does not break switching capacity or forwarding rate out per model; route scale, MAC table, and buffer also need confirming. MACsec port counts are per the model descriptions",
+  "models": [
+    {
+      "sku": "8360-32Y4C",
+      "description": "32x 1/10/25G SFP28 (4 MACsec) + 4x 40/100G",
+      "accessPorts": [
+        {
+          "count": 32,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 4,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "note": "Up to 14 of the SFP28 ports can run as SFP56 50G, at reduced port density (2 ports disabled per 50G pair)"
+    },
+    {
+      "sku": "8360-16Y2C",
+      "description": "16x 1/10/25G SFP28 + 2x 40/100G",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 2,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "note": "Supports optional SFP56 50G on some ports at reduced density"
+    },
+    {
+      "sku": "8360-48Y6C",
+      "description": "48x 1/10/25G SFP28 (4 MACsec) + 6x 40/100G (2 MACsec)",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 6,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "note": "Supports optional SFP56 50G on some ports at reduced density"
+    },
+    {
+      "sku": "8360-48XT4C",
+      "description": "48x 1/10G 10GBASE-T + 4x 40/100G",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 4,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "note": "Smart Rate 1/2.5/5/10G on the BASE-T ports. No breakout on the QSFP ports for this model"
+    },
+    {
+      "sku": "8360-24XF2C",
+      "description": "24x 1/10G SFP/SFP+ + 2x 40/100G",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 2,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": null,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "8360-12C",
+      "description": "12x 40/100G QSFP+/QSFP28",
+      "accessPorts": [],
+      "fabricPorts": [
+        {
+          "count": 12,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": null,
+      "forwardingMpps": null
+    }
+  ]
+}

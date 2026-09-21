@@ -1,0 +1,71 @@
+{
+  "id": "jex4650",
+  "vendor": "Juniper",
+  "family": "EX4650",
+  "source": "jex4650",
+  "stacking": {
+    "tech": "Virtual Chassis",
+    "bandwidthGbps": null,
+    "maxMembers": 4,
+    "frontPanel": true,
+    "note": "Up to 4 members in a Virtual Chassis over the QSFP28 ports, which otherwise serve as uplinks"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Junos Layer 3: static, OSPF, IS-IS, BGP, PIM, VRF, and BGP EVPN-VXLAN. Advanced routing needs a Flex license"
+  },
+  "routeScale": "Not captured from datasheet",
+  "macTable": "Not captured from datasheet",
+  "macsec": "MACsec AES-256 supported; port scope not captured from datasheet",
+  "buffer": "Not captured from datasheet",
+  "power": {
+    "summary": "Two field-replaceable, hot-swap AC or DC power supplies with front-to-back or back-to-front airflow",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two PSU slots, load sharing; airflow matched across PSUs and fans"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Juniper Flex: base features included; advanced routing (OSPF, BGP, EVPN-VXLAN) needs a Flex Advanced or Premium license. Mist Wired Assurance with subscription",
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "verify": [
+    "routeScale",
+    "macTable",
+    "macsec",
+    "buffer",
+    "switchingGbps"
+  ],
+  "verifyNote": "Juniper datasheet states 4 Tbps / 2.98 Bpps; some third-party listings cite 2 Tbps / 1.49 Bpps (likely unidirectional). Using the vendor figure. Route scale, MAC table, MACsec scope, and buffer need confirming from the EX4650 datasheet",
+  "models": [
+    {
+      "sku": "EX4650-48Y",
+      "description": "48x 1/10/25G SFP28 + 8x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 8,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 4000,
+      "forwardingMpps": 2980,
+      "note": "Sold as -48Y-AFI (back-to-front) and -48Y-AFO (front-to-back). Each QSFP28 can break out to 4x 25G, for up to 80 total 25G ports"
+    }
+  ]
+}

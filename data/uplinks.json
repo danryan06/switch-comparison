@@ -811,5 +811,32 @@
         ]
       }
     ]
+  },
+  "m9500nm": {
+    "modular": true,
+    "options": [
+      {
+        "label": "No module: 16x 1/10G only",
+        "ports": []
+      },
+      {
+        "label": "C9500-NM-8X: 8x 1/10G SFP/SFP+",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 10
+          }
+        ]
+      },
+      {
+        "label": "C9500-NM-2Q: 2x 40G QSFP+",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 40
+          }
+        ]
+      }
+    ]
   }
 }

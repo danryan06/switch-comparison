@@ -1,54 +1,95 @@
 {
   "id": "c9500",
   "vendor": "Cisco",
-  "family": "Catalyst 9500 (high-performance)",
+  "family": "Catalyst 9500",
   "source": "c9500",
   "stacking": {
-    "tech": "StackWise Virtual",
+    "tech": "Cisco StackWise Virtual",
     "bandwidthGbps": null,
     "maxMembers": 2,
     "frontPanel": false,
-    "note": "StackWise Virtual pairs two fixed Catalyst 9500 high-performance switches over dedicated SVL links. Not compatible with StackWise-480 or StackWise-1T rear stacking"
+    "note": "Two-chassis redundancy over a StackWise Virtual Link built from front-panel ports. Not a shared-management access stack"
   },
   "routing": {
     "tier": "full",
     "bgp": true,
-    "summary": "Full L3 incl. BGP, VRF, MPLS, VXLAN/EVPN, and SD-Access (Network Advantage)"
+    "summary": "Full Layer 3: static, RIPv2, OSPFv2/v3, EIGRP, IS-IS, BGP, PIM, MPLS L3VPN, BGP EVPN-VXLAN, and SD-Access. Advanced routing needs Network Advantage"
   },
-  "routeScale": "Up to 256,000 IPv4 indirect+direct (UADP 3.0 high-performance models; SDM dependent)",
-  "macTable": "Up to 82,000 (UADP 3.0 high-performance models; SDM dependent)",
-  "macsec": "256-bit AES-GCM MACsec",
-  "buffer": "Up to 36 MB unified buffer per UADP 3.0 ASIC",
+  "routeScale": "Up to 256,000 IPv4 routes (indirect + direct) on UADP 3.0 models; see model overrides",
+  "macTable": "82,000 (UADP 3.0 distribution template)",
+  "macsec": "AES-256 (802.1AE) at line rate on all ports and all speeds; WAN-MACsec on 9500X models",
+  "buffer": "Up to 36 MB unified per ASIC (UADP 3.0)",
   "power": {
-    "summary": "Dual field-replaceable Platinum-rated PSUs",
+    "summary": "Dual 1+1 redundant power supplies (AC or DC); ships with one",
     "psuFieldReplaceable": true,
     "redundancy": {
       "supported": true,
-      "detail": "Two field-replaceable PSU slots; second supply sold separately"
+      "detail": "Second hot-swap PSU at order or later; 1+1 redundant"
     }
   },
   "fansFieldReplaceable": true,
-  "licensing": "Cisco DNA or Cisco Networking Subscription (Essentials or Advantage) required with purchase",
-  "verify": [],
+  "licensing": "Cisco DNA / unified switching license (Network Essentials or Advantage), 3, 5, or 7-year subscription; an add-on license is required to order",
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "additionalSources": [],
   "models": [
     {
-      "sku": "C9500-32C",
-      "description": "9500 high-performance 32-port 100G QSFP28",
-      "accessPorts": [],
+      "sku": "C9500-16X",
+      "description": "16-port 1/10G SFP/SFP+ with optional 8x10G or 2x40G module",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "m9500nm",
+      "poeBudgets": [],
+      "switchingGbps": 480,
+      "forwardingMpps": 360,
+      "macTable": "64,000",
+      "routeScale": "64,000 IPv4 indirect, 80,000 IPv4 host (UADP 2.0)",
+      "buffer": "Not published (UADP 2.0)",
+      "operatingTempC": {
+        "min": 0,
+        "max": 40
+      },
+      "verify": [
+        "buffer"
+      ],
+      "verifyNote": "UADP 2.0 buffer size is not stated on the current 9500 datasheet"
+    },
+    {
+      "sku": "C9500-24Y4C",
+      "description": "24-port 1/10/25G SFP28 + 4x 40/100G",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
       "fabricPorts": [
         {
-          "count": 32,
-          "speedGbps": 100,
-          "media": "qsfp"
+          "count": 4,
+          "speedGbps": 100
         }
       ],
       "poeBudgets": [],
-      "switchingGbps": 6400,
-      "forwardingMpps": 2000
+      "switchingGbps": 2000,
+      "forwardingMpps": 1000,
+      "routeScale": "Up to 256,000 IPv4 routes (indirect + direct)"
     },
     {
       "sku": "C9500-48Y4C",
-      "description": "9500 high-performance 48-port 1/10/25G SFP28 + 4x 40/100G",
+      "description": "48-port 1/10/25G SFP28 + 4x 40/100G",
       "accessPorts": [
         {
           "count": 48,
@@ -60,13 +101,98 @@
       "fabricPorts": [
         {
           "count": 4,
-          "speedGbps": 100,
-          "media": "qsfp"
+          "speedGbps": 100
         }
       ],
       "poeBudgets": [],
       "switchingGbps": 3200,
-      "forwardingMpps": 1000
+      "forwardingMpps": 1000,
+      "routeScale": "Up to 256,000 IPv4 routes (indirect + direct)"
+    },
+    {
+      "sku": "C9500-32QC",
+      "description": "32-port 40G (or 16-port 100G) QSFP+/QSFP28",
+      "accessPorts": [],
+      "fabricPorts": [
+        {
+          "count": 32,
+          "speedGbps": 40
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 3200,
+      "forwardingMpps": 1000,
+      "routeScale": "Up to 256,000 IPv4 routes (indirect + direct)",
+      "note": "The 32 QSFP ports run as 32x 40G or, in pairs, as 16x 100G"
+    },
+    {
+      "sku": "C9500-32C",
+      "description": "32-port 100G QSFP28",
+      "accessPorts": [],
+      "fabricPorts": [
+        {
+          "count": 32,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 6400,
+      "forwardingMpps": 2000,
+      "routeScale": "Up to 256,000 IPv4 routes (indirect + direct)"
+    },
+    {
+      "sku": "C9500X-28C8D",
+      "description": "9500X: 28-port 40/100G QSFP28 + 8-port 40/100/200/400G QSFP-DD",
+      "accessPorts": [],
+      "fabricPorts": [
+        {
+          "count": 28,
+          "speedGbps": 100
+        },
+        {
+          "count": 8,
+          "speedGbps": 400,
+          "media": "qsfp-dd"
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 12000,
+      "forwardingMpps": 8000,
+      "macTable": "256,000",
+      "routeScale": "Up to 2,000,000 routes (Silicon One Q200)",
+      "buffer": "80 MB low-latency + up to 8 GB HBM",
+      "operatingTempC": {
+        "min": -5,
+        "max": 45
+      }
+    },
+    {
+      "sku": "C9500X-60L4D",
+      "description": "9500X: 60-port 10/25/50G SFP56 + 4-port 40/100/200/400G QSFP-DD",
+      "accessPorts": [],
+      "fabricPorts": [
+        {
+          "count": 60,
+          "speedGbps": 50,
+          "media": "sfp"
+        },
+        {
+          "count": 4,
+          "speedGbps": 400,
+          "media": "qsfp-dd"
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 9200,
+      "forwardingMpps": 8000,
+      "macTable": "256,000",
+      "routeScale": "Up to 2,000,000 routes (Silicon One Q200)",
+      "buffer": "80 MB low-latency + up to 8 GB HBM",
+      "operatingTempC": {
+        "min": -5,
+        "max": 45
+      },
+      "note": "The 60 SFP56 ports run 10/25/50G; stored at their 50G maximum as fabric ports"
     }
   ]
 }

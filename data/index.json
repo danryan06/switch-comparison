@@ -32,6 +32,7 @@
     "families/juniper/jex4100.json",
     "families/juniper/jex4100f.json",
     "families/juniper/jex4400.json",
+    "families/juniper/jex4650.json",
     "families/juniper/jex4000.json",
     "families/juniper/jex4100h.json",
     "families/ubiquiti/uecs.json",
@@ -46,6 +47,9 @@
     "families/hpe-aruba/a6000.json",
     "families/hpe-aruba/a6300m2.json",
     "families/hpe-aruba/a6300l.json",
+    "families/hpe-aruba/a8100.json",
+    "families/hpe-aruba/a8325.json",
+    "families/hpe-aruba/a8360.json",
     "families/hpe-aruba/a4100i.json"
   ]
 }

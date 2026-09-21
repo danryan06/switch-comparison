@@ -1,0 +1,148 @@
+{
+  "id": "a8100",
+  "vendor": "HPE Aruba",
+  "family": "CX 8100",
+  "source": "a8100",
+  "additionalSources": [
+    "a8100qs"
+  ],
+  "stacking": {
+    "tech": "VSX",
+    "bandwidthGbps": null,
+    "maxMembers": 2,
+    "frontPanel": false,
+    "note": "Two-node VSX high availability (active-active) over an inter-switch link built from front-panel ports; not a shared-management stack"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "AOS-CX Layer 3: static, OSPFv2/v3, BGP, VRF, PIM, and BGP EVPN-VXLAN, plus IPv6"
+  },
+  "routeScale": "Not captured from datasheet",
+  "macTable": "Not captured from datasheet",
+  "macsec": "Not captured from datasheet",
+  "buffer": "Not captured from datasheet",
+  "power": {
+    "summary": "Up to 2 field-replaceable, hot-swappable power supplies (bundles ship with 2); AC or DC",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two hot-swap PSU slots, load sharing; included in bundles"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "No switch software license to operate; HPE Aruba Networking Central subscription (Foundation or Advanced) for cloud management and advanced features",
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "verify": [
+    "routeScale",
+    "macTable",
+    "macsec",
+    "buffer",
+    "switchingGbps",
+    "forwardingMpps"
+  ],
+  "verifyNote": "Datasheet publishes a family max of 1.76 Tbps and 1,309 Mpps but does not break switching capacity, forwarding rate, route scale, MAC table, MACsec, or buffer out per model. Confirm from the CX 8100 QuickSpecs",
+  "models": [
+    {
+      "sku": "8100-48XF4C",
+      "description": "48x 1/10G SFP/SFP+ + 4x 40/100G",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 4,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": null,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "8100-24XF4C",
+      "description": "24x 1/10G SFP/SFP+ + 4x 40/100G",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 4,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": null,
+      "forwardingMpps": null
+    },
+    {
+      "sku": "8100-24XT4XF4C",
+      "description": "24x 1/2.5/5/10G BASE-T + 4x 1/10G SFP/SFP+ + 4x 40/100G",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 0
+        },
+        {
+          "count": 4,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 4,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "note": "The 24 BASE-T ports are Smart Rate 1/2.5/5/10G"
+    },
+    {
+      "sku": "8100-40XT8XF4C",
+      "description": "40x 100M/1/10G 10GBASE-T + 8x 1/10G SFP/SFP+ + 4x 40/100G",
+      "accessPorts": [
+        {
+          "count": 40,
+          "speedGbps": 10,
+          "poeWatts": 0
+        },
+        {
+          "count": 8,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 4,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": null,
+      "forwardingMpps": null
+    }
+  ]
+}

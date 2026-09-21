@@ -327,5 +327,30 @@
     "title": "Ubiquiti UniFi Industrial (USW-Industrial) Tech Specs",
     "url": "https://techspecs.ui.com/unifi/switching/usw-industrial",
     "retrieved": "2026-09-21"
+  },
+  "a8100": {
+    "title": "HPE Aruba Networking CX 8100 Switch Series Data Sheet (a00131340enw)",
+    "url": "https://www.hpe.com/psnow/doc/a00131340enw",
+    "retrieved": "2026-09-21"
+  },
+  "a8100qs": {
+    "title": "HPE Aruba Networking CX 8100 Switch Series QuickSpecs (a50006988enw)",
+    "url": "https://www.hpe.com/us/en/collaterals/collateral.a50006988enw.html",
+    "retrieved": "2026-09-21"
+  },
+  "a8325": {
+    "title": "HPE Aruba Networking CX 8325 Switch Series Data Sheet (a00059009enw)",
+    "url": "https://www.hpe.com/psnow/doc/a00059009enw",
+    "retrieved": "2026-09-21"
+  },
+  "a8360": {
+    "title": "HPE Aruba Networking CX 8360 v2 Switch Series Data Sheet (a50002121enw)",
+    "url": "https://www.hpe.com/psnow/doc/a50002121enw",
+    "retrieved": "2026-09-21"
+  },
+  "jex4650": {
+    "title": "Juniper Networks EX4650 Ethernet Switch Data Sheet",
+    "url": "https://www.juniper.net/us/en/products/switches/ex-series/ex4650-ethernet-switch-datasheet.html",
+    "retrieved": "2026-09-21"
   }
 }

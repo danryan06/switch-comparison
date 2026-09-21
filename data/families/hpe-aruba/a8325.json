@@ -1,0 +1,148 @@
+{
+  "id": "a8325",
+  "vendor": "HPE Aruba",
+  "family": "CX 8325",
+  "source": "a8325",
+  "stacking": {
+    "tech": "VSX",
+    "bandwidthGbps": null,
+    "maxMembers": 2,
+    "frontPanel": false,
+    "note": "Two-node VSX high availability (active-active) over an inter-switch link built from front-panel ports; not a shared-management stack"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "AOS-CX Layer 3: static, OSPFv2/v3, BGP, VRF, PIM, and BGP EVPN-VXLAN, plus IPv6"
+  },
+  "routeScale": "Not captured from datasheet",
+  "macTable": "Not captured from datasheet",
+  "macsec": "MACsec supported on select ports; port scope and cipher not captured from datasheet",
+  "buffer": "Not captured from datasheet",
+  "power": {
+    "summary": "Up to 2 field-replaceable, hot-swappable power supplies (bundles ship with 2); AC or DC",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two hot-swap PSU slots, load sharing; included in bundles"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "No switch software license to operate; HPE Aruba Networking Central subscription (Foundation or Advanced) for cloud management and advanced features",
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "verify": [
+    "routeScale",
+    "macTable",
+    "macsec",
+    "buffer"
+  ],
+  "verifyNote": "The 8325 datasheet was not fully retrieved. Route scale, MAC table, MACsec port scope, and buffer need confirming from the CX 8325 datasheet",
+  "models": [
+    {
+      "sku": "8325-32C",
+      "description": "32x 40/100G QSFP+/QSFP28",
+      "accessPorts": [],
+      "fabricPorts": [
+        {
+          "count": 32,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 6400,
+      "forwardingMpps": 2000
+    },
+    {
+      "sku": "8325P-32C",
+      "description": "32x 40/100G QSFP+/QSFP28 with PTP/SyncE/GNSS timing",
+      "accessPorts": [],
+      "fabricPorts": [
+        {
+          "count": 32,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 6400,
+      "forwardingMpps": 2000,
+      "note": "Timing variant: PTP 1588v2 Class C, SyncE, and GNSS for telco boundary clock"
+    },
+    {
+      "sku": "8325-48Y8C",
+      "description": "48x 1/10/25G SFP28 + 8x 40/100G",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 8,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "verify": [
+        "switchingGbps",
+        "forwardingMpps"
+      ],
+      "verifyNote": "Datasheet gives the 6.4 Tbps / 2,000 Mpps figure for the 32C; the 48Y8C is not separately published"
+    },
+    {
+      "sku": "8325H-16C",
+      "description": "Half-width 16x 40/100G QSFP+/QSFP28",
+      "accessPorts": [],
+      "fabricPorts": [
+        {
+          "count": 16,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 4000,
+      "forwardingMpps": null,
+      "note": "Half-width 1RU; 4 Tbps ASIC switching capacity (full duplex)",
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Forwarding rate not separately published for the 8325H"
+    },
+    {
+      "sku": "8325H-18Y4C",
+      "description": "Half-width 18x 1/10/25G SFP28 + 4x 40/100G",
+      "accessPorts": [
+        {
+          "count": 18,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 4,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 2160,
+      "forwardingMpps": null,
+      "note": "Half-width 1RU; 2.16 Tbps ASIC switching capacity (full duplex)",
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "Forwarding rate not separately published for the 8325H"
+    }
+  ]
+}
