@@ -2,6 +2,7 @@
   "id": "a8360",
   "vendor": "HPE Aruba",
   "family": "CX 8360 v2",
+  "role": "aggregation",
   "source": "a8360",
   "stacking": {
     "tech": "VSX",
@@ -15,10 +16,10 @@
     "bgp": true,
     "summary": "AOS-CX Layer 3: static, OSPFv2/v3, BGP, VRF, PIM, and BGP EVPN-VXLAN, plus IPv6"
   },
-  "routeScale": "Not captured from datasheet",
-  "macTable": "Not captured from datasheet",
+  "routeScale": "606,977 IPv4 unicast routes (630,784 IPv6); 145,780 IPv4 host",
+  "macTable": "212,992",
   "macsec": "AES-256 low-density MACsec on 4x 1/10/25G ports and 2x 40/100G ports (model-dependent)",
-  "buffer": "Not captured from datasheet",
+  "buffer": "32MB",
   "power": {
     "summary": "Up to 2 field-replaceable, hot-swappable power supplies (bundles ship with 2); AC or DC",
     "psuFieldReplaceable": true,
@@ -36,14 +37,6 @@
   "mounting": [
     "rack"
   ],
-  "verify": [
-    "routeScale",
-    "macTable",
-    "buffer",
-    "switchingGbps",
-    "forwardingMpps"
-  ],
-  "verifyNote": "Datasheet publishes a family max of 4.8 Tbps and 2,678 Mpps but does not break switching capacity or forwarding rate out per model; route scale, MAC table, and buffer also need confirming. MACsec port counts are per the model descriptions",
   "models": [
     {
       "sku": "8360-32Y4C",
@@ -63,7 +56,7 @@
         }
       ],
       "poeBudgets": [],
-      "switchingGbps": null,
+      "switchingGbps": 2400,
       "forwardingMpps": null,
       "note": "Up to 14 of the SFP28 ports can run as SFP56 50G, at reduced port density (2 ports disabled per 50G pair)"
     },
@@ -85,7 +78,7 @@
         }
       ],
       "poeBudgets": [],
-      "switchingGbps": null,
+      "switchingGbps": 1200,
       "forwardingMpps": null,
       "note": "Supports optional SFP56 50G on some ports at reduced density"
     },
@@ -107,7 +100,7 @@
         }
       ],
       "poeBudgets": [],
-      "switchingGbps": null,
+      "switchingGbps": 4800,
       "forwardingMpps": null,
       "note": "Supports optional SFP56 50G on some ports at reduced density"
     },
@@ -128,7 +121,7 @@
         }
       ],
       "poeBudgets": [],
-      "switchingGbps": null,
+      "switchingGbps": 1760,
       "forwardingMpps": null,
       "note": "Smart Rate 1/2.5/5/10G on the BASE-T ports. No breakout on the QSFP ports for this model"
     },
@@ -150,7 +143,7 @@
         }
       ],
       "poeBudgets": [],
-      "switchingGbps": null,
+      "switchingGbps": 880,
       "forwardingMpps": null
     },
     {
@@ -164,7 +157,7 @@
         }
       ],
       "poeBudgets": [],
-      "switchingGbps": null,
+      "switchingGbps": 2400,
       "forwardingMpps": null
     }
   ]

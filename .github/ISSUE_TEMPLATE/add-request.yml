@@ -1,0 +1,75 @@
+name: Request an addition
+description: Ask for a missing model, family, or vendor line to be added.
+title: "Add: "
+labels: ["add-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe what is missing and link the vendor datasheet. You do not need to fill in every JSON field; a clear SKU list and source is enough to start from.
+  - type: dropdown
+    id: scope
+    attributes:
+      label: What should be added?
+      options:
+        - One or more models in an existing family
+        - A whole new family
+        - A new vendor line
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role
+      description: Access is campus edge / wiring closet. Aggregation is distribution or core fabric.
+      options:
+        - Access
+        - Aggregation
+        - Mixed / not sure
+    validations:
+      required: true
+  - type: input
+    id: vendor
+    attributes:
+      label: Vendor
+      placeholder: Cisco, HPE Aruba, Extreme Networks, …
+    validations:
+      required: true
+  - type: input
+    id: family
+    attributes:
+      label: Family or series name
+      placeholder: Catalyst 9200CX, CX 6300M, 5420F, …
+    validations:
+      required: true
+  - type: textarea
+    id: models
+    attributes:
+      label: Models to include
+      description: List SKUs if you know them. Otherwise describe the lineup.
+      placeholder: |
+        C9200CX-12P-2X2G
+        C9200CX-8P-2X2G
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Datasheet URL
+      description: Prefer the vendor's own English PDF or HTML page on the vendor domain.
+      placeholder: https://www.arubanetworks.com/...
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: Optional. Useful for prioritizing (common in RFPs, replaces an EoS line, fills a gap in Browse, etc.).
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Scope check
+      options:
+        - label: These models still appear on a current vendor datasheet (not only a third-party catalog).
+          required: true

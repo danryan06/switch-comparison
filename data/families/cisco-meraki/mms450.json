@@ -2,6 +2,7 @@
   "id": "mms450",
   "vendor": "Cisco Meraki",
   "family": "MS450",
+  "role": "aggregation",
   "source": "mms450",
   "stacking": {
     "tech": "Meraki physical stacking",

@@ -2,15 +2,15 @@
 
 A vendor-neutral site for comparing campus and aggregation Ethernet switches. Every number comes from the vendor's own datasheet. Browse the full catalog, put models side by side, and optionally size a wiring closet against PoE and port demand.
 
-Live site: [danryan06.github.io/switch-comparison](https://danryan06.github.io/switch-comparison/)
+Live site: [switchcomparison.com](https://switchcomparison.com/)
 
 Current coverage: **56 families, 337 models** (25 past end of sale) across Cisco Catalyst (9200 through 9500, including 9350), Cisco Meraki MS (including MS130R and MS450), HPE Aruba CX (6000 through 8360, plus 4100i), Extreme Networks (5320 through 5720), Juniper EX, Ubiquiti UniFi, and Fortinet FortiSwitch (including Rugged). That spans copper and fiber access, high-speed fabric ports on aggregation SKUs, and compact, desktop, and rugged form factors.
 
 ## What it does
 
-- **Browse.** Filter and sort every model by vendor, ports, PoE, lifecycle, environment, and more. Show or hide columns, sort any visible column, and tick up to four rows to compare.
-- **Compare.** Up to four models side by side, with differing cells highlighted. Faceplates show access, fabric, and modular uplink layouts.
-- **Size a closet.** Optional helper: describe endpoints (APs, phones, cameras) plus copper, fiber, and uplink needs. Models that fit are sized with the fewest switches and the smallest PSU configuration; models that do not list why. Pure-fabric aggregation SKUs stay in Browse and Compare but drop out of the sizer.
+- **Browse.** Filter and sort every model by vendor, role (access vs aggregation), ports, PoE, lifecycle, environment, and more. Show or hide columns, sort any visible column, and tick up to four rows to compare. Export the visible table as CSV.
+- **Compare.** Up to four models side by side, with differing cells highlighted. Faceplates show access, fabric, and modular uplink layouts. Export the table as CSV, print it for a design doc, or share a permalink that restores the selection.
+- **Size a closet.** Optional helper: describe endpoints (APs, phones, cameras) plus copper, fiber, and uplink needs. Models that fit are sized with the fewest switches and the smallest PSU configuration; models that do not list why. Pure-fabric aggregation SKUs stay in Browse and Compare but drop out of the sizer. Share a permalink that restores the demand inputs.
 
 A **Needs checking** page (footer link) collects values that disagree inside a datasheet or had to be derived, until someone confirms them.
 
@@ -30,7 +30,7 @@ scripts/
 .github/workflows/pages.yml  validate on PRs, build and deploy to GitHub Pages on main
 ```
 
-The built site is a single self-contained HTML file. The raw data is also published at `/data/`, including `/data/all.json`, so others can consume it.
+The built site is a single self-contained HTML file. The raw data is also published at `/data/`, including `/data/all.json`, so others can consume it. Permalinks encode Compare and Size state in the URL hash, so there is no backend.
 
 ## Building locally
 
@@ -42,11 +42,13 @@ npm run build      # write dist/
 npm run preview    # build and serve dist/ on http://localhost:8080
 ```
 
-Contributions: see [CONTRIBUTING.md](CONTRIBUTING.md). Corrections and new models are welcome; every value must trace to a vendor datasheet.
+Contributions: see [CONTRIBUTING.md](CONTRIBUTING.md). The easiest path is a GitHub issue ([correct a value](https://github.com/danryan06/switch-comparison/issues/new?template=correction.yml) or [request an addition](https://github.com/danryan06/switch-comparison/issues/new?template=add-request.yml)); pull requests that edit the JSON are welcome too. Every value must trace to a vendor datasheet.
 
 ## How the data is modeled
 
 A few decisions matter more than the rest, because they are where vendors describe the same thing differently.
+
+**Role separates access from aggregation.** Each family is `access` (the default) or `aggregation`. Aggregation covers distribution and core fabric lines such as Catalyst 9500, Aruba CX 8100/8325/8360, EX4650, and Meraki MS450. Browse defaults to access models; set Role to Aggregation or Any when you want the fabric SKUs.
 
 **PoE budget belongs to a power supply configuration, not a model.** A Catalyst 9300-48UXM delivers anywhere from 490W to 2,880W depending on which supplies are installed. Each model lists every configuration its datasheet gives, and the sizer picks the smallest one that covers the load.
 

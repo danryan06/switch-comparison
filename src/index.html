@@ -87,6 +87,7 @@ input[type=text],input[type=number],select{width:100%;border:1px solid var(--lin
 .results h2{font-family:var(--cond);font-size:22px;font-weight:600;margin:0}
 .resHead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
 .resHead p{margin:0;color:var(--muted);font-size:14px}
+.resHead .barActs{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:10px}
 .card.best{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
 .cardTop{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
@@ -108,7 +109,9 @@ input[type=text],input[type=number],select{width:100%;border:1px solid var(--lin
 .note.w::before{background:var(--warn)}
 .linkbtn{background:none;border:0;color:var(--accent);cursor:pointer;padding:0;font-size:14px;font-weight:500}
 .ghost{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:6px 12px;cursor:pointer;font-size:14px}
+a.ghost{display:inline-block;text-decoration:none;color:inherit}
 .ghost.on{border-color:var(--accent);color:var(--accent);font-weight:600}
+.suggestActs{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 details.rej{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
 details.rej summary{cursor:pointer;font-weight:600}
 details.rej ul{margin:10px 0 0;padding-left:18px;font-size:14px;color:var(--muted)}
@@ -192,7 +195,9 @@ dialog::backdrop{background:rgba(10,15,20,.5)}
 .about h3{font-family:var(--cond);font-size:21px;margin:22px 0 6px}
 .footin{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:flex-end}
 .footin>span{flex:1 1 320px}
-.chklink{color:var(--accent);white-space:nowrap;margin-left:auto}
+.footActs{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-left:auto}
+.chklink{color:var(--accent);white-space:nowrap;text-decoration:none}
+.chklink:hover{text-decoration:underline}
 footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);font-size:14px}
 
 @media (max-width:860px){
@@ -208,6 +213,15 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
   .facts{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{
+  body{background:#fff;color:#000}
+  header.top,.compare-fab,footer,.filters,.bar2 .barActs,.presets,.navrow,.chklink,.size .panel,.rej,.resMore,.fchips,.legend,#dlg{display:none!important}
+  .view{display:none!important}
+  .view.on{display:block!important}
+  .size{grid-template-columns:1fr}
+  .tablewrap,.cmpgrid,.card,.panel{box-shadow:none;border-color:#ccc}
+  a{color:inherit;text-decoration:none}
+}
 </style>
 </head>
 <body>
@@ -295,7 +309,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
 
       <div class="results">
         <div class="summary" id="reqSummary"></div>
-        <div class="resHead"><h2 id="resTitle">Results</h2><p id="resSub"></p></div>
+        <div class="resHead"><h2 id="resTitle">Results</h2><div class="barActs"><button type="button" class="ghost" id="copySizeLink">Copy link</button><p id="resSub"></p></div></div>
         <div id="resList"></div>
         <div id="resMore"></div>
         <details class="rej" id="rejBox"><summary id="rejSum"></summary><ul id="rejList"></ul></details>
@@ -308,6 +322,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
     <div class="filters">
       <div class="fl"><label for="q">Search</label><input type="text" id="q" placeholder="SKU or family"></div>
       <div class="fl"><label for="bVendorBtn">Vendor</label><details class="msel" id="bVendors"><summary id="bVendorBtn">All vendors</summary><div class="mlist"></div></details></div>
+      <div class="fl"><label for="bRole">Role</label><select id="bRole"><option value="access">Access</option><option value="aggregation">Aggregation</option><option value="">Any</option></select></div>
       <div class="fl"><label for="bPorts">Access ports</label><select id="bPorts"><option value="0">Any</option></select></div>
       <div class="fl"><label for="bSpd">Fastest access port</label><select id="bSpd"><option value="0">Any</option><option value="2.5">2.5G or faster</option><option value="5">5G or faster</option><option value="10">10G</option></select></div>
       <div class="fl"><label for="bMed">Access media</label><select id="bMed"><option value="">Any</option><option value="rj45">Copper</option><option value="sfp">Fiber (SFP)</option></select></div>
@@ -350,6 +365,13 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
       <p>A switch model does not have one PoE budget. It has one per power supply configuration, so each model carries every configuration its datasheet lists, and the sizer picks the smallest configuration that covers the load. Each stored budget is the figure the vendor states, which is the power the supplies make available rather than what the ports can draw. Where that exceeds the port count times the per-port maximum, the sizer uses the port limit instead, and the budget is shown capped with the vendor's figure alongside it: a 24-port switch at 30W per port cannot deliver more than 720W however large the supply.</p>
       <h3>Numbers that are not directly comparable</h3>
       <p>Route scale is published differently by each vendor. Cisco states total IPv4 routes as direct plus indirect entries, while HPE Aruba states unicast routes and host table entries separately. They are shown as stated, not converted. Stacking bandwidth is also defined differently: Cisco uses dedicated rear stacking ports, while Aruba VSF stacks over the front uplink ports, which the sizer subtracts from the available uplinks. Fortinet has no hardware stacking at all; a FortiGate manages the switches as one fabric over FortiLink, so there is no member limit or stack bandwidth to compare.</p>
+      <h3>Suggest a change</h3>
+      <p>Spotted a wrong value or a missing model? Open a GitHub issue with the vendor datasheet link. No pull request required; maintainers turn accepted issues into data updates.</p>
+      <div class="suggestActs">
+        <a class="ghost" href="https://github.com/danryan06/switch-comparison/issues/new?template=correction.yml" target="_blank" rel="noopener">Correct a value</a>
+        <a class="ghost" href="https://github.com/danryan06/switch-comparison/issues/new?template=add-request.yml" target="_blank" rel="noopener">Request an addition</a>
+        <a class="ghost" href="https://github.com/danryan06/switch-comparison/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing guide</a>
+      </div>
       <h3>Coverage</h3>
       <p id="coverage"></p>
       <h3>Sources</h3>
@@ -360,13 +382,13 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
   <section class="view" id="v-check">
     <div class="about" style="max-width:none">
       <h3 style="margin-top:0">Needs checking</h3>
-      <p>These values disagree between two places in the same vendor datasheet, or had to be derived. They are shown as stated until someone confirms them against a newer datasheet, ordering guide, or written vendor confirmation. See CONTRIBUTING.md for how to clear one.</p>
+      <p>These values disagree between two places in the same vendor datasheet, or had to be derived. They are shown as stated until someone confirms them against a newer datasheet, ordering guide, or written vendor confirmation. To propose a fix, <a href="https://github.com/danryan06/switch-comparison/issues/new?template=correction.yml" target="_blank" rel="noopener">open a correction issue</a> or see CONTRIBUTING.md for how to clear one in a pull request.</p>
       <div id="chkBody"></div>
     </div>
   </section>
 </main>
 
-<footer><div class="wrap footin"><span>Vendor neutral and open source. Always confirm against the current datasheet before quoting a design. <span id="updated"></span></span><a class="xlink" href="https://apcomparison.com" target="_blank" rel="noopener">AP Comparison <span class="arr">&#8599;</span></a><a href="#" class="chklink" data-goto="check" id="chkLink">Needs checking</a></div></footer>
+<footer><div class="wrap footin"><span>Vendor neutral and open source. Always confirm against the current datasheet before quoting a design. <span id="updated"></span></span><div class="footActs"><a class="xlink" href="https://apcomparison.com" target="_blank" rel="noopener">AP Comparison <span class="arr">&#8599;</span></a><a class="chklink" href="https://github.com/danryan06/switch-comparison/issues/new/choose" target="_blank" rel="noopener">Suggest a change</a><a href="#" class="chklink" data-goto="check" id="chkLink">Needs checking</a></div></div></footer>
 
 <button type="button" class="compare-fab" id="compareFab" aria-label="Open compare">Compare (0)</button>
 
@@ -379,7 +401,7 @@ const SRC={};for(const [k,s] of Object.entries(DATA.sources))SRC[k]={t:s.title,u
 const U={};for(const [k,o] of Object.entries(DATA.uplinks))U[k]=o.options.map(x=>({n:x.label,p:x.ports.map(p=>[p.count,p.speedGbps])}));
 const FAM={},SKUS=[];
 for(const f of DATA.families){
-  FAM[f.id]={v:f.vendor,name:f.family,stack:{t:f.stacking.tech,bw:f.stacking.bandwidthGbps,max:f.stacking.maxMembers,fp:f.stacking.frontPanel,note:f.stacking.note},l3:f.routing.tier,l3t:f.routing.summary,bgp:f.routing.bgp,routes:f.routeScale,mac:f.macTable,macsec:f.macsec,buf:f.buffer,psuFru:f.power.psuFieldReplaceable,red:f.power.redundancy,fanFru:f.fansFieldReplaceable,power:f.power.summary,lic:f.licensing,src:f.source,xsrc:f.additionalSources||[],famVerify:f.verify||[],fnote:f.verifyNote||""};
+  FAM[f.id]={v:f.vendor,name:f.family,role:f.role||"access",stack:{t:f.stacking.tech,bw:f.stacking.bandwidthGbps,max:f.stacking.maxMembers,fp:f.stacking.frontPanel,note:f.stacking.note},l3:f.routing.tier,l3t:f.routing.summary,bgp:f.routing.bgp,routes:f.routeScale,mac:f.macTable,macsec:f.macsec,buf:f.buffer,psuFru:f.power.psuFieldReplaceable,red:f.power.redundancy,fanFru:f.fansFieldReplaceable,power:f.power.summary,lic:f.licensing,src:f.source,xsrc:f.additionalSources||[],famVerify:f.verify||[],fnote:f.verifyNote||""};
   for(const m of f.models)SKUS.push({fam:f.id,sku:m.sku,ports:(m.accessPorts||[]).map(p=>[p.count,p.speedGbps,p.poeWatts,p.media||"rj45"]),fabric:(m.fabricPorts||[]).map(p=>[p.count,p.speedGbps,p.media||"qsfp"]),up:m.uplinks||null,psu:(m.poeBudgets||[]).map(b=>[b.config,b.watts,b.verify?1:0]),sw:m.switchingGbps,fwd:m.forwardingMpps,name:m.description||"",note:m.note||"",ff:m.formFactor||"1RU",src:m.source||f.source,fanless:!!m.fanless,pd:m.poweredBy||"",routes:m.routeScale||"",mac:m.macTable||"",buf:m.buffer||"",verify:[...(m.verify||[]),...(f.verify||[])],own:m.verify||[],red:m.redundancy||f.power.redundancy,vnote:m.verifyNote||"",
     lc:m.lifecycle||f.lifecycle||{status:"current"},rug:(m.ruggedized!==undefined?m.ruggedized:f.ruggedized)||false,
     temp:m.operatingTempC||f.operatingTempC||null,ip:m.ipRating||f.ipRating||"",mount:m.mounting||f.mounting||[]});
@@ -559,6 +581,7 @@ function runSize(){
   $("#rejBox").style.display=nrej?"block":"none";
   $("#rejSum").textContent=`${nrej} models ruled out`;
   $("#rejList").innerHTML=keys.sort((a,b)=>rej[b].length-rej[a].length).map(k=>`<li><strong>${esc(k)}</strong>: ${rej[k].map(esc).join(", ")}</li>`).join("");
+  if(currentView()==="size")writeHashDebounced();
 }
 let showAll=false,deb;
 function runSizeDebounced(){clearTimeout(deb);deb=setTimeout(runSize,250)}
@@ -669,9 +692,10 @@ function cellHTML(s,c){
   return `<td></td>`;
 }
 function filteredBrowseRows(){
-  const med=$("#bMed").value,q=$("#q").value.trim().toLowerCase(),poe=+$("#bPoe").value,spd=+$("#bSpd").value,np=+$("#bPorts").value,red=$("#bRed").value,life=$("#bLife").value,rug=$("#bRug").value;
+  const med=$("#bMed").value,q=$("#q").value.trim().toLowerCase(),poe=+$("#bPoe").value,spd=+$("#bSpd").value,np=+$("#bPorts").value,red=$("#bRed").value,life=$("#bLife").value,rug=$("#bRug").value,role=$("#bRole").value;
   let rows=SKUS.filter(s=>{const f=FAM[s.fam];
     if(bVend.size&&!bVend.has(f.v))return false;
+    if(role&&f.role!==role)return false;
     if(q&&!(s.sku+" "+s.name+" "+f.name+" "+f.v).toLowerCase().includes(q))return false;
     if(life==="current"&&!isCur(s))return false;if(life==="eos"&&isCur(s))return false;
     if(rug==="yes"&&!s.rug)return false;
@@ -719,7 +743,7 @@ function exportBrowseCsv(){
 }
 function clearFilters(){
   $("#q").value="";
-  $("#bPorts").value="0";$("#bSpd").value="0";$("#bMed").value="";$("#bRed").value="";$("#bPoe").value="-1";$("#bLife").value="current";$("#bRug").value="";
+  $("#bRole").value="access";$("#bPorts").value="0";$("#bSpd").value="0";$("#bMed").value="";$("#bRed").value="";$("#bPoe").value="-1";$("#bLife").value="current";$("#bRug").value="";
   bVend.clear();
   document.querySelectorAll("#bVendors .mlist input").forEach(i=>i.checked=false);
   $("#bVendorBtn").textContent="All vendors";
@@ -740,7 +764,7 @@ $("#bTable").addEventListener("click",e=>{
   const tr=e.target.closest("tr[data-sku]");if(tr)openDetail(tr.dataset.sku);
 });
 function alertCmp(){const c=$("#bCount");const t=c.textContent;c.textContent="Compare holds 4 models. Untick one first.";c.style.color="var(--warn)";setTimeout(()=>{c.textContent=t;c.style.color=""},2200)}
-["q","bPorts","bSpd","bMed","bPoe","bRed","bLife","bRug"].forEach(id=>$("#"+id).addEventListener("input",renderBrowse));
+["q","bRole","bPorts","bSpd","bMed","bPoe","bRed","bLife","bRug"].forEach(id=>$("#"+id).addEventListener("input",renderBrowse));
 $("#bVendors .mlist").innerHTML=VENDORS.map(v=>`<label><input type="checkbox" value="${esc(v)}">${esc(v)}</label>`).join("");
 $("#bVendors").addEventListener("change",e=>{const v=e.target.value;if(e.target.checked)bVend.add(v);else bVend.delete(v);
   $("#bVendorBtn").textContent=!bVend.size?"All vendors":bVend.size===1?[...bVend][0]:bVend.size+" vendors";renderBrowse()});
@@ -788,7 +812,7 @@ function lifecycleHTML(s){
   return out.join("<br>");
 }
 function specRows(s){const f=FAM[s.fam];return [
-  ["Vendor",f.v],["Family",f.name],["Description",s.name||"-"],
+  ["Vendor",f.v],["Family",f.name],["Role",f.role==="aggregation"?"Aggregation":"Access"],["Description",s.name||"-"],
   ["Front panel",faceplate(s),1],["Form factor",s.ff+(s.fanless?", fanless":"")],["Powered by",s.pd||f.power],
   ["Access ports",portsText(s)],["Fabric ports",fabricText(s)],["Max PoE per port",poeLabel(maxW(s))],
   ["PoE budget",s.psu.length?s.psu.map(p=>{const u=usableW(s,p);return `${esc(p[0])}: ${fmt(u)} W`+(u<p[1]?` (capped by ports; vendor lists ${fmt(p[1])} W)`:"")}).join("<br>"):"None",1],
@@ -804,6 +828,13 @@ function specRows(s){const f=FAM[s.fam];return [
   ["Licensing",f.lic],
   ["Source",[s.src,...FAM[s.fam].xsrc].map(k=>`<a href="${SRC[k].u}" target="_blank" rel="noopener">${esc(SRC[k].t)}</a>`).join("<br>"),1]
 ]}
+function specPlain(s){
+  return specRows(s).map(r=>{
+    if(!r[2])return [r[0],r[1]];
+    const t=String(r[1]).replace(/<br\s*\/?>/gi,"\n").replace(/<[^>]+>/g," ").replace(/\s+\n/g,"\n").replace(/[ \t]+/g," ").trim();
+    return [r[0],t];
+  });
+}
 /* Starter sets never suggest a model the sizer would hide, so any end-of-sale SKU drops the set. */
 const CMP_SETS=[
   ["9300-48UXM vs 6300M 48p SR5","C9300-48UXM,JL659A"],
@@ -813,41 +844,162 @@ const CMP_SETS=[
   ["Fiber access","C9300-48S,JL658A,FS-424E-Fiber"],
   ["Compact PoE","C9200CX-12P-2X2G,R8Q72A,FS-108F-FPOE"]
 ].filter(p=>p[1].split(",").every(k=>{const s=SKUS.find(x=>x.sku===k);return s&&isCur(s)}));
+function exportCompareCsv(){
+  const list=[...cmp].map(k=>SKUS.find(s=>s.sku===k)).filter(Boolean);
+  if(!list.length)return;
+  const plains=list.map(specPlain);
+  const lines=[csvEscape("Spec")+","+list.map(s=>csvEscape(s.sku)).join(",")];
+  plains[0].forEach((row,i)=>{
+    if(row[0]==="Front panel")return;
+    lines.push([csvEscape(row[0]),...plains.map(p=>csvEscape(p[i][1]))].join(","));
+  });
+  const blob=new Blob([lines.join("\n")],{type:"text/csv;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="switch-compare.csv";
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+function flashBtn(btn,ok){
+  if(!btn)return;
+  const t=btn.textContent;
+  btn.textContent=ok||"Copied";
+  setTimeout(()=>{btn.textContent=t},1600);
+}
+async function copyText(text,btn){
+  try{
+    if(navigator.clipboard?.writeText)await navigator.clipboard.writeText(text);
+    else{
+      const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
+    }
+    flashBtn(btn,"Copied");
+  }catch{flashBtn(btn,"Copy failed")}
+}
 function renderCompare(){
-  const list=[...cmp].map(k=>SKUS.find(s=>s.sku===k));
+  const list=[...cmp].map(k=>SKUS.find(s=>s.sku===k)).filter(Boolean);
   if(!list.length){$("#cmpBody").innerHTML=`<div class="panel empty"><h2 style="font-family:var(--cond);margin:0 0 6px;color:var(--ink)">Pick models to compare</h2><p style="margin:0 0 12px">Tick up to four models in Browse, or use a starting pair below.</p><div class="presets">${CMP_SETS.map(p=>`<button class="chip" data-pair="${esc(p[1])}">${esc(p[0])}</button>`).join("")}</div></div>`;
-    document.querySelectorAll("[data-pair]").forEach(b=>b.onclick=()=>{cmp.clear();b.dataset.pair.split(",").forEach(k=>cmp.add(k));updCmp();renderBrowse()});return}
+    document.querySelectorAll("[data-pair]").forEach(b=>b.onclick=()=>{cmp.clear();b.dataset.pair.split(",").forEach(k=>cmp.add(k));updCmp();renderBrowse();writeHash()});return}
   const rows=list.map(specRows);
-  let h=`<div class="bar2"><span class="small">Highlighted cells differ across the selection.</span><button class="ghost" id="clrCmp">Clear</button></div><div class="cmpgrid"><table><thead><tr><th class="nosort">Spec</th>${list.map(s=>`<th class="nosort"><span class="hd">${esc(s.sku)}</span><br><button class="linkbtn" data-rmc="${esc(s.sku)}">Remove</button></th>`).join("")}</tr></thead><tbody>`;
+  let h=`<div class="bar2"><span class="small">Highlighted cells differ across the selection.</span><div class="barActs"><button type="button" class="ghost" id="copyCmpLink">Copy link</button><button type="button" class="ghost" id="exportCmpCsv">Export CSV</button><button type="button" class="ghost" id="printCmp">Print</button><button class="ghost" id="clrCmp">Clear</button></div></div><div class="cmpgrid"><table><thead><tr><th class="nosort">Spec</th>${list.map(s=>`<th class="nosort"><span class="hd">${esc(s.sku)}</span><br><button class="linkbtn" data-rmc="${esc(s.sku)}">Remove</button></th>`).join("")}</tr></thead><tbody>`;
   rows[0].forEach((r,i)=>{const vals=rows.map(x=>x[i][1]);const diff=r[2]?false:new Set(vals).size>1&&list.length>1;
     h+=`<tr><td>${esc(r[0])}</td>${vals.map(v=>`<td class="${diff?"diff":""}">${r[2]?v:esc(v)}</td>`).join("")}</tr>`});
   h+="</tbody></table></div>";
   $("#cmpBody").innerHTML=h;
-  $("#clrCmp").onclick=()=>{cmp.clear();updCmp();renderBrowse()};
-  document.querySelectorAll("[data-rmc]").forEach(b=>b.onclick=()=>{cmp.delete(b.dataset.rmc);updCmp();renderBrowse()});
+  $("#clrCmp").onclick=()=>{cmp.clear();updCmp();renderBrowse();writeHash()};
+  $("#exportCmpCsv").onclick=exportCompareCsv;
+  $("#printCmp").onclick=()=>window.print();
+  $("#copyCmpLink").onclick=()=>{writeHash(true);copyText(location.href,$("#copyCmpLink"))};
+  document.querySelectorAll("[data-rmc]").forEach(b=>b.onclick=()=>{cmp.delete(b.dataset.rmc);updCmp();renderBrowse();writeHash()});
 }
 
 /* ---------- Detail ---------- */
 function openDetail(sku){
   const s=SKUS.find(x=>x.sku===sku);
   const rows=specRows(s).filter(r=>!["Vendor","Family","Description","Front panel"].includes(r[0]));
+  const corr=`https://github.com/danryan06/switch-comparison/issues/new?template=correction.yml&title=${encodeURIComponent("Correction: "+s.sku)}`;
   $("#dlgBody").innerHTML=`<button class="ghost close" id="dlgClose">Close</button>
     <h3>${esc(modelName(s))}</h3><div class="fam">${esc(modelSub(s))}</div>
     <div class="facewrap">${faceplate(s,1.3)}</div><div class="legend">${legendHTML(s)}</div>
     <dl class="spec">${rows.map(r=>`<dt>${esc(r[0])}</dt><dd>${r[2]?r[1]:esc(r[1])}</dd>`).join("")}</dl>
-    <div style="margin-top:16px"><button class="ghost ${cmp.has(s.sku)?"on":""}" id="dlgCmp">${cmp.has(s.sku)?"Remove from compare":"Add to compare"}</button></div>`;
+    <div class="suggestActs" style="margin-top:16px">
+      <button class="ghost ${cmp.has(s.sku)?"on":""}" id="dlgCmp">${cmp.has(s.sku)?"Remove from compare":"Add to compare"}</button>
+      <a class="ghost" href="${corr}" target="_blank" rel="noopener">Suggest a correction</a>
+    </div>`;
   $("#dlgClose").onclick=()=>$("#dlg").close();
-  $("#dlgCmp").onclick=()=>{if(cmp.has(s.sku))cmp.delete(s.sku);else{if(cmp.size>=4){$("#dlgCmp").textContent="Compare holds 4 models";return}cmp.add(s.sku)}updCmp();renderBrowse();openDetail(sku)};
+  $("#dlgCmp").onclick=()=>{if(cmp.has(s.sku))cmp.delete(s.sku);else{if(cmp.size>=4){$("#dlgCmp").textContent="Compare holds 4 models";return}cmp.add(s.sku)}updCmp();renderBrowse();writeHash();openDetail(sku)};
   if(!$("#dlg").open)$("#dlg").showModal();
 }
 $("#dlg").addEventListener("click",e=>{if(e.target.id==="dlg")$("#dlg").close()});
 
+/* ---------- Permalinks (hash-encoded Compare / Size state) ---------- */
+let syncingHash=false,hashDeb;
+function currentView(){return document.querySelector("nav.tabs button[aria-selected='true']")?.dataset.v||"browse"}
+function encodeSizeState(){
+  const req=readReq();
+  const p=new URLSearchParams();
+  p.set("v","size");
+  p.set("d",String(req.data));
+  p.set("fib",req.fibN+","+req.fibS);
+  p.set("u",req.upN+","+req.upS);
+  p.set("l3",req.l3);
+  p.set("h",String(req.head));
+  p.set("st",req.stack?"1":"0");
+  p.set("eos",req.eos?"1":"0");
+  p.set("ff",req.ff);
+  p.set("env",req.env);
+  if(sizeVend.size)p.set("vend",[...sizeVend].join(","));
+  p.set("g",groups.map(g=>[g.name,g.qty,g.w,g.spd].map(encodeURIComponent).join("~")).join(";"));
+  return p;
+}
+function writeHash(force){
+  if(syncingHash&&!force)return;
+  const view=currentView();
+  let p;
+  if(view==="compare"&&cmp.size){
+    p=new URLSearchParams();p.set("v","compare");p.set("c",[...cmp].join(","));
+  }else if(view==="size"){
+    p=encodeSizeState();
+  }else if(view==="check"){
+    p=new URLSearchParams();p.set("v","check");
+  }else if(view==="about"){
+    p=new URLSearchParams();p.set("v","about");
+  }else{
+    /* Browse stays a clean URL unless something else is shareable. */
+    if(location.hash)history.replaceState(null,"",location.pathname+location.search);
+    return;
+  }
+  const h="#"+p.toString();
+  if(location.hash!==h)history.replaceState(null,"",h);
+}
+function writeHashDebounced(){clearTimeout(hashDeb);hashDeb=setTimeout(()=>writeHash(),200)}
+function applySizeFromParams(p){
+  const g=p.get("g");
+  if(g!==null){
+    groups=g?g.split(";").map(part=>{
+      const [name,qty,w,spd]=part.split("~").map(decodeURIComponent);
+      return {name:name||"Devices",qty:+qty||0,w:+w||0,spd:+spd||1};
+    }):[];
+    renderGroups();
+  }
+  if(p.has("d"))$("#dataPorts").value=p.get("d");
+  if(p.has("fib")){const [n,s]=p.get("fib").split(",");$("#fibN").value=n||0;if(s)$("#fibS").value=s}
+  if(p.has("u")){const [n,s]=p.get("u").split(",");$("#upN").value=n||0;if(s)$("#upS").value=s}
+  if(p.has("l3"))$("#l3").value=p.get("l3");
+  if(p.has("h"))$("#head").value=p.get("h");
+  if(p.has("st"))$("#stack").checked=p.get("st")!=="0";
+  if(p.has("eos"))$("#eos").checked=p.get("eos")==="1";
+  if(p.has("ff"))$("#ffSel").value=p.get("ff");
+  if(p.has("env"))$("#envSel").value=p.get("env");
+  sizeVend.clear();
+  (p.get("vend")||"").split(",").map(s=>s.trim()).filter(Boolean).forEach(v=>sizeVend.add(v));
+  document.querySelectorAll("#sizeVendors [data-sv]").forEach(b=>b.setAttribute("aria-pressed",sizeVend.has(b.dataset.sv)?"true":"false"));
+  runSize();
+}
+function readHash(){
+  const raw=location.hash.replace(/^#/,"");
+  if(!raw)return;
+  syncingHash=true;
+  try{
+    const p=new URLSearchParams(raw);
+    const view=p.get("v")||(p.has("c")?"compare":p.has("g")||p.has("d")?"size":"");
+    if(p.has("c")){
+      cmp.clear();
+      p.get("c").split(",").map(s=>s.trim()).filter(s=>SKUS.some(x=>x.sku===s)).slice(0,4).forEach(s=>cmp.add(s));
+      updCmp();renderBrowse();
+    }
+    if(view==="size"||(!view&&(p.has("g")||p.has("d"))))applySizeFromParams(p);
+    if(view==="compare"||view==="size"||view==="about"||view==="check")showView(view,true);
+    else if(p.has("c"))showView("compare",true);
+  }finally{syncingHash=false}
+}
+
 /* ---------- Tabs & about ---------- */
-function showView(v){
+function showView(v,fromHash){
   document.querySelectorAll("nav.tabs button").forEach(x=>x.setAttribute("aria-selected",x.dataset.v===v));
   document.querySelectorAll(".view").forEach(x=>x.classList.toggle("on",x.id==="v-"+v));
   if(v==="compare")renderCompare();
   window.scrollTo(0,0);
+  if(!fromHash)writeHash();
 }
 document.querySelectorAll("nav.tabs button").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.v)));
 document.addEventListener("click",e=>{const g=e.target.closest("[data-goto]");if(g){e.preventDefault();showView(g.dataset.goto)}});
@@ -857,6 +1009,8 @@ document.addEventListener("click",e=>{
   if($("#dlg").open)$("#dlg").close();
   $("#q").value=r.dataset.fam;$("#bLife").value="all";showView("browse");renderBrowse();
 });
+window.addEventListener("hashchange",()=>{if(!syncingHash)readHash()});
+$("#copySizeLink").onclick=()=>{writeHash(true);copyText(location.href,$("#copySizeLink"))};
 
 /* ---------- Needs checking ---------- */
 const OWN_LABEL={psu:"PoE budget",poeBudgets:"PoE budget",uplinks:"Uplink options",ports:"Access ports",accessPorts:"Access ports",fabricPorts:"Fabric ports",forwardingMpps:"Forwarding rate",switchingGbps:"Switching capacity",stacking:"Stacking"};
@@ -881,6 +1035,7 @@ $("#updated").textContent="Data updated "+DATA.updated+".";
 $("#srcList").innerHTML=Object.values(SRC).map(s=>`<li><a href="${s.u}" target="_blank" rel="noopener">${esc(s.t)}</a></li>`).join("");
 
 renderGroups();runSize();renderBrowse();updCmp();
+readHash();
 </script>
 </body>
 </html>

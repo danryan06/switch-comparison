@@ -2,13 +2,17 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "switch-comparison/family.schema.json",
   "title": "Switch family",
-  "description": "One product family from one vendor, with every orderable access model in it. Values come from the vendor datasheet named in `source`.",
+  "description": "One product family from one vendor, with every orderable model in it. Values come from the vendor datasheet named in `source`.",
   "type": "object",
   "required": ["id", "vendor", "family", "source", "stacking", "routing", "routeScale", "macTable", "macsec", "buffer", "power", "fansFieldReplaceable", "licensing", "models"],
   "properties": {
     "id": { "type": "string", "pattern": "^[a-z0-9]+$" },
     "vendor": { "type": "string" },
     "family": { "type": "string" },
+    "role": {
+      "enum": ["access", "aggregation"],
+      "description": "Campus role. Defaults to access. Aggregation covers distribution and core fabric lines (for example Catalyst 9500, CX 8325). Browse can filter on this; the closet sizer only considers access models with copper or fiber access ports."
+    },
     "source": { "type": "string", "description": "Key into data/sources.json" },
     "stacking": {
       "type": "object",

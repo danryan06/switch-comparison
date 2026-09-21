@@ -2,6 +2,7 @@
   "id": "c9500",
   "vendor": "Cisco",
   "family": "Catalyst 9500",
+  "role": "aggregation",
   "source": "c9500",
   "stacking": {
     "tech": "StackWise Virtual",

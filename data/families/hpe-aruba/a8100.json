@@ -2,6 +2,7 @@
   "id": "a8100",
   "vendor": "HPE Aruba",
   "family": "CX 8100",
+  "role": "aggregation",
   "source": "a8100",
   "additionalSources": [
     "a8100qs"
@@ -18,10 +19,10 @@
     "bgp": true,
     "summary": "AOS-CX Layer 3: static, OSPFv2/v3, BGP, VRF, PIM, and BGP EVPN-VXLAN, plus IPv6"
   },
-  "routeScale": "Not captured from datasheet",
-  "macTable": "Not captured from datasheet",
-  "macsec": "Not captured from datasheet",
-  "buffer": "Not captured from datasheet",
+  "routeScale": "24,576 IPv4 unicast routes (12,288 IPv6); 81,920 IPv4 host",
+  "macTable": "147,456",
+  "macsec": "Not listed on datasheet",
+  "buffer": "32MB",
   "power": {
     "summary": "Up to 2 field-replaceable, hot-swappable power supplies (bundles ship with 2); AC or DC",
     "psuFieldReplaceable": true,
@@ -39,15 +40,6 @@
   "mounting": [
     "rack"
   ],
-  "verify": [
-    "routeScale",
-    "macTable",
-    "macsec",
-    "buffer",
-    "switchingGbps",
-    "forwardingMpps"
-  ],
-  "verifyNote": "Datasheet publishes a family max of 1.76 Tbps and 1,309 Mpps but does not break switching capacity, forwarding rate, route scale, MAC table, MACsec, or buffer out per model. Confirm from the CX 8100 QuickSpecs",
   "models": [
     {
       "sku": "8100-48XF4C",
@@ -67,8 +59,8 @@
         }
       ],
       "poeBudgets": [],
-      "switchingGbps": null,
-      "forwardingMpps": null
+      "switchingGbps": 1760,
+      "forwardingMpps": 1309
     },
     {
       "sku": "8100-24XF4C",
@@ -88,7 +80,7 @@
         }
       ],
       "poeBudgets": [],
-      "switchingGbps": null,
+      "switchingGbps": 1280,
       "forwardingMpps": null
     },
     {
@@ -114,7 +106,7 @@
         }
       ],
       "poeBudgets": [],
-      "switchingGbps": null,
+      "switchingGbps": 1360,
       "forwardingMpps": null,
       "note": "The 24 BASE-T ports are Smart Rate 1/2.5/5/10G"
     },
@@ -141,8 +133,8 @@
         }
       ],
       "poeBudgets": [],
-      "switchingGbps": null,
-      "forwardingMpps": null
+      "switchingGbps": 1760,
+      "forwardingMpps": 1309
     }
   ]
 }

@@ -4,21 +4,21 @@
   "family": "5420F",
   "source": "e5420",
   "stacking": {
-    "tech": "EXOS stacking",
+    "tech": "Switch Engine stacking",
     "bandwidthGbps": 80,
     "maxMembers": 8,
     "frontPanel": false,
-    "note": "Up to 8 members over two dedicated SFP-DD stacking ports (80G per unit). Stacking needs EXOS"
+    "note": "Up to 8 units over two dedicated SFP-DD stacking ports (80G per unit). Stacking runs in Switch Engine mode only"
   },
   "routing": {
     "tier": "full",
     "bgp": true,
-    "summary": "Full L3 incl. BGP, EVPN, VRF, and IS-IS. Advanced routing needs a Premier license. Dual OS: EXOS (Switch Engine) or VOSS (Fabric Engine)"
+    "summary": "Dual persona: Switch Engine (EXOS) or Fabric Engine (VOSS). Static, RIP, OSPF, IS-IS, BGP, PIM, VRF, and EVPN. 5+ OSPF interfaces, 3+ BGP peers, IS-IS, and EVPN need a Premier license"
   },
-  "routeScale": "Not captured from datasheet",
-  "macTable": "Not captured from datasheet",
+  "routeScale": "12,000 IPv4 routes (Switch Engine); OSPF and BGP with a Premier license",
+  "macTable": "32,000 (Switch Engine)",
   "macsec": "MACsec 128 and 256-bit AES on access and built-in uplink ports (specific hardware revisions)",
-  "buffer": "Not captured from datasheet",
+  "buffer": "Not published",
   "power": {
     "summary": "One internal fixed power supply, with a second field-replaceable PSU slot for redundancy; fixed fans",
     "psuFieldReplaceable": false,
@@ -28,7 +28,7 @@
     }
   },
   "fansFieldReplaceable": false,
-  "licensing": "Base license included; Premier for advanced routing; MACsec license separate. ExtremeCloud IQ optional for cloud management",
+  "licensing": "Base software license included (most features); Premier license for advanced routing and MACsec license ordered separately. Managed by ExtremeCloud IQ or Extreme Platform ONE, or on-box via CLI/GUI",
   "operatingTempC": {
     "min": 0,
     "max": 50
@@ -36,14 +36,6 @@
   "mounting": [
     "rack"
   ],
-  "verify": [
-    "switchingGbps",
-    "forwardingMpps",
-    "routeScale",
-    "macTable",
-    "buffer"
-  ],
-  "verifyNote": "PoE budgets, ports, and uplinks are from the 5420 datasheet ordering tables. Per-model switching capacity, forwarding rate, MAC and route scale, and buffer were not captured and need confirming from the 5420 datasheet performance table",
   "models": [
     {
       "sku": "5420F-24T-4XE",
@@ -57,8 +49,8 @@
       ],
       "uplinks": "ext5420f",
       "poeBudgets": [],
-      "switchingGbps": null,
-      "forwardingMpps": null
+      "switchingGbps": 208,
+      "forwardingMpps": 154.8
     },
     {
       "sku": "5420F-24P-4XE",
@@ -81,8 +73,8 @@
           "watts": 720
         }
       ],
-      "switchingGbps": null,
-      "forwardingMpps": null
+      "switchingGbps": 208,
+      "forwardingMpps": 154.8
     },
     {
       "sku": "5420F-24S-4XE",
@@ -97,8 +89,8 @@
       ],
       "uplinks": "ext5420f",
       "poeBudgets": [],
-      "switchingGbps": null,
-      "forwardingMpps": null
+      "switchingGbps": 208,
+      "forwardingMpps": 154.8
     },
     {
       "sku": "5420F-48T-4XE",
@@ -112,8 +104,8 @@
       ],
       "uplinks": "ext5420f",
       "poeBudgets": [],
-      "switchingGbps": null,
-      "forwardingMpps": null
+      "switchingGbps": 256,
+      "forwardingMpps": 190.5
     },
     {
       "sku": "5420F-48P-4XE",
@@ -136,8 +128,8 @@
           "watts": 1480
         }
       ],
-      "switchingGbps": null,
-      "forwardingMpps": null
+      "switchingGbps": 256,
+      "forwardingMpps": 190.5
     },
     {
       "sku": "5420F-48P-4XL",
@@ -160,8 +152,8 @@
           "watts": 1440
         }
       ],
-      "switchingGbps": null,
-      "forwardingMpps": null
+      "switchingGbps": 256,
+      "forwardingMpps": 190.5
     },
     {
       "sku": "5420F-8W-16P-4XE",
@@ -189,8 +181,8 @@
           "watts": 960
         }
       ],
-      "switchingGbps": null,
-      "forwardingMpps": null
+      "switchingGbps": 208,
+      "forwardingMpps": 154.8
     },
     {
       "sku": "5420F-16W-32P-4XE",
@@ -218,8 +210,8 @@
           "watts": 1874
         }
       ],
-      "switchingGbps": null,
-      "forwardingMpps": null
+      "switchingGbps": 256,
+      "forwardingMpps": 190.5
     },
     {
       "sku": "5420F-16MW-32P-4XE",
@@ -247,8 +239,8 @@
           "watts": 1862
         }
       ],
-      "switchingGbps": null,
-      "forwardingMpps": null
+      "switchingGbps": 304,
+      "forwardingMpps": 226.2
     }
   ]
 }

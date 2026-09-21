@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contribute a pull request
+    url: https://github.com/danryan06/switch-comparison/blob/main/CONTRIBUTING.md
+    about: Prefer to edit the JSON yourself? Follow CONTRIBUTING.md and open a PR.
