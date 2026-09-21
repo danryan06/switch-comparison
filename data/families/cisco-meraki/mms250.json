@@ -1,0 +1,190 @@
+{
+  "id": "mms250",
+  "vendor": "Cisco Meraki",
+  "family": "MS250",
+  "source": "mms250",
+  "additionalSources": [
+    "mms250ig",
+    "mmsl3",
+    "mmsstack",
+    "mmsfamily"
+  ],
+  "stacking": {
+    "tech": "Meraki physical stacking",
+    "bandwidthGbps": 80,
+    "maxMembers": 8,
+    "frontPanel": false,
+    "note": "Two dedicated rear QSFP stacking ports. Stacks only with other MS250 models. Stacking cables sold separately"
+  },
+  "routing": {
+    "tier": "ospf",
+    "bgp": false,
+    "summary": "Static routing, OSPFv2, warm spare (VRRP), multicast routing (PIM-SM), DHCP server and relay. No BGP"
+  },
+  "routeScale": "1,024 routes (256 static); OSPF-learned routes capped at 900",
+  "macTable": "Not published",
+  "macsec": "Not listed",
+  "buffer": "Not published",
+  "licensing": "Meraki Enterprise license required per switch (co-term or per-device); includes support",
+  "power": {
+    "summary": "Modular hot-swap PSU; one included, second slot for an optional redundant PSU",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Second hot-swap PSU slot; the second PSU is sold separately"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "operatingTempC": {
+    "min": -5,
+    "max": 50
+  },
+  "mounting": [
+    "rack",
+    "desktop"
+  ],
+  "lifecycle": {
+    "status": "endOfSale",
+    "endOfSaleDate": "2025-08-08",
+    "endOfSupportDate": "2030-08-08",
+    "announcementUrl": "https://documentation.meraki.com/@api/deki/files/28698/MS250-HW_EOS_NOTICE-updated.pdf?revision=1",
+    "note": "End-of-sale announced August 28, 2024. Meraki names Meraki-managed Catalyst 9300L models as replacements"
+  },
+  "models": [
+    {
+      "sku": "MS250-24",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": null,
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2025-08-08",
+        "endOfSupportDate": "2030-08-08",
+        "announcementUrl": "https://documentation.meraki.com/@api/deki/files/28698/MS250-HW_EOS_NOTICE-updated.pdf?revision=1",
+        "replacement": [
+          "C9300L-24T-4X"
+        ],
+        "note": "End-of-sale announced August 28, 2024. Meraki names the C9300L-24T-4X-M (Meraki-managed variant of the same hardware) as the replacement"
+      }
+    },
+    {
+      "sku": "MS250-24P",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "1x MA-PWR-640WAC (included)",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": null,
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2025-08-08",
+        "endOfSupportDate": "2030-08-08",
+        "announcementUrl": "https://documentation.meraki.com/@api/deki/files/28698/MS250-HW_EOS_NOTICE-updated.pdf?revision=1",
+        "replacement": [
+          "C9300L-24P-4X"
+        ],
+        "note": "End-of-sale announced August 28, 2024. Meraki names the C9300L-24P-4X-M (Meraki-managed variant of the same hardware) as the replacement"
+      }
+    },
+    {
+      "sku": "MS250-48",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": null,
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2025-08-08",
+        "endOfSupportDate": "2030-08-08",
+        "announcementUrl": "https://documentation.meraki.com/@api/deki/files/28698/MS250-HW_EOS_NOTICE-updated.pdf?revision=1",
+        "replacement": [
+          "C9300L-48T-4X"
+        ],
+        "note": "End-of-sale announced August 28, 2024. Meraki names the C9300L-48T-4X-M (Meraki-managed variant of the same hardware) as the replacement"
+      }
+    },
+    {
+      "sku": "MS250-48LP",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "1x MA-PWR-640WAC (included)",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": null,
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2025-08-08",
+        "endOfSupportDate": "2030-08-08",
+        "announcementUrl": "https://documentation.meraki.com/@api/deki/files/28698/MS250-HW_EOS_NOTICE-updated.pdf?revision=1",
+        "replacement": [
+          "C9300L-48P-4X"
+        ],
+        "note": "End-of-sale announced August 28, 2024. Meraki names the C9300L-48P-4X-M (Meraki-managed variant of the same hardware) as the replacement"
+      }
+    },
+    {
+      "sku": "MS250-48FP",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "1x MA-PWR-1025WAC (included)",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": null,
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2025-08-08",
+        "endOfSupportDate": "2030-08-08",
+        "announcementUrl": "https://documentation.meraki.com/@api/deki/files/28698/MS250-HW_EOS_NOTICE-updated.pdf?revision=1",
+        "replacement": [
+          "C9300L-48PF-4X"
+        ],
+        "note": "End-of-sale announced August 28, 2024. Meraki names the C9300L-48PF-4X-M (Meraki-managed variant of the same hardware) as the replacement"
+      }
+    }
+  ]
+}

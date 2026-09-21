@@ -1,0 +1,200 @@
+{
+  "id": "mms355",
+  "vendor": "Cisco Meraki",
+  "family": "MS355",
+  "source": "mms355",
+  "additionalSources": [
+    "mmsl3",
+    "mmsstack",
+    "mmsfamily"
+  ],
+  "stacking": {
+    "tech": "Meraki physical stacking",
+    "bandwidthGbps": 400,
+    "maxMembers": 8,
+    "frontPanel": false,
+    "note": "Two dedicated rear 100G stacking ports. Stacks only with other MS355 models (not MS350). Stacking cables sold separately"
+  },
+  "routing": {
+    "tier": "ospf",
+    "bgp": false,
+    "summary": "Static routing, OSPFv2, warm spare (VRRP), multicast routing (PIM-SM), DHCP server and relay. No BGP"
+  },
+  "routeScale": "8,192 routes (256 static)",
+  "macTable": "Not published",
+  "macsec": "Not listed",
+  "buffer": "Not published",
+  "licensing": "Meraki Enterprise license required per switch (co-term or per-device); includes support",
+  "power": {
+    "summary": "Modular hot-swap PSU; one 1025W PSU included, second slot for an optional redundant PSU",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Second hot-swap PSU slot; the second PSU is sold separately"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "operatingTempC": {
+    "min": 0,
+    "max": 45
+  },
+  "mounting": [
+    "rack"
+  ],
+  "lifecycle": {
+    "status": "endOfSale",
+    "endOfSaleDate": "2025-08-08",
+    "endOfSupportDate": "2030-08-08",
+    "announcementUrl": "https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates",
+    "note": "End-of-sale announced August 28, 2024. The MS355-48X had an earlier last order date. Meraki names Meraki-managed Catalyst 9300X models as replacements"
+  },
+  "models": [
+    {
+      "sku": "MS355-24X",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 60
+        },
+        {
+          "count": 8,
+          "speedGbps": 10,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "x4q2",
+      "poeBudgets": [
+        {
+          "config": "1x MA-PWR-1025WAC (included)",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 352,
+      "forwardingMpps": null,
+      "verify": [
+        "accessPorts"
+      ],
+      "verifyNote": "Meraki's datasheet gives a 740W UPoE budget per model but not which ports carry UPoE. 60W on every copper port comes from reseller copies of Meraki's older MS355 datasheet (PoE, PoE+, and UPoE on all ports); one reseller listing shows PoE only on the mGig ports. Confirm per-port PoE, especially on the 1G ports",
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2025-08-08",
+        "endOfSupportDate": "2030-08-08",
+        "announcementUrl": "https://documentation.meraki.com/@api/deki/files/33594/MS355-24X-HW_EOS_PDF.pdf?revision=1",
+        "replacement": [
+          "C9300X-24HX"
+        ],
+        "note": "End-of-sale announced August 28, 2024. Meraki names the C9300X-24HX-M (Meraki-managed variant of the same hardware) as the replacement"
+      }
+    },
+    {
+      "sku": "MS355-24X2",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "x4q2",
+      "poeBudgets": [
+        {
+          "config": "1x MA-PWR-1025WAC (included)",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 640,
+      "forwardingMpps": null,
+      "verify": [
+        "accessPorts"
+      ],
+      "verifyNote": "Meraki's datasheet gives a 740W UPoE budget per model but not which ports carry UPoE. 60W on every copper port comes from reseller copies of Meraki's older MS355 datasheet (PoE, PoE+, and UPoE on all ports); one reseller listing shows PoE only on the mGig ports. Confirm per-port PoE, especially on the 1G ports",
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2025-08-08",
+        "endOfSupportDate": "2030-08-08",
+        "announcementUrl": "https://documentation.meraki.com/@api/deki/files/33593/MS355-24X2-HW_EOS_PDF.pdf?revision=1",
+        "replacement": [
+          "C9300X-24HX"
+        ],
+        "note": "End-of-sale announced August 28, 2024. Meraki names the C9300X-24HX-M (Meraki-managed variant of the same hardware) as the replacement"
+      }
+    },
+    {
+      "sku": "MS355-48X",
+      "accessPorts": [
+        {
+          "count": 32,
+          "speedGbps": 1,
+          "poeWatts": 60
+        },
+        {
+          "count": 16,
+          "speedGbps": 10,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "x4q2",
+      "poeBudgets": [
+        {
+          "config": "1x MA-PWR-1025WAC (included)",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 544,
+      "forwardingMpps": null,
+      "verify": [
+        "accessPorts"
+      ],
+      "verifyNote": "Meraki's datasheet gives a 740W UPoE budget per model but not which ports carry UPoE. 60W on every copper port comes from reseller copies of Meraki's older MS355 datasheet (PoE, PoE+, and UPoE on all ports); one reseller listing shows PoE only on the mGig ports. Confirm per-port PoE, especially on the 1G ports",
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2025-05-30",
+        "endOfSupportDate": "2030-08-08",
+        "announcementUrl": "https://documentation.meraki.com/@api/deki/files/33434/MS355-48X-HW_EOS_PDF.pdf?revision=1",
+        "replacement": [
+          "C9300X-48HX"
+        ],
+        "note": "End-of-sale announced August 28, 2024. Meraki names the C9300X-48HX-M (Meraki-managed variant of the same hardware) as the replacement. Meraki moved this SKU's last order date up from the announced August 8, 2025"
+      }
+    },
+    {
+      "sku": "MS355-48X2",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 60
+        },
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "x4q2",
+      "poeBudgets": [
+        {
+          "config": "1x MA-PWR-1025WAC (included)",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 688,
+      "forwardingMpps": null,
+      "verify": [
+        "accessPorts"
+      ],
+      "verifyNote": "Meraki's datasheet gives a 740W UPoE budget per model but not which ports carry UPoE. 60W on every copper port comes from reseller copies of Meraki's older MS355 datasheet (PoE, PoE+, and UPoE on all ports); one reseller listing shows PoE only on the mGig ports. Confirm per-port PoE, especially on the 1G ports",
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2025-08-08",
+        "endOfSupportDate": "2030-08-08",
+        "announcementUrl": "https://documentation.meraki.com/@api/deki/files/33595/MS355-48X2-HW_EOS_PDF.pdf?revision=1",
+        "replacement": [
+          "C9300X-48HX"
+        ],
+        "note": "End-of-sale announced August 28, 2024. Meraki names the C9300X-48HX-M (Meraki-managed variant of the same hardware) as the replacement"
+      }
+    }
+  ]
+}

@@ -761,5 +761,23 @@
         ]
       }
     ]
+  },
+  "x4q2": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 1/10G SFP+ and 2x 40G QSFP+ (fixed)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 10
+          },
+          {
+            "count": 2,
+            "speedGbps": 40
+          }
+        ]
+      }
+    ]
   }
 }
