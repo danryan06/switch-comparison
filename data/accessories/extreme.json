@@ -166,7 +166,11 @@
       "media": "Stack",
       "distanceM": 0.5,
       "note": "5420 SFP-DD stacking cable",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "e5420f",
+        "e5420m"
+      ]
     },
     {
       "sku": "20G-DACP-SFPDD1M",
@@ -176,7 +180,11 @@
       "media": "Stack",
       "distanceM": 1,
       "note": "5420 SFP-DD stacking cable",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "e5420f",
+        "e5420m"
+      ]
     },
     {
       "sku": "20G-DACP-SFPDD3M",
@@ -186,7 +194,11 @@
       "media": "Stack",
       "distanceM": 3,
       "note": "5420 SFP-DD stacking cable",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "e5420f",
+        "e5420m"
+      ]
     },
     {
       "sku": "20G-DACP-SFPDD5M",
@@ -196,7 +208,11 @@
       "media": "Stack",
       "distanceM": 5,
       "note": "5420 SFP-DD stacking cable",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "e5420f",
+        "e5420m"
+      ]
     }
   ]
 }

@@ -151,6 +151,13 @@ export function validate(data, today = new Date().toISOString().slice(0, 10)) {
       if (!ACC_MEDIA.includes(p.media)) errors.push(`${pt}: media must be one of ${ACC_MEDIA.join(', ')}`);
       if (!(typeof p.distanceM === 'number') || p.distanceM < 0) errors.push(`${pt}: distanceM must be a number >= 0`);
       if (p.verified !== undefined && typeof p.verified !== 'boolean') errors.push(`${pt}: verified must be true or false`);
+      if (p.appliesTo !== undefined) {
+        if (!Array.isArray(p.appliesTo)) errors.push(`${pt}: appliesTo must be an array of family IDs`);
+        else for (const fid of p.appliesTo) {
+          if (typeof fid !== 'string' || !fid) errors.push(`${pt}: appliesTo entries must be non-empty strings`);
+          else if (!ids.has(fid)) errors.push(`${pt}: appliesTo unknown family id "${fid}"`);
+        }
+      }
       if (p.category === 'transceiver') {
         if (!p.reach) errors.push(`${pt}: transceiver needs reach`);
         else if (!ACC_REACH.includes(p.reach)) errors.push(`${pt}: reach must be one of ${ACC_REACH.join(', ')}`);

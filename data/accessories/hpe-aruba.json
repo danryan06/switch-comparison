@@ -271,7 +271,12 @@
       "media": "DAC",
       "distanceM": 1,
       "note": "VSX inter-switch link on CX 8100/8325/8360",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "a8100",
+        "a8325",
+        "a8360"
+      ]
     },
     {
       "sku": "JL307A",
@@ -281,7 +286,12 @@
       "media": "DAC",
       "distanceM": 3,
       "note": "VSX inter-switch link on CX 8100/8325/8360",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "a8100",
+        "a8325",
+        "a8360"
+      ]
     },
     {
       "sku": "R0Z26A",
@@ -291,7 +301,12 @@
       "media": "DAC",
       "distanceM": 5,
       "note": "VSX inter-switch link on CX 8100/8325/8360",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "a8100",
+        "a8325",
+        "a8360"
+      ]
     },
     {
       "sku": "JL488A",
@@ -301,7 +316,13 @@
       "media": "DAC",
       "distanceM": 3,
       "note": "VSF stacking link over the 25G front ports on CX 6300",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "a6300f",
+        "a6300m",
+        "a6300m2",
+        "a6300l"
+      ]
     },
     {
       "sku": "J9283D",
@@ -311,7 +332,13 @@
       "media": "DAC",
       "distanceM": 3,
       "note": "VSF stacking link over the 10G front ports on CX 6300",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "a6300f",
+        "a6300m",
+        "a6300m2",
+        "a6300l"
+      ]
     }
   ]
 }

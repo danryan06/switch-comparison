@@ -187,6 +187,11 @@
           "type": "boolean",
           "description": "true when the SKU is traced to a vendor datasheet or matrix. false when it still needs confirming. Unverified parts stay in Accessories listings without a check tag, and appear on the Needs checking page."
         },
+        "appliesTo": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional family IDs this part applies to. Absent means every family of that vendor (typical for optics/DACs/AOCs). Present means only those families (typical for stacking cables/kits). An empty array means the part stays in the vendor catalog but appears on no switch detail view."
+        },
         "note": { "type": "string" }
       }
     },

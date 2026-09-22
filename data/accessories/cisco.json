@@ -191,71 +191,140 @@
       "sku": "STACK-T1-50CM",
       "category": "stacking",
       "speedGbps": null,
-      "formFactor": "StackWise-480",
+      "formFactor": "Stack",
       "media": "Stack",
       "distanceM": 0.5,
-      "note": "Catalyst 9300 StackWise-480",
+      "appliesTo": [
+        "c9300",
+        "c9300x"
+      ],
+      "note": "StackWise-480/1T cable (9300 and 9300X have built-in stack ports; cable only)",
       "verified": true
     },
     {
       "sku": "STACK-T1-1M",
       "category": "stacking",
       "speedGbps": null,
-      "formFactor": "StackWise-480",
+      "formFactor": "Stack",
       "media": "Stack",
       "distanceM": 1,
-      "note": "Catalyst 9300 StackWise-480",
+      "appliesTo": [
+        "c9300",
+        "c9300x"
+      ],
+      "note": "StackWise-480/1T cable",
       "verified": true
     },
     {
       "sku": "STACK-T1-3M",
       "category": "stacking",
       "speedGbps": null,
-      "formFactor": "StackWise-480",
+      "formFactor": "Stack",
       "media": "Stack",
       "distanceM": 3,
-      "note": "Catalyst 9300 StackWise-480",
+      "appliesTo": [
+        "c9300",
+        "c9300x"
+      ],
+      "note": "StackWise-480/1T cable",
+      "verified": true
+    },
+    {
+      "sku": "C9300L-STACK-KIT",
+      "category": "stacking",
+      "speedGbps": null,
+      "formFactor": "Kit",
+      "media": "Kit",
+      "distanceM": 0,
+      "appliesTo": [
+        "c9300l",
+        "c9300lm"
+      ],
+      "note": "StackWise-320 kit (STACK-T3 push-tab); 9300L/LM need the kit, they lack built-in ports",
+      "verified": true
+    },
+    {
+      "sku": "C9300L-STACK-KIT2",
+      "category": "stacking",
+      "speedGbps": null,
+      "formFactor": "Kit",
+      "media": "Kit",
+      "distanceM": 0,
+      "appliesTo": [
+        "c9300l",
+        "c9300lm"
+      ],
+      "note": "StackWise-320 kit (STACK-T3A thumb-screw)",
+      "verified": true
+    },
+    {
+      "sku": "C9200-STACK-KIT",
+      "category": "stacking",
+      "speedGbps": null,
+      "formFactor": "Kit",
+      "media": "Kit",
+      "distanceM": 0,
+      "appliesTo": [
+        "c9200"
+      ],
+      "note": "StackWise-160 kit (adapters + STACK-T4 cable)",
+      "verified": true
+    },
+    {
+      "sku": "C9200L-STACK-KIT",
+      "category": "stacking",
+      "speedGbps": null,
+      "formFactor": "Kit",
+      "media": "Kit",
+      "distanceM": 0,
+      "appliesTo": [
+        "c9200l"
+      ],
+      "note": "StackWise-80 kit (adapters + STACK-T4 cable)",
       "verified": true
     },
     {
       "sku": "STACK-T4-50CM",
       "category": "stacking",
       "speedGbps": null,
-      "formFactor": "StackWise-160",
+      "formFactor": "Stack",
       "media": "Stack",
       "distanceM": 0.5,
-      "note": "Catalyst 9200 (requires C9200-STACK-KIT)",
+      "appliesTo": [
+        "c9200",
+        "c9200l"
+      ],
+      "note": "StackWise-160/80 cable (used by the 9200 and 9200L kits)",
       "verified": true
     },
     {
       "sku": "STACK-T4-1M",
       "category": "stacking",
       "speedGbps": null,
-      "formFactor": "StackWise-160",
+      "formFactor": "Stack",
       "media": "Stack",
       "distanceM": 1,
-      "note": "Catalyst 9200 (requires C9200-STACK-KIT)",
+      "appliesTo": [
+        "c9200",
+        "c9200l"
+      ],
+      "note": "StackWise-160/80 cable",
       "verified": true
     },
     {
       "sku": "STACK-T4-3M",
       "category": "stacking",
       "speedGbps": null,
-      "formFactor": "StackWise-160",
+      "formFactor": "Stack",
       "media": "Stack",
       "distanceM": 3,
-      "note": "Catalyst 9200 (requires C9200-STACK-KIT)",
-      "verified": true
-    },
-    {
-      "sku": "C9300-STACK-KIT",
-      "category": "stacking",
-      "speedGbps": null,
-      "formFactor": "Kit",
-      "media": "Kit",
-      "distanceM": 0,
-      "note": "StackWise adapter kit for Catalyst 9300 fixed models. 9500 StackWise Virtual runs over standard uplink optics",
+      "appliesTo": [
+        "c9200",
+        "c9200l"
+      ],
+      "note": "StackWise-160/80 cable",
       "verified": true
     }
-  ]
+  ],
+  "note": "9200CX is not stackable. 9500 uses StackWise Virtual over standard uplink optics (no stacking cable). 9200 stacks only with 9200, 9200L only with 9200L, 9300L/LM only with each other; 9300 and 9300X stack together (9300X downgrades to StackWise-480)."
 }

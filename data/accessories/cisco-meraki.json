@@ -132,7 +132,13 @@
       "media": "Stack",
       "distanceM": 0.5,
       "note": "MS210/MS225/MS250/MS350/MS410/MS425",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "mms210",
+        "mms225",
+        "mms250",
+        "mms350"
+      ]
     },
     {
       "sku": "MA-CBL-40G-1M",
@@ -142,7 +148,13 @@
       "media": "Stack",
       "distanceM": 1,
       "note": "MS210/MS225/MS250/MS350/MS410/MS425",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "mms210",
+        "mms225",
+        "mms250",
+        "mms350"
+      ]
     },
     {
       "sku": "MA-CBL-40G-3M",
@@ -152,7 +164,13 @@
       "media": "Stack",
       "distanceM": 3,
       "note": "MS210/MS225/MS250/MS350/MS410/MS425",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "mms210",
+        "mms225",
+        "mms250",
+        "mms350"
+      ]
     },
     {
       "sku": "MA-CBL-100G-50CM",
@@ -162,7 +180,12 @@
       "media": "Stack",
       "distanceM": 0.5,
       "note": "MS150/MS355/MS450",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "mms150",
+        "mms355",
+        "mms450"
+      ]
     },
     {
       "sku": "MA-CBL-100G-1M",
@@ -172,7 +195,12 @@
       "media": "Stack",
       "distanceM": 1,
       "note": "MS150/MS355/MS450",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "mms150",
+        "mms355",
+        "mms450"
+      ]
     },
     {
       "sku": "MA-CBL-100G-3M",
@@ -182,7 +210,12 @@
       "media": "Stack",
       "distanceM": 3,
       "note": "MS150/MS355/MS450",
-      "verified": true
+      "verified": true,
+      "appliesTo": [
+        "mms150",
+        "mms355",
+        "mms450"
+      ]
     },
     {
       "sku": "MA-CBL-120G-50CM",
@@ -192,7 +225,8 @@
       "media": "Stack",
       "distanceM": 0.5,
       "note": "MS390/Catalyst 9300-M 480G StackWise",
-      "verified": true
+      "verified": true,
+      "appliesTo": []
     },
     {
       "sku": "MA-CBL-120G-1M",
@@ -202,7 +236,8 @@
       "media": "Stack",
       "distanceM": 1,
       "note": "MS390/Catalyst 9300-M 480G StackWise",
-      "verified": true
+      "verified": true,
+      "appliesTo": []
     },
     {
       "sku": "MA-CBL-120G-3M",
@@ -212,7 +247,8 @@
       "media": "Stack",
       "distanceM": 3,
       "note": "MS390/Catalyst 9300-M 480G StackWise",
-      "verified": true
+      "verified": true,
+      "appliesTo": []
     }
   ]
 }

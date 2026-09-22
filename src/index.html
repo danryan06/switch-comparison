@@ -449,9 +449,19 @@ function selectAccVendors(ids){
   (ids||[]).forEach(id=>{if(ACC_BY_ID[id])accVend.add(id)});
 }
 function accForSwitch(s){return ACC_BY_VENDOR[vendorOf(s)]||null}
+function partAppliesToFamily(p,famId){
+  if(p.appliesTo===undefined)return true;
+  return Array.isArray(p.appliesTo)&&p.appliesTo.includes(famId);
+}
+function appliesToLabel(p){
+  if(p.appliesTo===undefined)return "";
+  if(!p.appliesTo.length)return `<div class="small" style="margin-top:4px">Catalog only (no current family)</div>`;
+  const names=p.appliesTo.map(id=>{const f=FAM[id];return f?`${f.v} ${f.name}`:id});
+  return `<div class="small" style="margin-top:4px">Applies to: ${esc(names.join(", "))}</div>`;
+}
 function stackingCablesHTML(s){
   const a=accForSwitch(s);if(!a)return "";
-  const parts=a.parts.filter(p=>p.category==="stacking");
+  const parts=a.parts.filter(p=>p.category==="stacking"&&partAppliesToFamily(p,s.fam));
   if(!parts.length)return "";
   return parts.slice().sort((x,y)=>{
     const sx=x.speedGbps===null?Infinity:x.speedGbps,sy=y.speedGbps===null?Infinity:y.speedGbps;
@@ -1065,6 +1075,7 @@ function accTh(label,key){
   return `<th data-acc-sort="${key}" aria-sort="${on?(accSortDir>0?"ascending":"descending"):"none"}">${esc(label)}${on?(accSortDir>0?" &#9650;":" &#9660;"):""}</th>`;
 }
 function accPartRow({p,a}){
+  const note=esc(p.note||"")+(p.category==="stacking"?appliesToLabel(p):"");
   return `<tr>
     <td>${esc(a.vendor)}</td>
     <td class="sku">${esc(p.sku)}</td>
@@ -1073,7 +1084,7 @@ function accPartRow({p,a}){
     <td>${esc(p.reach||"-")}</td>
     <td>${esc(p.media)}</td>
     <td>${esc(distLabel(p.distanceM))}</td>
-    <td style="white-space:normal;min-width:180px">${esc(p.note||"")}</td>
+    <td style="white-space:normal;min-width:180px">${note}</td>
   </tr>`;
 }
 function renderAccHead(){
