@@ -370,6 +370,18 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
   <section class="view" id="v-accessories">
     <div class="filters" style="padding-top:0">
       <div class="fl" style="grid-column:1/-1"><label>Vendor</label><div class="fchips" id="accVendors"></div></div>
+      <div class="fl"><label for="accQ">Search</label><input type="text" id="accQ" placeholder="SKU or note"></div>
+      <div class="fl"><label for="accCat">Type</label><select id="accCat"><option value="">Any</option><option value="transceiver">Transceivers</option><option value="dac">DACs</option><option value="aoc">AOCs</option><option value="stacking">Stacking cables</option></select></div>
+      <div class="fl"><label for="accSpd">Speed</label><select id="accSpd"><option value="">Any</option></select></div>
+      <div class="fl"><label for="accRange">Range</label><select id="accRange"><option value="">Any</option></select></div>
+      <div class="fl"><label for="accMedia">Media</label><select id="accMedia"><option value="">Any</option></select></div>
+      <div class="fl"><label for="accForm">Form factor</label><select id="accForm"><option value="">Any</option></select></div>
+    </div>
+    <div class="bar2">
+      <span class="small" id="accCount"></span>
+      <div class="barActs">
+        <button type="button" class="ghost" id="accClrFilters">Clear filters</button>
+      </div>
     </div>
     <div class="accHead" id="accHead"></div>
     <div id="accBody"></div>
@@ -972,49 +984,130 @@ function openDetail(sku){
 $("#dlg").addEventListener("click",e=>{if(e.target.id==="dlg")$("#dlg").close()});
 
 /* ---------- Accessories ---------- */
+let accSortKey="speed",accSortDir=1;
 function renderAccVendors(){
   $("#accVendors").innerHTML=ACCESSORIES.map(a=>`<button type="button" class="chip" aria-pressed="${a.id===accId?"true":"false"}" data-acc="${esc(a.id)}">${esc(a.vendor)}</button>`).join("");
+}
+function fillAccFilterOptions(){
+  const a=ACC_BY_ID[accId];if(!a)return;
+  const speeds=[...new Set(a.parts.map(p=>p.speedGbps).filter(v=>v!==null&&v!==undefined))].sort((x,y)=>x-y);
+  const reaches=[...new Set(a.parts.map(p=>p.reach).filter(Boolean))].sort();
+  const media=[...new Set(a.parts.map(p=>p.media).filter(Boolean))].sort();
+  const forms=[...new Set(a.parts.map(p=>p.formFactor).filter(Boolean))].sort();
+  const keepSpd=$("#accSpd").value,keepRange=$("#accRange").value,keepMedia=$("#accMedia").value,keepForm=$("#accForm").value;
+  $("#accSpd").innerHTML=`<option value="">Any</option>`+speeds.map(s=>`<option value="${s}">${esc(accSpdLabel(s))}</option>`).join("");
+  $("#accRange").innerHTML=`<option value="">Any</option>`+reaches.map(r=>`<option value="${esc(r)}">${esc(r)}</option>`).join("");
+  $("#accMedia").innerHTML=`<option value="">Any</option>`+media.map(m=>`<option value="${esc(m)}">${esc(m)}</option>`).join("");
+  $("#accForm").innerHTML=`<option value="">Any</option>`+forms.map(f=>`<option value="${esc(f)}">${esc(f)}</option>`).join("");
+  if([...$("#accSpd").options].some(o=>o.value===keepSpd))$("#accSpd").value=keepSpd;
+  if([...$("#accRange").options].some(o=>o.value===keepRange))$("#accRange").value=keepRange;
+  if([...$("#accMedia").options].some(o=>o.value===keepMedia))$("#accMedia").value=keepMedia;
+  if([...$("#accForm").options].some(o=>o.value===keepForm))$("#accForm").value=keepForm;
+}
+function accFilterState(){
+  return {
+    q:($("#accQ").value||"").trim().toLowerCase(),
+    cat:$("#accCat").value,
+    spd:$("#accSpd").value,
+    range:$("#accRange").value,
+    media:$("#accMedia").value,
+    form:$("#accForm").value
+  };
+}
+function filteredAccParts(a){
+  const f=accFilterState();
+  return a.parts.filter(p=>{
+    if(f.cat&&p.category!==f.cat)return false;
+    if(f.spd!==""&&String(p.speedGbps)!==f.spd)return false;
+    if(f.range&&p.reach!==f.range)return false;
+    if(f.media&&p.media!==f.media)return false;
+    if(f.form&&p.formFactor!==f.form)return false;
+    if(f.q){
+      const hay=(p.sku+" "+(p.note||"")+" "+(p.reach||"")+" "+(p.formFactor||"")+" "+(p.media||"")).toLowerCase();
+      if(!hay.includes(f.q))return false;
+    }
+    return true;
+  });
+}
+function sortAccParts(parts){
+  const key=accSortKey,dir=accSortDir;
+  const val=p=>{
+    if(key==="sku")return p.sku||"";
+    if(key==="speed")return p.speedGbps===null||p.speedGbps===undefined?Infinity:p.speedGbps;
+    if(key==="form")return p.formFactor||"";
+    if(key==="range")return p.reach||"";
+    if(key==="media")return p.media||"";
+    if(key==="distance")return p.distanceM===null||p.distanceM===undefined?Infinity:p.distanceM;
+    if(key==="note")return p.note||"";
+    return p.sku||"";
+  };
+  return parts.slice().sort((a,b)=>{
+    const x=val(a),y=val(b);
+    if(typeof x==="number"&&typeof y==="number")return (x-y)*dir||a.sku.localeCompare(b.sku);
+    return String(x).localeCompare(String(y),undefined,{numeric:true})*dir||a.sku.localeCompare(b.sku);
+  });
+}
+function accTh(label,key){
+  const on=accSortKey===key;
+  return `<th data-acc-sort="${key}" aria-sort="${on?(accSortDir>0?"ascending":"descending"):"none"}">${esc(label)}${on?(accSortDir>0?" &#9650;":" &#9660;"):""}</th>`;
+}
+function accPartRow(p){
+  return `<tr>
+    <td class="sku">${esc(p.sku)}</td>
+    <td>${esc(accSpdLabel(p.speedGbps))}</td>
+    <td>${esc(p.formFactor)}</td>
+    <td>${esc(p.reach||"-")}</td>
+    <td>${esc(p.media)}</td>
+    <td>${esc(distLabel(p.distanceM))}</td>
+    <td style="white-space:normal;min-width:180px">${esc(p.note||"")}</td>
+  </tr>`;
+}
+function renderAccessories(){
+  if(!ACCESSORIES.length){
+    $("#accHead").innerHTML="";
+    $("#accBody").innerHTML=`<div class="panel empty">No accessory catalogs loaded.</div>`;
+    $("#accCount").textContent="";
+    return;
+  }
+  if(!ACC_BY_ID[accId])accId=ACCESSORIES[0].id;
+  renderAccVendors();
+  fillAccFilterOptions();
+  const a=ACC_BY_ID[accId];
+  const src=SRC[a.source];
+  $("#accHead").innerHTML=`${a.note?`<p>${esc(a.note)}</p>`:""}<p><a href="${esc(a.opticsMatrixUrl)}" target="_blank" rel="noopener">Full optics matrix</a>${src?` · <a href="${esc(src.u)}" target="_blank" rel="noopener">${esc(src.t)}</a>`:""}</p>`;
+  const filtered=filteredAccParts(a);
+  $("#accCount").textContent=`${filtered.length} of ${a.parts.length} parts`;
+  const byCat={};
+  for(const p of filtered){(byCat[p.category]=byCat[p.category]||[]).push(p)}
+  let h="";
+  for(const cat of ACC_CAT_ORDER){
+    const parts=byCat[cat];if(!parts||!parts.length)continue;
+    const sorted=sortAccParts(parts);
+    h+=`<div class="accSec" id="acc-sec-${cat}"><h3>${esc(ACC_CAT_LABEL[cat]||cat)}</h3><div class="tablewrap"><table><thead><tr>
+      ${accTh("SKU","sku")}${accTh("Speed","speed")}${accTh("Form factor","form")}${accTh("Range","range")}${accTh("Media","media")}${accTh("Distance","distance")}${accTh("Note","note")}
+    </tr></thead><tbody>`;
+    h+=sorted.map(accPartRow).join("");
+    h+=`</tbody></table></div></div>`;
+  }
+  $("#accBody").innerHTML=h||`<div class="panel empty">No parts match these filters.</div>`;
+}
+function clearAccFilters(){
+  $("#accQ").value="";$("#accCat").value="";$("#accSpd").value="";$("#accRange").value="";$("#accMedia").value="";$("#accForm").value="";
+  renderAccessories();writeHash();
 }
 $("#accVendors").addEventListener("click",e=>{
   const id=e.target.dataset.acc;if(!id||!ACC_BY_ID[id])return;
   accId=id;renderAccessories();writeHash();
 });
-function renderAccessories(){
-  if(!ACCESSORIES.length){
-    $("#accHead").innerHTML="";
-    $("#accBody").innerHTML=`<div class="panel empty">No accessory catalogs loaded.</div>`;
-    return;
-  }
-  if(!ACC_BY_ID[accId])accId=ACCESSORIES[0].id;
-  renderAccVendors();
-  const a=ACC_BY_ID[accId];
-  const src=SRC[a.source];
-  $("#accHead").innerHTML=`${a.note?`<p>${esc(a.note)}</p>`:""}<p><a href="${esc(a.opticsMatrixUrl)}" target="_blank" rel="noopener">Full optics matrix</a>${src?` · <a href="${esc(src.u)}" target="_blank" rel="noopener">${esc(src.t)}</a>`:""}</p>`;
-  const byCat={};
-  for(const p of a.parts){(byCat[p.category]=byCat[p.category]||[]).push(p)}
-  let h="";
-  for(const cat of ACC_CAT_ORDER){
-    const parts=byCat[cat];if(!parts||!parts.length)continue;
-    parts.sort((x,y)=>{
-      const sx=x.speedGbps===null?Infinity:x.speedGbps,sy=y.speedGbps===null?Infinity:y.speedGbps;
-      return sx-sy||x.sku.localeCompare(y.sku);
-    });
-    h+=`<div class="accSec"><h3>${esc(ACC_CAT_LABEL[cat]||cat)}</h3><div class="tablewrap"><table><thead><tr>
-      <th class="nosort">SKU</th><th class="nosort">Speed</th><th class="nosort">Form factor</th><th class="nosort">Reach</th><th class="nosort">Media</th><th class="nosort">Distance</th><th class="nosort">Note</th>
-    </tr></thead><tbody>`;
-    h+=parts.map(p=>`<tr>
-      <td class="sku">${esc(p.sku)}</td>
-      <td>${esc(accSpdLabel(p.speedGbps))}</td>
-      <td>${esc(p.formFactor)}</td>
-      <td>${esc(p.reach||"-")}</td>
-      <td>${esc(p.media)}</td>
-      <td>${esc(distLabel(p.distanceM))}</td>
-      <td style="white-space:normal;min-width:180px">${esc(p.note||"")}</td>
-    </tr>`).join("");
-    h+=`</tbody></table></div></div>`;
-  }
-  $("#accBody").innerHTML=h||`<div class="panel empty">No parts listed for this vendor.</div>`;
-}
+["accQ"].forEach(id=>$("#"+id).addEventListener("input",()=>{renderAccessories();writeHashDebounced()}));
+["accCat","accSpd","accRange","accMedia","accForm"].forEach(id=>$("#"+id).addEventListener("change",()=>{renderAccessories();writeHash()}));
+$("#accClrFilters").onclick=clearAccFilters;
+$("#accBody").addEventListener("click",e=>{
+  const th=e.target.closest("th[data-acc-sort]");if(!th)return;
+  const k=th.dataset.accSort;
+  if(k===accSortKey)accSortDir*=-1;else{accSortKey=k;accSortDir=1}
+  renderAccessories();
+});
 
 /* ---------- Permalinks (hash-encoded Compare / Size state) ---------- */
 let syncingHash=false,hashDeb;
@@ -1041,7 +1134,16 @@ function writeHash(force){
   const view=currentView();
   if(view==="accessories"){
     const id=accId||ACCESSORIES[0]?.id||"";
-    const h=id?"#accessories/"+id:"#accessories";
+    const f=accFilterState();
+    const q=new URLSearchParams();
+    if(f.cat)q.set("category",f.cat);
+    if(f.spd!=="")q.set("speed",f.spd);
+    if(f.range)q.set("range",f.range);
+    if(f.media)q.set("media",f.media);
+    if(f.form)q.set("form",f.form);
+    if(f.q)q.set("q",f.q);
+    let h=id?"#accessories/"+id:"#accessories";
+    const qs=q.toString();if(qs)h+="?"+qs;
     if(location.hash!==h)history.replaceState(null,"",h);
     return;
   }
@@ -1091,11 +1193,22 @@ function readHash(){
   if(!raw)return;
   syncingHash=true;
   try{
-    if(raw==="accessories"||raw.startsWith("accessories/")){
-      const id=raw.split("/")[1]||"";
+    if(raw==="accessories"||raw.startsWith("accessories/")||raw.startsWith("accessories?")){
+      const [pathPart,qs]=raw.split("?");
+      const id=pathPart.split("/")[1]||"";
       if(id&&ACC_BY_ID[id])accId=id;
       else if(!ACC_BY_ID[accId])accId=ACCESSORIES[0]?.id||"";
+      const p=new URLSearchParams(qs||"");
+      fillAccFilterOptions();
+      if(p.has("category"))$("#accCat").value=p.get("category")||"";
+      if(p.has("speed")){$("#accSpd").value=p.get("speed")||"";if(![...$("#accSpd").options].some(o=>o.value===$("#accSpd").value))$("#accSpd").value=""}
+      if(p.has("range")||p.has("reach")){$("#accRange").value=p.get("range")||p.get("reach")||"";if(![...$("#accRange").options].some(o=>o.value===$("#accRange").value))$("#accRange").value=""}
+      if(p.has("media")){$("#accMedia").value=p.get("media")||"";if(![...$("#accMedia").options].some(o=>o.value===$("#accMedia").value))$("#accMedia").value=""}
+      if(p.has("form")){$("#accForm").value=p.get("form")||"";if(![...$("#accForm").options].some(o=>o.value===$("#accForm").value))$("#accForm").value=""}
+      if(p.has("q"))$("#accQ").value=p.get("q")||"";
       showView("accessories",true);
+      const cat=p.get("category");
+      if(cat){const el=$("#acc-sec-"+cat);if(el)el.scrollIntoView({block:"start"})}
       return;
     }
     const p=new URLSearchParams(raw);
