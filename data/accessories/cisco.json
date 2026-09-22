@@ -194,7 +194,17 @@
       "formFactor": "StackWise-480",
       "media": "Stack",
       "distanceM": 0.5,
-      "note": "Catalyst 9300 StackWise-480 (also STACK-T1-1M, STACK-T1-3M)",
+      "note": "Catalyst 9300 StackWise-480",
+      "verified": true
+    },
+    {
+      "sku": "STACK-T1-1M",
+      "category": "stacking",
+      "speedGbps": null,
+      "formFactor": "StackWise-480",
+      "media": "Stack",
+      "distanceM": 1,
+      "note": "Catalyst 9300 StackWise-480",
       "verified": true
     },
     {
@@ -208,13 +218,33 @@
       "verified": true
     },
     {
+      "sku": "STACK-T4-50CM",
+      "category": "stacking",
+      "speedGbps": null,
+      "formFactor": "StackWise-160",
+      "media": "Stack",
+      "distanceM": 0.5,
+      "note": "Catalyst 9200 (requires C9200-STACK-KIT)",
+      "verified": true
+    },
+    {
       "sku": "STACK-T4-1M",
       "category": "stacking",
       "speedGbps": null,
       "formFactor": "StackWise-160",
       "media": "Stack",
       "distanceM": 1,
-      "note": "Catalyst 9200 (requires C9200-STACK-KIT); also STACK-T4-50CM, STACK-T4-3M",
+      "note": "Catalyst 9200 (requires C9200-STACK-KIT)",
+      "verified": true
+    },
+    {
+      "sku": "STACK-T4-3M",
+      "category": "stacking",
+      "speedGbps": null,
+      "formFactor": "StackWise-160",
+      "media": "Stack",
+      "distanceM": 3,
+      "note": "Catalyst 9200 (requires C9200-STACK-KIT)",
       "verified": true
     },
     {

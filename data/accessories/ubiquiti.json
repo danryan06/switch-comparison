@@ -2,7 +2,7 @@
   "vendor": "Ubiquiti",
   "source": "ubiquiti-optics",
   "opticsMatrixUrl": "https://techspecs.ui.com/unifi/switching",
-  "note": "Ubiquiti UniFi optics are universal/programmable (Any Brand Compatible). No LRM offered, and UniFi switches do not stack. The UACC-Uplink-SFP28 DAC auto-negotiates 1/10/25G.",
+  "note": "Ubiquiti UniFi optics are universal/programmable (Any Brand Compatible). No LRM offered, and UniFi switches do not stack. The UACC-Uplink-SFP28 family auto-negotiates 1/10/25G (copper 0.15/0.3 m, fiber 3/30 m).",
   "parts": [
     {
       "sku": "UACC-OM-MM-1G-D",
@@ -96,17 +96,37 @@
       "formFactor": "SFP28",
       "media": "DAC",
       "distanceM": 0.15,
-      "note": "Auto 1/10/25G uplink DAC (also 0.3m, 3m, 30m)",
+      "note": "Auto 1/10/25G uplink DAC (copper)",
       "verified": true
     },
     {
-      "sku": "UACC-Uplink-SFP28-3M",
+      "sku": "UACC-Uplink-SFP28-0.3M",
       "category": "dac",
       "speedGbps": 25,
       "formFactor": "SFP28",
       "media": "DAC",
+      "distanceM": 0.3,
+      "note": "Auto 1/10/25G uplink DAC (copper)",
+      "verified": true
+    },
+    {
+      "sku": "UACC-Uplink-SFP28-3M",
+      "category": "aoc",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "AOC",
       "distanceM": 3,
-      "note": "Auto 1/10/25G uplink DAC",
+      "note": "Auto 1/10/25G uplink AOC (fiber)",
+      "verified": true
+    },
+    {
+      "sku": "UACC-Uplink-SFP28-30M",
+      "category": "aoc",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "AOC",
+      "distanceM": 30,
+      "note": "Auto 1/10/25G uplink AOC (fiber)",
       "verified": true
     }
   ]

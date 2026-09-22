@@ -264,13 +264,33 @@
       "verified": true
     },
     {
+      "sku": "R0Z25A",
+      "category": "stacking",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 1,
+      "note": "VSX inter-switch link on CX 8100/8325/8360",
+      "verified": true
+    },
+    {
       "sku": "JL307A",
       "category": "stacking",
       "speedGbps": 100,
       "formFactor": "QSFP28",
       "media": "DAC",
       "distanceM": 3,
-      "note": "VSX inter-switch link on CX 8100/8325/8360 (also 1m R0Z25A, 5m R0Z26A)",
+      "note": "VSX inter-switch link on CX 8100/8325/8360",
+      "verified": true
+    },
+    {
+      "sku": "R0Z26A",
+      "category": "stacking",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 5,
+      "note": "VSX inter-switch link on CX 8100/8325/8360",
       "verified": true
     },
     {

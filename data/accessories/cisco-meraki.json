@@ -131,7 +131,7 @@
       "formFactor": "QSFP+",
       "media": "Stack",
       "distanceM": 0.5,
-      "note": "MS210/MS225/MS250/MS350/MS410/MS425 (also 1M, 3M)",
+      "note": "MS210/MS225/MS250/MS350/MS410/MS425",
       "verified": true
     },
     {
@@ -145,13 +145,23 @@
       "verified": true
     },
     {
+      "sku": "MA-CBL-40G-3M",
+      "category": "stacking",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "media": "Stack",
+      "distanceM": 3,
+      "note": "MS210/MS225/MS250/MS350/MS410/MS425",
+      "verified": true
+    },
+    {
       "sku": "MA-CBL-100G-50CM",
       "category": "stacking",
       "speedGbps": 100,
       "formFactor": "QSFP28",
       "media": "Stack",
       "distanceM": 0.5,
-      "note": "MS150/MS355/MS450 (also 1M, 3M)",
+      "note": "MS150/MS355/MS450",
       "verified": true
     },
     {
@@ -165,13 +175,43 @@
       "verified": true
     },
     {
+      "sku": "MA-CBL-100G-3M",
+      "category": "stacking",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "Stack",
+      "distanceM": 3,
+      "note": "MS150/MS355/MS450",
+      "verified": true
+    },
+    {
       "sku": "MA-CBL-120G-50CM",
       "category": "stacking",
       "speedGbps": 120,
       "formFactor": "Stack",
       "media": "Stack",
       "distanceM": 0.5,
-      "note": "MS390/Catalyst 9300-M 480G StackWise (also 1M, 3M)",
+      "note": "MS390/Catalyst 9300-M 480G StackWise",
+      "verified": true
+    },
+    {
+      "sku": "MA-CBL-120G-1M",
+      "category": "stacking",
+      "speedGbps": 120,
+      "formFactor": "Stack",
+      "media": "Stack",
+      "distanceM": 1,
+      "note": "MS390/Catalyst 9300-M 480G StackWise",
+      "verified": true
+    },
+    {
+      "sku": "MA-CBL-120G-3M",
+      "category": "stacking",
+      "speedGbps": 120,
+      "formFactor": "Stack",
+      "media": "Stack",
+      "distanceM": 3,
+      "note": "MS390/Catalyst 9300-M 480G StackWise",
       "verified": true
     }
   ]
