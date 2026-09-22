@@ -2,7 +2,7 @@
   "vendor": "Fortinet",
   "source": "fortinet-optics",
   "opticsMatrixUrl": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/Fortinet_Transceivers.pdf",
-  "note": "Fortinet does not list a 10G LRM transceiver; use SR or LR. FortiSwitch has no dedicated stacking cable, FortiLink runs over standard DACs or optics",
+  "note": "FortiSwitch has no dedicated stacking cable; FortiLink runs over standard DACs or optics. 25G/40G/100G optic part numbers not yet confirmed against your catalog; see the transceivers datasheet.",
   "parts": [
     {
       "sku": "FN-TRAN-SX",
@@ -11,7 +11,8 @@
       "formFactor": "SFP",
       "reach": "SX",
       "media": "MMF",
-      "distanceM": 550
+      "distanceM": 550,
+      "verified": true
     },
     {
       "sku": "FN-TRAN-LX",
@@ -20,7 +21,8 @@
       "formFactor": "SFP",
       "reach": "LX",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": true
     },
     {
       "sku": "FN-TRAN-GC",
@@ -29,7 +31,8 @@
       "formFactor": "SFP",
       "reach": "T",
       "media": "Copper",
-      "distanceM": 100
+      "distanceM": 100,
+      "verified": true
     },
     {
       "sku": "FN-TRAN-SFP+SR",
@@ -38,7 +41,8 @@
       "formFactor": "SFP+",
       "reach": "SR",
       "media": "MMF",
-      "distanceM": 300
+      "distanceM": 300,
+      "verified": true
     },
     {
       "sku": "FN-TRAN-SFP+LR",
@@ -47,7 +51,8 @@
       "formFactor": "SFP+",
       "reach": "LR",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": true
     },
     {
       "sku": "FN-TRAN-SFP+ER",
@@ -56,7 +61,8 @@
       "formFactor": "SFP+",
       "reach": "ER",
       "media": "SMF",
-      "distanceM": 40000
+      "distanceM": 40000,
+      "verified": false
     },
     {
       "sku": "FN-TRAN-SFP28-SR",
@@ -65,7 +71,8 @@
       "formFactor": "SFP28",
       "reach": "SR",
       "media": "MMF",
-      "distanceM": 100
+      "distanceM": 100,
+      "verified": false
     },
     {
       "sku": "FN-TRAN-SFP28-LR",
@@ -74,7 +81,8 @@
       "formFactor": "SFP28",
       "reach": "LR",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": false
     },
     {
       "sku": "FN-TRAN-QSFP+SR",
@@ -83,7 +91,8 @@
       "formFactor": "QSFP+",
       "reach": "SR4",
       "media": "MMF",
-      "distanceM": 150
+      "distanceM": 150,
+      "verified": false
     },
     {
       "sku": "FN-TRAN-QSFP+LR",
@@ -92,7 +101,8 @@
       "formFactor": "QSFP+",
       "reach": "LR4",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": false
     },
     {
       "sku": "FN-TRAN-QSFP28-SR",
@@ -101,7 +111,8 @@
       "formFactor": "QSFP28",
       "reach": "SR4",
       "media": "MMF",
-      "distanceM": 100
+      "distanceM": 100,
+      "verified": false
     },
     {
       "sku": "FN-TRAN-QSFP28-LR4",
@@ -110,39 +121,69 @@
       "formFactor": "QSFP28",
       "reach": "LR4",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": false
     },
     {
-      "sku": "SP-CABLE-FS-SFP+1",
+      "sku": "FN-CABLE-SFP+1",
       "category": "dac",
       "speedGbps": 10,
       "formFactor": "SFP+",
       "media": "DAC",
-      "distanceM": 1
+      "distanceM": 1,
+      "note": "Passive",
+      "verified": true
     },
     {
-      "sku": "SP-CABLE-FS-SFP+3",
+      "sku": "FN-CABLE-SFP+3",
       "category": "dac",
       "speedGbps": 10,
       "formFactor": "SFP+",
       "media": "DAC",
-      "distanceM": 3
+      "distanceM": 3,
+      "note": "Passive",
+      "verified": true
     },
     {
-      "sku": "FS-SFP28-DAC-1M",
+      "sku": "FN-CABLE-SFP+5",
       "category": "dac",
-      "speedGbps": 25,
-      "formFactor": "SFP28",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
       "media": "DAC",
-      "distanceM": 1
+      "distanceM": 5,
+      "note": "Passive",
+      "verified": true
     },
     {
-      "sku": "FS-QSFP-DAC-1M",
+      "sku": "SP-CABLE-ADASFP+",
       "category": "dac",
-      "speedGbps": 40,
-      "formFactor": "QSFP+",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
       "media": "DAC",
-      "distanceM": 1
+      "distanceM": 10,
+      "note": "Active DAC",
+      "verified": true
+    },
+    {
+      "sku": "FN-TRAN-SFP+LRM",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LRM",
+      "media": "MMF",
+      "distanceM": 220,
+      "verified": true
+    },
+    {
+      "sku": "FN-TRAN-SFP+GC",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 30,
+      "note": "10GBASE-T RJ45 SFP+",
+      "verified": true
     }
   ]
 }

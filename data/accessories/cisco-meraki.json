@@ -11,7 +11,8 @@
       "formFactor": "SFP",
       "reach": "SX",
       "media": "MMF",
-      "distanceM": 550
+      "distanceM": 550,
+      "verified": false
     },
     {
       "sku": "MA-SFP-1GB-LX10",
@@ -20,7 +21,8 @@
       "formFactor": "SFP",
       "reach": "LX",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": false
     },
     {
       "sku": "MA-SFP-1GB-TX",
@@ -29,7 +31,8 @@
       "formFactor": "SFP",
       "reach": "T",
       "media": "Copper",
-      "distanceM": 100
+      "distanceM": 100,
+      "verified": false
     },
     {
       "sku": "MA-SFP-10GB-SR",
@@ -38,7 +41,8 @@
       "formFactor": "SFP+",
       "reach": "SR",
       "media": "MMF",
-      "distanceM": 300
+      "distanceM": 300,
+      "verified": false
     },
     {
       "sku": "MA-SFP-10GB-LR",
@@ -47,7 +51,8 @@
       "formFactor": "SFP+",
       "reach": "LR",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": false
     },
     {
       "sku": "MA-SFP-10GB-LRM",
@@ -56,7 +61,8 @@
       "formFactor": "SFP+",
       "reach": "LRM",
       "media": "MMF",
-      "distanceM": 220
+      "distanceM": 220,
+      "verified": true
     },
     {
       "sku": "MA-QSFP-40G-SR4",
@@ -65,7 +71,8 @@
       "formFactor": "QSFP+",
       "reach": "SR4",
       "media": "MMF",
-      "distanceM": 150
+      "distanceM": 150,
+      "verified": false
     },
     {
       "sku": "MA-QSFP-40G-LR4",
@@ -74,7 +81,8 @@
       "formFactor": "QSFP+",
       "reach": "LR4",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": false
     },
     {
       "sku": "MA-QSFP-100G-SR4",
@@ -83,7 +91,8 @@
       "formFactor": "QSFP28",
       "reach": "SR4",
       "media": "MMF",
-      "distanceM": 100
+      "distanceM": 100,
+      "verified": false
     },
     {
       "sku": "MA-QSFP-100G-LR4",
@@ -92,7 +101,8 @@
       "formFactor": "QSFP28",
       "reach": "LR4",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": false
     },
     {
       "sku": "MA-CBL-TA-1M",
@@ -101,7 +111,8 @@
       "formFactor": "SFP+",
       "media": "DAC",
       "distanceM": 1,
-      "note": "10G SFP+ Twinax"
+      "note": "10G SFP+ Twinax",
+      "verified": false
     },
     {
       "sku": "MA-CBL-TA-3M",
@@ -110,7 +121,8 @@
       "formFactor": "SFP+",
       "media": "DAC",
       "distanceM": 3,
-      "note": "10G SFP+ Twinax"
+      "note": "10G SFP+ Twinax",
+      "verified": false
     },
     {
       "sku": "MA-CBL-40G-50CM",
@@ -119,7 +131,8 @@
       "formFactor": "QSFP+",
       "media": "Stack",
       "distanceM": 0.5,
-      "note": "MS210/MS225/MS250/MS350/MS410/MS425 (also 1M, 3M)"
+      "note": "MS210/MS225/MS250/MS350/MS410/MS425 (also 1M, 3M)",
+      "verified": true
     },
     {
       "sku": "MA-CBL-40G-1M",
@@ -128,7 +141,8 @@
       "formFactor": "QSFP+",
       "media": "Stack",
       "distanceM": 1,
-      "note": "MS210/MS225/MS250/MS350/MS410/MS425"
+      "note": "MS210/MS225/MS250/MS350/MS410/MS425",
+      "verified": true
     },
     {
       "sku": "MA-CBL-100G-50CM",
@@ -137,7 +151,8 @@
       "formFactor": "QSFP28",
       "media": "Stack",
       "distanceM": 0.5,
-      "note": "MS150/MS355/MS450 (also 1M, 3M)"
+      "note": "MS150/MS355/MS450 (also 1M, 3M)",
+      "verified": true
     },
     {
       "sku": "MA-CBL-100G-1M",
@@ -146,7 +161,8 @@
       "formFactor": "QSFP28",
       "media": "Stack",
       "distanceM": 1,
-      "note": "MS150/MS355/MS450"
+      "note": "MS150/MS355/MS450",
+      "verified": true
     },
     {
       "sku": "MA-CBL-120G-50CM",
@@ -155,7 +171,8 @@
       "formFactor": "Stack",
       "media": "Stack",
       "distanceM": 0.5,
-      "note": "MS390/Catalyst 9300-M 480G StackWise (also 1M, 3M)"
+      "note": "MS390/Catalyst 9300-M 480G StackWise (also 1M, 3M)",
+      "verified": true
     }
   ]
 }

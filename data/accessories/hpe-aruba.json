@@ -2,7 +2,7 @@
   "vendor": "HPE Aruba",
   "source": "aruba-optics",
   "opticsMatrixUrl": "https://hpe.com/networking/support (Aruba Switch Transceiver Guide)",
-  "note": "Aruba CX 8100/8325/8360 datasheets state 10G LRM is not supported; use SR or LR",
+  "note": "Aruba CX has no dedicated stacking cable. VSF (CX 6300) runs over the front-panel SFP+/SFP28 ports using standard DACs; VSX (CX 8100/8325/8360) runs over a QSFP28 DAC or optics inter-switch link. CX 8100/8325/8360 datasheets state 10G LRM is not supported.",
   "parts": [
     {
       "sku": "J4858D",
@@ -11,7 +11,8 @@
       "formFactor": "SFP",
       "reach": "SX",
       "media": "MMF",
-      "distanceM": 550
+      "distanceM": 550,
+      "verified": true
     },
     {
       "sku": "J4859D",
@@ -20,7 +21,8 @@
       "formFactor": "SFP",
       "reach": "LX",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": true
     },
     {
       "sku": "J8177D",
@@ -29,7 +31,8 @@
       "formFactor": "SFP",
       "reach": "T",
       "media": "Copper",
-      "distanceM": 100
+      "distanceM": 100,
+      "verified": true
     },
     {
       "sku": "J9150D",
@@ -38,7 +41,8 @@
       "formFactor": "SFP+",
       "reach": "SR",
       "media": "MMF",
-      "distanceM": 300
+      "distanceM": 300,
+      "verified": true
     },
     {
       "sku": "J9151E",
@@ -47,7 +51,8 @@
       "formFactor": "SFP+",
       "reach": "LR",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": true
     },
     {
       "sku": "J9153D",
@@ -56,7 +61,8 @@
       "formFactor": "SFP+",
       "reach": "ER",
       "media": "SMF",
-      "distanceM": 40000
+      "distanceM": 40000,
+      "verified": true
     },
     {
       "sku": "JL563C",
@@ -65,7 +71,8 @@
       "formFactor": "SFP+",
       "reach": "T",
       "media": "Copper",
-      "distanceM": 30
+      "distanceM": 30,
+      "verified": true
     },
     {
       "sku": "JL484A",
@@ -74,7 +81,8 @@
       "formFactor": "SFP28",
       "reach": "SR",
       "media": "MMF",
-      "distanceM": 100
+      "distanceM": 100,
+      "verified": true
     },
     {
       "sku": "JL486A",
@@ -83,7 +91,8 @@
       "formFactor": "SFP28",
       "reach": "LR",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": true
     },
     {
       "sku": "JH231A",
@@ -92,7 +101,8 @@
       "formFactor": "QSFP+",
       "reach": "SR4",
       "media": "MMF",
-      "distanceM": 150
+      "distanceM": 150,
+      "verified": true
     },
     {
       "sku": "JH232A",
@@ -101,7 +111,8 @@
       "formFactor": "QSFP+",
       "reach": "LR4",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": true
     },
     {
       "sku": "JL309A",
@@ -110,7 +121,8 @@
       "formFactor": "QSFP28",
       "reach": "SR4",
       "media": "MMF",
-      "distanceM": 100
+      "distanceM": 100,
+      "verified": true
     },
     {
       "sku": "JL310A",
@@ -119,7 +131,8 @@
       "formFactor": "QSFP28",
       "reach": "LR4",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": true
     },
     {
       "sku": "J9281D",
@@ -127,7 +140,8 @@
       "speedGbps": 10,
       "formFactor": "SFP+",
       "media": "DAC",
-      "distanceM": 1
+      "distanceM": 1,
+      "verified": true
     },
     {
       "sku": "J9283D",
@@ -135,7 +149,8 @@
       "speedGbps": 10,
       "formFactor": "SFP+",
       "media": "DAC",
-      "distanceM": 3
+      "distanceM": 3,
+      "verified": true
     },
     {
       "sku": "JL487A",
@@ -143,7 +158,8 @@
       "speedGbps": 25,
       "formFactor": "SFP28",
       "media": "DAC",
-      "distanceM": 0.65
+      "distanceM": 0.65,
+      "verified": true
     },
     {
       "sku": "JL488A",
@@ -151,7 +167,8 @@
       "speedGbps": 25,
       "formFactor": "SFP28",
       "media": "DAC",
-      "distanceM": 3
+      "distanceM": 3,
+      "verified": true
     },
     {
       "sku": "JL307A",
@@ -160,7 +177,8 @@
       "formFactor": "QSFP28",
       "media": "DAC",
       "distanceM": 3,
-      "note": "Also used for the VSX inter-switch link on CX 8325/8360"
+      "note": "Also used for the VSX inter-switch link on CX 8325/8360",
+      "verified": true
     },
     {
       "sku": "JL856A",
@@ -168,7 +186,82 @@
       "speedGbps": 100,
       "formFactor": "QSFP28",
       "media": "AOC",
-      "distanceM": 2
+      "distanceM": 2,
+      "verified": true
+    },
+    {
+      "sku": "JL489A",
+      "category": "dac",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "DAC",
+      "distanceM": 5,
+      "verified": true
+    },
+    {
+      "sku": "R0M46A",
+      "category": "dac",
+      "speedGbps": 50,
+      "formFactor": "SFP56",
+      "media": "DAC",
+      "distanceM": 0.65,
+      "verified": true
+    },
+    {
+      "sku": "R0M47A",
+      "category": "dac",
+      "speedGbps": 50,
+      "formFactor": "SFP56",
+      "media": "DAC",
+      "distanceM": 3,
+      "verified": true
+    },
+    {
+      "sku": "S1J07A",
+      "category": "dac",
+      "speedGbps": 50,
+      "formFactor": "QSFP56",
+      "media": "DAC",
+      "distanceM": 0.65,
+      "note": "QSFP56 to SFP56 breakout DAC",
+      "verified": true
+    },
+    {
+      "sku": "S1J08A",
+      "category": "dac",
+      "speedGbps": 50,
+      "formFactor": "QSFP56",
+      "media": "DAC",
+      "distanceM": 3,
+      "note": "QSFP56 to SFP56 breakout DAC",
+      "verified": true
+    },
+    {
+      "sku": "R0M44A",
+      "category": "aoc",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "AOC",
+      "distanceM": 3,
+      "verified": true
+    },
+    {
+      "sku": "R0M45A",
+      "category": "aoc",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "AOC",
+      "distanceM": 7,
+      "verified": true
+    },
+    {
+      "sku": "R0Z21A",
+      "category": "aoc",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "AOC",
+      "distanceM": 15,
+      "verified": true
     },
     {
       "sku": "JL307A",
@@ -177,7 +270,28 @@
       "formFactor": "QSFP28",
       "media": "DAC",
       "distanceM": 3,
-      "note": "CX has no dedicated stacking cable; VSF/VSX runs over standard QSFP28 DACs or optics"
+      "note": "VSX inter-switch link on CX 8100/8325/8360 (also 1m R0Z25A, 5m R0Z26A)",
+      "verified": true
+    },
+    {
+      "sku": "JL488A",
+      "category": "stacking",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "DAC",
+      "distanceM": 3,
+      "note": "VSF stacking link over the 25G front ports on CX 6300",
+      "verified": true
+    },
+    {
+      "sku": "J9283D",
+      "category": "stacking",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 3,
+      "note": "VSF stacking link over the 10G front ports on CX 6300",
+      "verified": true
     }
   ]
 }

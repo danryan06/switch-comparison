@@ -10,7 +10,8 @@
       "formFactor": "SFP",
       "reach": "SX",
       "media": "MMF",
-      "distanceM": 550
+      "distanceM": 550,
+      "verified": true
     },
     {
       "sku": "GLC-LH-SMD",
@@ -19,7 +20,8 @@
       "formFactor": "SFP",
       "reach": "LX/LH",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": true
     },
     {
       "sku": "GLC-T",
@@ -28,7 +30,8 @@
       "formFactor": "SFP",
       "reach": "T",
       "media": "Copper",
-      "distanceM": 100
+      "distanceM": 100,
+      "verified": true
     },
     {
       "sku": "SFP-10G-SR",
@@ -37,7 +40,8 @@
       "formFactor": "SFP+",
       "reach": "SR",
       "media": "MMF",
-      "distanceM": 300
+      "distanceM": 300,
+      "verified": true
     },
     {
       "sku": "SFP-10G-LR",
@@ -46,7 +50,8 @@
       "formFactor": "SFP+",
       "reach": "LR",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": true
     },
     {
       "sku": "SFP-10G-LRM",
@@ -55,7 +60,8 @@
       "formFactor": "SFP+",
       "reach": "LRM",
       "media": "MMF",
-      "distanceM": 220
+      "distanceM": 220,
+      "verified": true
     },
     {
       "sku": "SFP-10G-ER",
@@ -64,7 +70,8 @@
       "formFactor": "SFP+",
       "reach": "ER",
       "media": "SMF",
-      "distanceM": 40000
+      "distanceM": 40000,
+      "verified": true
     },
     {
       "sku": "SFP-25G-SR-S",
@@ -73,7 +80,8 @@
       "formFactor": "SFP28",
       "reach": "SR",
       "media": "MMF",
-      "distanceM": 100
+      "distanceM": 100,
+      "verified": true
     },
     {
       "sku": "SFP-25G-LR-S",
@@ -82,7 +90,8 @@
       "formFactor": "SFP28",
       "reach": "LR",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": true
     },
     {
       "sku": "QSFP-40G-SR4",
@@ -91,7 +100,8 @@
       "formFactor": "QSFP+",
       "reach": "SR4",
       "media": "MMF",
-      "distanceM": 150
+      "distanceM": 150,
+      "verified": true
     },
     {
       "sku": "QSFP-40G-LR4",
@@ -100,7 +110,8 @@
       "formFactor": "QSFP+",
       "reach": "LR4",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": true
     },
     {
       "sku": "QSFP-100G-SR4-S",
@@ -109,7 +120,8 @@
       "formFactor": "QSFP28",
       "reach": "SR4",
       "media": "MMF",
-      "distanceM": 100
+      "distanceM": 100,
+      "verified": true
     },
     {
       "sku": "QSFP-100G-LR4-S",
@@ -118,7 +130,8 @@
       "formFactor": "QSFP28",
       "reach": "LR4",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": true
     },
     {
       "sku": "SFP-H10GB-CU1M",
@@ -126,7 +139,8 @@
       "speedGbps": 10,
       "formFactor": "SFP+",
       "media": "DAC",
-      "distanceM": 1
+      "distanceM": 1,
+      "verified": true
     },
     {
       "sku": "SFP-H10GB-CU3M",
@@ -134,7 +148,8 @@
       "speedGbps": 10,
       "formFactor": "SFP+",
       "media": "DAC",
-      "distanceM": 3
+      "distanceM": 3,
+      "verified": true
     },
     {
       "sku": "SFP-H25G-CU3M",
@@ -142,7 +157,8 @@
       "speedGbps": 25,
       "formFactor": "SFP28",
       "media": "DAC",
-      "distanceM": 3
+      "distanceM": 3,
+      "verified": true
     },
     {
       "sku": "QSFP-H40G-CU3M",
@@ -150,7 +166,8 @@
       "speedGbps": 40,
       "formFactor": "QSFP+",
       "media": "DAC",
-      "distanceM": 3
+      "distanceM": 3,
+      "verified": true
     },
     {
       "sku": "QSFP-100G-CU3M",
@@ -158,7 +175,8 @@
       "speedGbps": 100,
       "formFactor": "QSFP28",
       "media": "DAC",
-      "distanceM": 3
+      "distanceM": 3,
+      "verified": true
     },
     {
       "sku": "SFP-10G-AOC3M",
@@ -166,7 +184,8 @@
       "speedGbps": 10,
       "formFactor": "SFP+",
       "media": "AOC",
-      "distanceM": 3
+      "distanceM": 3,
+      "verified": true
     },
     {
       "sku": "STACK-T1-50CM",
@@ -175,7 +194,8 @@
       "formFactor": "StackWise-480",
       "media": "Stack",
       "distanceM": 0.5,
-      "note": "Catalyst 9300 StackWise-480 (also STACK-T1-1M, STACK-T1-3M)"
+      "note": "Catalyst 9300 StackWise-480 (also STACK-T1-1M, STACK-T1-3M)",
+      "verified": true
     },
     {
       "sku": "STACK-T1-3M",
@@ -184,7 +204,8 @@
       "formFactor": "StackWise-480",
       "media": "Stack",
       "distanceM": 3,
-      "note": "Catalyst 9300 StackWise-480"
+      "note": "Catalyst 9300 StackWise-480",
+      "verified": true
     },
     {
       "sku": "STACK-T4-1M",
@@ -193,7 +214,8 @@
       "formFactor": "StackWise-160",
       "media": "Stack",
       "distanceM": 1,
-      "note": "Catalyst 9200 (requires C9200-STACK-KIT); also STACK-T4-50CM, STACK-T4-3M"
+      "note": "Catalyst 9200 (requires C9200-STACK-KIT); also STACK-T4-50CM, STACK-T4-3M",
+      "verified": true
     },
     {
       "sku": "C9300-STACK-KIT",
@@ -202,7 +224,8 @@
       "formFactor": "Kit",
       "media": "Kit",
       "distanceM": 0,
-      "note": "StackWise adapter kit for Catalyst 9300 fixed models. 9500 StackWise Virtual runs over standard uplink optics"
+      "note": "StackWise adapter kit for Catalyst 9300 fixed models. 9500 StackWise Virtual runs over standard uplink optics",
+      "verified": true
     }
   ]
 }

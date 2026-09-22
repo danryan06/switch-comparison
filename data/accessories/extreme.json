@@ -2,7 +2,7 @@
   "vendor": "Extreme Networks",
   "source": "extreme-optics",
   "opticsMatrixUrl": "https://optics.extremenetworks.com/",
-  "note": "5420 stacks over SFP-DD cables; 5520/5720 stack over the built-in QSFP28 ports using QSFP28 DACs",
+  "note": "10G SFP+ DACs are supported on uplink and universal (stacking) ports, except the access ports on the 5420F. 5420 stacks over SFP-DD cables (20G-DACP-SFPDD series); 5520/5720 stack over the built-in QSFP28 ports using QSFP28 DACs (see the optics matrix). 100G optics part numbers vary by platform; confirm on the matrix.",
   "parts": [
     {
       "sku": "10051H",
@@ -11,7 +11,8 @@
       "formFactor": "SFP",
       "reach": "SX",
       "media": "MMF",
-      "distanceM": 550
+      "distanceM": 550,
+      "verified": false
     },
     {
       "sku": "10052H",
@@ -20,7 +21,8 @@
       "formFactor": "SFP",
       "reach": "LX",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": false
     },
     {
       "sku": "10065",
@@ -29,7 +31,8 @@
       "formFactor": "SFP",
       "reach": "T",
       "media": "Copper",
-      "distanceM": 100
+      "distanceM": 100,
+      "verified": false
     },
     {
       "sku": "10301",
@@ -38,7 +41,8 @@
       "formFactor": "SFP+",
       "reach": "SR",
       "media": "MMF",
-      "distanceM": 300
+      "distanceM": 300,
+      "verified": true
     },
     {
       "sku": "10302",
@@ -47,7 +51,8 @@
       "formFactor": "SFP+",
       "reach": "LR",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": true
     },
     {
       "sku": "10303",
@@ -56,16 +61,8 @@
       "formFactor": "SFP+",
       "reach": "LRM",
       "media": "MMF",
-      "distanceM": 220
-    },
-    {
-      "sku": "10304",
-      "category": "transceiver",
-      "speedGbps": 10,
-      "formFactor": "SFP+",
-      "reach": "ER",
-      "media": "SMF",
-      "distanceM": 40000
+      "distanceM": 220,
+      "verified": true
     },
     {
       "sku": "10501",
@@ -74,7 +71,8 @@
       "formFactor": "SFP28",
       "reach": "SR",
       "media": "MMF",
-      "distanceM": 100
+      "distanceM": 100,
+      "verified": false
     },
     {
       "sku": "10502",
@@ -83,7 +81,8 @@
       "formFactor": "SFP28",
       "reach": "LR",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": false
     },
     {
       "sku": "10319",
@@ -92,7 +91,8 @@
       "formFactor": "QSFP+",
       "reach": "SR4",
       "media": "MMF",
-      "distanceM": 150
+      "distanceM": 150,
+      "verified": false
     },
     {
       "sku": "10321",
@@ -101,25 +101,35 @@
       "formFactor": "QSFP+",
       "reach": "LR4",
       "media": "SMF",
-      "distanceM": 10000
+      "distanceM": 10000,
+      "verified": false
     },
     {
-      "sku": "AA1405001-E6",
-      "category": "transceiver",
-      "speedGbps": 100,
-      "formFactor": "QSFP28",
-      "reach": "SR4",
-      "media": "MMF",
-      "distanceM": 100
+      "sku": "10G-DACP-SFPZ5M",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 0.5,
+      "verified": true
     },
     {
-      "sku": "AA1405002-E6",
-      "category": "transceiver",
-      "speedGbps": 100,
-      "formFactor": "QSFP28",
-      "reach": "LR4",
-      "media": "SMF",
-      "distanceM": 10000
+      "sku": "10304",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 1,
+      "verified": true
+    },
+    {
+      "sku": "10305",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 3,
+      "verified": true
     },
     {
       "sku": "10306",
@@ -127,51 +137,66 @@
       "speedGbps": 10,
       "formFactor": "SFP+",
       "media": "DAC",
-      "distanceM": 1,
-      "note": "10G SFP+ passive DAC (also 10307 3m, 10308 5m)"
+      "distanceM": 5,
+      "verified": true
     },
     {
-      "sku": "10520",
+      "sku": "10307",
       "category": "dac",
-      "speedGbps": 25,
-      "formFactor": "SFP28",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
       "media": "DAC",
-      "distanceM": 1
+      "distanceM": 10,
+      "verified": true
     },
     {
-      "sku": "10323",
-      "category": "dac",
-      "speedGbps": 40,
-      "formFactor": "QSFP+",
-      "media": "DAC",
-      "distanceM": 1
+      "sku": "10G-AOC-SFP10M",
+      "category": "aoc",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "AOC",
+      "distanceM": 10,
+      "verified": true
     },
     {
-      "sku": "10GB-C01-QSFP28",
-      "category": "dac",
-      "speedGbps": 100,
-      "formFactor": "QSFP28",
-      "media": "DAC",
-      "distanceM": 1,
-      "note": "Also used for 5520/5720 QSFP28 stacking"
+      "sku": "20G-DACP-SFPDDZ5M",
+      "category": "stacking",
+      "speedGbps": 20,
+      "formFactor": "SFP-DD",
+      "media": "Stack",
+      "distanceM": 0.5,
+      "note": "5420 SFP-DD stacking cable",
+      "verified": true
     },
     {
-      "sku": "SFP-DD-DAC-1M",
+      "sku": "20G-DACP-SFPDD1M",
       "category": "stacking",
       "speedGbps": 20,
       "formFactor": "SFP-DD",
       "media": "Stack",
       "distanceM": 1,
-      "note": "5420 SFP-DD stacking cable"
+      "note": "5420 SFP-DD stacking cable",
+      "verified": true
     },
     {
-      "sku": "10GB-C01-QSFP28",
+      "sku": "20G-DACP-SFPDD3M",
       "category": "stacking",
-      "speedGbps": 100,
-      "formFactor": "QSFP28",
-      "media": "DAC",
-      "distanceM": 1,
-      "note": "5520 (40G) and 5720 (100G) stack over the built-in QSFP28 ports using QSFP28 DACs"
+      "speedGbps": 20,
+      "formFactor": "SFP-DD",
+      "media": "Stack",
+      "distanceM": 3,
+      "note": "5420 SFP-DD stacking cable",
+      "verified": true
+    },
+    {
+      "sku": "20G-DACP-SFPDD5M",
+      "category": "stacking",
+      "speedGbps": 20,
+      "formFactor": "SFP-DD",
+      "media": "Stack",
+      "distanceM": 5,
+      "note": "5420 SFP-DD stacking cable",
+      "verified": true
     }
   ]
 }

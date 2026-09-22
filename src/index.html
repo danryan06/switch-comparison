@@ -401,7 +401,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
   <section class="view" id="v-check">
     <div class="about" style="max-width:none">
       <h3 style="margin-top:0">Needs checking</h3>
-      <p>These values disagree between two places in the same vendor datasheet, or had to be derived. They are shown as stated until someone confirms them against a newer datasheet, ordering guide, or written vendor confirmation. To propose a fix, <a href="https://github.com/danryan06/switch-comparison/issues/new?template=correction.yml" target="_blank" rel="noopener">open a correction issue</a> or see CONTRIBUTING.md for how to clear one in a pull request.</p>
+      <p>These values disagree between two places in the same vendor datasheet, or had to be derived. They are shown as stated until someone confirms them against a newer datasheet, ordering guide, or written vendor confirmation. Accessory SKUs that are not yet traced to a vendor matrix are listed below as well; they still appear in Accessories without a check tag. To propose a fix, <a href="https://github.com/danryan06/switch-comparison/issues/new?template=correction.yml" target="_blank" rel="noopener">open a correction issue</a> or see CONTRIBUTING.md for how to clear one in a pull request.</p>
       <div id="chkBody"></div>
     </div>
   </section>
@@ -1140,14 +1140,31 @@ const FAM_LABEL={macsec:"MACsec",bgp:"BGP",routing:"Dynamic routing",routeScale:
     return {s,what:s.own.map(k=>OWN_LABEL[k]||k).join(", ")||"PoE budget",note:[s.vnote,flagged.length?"Affected: "+flagged.join("; "):""].filter(Boolean).join(". ")};
   });
   const fams=Object.entries(FAM).filter(([k,f])=>f.famVerify.length);
-  $("#chkLink").textContent=`Needs checking (${rows.length+fams.length})`;
+  const accRows=[];
+  for(const a of ACCESSORIES){
+    for(const p of a.parts){
+      if(p.verified===false)accRows.push({a,p});
+    }
+  }
+  $("#chkLink").textContent=`Needs checking (${rows.length+fams.length+accRows.length})`;
   let h=`<h3>Models (${rows.length})</h3><div class="tablewrap"><table><thead><tr><th class="nosort">Model</th><th class="nosort">Family</th><th class="nosort">What</th><th class="nosort">Why</th></tr></thead><tbody>`;
   h+=rows.map(r=>`<tr><td class="sku"><button class="linkbtn" data-open="${esc(r.s.sku)}">${esc(r.s.sku)}</button></td><td>${esc(FAM[r.s.fam].v)} ${esc(FAM[r.s.fam].name)}</td><td>${esc(r.what)}</td><td style="white-space:normal;min-width:280px">${esc(r.note)}</td></tr>`).join("");
   h+=`</tbody></table></div><h3>Whole families (${fams.length})</h3><div class="tablewrap"><table><thead><tr><th class="nosort">Family</th><th class="nosort">What</th><th class="nosort">Why</th></tr></thead><tbody>`;
   h+=fams.map(([k,f])=>`<tr><td>${esc(f.v)} ${esc(f.name)}</td><td style="white-space:normal">${esc(f.famVerify.map(x=>FAM_LABEL[x]||x).join(", "))}</td><td style="white-space:normal;min-width:280px">${esc(f.fnote||"Varies by model")}</td></tr>`).join("");
+  h+=`</tbody></table></div><h3>Accessories (${accRows.length})</h3><p class="small" style="margin:0 0 10px">These accessory SKUs are listed in Accessories but are not yet traced to a vendor datasheet or optics matrix. Confirm them, then set <code>verified: true</code>.</p><div class="tablewrap"><table><thead><tr><th class="nosort">Vendor</th><th class="nosort">SKU</th><th class="nosort">Category</th><th class="nosort">Spec</th><th class="nosort">Note</th></tr></thead><tbody>`;
+  h+=accRows.map(({a,p})=>{
+    const spec=[accSpdLabel(p.speedGbps),p.formFactor,p.reach,p.media,distLabel(p.distanceM)].filter(Boolean).join(" · ");
+    return `<tr><td>${esc(a.vendor)}</td><td class="sku"><button type="button" class="linkbtn" data-acc-goto="${esc(a.id)}">${esc(p.sku)}</button></td><td>${esc(ACC_CAT_LABEL[p.category]||p.category)}</td><td style="white-space:normal">${esc(spec)}</td><td style="white-space:normal;min-width:200px">${esc(p.note||"Needs a vendor source")}</td></tr>`;
+  }).join("");
   h+="</tbody></table></div>";
   $("#chkBody").innerHTML=h;
 })();
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-acc-goto]");if(!b)return;
+  e.preventDefault();
+  const id=b.dataset.accGoto;if(!ACC_BY_ID[id])return;
+  accId=id;showView("accessories");
+});
 const famCounts=Object.entries(FAM).map(([k,f])=>`${f.v} ${f.name} (${SKUS.filter(s=>s.fam===k).length})`);
 $("#coverage").textContent=`${SKUS.length} models across ${Object.keys(FAM).length} families: ${famCounts.join(", ")}. FortiSwitch models no longer on the current datasheets are left out for now.`;
 $("#updated").textContent="Data updated "+DATA.updated+".";

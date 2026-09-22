@@ -2,27 +2,29 @@
   "vendor": "Ubiquiti",
   "source": "ubiquiti-optics",
   "opticsMatrixUrl": "https://techspecs.ui.com/unifi/switching",
-  "note": "Ubiquiti UniFi optics ship as matched pairs (-D suffix). No LRM offered, and UniFi switches do not stack",
+  "note": "Ubiquiti UniFi optics are universal/programmable (Any Brand Compatible). No LRM offered, and UniFi switches do not stack. The UACC-Uplink-SFP28 DAC auto-negotiates 1/10/25G.",
   "parts": [
     {
-      "sku": "UACC-OM-MM-1G-D-2",
+      "sku": "UACC-OM-MM-1G-D",
       "category": "transceiver",
       "speedGbps": 1,
       "formFactor": "SFP",
       "reach": "SX",
       "media": "MMF",
       "distanceM": 550,
-      "note": "Sold as a pair"
+      "note": "Sold single/2-pack/20-pack",
+      "verified": true
     },
     {
-      "sku": "UACC-OM-SM-1G-D-2",
+      "sku": "UACC-OM-SM-1G-S-2",
       "category": "transceiver",
       "speedGbps": 1,
       "formFactor": "SFP",
-      "reach": "LX",
+      "reach": "BiDi",
       "media": "SMF",
-      "distanceM": 10000,
-      "note": "Sold as a pair"
+      "distanceM": 3000,
+      "note": "Bidirectional, simplex LC, 2-pack",
+      "verified": true
     },
     {
       "sku": "UACC-CM-RJ45-1G",
@@ -31,87 +33,81 @@
       "formFactor": "SFP",
       "reach": "T",
       "media": "Copper",
-      "distanceM": 100
+      "distanceM": 100,
+      "note": "SFP to RJ45 adapter",
+      "verified": true
     },
     {
-      "sku": "UACC-OM-MM-10G-D-2",
+      "sku": "UACC-OM-MM-10G-D",
       "category": "transceiver",
       "speedGbps": 10,
       "formFactor": "SFP+",
       "reach": "SR",
       "media": "MMF",
-      "distanceM": 300,
-      "note": "Sold as a pair"
+      "distanceM": 400,
+      "note": "Sold single/2-pack/20-pack",
+      "verified": true
     },
     {
-      "sku": "UACC-OM-SM-10G-D-2",
+      "sku": "UACC-OM-SM-10G-D",
       "category": "transceiver",
       "speedGbps": 10,
       "formFactor": "SFP+",
       "reach": "LR",
       "media": "SMF",
       "distanceM": 10000,
-      "note": "Sold as a pair"
+      "verified": false
     },
     {
-      "sku": "UACC-CM-RJ45-MG",
+      "sku": "UACC-OM-SFP10-1310",
       "category": "transceiver",
       "speedGbps": 10,
       "formFactor": "SFP+",
-      "reach": "T",
-      "media": "Copper",
-      "distanceM": 100,
-      "note": "Multi-gig RJ45"
+      "reach": "CWDM",
+      "media": "SMF",
+      "distanceM": 20000,
+      "note": "CWDM, many wavelengths (1270-1590nm)",
+      "verified": true
     },
     {
-      "sku": "UACC-OM-SFP28-SR",
-      "category": "transceiver",
-      "speedGbps": 25,
-      "formFactor": "SFP28",
-      "reach": "SR",
-      "media": "MMF",
-      "distanceM": 100
-    },
-    {
-      "sku": "UACC-OM-QSFP28-SR",
+      "sku": "UACC-OM-QSFP28-SR4",
       "category": "transceiver",
       "speedGbps": 100,
       "formFactor": "QSFP28",
       "reach": "SR4",
       "media": "MMF",
-      "distanceM": 100
+      "distanceM": 100,
+      "verified": true
     },
     {
-      "sku": "UACC-DAC-SFP10-1M",
-      "category": "dac",
-      "speedGbps": 10,
-      "formFactor": "SFP+",
-      "media": "DAC",
-      "distanceM": 1
+      "sku": "UACC-OM-QSFP28-LR4",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true
     },
     {
-      "sku": "UACC-DAC-SFP10-3M",
-      "category": "dac",
-      "speedGbps": 10,
-      "formFactor": "SFP+",
-      "media": "DAC",
-      "distanceM": 3
-    },
-    {
-      "sku": "UACC-DAC-SFP28-1M",
+      "sku": "UACC-Uplink-SFP28-0.15M",
       "category": "dac",
       "speedGbps": 25,
       "formFactor": "SFP28",
       "media": "DAC",
-      "distanceM": 1
+      "distanceM": 0.15,
+      "note": "Auto 1/10/25G uplink DAC (also 0.3m, 3m, 30m)",
+      "verified": true
     },
     {
-      "sku": "UACC-DAC-QSFP28-0.5M",
+      "sku": "UACC-Uplink-SFP28-3M",
       "category": "dac",
-      "speedGbps": 100,
-      "formFactor": "QSFP28",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
       "media": "DAC",
-      "distanceM": 0.5
+      "distanceM": 3,
+      "note": "Auto 1/10/25G uplink DAC",
+      "verified": true
     }
   ]
 }

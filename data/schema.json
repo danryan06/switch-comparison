@@ -171,17 +171,21 @@
           "description": "1, 10, 20, 25, 40, 50, 100, 120, or 400. Null for stack-fabric cables and kits with no rated data rate."
         },
         "formFactor": {
-          "enum": ["SFP", "SFP+", "SFP28", "SFP56", "QSFP+", "QSFP28", "QSFP-DD", "SFP-DD", "StackWise-480", "StackWise-160", "Stack", "Kit"]
+          "enum": ["SFP", "SFP+", "SFP28", "SFP56", "QSFP+", "QSFP28", "QSFP56", "QSFP-DD", "SFP-DD", "StackWise-480", "StackWise-160", "Stack", "Kit"]
         },
         "reach": {
-          "enum": ["SR", "LR", "LRM", "ER", "SX", "LX", "LX/LH", "T", "SR4", "LR4"],
-          "description": "Required on transceivers. Omit on DAC, AOC, and stacking. LX/LH is the Cisco 1G long-haul label."
+          "enum": ["SR", "LR", "LRM", "ER", "SX", "LX", "LX/LH", "LH", "LX40", "FX", "T", "SR4", "LR4", "USR", "ZR", "BiDi", "CWDM"],
+          "description": "Required on transceivers. Omit on DAC, AOC, and stacking. Values follow the vendor's own reach labels."
         },
         "media": { "enum": ["MMF", "SMF", "Copper", "DAC", "AOC", "Stack", "Kit"] },
         "distanceM": {
           "type": "number",
           "minimum": 0,
           "description": "Reach in metres. 0 for kits. Fractional values allowed (for example 0.5 or 0.65)."
+        },
+        "verified": {
+          "type": "boolean",
+          "description": "true when the SKU is traced to a vendor datasheet or matrix. false when it still needs confirming. Unverified parts stay in Accessories listings without a check tag, and appear on the Needs checking page."
         },
         "note": { "type": "string" }
       }

@@ -30,8 +30,8 @@ const STATUSES = ['current', 'endOfSale', 'endOfSupport'];
 const MOUNTS = ['rack', 'desktop', 'wall', 'din'];
 const ACC_CATS = ['transceiver', 'dac', 'aoc', 'stacking'];
 const ACC_SPEEDS = [1, 10, 20, 25, 40, 50, 100, 120, 400];
-const ACC_FORMS = ['SFP', 'SFP+', 'SFP28', 'SFP56', 'QSFP+', 'QSFP28', 'QSFP-DD', 'SFP-DD', 'StackWise-480', 'StackWise-160', 'Stack', 'Kit'];
-const ACC_REACH = ['SR', 'LR', 'LRM', 'ER', 'SX', 'LX', 'LX/LH', 'T', 'SR4', 'LR4'];
+const ACC_FORMS = ['SFP', 'SFP+', 'SFP28', 'SFP56', 'QSFP+', 'QSFP28', 'QSFP56', 'QSFP-DD', 'SFP-DD', 'StackWise-480', 'StackWise-160', 'Stack', 'Kit'];
+const ACC_REACH = ['SR', 'LR', 'LRM', 'ER', 'SX', 'LX', 'LX/LH', 'LH', 'LX40', 'FX', 'T', 'SR4', 'LR4', 'USR', 'ZR', 'BiDi', 'CWDM'];
 const ACC_MEDIA = ['MMF', 'SMF', 'Copper', 'DAC', 'AOC', 'Stack', 'Kit'];
 const isDate = s => /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(s));
 
@@ -150,6 +150,7 @@ export function validate(data, today = new Date().toISOString().slice(0, 10)) {
       if (!ACC_FORMS.includes(p.formFactor)) errors.push(`${pt}: formFactor must be one of ${ACC_FORMS.join(', ')}`);
       if (!ACC_MEDIA.includes(p.media)) errors.push(`${pt}: media must be one of ${ACC_MEDIA.join(', ')}`);
       if (!(typeof p.distanceM === 'number') || p.distanceM < 0) errors.push(`${pt}: distanceM must be a number >= 0`);
+      if (p.verified !== undefined && typeof p.verified !== 'boolean') errors.push(`${pt}: verified must be true or false`);
       if (p.category === 'transceiver') {
         if (!p.reach) errors.push(`${pt}: transceiver needs reach`);
         else if (!ACC_REACH.includes(p.reach)) errors.push(`${pt}: reach must be one of ${ACC_REACH.join(', ')}`);
