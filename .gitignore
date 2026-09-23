@@ -5,3 +5,6 @@ node_modules/
 # Agent merge instruction blurbs from data packages (not product data)
 **/CURSOR*.md
 *.CURSOR-*.md
+
+# Local Claude Code settings
+.claude/
