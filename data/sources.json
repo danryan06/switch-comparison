@@ -562,5 +562,31 @@
     "title": "Cisco 100G Fiber Optic Transceiver Cable Ordering Guide: Cisco Nexus",
     "url": "https://www.cisco.com/c/dam/en/us/products/collateral/interfaces-modules/transceiver-modules/panduit-cable-og-100g-optics.pdf",
     "retrieved": "2026-09-23"
+  },
+  "icx8100": {
+    "title": "RUCKUS ICX 8100 Switch Data Sheet (PA-119962.2-EN, Jan 2026)",
+    "url": "https://www.netwifi.co.uk/datasheets/icx8100.pdf",
+    "retrieved": "2026-09-23"
+  },
+  "icx8200": {
+    "title": "RUCKUS ICX 8200 Switch Data Sheet",
+    "url": "https://www.commgear.com/Documents/RUCKUS_ICX_8200_Data_Sheet.pdf",
+    "retrieved": "2026-09-23"
+  },
+  "icx7550": {
+    "title": "RUCKUS ICX 7550 Switch Data Sheet",
+    "url": "https://www.purdi.com/wp-content/uploads/2020/11/RUCKUS-ICX-7550-Switch-Data-Sheet.pdf",
+    "retrieved": "2026-09-23"
+  },
+  "icx7850": {
+    "title": "RUCKUS ICX 7850 Switch Data Sheet (PA-113851.5-EN, Feb 2026)",
+    "url": "https://www.netwifi.com.au/datasheets/icx7850.pdf",
+    "retrieved": "2026-09-23"
+  },
+  "ruckus-optics": {
+    "title": "RUCKUS Ethernet Optics Data Sheet (support doc 2656)",
+    "url": "https://support.ruckuswireless.com/documents/2656-ruckus-ethernet-optics-data-sheet",
+    "retrieved": "2026-09-23",
+    "note": "Matrix covers ICX 7150\u20137850 and ICX 8200/8100. Part-number prefixes: E1MG- (1G), E10G- (10G), E25G-SFP28-*, E40G-QSFP-*, E100G-QSFP28-*, plus DACs/AOCs. Stacking vs data-only called out per optic. Accessories/PSUs noted from family datasheets: ICX7000-RMK, ICX7000-C12-RMK/WMK, RPS19/21/22/23/24, ICX-FAN12/13/14, ICX7550 uplink modules 1X100GQ / 2X40GQ / 4X10GF."
   }
 }

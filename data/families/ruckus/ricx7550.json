@@ -1,0 +1,233 @@
+{
+  "id": "ricx7550",
+  "vendor": "RUCKUS",
+  "family": "ICX 7550",
+  "role": "access",
+  "source": "icx7550",
+  "stacking": {
+    "tech": "ICX stacking",
+    "bandwidthGbps": 2400,
+    "maxMembers": 12,
+    "frontPanel": true,
+    "note": "Up to 12 members over fixed QSFP+/QSFP28 ports (40G on copper gigabit models, 100G on multigig/fiber), up to 10 km. Aggregate stack bandwidth 960 Gbps (40G models) or 2.4 Tbps (100G models)"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Base: static and RIP. Premium license (ICX7550-PREM-LIC): OSPF, BGP, VRRP, PIM, PBR, VRF"
+  },
+  "routeScale": "Profile-dependent: up to 97,280 IPv4 / 8,192 IPv6 (profile 1)",
+  "macTable": "16,000 to 114,000 depending on TCAM profile (32,000 default profile 3)",
+  "macsec": "128/256-bit on optional 4x10G MACsec uplink module (ICX 7650/7550 4X10GF)",
+  "buffer": "8 MB",
+  "power": {
+    "summary": "Dual hot-swap AC/DC PSUs (RPS21 non-PoE 400W; RPS22 PoE up to 1200W). Reversible airflow",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "N+1 hot-swap load-sharing PSUs; up to 3 hot-swap fans"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "ICX7550-PREM-LIC for advanced L3. Bundles (-E2) include dual PSUs and fans",
+  "operatingTempC": {
+    "min": 0,
+    "max": 45
+  },
+  "mounting": [
+    "rack"
+  ],
+  "note": "MCT not supported on ICX 7550. Optional uplink modules: 1X100GQ, 2X40GQ, 4X10GF (shared with 7650). PoE models support perpetual and fast-boot PoE. Optics: ruckus-optics",
+  "models": [
+    {
+      "sku": "ICX7550-24",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "q2",
+      "poeBudgets": [],
+      "switchingGbps": 368,
+      "forwardingMpps": 274,
+      "note": "Fixed 2x40G QSFP+ uplink/stack; optional expansion module"
+    },
+    {
+      "sku": "ICX7550-48",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "q2",
+      "poeBudgets": [],
+      "switchingGbps": 416,
+      "forwardingMpps": 309,
+      "note": "Fixed 2x40G QSFP+ uplink/stack; optional expansion module"
+    },
+    {
+      "sku": "ICX7550-24P",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "q2",
+      "poeBudgets": [
+        {
+          "config": "1x RPS22 (180-240V)",
+          "watts": 1000
+        },
+        {
+          "config": "2x RPS22 (180-240V)",
+          "watts": 2000
+        },
+        {
+          "config": "2x RPS22 (100-180V)",
+          "watts": 1666
+        }
+      ],
+      "switchingGbps": 368,
+      "forwardingMpps": 274,
+      "note": "Perpetual and fast-boot PoE; optional expansion module"
+    },
+    {
+      "sku": "ICX7550-48P",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "q2",
+      "poeBudgets": [
+        {
+          "config": "1x RPS22 (180-240V)",
+          "watts": 1000
+        },
+        {
+          "config": "2x RPS22 (180-240V)",
+          "watts": 2000
+        },
+        {
+          "config": "2x RPS22 (100-180V)",
+          "watts": 1666
+        }
+      ],
+      "switchingGbps": 416,
+      "forwardingMpps": 309,
+      "note": "Perpetual and fast-boot PoE; optional expansion module"
+    },
+    {
+      "sku": "ICX7550-24ZP",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        },
+        {
+          "count": 12,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "c2",
+      "poeBudgets": [
+        {
+          "config": "1x RPS22 (180-240V)",
+          "watts": 1000
+        },
+        {
+          "config": "2x RPS22 (180-240V)",
+          "watts": 2000
+        },
+        {
+          "config": "2x RPS22 (100-180V)",
+          "watts": 1666
+        }
+      ],
+      "switchingGbps": 700,
+      "forwardingMpps": 521,
+      "note": "Perpetual and fast-boot PoE; 2x40/100G QSFP28; optional 1X100GQ module"
+    },
+    {
+      "sku": "ICX7550-48ZP",
+      "accessPorts": [
+        {
+          "count": 36,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        },
+        {
+          "count": 12,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "c2",
+      "poeBudgets": [
+        {
+          "config": "1x RPS22 (180-240V)",
+          "watts": 1000
+        },
+        {
+          "config": "2x RPS22 (180-240V)",
+          "watts": 2000
+        },
+        {
+          "config": "2x RPS22 (100-180V)",
+          "watts": 1666
+        }
+      ],
+      "switchingGbps": 1020,
+      "forwardingMpps": 759,
+      "note": "Datasheet lists 802.3bt on all 48 ports (up to 90W); PoE budget still PSU-limited. Optional 1X100GQ module"
+    },
+    {
+      "sku": "ICX7550-24F",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "c2",
+      "poeBudgets": [],
+      "switchingGbps": 880,
+      "forwardingMpps": 655,
+      "note": "24x 1/10G SFP+; optional 1X100GQ module"
+    },
+    {
+      "sku": "ICX7550-48F",
+      "accessPorts": [
+        {
+          "count": 36,
+          "speedGbps": 1,
+          "poeWatts": 0,
+          "media": "sfp"
+        },
+        {
+          "count": 12,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "c2",
+      "poeBudgets": [],
+      "switchingGbps": 912,
+      "forwardingMpps": 678,
+      "note": "Optional 1X100GQ module"
+    }
+  ]
+}

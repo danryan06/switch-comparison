@@ -1,0 +1,126 @@
+{
+  "id": "ricx7850",
+  "vendor": "RUCKUS",
+  "family": "ICX 7850",
+  "role": "aggregation",
+  "source": "icx7850",
+  "mlag": {
+    "tech": "MCT (Multi-Chassis Trunking)",
+    "note": "Two-chassis active-active LAG with load balancing; separate from stacking"
+  },
+  "stacking": {
+    "tech": "ICX stacking",
+    "bandwidthGbps": 9600,
+    "maxMembers": 12,
+    "frontPanel": true,
+    "note": "Up to 8x 40/100G QSFP28 as stack ports, 12 members, up to 10 km, ISSU. Aggregate stack bandwidth up to 9.6 Tbps"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Base: static and RIP. Premium (ICX7850-PREM-LIC): OSPF, BGP, VRRP, PIM, PBR, VRF, GRE, BGP EVPN VXLAN"
+  },
+  "routeScale": "Up to 128,000 IPv4 / 7,000 IPv6 routes; 20,000 next hops",
+  "macTable": "288,000",
+  "macsec": "128/256-bit on ICX7850-48FS only (ICX-MACSEC-LIC)",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Dual hot-swap 650W AC/DC (RPS19), reversible airflow; 5 or 6 hot-swap fans",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "1+1 hot-swap load-sharing PSU; N+1 fans"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "ICX7850-PREM-LIC for advanced L3; ICX-MACSEC-LIC for MACsec on -48FS. Bare SKUs need PSU/fans ordered separately; -E2 bundles include dual PSU and fans",
+  "verify": [
+    "buffer"
+  ],
+  "verifyNote": "Packet buffer size is not stated on the ICX 7850 datasheet",
+  "operatingTempC": {
+    "min": 0,
+    "max": 45
+  },
+  "mounting": [
+    "rack"
+  ],
+  "note": "Accessories: RPS19-E/I, RPS19DC-E/I, ICX-FAN12-E/I. Optics: ruckus-optics (E40G-/E100G-QSFP28 and 25G SFP28)",
+  "models": [
+    {
+      "sku": "ICX7850-32Q",
+      "accessPorts": [],
+      "fabricPorts": [
+        {
+          "count": 32,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 6400,
+      "forwardingMpps": 2000,
+      "note": "All 32 QSFP28 ports are 40/100G; up to 8 rightmost usable for stacking. Breakout to 4x10/25G supported"
+    },
+    {
+      "sku": "ICX7850-48F",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 8,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 4000,
+      "forwardingMpps": 2000
+    },
+    {
+      "sku": "ICX7850-48FS",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 8,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 2560,
+      "forwardingMpps": 1900,
+      "note": "MACsec and LRM on the 48x 1/10G SFP+ ports with ICX-MACSEC-LIC"
+    },
+    {
+      "sku": "ICX7850-48C",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 8,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 2560,
+      "forwardingMpps": 1900,
+      "note": "48x 1/10GBASE-T"
+    }
+  ]
+}

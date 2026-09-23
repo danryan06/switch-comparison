@@ -1,0 +1,370 @@
+{
+  "id": "ricx8200",
+  "vendor": "RUCKUS",
+  "family": "ICX 8200",
+  "role": "access",
+  "source": "icx8200",
+  "stacking": {
+    "tech": "ICX stacking",
+    "bandwidthGbps": 1200,
+    "maxMembers": 12,
+    "frontPanel": true,
+    "note": "Stacks over 1/10/25G SFP28 (or 10G SFP+ on C08PF), up to 12 members and 10 km. Aggregate stack bandwidth up to 1.2 Tbps"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Base: static and RIP. Premium license (ICX8200-PREM-LIC): OSPF, VRRP, VRF, GRE, PIM, PBR, BGP, VXLAN"
+  },
+  "routeScale": "16,000 IPv4 / 4,000 IPv6 routes in hardware; 8,000 next hops",
+  "macTable": "32,000",
+  "macsec": "None",
+  "buffer": "4 MB",
+  "power": {
+    "summary": "Fixed internal PSU on compact and fixed-PSU 1RU models; dual hot-swap on PF2/ZP2/XP2/NP2 (see model redundancy)",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Fixed PSU on base models. Hot-swap dual PSU on PF2/ZP2/XP2/NP2 (see model notes)"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Base L3 (static/RIP) included. ICX8200-PREM-LIC for OSPF/BGP/VRF/VXLAN and related. Three-year remote TAC included on orderable SKUs",
+  "operatingTempC": {
+    "min": 0,
+    "max": 45
+  },
+  "mounting": [
+    "rack"
+  ],
+  "note": "Does not support MCT. Optics: ruckus-optics (25G E25G-SFP28-*). Hot-swap PSU/fans: RPS23-E, RPS24-E, ICX-FAN13-E, ICX-FAN14-E",
+  "models": [
+    {
+      "sku": "ICX8200-C08PF",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x2",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 124
+        }
+      ],
+      "switchingGbps": 56,
+      "forwardingMpps": 42,
+      "formFactor": "Compact",
+      "fanless": true
+    },
+    {
+      "sku": "ICX8200-C08ZP",
+      "accessPorts": [
+        {
+          "count": 4,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        },
+        {
+          "count": 4,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "y2",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 200,
+      "forwardingMpps": 148,
+      "formFactor": "Compact",
+      "fanless": true
+    },
+    {
+      "sku": "ICX8200-24",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [],
+      "switchingGbps": 248,
+      "forwardingMpps": 184,
+      "fanless": true,
+      "note": "Fanless mode available; 25G ports limited to 10G and PoE budget limited when fanless"
+    },
+    {
+      "sku": "ICX8200-24P",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 248,
+      "forwardingMpps": 184
+    },
+    {
+      "sku": "ICX8200-24ZP",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 320,
+      "forwardingMpps": 237
+    },
+    {
+      "sku": "ICX8200-48",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [],
+      "switchingGbps": 296,
+      "forwardingMpps": 220,
+      "fanless": true
+    },
+    {
+      "sku": "ICX8200-48P",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 296,
+      "forwardingMpps": 220
+    },
+    {
+      "sku": "ICX8200-48PF",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 296,
+      "forwardingMpps": 220
+    },
+    {
+      "sku": "ICX8200-48PF2",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [
+        {
+          "config": "1x RPS23-E",
+          "watts": 840
+        },
+        {
+          "config": "2x RPS23-E",
+          "watts": 1480
+        }
+      ],
+      "switchingGbps": 296,
+      "forwardingMpps": 220,
+      "note": "Dual hot-swap PSU and fans. -E ships one PSU (840W PoE); -E2 ships two (1480W)",
+      "redundancy": {
+        "supported": true,
+        "detail": "Dual hot-swap load-sharing PSU (RPS23-E) and fans"
+      }
+    },
+    {
+      "sku": "ICX8200-48ZP2",
+      "accessPorts": [
+        {
+          "count": 32,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 16,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [
+        {
+          "config": "1x RPS23-E",
+          "watts": 800
+        },
+        {
+          "config": "2x RPS23-E",
+          "watts": 1480
+        }
+      ],
+      "switchingGbps": 344,
+      "forwardingMpps": 254,
+      "note": "Dual hot-swap PSU and fans",
+      "redundancy": {
+        "supported": true,
+        "detail": "Dual hot-swap load-sharing PSU (RPS23-E) and fans"
+      }
+    },
+    {
+      "sku": "ICX8200-24XP2",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 10,
+          "poeWatts": 90
+        },
+        {
+          "count": 16,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "y6",
+      "poeBudgets": [
+        {
+          "config": "1x RPS24-E",
+          "watts": 950
+        },
+        {
+          "config": "2x RPS24-E",
+          "watts": 1900
+        }
+      ],
+      "switchingGbps": 540,
+      "forwardingMpps": 380,
+      "note": "Dual hot-swap PSU and fans (RPS24-E, ICX-FAN14-E)",
+      "redundancy": {
+        "supported": true,
+        "detail": "Dual hot-swap load-sharing PSU (RPS24-E) and fans"
+      }
+    },
+    {
+      "sku": "ICX8200-48NP2",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 10,
+          "poeWatts": 90
+        },
+        {
+          "count": 40,
+          "speedGbps": 5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "y8",
+      "poeBudgets": [
+        {
+          "config": "1x RPS24-E",
+          "watts": 950
+        },
+        {
+          "config": "2x RPS24-E",
+          "watts": 1900
+        }
+      ],
+      "switchingGbps": 960,
+      "forwardingMpps": 650,
+      "note": "Dual hot-swap PSU and fans; 40 ports are 1/2.5/5G (not 10G)",
+      "redundancy": {
+        "supported": true,
+        "detail": "Dual hot-swap load-sharing PSU (RPS24-E) and fans"
+      }
+    },
+    {
+      "sku": "ICX8200-24F",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [],
+      "switchingGbps": 248,
+      "forwardingMpps": 184
+    },
+    {
+      "sku": "ICX8200-48F",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [],
+      "switchingGbps": 296,
+      "forwardingMpps": 219
+    },
+    {
+      "sku": "ICX8200-24FX",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "y8",
+      "poeBudgets": [],
+      "switchingGbps": 720,
+      "forwardingMpps": 533,
+      "note": "16x 1/10G SFP+ access + 8x 25G SFP28 uplink/stack"
+    }
+  ]
+}

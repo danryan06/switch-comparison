@@ -1018,5 +1018,61 @@
         ]
       }
     ]
+  },
+  "x2": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 1/10G SFP+ (fixed)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
+  },
+  "y6": {
+    "modular": false,
+    "options": [
+      {
+        "label": "6x 1/10/25G SFP28 (fixed)",
+        "ports": [
+          {
+            "count": 6,
+            "speedGbps": 25
+          }
+        ]
+      }
+    ]
+  },
+  "c2": {
+    "modular": false,
+    "options": [
+      {
+        "label": "2x 40/100G QSFP28 (fixed; uplink/stack)",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 100
+          }
+        ]
+      }
+    ]
+  },
+  "c8": {
+    "modular": false,
+    "options": [
+      {
+        "label": "8x 40/100G QSFP28 (fixed; uplink/stack)",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 100
+          }
+        ]
+      }
+    ]
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-09-21",
+  "updated": "2026-09-23",
   "families": [
     "families/cisco/c9200.json",
     "families/cisco/c9200l.json",
@@ -72,7 +72,11 @@
     "families/cisco-nexus/n9300gx.json",
     "families/cisco-nexus/n9300gx2.json",
     "families/cisco-nexus/n9300fx3s.json",
-    "families/cisco-nexus/n930024p.json"
+    "families/cisco-nexus/n930024p.json",
+    "families/ruckus/ricx8100.json",
+    "families/ruckus/ricx8200.json",
+    "families/ruckus/ricx7550.json",
+    "families/ruckus/ricx7850.json"
   ],
   "accessories": [
     "accessories/hpe-aruba.json",

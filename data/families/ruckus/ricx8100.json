@@ -1,0 +1,315 @@
+{
+  "id": "ricx8100",
+  "vendor": "RUCKUS",
+  "family": "ICX 8100",
+  "role": "access",
+  "source": "icx8100",
+  "stacking": {
+    "tech": "ICX stacking",
+    "bandwidthGbps": null,
+    "maxMembers": 4,
+    "frontPanel": true,
+    "note": "Only -X SKUs stack (up to 4x 10G SFP+ as stack ports on 24/48 models; 2x 10G on compact), max 4 members, ring or linear, up to 40 km. Aggregate stack bandwidth is not published. Non-X models are standalone with 1G SFP uplinks"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 only; hardware routing is not supported"
+  },
+  "routeScale": "None (Layer 2)",
+  "macTable": "32,000",
+  "macsec": "None",
+  "buffer": "4 MB",
+  "power": {
+    "summary": "Fixed internal PSU; no field-replaceable or redundant supply",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Single fixed internal PSU"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No feature licenses. Limited lifetime warranty; 90 days free TAC then support contract",
+  "operatingTempC": {
+    "min": 0,
+    "max": 45
+  },
+  "mounting": [
+    "rack"
+  ],
+  "note": "Pro AV (-V) SKUs omitted; same porting as the matching non-V model. Optics: see ruckus-optics. Accessories: ICX7000-RMK, ICX7000-C12-RMK, ICX7000-C12-WMK, CC-USBC-USBA, XBR-R000295",
+  "models": [
+    {
+      "sku": "ICX8100-C08PF",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g2",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 124
+        }
+      ],
+      "switchingGbps": 56,
+      "forwardingMpps": 42,
+      "fanless": true,
+      "formFactor": "Compact",
+      "note": "Not stackable (non-X)"
+    },
+    {
+      "sku": "ICX8100-C08PF-X",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x2",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 124
+        }
+      ],
+      "switchingGbps": 56,
+      "forwardingMpps": 42,
+      "fanless": true,
+      "formFactor": "Compact",
+      "note": "10G uplinks; stackable up to 4"
+    },
+    {
+      "sku": "ICX8100-C16P",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g2",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 124
+        }
+      ],
+      "switchingGbps": 72,
+      "forwardingMpps": 54,
+      "fanless": true,
+      "formFactor": "Compact",
+      "note": "Not stackable (non-X)"
+    },
+    {
+      "sku": "ICX8100-C16P-X",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x2",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 124
+        }
+      ],
+      "switchingGbps": 72,
+      "forwardingMpps": 54,
+      "fanless": true,
+      "formFactor": "Compact",
+      "note": "10G uplinks; stackable up to 4"
+    },
+    {
+      "sku": "ICX8100-24",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": 96,
+      "fanless": true,
+      "note": "Not stackable (non-X)"
+    },
+    {
+      "sku": "ICX8100-24-X",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": 96,
+      "fanless": true,
+      "note": "10G uplinks; stackable up to 4"
+    },
+    {
+      "sku": "ICX8100-48",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": 132,
+      "fanless": true,
+      "note": "Not stackable (non-X)"
+    },
+    {
+      "sku": "ICX8100-48-X",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": 132,
+      "fanless": true,
+      "note": "10G uplinks; stackable up to 4"
+    },
+    {
+      "sku": "ICX8100-24P",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 96,
+      "note": "Not stackable (non-X)"
+    },
+    {
+      "sku": "ICX8100-24P-X",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 96,
+      "note": "10G uplinks; stackable up to 4"
+    },
+    {
+      "sku": "ICX8100-48P",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 132,
+      "note": "Not stackable (non-X)"
+    },
+    {
+      "sku": "ICX8100-48P-X",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 132,
+      "note": "10G uplinks; stackable up to 4"
+    },
+    {
+      "sku": "ICX8100-48PF",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "g4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 132,
+      "note": "Not stackable (non-X)"
+    },
+    {
+      "sku": "ICX8100-48PF-X",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 132,
+      "note": "10G uplinks; stackable up to 4"
+    }
+  ]
+}
