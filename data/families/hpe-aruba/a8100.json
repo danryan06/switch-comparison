@@ -47,7 +47,6 @@
   "models": [
     {
       "sku": "8100-48XF4C",
-      "description": "48x 1/10G SFP/SFP+ + 4x 40/100G",
       "accessPorts": [
         {
           "count": 48,
@@ -68,7 +67,6 @@
     },
     {
       "sku": "8100-24XF4C",
-      "description": "24x 1/10G SFP/SFP+ + 4x 40/100G",
       "accessPorts": [
         {
           "count": 24,
@@ -89,7 +87,6 @@
     },
     {
       "sku": "8100-24XT4XF4C",
-      "description": "24x 1/2.5/5/10G BASE-T + 4x 1/10G SFP/SFP+ + 4x 40/100G",
       "accessPorts": [
         {
           "count": 24,
@@ -116,7 +113,6 @@
     },
     {
       "sku": "8100-40XT8XF4C",
-      "description": "40x 100M/1/10G 10GBASE-T + 8x 1/10G SFP/SFP+ + 4x 40/100G",
       "accessPorts": [
         {
           "count": 40,

@@ -45,7 +45,6 @@
   "models": [
     {
       "sku": "N9K-C93180YC-FX3",
-      "description": "48x 1/10/25G SFP28 + 6x 40/100G QSFP28",
       "accessPorts": [
         {
           "count": 48,
@@ -68,7 +67,6 @@
     },
     {
       "sku": "N9K-C93108TC-FX3",
-      "description": "48x 100M/1/10G BASE-T + 6x 40/100G QSFP28",
       "accessPorts": [
         {
           "count": 48,
@@ -89,7 +87,6 @@
     },
     {
       "sku": "N9K-C93108TC-FX3P",
-      "description": "48x 100M/1/2.5/5/10G BASE-T UPoE + 6x 40/100G QSFP28",
       "accessPorts": [
         {
           "count": 48,
@@ -128,7 +125,6 @@
     },
     {
       "sku": "N9K-C9348GC-FX3",
-      "description": "48x 10M/100M/1G BASE-T + 4x 1/10/25G SFP28 + 2x 40/100G QSFP28",
       "accessPorts": [
         {
           "count": 48,
@@ -155,7 +151,6 @@
     },
     {
       "sku": "N9K-C9348GC-FX3PH",
-      "description": "40x 10M/100M/1G BASE-T + 8x 10M/100M half-duplex, PoE++ + 4x 1/10/25G SFP28 + 2x 40/100G QSFP28",
       "accessPorts": [
         {
           "count": 40,

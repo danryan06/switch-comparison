@@ -51,7 +51,6 @@
   "models": [
     {
       "sku": "N9K-C9364D-GX2A",
-      "description": "64x 400G QSFP-DD + 2x 1/10G SFP+, 2RU",
       "accessPorts": [
         {
           "count": 2,
@@ -75,7 +74,6 @@
     },
     {
       "sku": "N9K-C9348D-GX2A",
-      "description": "48x 400G QSFP-DD + 2x 1/10G SFP+, 2RU",
       "accessPorts": [
         {
           "count": 2,
@@ -99,7 +97,6 @@
     },
     {
       "sku": "N9K-C9332D-GX2B",
-      "description": "32x 400G QSFP-DD + 2x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 2,
@@ -122,7 +119,6 @@
     },
     {
       "sku": "N9K-C9332D-GX2B-M",
-      "description": "32x 400G QSFP-DD + 2x 1/10G SFP+, expanded memory",
       "accessPorts": [
         {
           "count": 2,

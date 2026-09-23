@@ -51,7 +51,6 @@
   "models": [
     {
       "sku": "N9K-C93180YC-FX3H",
-      "description": "24 licensed of 48x 1/10/25G SFP28 + 6x 40/100G QSFP28",
       "accessPorts": [
         {
           "count": 24,
@@ -74,7 +73,6 @@
     },
     {
       "sku": "N9K-C93108TC-FX3H",
-      "description": "24 licensed of 48x 100M/1/2.5/5/10G BASE-T + 6x 40/100G QSFP28",
       "accessPorts": [
         {
           "count": 24,
@@ -96,7 +94,6 @@
     },
     {
       "sku": "N9K-C93180YC-FX-24",
-      "description": "24 licensed of 48x 1/10/25G SFP28 + 6x 40/100G QSFP28",
       "accessPorts": [
         {
           "count": 24,
@@ -119,7 +116,6 @@
     },
     {
       "sku": "N9K-C93108TC-FX-24",
-      "description": "24 licensed of 48x 100M/1/10G BASE-T + 6x 40/100G QSFP28",
       "accessPorts": [
         {
           "count": 24,
@@ -141,7 +137,6 @@
     },
     {
       "sku": "N9K-C93180YC-EX-24",
-      "description": "24 licensed of 48x 1/10/25G SFP28 + 6x 40/100G QSFP28",
       "accessPorts": [
         {
           "count": 24,
@@ -166,7 +161,6 @@
     },
     {
       "sku": "N9K-C93108TC-EX-24",
-      "description": "24 licensed of 48x 100M/1/10G BASE-T + 6x 40/100G QSFP28",
       "accessPorts": [
         {
           "count": 24,

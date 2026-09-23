@@ -44,7 +44,6 @@
   "models": [
     {
       "sku": "8360-32Y4C",
-      "description": "32x 1/10/25G SFP28 (4 MACsec) + 4x 40/100G",
       "accessPorts": [
         {
           "count": 32,
@@ -66,7 +65,6 @@
     },
     {
       "sku": "8360-16Y2C",
-      "description": "16x 1/10/25G SFP28 + 2x 40/100G",
       "accessPorts": [
         {
           "count": 16,
@@ -88,7 +86,6 @@
     },
     {
       "sku": "8360-48Y6C",
-      "description": "48x 1/10/25G SFP28 (4 MACsec) + 6x 40/100G (2 MACsec)",
       "accessPorts": [
         {
           "count": 48,
@@ -110,7 +107,6 @@
     },
     {
       "sku": "8360-48XT4C",
-      "description": "48x 1/10G 10GBASE-T + 4x 40/100G",
       "accessPorts": [
         {
           "count": 48,
@@ -131,7 +127,6 @@
     },
     {
       "sku": "8360-24XF2C",
-      "description": "24x 1/10G SFP/SFP+ + 2x 40/100G",
       "accessPorts": [
         {
           "count": 24,
@@ -152,7 +147,6 @@
     },
     {
       "sku": "8360-12C",
-      "description": "12x 40/100G QSFP+/QSFP28",
       "accessPorts": [],
       "fabricPorts": [
         {

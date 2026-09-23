@@ -44,7 +44,6 @@
   "models": [
     {
       "sku": "8325-32C",
-      "description": "32x 40/100G QSFP+/QSFP28",
       "accessPorts": [],
       "fabricPorts": [
         {
@@ -58,7 +57,6 @@
     },
     {
       "sku": "8325P-32C",
-      "description": "32x 40/100G QSFP+/QSFP28 with PTP/SyncE/GNSS timing",
       "accessPorts": [],
       "fabricPorts": [
         {
@@ -73,7 +71,6 @@
     },
     {
       "sku": "8325-48Y8C",
-      "description": "48x 1/10/25G SFP28 + 8x 40/100G",
       "accessPorts": [
         {
           "count": 48,
@@ -94,7 +91,6 @@
     },
     {
       "sku": "8325H-16C",
-      "description": "Half-width 16x 40/100G QSFP+/QSFP28",
       "accessPorts": [],
       "fabricPorts": [
         {
@@ -113,7 +109,6 @@
     },
     {
       "sku": "8325H-18Y4C",
-      "description": "Half-width 18x 1/10/25G SFP28 + 4x 40/100G",
       "accessPorts": [
         {
           "count": 18,

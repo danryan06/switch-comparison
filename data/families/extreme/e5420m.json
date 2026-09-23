@@ -39,7 +39,6 @@
   "models": [
     {
       "sku": "5420M-24T-4YE",
-      "description": "24x 1G RJ45 + 4x 1/10/25G SFP28 (non-PoE)",
       "accessPorts": [
         {
           "count": 24,
@@ -54,7 +53,6 @@
     },
     {
       "sku": "5420M-24W-4YE",
-      "description": "24x 1G RJ45 90W PoE + 4x 1/10/25G SFP28",
       "accessPorts": [
         {
           "count": 24,
@@ -78,7 +76,6 @@
     },
     {
       "sku": "5420M-48T-4YE",
-      "description": "48x 1G RJ45 + 4x 1/10/25G SFP28 (non-PoE)",
       "accessPorts": [
         {
           "count": 48,
@@ -93,7 +90,6 @@
     },
     {
       "sku": "5420M-48W-4YE",
-      "description": "48x 1G RJ45 90W PoE + 4x 1/10/25G SFP28",
       "accessPorts": [
         {
           "count": 48,
@@ -121,7 +117,6 @@
     },
     {
       "sku": "5420M-16MW-32P-4YE",
-      "description": "16x 1/2.5G multi-rate 90W + 32x 1G RJ45 30W PoE + 4x 1/10/25G SFP28",
       "accessPorts": [
         {
           "count": 16,

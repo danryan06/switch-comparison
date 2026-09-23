@@ -48,7 +48,6 @@
   "models": [
     {
       "sku": "CCS-722XPM-48ZY8",
-      "description": "48x 2.5G mGig 60W PoE + 8x 25G SFP28, MACsec on all ports",
       "accessPorts": [
         {
           "count": 48,

@@ -51,7 +51,6 @@
   "models": [
     {
       "sku": "N9K-C9316D-GX",
-      "description": "16x 40/100/400G QSFP-DD (pure fabric)",
       "accessPorts": [],
       "poeBudgets": [],
       "fabricPorts": [
@@ -67,7 +66,6 @@
     },
     {
       "sku": "N9K-C93600CD-GX",
-      "description": "28x 40/100G QSFP28 + 8x 40/100/400G QSFP-DD (pure fabric)",
       "accessPorts": [],
       "poeBudgets": [],
       "fabricPorts": [
@@ -88,7 +86,6 @@
     },
     {
       "sku": "N9K-C9364C-GX",
-      "description": "64x 40/100G QSFP28 (pure fabric), 2RU",
       "accessPorts": [],
       "poeBudgets": [],
       "fabricPorts": [

@@ -44,7 +44,6 @@
   "models": [
     {
       "sku": "5320-16P-4XE",
-      "description": "16x 1G RJ45 30W PoE + 4x 1/10G SFP+ (AC)",
       "accessPorts": [
         {
           "count": 16,
@@ -66,7 +65,6 @@
     },
     {
       "sku": "5320-16P-4XE-DC",
-      "description": "16x 1G RJ45 30W PoE + 4x 1/10G SFP+ (DC)",
       "accessPorts": [
         {
           "count": 16,
@@ -88,7 +86,6 @@
     },
     {
       "sku": "5320-24T-8XE",
-      "description": "24x 1G RJ45 + 8x 1/10G SFP+ (non-PoE)",
       "accessPorts": [
         {
           "count": 24,
@@ -103,7 +100,6 @@
     },
     {
       "sku": "5320-24P-8XE",
-      "description": "24x 1G RJ45 30W PoE + 8x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 24,
@@ -123,7 +119,6 @@
     },
     {
       "sku": "5320-48T-8XE",
-      "description": "48x 1G RJ45 + 8x 1/10G SFP+ (non-PoE)",
       "accessPorts": [
         {
           "count": 48,
@@ -138,7 +133,6 @@
     },
     {
       "sku": "5320-48P-8XE",
-      "description": "48x 1G RJ45 30W PoE + 8x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 48,

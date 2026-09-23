@@ -49,7 +49,6 @@
   "models": [
     {
       "sku": "N9K-C9336C-FX2",
-      "description": "36x 40/100G QSFP28 (pure fabric)",
       "accessPorts": [],
       "poeBudgets": [],
       "fabricPorts": [
@@ -65,7 +64,6 @@
     },
     {
       "sku": "N9K-C9336C-FX2-E",
-      "description": "36x 40/100G QSFP28 (pure fabric), Fibre Channel capable",
       "accessPorts": [],
       "poeBudgets": [],
       "fabricPorts": [
@@ -81,7 +79,6 @@
     },
     {
       "sku": "N9K-C93240YC-FX2",
-      "description": "48x 1/10/25G SFP28 + 12x 40/100G QSFP28, 1.2RU",
       "accessPorts": [
         {
           "count": 48,
@@ -105,7 +102,6 @@
     },
     {
       "sku": "N9K-C93360YC-FX2",
-      "description": "96x 1/10/25G SFP28 + 12x 40/100G QSFP28, 2RU",
       "accessPorts": [
         {
           "count": 96,
@@ -128,7 +124,6 @@
     },
     {
       "sku": "N9K-C93216TC-FX2",
-      "description": "96x 100M/1/10G BASE-T + 12x 40/100G QSFP28, 2RU",
       "accessPorts": [
         {
           "count": 96,

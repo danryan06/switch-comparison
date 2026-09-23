@@ -48,7 +48,6 @@
   "models": [
     {
       "sku": "CCS-720XP-24ZY4",
-      "description": "16x 2.5G 30W + 8x 5G 60W mGig PoE + 4x 25G SFP28",
       "accessPorts": [
         {
           "count": 16,
@@ -85,7 +84,6 @@
     },
     {
       "sku": "CCS-720XP-48ZC2",
-      "description": "40x 2.5G 30W + 8x 5G 60W mGig PoE + 4x 25G SFP28 + 2x 100G QSFP28",
       "accessPorts": [
         {
           "count": 40,
@@ -126,7 +124,6 @@
     },
     {
       "sku": "CCS-720XP-96ZC2-M-S",
-      "description": "80x 2.5G + 16x 5G mGig 60W PoE + 4x 25G SFP28 + 2x 100G QSFP28 (2RU)",
       "accessPorts": [
         {
           "count": 80,
@@ -169,7 +166,6 @@
     },
     {
       "sku": "CCS-720XP-48TXH-2C-S",
-      "description": "48x 10G mGig 90W PoE + 4x 25G SFP28 + 2x 100G QSFP28",
       "accessPorts": [
         {
           "count": 48,
@@ -199,7 +195,6 @@
     },
     {
       "sku": "CCS-720XP-48TXH-2C-S-5G",
-      "description": "48x 5G mGig 90W PoE + 4x 25G SFP28 + 2x 100G QSFP28",
       "accessPorts": [
         {
           "count": 48,

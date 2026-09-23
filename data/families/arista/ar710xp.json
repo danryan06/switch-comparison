@@ -47,7 +47,6 @@
   "models": [
     {
       "sku": "CCS-710XP-12TH-2S",
-      "description": "8x 1G 30W PoE + 4x 1G 60W PoE + 2x 1/10G SFP+, fanless",
       "accessPorts": [
         {
           "count": 8,
@@ -80,7 +79,6 @@
     },
     {
       "sku": "CCS-710XP-28TNH-2S",
-      "description": "24x 1G 30W PoE + 4x 5G 90W PoE + 2x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 24,

@@ -48,7 +48,6 @@
   "models": [
     {
       "sku": "EX4650-48Y",
-      "description": "48x 1/10/25G SFP28 + 8x 40/100G QSFP28",
       "accessPorts": [
         {
           "count": 48,

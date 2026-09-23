@@ -341,7 +341,6 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
       <div class="fl"><label for="bLife">Lifecycle</label><select id="bLife"><option value="current">Current only</option><option value="all">Include end of sale</option><option value="eos">End of sale only</option></select></div>
       <div class="fl"><label for="bRug">Environment</label><select id="bRug"><option value="">Any</option><option value="yes">Rugged only</option></select></div>
       <div class="fl"><label for="bStack">Stacking</label><select id="bStack"><option value="">Any</option><option value="yes">Yes</option><option value="no">No</option></select></div>
-      <div class="fl"><label for="bMlag">Multichassis LAG</label><select id="bMlag"><option value="">Any</option><option value="yes">Yes</option><option value="no">Not listed</option></select></div>
     </div>
     <div class="bar2">
       <span class="small" id="bCount"></span>
@@ -505,9 +504,15 @@ const fmtN=n=>n===null||n===undefined?null:fmt(n);
 const upText=s=>{if(!s.up)return "-";const o=U[s.up];return o.length>1?"Modular: "+o.map(x=>x.n.split(": ")[1]).join(", "):o[0].n};
 const isMod=s=>!!(s.up&&DATA.uplinks[s.up].modular);
 const vendorOf=s=>FAM[s.fam].v;
-/* Aruba SKUs are opaque part numbers, so lead with the model and demote the SKU. Every other vendor's SKU is its model name and has no s.name. */
-const modelName=s=>s.name||s.sku;
-const modelSub=s=>{const f=FAM[s.fam];return f.v+" "+f.name+(s.name?" · "+s.sku:"")};
+/* Naming scheme:
+   - Title = recognizable model name (s.name / description when present; else SKU).
+   - Subtitle = Vendor Family · orderable SKU when the title is not the raw SKU.
+   - Aruba access/campus: opaque JL/R8/S* order codes → description is the model name.
+   - Arista: strip CCS- product-line prefix from the title; keep full CCS-… SKU in the subtitle.
+   - Everyone else: SKU is already the model name (no port-layout prose as title). */
+const displaySku=s=>s.sku.replace(/^CCS-/,"");
+const modelName=s=>s.name||displaySku(s);
+const modelSub=s=>{const f=FAM[s.fam];return f.v+" "+f.name+((s.name||displaySku(s)!==s.sku)?" · "+s.sku:"")};
 const isCur=s=>s.lc.status==="current";
 /* End of support implies end of sale, so the later milestone is the one worth showing. */
 const lcShort=s=>s.lc.status==="endOfSupport"?"End of support "+(s.lc.endOfSupportDate||s.lc.endOfSaleDate):"End of sale "+s.lc.endOfSaleDate;
@@ -760,7 +765,7 @@ function cellHTML(s,c){
   if(c.k==="cmp")return `<td class="cmp"><input type="checkbox" class="cmpbox" aria-label="Compare ${esc(s.sku)}" data-c="${esc(s.sku)}" ${cmp.has(s.sku)?"checked":""}></td>`;
   if(c.k==="sku"){const v=s.verify.length?`<span class="vflag" title="${esc(s.vnote||"Needs verification")}">check</span>`:"";const e=isCur(s)?"":`<span class="eos" title="${esc(lcShort(s))}">EoS</span>`;
     const sub=[];
-    if(s.name)sub.push(s.sku);
+    if(s.name||displaySku(s)!==s.sku)sub.push(s.sku);
     if(s.ff==="Compact")sub.push(s.fanless?"Compact, fanless":"Compact");
     else if(s.fanless)sub.push("Fanless");
     return `<td class="sku">${esc(modelName(s))}${v}${e}${sub.length?`<div class="small" style="font-family:var(--sans);font-weight:400">${esc(sub.join(". "))}</div>`:""}</td>`}
@@ -777,17 +782,15 @@ function cellHTML(s,c){
   return `<td></td>`;
 }
 function filteredBrowseRows(){
-  const med=$("#bMed").value,q=$("#q").value.trim().toLowerCase(),poe=+$("#bPoe").value,spd=+$("#bSpd").value,np=+$("#bPorts").value,red=$("#bRed").value,life=$("#bLife").value,rug=$("#bRug").value,role=$("#bRole").value,stk=$("#bStack").value,mlag=$("#bMlag").value;
+  const med=$("#bMed").value,q=$("#q").value.trim().toLowerCase(),poe=+$("#bPoe").value,spd=+$("#bSpd").value,np=+$("#bPorts").value,red=$("#bRed").value,life=$("#bLife").value,rug=$("#bRug").value,role=$("#bRole").value,stk=$("#bStack").value;
   let rows=SKUS.filter(s=>{const f=FAM[s.fam];
     if(bVend.size&&!bVend.has(f.v))return false;
     if(role&&f.role!==role)return false;
-    if(q&&!(s.sku+" "+s.name+" "+f.name+" "+f.v).toLowerCase().includes(q))return false;
+    if(q&&!(s.sku+" "+displaySku(s)+" "+s.name+" "+f.name+" "+f.v).toLowerCase().includes(q))return false;
     if(life==="current"&&!isCur(s))return false;if(life==="eos"&&isCur(s))return false;
     if(rug==="yes"&&!s.rug)return false;
     if(stk==="yes"&&!(typeof f.stack.max==="number"&&f.stack.max>1))return false;
     if(stk==="no"&&typeof f.stack.max==="number"&&f.stack.max>1)return false;
-    if(mlag==="yes"&&!f.mlag)return false;
-    if(mlag==="no"&&f.mlag)return false;
     if(poe===0&&maxW(s)>0)return false;if(poe>0&&maxW(s)<poe)return false;
     if(np&&totalPorts(s)!==np)return false;if(red&&(red==="yes")!==s.red.supported)return false;if(spd&&maxSpd(s)<spd)return false;if(med&&!s.ports.some(p=>p[3]===med))return false;return true});
   let col=COLS.find(c=>c.k===sortKey&&colVisible(c));
@@ -832,7 +835,7 @@ function exportBrowseCsv(){
 }
 function clearFilters(){
   $("#q").value="";
-  $("#bRole").value="access";$("#bPorts").value="0";$("#bSpd").value="0";$("#bMed").value="";$("#bRed").value="";$("#bPoe").value="-1";$("#bLife").value="current";$("#bRug").value="";$("#bStack").value="";$("#bMlag").value="";
+  $("#bRole").value="access";$("#bPorts").value="0";$("#bSpd").value="0";$("#bMed").value="";$("#bRed").value="";$("#bPoe").value="-1";$("#bLife").value="current";$("#bRug").value="";$("#bStack").value="";
   bVend.clear();
   document.querySelectorAll("#bVendors .mlist input").forEach(i=>i.checked=false);
   $("#bVendorBtn").textContent="All vendors";
@@ -853,7 +856,7 @@ $("#bTable").addEventListener("click",e=>{
   const tr=e.target.closest("tr[data-sku]");if(tr)openDetail(tr.dataset.sku);
 });
 function alertCmp(){const c=$("#bCount");const t=c.textContent;c.textContent="Compare holds 4 models. Untick one first.";c.style.color="var(--warn)";setTimeout(()=>{c.textContent=t;c.style.color=""},2200)}
-["q","bRole","bPorts","bSpd","bMed","bPoe","bRed","bLife","bRug","bStack","bMlag"].forEach(id=>$("#"+id).addEventListener("input",renderBrowse));
+["q","bRole","bPorts","bSpd","bMed","bPoe","bRed","bLife","bRug","bStack"].forEach(id=>$("#"+id).addEventListener("input",renderBrowse));
 $("#bVendors .mlist").innerHTML=VENDORS.map(v=>`<label><input type="checkbox" value="${esc(v)}">${esc(v)}</label>`).join("");
 $("#bVendors").addEventListener("change",e=>{const v=e.target.value;if(e.target.checked)bVend.add(v);else bVend.delete(v);
   $("#bVendorBtn").textContent=!bVend.size?"All vendors":bVend.size===1?[...bVend][0]:bVend.size+" vendors";renderBrowse()});

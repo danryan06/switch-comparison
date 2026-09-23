@@ -47,7 +47,6 @@
   "models": [
     {
       "sku": "CCS-720DP-24S-M-S",
-      "description": "24x 1G 30W PoE + 4x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 24,
@@ -74,7 +73,6 @@
     },
     {
       "sku": "CCS-720DP-48S-M-S",
-      "description": "48x 1G 30W PoE + 4x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 48,
@@ -94,7 +92,6 @@
     },
     {
       "sku": "CCS-720DP-24ZS",
-      "description": "24x 2.5G mGig 60W PoE + 4x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 24,
@@ -117,7 +114,6 @@
     },
     {
       "sku": "CCS-720DP-48ZS",
-      "description": "48x 2.5G mGig 60W PoE + 4x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 48,
@@ -146,7 +142,6 @@
     },
     {
       "sku": "CCS-720DT-24S-M-S",
-      "description": "24x 1G RJ45 (non-PoE) + 4x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 24,
@@ -169,7 +164,6 @@
     },
     {
       "sku": "CCS-720DT-48S",
-      "description": "48x 1G RJ45 (non-PoE) + 4x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 48,
@@ -185,7 +179,6 @@
     },
     {
       "sku": "CCS-720DF-48Y-M-S",
-      "description": "48x 1G SFP (non-PoE) + 4x 1/10/25G SFP28",
       "accessPorts": [
         {
           "count": 48,

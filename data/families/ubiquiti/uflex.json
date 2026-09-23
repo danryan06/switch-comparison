@@ -34,7 +34,6 @@
     {
       "sku": "USW-Flex-Mini",
       "source": "ui-usw-flex-mini",
-      "description": "5-port 1G desktop switch, USB-C or PoE powered (no PoE output)",
       "accessPorts": [
         {
           "count": 5,
@@ -52,7 +51,6 @@
     {
       "sku": "USW-Flex",
       "source": "ui-usw-flex",
-      "description": "5-port 1G PoE switch, outdoor-ready, PoE-powered with PoE+ passthrough",
       "accessPorts": [
         {
           "count": 4,
@@ -88,7 +86,6 @@
     {
       "sku": "USW-Flex-2.5G-5",
       "source": "ui-usw-flex-2-5g-5",
-      "description": "5-port 2.5G desktop switch, USB-C or PoE powered (no PoE output)",
       "accessPorts": [
         {
           "count": 5,
@@ -106,7 +103,6 @@
     {
       "sku": "USW-Flex-2.5G-8-PoE",
       "source": "ui-usw-flex-2-5g-8-poe",
-      "description": "8-port 2.5G PoE++ switch + one 10G RJ45/SFP+ combo uplink, PoE+++ or AC powered",
       "accessPorts": [
         {
           "count": 8,

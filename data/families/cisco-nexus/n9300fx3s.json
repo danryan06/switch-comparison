@@ -45,7 +45,6 @@
   "models": [
     {
       "sku": "N9K-C93180YC-FX3S",
-      "description": "48x 1/10/25G SFP28 + 6x 40/100G QSFP28",
       "accessPorts": [
         {
           "count": 48,

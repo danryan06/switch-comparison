@@ -39,7 +39,6 @@
   "models": [
     {
       "sku": "5520-24T",
-      "description": "24x 1G RJ45 (non-PoE)",
       "accessPorts": [
         {
           "count": 24,
@@ -54,7 +53,6 @@
     },
     {
       "sku": "5520-24W",
-      "description": "24x 1G RJ45 90W PoE",
       "accessPorts": [
         {
           "count": 24,
@@ -86,7 +84,6 @@
     },
     {
       "sku": "5520-48T",
-      "description": "48x 1G RJ45 (non-PoE)",
       "accessPorts": [
         {
           "count": 48,
@@ -101,7 +98,6 @@
     },
     {
       "sku": "5520-48W",
-      "description": "48x 1G RJ45 90W PoE",
       "accessPorts": [
         {
           "count": 48,
@@ -133,7 +129,6 @@
     },
     {
       "sku": "5520-12MW-36W",
-      "description": "12x 1/2.5/5G multi-rate 90W + 36x 1G RJ45 90W PoE",
       "accessPorts": [
         {
           "count": 12,
@@ -170,7 +165,6 @@
     },
     {
       "sku": "5520-48SE",
-      "description": "48x 100M/1G SFP (non-PoE)",
       "accessPorts": [
         {
           "count": 48,
@@ -186,7 +180,6 @@
     },
     {
       "sku": "5520-24X",
-      "description": "24x 1/10G SFP+ (non-PoE)",
       "accessPorts": [
         {
           "count": 24,

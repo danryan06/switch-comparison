@@ -46,7 +46,6 @@
   "models": [
     {
       "sku": "CCS-720XPM-24T-6SY",
-      "description": "24x 1G 30W PoE + 4x 25G SFP28 + 2x 10G SFP+, MACsec",
       "accessPorts": [
         {
           "count": 24,
@@ -71,7 +70,6 @@
     },
     {
       "sku": "CCS-720XPM-24TH-6SY",
-      "description": "24x 1G 90W PoE + 4x 25G SFP28 + 2x 10G SFP+, MACsec",
       "accessPorts": [
         {
           "count": 24,
@@ -104,7 +102,6 @@
     },
     {
       "sku": "CCS-720XPM-48T-6SY",
-      "description": "48x 1G 30W PoE + 4x 25G SFP28 + 2x 10G SFP+, MACsec",
       "accessPorts": [
         {
           "count": 48,
@@ -129,7 +126,6 @@
     },
     {
       "sku": "CCS-720XPM-48TH-6SY",
-      "description": "48x 1G 90W PoE + 4x 25G SFP28 + 2x 10G SFP+, MACsec",
       "accessPorts": [
         {
           "count": 48,
@@ -162,7 +158,6 @@
     },
     {
       "sku": "CCS-720XDM-48T-6SY",
-      "description": "48x 1G RJ45 (non-PoE) + 4x 25G SFP28 + 2x 10G SFP+, MACsec",
       "accessPorts": [
         {
           "count": 48,
@@ -177,7 +172,6 @@
     },
     {
       "sku": "CCS-720XDM-32S-6SY",
-      "description": "32x 1G SFP (non-PoE) + 4x 25G SFP28 + 2x 10G SFP+, MACsec",
       "accessPorts": [
         {
           "count": 32,

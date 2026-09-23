@@ -39,7 +39,6 @@
   "models": [
     {
       "sku": "5720-24MW",
-      "description": "24x 1/2.5/5G multi-rate 90W PoE",
       "accessPorts": [
         {
           "count": 24,
@@ -71,7 +70,6 @@
     },
     {
       "sku": "5720-48MW",
-      "description": "48x 1/2.5/5G multi-rate 90W PoE",
       "accessPorts": [
         {
           "count": 48,
@@ -103,7 +101,6 @@
     },
     {
       "sku": "5720-24MXW",
-      "description": "24x 1/2.5/5/10G multi-rate 90W PoE",
       "accessPorts": [
         {
           "count": 24,
@@ -136,7 +133,6 @@
     },
     {
       "sku": "5720-48MXW",
-      "description": "48x 1/2.5/5/10G multi-rate 90W PoE",
       "accessPorts": [
         {
           "count": 48,

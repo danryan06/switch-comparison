@@ -54,7 +54,6 @@
   "models": [
     {
       "sku": "CCS-710P-16P",
-      "description": "12x 1G 30W PoE + 2x 5G 60W PoE + 2x 5G (1 data only, 1 PD/PSE) + 2x 1/10G SFP+, fanless",
       "accessPorts": [
         {
           "count": 12,

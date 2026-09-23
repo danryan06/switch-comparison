@@ -51,7 +51,6 @@
   "models": [
     {
       "sku": "CCS-710HXP-28TXH-4S",
-      "description": "24x 1G 60W PoE + 4x 10G mGig 90W PoE + 4x 1/10G SFP+, fanless, 1RU",
       "accessPorts": [
         {
           "count": 24,
@@ -81,7 +80,6 @@
     },
     {
       "sku": "CCS-710HXP-20TNH-4S",
-      "description": "16x 1G 30W PoE + 4x 5G mGig 90W PoE + 4x 1/10G SFP+, fanless, DIN rail",
       "accessPorts": [
         {
           "count": 16,

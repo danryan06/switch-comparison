@@ -39,7 +39,6 @@
   "models": [
     {
       "sku": "5420F-24T-4XE",
-      "description": "24x 1G RJ45 + 4x 1/10G SFP+ (non-PoE)",
       "accessPorts": [
         {
           "count": 24,
@@ -54,7 +53,6 @@
     },
     {
       "sku": "5420F-24P-4XE",
-      "description": "24x 1G RJ45 30W PoE + 4x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 24,
@@ -78,7 +76,6 @@
     },
     {
       "sku": "5420F-24S-4XE",
-      "description": "24x 100M/1G SFP + 4x 1/10G SFP+ (non-PoE)",
       "accessPorts": [
         {
           "count": 24,
@@ -94,7 +91,6 @@
     },
     {
       "sku": "5420F-48T-4XE",
-      "description": "48x 1G RJ45 + 4x 1/10G SFP+ (non-PoE)",
       "accessPorts": [
         {
           "count": 48,
@@ -109,7 +105,6 @@
     },
     {
       "sku": "5420F-48P-4XE",
-      "description": "48x 1G RJ45 30W PoE + 4x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 48,
@@ -133,7 +128,6 @@
     },
     {
       "sku": "5420F-48P-4XL",
-      "description": "48x 1G RJ45 30W PoE + 4x 1/10G SFP+ (higher PoE)",
       "accessPorts": [
         {
           "count": 48,
@@ -157,7 +151,6 @@
     },
     {
       "sku": "5420F-8W-16P-4XE",
-      "description": "8x 1G RJ45 90W + 16x 1G RJ45 30W PoE + 4x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 8,
@@ -186,7 +179,6 @@
     },
     {
       "sku": "5420F-16W-32P-4XE",
-      "description": "16x 1G RJ45 90W + 32x 1G RJ45 30W PoE + 4x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 16,
@@ -215,7 +207,6 @@
     },
     {
       "sku": "5420F-16MW-32P-4XE",
-      "description": "16x 1/2.5G multi-rate 90W + 32x 1G RJ45 30W PoE + 4x 1/10G SFP+",
       "accessPorts": [
         {
           "count": 16,
