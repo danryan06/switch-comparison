@@ -1,3 +1,7 @@
 dist/
 node_modules/
 .DS_Store
+
+# Agent merge instruction blurbs from data packages (not product data)
+**/CURSOR*.md
+*.CURSOR-*.md

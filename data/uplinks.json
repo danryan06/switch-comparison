@@ -954,5 +954,19 @@
         ]
       }
     ]
+  },
+  "uflex25g": {
+    "modular": false,
+    "options": [
+      {
+        "label": "1x 10G combo uplink: RJ45 or SFP+ (one active at a time; RJ45 also serves as PoE+++ power input)",
+        "ports": [
+          {
+            "count": 1,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
   }
 }

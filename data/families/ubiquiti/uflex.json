@@ -1,0 +1,143 @@
+{
+  "id": "uflex",
+  "vendor": "Ubiquiti",
+  "family": "Flex",
+  "source": "ui-switching",
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "Not stackable; each switch is managed individually in UniFi Network"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 only"
+  },
+  "routeScale": "None (Layer 2)",
+  "macTable": "2,000 to 4,000 (per model)",
+  "macsec": "Not listed",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Powered by PoE, or by a USB-C or AC adapter depending on model; single power input",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Single power input; no redundant option"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "No switch licensing; managed from UniFi Network (self-hosted or on a UniFi cloud gateway)",
+  "verify": [],
+  "models": [
+    {
+      "sku": "USW-Flex-Mini",
+      "source": "ui-usw-flex-mini",
+      "description": "5-port 1G desktop switch, USB-C or PoE powered (no PoE output)",
+      "accessPorts": [
+        {
+          "count": 5,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 10,
+      "forwardingMpps": 7,
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "Powered by 802.3af/at PoE or a 5V USB-C adapter. No PoE output. MAC table 2,000"
+    },
+    {
+      "sku": "USW-Flex",
+      "source": "ui-usw-flex",
+      "description": "5-port 1G PoE switch, outdoor-ready, PoE-powered with PoE+ passthrough",
+      "accessPorts": [
+        {
+          "count": 4,
+          "speedGbps": 1,
+          "poeWatts": 25
+        },
+        {
+          "count": 1,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "poeBudgets": [
+        {
+          "config": "PoE++/60W adapter input",
+          "watts": 46
+        },
+        {
+          "config": "PoE+ input",
+          "watts": 20
+        },
+        {
+          "config": "PoE input",
+          "watts": 8
+        }
+      ],
+      "switchingGbps": 10,
+      "forwardingMpps": 7,
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "Outdoor-ready. Port 1 is the PoE++ input; PoE+ output on 4 ports. Powered by PoE, no internal AC PSU. MAC table 2,000"
+    },
+    {
+      "sku": "USW-Flex-2.5G-5",
+      "source": "ui-usw-flex-2-5g-5",
+      "description": "5-port 2.5G desktop switch, USB-C or PoE powered (no PoE output)",
+      "accessPorts": [
+        {
+          "count": 5,
+          "speedGbps": 2.5,
+          "poeWatts": 0
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 25,
+      "forwardingMpps": 19,
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "Marketed as Flex Mini 2.5G. Powered by 802.3af/at PoE or a 5V USB-C adapter. No PoE output. MAC table 4,000"
+    },
+    {
+      "sku": "USW-Flex-2.5G-8-PoE",
+      "source": "ui-usw-flex-2-5g-8-poe",
+      "description": "8-port 2.5G PoE++ switch + one 10G RJ45/SFP+ combo uplink, PoE+++ or AC powered",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 64
+        }
+      ],
+      "uplinks": "uflex25g",
+      "poeBudgets": [
+        {
+          "config": "210W AC adapter input",
+          "watts": 196
+        },
+        {
+          "config": "PoE+++ input",
+          "watts": 76
+        },
+        {
+          "config": "PoE++ input",
+          "watts": 46
+        },
+        {
+          "config": "PoE+ input",
+          "watts": 16
+        }
+      ],
+      "switchingGbps": 60,
+      "forwardingMpps": 45,
+      "formFactor": "Compact",
+      "fanless": true,
+      "note": "Marketed as Flex 2.5G PoE. 8x 2.5G all PoE++ (up to 64W/port). One 10G uplink offered as a combo: either 10G RJ45 (which doubles as the PoE+++ power input) or 10G SFP+, one active at a time, not both. MAC table 4,000"
+    }
+  ]
+}

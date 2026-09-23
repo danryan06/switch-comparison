@@ -50,6 +50,7 @@
     "families/ubiquiti/upro.json",
     "families/ubiquiti/ustd.json",
     "families/ubiquiti/uind.json",
+    "families/ubiquiti/uflex.json",
     "families/hpe-aruba/a6100.json",
     "families/hpe-aruba/a6000.json",
     "families/hpe-aruba/a6300m2.json",
