@@ -87,6 +87,7 @@
     "accessories/ubiquiti.json",
     "accessories/extreme.json",
     "accessories/arista.json",
-    "accessories/cisco-nexus.json"
+    "accessories/cisco-nexus.json",
+    "accessories/ruckus.json"
   ]
 }

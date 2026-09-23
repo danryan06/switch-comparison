@@ -1,0 +1,577 @@
+{
+  "vendor": "RUCKUS",
+  "source": "ruckus-optics",
+  "opticsMatrixUrl": "https://webresources.commscope.com/download/assets/RUCKUS+Optics+Family+Data+Sheet/b9196c363bd511f0ba74ea1fa90d937b",
+  "note": "Curated from the RUCKUS Ethernet Optics Family data sheet (PA-114240). ICX stacks over standard Ethernet ports\u2014no proprietary stacking cable; use the same SFP+/SFP28/QSFP optics or DACs marked for stacking on the matrix (\u0298). 25G optics are not for 10G ports. PSUs/fans/modules (RPS19/21/22/23/24, ICX-FAN12/13/14, ICX7550 1X100GQ/2X40GQ/4X10GF) are ordered from the switch datasheets, not this optics catalog. Multipacks and many EOL variants omitted.",
+  "parts": [
+    {
+      "sku": "E1MG-SX-OM",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "SX",
+      "media": "MMF",
+      "distanceM": 550,
+      "verified": true
+    },
+    {
+      "sku": "E1MG-LX-OM",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "LX",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true
+    },
+    {
+      "sku": "E1MG-TX-A",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 100,
+      "verified": true,
+      "note": "100/1000BASE-T, TAA"
+    },
+    {
+      "sku": "E1MG-BXD-TA",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "BiDi",
+      "media": "SMF",
+      "distanceM": 20000,
+      "verified": true,
+      "note": "Downstream BiDi (1490/1310); pair with E1MG-BXU-TA; industrial temp, TAA"
+    },
+    {
+      "sku": "E1MG-BXU-TA",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "BiDi",
+      "media": "SMF",
+      "distanceM": 20000,
+      "verified": true,
+      "note": "Upstream BiDi (1310/1490); pair with E1MG-BXD-TA; industrial temp, TAA"
+    },
+    {
+      "sku": "10G-SFPP-SR-S",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 300,
+      "verified": true,
+      "note": "Standard temp (0\u201370\u00b0C); 300m OM3 / 400m OM4"
+    },
+    {
+      "sku": "10G-SFPP-LR-S",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true,
+      "note": "Standard temp (0\u201370\u00b0C)"
+    },
+    {
+      "sku": "10G-SFPP-SR-SA",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 300,
+      "verified": true,
+      "note": "TAA; standard temp"
+    },
+    {
+      "sku": "10G-SFPP-LR-SA",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true,
+      "note": "TAA; standard temp"
+    },
+    {
+      "sku": "10G-SFPP-ER",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "ER",
+      "media": "SMF",
+      "distanceM": 40000,
+      "verified": true,
+      "note": "Marked EOL on newer optics datasheet; still listed"
+    },
+    {
+      "sku": "10G-SFPP-ZR",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "ZR",
+      "media": "SMF",
+      "distanceM": 80000,
+      "verified": true,
+      "note": "Marked EOL on newer optics datasheet; still listed"
+    },
+    {
+      "sku": "10G-SFPP-LRM",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LRM",
+      "media": "MMF",
+      "distanceM": 220,
+      "verified": true,
+      "appliesTo": [
+        "ricx7850"
+      ],
+      "note": "Native on ICX7850-48FS only per optics matrix"
+    },
+    {
+      "sku": "10G-SFPP-TX-LP-A",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 30,
+      "verified": true,
+      "note": "10GBASE-T low power, Cat6a/7, TAA; port-count limits apply"
+    },
+    {
+      "sku": "10G-SFPP-BXD-S",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "BiDi",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true,
+      "note": "BiDi downstream; pair with 10G-SFPP-BXU-S"
+    },
+    {
+      "sku": "10G-SFPP-BXU-S",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "BiDi",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true,
+      "note": "BiDi upstream; pair with 10G-SFPP-BXD-S"
+    },
+    {
+      "sku": "10G-SFPP-TWX-P-0101",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 1,
+      "verified": true,
+      "note": "Passive DAC; usable for stacking on platforms that support 10G stack links"
+    },
+    {
+      "sku": "10G-SFPP-TWX-P-0301",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 3,
+      "verified": true
+    },
+    {
+      "sku": "10G-SFPP-TWX-P-0501",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 5,
+      "verified": true
+    },
+    {
+      "sku": "10GE-SFPP-AOC-1001",
+      "category": "aoc",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "AOC",
+      "distanceM": 10,
+      "verified": true
+    },
+    {
+      "sku": "E25G-SFP28-SR",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 100,
+      "verified": true,
+      "appliesTo": [
+        "ricx8200",
+        "ricx7850"
+      ],
+      "note": "70m OM3 / 100m OM4. Stacking+data on ICX 8200; data-only on ICX7850-48F"
+    },
+    {
+      "sku": "E25G-SFP28-LR",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true,
+      "appliesTo": [
+        "ricx8200",
+        "ricx7850"
+      ],
+      "note": "Stacking+data on ICX 8200; data-only on ICX7850-48F"
+    },
+    {
+      "sku": "E25G-SFP28-TWX-P-0101",
+      "category": "dac",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "DAC",
+      "distanceM": 1,
+      "verified": true,
+      "appliesTo": [
+        "ricx8200",
+        "ricx7850"
+      ]
+    },
+    {
+      "sku": "E25G-SFP28-TWX-P-0301",
+      "category": "dac",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "DAC",
+      "distanceM": 3,
+      "verified": true,
+      "appliesTo": [
+        "ricx8200",
+        "ricx7850"
+      ]
+    },
+    {
+      "sku": "E25G-SFP28-AOC-1001",
+      "category": "aoc",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "AOC",
+      "distanceM": 10,
+      "verified": true,
+      "appliesTo": [
+        "ricx8200",
+        "ricx7850"
+      ],
+      "note": "Marked EOL on newer optics datasheet"
+    },
+    {
+      "sku": "E40G-QSFP-SR4",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 150,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ],
+      "note": "100m OM3 / 150m OM4; stacking+data on 7550/7850"
+    },
+    {
+      "sku": "E40G-QSFP-LR4",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ]
+    },
+    {
+      "sku": "E40G-QSFP-LR4-A",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ],
+      "note": "TAA"
+    },
+    {
+      "sku": "E40G-QSFP-SR-BIDI",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "BiDi",
+      "media": "MMF",
+      "distanceM": 100,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ],
+      "note": "Marked EOL; LC BiDi"
+    },
+    {
+      "sku": "E40G-QSFP-QSFP-P-0101",
+      "category": "dac",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "media": "DAC",
+      "distanceM": 1,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ],
+      "note": "Passive DAC; common short stack cable"
+    },
+    {
+      "sku": "E40G-QSFP-QSFP-P-0301",
+      "category": "dac",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "media": "DAC",
+      "distanceM": 3,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ]
+    },
+    {
+      "sku": "E40G-QSFP-C-0501",
+      "category": "dac",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "media": "DAC",
+      "distanceM": 5,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ]
+    },
+    {
+      "sku": "E40G-QSFP-4SFP-AOC-1001",
+      "category": "aoc",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "media": "AOC",
+      "distanceM": 10,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ],
+      "note": "4x10G QSFP+ to 4x SFP+ breakout AOC"
+    },
+    {
+      "sku": "E100G-QSFP28-SR4",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 100,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ],
+      "note": "25G breakout capable; stacking+data with FI 8.0.95c+"
+    },
+    {
+      "sku": "E100G-QSFP28-SR4-A",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 100,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ],
+      "note": "TAA"
+    },
+    {
+      "sku": "E100G-QSFP28-LR4-LP-10KM",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ],
+      "note": "Low-power LR4; stacking+data"
+    },
+    {
+      "sku": "E100G-QSFP28-DR1",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 500,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ],
+      "note": "100GBASE-DR PAM4 single-lambda, FEC; data links (reach label mapped to LR)"
+    },
+    {
+      "sku": "E100G-QSFP28-FR1",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 2000,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ],
+      "note": "100GBASE-FR PAM4, FEC; data links"
+    },
+    {
+      "sku": "E100G-QSFP28-LR1",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ],
+      "note": "100GBASE-LR PAM4, FEC; data links"
+    },
+    {
+      "sku": "E100G-QSFP28-ER4L",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "ER",
+      "media": "SMF",
+      "distanceM": 40000,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ],
+      "note": "30km no FEC / 40km with FEC"
+    },
+    {
+      "sku": "E100G-QSFP-QSFP-P-0101",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 1,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ]
+    },
+    {
+      "sku": "E100G-QSFP-QSFP-P-0301",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 3,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ]
+    },
+    {
+      "sku": "E100G-QSFP-QSFP-P-0501",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 5,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ]
+    },
+    {
+      "sku": "E100G-QSFP-QSFP-AOC-1001",
+      "category": "aoc",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "AOC",
+      "distanceM": 10,
+      "verified": true,
+      "appliesTo": [
+        "ricx7550",
+        "ricx7850"
+      ],
+      "note": "Marked EOL on newer optics datasheet"
+    },
+    {
+      "sku": "E100G-QSFP-4SFP-P-0101",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 1,
+      "verified": true,
+      "appliesTo": [
+        "ricx7850"
+      ],
+      "note": "4x25G breakout DAC; primarily with ICX7850-48F / -32Q breakout"
+    },
+    {
+      "sku": "E100G-QSFP-4SFP-P-0301",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 3,
+      "verified": true,
+      "appliesTo": [
+        "ricx7850"
+      ]
+    }
+  ]
+}
