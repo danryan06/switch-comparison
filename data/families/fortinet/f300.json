@@ -3,6 +3,10 @@
   "vendor": "Fortinet",
   "family": "FortiSwitch 300G",
   "source": "fcam",
+  "mlag": {
+    "tech": "MCLAG",
+    "note": "Two FortiSwitch units form an active/active MCLAG pair (maximum two; same model and firmware recommended). Supported with FortiLink MCLAG peer groups and in standalone mode. The feature matrix has a 348G/348G-FPOE column only; the 324G models are not listed. Layer-3 routing inside the MCLAG is not supported per the matrix"
+  },
   "stacking": {
     "tech": "FortiLink",
     "bandwidthGbps": null,
@@ -30,7 +34,8 @@
   "fansFieldReplaceable": false,
   "licensing": "No license needed when managed by a FortiGate over FortiLink. Dynamic routing needs the Advanced Features license (FS-SW-LIC-xxx). Cloud or standalone management is a separate subscription",
   "verify": [
-    "bgp"
+    "bgp",
+    "mlag"
   ],
   "models": [
     {
@@ -115,5 +120,9 @@
       "note": "Spec table lists 1560W; the lower ordering figure is used for sizing"
     }
   ],
-  "verifyNote": "BGP listed for the campus family; not yet confirmed for 300G models"
+  "verifyNote": "BGP listed for the campus family; not yet confirmed for 300G models. Multichassis LAG: MCLAG support is read from the FortiSwitchOS 7.6.6 Feature Matrix. Its check marks do not survive text extraction, so the supported columns were placed from the dashes in the MCLAG rows and the 'Layer-3 routing in MCLAG' row. Confirm against the PDF. The 324G and 324G-FPOE do not appear in the 7.6.6 matrix at all, so MCLAG on those models is unconfirmed",
+  "additionalSources": [
+    "fsmatrix766",
+    "fsmclag"
+  ]
 }

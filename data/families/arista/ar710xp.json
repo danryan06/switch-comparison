@@ -1,0 +1,115 @@
+{
+  "id": "ar710xp",
+  "vendor": "Arista",
+  "family": "710XP",
+  "source": "ar710xp",
+  "additionalSources": [
+    "arswag"
+  ],
+  "mlag": {
+    "tech": "MLAG",
+    "note": "Active/active MLAG pair using standard LACP (listed on the datasheet)"
+  },
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking on the datasheet. Arista SWAG (Switch Aggregation Group) can combine switches into one logical system over standard Ethernet links, but per-platform support is not published publicly"
+  },
+  "verify": [
+    "stacking"
+  ],
+  "verifyNote": "SWAG support is not on the datasheet and Arista's platform list is behind a login. If confirmed, set stacking.tech to SWAG and take the member limit and port usage from the platform documentation, not the general 48-switch figure",
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "EOS Layer 3: static, OSPFv2/v3, IS-IS, BGP/MP-BGP, RIPv2, VRRP, VRF, PBR. PIM, VXLAN and EVPN are listed as not yet supported in EOS. Dynamic routing needs the FLX-Lite license (Group 0)"
+  },
+  "routeScale": "2K IPv4 / 512 IPv6 routes, 8K / 4K hosts",
+  "macTable": "16K",
+  "macsec": "Not listed on datasheet",
+  "buffer": "1.5 MB",
+  "power": {
+    "summary": "Fixed internal AC power supply: 180W (12TH) or 460W (28TNH). The 12TH is fanless; the 28TNH has 2+1 fans",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Single fixed internal PSU"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Base EOS included. Dynamic routing needs FLX-Lite (LIC-FIX-G0-FLX-L, up to 8K routes). Also manageable with CloudVision CUE (subscription)",
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "models": [
+    {
+      "sku": "CCS-710XP-12TH-2S",
+      "description": "8x 1G 30W PoE + 4x 1G 60W PoE + 2x 1/10G SFP+, fanless",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 4,
+          "speedGbps": 1,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "upm2",
+      "poeBudgets": [
+        {
+          "config": "Fixed internal 180W",
+          "watts": 150
+        }
+      ],
+      "switchingGbps": 64,
+      "forwardingMpps": 95,
+      "formFactor": "Compact",
+      "fanless": true,
+      "mounting": [
+        "desktop",
+        "din",
+        "rack"
+      ],
+      "note": "Rated to 35C in vertical, under-counter or enclosed mounting. Magnetic mount kit also available"
+    },
+    {
+      "sku": "CCS-710XP-28TNH-2S",
+      "description": "24x 1G 30W PoE + 4x 5G 90W PoE + 2x 1/10G SFP+",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 4,
+          "speedGbps": 5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "upm2",
+      "poeBudgets": [
+        {
+          "config": "Fixed internal 460W",
+          "watts": 360
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 95,
+      "mounting": [
+        "rack"
+      ],
+      "note": "Ordered as CCS-710XP-28TNH-2S-F. Minimum EOS and weight are listed as TBD on the Aug 2026 datasheet",
+      "verify": [
+        "forwardingMpps"
+      ],
+      "verifyNote": "The datasheet shows one 95 Mpps value spanning both model columns; it may apply only to the 12TH"
+    }
+  ]
+}

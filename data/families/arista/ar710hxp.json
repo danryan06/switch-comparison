@@ -1,0 +1,124 @@
+{
+  "id": "ar710hxp",
+  "vendor": "Arista",
+  "family": "710HXP",
+  "source": "ar710hxp",
+  "additionalSources": [
+    "arswag"
+  ],
+  "mlag": {
+    "tech": "MLAG",
+    "note": "MLAG is listed under Layer 2 features, but the datasheet marks its 'Cognitive Campus Resilience' section (MLAG, SSU) with the not-yet-supported asterisk"
+  },
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking on the datasheet. Arista SWAG (Switch Aggregation Group) can combine switches into one logical system over standard Ethernet links, but per-platform support is not published publicly"
+  },
+  "verify": [
+    "stacking",
+    "mlag"
+  ],
+  "verifyNote": "SWAG support is not on the datasheet and Arista's platform list is behind a login. If confirmed, set stacking.tech to SWAG and take the member limit and port usage from the platform documentation, not the general 48-switch figure. Multichassis LAG: the datasheet lists MLAG without an asterisk but flags the resilience section containing it as not currently supported in EOS; confirm MLAG is shipping",
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "EOS Layer 3: static, OSPFv2/v3, IS-IS, BGP/MP-BGP, RIPv2, VRRP, VRF, PBR. PIM, VXLAN and EVPN are listed as not yet supported. Industrial protocols: PROFINET, MODBUS. Dynamic routing needs the Enhanced license (Group 2)"
+  },
+  "routeScale": "2K IPv4 / 512 IPv6 routes, 8K / 4K hosts",
+  "macTable": "16K",
+  "macsec": "Not listed on datasheet",
+  "buffer": "1.5 MB",
+  "power": {
+    "summary": "28TXH: two hot-swap internal 400W AC/HVDC PSUs. 20TNH: up to two external adapters, 480W AC or 290W DC. Fanless",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "1+1. On the 20TNH the second supply does not add PoE budget; on the 28TXH the 720W budget is with both PSUs"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Base EOS included. OSPF, IS-IS, BGP and PIM need the Enhanced license (LIC-FIX-G2-E); FLX-Lite adds up to 32K routes. Also manageable with CloudVision CUE (subscription)",
+  "ruggedized": true,
+  "operatingTempC": {
+    "min": -40,
+    "max": 75
+  },
+  "ipRating": "IP30",
+  "note": "Rated -40 to 75C in a fan-equipped enclosure, 70C ventilated, 60C sealed. Vibration and shock rated (IEC 60068, MIL-STD-810), IEEE 1613 and IEC 61850-3. Minimum EOS is TBD for both models on the Aug 2026 datasheet",
+  "models": [
+    {
+      "sku": "CCS-710HXP-28TXH-4S",
+      "description": "24x 1G 60W PoE + 4x 10G mGig 90W PoE + 4x 1/10G SFP+, fanless, 1RU",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 60
+        },
+        {
+          "count": 4,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "2x 400W AC/HVDC internal (included)",
+          "watts": 720
+        }
+      ],
+      "switchingGbps": 208,
+      "forwardingMpps": 95,
+      "fanless": true,
+      "mounting": [
+        "rack",
+        "wall"
+      ]
+    },
+    {
+      "sku": "CCS-710HXP-20TNH-4S",
+      "description": "16x 1G 30W PoE + 4x 5G mGig 90W PoE + 4x 1/10G SFP+, fanless, DIN rail",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 4,
+          "speedGbps": 5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "290W DC external adapter (single or dual)",
+          "watts": 210
+        },
+        {
+          "config": "480W AC external adapter (single or dual)",
+          "watts": 400
+        }
+      ],
+      "switchingGbps": 144,
+      "forwardingMpps": 95,
+      "formFactor": "Compact",
+      "fanless": true,
+      "mounting": [
+        "din",
+        "wall",
+        "rack"
+      ],
+      "poweredBy": "External adapters, sold separately (PWR-462-AC-ADP-H or PWR-462-DC-ADP-H)",
+      "verify": [
+        "switchingGbps"
+      ],
+      "verifyNote": "The datasheet states 144 Gbps; the port total (16x 1G + 4x 5G + 4x 10G) is 152 Gbps full duplex. Datasheet value kept"
+    }
+  ]
+}

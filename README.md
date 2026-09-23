@@ -60,7 +60,7 @@ A few decisions matter more than the rest, because they are where vendors descri
 
 **Form factor matters for small sites.** Models are `1RU` (the default), `Compact`, or `Desktop`, with a `fanless` flag. Switches that can run on PoE from upstream (Catalyst 9200CX-12T and -8PT, FS-108F) describe it in `poweredBy`.
 
-**Stacking is not one thing.** Cisco StackWise stacks over dedicated rear ports. Aruba VSF stacks over the front uplinks, so the sizer subtracts those ports from available uplinks. Fortinet has no hardware stack; a FortiGate manages switches as a fabric over FortiLink, so `maxMembers` is `null`. Two-node HA pairs such as StackWise Virtual and VSX use `maxMembers: 2` with `frontPanel: false`. Switches that cannot stack at all, like the Catalyst 9200CX, use `maxMembers: 1`.
+**Stacking is not one thing.** Cisco StackWise stacks over dedicated rear ports. Aruba VSF stacks over the front uplinks, so the sizer subtracts those ports from available uplinks. Fortinet has no hardware stack; a FortiGate manages switches as a fabric over FortiLink, so `maxMembers` is `null`. Switches that cannot stack at all use `maxMembers: 1`. Two-switch HA pairs (StackWise Virtual, VSX, MLAG, MCLAG) are not stacks: they go in the separate optional `mlag` field, and families that only pair (not stack) use `maxMembers: 1` in `stacking`.
 
 **Model values can override the family.** When one model differs from its family (a different datasheet, route scale, MAC table, or buffer), set that field on the model.
 

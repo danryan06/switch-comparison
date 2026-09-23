@@ -1,0 +1,334 @@
+{
+  "vendor": "Arista",
+  "source": "arista-optics",
+  "opticsMatrixUrl": "https://www.arista.com/en/products/transceivers-cables",
+  "note": "Curated from Arista's Optics Modules and Cables data sheet. Arista campus switches have no stacking cables (redundancy is MLAG over standard ports). DACs and AOCs come in more lengths than listed; platform support for SFP-10G-T and rate-adapting optics varies, so check the Transceiver and Cable Guide.",
+  "parts": [
+    {
+      "sku": "SFP-1G-SX",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "SX",
+      "media": "MMF",
+      "distanceM": 550,
+      "verified": true
+    },
+    {
+      "sku": "SFP-1G-LX",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "LX",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true
+    },
+    {
+      "sku": "SFP-1G-T",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 100,
+      "note": "100/1000BASE-T",
+      "verified": true
+    },
+    {
+      "sku": "SFP-1G-LX-H",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "LX",
+      "media": "SMF",
+      "distanceM": 10000,
+      "note": "Extended temperature; listed for the 710HXP",
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-SRL",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 100,
+      "note": "10GBASE-SRL (short reach lite), 100m OM3 / 150m OM4; interoperates with 10G-SR",
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-SR",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 300,
+      "note": "300m OM3 / 400m OM4",
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-SR-H",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 300,
+      "note": "Extended temperature; listed for the 710HXP",
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-LRL",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 1000,
+      "note": "10GBASE-LRL (long reach lite), 1km; interoperates with 10G-LR",
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-LR",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-LR-H",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000,
+      "note": "Extended temperature; listed for the 710HXP",
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-ER",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "ER",
+      "media": "SMF",
+      "distanceM": 40000,
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-ZR",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "ZR",
+      "media": "SMF",
+      "distanceM": 80000,
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-T-RP",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 30,
+      "note": "10G/1G/100M BASE-T, 30m at 10G over Cat6a; reduced-power version supported in all Arista SFP+ and SFP25 ports unless otherwise noted",
+      "verified": true
+    },
+    {
+      "sku": "SFP-25G-SR",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 100,
+      "note": "70m OM3 / 100m OM4",
+      "verified": true
+    },
+    {
+      "sku": "SFP-25G-MR-SR",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 100,
+      "note": "Dual rate 10G/25G: 70m/100m OM3/OM4 at 25G, 300m/400m at 10G",
+      "verified": true
+    },
+    {
+      "sku": "SFP-25G-MR-XSR",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 300,
+      "note": "Dual rate 10G/25G extended reach: 200m/300m OM3/OM4 at 25G",
+      "verified": true
+    },
+    {
+      "sku": "SFP-25G-LR",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true
+    },
+    {
+      "sku": "SFP-25G-MR-LR",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000,
+      "note": "Dual rate 10G/25G",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-SR4",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 100,
+      "note": "70m OM3 / 100m OM4, MPO-12",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-SRBD",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "BiDi",
+      "media": "MMF",
+      "distanceM": 100,
+      "note": "100GBASE-BIDI over duplex MMF, 70m OM3 / 100m OM4",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-CWDM4",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "CWDM",
+      "media": "SMF",
+      "distanceM": 2000,
+      "note": "Duplex SMF, 100G/40G dual rate",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-LR4",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true
+    },
+    {
+      "sku": "CAB-SFP-SFP-1M",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 1,
+      "verified": true
+    },
+    {
+      "sku": "CAB-SFP-SFP-3M",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 3,
+      "verified": true
+    },
+    {
+      "sku": "CAB-S-S-25G-1M",
+      "category": "dac",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "DAC",
+      "distanceM": 1,
+      "verified": true
+    },
+    {
+      "sku": "CAB-S-S-25G-3M",
+      "category": "dac",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "DAC",
+      "distanceM": 3,
+      "verified": true
+    },
+    {
+      "sku": "CAB-Q-Q-100G-1M",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 1,
+      "verified": true
+    },
+    {
+      "sku": "CAB-Q-Q-100G-3M",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 3,
+      "verified": true
+    },
+    {
+      "sku": "CAB-Q-4S-100G-3M",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 3,
+      "note": "100G QSFP to 4x 25G SFP breakout",
+      "verified": true
+    },
+    {
+      "sku": "AOC-S-S-10G-10M",
+      "category": "aoc",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "AOC",
+      "distanceM": 10,
+      "verified": true
+    },
+    {
+      "sku": "AOC-S-S-25G-10M",
+      "category": "aoc",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "AOC",
+      "distanceM": 10,
+      "verified": true
+    },
+    {
+      "sku": "AOC-Q-Q-100G-10M",
+      "category": "aoc",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "AOC",
+      "distanceM": 10,
+      "verified": true
+    }
+  ]
+}

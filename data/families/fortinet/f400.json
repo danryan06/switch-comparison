@@ -3,6 +3,10 @@
   "vendor": "Fortinet",
   "family": "FortiSwitch 400E",
   "source": "fcam",
+  "mlag": {
+    "tech": "MCLAG",
+    "note": "Two FortiSwitch units form an active/active MCLAG pair (maximum two; same model and firmware recommended). Supported with FortiLink MCLAG peer groups and in standalone mode. Layer-3 routing inside the MCLAG is limited to VRRP and static routes"
+  },
   "stacking": {
     "tech": "FortiLink",
     "bandwidthGbps": null,
@@ -29,7 +33,9 @@
   },
   "fansFieldReplaceable": false,
   "licensing": "No license needed when managed by a FortiGate over FortiLink. Dynamic routing needs the Advanced Features license (FS-SW-LIC-xxx). Cloud or standalone management is a separate subscription",
-  "verify": [],
+  "verify": [
+    "mlag"
+  ],
   "models": [
     {
       "sku": "FS-424E-Fiber",
@@ -100,6 +106,9 @@
     }
   ],
   "additionalSources": [
-    "fsos720"
-  ]
+    "fsos720",
+    "fsmatrix766",
+    "fsmclag"
+  ],
+  "verifyNote": "Multichassis LAG: MCLAG support is read from the FortiSwitchOS 7.6.6 Feature Matrix. Its check marks do not survive text extraction, so the supported columns were placed from the dashes in the MCLAG rows and the 'Layer-3 routing in MCLAG' row. Confirm against the PDF"
 }

@@ -62,7 +62,10 @@
     "families/arista/ar720xp.json",
     "families/arista/ar722xpm.json",
     "families/arista/ar720xpm.json",
-    "families/arista/ar720d.json"
+    "families/arista/ar720d.json",
+    "families/arista/ar710p.json",
+    "families/arista/ar710xp.json",
+    "families/arista/ar710hxp.json"
   ],
   "accessories": [
     "accessories/hpe-aruba.json",
@@ -71,6 +74,7 @@
     "accessories/fortinet.json",
     "accessories/juniper.json",
     "accessories/ubiquiti.json",
-    "accessories/extreme.json"
+    "accessories/extreme.json",
+    "accessories/arista.json"
   ]
 }

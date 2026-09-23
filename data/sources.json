@@ -472,5 +472,40 @@
     "title": "Arista press release: Arista Unveils Modern Stacking for Campus Networks (SWAG, Dec 3, 2024)",
     "url": "https://www.arista.com/en/company/news/press-release/20693-pr-12032024",
     "retrieved": "2026-09-23"
+  },
+  "fsmatrix766": {
+    "title": "Feature Matrix for FortiSwitchOS 7.6.6",
+    "url": "https://fortinetweb.s3.amazonaws.com/docs.fortinet.com/v2/attachments/742a8550-038e-11f1-8b43-d2943efe5b2f/FortiSwitch-7.6.6-Feature-Matrix.pdf",
+    "retrieved": "2026-09-23"
+  },
+  "fsmclag": {
+    "title": "FortiSwitch 7.6.5 FortiLink Guide: MCLAG requirements",
+    "url": "https://docs.fortinet.com/document/fortiswitch/7.6.5/fortilink-guide/801193/mclag-requirements",
+    "retrieved": "2026-09-23"
+  },
+  "ar710p": {
+    "title": "Arista CCS-710P Compact Series Switches Data Sheet (03-0062-14, Aug 17, 2026)",
+    "url": "https://www.arista.com/assets/data/pdf/Datasheets/CCS-710P-Datasheet.pdf",
+    "retrieved": "2026-09-23"
+  },
+  "ar710p-eos": {
+    "title": "Arista: End of Sale of the CCS-710P-12 Switch (Sep 12, 2025)",
+    "url": "https://www.arista.com/en/support/advisories-notices/end-of-sale/22401-end-of-sale-of-the-arista-ccs-710p-12-switch",
+    "retrieved": "2026-09-23"
+  },
+  "ar710xp": {
+    "title": "Arista CCS-710XP Compact Series Switches Data Sheet (04-0057-12, Aug 17, 2026)",
+    "url": "https://www.arista.com/assets/data/pdf/Datasheets/CCS-710XP-Datasheet.pdf",
+    "retrieved": "2026-09-23"
+  },
+  "ar710hxp": {
+    "title": "Arista CCS-710HXP Series Switches Data Sheet (04-0066-08, Aug 17, 2026)",
+    "url": "https://www.arista.com/assets/data/pdf/Datasheets/CCS-710HXP-Datasheet.pdf",
+    "retrieved": "2026-09-23"
+  },
+  "arista-optics": {
+    "title": "Arista Optics Modules and Cables Data Sheet (03-0027-38, Nov 2025)",
+    "url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+    "retrieved": "2026-09-23"
   }
 }

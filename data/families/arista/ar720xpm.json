@@ -11,12 +11,12 @@
     "bandwidthGbps": null,
     "maxMembers": 1,
     "frontPanel": false,
-    "note": "No hardware stacking on the datasheet. Redundancy is an MLAG pair (active/active, standard LACP) or L3 ECMP uplinks. Arista SWAG (Switch Aggregation Group, announced Dec 2024) groups up to 48 switches under one IP over standard Ethernet links, but the datasheet does not list it and per-platform support is not confirmed"
+    "note": "No hardware stacking on the datasheet. Arista SWAG (Switch Aggregation Group) can combine switches into one logical system over standard Ethernet links, but per-platform support is not published publicly"
   },
   "verify": [
     "stacking"
   ],
-  "verifyNote": "SWAG support for this family is not on the datasheet; the SWAG TOI with the platform list is behind an Arista login. If SWAG is supported, stacking should become tech SWAG, maxMembers 48, frontPanel true",
+  "verifyNote": "SWAG support is not on the datasheet and Arista's platform list is behind a login. If confirmed, set stacking.tech to SWAG and take the member limit and port usage from the platform documentation, not the general 48-switch figure",
   "routing": {
     "tier": "full",
     "bgp": true,

@@ -1,0 +1,102 @@
+{
+  "id": "ar710p",
+  "vendor": "Arista",
+  "family": "710P",
+  "source": "ar710p",
+  "additionalSources": [
+    "ar710p-eos",
+    "arswag"
+  ],
+  "mlag": {
+    "tech": "MLAG",
+    "note": "Active/active MLAG pair using standard LACP (listed on the datasheet)"
+  },
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking on the datasheet. Arista SWAG (Switch Aggregation Group) can combine switches into one logical system over standard Ethernet links, but per-platform support is not published publicly"
+  },
+  "verify": [
+    "stacking"
+  ],
+  "verifyNote": "SWAG support is not on the datasheet and Arista's platform list is behind a login. If confirmed, set stacking.tech to SWAG and take the member limit and port usage from the platform documentation, not the general 48-switch figure",
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "EOS Layer 3: static, OSPFv2/v3, IS-IS, BGP/MP-BGP, RIPv2, PIM, VRRP; VXLAN bridging with EVPN type 2. Dynamic routing and EVPN need the FLX-Lite license (Group 1)"
+  },
+  "routeScale": "8K IPv4 / 2K IPv6 routes, 16K / 8K hosts",
+  "macTable": "32K",
+  "macsec": "Not listed on datasheet",
+  "buffer": "2 MB",
+  "power": {
+    "summary": "External 150W or 280W AC power adapter (280W ships with the -16P), or PoE-powered from an upstream 802.3bt switch through the PD port. Fanless",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": false,
+      "detail": "Single external adapter or PoE input; no redundant supply listed"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Base EOS included. Dynamic routing, EVPN and VXLAN need FLX-Lite (LIC-FIX-G1-FLX-L). Also manageable with CloudVision CUE (subscription)",
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "desktop",
+    "din",
+    "rack"
+  ],
+  "note": "CCS-710P-12 (end of sale Mar 20, 2026, with listed replacements) is intentionally excluded",
+  "models": [
+    {
+      "sku": "CCS-710P-16P",
+      "description": "12x 1G 30W PoE + 2x 5G 60W PoE + 2x 5G (1 data only, 1 PD/PSE) + 2x 1/10G SFP+, fanless",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 2,
+          "speedGbps": 5,
+          "poeWatts": 60
+        },
+        {
+          "count": 2,
+          "speedGbps": 5,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "upm2",
+      "poeBudgets": [
+        {
+          "config": "PoE input, 60W upstream",
+          "watts": 9
+        },
+        {
+          "config": "PoE input, 90W upstream (802.3bt Type 4)",
+          "watts": 39
+        },
+        {
+          "config": "150W external adapter",
+          "watts": 99
+        },
+        {
+          "config": "280W external adapter (included)",
+          "watts": 229
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": 155,
+      "formFactor": "Compact",
+      "fanless": true,
+      "poweredBy": "External 280W adapter (included) or 150W adapter, or up to 90W 802.3bt on the PD port",
+      "note": "One of the two non-PoE 5G ports is the PD input; the datasheet lists it as PD/PSE. Magnetic and L-bracket mounts are also available"
+    }
+  ]
+}
