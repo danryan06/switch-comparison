@@ -494,6 +494,12 @@ const poeCap=s=>s.ports.reduce((a,p)=>a+p[0]*p[2],0);
 const usableW=(s,b)=>Math.min(b[1],poeCap(s));
 const maxBudget=s=>s.psu.length?Math.max(...s.psu.map(p=>usableW(s,p))):0;
 const defBudget=s=>s.psu.length?usableW(s,s.psu[0]):0;
+/* One figure when default and max match (fixed PSU / single budget); otherwise default / max. */
+const budText=s=>{
+  if(!s.psu.length)return "None";
+  const d=defBudget(s),m=maxBudget(s);
+  return d===m?`${fmt(m)} W`:`${fmt(d)} / ${fmt(m)} W`;
+};
 const poeLabel=w=>w===0?"None":w===30?"30W (PoE+)":w===60?"60W (Class 6 / UPOE)":w===90?"90W (Class 8 / UPOE+)":w+"W";
 const portsText=s=>s.ports.length?s.ports.map(p=>p[0]+"x "+spdLabel(p[1])+(p[3]==="sfp"?" SFP":"")).join(" + "):"-";
 const FAB_MEDIA={sfp:"SFP",qsfp:"QSFP28","qsfp-dd":"QSFP-DD"};
@@ -705,7 +711,7 @@ const COLS=[
   {k:"ports",t:"Access ports",f:s=>totalPorts(s)*100+maxSpd(s)},
   {k:"fab",t:"Fabric ports",f:s=>s.fabric.reduce((a,p)=>a+p[0],0)*1000+(s.fabric.length?Math.max(...s.fabric.map(p=>p[1])):0)},
   {k:"w",t:"PoE per port",f:s=>maxW(s)},
-  {k:"bud",t:"PoE budget",f:s=>maxBudget(s),num:1,tip:"Default / max PoE budget (W)"},
+  {k:"bud",t:"PoE budget",f:s=>maxBudget(s),num:1,tip:"PoE budget (W). Shows one figure when fixed; otherwise default / max across power configs"},
   {k:"up",t:"Uplinks",f:s=>upText(s)},
   {k:"stk",t:"Stacking",f:s=>FAM[s.fam].stack.t},
   {k:"mlag",t:"Multichassis LAG",f:s=>FAM[s.fam].mlag?FAM[s.fam].mlag.tech:"-"},
@@ -752,7 +758,7 @@ function cellText(s,c){
   if(c.k==="ports")return portsText(s);
   if(c.k==="fab")return fabricText(s);
   if(c.k==="w")return maxW(s)?maxW(s)+"W":"None";
-  if(c.k==="bud")return s.psu.length?defBudget(s)+" / "+maxBudget(s)+" W":"None";
+  if(c.k==="bud")return budText(s);
   if(c.k==="up")return upText(s);
   if(c.k==="stk")return f.stack.max===1?"None":f.stack.t+(f.stack.max?", "+f.stack.max:"");
   if(c.k==="mlag")return f.mlag?f.mlag.tech:"-";
@@ -773,7 +779,7 @@ function cellHTML(s,c){
   if(c.k==="ports")return `<td>${esc(portsText(s))}</td>`;
   if(c.k==="fab")return `<td>${esc(fabricText(s))}</td>`;
   if(c.k==="w")return `<td>${maxW(s)?maxW(s)+"W":"None"}</td>`;
-  if(c.k==="bud")return `<td class="num">${s.psu.length?fmt(defBudget(s))+" / "+fmt(maxBudget(s))+" W":"None"}</td>`;
+  if(c.k==="bud")return `<td class="num">${budText(s)}</td>`;
   if(c.k==="up")return `<td>${esc(upText(s))}</td>`;
   if(c.k==="stk")return `<td>${f.stack.max===1?"None":esc(f.stack.t)+(f.stack.max?", "+f.stack.max:"")}</td>`;
   if(c.k==="mlag")return `<td>${f.mlag?esc(f.mlag.tech):"-"}</td>`;

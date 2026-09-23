@@ -74,20 +74,20 @@
       "uplinks": "upm2",
       "poeBudgets": [
         {
-          "config": "PoE input, 60W upstream",
-          "watts": 9
-        },
-        {
-          "config": "PoE input, 90W upstream (802.3bt Type 4)",
-          "watts": 39
+          "config": "280W external adapter (included)",
+          "watts": 229
         },
         {
           "config": "150W external adapter",
           "watts": 99
         },
         {
-          "config": "280W external adapter (included)",
-          "watts": 229
+          "config": "PoE input, 90W upstream (802.3bt Type 4)",
+          "watts": 39
+        },
+        {
+          "config": "PoE input, 60W upstream",
+          "watts": 9
         }
       ],
       "switchingGbps": 104,
