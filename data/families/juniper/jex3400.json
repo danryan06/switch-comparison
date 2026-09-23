@@ -1,0 +1,112 @@
+{
+  "id": "jex3400",
+  "vendor": "Juniper",
+  "family": "EX3400",
+  "role": "access",
+  "source": "jex3400",
+  "stacking": {
+    "tech": "Virtual Chassis",
+    "bandwidthGbps": 160,
+    "maxMembers": 10,
+    "frontPanel": true,
+    "note": "Stacks over the two 40G QSFP+ ports by default (160 Gbps interconnect) or over the 1/10G SFP+ uplinks (80 Gbps). QSFP+ ports can be reconfigured as network uplinks"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Base includes RIP and static routing. OSPF, VRF-lite, and IPv6 routing need an Enhanced Feature or Flex Advanced license. BGP, MBGP, and IS-IS need an Advanced Feature or Flex Premium license"
+  },
+  "routeScale": "14,000 IPv4 prefixes / 36,000 host routes; 3,500 IPv6 prefixes / 18,000 host routes",
+  "macTable": "32,000",
+  "macsec": "IEEE 802.1AE MACsec (up to 88 Gbps near line-rate on GbE and 10GbE ports)",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Dual hot-swap AC (or DC) PSU bays; one PSU included. 600W on 24P, 920W on 48P, 150W on non-PoE",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "One PSU included; second sold separately (internal, hot-swap). Fans are field-replaceable"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Juniper Flex: Standard included. OSPF needs Flex Advanced/Premium or legacy EX-24-EFL / EX-48-EFL. BGP needs Flex Premium or the legacy Advanced Feature license. Subscriptions include Mist Wired Assurance",
+  "verify": [],
+  "models": [
+    {
+      "sku": "EX3400-24T",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4q2",
+      "poeBudgets": [],
+      "switchingGbps": 288,
+      "forwardingMpps": 214,
+      "note": "Also sold as -24T-DC"
+    },
+    {
+      "sku": "EX3400-24P",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4q2",
+      "poeBudgets": [
+        {
+          "config": "1x 600W AC (included)",
+          "watts": 370
+        },
+        {
+          "config": "2x 600W AC",
+          "watts": 720
+        }
+      ],
+      "switchingGbps": 288,
+      "forwardingMpps": 214
+    },
+    {
+      "sku": "EX3400-48T",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4q2",
+      "poeBudgets": [],
+      "switchingGbps": 336,
+      "forwardingMpps": 250,
+      "note": "Also sold as -48T-AFI (back-to-front airflow) and -48T-DC"
+    },
+    {
+      "sku": "EX3400-48P",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4q2",
+      "poeBudgets": [
+        {
+          "config": "1x 920W AC (included)",
+          "watts": 740
+        },
+        {
+          "config": "2x 920W AC",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 336,
+      "forwardingMpps": 250
+    }
+  ]
+}

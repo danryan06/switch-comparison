@@ -1,0 +1,172 @@
+{
+  "id": "jex2300",
+  "vendor": "Juniper",
+  "family": "EX2300",
+  "role": "access",
+  "source": "jex2300",
+  "additionalSources": [
+    "jex2300eol"
+  ],
+  "stacking": {
+    "tech": "Virtual Chassis",
+    "bandwidthGbps": 80,
+    "maxMembers": 4,
+    "frontPanel": true,
+    "note": "Stacks over front-panel 1/10G SFP+ uplinks using standard 10G optics. Optional EX2300-VC license required. Mixes with other EX2300 models including multigigabit SKUs"
+  },
+  "routing": {
+    "tier": "ospf",
+    "bgp": false,
+    "summary": "Base license includes RIP and static routing. OSPF (and OSPFv3) need an Enhanced Feature or Flex Advanced license. No BGP on this platform"
+  },
+  "routeScale": "512 IPv4 prefixes / 4,096 host routes; 512 IPv6 prefixes / 2,048 host routes",
+  "macTable": "16,000",
+  "macsec": "Not listed",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Fixed internal AC PSU (DC option on EX2300-24T-DC)",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Fixed internal PSU; no redundant option"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Juniper Flex: Standard included (RIP, static). OSPF needs Flex Advanced/Premium or the legacy EX-24-EFL / EX-48-EFL. Virtual Chassis needs EX2300-VC on 24/48-port models. Subscriptions include Mist Wired Assurance",
+  "lifecycle": {
+    "status": "endOfSale",
+    "endOfSaleDate": "2026-09-30",
+    "endOfSupportDate": "2031-09-30",
+    "announcementUrl": "https://support.juniper.net/support/eol/product/ex_series/",
+    "replacement": [
+      "jex4100f"
+    ],
+    "note": "End-of-sale announced April 30, 2026 (TSB107683). Last order September 30, 2026; support through September 30, 2031. EX4100-F is the common migration target for this class"
+  },
+  "verify": [
+    "lifecycle"
+  ],
+  "verifyNote": "Confirm TSB107683 dates and named replacements on Juniper's EX Series EOL page; third-party summaries agree on last order 2026-09-30 and support through 2031-09-30",
+  "models": [
+    {
+      "sku": "EX2300-24T",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": 95,
+      "note": "Also sold as -24T-DC and -24T-TAA. -24T-VC includes the Virtual Chassis license"
+    },
+    {
+      "sku": "EX2300-24P",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 95,
+      "note": "Also sold as -24P-TAA. -24P-VC includes the Virtual Chassis license"
+    },
+    {
+      "sku": "EX2300-24MP",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 8,
+          "speedGbps": 2.5,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 380
+        }
+      ],
+      "switchingGbps": 152,
+      "forwardingMpps": 95,
+      "note": "Ports 0-7 are 1/2.5G; ports 8-23 are 1G. All access ports PoE+"
+    },
+    {
+      "sku": "EX2300-48T",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": 130,
+      "note": "Also sold as -48T-TAA. -48T-VC includes the Virtual Chassis license"
+    },
+    {
+      "sku": "EX2300-48P",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 750
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 130,
+      "note": "Also sold as -48P-TAA. -48P-VC includes the Virtual Chassis license. Datasheet notes 750W system PoE budget can feed 30W PoE+ on up to 24 ports or 15.4W on all 48"
+    },
+    {
+      "sku": "EX2300-48MP",
+      "accessPorts": [
+        {
+          "count": 32,
+          "speedGbps": 1,
+          "poeWatts": 30
+        },
+        {
+          "count": 16,
+          "speedGbps": 2.5,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x6",
+      "poeBudgets": [
+        {
+          "config": "Internal",
+          "watts": 750
+        }
+      ],
+      "switchingGbps": 264,
+      "forwardingMpps": 130,
+      "note": "Ports 16-31 are 1/2.5G; ports 0-15 and 32-47 are 1G. Six 1/10G SFP+ uplinks. All access ports PoE+"
+    }
+  ]
+}

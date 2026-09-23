@@ -627,5 +627,20 @@
     "title": "Meter 12-Port SFP/SFP+ Switch specifications (customer-provided excerpt)",
     "url": "https://www.meter.com/hardware/switches",
     "retrieved": "2026-09-23"
+  },
+  "jex2300": {
+    "title": "Juniper Networks EX2300 Ethernet Switch Datasheet",
+    "url": "https://www.juniper.net/us/en/products/switches/ex-series/ex2300-ethernet-switch-datasheet.html",
+    "retrieved": "2026-09-23"
+  },
+  "jex2300eol": {
+    "title": "Juniper EX Series Hardware Dates & Milestones (EX2300 end-of-sale; TSB107683 summarized as last order 2026-09-30)",
+    "url": "https://support.juniper.net/support/eol/product/ex_series/",
+    "retrieved": "2026-09-23"
+  },
+  "jex3400": {
+    "title": "Juniper Networks EX3400 Ethernet Switch Datasheet",
+    "url": "https://www.juniper.net/us/en/products/switches/ex-series/ex3400-ethernet-switch-datasheet.html",
+    "retrieved": "2026-09-23"
   }
 }
