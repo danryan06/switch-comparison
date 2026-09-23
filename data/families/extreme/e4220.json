@@ -1,0 +1,254 @@
+{
+  "id": "e4220",
+  "vendor": "Extreme Networks",
+  "family": "4220",
+  "role": "access",
+  "source": "e4000",
+  "stacking": {
+    "tech": "Switch Engine stacking",
+    "bandwidthGbps": 40,
+    "maxMembers": 8,
+    "frontPanel": true,
+    "note": "Up to 8 units over two of the SFP+ uplink ports (10G each). Cannot stack with 4120"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 access with limited static routing (1,000 IPv4 routes in Switch Engine). Select models are dual-persona (Switch Engine or Fabric Engine / VOSS) for Extreme Fabric"
+  },
+  "routeScale": "1,000 IPv4 / 500 IPv6 routes (Switch Engine)",
+  "macTable": "32,000 (Switch Engine); 16,000\u201332,000 (Fabric Engine)",
+  "macsec": "None listed",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Fixed internal AC PSU on all models; optional external RPS on 4MW-20P (RPS-550W) and 8MW-40P (RPS-950W)",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Single fixed PSU by default. External RPS available on the larger multi-gig PoE models for failover"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Base software included. Dual-persona Fabric Engine on select SKUs (not 48T/48P/8MW). Managed by Extreme Platform ONE, ExtremeCloud IQ, Site Engine, or CLI",
+  "operatingTempC": {
+    "min": 0,
+    "max": 50
+  },
+  "mounting": [
+    "rack"
+  ],
+  "verify": [
+    "buffer"
+  ],
+  "verifyNote": "Packet buffer size is not published on the 4000 Series datasheet",
+  "models": [
+    {
+      "sku": "4220-12T-4X",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 104,
+      "forwardingMpps": 77.4,
+      "note": "Dual persona (Switch Engine / Fabric Engine). Quiet fan-off up to 35C",
+      "fanless": true,
+      "formFactor": "Compact"
+    },
+    {
+      "sku": "4220-12P-4X",
+      "accessPorts": [
+        {
+          "count": 12,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Fixed internal AC PSU",
+          "watts": 124
+        }
+      ],
+      "switchingGbps": 104,
+      "forwardingMpps": 77.4,
+      "note": "Dual persona. Quiet fan-off up to 35C",
+      "formFactor": "Compact"
+    },
+    {
+      "sku": "4220-24T-4X",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": 95.2,
+      "note": "Dual persona"
+    },
+    {
+      "sku": "4220-24P-4X",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Fixed internal AC PSU",
+          "watts": 195
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 95.2,
+      "note": "Dual persona"
+    },
+    {
+      "sku": "4220-48T-4X",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": 130.9,
+      "note": "Switch Engine only"
+    },
+    {
+      "sku": "4220-48P-4X",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Fixed internal AC PSU",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 130.9,
+      "note": "Switch Engine only"
+    },
+    {
+      "sku": "4220-4MW-8P-4X",
+      "accessPorts": [
+        {
+          "count": 4,
+          "speedGbps": 5,
+          "poeWatts": 90
+        },
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Fixed internal AC PSU",
+          "watts": 240
+        }
+      ],
+      "switchingGbps": 136,
+      "forwardingMpps": 101.2,
+      "note": "Dual persona. Quiet fan-off up to 35C",
+      "formFactor": "Compact"
+    },
+    {
+      "sku": "4220-4MW-20P-4X",
+      "accessPorts": [
+        {
+          "count": 4,
+          "speedGbps": 5,
+          "poeWatts": 90
+        },
+        {
+          "count": 20,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Fixed internal AC PSU",
+          "watts": 370
+        }
+      ],
+      "switchingGbps": 160,
+      "forwardingMpps": 119,
+      "note": "Dual persona. Optional external RPS-550W for redundant power (same 370W PoE budget)",
+      "redundancy": {
+        "supported": true,
+        "detail": "Optional external RPS-550W for failover"
+      }
+    },
+    {
+      "sku": "4220-8MW-40P-4X",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 5,
+          "poeWatts": 90
+        },
+        {
+          "count": 40,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Fixed internal AC PSU",
+          "watts": 740
+        }
+      ],
+      "switchingGbps": 240,
+      "forwardingMpps": 178.6,
+      "note": "Switch Engine only. Optional external RPS-950W for redundant power (same 740W PoE budget)",
+      "redundancy": {
+        "supported": true,
+        "detail": "Optional external RPS-950W for failover"
+      }
+    },
+    {
+      "sku": "4220-8X",
+      "accessPorts": [
+        {
+          "count": 8,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 160,
+      "forwardingMpps": 119,
+      "formFactor": "Compact",
+      "note": "All eight ports are 1/10G SFP+ (no separate copper access or dedicated uplinks). Dual persona. Quiet fan-off up to 35C"
+    }
+  ]
+}

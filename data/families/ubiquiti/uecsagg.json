@@ -1,0 +1,74 @@
+{
+  "id": "uecsagg",
+  "vendor": "Ubiquiti",
+  "family": "Enterprise Campus Aggregation",
+  "role": "aggregation",
+  "source": "ui-ecs-aggregation",
+  "additionalSources": [
+    "ui-switching"
+  ],
+  "mlag": {
+    "tech": "MC-LAG",
+    "note": "Multi-Chassis Link Aggregation for two-switch active-active LAG. Requires UniFi Network 8.5.6 or later"
+  },
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking; use MC-LAG for multichassis redundancy"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Inter-VLAN routing, static routes, DHCP server and relay on the published tech specs. Some store listings mention BGP; not shown on techspecs.ui.com"
+  },
+  "routeScale": "256 IPv4 static routes (tech specs); ARP 96,000 on some reseller pages",
+  "macTable": "128,000",
+  "macsec": "Not listed",
+  "buffer": "24 MB",
+  "power": {
+    "summary": "Two hot-swap 550W AC/DC modules included (1+1)",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Two hot-swap 550W PSUs included; 1+1 redundant. Five hot-swap fans (4+1)"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "No switch licensing; managed from UniFi Network 8.5.6+",
+  "operatingTempC": {
+    "min": -5,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "verify": [
+    "routing"
+  ],
+  "verifyNote": "Confirm whether BGP is available in current UniFi Network builds; the Ubiquiti tech specs page lists static routing only",
+  "models": [
+    {
+      "sku": "ECS-Aggregation",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 6,
+          "speedGbps": 100
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 3600,
+      "forwardingMpps": 2400,
+      "note": "48x 10/25G SFP28 (1G not supported) + 6x 40/100G QSFP28. Full-depth 1U; four-post rack recommended"
+    }
+  ]
+}

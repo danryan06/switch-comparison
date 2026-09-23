@@ -1,0 +1,127 @@
+{
+  "id": "e4120",
+  "vendor": "Extreme Networks",
+  "family": "4120",
+  "role": "access",
+  "source": "e4000",
+  "stacking": {
+    "tech": "Switch Engine stacking",
+    "bandwidthGbps": 200,
+    "maxMembers": 8,
+    "frontPanel": true,
+    "note": "Up to 8 units over the two QSFP28 ports (50G each when stacking; 100G when used as uplinks). Cannot stack with 4220"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Switch Engine only. Essentially Layer 2 with very limited static routing (64 IPv4 routes). Fabric-attach capable; not a dual-persona Fabric Engine switch"
+  },
+  "routeScale": "64 IPv4 / 32 IPv6 routes (Switch Engine)",
+  "macTable": "16,000",
+  "macsec": "None listed",
+  "buffer": "Not published",
+  "power": {
+    "summary": "One fixed internal AC PSU plus one modular secondary bay (XN-ACPWR-920W/1200W/2000W depending on model)",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "Second modular AC PSU in the empty bay; same type recommended for PoE. Fixed fans"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Base software included. Managed by Extreme Platform ONE, ExtremeCloud IQ, Site Engine, or CLI. Extreme Platform ONE Security is a separate license",
+  "operatingTempC": {
+    "min": 0,
+    "max": 50
+  },
+  "mounting": [
+    "rack"
+  ],
+  "verify": [
+    "buffer",
+    "operatingTempC"
+  ],
+  "verifyNote": "Packet buffer and exact operating temperature range are not tabulated on the 4000 Series datasheet excerpt used here",
+  "models": [
+    {
+      "sku": "4120-24MW-4Y",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "y4c2",
+      "poeBudgets": [
+        {
+          "config": "Fixed internal PSU (200-240V)",
+          "watts": 680
+        },
+        {
+          "config": "Fixed + XN-ACPWR-920W (200-240V)",
+          "watts": 1440
+        },
+        {
+          "config": "Fixed + XN-ACPWR-1200W (200-240V)",
+          "watts": 1540
+        },
+        {
+          "config": "Fixed internal PSU (100-120V)",
+          "watts": 680
+        },
+        {
+          "config": "Fixed + XN-ACPWR-920W (100-120V)",
+          "watts": 1440
+        },
+        {
+          "config": "Fixed + XN-ACPWR-1200W (100-120V)",
+          "watts": 1380
+        }
+      ],
+      "switchingGbps": 720,
+      "forwardingMpps": 535.7,
+      "note": "All access ports 1/2.5G with 90W PoE. 2000W secondary PSU not supported on this model"
+    },
+    {
+      "sku": "4120-48MW-4Y",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 2.5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "y4c2",
+      "poeBudgets": [
+        {
+          "config": "Fixed internal PSU (200-240V)",
+          "watts": 980
+        },
+        {
+          "config": "Fixed + XN-ACPWR-1200W (200-240V)",
+          "watts": 1780
+        },
+        {
+          "config": "Fixed + XN-ACPWR-2000W (200-240V)",
+          "watts": 2180
+        },
+        {
+          "config": "Fixed internal PSU (100-120V)",
+          "watts": 640
+        },
+        {
+          "config": "Fixed + XN-ACPWR-1200W (100-120V)",
+          "watts": 1340
+        },
+        {
+          "config": "Fixed + XN-ACPWR-2000W (100-120V)",
+          "watts": 1230
+        }
+      ],
+      "switchingGbps": 840,
+      "forwardingMpps": 625,
+      "note": "All access ports 1/2.5G with 90W PoE. 920W secondary PSU not supported on this model"
+    }
+  ]
+}

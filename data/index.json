@@ -76,7 +76,10 @@
     "families/ruckus/ricx8100.json",
     "families/ruckus/ricx8200.json",
     "families/ruckus/ricx7550.json",
-    "families/ruckus/ricx7850.json"
+    "families/ruckus/ricx7850.json",
+    "families/extreme/e4120.json",
+    "families/extreme/e4220.json",
+    "families/ubiquiti/uecsagg.json"
   ],
   "accessories": [
     "accessories/hpe-aruba.json",
