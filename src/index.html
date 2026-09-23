@@ -164,7 +164,7 @@ tbody tr{cursor:pointer}
 tbody tr:hover{background:var(--surface-2)}
 td.sku{font-family:var(--cond);font-weight:600;font-size:16px}
 td.num{text-align:right;font-variant-numeric:tabular-nums}
-.vflag{color:var(--warn);font-weight:600;font-size:12px;margin-left:4px}
+.vflag{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--warn);margin-left:6px;vertical-align:middle;flex-shrink:0}
 .eos{color:var(--muted);border:1px solid var(--line);border-radius:4px;font-weight:600;font-size:11px;margin-left:6px;padding:0 4px;white-space:nowrap}
 .cmpbox{width:18px;height:18px;accent-color:var(--accent);cursor:pointer}
 .bar2{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0}
@@ -392,7 +392,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
   <section class="view" id="v-about">
     <div class="about">
       <h3>Where the numbers come from</h3>
-      <p>Every spec is taken from the vendor's own datasheet, linked on each model. Values that disagree with other published figures, or that were derived rather than stated, are marked <span class="vflag">check</span> in Browse and collected on the <a href="#" data-goto="check">Needs checking</a> page until someone confirms them.</p>
+      <p>Every spec is taken from the vendor's own datasheet, linked on each model. Values that disagree with other published figures, or that were derived rather than stated, are marked with an orange dot <span class="vflag" aria-hidden="true"></span> in Browse and collected on the <a href="#" data-goto="check">Needs checking</a> page until someone confirms them.</p>
       <h3>How PoE budget is modeled</h3>
       <p>A switch model does not have one PoE budget. It has one per power supply configuration, so each model carries every configuration its datasheet lists, and the sizer picks the smallest configuration that covers the load. Each stored budget is the figure the vendor states, which is the power the supplies make available rather than what the ports can draw. Where that exceeds the port count times the per-port maximum, the sizer uses the port limit instead, and the budget is shown capped with the vendor's figure alongside it: a 24-port switch at 30W per port cannot deliver more than 720W however large the supply.</p>
       <h3>Numbers that are not directly comparable</h3>
@@ -769,7 +769,7 @@ function cellText(s,c){
 function cellHTML(s,c){
   const f=FAM[s.fam];
   if(c.k==="cmp")return `<td class="cmp"><input type="checkbox" class="cmpbox" aria-label="Compare ${esc(s.sku)}" data-c="${esc(s.sku)}" ${cmp.has(s.sku)?"checked":""}></td>`;
-  if(c.k==="sku"){const v=s.verify.length?`<span class="vflag" title="${esc(s.vnote||"Needs verification")}">check</span>`:"";const e=isCur(s)?"":`<span class="eos" title="${esc(lcShort(s))}">EoS</span>`;
+  if(c.k==="sku"){const v=s.verify.length?`<span class="vflag" title="${esc(s.vnote||"Needs verification")}" aria-label="Needs verification"></span>`:"";const e=isCur(s)?"":`<span class="eos" title="${esc(lcShort(s))}">EoS</span>`;
     const sub=[];
     if(s.name||displaySku(s)!==s.sku)sub.push(s.sku);
     if(s.ff==="Compact")sub.push(s.fanless?"Compact, fanless":"Compact");
