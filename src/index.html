@@ -340,6 +340,8 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
       <div class="fl"><label for="bPoe">PoE per port</label><select id="bPoe"><option value="-1">Any</option><option value="0">Non-PoE only</option><option value="30">30W or more</option><option value="60">60W or more</option><option value="90">90W</option></select></div>
       <div class="fl"><label for="bLife">Lifecycle</label><select id="bLife"><option value="current">Current only</option><option value="all">Include end of sale</option><option value="eos">End of sale only</option></select></div>
       <div class="fl"><label for="bRug">Environment</label><select id="bRug"><option value="">Any</option><option value="yes">Rugged only</option></select></div>
+      <div class="fl"><label for="bStack">Stacking</label><select id="bStack"><option value="">Any</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+      <div class="fl"><label for="bMlag">Multichassis LAG</label><select id="bMlag"><option value="">Any</option><option value="yes">Yes</option><option value="no">No</option></select></div>
     </div>
     <div class="bar2">
       <span class="small" id="bCount"></span>
@@ -432,7 +434,7 @@ const SRC={};for(const [k,s] of Object.entries(DATA.sources))SRC[k]={t:s.title,u
 const U={};for(const [k,o] of Object.entries(DATA.uplinks))U[k]=o.options.map(x=>({n:x.label,p:x.ports.map(p=>[p.count,p.speedGbps])}));
 const FAM={},SKUS=[];
 for(const f of DATA.families){
-  FAM[f.id]={v:f.vendor,name:f.family,role:f.role||"access",stack:{t:f.stacking.tech,bw:f.stacking.bandwidthGbps,max:f.stacking.maxMembers,fp:f.stacking.frontPanel,note:f.stacking.note},l3:f.routing.tier,l3t:f.routing.summary,bgp:f.routing.bgp,routes:f.routeScale,mac:f.macTable,macsec:f.macsec,buf:f.buffer,psuFru:f.power.psuFieldReplaceable,red:f.power.redundancy,fanFru:f.fansFieldReplaceable,power:f.power.summary,lic:f.licensing,src:f.source,xsrc:f.additionalSources||[],famVerify:f.verify||[],fnote:f.verifyNote||""};
+  FAM[f.id]={v:f.vendor,name:f.family,role:f.role||"access",stack:{t:f.stacking.tech,bw:f.stacking.bandwidthGbps,max:f.stacking.maxMembers,fp:f.stacking.frontPanel,note:f.stacking.note},mlag:f.mlag||null,l3:f.routing.tier,l3t:f.routing.summary,bgp:f.routing.bgp,routes:f.routeScale,mac:f.macTable,macsec:f.macsec,buf:f.buffer,psuFru:f.power.psuFieldReplaceable,red:f.power.redundancy,fanFru:f.fansFieldReplaceable,power:f.power.summary,lic:f.licensing,src:f.source,xsrc:f.additionalSources||[],famVerify:f.verify||[],fnote:f.verifyNote||""};
   for(const m of f.models)SKUS.push({fam:f.id,sku:m.sku,ports:(m.accessPorts||[]).map(p=>[p.count,p.speedGbps,p.poeWatts,p.media||"rj45"]),fabric:(m.fabricPorts||[]).map(p=>[p.count,p.speedGbps,p.media||"qsfp"]),up:m.uplinks||null,psu:(m.poeBudgets||[]).map(b=>[b.config,b.watts,b.verify?1:0]),sw:m.switchingGbps,fwd:m.forwardingMpps,name:m.description||"",note:m.note||"",ff:m.formFactor||"1RU",src:m.source||f.source,fanless:!!m.fanless,pd:m.poweredBy||"",routes:m.routeScale||"",mac:m.macTable||"",buf:m.buffer||"",verify:[...(m.verify||[]),...(f.verify||[])],own:m.verify||[],red:m.redundancy||f.power.redundancy,vnote:m.verifyNote||"",
     lc:m.lifecycle||f.lifecycle||{status:"current"},rug:(m.ruggedized!==undefined?m.ruggedized:f.ruggedized)||false,
     temp:m.operatingTempC||f.operatingTempC||null,ip:m.ipRating||f.ipRating||"",mount:m.mounting||f.mounting||[]});
@@ -619,7 +621,7 @@ function sizeOne(s,req){
     let cfg=null;if(W>0){cfg=cfgs.find(c=>usableW(s,c)*u>=W);if(!cfg)continue}
     const notes=[];
     if(!isCur(s))notes.push({w:1,t:lcShort(s)});
-    if(req.stack&&u>1&&f.stack.max===null)notes.push({t:"No hardware stack: managed as one fabric via FortiLink"});
+    if(req.stack&&u>1&&f.stack.max===null)notes.push({t:`No hardware stack: managed as one fabric via ${f.stack.t}`});
     if(req.l3!=="l2"&&f.v==="Fortinet")notes.push({t:"Routing needs Advanced Features license"});
     if(req.stack&&u>1&&f.stack.max===1)notes.push({w:1,t:"Not stackable: managed as separate switches"});
     if(s.ff!=="1RU")notes.push({t:s.ff+(s.fanless?", fanless":"")});
@@ -681,7 +683,7 @@ $("#sizeVendors").addEventListener("click",e=>{const v=e.target.dataset.sv;if(!v
 /* ---------- Browse ---------- */
 const cmp=new Set();
 const bVend=new Set();/* empty = all vendors */
-const DEF_HIDDEN=["fab","stk","l3","sw"];/* default Browse columns: Model, Family, Access ports, PoE per port, PoE budget, Uplinks */
+const DEF_HIDDEN=["fab","stk","mlag","l3","sw"];/* default Browse columns: Model, Family, Access ports, PoE per port, PoE budget, Uplinks */
 const hiddenCols=new Set(DEF_HIDDEN);/* sku always stays visible */
 let sortKey="fam",sortDir=1;
 const COLS=[
@@ -694,10 +696,11 @@ const COLS=[
   {k:"bud",t:"PoE budget",f:s=>maxBudget(s),num:1,tip:"Default / max PoE budget (W)"},
   {k:"up",t:"Uplinks",f:s=>upText(s)},
   {k:"stk",t:"Stacking",f:s=>FAM[s.fam].stack.t},
+  {k:"mlag",t:"Multichassis LAG",f:s=>FAM[s.fam].mlag?FAM[s.fam].mlag.tech:"-"},
   {k:"l3",t:"BGP",f:s=>FAM[s.fam].bgp?1:0},
   {k:"sw",t:"Switching",f:s=>s.sw||0,num:1}
 ];
-const DEF_W={cmp:52,sku:180,fam:200,ports:150,fab:140,w:110,bud:150,up:190,stk:150,l3:72,sw:130};
+const DEF_W={cmp:52,sku:180,fam:200,ports:150,fab:140,w:110,bud:150,up:190,stk:150,mlag:150,l3:72,sw:130};
 const colW={...DEF_W};
 try{const saved=JSON.parse(localStorage.getItem("sw.colW")||"{}");for(const k of Object.keys(DEF_W))if(typeof saved[k]==="number")colW[k]=saved[k]}catch{}
 const colVisible=c=>c.k==="cmp"||c.k==="sku"||!hiddenCols.has(c.k);
@@ -740,6 +743,7 @@ function cellText(s,c){
   if(c.k==="bud")return s.psu.length?defBudget(s)+" / "+maxBudget(s)+" W":"None";
   if(c.k==="up")return upText(s);
   if(c.k==="stk")return f.stack.max===1?"None":f.stack.t+(f.stack.max?", "+f.stack.max:"");
+  if(c.k==="mlag")return f.mlag?f.mlag.tech:"-";
   if(c.k==="l3")return f.bgp?"Yes":"No";
   if(c.k==="sw")return s.sw===null?"Not published":s.sw+" Gbps";
   return "";
@@ -760,18 +764,23 @@ function cellHTML(s,c){
   if(c.k==="bud")return `<td class="num">${s.psu.length?fmt(defBudget(s))+" / "+fmt(maxBudget(s))+" W":"None"}</td>`;
   if(c.k==="up")return `<td>${esc(upText(s))}</td>`;
   if(c.k==="stk")return `<td>${f.stack.max===1?"None":esc(f.stack.t)+(f.stack.max?", "+f.stack.max:"")}</td>`;
+  if(c.k==="mlag")return `<td>${f.mlag?esc(f.mlag.tech):"-"}</td>`;
   if(c.k==="l3")return `<td>${f.bgp?"Yes":"No"}</td>`;
   if(c.k==="sw")return `<td class="num">${s.sw===null?"Not published":fmt(s.sw)+" Gbps"}</td>`;
   return `<td></td>`;
 }
 function filteredBrowseRows(){
-  const med=$("#bMed").value,q=$("#q").value.trim().toLowerCase(),poe=+$("#bPoe").value,spd=+$("#bSpd").value,np=+$("#bPorts").value,red=$("#bRed").value,life=$("#bLife").value,rug=$("#bRug").value,role=$("#bRole").value;
+  const med=$("#bMed").value,q=$("#q").value.trim().toLowerCase(),poe=+$("#bPoe").value,spd=+$("#bSpd").value,np=+$("#bPorts").value,red=$("#bRed").value,life=$("#bLife").value,rug=$("#bRug").value,role=$("#bRole").value,stk=$("#bStack").value,mlag=$("#bMlag").value;
   let rows=SKUS.filter(s=>{const f=FAM[s.fam];
     if(bVend.size&&!bVend.has(f.v))return false;
     if(role&&f.role!==role)return false;
     if(q&&!(s.sku+" "+s.name+" "+f.name+" "+f.v).toLowerCase().includes(q))return false;
     if(life==="current"&&!isCur(s))return false;if(life==="eos"&&isCur(s))return false;
     if(rug==="yes"&&!s.rug)return false;
+    if(stk==="yes"&&!(typeof f.stack.max==="number"&&f.stack.max>1))return false;
+    if(stk==="no"&&typeof f.stack.max==="number"&&f.stack.max>1)return false;
+    if(mlag==="yes"&&!f.mlag)return false;
+    if(mlag==="no"&&f.mlag)return false;
     if(poe===0&&maxW(s)>0)return false;if(poe>0&&maxW(s)<poe)return false;
     if(np&&totalPorts(s)!==np)return false;if(red&&(red==="yes")!==s.red.supported)return false;if(spd&&maxSpd(s)<spd)return false;if(med&&!s.ports.some(p=>p[3]===med))return false;return true});
   let col=COLS.find(c=>c.k===sortKey&&colVisible(c));
@@ -816,7 +825,7 @@ function exportBrowseCsv(){
 }
 function clearFilters(){
   $("#q").value="";
-  $("#bRole").value="access";$("#bPorts").value="0";$("#bSpd").value="0";$("#bMed").value="";$("#bRed").value="";$("#bPoe").value="-1";$("#bLife").value="current";$("#bRug").value="";
+  $("#bRole").value="access";$("#bPorts").value="0";$("#bSpd").value="0";$("#bMed").value="";$("#bRed").value="";$("#bPoe").value="-1";$("#bLife").value="current";$("#bRug").value="";$("#bStack").value="";$("#bMlag").value="";
   bVend.clear();
   document.querySelectorAll("#bVendors .mlist input").forEach(i=>i.checked=false);
   $("#bVendorBtn").textContent="All vendors";
@@ -837,7 +846,7 @@ $("#bTable").addEventListener("click",e=>{
   const tr=e.target.closest("tr[data-sku]");if(tr)openDetail(tr.dataset.sku);
 });
 function alertCmp(){const c=$("#bCount");const t=c.textContent;c.textContent="Compare holds 4 models. Untick one first.";c.style.color="var(--warn)";setTimeout(()=>{c.textContent=t;c.style.color=""},2200)}
-["q","bRole","bPorts","bSpd","bMed","bPoe","bRed","bLife","bRug"].forEach(id=>$("#"+id).addEventListener("input",renderBrowse));
+["q","bRole","bPorts","bSpd","bMed","bPoe","bRed","bLife","bRug","bStack","bMlag"].forEach(id=>$("#"+id).addEventListener("input",renderBrowse));
 $("#bVendors .mlist").innerHTML=VENDORS.map(v=>`<label><input type="checkbox" value="${esc(v)}">${esc(v)}</label>`).join("");
 $("#bVendors").addEventListener("change",e=>{const v=e.target.value;if(e.target.checked)bVend.add(v);else bVend.delete(v);
   $("#bVendorBtn").textContent=!bVend.size?"All vendors":bVend.size===1?[...bVend][0]:bVend.size+" vendors";renderBrowse()});
@@ -893,6 +902,7 @@ function specRows(s){const f=FAM[s.fam];
   ["Uplinks",s.up?U[s.up].map(o=>o.n).join("<br>"):"-",1],
   ["Stacking",f.stack.max===1?"Not stackable":f.stack.max?`${f.stack.t}, up to ${f.stack.max} members${f.stack.bw?`, ${f.stack.bw} Gbps`:""}`:`${f.stack.t} (no hardware stacking)`],
   ["Stacking notes",f.stack.note],
+  ["Multichassis LAG",f.mlag?`${esc(f.mlag.tech)}. ${esc(f.mlag.note)}`:"Not listed",1],
   ["Routing",f.l3t],["IPv4 route scale (as stated)",s.routes||f.routes],["MAC table",s.mac||f.mac],["MACsec",f.macsec],["Packet buffer",s.buf||f.buf],
   ["Switching capacity",s.sw===null?"Not published":fmt(s.sw)+" Gbps"],["Forwarding rate",s.fwd===null?"Not published":fmt(s.fwd)+" Mpps"],
   ["Redundant power supplies",`${s.red.supported?"Yes":"No"}. ${esc(s.red.detail)}`,1],
@@ -1292,7 +1302,7 @@ $("#copySizeLink").onclick=()=>{writeHash(true);copyText(location.href,$("#copyS
 
 /* ---------- Needs checking ---------- */
 const OWN_LABEL={psu:"PoE budget",poeBudgets:"PoE budget",uplinks:"Uplink options",ports:"Access ports",accessPorts:"Access ports",fabricPorts:"Fabric ports",forwardingMpps:"Forwarding rate",switchingGbps:"Switching capacity",stacking:"Stacking"};
-const FAM_LABEL={macsec:"MACsec",bgp:"BGP",routing:"Dynamic routing",routeScale:"Route scale",macTable:"MAC table",buffer:"Packet buffer",stacking:"Stacking"};
+const FAM_LABEL={macsec:"MACsec",bgp:"BGP",routing:"Dynamic routing",routeScale:"Route scale",macTable:"MAC table",buffer:"Packet buffer",stacking:"Stacking",mlag:"Multichassis LAG"};
 (function(){
   const rows=SKUS.filter(s=>s.own.length||s.psu.some(p=>p[2])).map(s=>{
     const flagged=s.psu.filter(p=>p[2]).map(p=>`${p[0]}: ${fmt(p[1])} W`);

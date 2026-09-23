@@ -25,6 +25,15 @@
         "note": { "type": "string" }
       }
     },
+    "mlag": {
+      "type": "object",
+      "description": "Optional. Present when the family can form a two-switch multichassis LAG pair (MLAG, MCLAG, VSX, StackWise Virtual, and similar). Absent means unknown or not supported.",
+      "required": ["tech", "note"],
+      "properties": {
+        "tech": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
     "routing": {
       "type": "object",
       "required": ["tier", "bgp", "summary"],
@@ -46,7 +55,7 @@
     "fansFieldReplaceable": { "type": "boolean" },
     "licensing": { "type": "string" },
     "additionalSources": { "type": "array", "items": { "type": "string" }, "description": "Further keys into data/sources.json, for vendor documents that supply values the primary source does not" },
-    "verify": { "type": "array", "items": { "type": "string" }, "description": "Family-level fields that still need confirming" },
+    "verify": { "type": "array", "items": { "type": "string" }, "description": "Family-level fields that still need confirming (for example stacking, mlag, routeScale)" },
     "verifyNote": { "type": "string", "description": "Why the family-level fields are flagged" },
     "lifecycle": { "$ref": "#/$defs/lifecycle", "description": "Family-wide lifecycle state. A model's own lifecycle overrides it" },
     "ruggedized": { "type": "boolean", "description": "Family default. Overridden per model" },

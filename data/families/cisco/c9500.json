@@ -4,12 +4,16 @@
   "family": "Catalyst 9500",
   "role": "aggregation",
   "source": "c9500",
-  "stacking": {
+  "mlag": {
     "tech": "StackWise Virtual",
-    "bandwidthGbps": null,
-    "maxMembers": 2,
-    "frontPanel": false,
     "note": "Two-chassis redundancy over a StackWise Virtual Link built from front-panel ports. Not a shared-management access stack"
+  },
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking; see multichassis LAG"
   },
   "routing": {
     "tier": "full",

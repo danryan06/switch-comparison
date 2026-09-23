@@ -58,7 +58,11 @@
     "families/hpe-aruba/a8100.json",
     "families/hpe-aruba/a8325.json",
     "families/hpe-aruba/a8360.json",
-    "families/hpe-aruba/a4100i.json"
+    "families/hpe-aruba/a4100i.json",
+    "families/arista/ar720xp.json",
+    "families/arista/ar722xpm.json",
+    "families/arista/ar720xpm.json",
+    "families/arista/ar720d.json"
   ],
   "accessories": [
     "accessories/hpe-aruba.json",

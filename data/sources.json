@@ -437,5 +437,40 @@
     "title": "Ubiquiti UniFi Flex 2.5G PoE (USW-Flex-2.5G-8-PoE) Tech Specs",
     "url": "https://techspecs.ui.com/unifi/switching/usw-flex-2-5g-8-poe",
     "retrieved": "2026-09-22"
+  },
+  "ar720xp": {
+    "title": "Arista CCS-720XP Campus Switches Data Sheet (04-0060-39, Aug 7, 2026)",
+    "url": "https://www.arista.com/assets/data/pdf/Datasheets/CCS-720XP-Datasheet.pdf",
+    "retrieved": "2026-09-23"
+  },
+  "ar720xp-eos": {
+    "title": "Arista: End of Sale for Select CCS-720XP Switches with 4GB DRAM (Jul 1, 2026)",
+    "url": "https://www.arista.com/en/support/advisories-notices/end-of-sale/24136-end-of-sale-for-select-arista-ccs-720xp-switches-with-4gb-dram",
+    "retrieved": "2026-09-23"
+  },
+  "ar722xpm": {
+    "title": "Arista CCS-722XPM Switches Data Sheet (03-0061-16, Aug 7, 2026)",
+    "url": "https://www.arista.com/assets/data/pdf/Datasheets/CCS-722XP-Datasheet.pdf",
+    "retrieved": "2026-09-23"
+  },
+  "ar722xpm-eos": {
+    "title": "Arista: End of Sale of the Select CCS-722XPM Switches with 4GB DRAM (Jul 1, 2026)",
+    "url": "https://www.arista.com/en/support/advisories-notices/end-of-sale/24137-end-of-sale-of-the-select-arista-ccs-722xpm-switches-with-4gb-dram",
+    "retrieved": "2026-09-23"
+  },
+  "ar720xpm": {
+    "title": "Arista CCS-720XPM/XDM Switches Data Sheet (04-0058-10, Sep 15, 2026)",
+    "url": "https://www.arista.com/assets/data/pdf/Datasheets/CCS-720XPM-Datasheet.pdf",
+    "retrieved": "2026-09-23"
+  },
+  "ar720d": {
+    "title": "Arista CCS-720D Campus Switches Data Sheet (04-0042-26, Aug 31, 2026)",
+    "url": "https://www.arista.com/assets/data/pdf/Datasheets/CCS-720D-Datasheet.pdf",
+    "retrieved": "2026-09-23"
+  },
+  "arswag": {
+    "title": "Arista press release: Arista Unveils Modern Stacking for Campus Networks (SWAG, Dec 3, 2024)",
+    "url": "https://www.arista.com/en/company/news/press-release/20693-pr-12032024",
+    "retrieved": "2026-09-23"
   }
 }

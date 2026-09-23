@@ -1,0 +1,95 @@
+{
+  "id": "ar722xpm",
+  "vendor": "Arista",
+  "family": "722XPM",
+  "source": "ar722xpm",
+  "additionalSources": [
+    "ar722xpm-eos",
+    "arswag"
+  ],
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking on the datasheet. Redundancy is an MLAG pair (active/active, standard LACP) or L3 ECMP uplinks. Arista SWAG (Switch Aggregation Group, announced Dec 2024) groups up to 48 switches under one IP over standard Ethernet links, but the datasheet does not list it and per-platform support is not confirmed"
+  },
+  "verify": [
+    "stacking"
+  ],
+  "verifyNote": "SWAG support for this family is not on the datasheet; the SWAG TOI with the platform list is behind an Arista login. If SWAG is supported, stacking should become tech SWAG, maxMembers 48, frontPanel true",
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "EOS Layer 3: static, OSPFv2/v3, IS-IS, BGP/MP-BGP, RIPv2, PIM, VRRP, VRF, BGP-EVPN VXLAN. OSPF, IS-IS, BGP and PIM need the Enhanced license; EVPN needs FLX-Lite"
+  },
+  "routeScale": "16K IPv4 / 6K IPv6 routes, 32K / 16K hosts",
+  "macTable": "64K",
+  "macsec": "256-bit MACsec on every access and uplink port (100G down / 100G up on 48ZY8); separately licensed (LIC-FIX-G3-MACSEC)",
+  "buffer": "8 MB",
+  "power": {
+    "summary": "Two hot-swap, field-replaceable PSU bays: 650W, 1050W or 2000W AC, 500W DC. Three hot-swap fans (N+1)",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "1+1: ships with one PSU by default; second PSU adds PoE budget"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Base EOS included. OSPF, IS-IS, BGP and PIM need the Enhanced (E) license; BGP-EVPN/VXLAN needs FLX-Lite (LIC-FIX-G1/G2/G3 by model license group). CloudVision management is a subscription. MACsec is a separate license",
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "note": "CCS-722XPM-48Y4 (end of sale Dec 31, 2026; replaced by CCS-720XPM-48TH-6SY) is intentionally excluded",
+  "models": [
+    {
+      "sku": "CCS-722XPM-48ZY8",
+      "description": "48x 2.5G mGig 60W PoE + 8x 25G SFP28, MACsec on all ports",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 2.5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "y8",
+      "poeBudgets": [
+        {
+          "config": "1x 650W AC",
+          "watts": 490
+        },
+        {
+          "config": "1x 1050W AC (default)",
+          "watts": 890
+        },
+        {
+          "config": "2x 650W AC",
+          "watts": 1043
+        },
+        {
+          "config": "2x 1050W AC",
+          "watts": 1783
+        },
+        {
+          "config": "1x 2000W AC",
+          "watts": 1840
+        },
+        {
+          "config": "2x 2000W AC",
+          "watts": 3640
+        }
+      ],
+      "switchingGbps": 640,
+      "forwardingMpps": 952,
+      "note": "PoE budgets use the datasheet's lower (max-load) figure of each typical/max pair"
+    }
+  ],
+  "mlag": {
+    "tech": "MLAG",
+    "note": "Active/active MLAG pair using standard LACP (listed on the datasheet)"
+  }
+}

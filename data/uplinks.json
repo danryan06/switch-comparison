@@ -968,5 +968,55 @@
         ]
       }
     ]
+  },
+  "y4c2": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 1/10/25G SFP28 + 2x 40/100G QSFP28 (fixed)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 25
+          },
+          {
+            "count": 2,
+            "speedGbps": 100
+          }
+        ]
+      }
+    ]
+  },
+  "y8": {
+    "modular": false,
+    "options": [
+      {
+        "label": "8x 1/10/25G SFP28 (fixed)",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 25
+          }
+        ]
+      }
+    ]
+  },
+  "y4x2": {
+    "modular": false,
+    "options": [
+      {
+        "label": "4x 1/10/25G SFP28 + 2x 1/10G SFP+ (fixed)",
+        "ports": [
+          {
+            "count": 4,
+            "speedGbps": 25
+          },
+          {
+            "count": 2,
+            "speedGbps": 10
+          }
+        ]
+      }
+    ]
   }
 }

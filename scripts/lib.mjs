@@ -71,6 +71,13 @@ export function validate(data, today = new Date().toISOString().slice(0, 10)) {
     if (!TIERS.includes(f.routing?.tier)) errors.push(`${at}: routing.tier must be one of ${TIERS.join(', ')}`);
     if (f.role !== undefined && !ROLES.includes(f.role)) errors.push(`${at}: role must be one of ${ROLES.join(', ')}`);
     if (f.stacking?.maxMembers !== null && !(f.stacking?.maxMembers > 0)) errors.push(`${at}: stacking.maxMembers must be a number or null`);
+    if (f.mlag !== undefined) {
+      if (!f.mlag || typeof f.mlag !== 'object') errors.push(`${at}: mlag must be an object with tech and note`);
+      else {
+        if (!f.mlag.tech) errors.push(`${at}: mlag.tech is required when mlag is present`);
+        if (!f.mlag.note) errors.push(`${at}: mlag.note is required when mlag is present`);
+      }
+    }
     if (!f.models?.length) errors.push(`${at}: no models`);
     if ((f.verify || []).length && !f.verifyNote) warnings.push(`${at}: flagged for verification without a verifyNote`);
     checkLifecycle(at, f.lifecycle);

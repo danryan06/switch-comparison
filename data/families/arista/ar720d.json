@@ -1,0 +1,211 @@
+{
+  "id": "ar720d",
+  "vendor": "Arista",
+  "family": "720D",
+  "source": "ar720d",
+  "additionalSources": [
+    "arswag"
+  ],
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking on the datasheet. Redundancy is an MLAG pair (active/active, standard LACP) or L3 ECMP uplinks. Arista SWAG (Switch Aggregation Group, announced Dec 2024) groups up to 48 switches under one IP over standard Ethernet links, but the datasheet does not list it and per-platform support is not confirmed"
+  },
+  "verify": [
+    "stacking"
+  ],
+  "verifyNote": "SWAG support for this family is not on the datasheet; the SWAG TOI with the platform list is behind an Arista login. If SWAG is supported, stacking should become tech SWAG, maxMembers 48, frontPanel true",
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "EOS Layer 3: static, OSPFv2/v3, IS-IS, BGP/MP-BGP, RIPv2, PIM, VRRP, VRF, BGP-EVPN VXLAN. OSPF, IS-IS, BGP and PIM need the Enhanced license; EVPN needs FLX-Lite. VRF, PBR, uRPF, EVPN and MSS are not supported on the 24-port 1G models"
+  },
+  "routeScale": "16K IPv4 / 6K IPv6 routes, 32K / 16K hosts (48-port 1G models)",
+  "macTable": "64K (48-port 1G models)",
+  "macsec": "Not listed on datasheet",
+  "buffer": "4 MB",
+  "power": {
+    "summary": "Dual integrated (fixed) power supplies, 1+1 redundant, and integrated fans with N+1 redundancy",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": true,
+      "detail": "Both PSUs are built in. The second PSU does not add PoE budget, except on the 720DP-48ZS"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Base EOS included. OSPF, IS-IS, BGP and PIM need the Enhanced (E) license; BGP-EVPN/VXLAN needs FLX-Lite (LIC-FIX-G1/G2/G3 by model license group). CloudVision management is a subscription",
+  "operatingTempC": {
+    "min": 0,
+    "max": 45
+  },
+  "mounting": [
+    "rack"
+  ],
+  "note": "The original 4GB SKUs (CCS-720DP-24S, -48S, CCS-720DT-24S-2F, CCS-720DF-48Y) reached end of sale Mar 20, 2026 and are replaced by the -M-S (8GB) SKUs listed here",
+  "models": [
+    {
+      "sku": "CCS-720DP-24S-M-S",
+      "description": "24x 1G 30W PoE + 4x 1/10G SFP+",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Dual integrated 460W AC (1+1)",
+          "watts": 380
+        }
+      ],
+      "switchingGbps": 128,
+      "forwardingMpps": 95,
+      "buffer": "2 MB",
+      "routeScale": "8K IPv4 / 2K IPv6 routes, 16K / 8K hosts",
+      "macTable": "32K",
+      "verify": [
+        "routing"
+      ],
+      "verifyNote": "The datasheet's not-supported footnote (VRF, PBR, uRPF, EVPN, MSS) names the 720DP-24S and 720DT-24S; it does not say whether it also covers the -M-S (8GB) versions"
+    },
+    {
+      "sku": "CCS-720DP-48S-M-S",
+      "description": "48x 1G 30W PoE + 4x 1/10G SFP+",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Dual integrated 950W AC (1+1)",
+          "watts": 745
+        }
+      ],
+      "switchingGbps": 176,
+      "forwardingMpps": 131
+    },
+    {
+      "sku": "CCS-720DP-24ZS",
+      "description": "24x 2.5G mGig 60W PoE + 4x 1/10G SFP+",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 2.5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Dual integrated 950W AC (1+1)",
+          "watts": 730
+        }
+      ],
+      "switchingGbps": 200,
+      "forwardingMpps": 149,
+      "buffer": "8 MB",
+      "routeScale": "16K IPv4 / 8K IPv6 LPM routes, 64K IPv4 host routes (default mode 2); up to 144K IPv4 LPM in mode 4",
+      "macTable": "64K (default mode 2); 16K to 112K by forwarding mode"
+    },
+    {
+      "sku": "CCS-720DP-48ZS",
+      "description": "48x 2.5G mGig 60W PoE + 4x 1/10G SFP+",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 2.5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [
+        {
+          "config": "Dual integrated 1800W AC, redundant",
+          "watts": 1440
+        },
+        {
+          "config": "Dual integrated 1800W AC, both feeding PoE",
+          "watts": 2880,
+          "verify": true
+        }
+      ],
+      "switchingGbps": 320,
+      "forwardingMpps": 238,
+      "buffer": "8 MB",
+      "routeScale": "16K IPv4 / 8K IPv6 LPM routes, 64K IPv4 host routes (default mode 2); up to 144K IPv4 LPM in mode 4",
+      "macTable": "64K (default mode 2); 16K to 112K by forwarding mode",
+      "verifyNote": "The datasheet lists the PoE budget as \"2x1440W\" and says the second PSU adds PoE budget on this model only. 2880W is read from that and equals 48 ports x 60W; confirm with Arista"
+    },
+    {
+      "sku": "CCS-720DT-24S-M-S",
+      "description": "24x 1G RJ45 (non-PoE) + 4x 1/10G SFP+",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 128,
+      "forwardingMpps": 95,
+      "buffer": "2 MB",
+      "routeScale": "8K IPv4 / 2K IPv6 routes, 16K / 8K hosts",
+      "macTable": "32K",
+      "note": "CCS-720DT-24S-2R (rear-to-front, 8GB) is the same hardware and is also current",
+      "verify": [
+        "routing"
+      ],
+      "verifyNote": "The datasheet's not-supported footnote (VRF, PBR, uRPF, EVPN, MSS) names the 720DP-24S and 720DT-24S; it does not say whether it also covers the -M-S (8GB) versions"
+    },
+    {
+      "sku": "CCS-720DT-48S",
+      "description": "48x 1G RJ45 (non-PoE) + 4x 1/10G SFP+",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "x4",
+      "poeBudgets": [],
+      "switchingGbps": 176,
+      "forwardingMpps": 131,
+      "note": "Ships with 8GB and is not on an end-of-sale notice. Rear-to-front airflow available (-2R)"
+    },
+    {
+      "sku": "CCS-720DF-48Y-M-S",
+      "description": "48x 1G SFP (non-PoE) + 4x 1/10/25G SFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [],
+      "switchingGbps": 296,
+      "forwardingMpps": 220,
+      "buffer": "8 MB",
+      "routeScale": "16K IPv4 / 8K IPv6 LPM routes, 64K IPv4 host routes (default mode 2); up to 144K IPv4 LPM in mode 4",
+      "macTable": "64K (default mode 2); 16K to 112K by forwarding mode",
+      "note": "Also orderable as CCS-720DF-48Y-DC (dual DC PSUs) and CCS-720DF-48Y-HVDC (AC or HVDC, minimum EOS 4.36.2); same ports"
+    }
+  ],
+  "mlag": {
+    "tech": "MLAG",
+    "note": "Active/active MLAG pair using standard LACP (listed on the datasheet)"
+  }
+}

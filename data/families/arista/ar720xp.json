@@ -1,0 +1,231 @@
+{
+  "id": "ar720xp",
+  "vendor": "Arista",
+  "family": "720XP",
+  "source": "ar720xp",
+  "additionalSources": [
+    "ar720xp-eos",
+    "arswag"
+  ],
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking on the datasheet. Redundancy is an MLAG pair (active/active, standard LACP) or L3 ECMP uplinks. Arista SWAG (Switch Aggregation Group, announced Dec 2024) groups up to 48 switches under one IP over standard Ethernet links, but the datasheet does not list it and per-platform support is not confirmed"
+  },
+  "verify": [
+    "stacking"
+  ],
+  "verifyNote": "SWAG support for this family is not on the datasheet; the SWAG TOI with the platform list is behind an Arista login. If SWAG is supported, stacking should become tech SWAG, maxMembers 48, frontPanel true",
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "EOS Layer 3: static, OSPFv2/v3, IS-IS, BGP/MP-BGP, RIPv2, PIM, VRRP, VRF, BGP-EVPN VXLAN. OSPF, IS-IS, BGP and PIM need the Enhanced license; EVPN needs FLX-Lite"
+  },
+  "routeScale": "16K IPv4 / 8K IPv6 LPM routes, 64K IPv4 host routes (default forwarding mode 2); up to 144K IPv4 / 72K IPv6 LPM in mode 4",
+  "macTable": "64K (default mode 2); 16K to 112K by forwarding mode",
+  "macsec": "Not listed on datasheet",
+  "buffer": "8 MB",
+  "power": {
+    "summary": "Two hot-swap, field-replaceable PSU bays (four on the 2RU 96ZC2). 650W, 1050W or 2000W AC and 500W or 700W DC, model dependent. Three field-replaceable fans (N+1)",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "N+1: -F bundles ship one PSU, -2F bundles ship two; the second PSU adds PoE budget"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Base EOS included. OSPF, IS-IS, BGP and PIM need the Enhanced (E) license; BGP-EVPN/VXLAN needs FLX-Lite (LIC-FIX-G1/G2/G3 by model license group). CloudVision management is a subscription",
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "note": "CCS-720XP-48Y6 and -24Y6 (end of sale Dec 31, 2026; replaced by CCS-720XPM-48TH-6SY and CCS-720DP-24S-M-S) and the 4GB CCS-720XP-96ZC2 (end of sale Mar 20, 2026; replaced by -M-S) are intentionally excluded",
+  "models": [
+    {
+      "sku": "CCS-720XP-24ZY4",
+      "description": "16x 2.5G 30W + 8x 5G 60W mGig PoE + 4x 25G SFP28",
+      "accessPorts": [
+        {
+          "count": 16,
+          "speedGbps": 2.5,
+          "poeWatts": 30
+        },
+        {
+          "count": 8,
+          "speedGbps": 5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "y4",
+      "poeBudgets": [
+        {
+          "config": "1x 650W AC (default)",
+          "watts": 494
+        },
+        {
+          "config": "2x 650W AC",
+          "watts": 1047
+        },
+        {
+          "config": "2x 1050W AC",
+          "watts": 1787
+        }
+      ],
+      "switchingGbps": 360,
+      "forwardingMpps": 268,
+      "verify": [
+        "switchingGbps"
+      ],
+      "verifyNote": "Spec table gives 180 (360) Gbps FDX, used here; the model overview text says 1120 Gbps, which looks copied from the 48ZC2. PoE budgets use the datasheet's minimum (max-load) figures"
+    },
+    {
+      "sku": "CCS-720XP-48ZC2",
+      "description": "40x 2.5G 30W + 8x 5G 60W mGig PoE + 4x 25G SFP28 + 2x 100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 40,
+          "speedGbps": 2.5,
+          "poeWatts": 30
+        },
+        {
+          "count": 8,
+          "speedGbps": 5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "y4c2",
+      "poeBudgets": [
+        {
+          "config": "1x 1050W AC (default)",
+          "watts": 894
+        },
+        {
+          "config": "2x 650W AC",
+          "watts": 1047
+        },
+        {
+          "config": "2x 1050W AC",
+          "watts": 1787
+        },
+        {
+          "config": "2x 2000W AC",
+          "watts": 3644
+        }
+      ],
+      "switchingGbps": 880,
+      "forwardingMpps": 654,
+      "verify": [
+        "switchingGbps"
+      ],
+      "verifyNote": "Spec table gives 440 (880) Gbps FDX, used here; the model overview text says 1120 Gbps. PoE budgets use the datasheet's minimum (max-load) figures"
+    },
+    {
+      "sku": "CCS-720XP-96ZC2-M-S",
+      "description": "80x 2.5G + 16x 5G mGig 60W PoE + 4x 25G SFP28 + 2x 100G QSFP28 (2RU)",
+      "accessPorts": [
+        {
+          "count": 80,
+          "speedGbps": 2.5,
+          "poeWatts": 60
+        },
+        {
+          "count": 16,
+          "speedGbps": 5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "y4c2",
+      "poeBudgets": [
+        {
+          "config": "2x 1050W AC (default)",
+          "watts": 1707
+        },
+        {
+          "config": "4x 1050W AC",
+          "watts": 3492
+        },
+        {
+          "config": "2x 2000W AC",
+          "watts": 3564
+        },
+        {
+          "config": "4x 2000W AC",
+          "watts": 7164
+        }
+      ],
+      "switchingGbps": 1160,
+      "forwardingMpps": 863,
+      "buffer": "16 MB",
+      "note": "2RU, up to four PSUs. The -M-S (8GB expanded memory) SKU is the current orderable version; the schema has no 2RU form factor, so it shows as 1RU",
+      "verify": [
+        "switchingGbps"
+      ],
+      "verifyNote": "Spec table gives 580 (1160) Gbps FDX, used here; the model overview text says 2240 Gbps. PoE budgets use the datasheet's minimum (max-load) figures"
+    },
+    {
+      "sku": "CCS-720XP-48TXH-2C-S",
+      "description": "48x 10G mGig 90W PoE + 4x 25G SFP28 + 2x 100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "y4c2",
+      "poeBudgets": [
+        {
+          "config": "2x 1050W AC (default)",
+          "watts": 1744
+        },
+        {
+          "config": "2x 2000W AC",
+          "watts": 3601
+        }
+      ],
+      "switchingGbps": 1560,
+      "forwardingMpps": 1160,
+      "buffer": "16 MB",
+      "note": "CCS-720XP-48TXH-5G-10GUPG upgrades the 5G version to this model",
+      "verify": [
+        "switchingGbps"
+      ],
+      "verifyNote": "Spec table gives 780 (1560) Gbps FDX, used here; the model overview text says 2240 Gbps. PoE budgets use the datasheet's minimum (max-load) figures"
+    },
+    {
+      "sku": "CCS-720XP-48TXH-2C-S-5G",
+      "description": "48x 5G mGig 90W PoE + 4x 25G SFP28 + 2x 100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 5,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "y4c2",
+      "poeBudgets": [
+        {
+          "config": "2x 1050W AC (default)",
+          "watts": 1744
+        },
+        {
+          "config": "2x 2000W AC",
+          "watts": 3601
+        }
+      ],
+      "switchingGbps": 1080,
+      "forwardingMpps": 1160,
+      "buffer": "16 MB",
+      "note": "Field-upgradable to 48x 10G with license CCS-720XP-48TXH-5G-10GUPG. The spec table lists the same 1160 Mpps as the 10G model"
+    }
+  ],
+  "mlag": {
+    "tech": "MLAG",
+    "note": "Active/active MLAG pair using standard LACP (listed on the datasheet)"
+  }
+}

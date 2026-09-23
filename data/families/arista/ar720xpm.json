@@ -1,0 +1,200 @@
+{
+  "id": "ar720xpm",
+  "vendor": "Arista",
+  "family": "720XPM / 720XDM",
+  "source": "ar720xpm",
+  "additionalSources": [
+    "arswag"
+  ],
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking on the datasheet. Redundancy is an MLAG pair (active/active, standard LACP) or L3 ECMP uplinks. Arista SWAG (Switch Aggregation Group, announced Dec 2024) groups up to 48 switches under one IP over standard Ethernet links, but the datasheet does not list it and per-platform support is not confirmed"
+  },
+  "verify": [
+    "stacking"
+  ],
+  "verifyNote": "SWAG support for this family is not on the datasheet; the SWAG TOI with the platform list is behind an Arista login. If SWAG is supported, stacking should become tech SWAG, maxMembers 48, frontPanel true",
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "EOS Layer 3: static, OSPFv2/v3, IS-IS, BGP/MP-BGP, RIPv2, PIM, VRRP, VRF, BGP-EVPN VXLAN. OSPF, IS-IS, BGP and PIM need the Enhanced license; EVPN needs FLX-Lite"
+  },
+  "routeScale": "16K IPv4 / 6K IPv6 routes, 32K / 16K hosts",
+  "macTable": "64K",
+  "macsec": "256-bit MACsec on every access and uplink port (50G down / 50G up); separately licensed",
+  "buffer": "4 MB",
+  "power": {
+    "summary": "Two PSU bays (1+1). PoE models: 1050W AC or DC, 2000W AC on the TH models. 720XDM: 300W AC or DC. Two hot-swap fans front-to-rear (three for rear-to-front)",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "1+1: runs on one PSU; second PSU adds redundancy and PoE budget"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "Base EOS included. OSPF, IS-IS, BGP and PIM need the Enhanced (E) license; BGP-EVPN/VXLAN needs FLX-Lite (LIC-FIX-G1/G2/G3 by model license group). CloudVision management is a subscription. MACsec is a separate license",
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "models": [
+    {
+      "sku": "CCS-720XPM-24T-6SY",
+      "description": "24x 1G 30W PoE + 4x 25G SFP28 + 2x 10G SFP+, MACsec",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "y4x2",
+      "poeBudgets": [
+        {
+          "config": "1x 1050W AC (default)",
+          "watts": 720
+        },
+        {
+          "config": "2x 1050W AC",
+          "watts": 720
+        }
+      ],
+      "switchingGbps": 288,
+      "forwardingMpps": 500,
+      "note": "Minimum EOS listed as TBD on the Sep 2026 datasheet. Front-to-rear airflow only"
+    },
+    {
+      "sku": "CCS-720XPM-24TH-6SY",
+      "description": "24x 1G 90W PoE + 4x 25G SFP28 + 2x 10G SFP+, MACsec",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "y4x2",
+      "poeBudgets": [
+        {
+          "config": "1x 1050W AC (default)",
+          "watts": 980
+        },
+        {
+          "config": "1x 2000W AC",
+          "watts": 1930
+        },
+        {
+          "config": "2x 1050W AC",
+          "watts": 2030
+        },
+        {
+          "config": "2x 2000W AC",
+          "watts": 2160
+        }
+      ],
+      "switchingGbps": 288,
+      "forwardingMpps": 500,
+      "note": "Minimum EOS listed as TBD on the Sep 2026 datasheet. Front-to-rear airflow only"
+    },
+    {
+      "sku": "CCS-720XPM-48T-6SY",
+      "description": "48x 1G 30W PoE + 4x 25G SFP28 + 2x 10G SFP+, MACsec",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 30
+        }
+      ],
+      "uplinks": "y4x2",
+      "poeBudgets": [
+        {
+          "config": "1x 1050W AC (default)",
+          "watts": 980
+        },
+        {
+          "config": "2x 1050W AC",
+          "watts": 1440
+        }
+      ],
+      "switchingGbps": 336,
+      "forwardingMpps": 500,
+      "note": "Minimum EOS listed as TBD on the Sep 2026 datasheet. Front-to-rear airflow only"
+    },
+    {
+      "sku": "CCS-720XPM-48TH-6SY",
+      "description": "48x 1G 90W PoE + 4x 25G SFP28 + 2x 10G SFP+, MACsec",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "y4x2",
+      "poeBudgets": [
+        {
+          "config": "1x 1050W AC (default)",
+          "watts": 980
+        },
+        {
+          "config": "1x 2000W AC",
+          "watts": 1930
+        },
+        {
+          "config": "2x 1050W AC",
+          "watts": 2030
+        },
+        {
+          "config": "2x 2000W AC",
+          "watts": 3930
+        }
+      ],
+      "switchingGbps": 336,
+      "forwardingMpps": 500,
+      "note": "Arista's listed replacement for the 720XP-48Y6 and 722XPM-48Y4. Rear-to-front airflow available (-2R)"
+    },
+    {
+      "sku": "CCS-720XDM-48T-6SY",
+      "description": "48x 1G RJ45 (non-PoE) + 4x 25G SFP28 + 2x 10G SFP+, MACsec",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "y4x2",
+      "poeBudgets": [],
+      "switchingGbps": 336,
+      "forwardingMpps": 500
+    },
+    {
+      "sku": "CCS-720XDM-32S-6SY",
+      "description": "32x 1G SFP (non-PoE) + 4x 25G SFP28 + 2x 10G SFP+, MACsec",
+      "accessPorts": [
+        {
+          "count": 32,
+          "speedGbps": 1,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "uplinks": "y4x2",
+      "poeBudgets": [],
+      "switchingGbps": 304,
+      "forwardingMpps": 500,
+      "note": "Minimum EOS listed as TBD on the Sep 2026 datasheet. Front-to-rear airflow only"
+    }
+  ],
+  "mlag": {
+    "tech": "MLAG",
+    "note": "Active/active MLAG pair using standard LACP (listed on the datasheet)"
+  }
+}

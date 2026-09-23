@@ -4,12 +4,16 @@
   "family": "CX 8360 v2",
   "role": "aggregation",
   "source": "a8360",
-  "stacking": {
+  "mlag": {
     "tech": "VSX",
-    "bandwidthGbps": null,
-    "maxMembers": 2,
-    "frontPanel": false,
     "note": "Two-node VSX high availability (active-active) over an inter-switch link built from front-panel ports; not a shared-management stack"
+  },
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking; see multichassis LAG"
   },
   "routing": {
     "tier": "full",
