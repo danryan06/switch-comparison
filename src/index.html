@@ -434,7 +434,7 @@ const SRC={};for(const [k,s] of Object.entries(DATA.sources))SRC[k]={t:s.title,u
 const U={};for(const [k,o] of Object.entries(DATA.uplinks))U[k]=o.options.map(x=>({n:x.label,p:x.ports.map(p=>[p.count,p.speedGbps])}));
 const FAM={},SKUS=[];
 for(const f of DATA.families){
-  FAM[f.id]={v:f.vendor,name:f.family,role:f.role||"access",stack:{t:f.stacking.tech,bw:f.stacking.bandwidthGbps,max:f.stacking.maxMembers,fp:f.stacking.frontPanel,note:f.stacking.note},mlag:f.mlag||null,l3:f.routing.tier,l3t:f.routing.summary,bgp:f.routing.bgp,routes:f.routeScale,mac:f.macTable,macsec:f.macsec,buf:f.buffer,psuFru:f.power.psuFieldReplaceable,red:f.power.redundancy,fanFru:f.fansFieldReplaceable,power:f.power.summary,lic:f.licensing,src:f.source,xsrc:f.additionalSources||[],famVerify:f.verify||[],fnote:f.verifyNote||""};
+  FAM[f.id]={v:f.vendor,vendorSlug:f.vendorSlug||"",name:f.family,role:f.role||"access",stack:{t:f.stacking.tech,bw:f.stacking.bandwidthGbps,max:f.stacking.maxMembers,fp:f.stacking.frontPanel,note:f.stacking.note},mlag:f.mlag||null,l3:f.routing.tier,l3t:f.routing.summary,bgp:f.routing.bgp,routes:f.routeScale,mac:f.macTable,macsec:f.macsec,buf:f.buffer,psuFru:f.power.psuFieldReplaceable,red:f.power.redundancy,fanFru:f.fansFieldReplaceable,power:f.power.summary,lic:f.licensing,src:f.source,xsrc:f.additionalSources||[],famVerify:f.verify||[],fnote:f.verifyNote||""};
   for(const m of f.models)SKUS.push({fam:f.id,sku:m.sku,ports:(m.accessPorts||[]).map(p=>[p.count,p.speedGbps,p.poeWatts,p.media||"rj45"]),fabric:(m.fabricPorts||[]).map(p=>[p.count,p.speedGbps,p.media||"qsfp"]),up:m.uplinks||null,psu:(m.poeBudgets||[]).map(b=>[b.config,b.watts,b.verify?1:0]),sw:m.switchingGbps,fwd:m.forwardingMpps,name:m.description||"",note:m.note||"",ff:m.formFactor||"1RU",src:m.source||f.source,fanless:!!m.fanless,pd:m.poweredBy||"",routes:m.routeScale||"",mac:m.macTable||"",buf:m.buffer||"",verify:[...(m.verify||[]),...(f.verify||[])],own:m.verify||[],red:m.redundancy||f.power.redundancy,vnote:m.verifyNote||"",
     lc:m.lifecycle||f.lifecycle||{status:"current"},rug:(m.ruggedized!==undefined?m.ruggedized:f.ruggedized)||false,
     temp:m.operatingTempC||f.operatingTempC||null,ip:m.ipRating||f.ipRating||"",mount:m.mounting||f.mounting||[]});
@@ -450,7 +450,12 @@ function selectAccVendors(ids){
   accVend.clear();
   (ids||[]).forEach(id=>{if(ACC_BY_ID[id])accVend.add(id)});
 }
-function accForSwitch(s){return ACC_BY_VENDOR[vendorOf(s)]||null}
+function accForSwitch(s){
+  const f=FAM[s.fam];
+  /* Prefer catalog id matching the family path slug (cisco-nexus), then fall back to display vendor. */
+  if(f.vendorSlug&&ACC_BY_ID[f.vendorSlug])return ACC_BY_ID[f.vendorSlug];
+  return ACC_BY_VENDOR[f.v]||null;
+}
 function partAppliesToFamily(p,famId){
   if(p.appliesTo===undefined)return true;
   return Array.isArray(p.appliesTo)&&p.appliesTo.includes(famId);
@@ -599,10 +604,12 @@ function uplinkAvail(s,req,u){
 function sizeOne(s,req){
   const f=FAM[s.fam];
   if(sizeVend.size&&!sizeVend.has(f.v))return null;
-  /* Pure fabric / aggregation models have no accessPorts and are not closet-sizing candidates. */
+  /* Aggregation and core families are not wiring-closet candidates, even when they carry
+     a handful of low-speed ports. Pure fabric models have no accessPorts at all. */
+  if(f.role==="aggregation")return null;
   if(!s.ports.length)return null;
   if(req.ff==="1RU"&&s.ff!=="1RU")return null;
-  if(req.ff==="small"&&s.ff==="1RU")return null;
+  if(req.ff==="small"&&s.ff!=="Compact"&&s.ff!=="Desktop")return null;
   if(!req.eos&&!isCur(s))return {rej:"End of sale"};
   if(req.env==="rugged"&&!s.rug)return {rej:"Not built for rugged environments"};
   if(req.l3!=="l2"&&f.l3==="l2")return {rej:"Layer 2 only (routing stays on the firewall or core)"};

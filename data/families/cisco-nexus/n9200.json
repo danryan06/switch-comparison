@@ -1,0 +1,189 @@
+{
+  "id": "n9200",
+  "vendor": "Cisco",
+  "family": "Nexus 9200",
+  "role": "aggregation",
+  "source": "n9200",
+  "mlag": {
+    "tech": "vPC",
+    "note": "Two independent Nexus switches form a vPC domain for active/active multichassis link aggregation, over a peer link built from front-panel Ethernet ports. Each peer keeps its own control and management plane; this is not a stack"
+  },
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking. Nexus switches are deployed as independent systems; multichassis redundancy is vPC"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "NX-OS Layer 3: static, OSPFv2/v3, IS-IS, EIGRP, RIPv2, BGP/MP-BGP, PIM-SM/SSM, MSDP, HSRP, VRRP, VXLAN BGP EVPN, Segment Routing. Layer 3 unicast and multicast routing require a license beyond the default Layer 2 feature set"
+  },
+  "licensing": "Default system software covers Layer 2 security and management. Layer 3 unicast and multicast routing and Nexus Data Broker need additional licensing; sold as Data Center Networking (DCN) Essentials, Advantage or Premier subscriptions, or perpetual",
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "fansFieldReplaceable": true,
+  "routeScale": "Hardware forwarding tables are shared; the platform is published as up to 40 MB shared buffer with flexible LPM and host scale. Per-model route scale is in the Cisco Verified Scalability Guide, not the data sheet",
+  "macTable": "Not published per model on the data sheet; see the Cisco Verified Scalability Guide",
+  "macsec": "Not listed on the N9200 data sheet",
+  "buffer": "Up to 40 MB shared",
+  "power": {
+    "summary": "Two hot-swappable power supplies (1+1) and hot-swappable fan trays, in port-side intake or port-side exhaust airflow versions. AC, DC and HVAC/HVDC options vary by model",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "1+1 redundant power supplies; N+1 fans"
+    }
+  },
+  "note": "Platform total is up to 7.2 Tbps and 5.35 bpps across the family. Native line-rate VXLAN routing is supported on every model except the 92348GC-X and 92348GC-FX3. N9K-C92160YC-X (end of sale, last order Mar 5, 2021) is intentionally excluded",
+  "verify": [
+    "routeScale",
+    "macTable",
+    "lifecycle"
+  ],
+  "verifyNote": "Route and MAC scale are not published per model on the N9200 data sheet; they need the Verified Scalability Guide. Lifecycle: only the 92160YC-X was confirmed end of sale. The 9272Q, 92304QC and 9236C are the same generation and their lifecycle status was not confirmed",
+  "additionalSources": [
+    "n9200-92160eos"
+  ],
+  "models": [
+    {
+      "sku": "N9K-C92348GC-X",
+      "description": "48x 100M/1G BASE-T + 4x 1/10/25G SFP28 + 2x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        },
+        {
+          "count": 4,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 2,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 696,
+      "forwardingMpps": 517,
+      "note": "1G ToR and out-of-band management switch. No native line-rate VXLAN routing"
+    },
+    {
+      "sku": "N9K-C92348GC-FX3",
+      "description": "48x 10M/100M/1G BASE-T + 4x 1/10/25G SFP28 + 2x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        },
+        {
+          "count": 4,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 2,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 696,
+      "forwardingMpps": 517,
+      "buffer": "40 MB",
+      "note": "Cisco positions this as the successor to the 92348GC-X. No native line-rate VXLAN routing"
+    },
+    {
+      "sku": "N9K-C92300YC",
+      "description": "48x 1/10/25G SFP28 + 18x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 18,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 6000,
+      "forwardingMpps": 4750,
+      "note": "25G server access at 1:1 subscription. FC-FEC enabled for 25G, up to 3m DAC"
+    },
+    {
+      "sku": "N9K-C9272Q",
+      "description": "72x 40G QSFP+ (pure fabric)",
+      "accessPorts": [],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 72,
+          "speedGbps": 40,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 5760,
+      "forwardingMpps": null,
+      "note": "No ports at 25G or below, so this does not appear in the closet sizer"
+    },
+    {
+      "sku": "N9K-C92304QC",
+      "description": "56x 40G QSFP+ + 8x 40/100G QSFP28 (pure fabric), 2RU",
+      "accessPorts": [],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 56,
+          "speedGbps": 40,
+          "media": "qsfp"
+        },
+        {
+          "count": 8,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "formFactor": "2RU"
+    },
+    {
+      "sku": "N9K-C9236C",
+      "description": "36x 40/100G QSFP28 (pure fabric)",
+      "accessPorts": [],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 36,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 7200,
+      "forwardingMpps": null,
+      "note": "Highest-bandwidth N9200 model; the 7.2 Tbps platform figure refers to this switch"
+    }
+  ]
+}

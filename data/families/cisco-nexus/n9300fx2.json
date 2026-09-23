@@ -1,0 +1,152 @@
+{
+  "id": "n9300fx2",
+  "vendor": "Cisco",
+  "family": "Nexus 9300-FX2",
+  "role": "aggregation",
+  "source": "n9300-fx2",
+  "mlag": {
+    "tech": "vPC",
+    "note": "Two independent Nexus switches form a vPC domain for active/active multichassis link aggregation, over a peer link built from front-panel Ethernet ports. Each peer keeps its own control and management plane; this is not a stack"
+  },
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking. Nexus switches are deployed as independent systems; multichassis redundancy is vPC"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "NX-OS Layer 3: static, OSPFv2/v3, IS-IS, EIGRP, RIPv2, BGP/MP-BGP, PIM-SM/SSM, MSDP, HSRP, VRRP, VXLAN BGP EVPN, Segment Routing. Layer 3 unicast and multicast routing require a license beyond the default Layer 2 feature set"
+  },
+  "licensing": "Default system software covers Layer 2 security and management. Layer 3 unicast and multicast routing and Nexus Data Broker need additional licensing; sold as Data Center Networking (DCN) Essentials, Advantage or Premier subscriptions, or perpetual",
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "fansFieldReplaceable": true,
+  "routeScale": "Shared forwarding tables; see the Cisco Verified Scalability Guide for per-release route and host scale",
+  "macTable": "Not published per model on the data sheet; see the Cisco Verified Scalability Guide",
+  "macsec": "Wire-rate MACsec on all ports (9336C-FX2 and 9336C-FX2-E also support CloudSec)",
+  "buffer": "40 MB shared",
+  "power": {
+    "summary": "Two hot-swappable power supplies (1+1) and hot-swappable fan trays, in port-side intake or port-side exhaust airflow versions. AC, DC and HVAC/HVDC options vary by model",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "1+1 redundant power supplies; N+1 fans"
+    }
+  },
+  "verify": [
+    "routeScale",
+    "macTable"
+  ],
+  "verifyNote": "Route and MAC scale are given in the Verified Scalability Guide rather than the data sheet",
+  "models": [
+    {
+      "sku": "N9K-C9336C-FX2",
+      "description": "36x 40/100G QSFP28 (pure fabric)",
+      "accessPorts": [],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 36,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 7200,
+      "forwardingMpps": 2400,
+      "note": "Ports are configurable at 1/10/25/40/50/100G; breakout supported on all ports"
+    },
+    {
+      "sku": "N9K-C9336C-FX2-E",
+      "description": "36x 40/100G QSFP28 (pure fabric), Fibre Channel capable",
+      "accessPorts": [],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 36,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 7200,
+      "forwardingMpps": 2400,
+      "note": "Ports can also run as 16G or 32G Fibre Channel"
+    },
+    {
+      "sku": "N9K-C93240YC-FX2",
+      "description": "48x 1/10/25G SFP28 + 12x 40/100G QSFP28, 1.2RU",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 12,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 4800,
+      "forwardingMpps": 2500,
+      "formFactor": "1.2RU",
+      "note": "Non-oversubscribed. Cisco lists the chassis as 1.2RU. FC-FEC and RS-FEC enabled for 25G"
+    },
+    {
+      "sku": "N9K-C93360YC-FX2",
+      "description": "96x 1/10/25G SFP28 + 12x 40/100G QSFP28, 2RU",
+      "accessPorts": [
+        {
+          "count": 96,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 12,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 7200,
+      "forwardingMpps": 2400,
+      "formFactor": "2RU"
+    },
+    {
+      "sku": "N9K-C93216TC-FX2",
+      "description": "96x 100M/1/10G BASE-T + 12x 40/100G QSFP28, 2RU",
+      "accessPorts": [
+        {
+          "count": 96,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 12,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 4320,
+      "forwardingMpps": 2500,
+      "formFactor": "2RU"
+    }
+  ]
+}

@@ -1,0 +1,551 @@
+{
+  "vendor": "Cisco Nexus",
+  "source": "cisco-optics-100g",
+  "opticsMatrixUrl": "https://tmgmatrix.cisco.com/",
+  "note": "Curated Cisco optics and cables commonly used on Nexus 9000 fixed switches, from the Cisco 100GBASE QSFP-100G and 400G QSFP-DD module data sheets and the Nexus optics ordering guides. Cisco publishes per-platform and per-release support in the Transceiver Module Group (TMG) compatibility matrix; always check there. DACs and AOCs come in more lengths than listed. Nexus switches have no stacking cables.",
+  "parts": [
+    {
+      "sku": "GLC-TE",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 100,
+      "note": "1000BASE-T, extended temperature",
+      "verified": true
+    },
+    {
+      "sku": "GLC-SX-MMD",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "SX",
+      "media": "MMF",
+      "distanceM": 550,
+      "note": "1000BASE-SX with DOM",
+      "verified": true
+    },
+    {
+      "sku": "GLC-LH-SMD",
+      "category": "transceiver",
+      "speedGbps": 1,
+      "formFactor": "SFP",
+      "reach": "LX",
+      "media": "SMF",
+      "distanceM": 10000,
+      "note": "1000BASE-LX/LH with DOM",
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-SR-S",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 300,
+      "note": "300m OM3 / 400m OM4",
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-LRM",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LRM",
+      "media": "MMF",
+      "distanceM": 220,
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-LR-S",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-ER-S",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "ER",
+      "media": "SMF",
+      "distanceM": 40000,
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-ZR-S",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "ZR",
+      "media": "SMF",
+      "distanceM": 80000,
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-T-X",
+      "category": "transceiver",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "reach": "T",
+      "media": "Copper",
+      "distanceM": 30,
+      "note": "10GBASE-T over Cat6a/Cat7; check per-platform support",
+      "verified": true
+    },
+    {
+      "sku": "SFP-25G-SL",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 30,
+      "note": "Short-reach 25G, interoperates with QSFP-100G-SL4 in breakout",
+      "verified": true
+    },
+    {
+      "sku": "SFP-25G-SR-S",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 100,
+      "note": "70m OM3 / 100m OM4",
+      "verified": true
+    },
+    {
+      "sku": "SFP-10/25G-CSR-S",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 400,
+      "note": "Dual rate 10/25G extended reach: 300m OM4 at 25G, 400m at 10G",
+      "verified": true
+    },
+    {
+      "sku": "SFP-10/25G-LR-S",
+      "category": "transceiver",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 10000,
+      "note": "Dual rate 10/25G",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-40G-SR4",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 150,
+      "note": "100m OM3 / 150m OM4, MPO-12",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-40G-SR-BD",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "BiDi",
+      "media": "MMF",
+      "distanceM": 150,
+      "note": "40GBASE-BIDI over duplex MMF",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-40G-LR4-S",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true
+    },
+    {
+      "sku": "QSFP-40G-ER4",
+      "category": "transceiver",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "reach": "ER",
+      "media": "SMF",
+      "distanceM": 40000,
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-SR4-S",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 100,
+      "note": "70m OM3 / 100m OM4, MPO-12",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-SL4",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 30,
+      "note": "Short reach, MPO-12; interoperates with SFP-25G-SL in breakout",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-SR1.2",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "SR",
+      "media": "MMF",
+      "distanceM": 100,
+      "note": "Duplex LC over OM4",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-40/100-SRBD",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "BiDi",
+      "media": "MMF",
+      "distanceM": 100,
+      "note": "Dual rate 40/100G BiDi over duplex MMF; 100m OM4 at 100G",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-CWDM4-S",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "CWDM",
+      "media": "SMF",
+      "distanceM": 2000,
+      "note": "Duplex LC",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-FR-S",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 2000,
+      "note": "100GBASE-FR single lambda; interoperates with 400G DR4 in breakout",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-DR-S",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR",
+      "media": "SMF",
+      "distanceM": 500,
+      "note": "100GBASE-DR single lambda; interoperates with QDD-400G-DR4-S in breakout",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-PSM4-S",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 500,
+      "note": "MPO-12 parallel SMF",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-LR4-S",
+      "category": "transceiver",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000,
+      "verified": true
+    },
+    {
+      "sku": "QDD-400G-VR4",
+      "category": "transceiver",
+      "speedGbps": 400,
+      "formFactor": "QSFP-DD",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 50,
+      "note": "MPO-12 APC",
+      "verified": true
+    },
+    {
+      "sku": "QDD-400G-SR4.2-BD",
+      "category": "transceiver",
+      "speedGbps": 400,
+      "formFactor": "QSFP-DD",
+      "reach": "BiDi",
+      "media": "MMF",
+      "distanceM": 100,
+      "note": "400GBASE-SR4.2, MPO-12 APC; 4x100G breakout capable",
+      "verified": true
+    },
+    {
+      "sku": "QDD-400G-SR8-S",
+      "category": "transceiver",
+      "speedGbps": 400,
+      "formFactor": "QSFP-DD",
+      "reach": "SR4",
+      "media": "MMF",
+      "distanceM": 100,
+      "note": "MPO-16 APC",
+      "verified": true
+    },
+    {
+      "sku": "QDD-400G-DR4-S",
+      "category": "transceiver",
+      "speedGbps": 400,
+      "formFactor": "QSFP-DD",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 500,
+      "note": "MPO-12 APC; breaks out to 4x 100G DR",
+      "verified": true
+    },
+    {
+      "sku": "QDD-400G-FR4-S",
+      "category": "transceiver",
+      "speedGbps": 400,
+      "formFactor": "QSFP-DD",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 2000,
+      "note": "Duplex LC",
+      "verified": true
+    },
+    {
+      "sku": "QDD-4X100G-FR-S",
+      "category": "transceiver",
+      "speedGbps": 400,
+      "formFactor": "QSFP-DD",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 2000,
+      "note": "4x 100G FR breakout, MPO-12 APC",
+      "verified": true
+    },
+    {
+      "sku": "QDD-400G-LR4-S",
+      "category": "transceiver",
+      "speedGbps": 400,
+      "formFactor": "QSFP-DD",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000,
+      "note": "Duplex LC",
+      "verified": true
+    },
+    {
+      "sku": "QDD-400G-LR8-S",
+      "category": "transceiver",
+      "speedGbps": 400,
+      "formFactor": "QSFP-DD",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000,
+      "note": "Duplex LC",
+      "verified": true
+    },
+    {
+      "sku": "QDD-4X100G-LR-S",
+      "category": "transceiver",
+      "speedGbps": 400,
+      "formFactor": "QSFP-DD",
+      "reach": "LR4",
+      "media": "SMF",
+      "distanceM": 10000,
+      "note": "4x 100G LR breakout, MPO-12 APC",
+      "verified": true
+    },
+    {
+      "sku": "SFP-H10GB-CU1M",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 1,
+      "verified": true
+    },
+    {
+      "sku": "SFP-H10GB-CU3M",
+      "category": "dac",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "DAC",
+      "distanceM": 3,
+      "verified": true
+    },
+    {
+      "sku": "SFP-H25G-CU1M",
+      "category": "dac",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "DAC",
+      "distanceM": 1,
+      "verified": true
+    },
+    {
+      "sku": "SFP-H25G-CU3M",
+      "category": "dac",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "DAC",
+      "distanceM": 3,
+      "verified": true
+    },
+    {
+      "sku": "QSFP-H40G-CU1M",
+      "category": "dac",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "media": "DAC",
+      "distanceM": 1,
+      "verified": true
+    },
+    {
+      "sku": "QSFP-H40G-CU3M",
+      "category": "dac",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "media": "DAC",
+      "distanceM": 3,
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-CU1M",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 1,
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-CU3M",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 3,
+      "verified": true
+    },
+    {
+      "sku": "QSFP-4SFP25G-CU1M",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 1,
+      "note": "100G QSFP28 to 4x 25G SFP28 breakout",
+      "verified": true
+    },
+    {
+      "sku": "QSFP-4SFP25G-CU3M",
+      "category": "dac",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "DAC",
+      "distanceM": 3,
+      "note": "100G QSFP28 to 4x 25G SFP28 breakout",
+      "verified": true
+    },
+    {
+      "sku": "QDD-400-CU1M",
+      "category": "dac",
+      "speedGbps": 400,
+      "formFactor": "QSFP-DD",
+      "media": "DAC",
+      "distanceM": 1,
+      "verified": true
+    },
+    {
+      "sku": "QDD-400-CU2M",
+      "category": "dac",
+      "speedGbps": 400,
+      "formFactor": "QSFP-DD",
+      "media": "DAC",
+      "distanceM": 2,
+      "verified": true
+    },
+    {
+      "sku": "QDD-4ZQ100-CU1M",
+      "category": "dac",
+      "speedGbps": 400,
+      "formFactor": "QSFP-DD",
+      "media": "DAC",
+      "distanceM": 1,
+      "note": "400G QSFP-DD to 4x 100G QSFP28 breakout",
+      "verified": true
+    },
+    {
+      "sku": "SFP-10G-AOC3M",
+      "category": "aoc",
+      "speedGbps": 10,
+      "formFactor": "SFP+",
+      "media": "AOC",
+      "distanceM": 3,
+      "verified": true
+    },
+    {
+      "sku": "SFP-25G-AOC3M",
+      "category": "aoc",
+      "speedGbps": 25,
+      "formFactor": "SFP28",
+      "media": "AOC",
+      "distanceM": 3,
+      "verified": true
+    },
+    {
+      "sku": "QSFP-H40G-AOC3M",
+      "category": "aoc",
+      "speedGbps": 40,
+      "formFactor": "QSFP+",
+      "media": "AOC",
+      "distanceM": 3,
+      "verified": true
+    },
+    {
+      "sku": "QSFP-100G-AOC3M",
+      "category": "aoc",
+      "speedGbps": 100,
+      "formFactor": "QSFP28",
+      "media": "AOC",
+      "distanceM": 3,
+      "verified": true
+    },
+    {
+      "sku": "QDD-400-AOC3M",
+      "category": "aoc",
+      "speedGbps": 400,
+      "formFactor": "QSFP-DD",
+      "media": "AOC",
+      "distanceM": 3,
+      "verified": true
+    }
+  ]
+}

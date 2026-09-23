@@ -10,7 +10,12 @@ export function loadData() {
     updated: index.updated,
     sources: read('sources.json'),
     uplinks: read('uplinks.json'),
-    families: index.families.map(read),
+    families: index.families.map(p => {
+      const f = read(p);
+      /* Path slug (e.g. cisco-nexus) so accessories resolve even when display vendor is shared (Cisco). */
+      f.vendorSlug = p.split('/')[1] || '';
+      return f;
+    }),
     accessories: (index.accessories || []).map(p => {
       const a = read(p);
       a.id = p.replace(/^accessories\//, '').replace(/\.json$/, '');
@@ -23,7 +28,7 @@ const SPEEDS = [1, 2.5, 5, 10, 25];
 const MEDIA = ['rj45', 'sfp'];
 const FABRIC_SPEEDS = [40, 50, 100, 200, 400];
 const FABRIC_MEDIA = ['sfp', 'qsfp', 'qsfp-dd'];
-const FORMS = ['1RU', 'Compact', 'Desktop'];
+const FORMS = ['1RU', '1.2RU', '2RU', 'Compact', 'Desktop'];
 const TIERS = ['l2', 'ospf', 'full'];
 const ROLES = ['access', 'aggregation'];
 const STATUSES = ['current', 'endOfSale', 'endOfSupport'];

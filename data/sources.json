@@ -507,5 +507,60 @@
     "title": "Arista Optics Modules and Cables Data Sheet (03-0027-38, Nov 2025)",
     "url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
     "retrieved": "2026-09-23"
+  },
+  "n9200": {
+    "title": "Cisco N9200 Platform Switches Data Sheet (updated Aug 19, 2026)",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-735989.html",
+    "retrieved": "2026-09-23"
+  },
+  "n9200-92160eos": {
+    "title": "Cisco: End-of-Sale and End-of-Life Announcement for the Cisco Nexus N9K-C92160YC-X",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/eos-eol-notice-c51-743538.html",
+    "retrieved": "2026-09-23"
+  },
+  "n9300-fx2": {
+    "title": "Cisco N9300-FX2 Series Switches Data Sheet (updated Aug 6, 2026)",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-742282.html",
+    "retrieved": "2026-09-23"
+  },
+  "n9300-fx3": {
+    "title": "Cisco N9300-FX3 Series Switches Data Sheet (updated Jun 2, 2026)",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-744052.html",
+    "retrieved": "2026-09-23"
+  },
+  "n9300-gx": {
+    "title": "Cisco N9300-GX Series Switches Data Sheet (updated Jul 20, 2026)",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-741560.html",
+    "retrieved": "2026-09-23"
+  },
+  "n9300-gx2": {
+    "title": "Cisco N9300-GX2 Series Fixed Switches Data Sheet (2026)",
+    "url": "https://www.cisco.com/site/us/en/products/collateral/networking/switches/nexus-9000-series-switches/nexus-9300-gx2-series-fixed-switches-data-sheet.html",
+    "retrieved": "2026-09-23"
+  },
+  "n9300-fx3s": {
+    "title": "Cisco N9300-FX3S Series Switch Data Sheet (updated Aug 6, 2026)",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-744874.html",
+    "retrieved": "2026-09-23"
+  },
+  "n9300-24p": {
+    "title": "Cisco N9300-EX, FX, and FX3 24 Port Series Switches Data Sheet (updated May 4, 2026)",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-743149.html",
+    "retrieved": "2026-09-23"
+  },
+  "cisco-optics-100g": {
+    "title": "Cisco 100GBASE QSFP-100G Modules Data Sheet",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.html",
+    "retrieved": "2026-09-23"
+  },
+  "cisco-optics-400g": {
+    "title": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+    "retrieved": "2026-09-23"
+  },
+  "cisco-optics-nexus-og": {
+    "title": "Cisco 100G Fiber Optic Transceiver Cable Ordering Guide: Cisco Nexus",
+    "url": "https://www.cisco.com/c/dam/en/us/products/collateral/interfaces-modules/transceiver-modules/panduit-cable-og-100g-optics.pdf",
+    "retrieved": "2026-09-23"
   }
 }

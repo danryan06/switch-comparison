@@ -151,7 +151,7 @@
         },
         "switchingGbps": { "type": ["number", "null"], "description": "null when the datasheet does not publish it" },
         "forwardingMpps": { "type": ["number", "null"] },
-        "formFactor": { "enum": ["1RU", "Compact", "Desktop"], "description": "Defaults to 1RU" },
+        "formFactor": { "enum": ["1RU", "1.2RU", "2RU", "Compact", "Desktop"], "description": "Defaults to 1RU" },
         "fanless": { "type": "boolean" },
         "poweredBy": { "type": "string", "description": "For switches that can be powered over PoE or by an adapter" },
         "routeScale": { "type": "string", "description": "Overrides the family value" },

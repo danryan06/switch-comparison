@@ -1,0 +1,106 @@
+{
+  "id": "n9300gx",
+  "vendor": "Cisco",
+  "family": "Nexus 9300-GX",
+  "role": "aggregation",
+  "source": "n9300-gx",
+  "mlag": {
+    "tech": "vPC",
+    "note": "Two independent Nexus switches form a vPC domain for active/active multichassis link aggregation, over a peer link built from front-panel Ethernet ports. Each peer keeps its own control and management plane; this is not a stack"
+  },
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking. Nexus switches are deployed as independent systems; multichassis redundancy is vPC"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "NX-OS Layer 3: static, OSPFv2/v3, IS-IS, EIGRP, RIPv2, BGP/MP-BGP, PIM-SM/SSM, MSDP, HSRP, VRRP, VXLAN BGP EVPN, Segment Routing. Layer 3 unicast and multicast routing require a license beyond the default Layer 2 feature set"
+  },
+  "licensing": "Default system software covers Layer 2 security and management. Layer 3 unicast and multicast routing and Nexus Data Broker need additional licensing; sold as Data Center Networking (DCN) Essentials, Advantage or Premier subscriptions, or perpetual",
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "fansFieldReplaceable": true,
+  "routeScale": "Shared forwarding tables; see the Cisco Verified Scalability Guide for per-release route and host scale",
+  "macTable": "Not published per model on the data sheet; see the Cisco Verified Scalability Guide",
+  "macsec": "Wire-rate MACsec and CloudSec support (port coverage varies by model)",
+  "buffer": "Not published on the data sheet",
+  "power": {
+    "summary": "Two hot-swappable power supplies (1+1) and hot-swappable fan trays, in port-side intake or port-side exhaust airflow versions. AC, DC and HVAC/HVDC options vary by model",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "1+1 redundant power supplies; N+1 fans"
+    }
+  },
+  "verify": [
+    "routeScale",
+    "macTable",
+    "buffer",
+    "macsec"
+  ],
+  "verifyNote": "The N9300-GX data sheet does not publish buffer, MAC or route scale per model, and states MACsec support without naming the covered ports",
+  "models": [
+    {
+      "sku": "N9K-C9316D-GX",
+      "description": "16x 40/100/400G QSFP-DD (pure fabric)",
+      "accessPorts": [],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 16,
+          "speedGbps": 400,
+          "media": "qsfp-dd"
+        }
+      ],
+      "switchingGbps": 12800,
+      "forwardingMpps": 4300,
+      "note": "Ports are configurable at 10/25/40/50/100/200/400G"
+    },
+    {
+      "sku": "N9K-C93600CD-GX",
+      "description": "28x 40/100G QSFP28 + 8x 40/100/400G QSFP-DD (pure fabric)",
+      "accessPorts": [],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 28,
+          "speedGbps": 100,
+          "media": "qsfp"
+        },
+        {
+          "count": 8,
+          "speedGbps": 400,
+          "media": "qsfp-dd"
+        }
+      ],
+      "switchingGbps": 12000,
+      "forwardingMpps": 4000,
+      "note": "The 28 QSFP28 ports also support 10G and 25G, which would be below the fabric threshold; they are recorded at their maximum 100G"
+    },
+    {
+      "sku": "N9K-C9364C-GX",
+      "description": "64x 40/100G QSFP28 (pure fabric), 2RU",
+      "accessPorts": [],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 64,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 12800,
+      "forwardingMpps": 4300,
+      "formFactor": "2RU"
+    }
+  ]
+}

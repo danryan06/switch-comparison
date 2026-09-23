@@ -65,7 +65,14 @@
     "families/arista/ar720d.json",
     "families/arista/ar710p.json",
     "families/arista/ar710xp.json",
-    "families/arista/ar710hxp.json"
+    "families/arista/ar710hxp.json",
+    "families/cisco-nexus/n9200.json",
+    "families/cisco-nexus/n9300fx2.json",
+    "families/cisco-nexus/n9300fx3.json",
+    "families/cisco-nexus/n9300gx.json",
+    "families/cisco-nexus/n9300gx2.json",
+    "families/cisco-nexus/n9300fx3s.json",
+    "families/cisco-nexus/n930024p.json"
   ],
   "accessories": [
     "accessories/hpe-aruba.json",
@@ -75,6 +82,7 @@
     "accessories/juniper.json",
     "accessories/ubiquiti.json",
     "accessories/extreme.json",
-    "accessories/arista.json"
+    "accessories/arista.json",
+    "accessories/cisco-nexus.json"
   ]
 }

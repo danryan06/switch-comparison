@@ -1,0 +1,70 @@
+{
+  "id": "n9300fx3s",
+  "vendor": "Cisco",
+  "family": "Nexus 9300-FX3S",
+  "role": "aggregation",
+  "source": "n9300-fx3s",
+  "mlag": {
+    "tech": "vPC",
+    "note": "Two independent Nexus switches form a vPC domain for active/active multichassis link aggregation, over a peer link built from front-panel Ethernet ports. Each peer keeps its own control and management plane; this is not a stack"
+  },
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking. Nexus switches are deployed as independent systems; multichassis redundancy is vPC"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "NX-OS Layer 3: static, OSPFv2/v3, IS-IS, EIGRP, RIPv2, BGP/MP-BGP, PIM-SM/SSM, MSDP, HSRP, VRRP, VXLAN BGP EVPN, Segment Routing. Layer 3 unicast and multicast routing require a license beyond the default Layer 2 feature set"
+  },
+  "licensing": "Default system software covers Layer 2 security and management. Layer 3 unicast and multicast routing and Nexus Data Broker need additional licensing; sold as Data Center Networking (DCN) Essentials, Advantage or Premier subscriptions, or perpetual. SyncE is a separate add-on license (DCN-SYNCE-XF)",
+  "routeScale": "1,792,000 IPv4 LPM routes and IPv4 host entries; 896,000 IPv6 LPM routes and 1,792,000 IPv6 host entries",
+  "macTable": "512,000",
+  "macsec": "IEEE 802.1ae MACsec and CloudSec on all ports at 1G and above (feature license required)",
+  "buffer": "40 MB",
+  "power": {
+    "summary": "Up to two hot-swappable power supplies: 650W AC, 930W DC or 1200W HVAC/HVDC. Four hot-swappable fans, port-side intake or exhaust",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "N+1 power supplies and fans"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "note": "NX-OS only; ACI mode is not supported. Flexible forwarding tables support up to two million shared entries. Can be converted to a Fabric Extender with a software FEX mode command",
+  "models": [
+    {
+      "sku": "N9K-C93180YC-FX3S",
+      "description": "48x 1/10/25G SFP28 + 6x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 6,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 3600,
+      "forwardingMpps": 1200,
+      "note": "PTP telecom profile G.8275.1 with SyncE, boundary clock G.8273.2 Class B, plus GNSS antenna, 1PPS and 10MHz inputs and a ToD RJ-45"
+    }
+  ]
+}

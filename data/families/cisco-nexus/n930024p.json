@@ -1,0 +1,192 @@
+{
+  "id": "n930024p",
+  "vendor": "Cisco",
+  "family": "Nexus 9300 24-port (EX / FX / FX3H)",
+  "role": "aggregation",
+  "source": "n9300-24p",
+  "mlag": {
+    "tech": "vPC",
+    "note": "Two independent Nexus switches form a vPC domain for active/active multichassis link aggregation, over a peer link built from front-panel Ethernet ports. Each peer keeps its own control and management plane; this is not a stack"
+  },
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking. Nexus switches are deployed as independent systems; multichassis redundancy is vPC"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "NX-OS Layer 3: static, OSPFv2/v3, IS-IS, EIGRP, RIPv2, BGP/MP-BGP, PIM-SM/SSM, MSDP, HSRP, VRRP, VXLAN BGP EVPN, Segment Routing. Layer 3 unicast and multicast routing require a license beyond the default Layer 2 feature set"
+  },
+  "licensing": "Default system software covers Layer 2 security and management. Layer 3 unicast and multicast routing and Nexus Data Broker need additional licensing; sold as Data Center Networking (DCN) Essentials, Advantage or Premier subscriptions, or perpetual. These switches ship licensed for any 24 of the 48 downlink ports; a 48-port upgrade license (N9K-FX3-24P-UPG=, N9K-FX-24P-UPG= or N9K-EX-24P-UPG=) unlocks the rest. MACsec on the FX-24 models needs a feature license",
+  "routeScale": "FX3H and FX-24: 1,792,000 LPM routes and IP host entries. EX-24: 896,000",
+  "macTable": "FX3H and FX-24: 512,000. EX-24: 256,000",
+  "macsec": "Wire-rate MACsec on all ports of the FX-24 models (feature license required); not stated for the FX3H or EX-24 models",
+  "buffer": "40 MB",
+  "power": {
+    "summary": "Up to two hot-swappable power supplies and four hot-swappable fans, port-side intake or exhaust. FX3H: 650W AC, 930W DC or 1200W HVAC/HVDC. 93108TC-FX3H: 1100W or 1900W AC. FX-24 and EX-24: 500W AC, 930W DC or 1200W HVAC/HVDC",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "N+1 power supplies and fans"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "note": "Compact-licensing variants of the 9300-EX, FX and FX3 leaf switches for smaller deployments. Each has 48 physical downlink ports but ships licensed to use any 24 of them, so accessPorts here record the 24 licensed ports, not the physical 48",
+  "verify": [
+    "accessPorts",
+    "switchingGbps",
+    "forwardingMpps"
+  ],
+  "verifyNote": "accessPorts record the 24 licensed downlinks; the hardware has 48 physical ports and a 48-port upgrade license is orderable. Cisco does not publish switching capacity or forwarding rate for the 24-port models on this data sheet",
+  "models": [
+    {
+      "sku": "N9K-C93180YC-FX3H",
+      "description": "24 licensed of 48x 1/10/25G SFP28 + 6x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 6,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "note": "PTP telecom profiles with SyncE and boundary clock. Minimum NX-OS 10.3.1"
+    },
+    {
+      "sku": "N9K-C93108TC-FX3H",
+      "description": "24 licensed of 48x 100M/1/2.5/5/10G BASE-T + 6x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 6,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "note": "Shares hardware with the 93108TC-FX3P, which is the PoE version. Minimum NX-OS 10.3.1"
+    },
+    {
+      "sku": "N9K-C93180YC-FX-24",
+      "description": "24 licensed of 48x 1/10/25G SFP28 + 6x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 6,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "note": "Sub-microsecond latency. Downlinks can also run 16G or 32G Fibre Channel (on the software roadmap). Minimum NX-OS 9.3(2)"
+    },
+    {
+      "sku": "N9K-C93108TC-FX-24",
+      "description": "24 licensed of 48x 100M/1/10G BASE-T + 6x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 6,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "note": "Minimum NX-OS 9.3(2)"
+    },
+    {
+      "sku": "N9K-C93180YC-EX-24",
+      "description": "24 licensed of 48x 1/10/25G SFP28 + 6x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 6,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "routeScale": "896,000 LPM routes and IP host entries",
+      "macTable": "256,000",
+      "note": "FC-FEC enabled for 25G, up to 3m DAC. Minimum NX-OS 9.3(2)"
+    },
+    {
+      "sku": "N9K-C93108TC-EX-24",
+      "description": "24 licensed of 48x 100M/1/10G BASE-T + 6x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 6,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": null,
+      "forwardingMpps": null,
+      "routeScale": "896,000 LPM routes and IP host entries",
+      "macTable": "256,000",
+      "note": "Minimum NX-OS 9.3(2)"
+    }
+  ]
+}

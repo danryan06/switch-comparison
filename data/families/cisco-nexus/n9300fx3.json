@@ -1,0 +1,203 @@
+{
+  "id": "n9300fx3",
+  "vendor": "Cisco",
+  "family": "Nexus 9300-FX3",
+  "role": "aggregation",
+  "source": "n9300-fx3",
+  "mlag": {
+    "tech": "vPC",
+    "note": "Two independent Nexus switches form a vPC domain for active/active multichassis link aggregation, over a peer link built from front-panel Ethernet ports. Each peer keeps its own control and management plane; this is not a stack"
+  },
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking. Nexus switches are deployed as independent systems; multichassis redundancy is vPC"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "NX-OS Layer 3: static, OSPFv2/v3, IS-IS, EIGRP, RIPv2, BGP/MP-BGP, PIM-SM/SSM, MSDP, HSRP, VRRP, VXLAN BGP EVPN, Segment Routing. Layer 3 unicast and multicast routing require a license beyond the default Layer 2 feature set"
+  },
+  "licensing": "Default system software covers Layer 2 security and management. Layer 3 unicast and multicast routing and Nexus Data Broker need additional licensing; sold as Data Center Networking (DCN) Essentials, Advantage or Premier subscriptions, or perpetual",
+  "operatingTempC": {
+    "min": 0,
+    "max": 40
+  },
+  "mounting": [
+    "rack"
+  ],
+  "fansFieldReplaceable": true,
+  "routeScale": "1,792,000 IPv4 LPM routes and host entries; 896,000 IPv6 LPM routes (hardware capacity)",
+  "macTable": "512,000",
+  "macsec": "IEEE 802.1ae MACsec on all ports",
+  "buffer": "40 MB",
+  "power": {
+    "summary": "Two hot-swappable power supplies (1+1) and hot-swappable fan trays, in port-side intake or port-side exhaust airflow versions. AC, DC and HVAC/HVDC options vary by model",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "1+1 redundant power supplies; N+1 fans"
+    }
+  },
+  "note": "Flexible forwarding tables support up to two million shared entries. FEX is supported on the 93180YC-FX3 and 93108TC-FX3P only",
+  "models": [
+    {
+      "sku": "N9K-C93180YC-FX3",
+      "description": "48x 1/10/25G SFP28 + 6x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 6,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 3600,
+      "forwardingMpps": 1200,
+      "note": "Supports PTP telecom profiles with SyncE and boundary clock, plus GNSS, 1PPS and ToD inputs"
+    },
+    {
+      "sku": "N9K-C93108TC-FX3",
+      "description": "48x 100M/1/10G BASE-T + 6x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 6,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 2160,
+      "forwardingMpps": 1200
+    },
+    {
+      "sku": "N9K-C93108TC-FX3P",
+      "description": "48x 100M/1/2.5/5/10G BASE-T UPoE + 6x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 60
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 6,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "poeBudgets": [
+        {
+          "config": "2x 1100W AC, redundant",
+          "watts": 500
+        },
+        {
+          "config": "2x 1900W AC, redundant",
+          "watts": 1300
+        },
+        {
+          "config": "2x 1100W AC, non-redundant",
+          "watts": 1600
+        },
+        {
+          "config": "2x 1900W AC, non-redundant",
+          "watts": 1920
+        }
+      ],
+      "switchingGbps": 2160,
+      "forwardingMpps": 1200,
+      "note": "PoE on ports 1 to 48: PoE (15W), PoE+ (30W) and UPoE (60W). At 60W the datasheet supports 8, 21, 26 or 32 ports depending on the power configuration"
+    },
+    {
+      "sku": "N9K-C9348GC-FX3",
+      "description": "48x 10M/100M/1G BASE-T + 4x 1/10/25G SFP28 + 2x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 1,
+          "poeWatts": 0
+        },
+        {
+          "count": 4,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "poeBudgets": [],
+      "fabricPorts": [
+        {
+          "count": 2,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "switchingGbps": 696,
+      "forwardingMpps": 517
+    },
+    {
+      "sku": "N9K-C9348GC-FX3PH",
+      "description": "40x 10M/100M/1G BASE-T + 8x 10M/100M half-duplex, PoE++ + 4x 1/10/25G SFP28 + 2x 40/100G QSFP28",
+      "accessPorts": [
+        {
+          "count": 40,
+          "speedGbps": 1,
+          "poeWatts": 60
+        },
+        {
+          "count": 8,
+          "speedGbps": 1,
+          "poeWatts": 60
+        },
+        {
+          "count": 4,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "fabricPorts": [
+        {
+          "count": 2,
+          "speedGbps": 100,
+          "media": "qsfp"
+        }
+      ],
+      "poeBudgets": [
+        {
+          "config": "2x 1900W AC, redundant",
+          "watts": 1450
+        },
+        {
+          "config": "2x 1900W AC, non-redundant",
+          "watts": 3000
+        }
+      ],
+      "switchingGbps": 696,
+      "forwardingMpps": 517,
+      "note": "PoE on ports 1 to 48: PoE (15W), PoE+ (30W) and PoE++ (60W). The last 8 downlinks run at 10M or 100M half-duplex only; the schema has no sub-1G speed, so they are stored at 1G",
+      "verify": [
+        "accessPorts"
+      ],
+      "verifyNote": "The last 8 downlink ports are 10M/100M half-duplex only and are recorded at 1G because the schema's lowest access speed is 1G"
+    }
+  ]
+}
