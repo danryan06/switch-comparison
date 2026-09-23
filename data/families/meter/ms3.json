@@ -1,7 +1,7 @@
 {
   "id": "ms3",
   "vendor": "Meter",
-  "family": "S3",
+  "family": "S3 Core",
   "role": "aggregation",
   "source": "meter-switches",
   "additionalSources": [
@@ -67,7 +67,7 @@
       "poeBudgets": [],
       "switchingGbps": 420,
       "forwardingMpps": null,
-      "note": "6x 1/10/25G SFP28 + 6x 1/10G SFP+. 1x console + 1x 1G RJ-45 OOB. Silent under normal operating conditions. MTBF 1M hours. 1U full width"
+      "note": "Core switch with 6x 1/10/25G SFP28 and 6x 1/10G SFP+ (not a uniform 12x SFP+ layout). 1x console + 1x 1G RJ-45 OOB. Silent under normal operating conditions. MTBF 1M hours. 1U full width"
     }
   ]
 }
