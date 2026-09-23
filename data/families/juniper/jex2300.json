@@ -37,16 +37,13 @@
     "status": "endOfSale",
     "endOfSaleDate": "2026-09-30",
     "endOfSupportDate": "2031-09-30",
-    "announcementUrl": "https://support.juniper.net/support/eol/product/ex_series/",
+    "announcementUrl": "https://support.juniper.net/support/eol",
     "replacement": [
-      "jex4100f"
+      "jex4000"
     ],
-    "note": "End-of-sale announced April 30, 2026 (TSB107683). Last order September 30, 2026; support through September 30, 2031. EX4100-F is the common migration target for this class"
+    "note": "TSB107683 (created 2026-04-30, updated 2026-07-30). Last order 2026-09-30; end of hardware failure analysis 2027-09-30; end of engineering 2029-09-30; end of support 2031-09-30. Juniper names EX4000 SKUs as replacements. Last software version 25.4"
   },
-  "verify": [
-    "lifecycle"
-  ],
-  "verifyNote": "Confirm TSB107683 dates and named replacements on Juniper's EX Series EOL page; third-party summaries agree on last order 2026-09-30 and support through 2031-09-30",
+  "verify": [],
   "models": [
     {
       "sku": "EX2300-24T",
@@ -61,7 +58,16 @@
       "poeBudgets": [],
       "switchingGbps": 128,
       "forwardingMpps": 95,
-      "note": "Also sold as -24T-DC and -24T-TAA. -24T-VC includes the Virtual Chassis license"
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2026-09-30",
+        "endOfSupportDate": "2031-09-30",
+        "announcementUrl": "https://support.juniper.net/support/eol",
+        "replacement": [
+          "EX4000-24T"
+        ]
+      },
+      "note": "Also sold as -24T-DC and -24T-TAA. -24T-VC includes the Virtual Chassis license. TSB107683 names EX4000-24T as the replacement; DC and VC SKUs have no replacement listed"
     },
     {
       "sku": "EX2300-24P",
@@ -81,7 +87,16 @@
       ],
       "switchingGbps": 128,
       "forwardingMpps": 95,
-      "note": "Also sold as -24P-TAA. -24P-VC includes the Virtual Chassis license"
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2026-09-30",
+        "endOfSupportDate": "2031-09-30",
+        "announcementUrl": "https://support.juniper.net/support/eol",
+        "replacement": [
+          "EX4000-24P"
+        ]
+      },
+      "note": "Also sold as -24P-TAA. -24P-VC includes the Virtual Chassis license (no replacement listed for the VC SKU)"
     },
     {
       "sku": "EX2300-24MP",
@@ -106,6 +121,15 @@
       ],
       "switchingGbps": 152,
       "forwardingMpps": 95,
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2026-09-30",
+        "endOfSupportDate": "2031-09-30",
+        "announcementUrl": "https://support.juniper.net/support/eol",
+        "replacement": [
+          "EX4000-24MP"
+        ]
+      },
       "note": "Ports 0-7 are 1/2.5G; ports 8-23 are 1G. All access ports PoE+"
     },
     {
@@ -121,7 +145,16 @@
       "poeBudgets": [],
       "switchingGbps": 176,
       "forwardingMpps": 130,
-      "note": "Also sold as -48T-TAA. -48T-VC includes the Virtual Chassis license"
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2026-09-30",
+        "endOfSupportDate": "2031-09-30",
+        "announcementUrl": "https://support.juniper.net/support/eol",
+        "replacement": [
+          "EX4000-48T"
+        ]
+      },
+      "note": "Also sold as -48T-TAA. -48T-VC includes the Virtual Chassis license; TSB107683 also maps -48T-VC to EX4000-48T"
     },
     {
       "sku": "EX2300-48P",
@@ -141,7 +174,16 @@
       ],
       "switchingGbps": 176,
       "forwardingMpps": 130,
-      "note": "Also sold as -48P-TAA. -48P-VC includes the Virtual Chassis license. Datasheet notes 750W system PoE budget can feed 30W PoE+ on up to 24 ports or 15.4W on all 48"
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2026-09-30",
+        "endOfSupportDate": "2031-09-30",
+        "announcementUrl": "https://support.juniper.net/support/eol",
+        "replacement": [
+          "EX4000-48P"
+        ]
+      },
+      "note": "Also sold as -48P-TAA. -48P-VC includes the Virtual Chassis license (no replacement listed for the VC SKU). Datasheet notes 750W system PoE budget can feed 30W PoE+ on up to 24 ports or 15.4W on all 48"
     },
     {
       "sku": "EX2300-48MP",
@@ -166,6 +208,15 @@
       ],
       "switchingGbps": 264,
       "forwardingMpps": 130,
+      "lifecycle": {
+        "status": "endOfSale",
+        "endOfSaleDate": "2026-09-30",
+        "endOfSupportDate": "2031-09-30",
+        "announcementUrl": "https://support.juniper.net/support/eol",
+        "replacement": [
+          "EX4000-48MP"
+        ]
+      },
       "note": "Ports 16-31 are 1/2.5G; ports 0-15 and 32-47 are 1G. Six 1/10G SFP+ uplinks. All access ports PoE+"
     }
   ]

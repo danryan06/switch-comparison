@@ -634,8 +634,8 @@
     "retrieved": "2026-09-23"
   },
   "jex2300eol": {
-    "title": "Juniper EX Series Hardware Dates & Milestones (EX2300 end-of-sale; TSB107683 summarized as last order 2026-09-30)",
-    "url": "https://support.juniper.net/support/eol/product/ex_series/",
+    "title": "Juniper TSB107683 End of Life Announcement: EX2300 (created 2026-04-30, updated 2026-07-30)",
+    "url": "https://support.juniper.net/support/eol",
     "retrieved": "2026-09-23"
   },
   "jex3400": {
