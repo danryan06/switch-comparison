@@ -1,0 +1,88 @@
+{
+  "id": "ms",
+  "vendor": "Meter",
+  "family": "S-Series",
+  "role": "access",
+  "source": "meter-switches",
+  "additionalSources": [
+    "meter-s1",
+    "meter-s2",
+    "meter-s-series"
+  ],
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking. Cloud-managed individually via the Meter dashboard / Meter Network Operating System"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Layer 2 access with VLANs (up to 4096). Inter-VLAN routing and firewall policy live on Meter gateways/firewalls, not on these switches"
+  },
+  "routeScale": "None (Layer 2)",
+  "macTable": "32,000",
+  "macsec": "Not listed",
+  "buffer": "3 MB",
+  "power": {
+    "summary": "Single fixed internal AC PSU (100-240V)",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Fixed internal PSU; no redundant option listed"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Included with Meter Network as a Service. Hardware is provisioned and managed as part of the Meter subscription rather than sold as standalone switches with a separate license SKU",
+  "operatingTempC": {
+    "min": 0,
+    "max": 45
+  },
+  "mounting": [
+    "rack"
+  ],
+  "verify": [
+    "buffer"
+  ],
+  "verifyNote": "S1 lists packet buffer as 3 MB; S2 lists 3M bits on the same generation sheet (treated as 3 MB). Confirm against a formal Meter datasheet if one is published",
+  "models": [
+    {
+      "sku": "S1",
+      "source": "meter-s1",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 2.5,
+          "poeWatts": 60
+        }
+      ],
+      "uplinks": "y6",
+      "poeBudgets": [
+        {
+          "config": "Internal (950W PSU)",
+          "watts": 720
+        }
+      ],
+      "switchingGbps": 420,
+      "forwardingMpps": null,
+      "note": "24x 10/100/1000/2500BASE-T with IEEE 802.3bt Type 3 Class 6 (60W) PoE++. 6x 1/10/25G SFP28. 1x 1G RJ-45 OOB. ~18 dBA normal operation. MTBF 305k hours"
+    },
+    {
+      "sku": "S2",
+      "source": "meter-s2",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 2.5,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "y6",
+      "poeBudgets": [],
+      "switchingGbps": 540,
+      "forwardingMpps": null,
+      "note": "48x 10/100/1000/2500BASE-T (non-PoE). 6x 1/10/25G SFP28. 1x console + 1x 1G RJ-45 OOB. ~18 dBA normal operation. MTBF 688k hours"
+    }
+  ]
+}

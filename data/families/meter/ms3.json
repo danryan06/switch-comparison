@@ -1,0 +1,73 @@
+{
+  "id": "ms3",
+  "vendor": "Meter",
+  "family": "S3",
+  "role": "aggregation",
+  "source": "meter-switches",
+  "additionalSources": [
+    "meter-s3",
+    "meter-s-series"
+  ],
+  "stacking": {
+    "tech": "None",
+    "bandwidthGbps": null,
+    "maxMembers": 1,
+    "frontPanel": false,
+    "note": "No hardware stacking. Cloud-managed via the Meter dashboard / Meter Network Operating System. Typical designs pair S3 as a small site core with S1/S2 access"
+  },
+  "routing": {
+    "tier": "l2",
+    "bgp": false,
+    "summary": "Marketed as a core switch. Published hardware specs are Layer 2 (VLANs up to 4096). Dynamic routing is not listed on the switch; Meter gateways/firewalls handle routed services"
+  },
+  "routeScale": "None published (Layer 2 on the switch)",
+  "macTable": "32,000",
+  "macsec": "Not listed",
+  "buffer": "3 MB",
+  "power": {
+    "summary": "Single fixed internal AC PSU (100-240V; ~1.7A at 115V)",
+    "psuFieldReplaceable": false,
+    "redundancy": {
+      "supported": false,
+      "detail": "Fixed internal PSU; no redundant option listed"
+    }
+  },
+  "fansFieldReplaceable": false,
+  "licensing": "Included with Meter Network as a Service. Hardware is provisioned and managed as part of the Meter subscription rather than sold as standalone switches with a separate license SKU",
+  "operatingTempC": {
+    "min": 0,
+    "max": 45
+  },
+  "mounting": [
+    "rack"
+  ],
+  "verify": [
+    "routing",
+    "buffer"
+  ],
+  "verifyNote": "Confirm whether any Layer 3 features run on the S3 itself versus only on Meter gateways. Buffer listed as 3M bits on the sheet; treated as 3 MB to match S1",
+  "models": [
+    {
+      "sku": "S3",
+      "source": "meter-s3",
+      "accessPorts": [
+        {
+          "count": 6,
+          "speedGbps": 25,
+          "poeWatts": 0,
+          "media": "sfp"
+        },
+        {
+          "count": 6,
+          "speedGbps": 10,
+          "poeWatts": 0,
+          "media": "sfp"
+        }
+      ],
+      "poeBudgets": [],
+      "switchingGbps": 420,
+      "forwardingMpps": null,
+      "note": "6x 1/10/25G SFP28 + 6x 1/10G SFP+. 1x console + 1x 1G RJ-45 OOB. Silent under normal operating conditions. MTBF 1M hours. 1U full width"
+    }
+  ]
+}
