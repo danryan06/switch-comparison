@@ -82,7 +82,6 @@
     "families/ubiquiti/uecsagg.json",
     "families/meter/ms.json",
     "families/meter/ms3.json",
-    "families/meter/mpoe.json",
     "families/meter/m12.json"
   ],
   "accessories": [
