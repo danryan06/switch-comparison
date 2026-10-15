@@ -473,11 +473,6 @@
     "url": "https://www.arista.com/en/company/news/press-release/20693-pr-12032024",
     "retrieved": "2026-09-23"
   },
-  "fsmatrix766": {
-    "title": "Feature Matrix for FortiSwitchOS 7.6.6",
-    "url": "https://fortinetweb.s3.amazonaws.com/docs.fortinet.com/v2/attachments/742a8550-038e-11f1-8b43-d2943efe5b2f/FortiSwitch-7.6.6-Feature-Matrix.pdf",
-    "retrieved": "2026-09-23"
-  },
   "fsmclag": {
     "title": "FortiSwitch 7.6.5 FortiLink Guide: MCLAG requirements",
     "url": "https://docs.fortinet.com/document/fortiswitch/7.6.5/fortilink-guide/801193/mclag-requirements",
@@ -556,11 +551,6 @@
   "n9kvsg1063": {
     "title": "Cisco Nexus 9000 Series NX-OS Verified Scalability Guide, Release 10.6(3s)F",
     "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/n9300/scalability/cisco-nexus-9000-series-nx-os-verified-scalability-guide-1063sf.html",
-    "retrieved": "2026-10-15"
-  },
-  "n9kvsg938": {
-    "title": "Cisco Nexus 9000 Series NX-OS Verified Scalability Guide, Release 9.3(8)",
-    "url": "https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-verified-scalability-guides-list.html",
     "retrieved": "2026-10-15"
   },
   "n9300-fx3s": {

@@ -168,9 +168,8 @@
     }
   ],
   "additionalSources": [
-    "fsmatrix766",
+    "fsos766matrix",
     "fsmclag",
-    "fssecureaccess",
-    "fsos766matrix"
+    "fssecureaccess"
   ]
 }

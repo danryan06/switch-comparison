@@ -72,8 +72,7 @@
     }
   ],
   "additionalSources": [
-    "fsmatrix766",
-    "fsmclag",
-    "fsos766matrix"
+    "fsos766matrix",
+    "fsmclag"
   ]
 }
