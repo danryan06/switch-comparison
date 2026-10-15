@@ -17,7 +17,7 @@
   "routing": {
     "tier": "ospf",
     "bgp": false,
-    "summary": "Static routing; OSPF, RIP, VRRP with Advanced Features license. No BGP"
+    "summary": "Static routing; OSPF, RIP, VRRP, IS-IS with the Advanced Features license. No BGP."
   },
   "routeScale": "64 IPv4 routes, 512 host entries",
   "macTable": "16,000",
