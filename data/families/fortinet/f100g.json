@@ -56,10 +56,7 @@
       "forwardingMpps": 208,
       "formFactor": "Desktop",
       "fanless": true,
-      "verify": [
-        "ports"
-      ],
-      "verifyNote": "802.3bt type on the two 5G ports (Type 3 60W vs Type 4 90W) is not stated; 60W used as the conservative value"
+      "note": "60W used on the two 5G ports as the conservative value; 802.3bt type not stated"
     },
     {
       "sku": "FS-124G",

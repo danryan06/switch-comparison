@@ -62,6 +62,12 @@ export function validate(data, today = new Date().toISOString().slice(0, 10)) {
     for (const m of o.mounting || [])
       if (!MOUNTS.includes(m)) errors.push(`${at}: mounting "${m}" must be one of ${MOUNTS.join(', ')}`);
   };
+  const checkLimitation = (at, o, flagged) => {
+    if (o.modelingLimitation === undefined) return;
+    if (typeof o.modelingLimitation !== 'boolean') errors.push(`${at}: modelingLimitation must be true or false`);
+    else if (o.modelingLimitation && !flagged) errors.push(`${at}: modelingLimitation is set but nothing is flagged`);
+    else if (o.modelingLimitation && !o.verifyNote) errors.push(`${at}: modelingLimitation needs a verifyNote describing the limitation`);
+  };
   for (const [k, src] of Object.entries(data.sources))
     if (src.language && src.language !== 'en') warnings.push(`source ${k}: not in English (${src.language}); add an English primary source and flag values that only appear here`);
   for (const f of data.families) {
@@ -85,6 +91,7 @@ export function validate(data, today = new Date().toISOString().slice(0, 10)) {
     }
     if (!f.models?.length) errors.push(`${at}: no models`);
     if ((f.verify || []).length && !f.verifyNote) warnings.push(`${at}: flagged for verification without a verifyNote`);
+    checkLimitation(at, f, (f.verify || []).length);
     checkLifecycle(at, f.lifecycle);
     checkRugged(at, f);
     const badRed = r => typeof r?.supported !== 'boolean' || !r?.detail;
@@ -128,6 +135,7 @@ export function validate(data, today = new Date().toISOString().slice(0, 10)) {
       if (m.formFactor && !FORMS.includes(m.formFactor)) errors.push(`${mt}: formFactor must be one of ${FORMS.join(', ')}`);
       const flagged = (m.verify || []).length || (m.poeBudgets || []).some(b => b.verify);
       if (flagged && !m.verifyNote) warnings.push(`${mt}: flagged for verification without a verifyNote`);
+      checkLimitation(mt, m, flagged);
       checkLifecycle(mt, m.lifecycle);
       checkRugged(mt, m);
     }

@@ -473,15 +473,25 @@
     "url": "https://www.arista.com/en/company/news/press-release/20693-pr-12032024",
     "retrieved": "2026-09-23"
   },
-  "fsmatrix766": {
-    "title": "Feature Matrix for FortiSwitchOS 7.6.6",
-    "url": "https://fortinetweb.s3.amazonaws.com/docs.fortinet.com/v2/attachments/742a8550-038e-11f1-8b43-d2943efe5b2f/FortiSwitch-7.6.6-Feature-Matrix.pdf",
-    "retrieved": "2026-09-23"
-  },
   "fsmclag": {
     "title": "FortiSwitch 7.6.5 FortiLink Guide: MCLAG requirements",
     "url": "https://docs.fortinet.com/document/fortiswitch/7.6.5/fortilink-guide/801193/mclag-requirements",
     "retrieved": "2026-09-23"
+  },
+  "fssecureaccess": {
+    "title": "Fortinet FortiSwitch Secure Access Series Data Sheet",
+    "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiSwitch_Secure_Access_Series.pdf",
+    "retrieved": "2026-10-15"
+  },
+  "fsos766rn": {
+    "title": "FortiSwitchOS 7.6.6 Release Notes",
+    "url": "https://docs.fortinet.com/document/fortiswitch/7.6.6/release-notes",
+    "retrieved": "2026-10-15"
+  },
+  "fsos766matrix": {
+    "title": "Fortinet FortiSwitchOS 7.6.6 Feature Matrix",
+    "url": "https://docs.fortinet.com/document/fortiswitch/7.6.6/fortiswitch-feature-matrix",
+    "retrieved": "2026-10-15"
   },
   "ar710p": {
     "title": "Arista CCS-710P Compact Series Switches Data Sheet (03-0062-14, Aug 17, 2026)",
@@ -537,6 +547,11 @@
     "title": "Cisco N9300-GX2 Series Fixed Switches Data Sheet (2026)",
     "url": "https://www.cisco.com/site/us/en/products/collateral/networking/switches/nexus-9000-series-switches/nexus-9300-gx2-series-fixed-switches-data-sheet.html",
     "retrieved": "2026-09-23"
+  },
+  "n9kvsg1063": {
+    "title": "Cisco Nexus 9000 Series NX-OS Verified Scalability Guide, Release 10.6(3s)F",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/n9300/scalability/cisco-nexus-9000-series-nx-os-verified-scalability-guide-1063sf.html",
+    "retrieved": "2026-10-15"
   },
   "n9300-fx3s": {
     "title": "Cisco N9300-FX3S Series Switch Data Sheet (updated Aug 6, 2026)",

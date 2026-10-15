@@ -192,7 +192,8 @@
       "verify": [
         "accessPorts"
       ],
-      "verifyNote": "The last 8 downlink ports are 10M/100M half-duplex only and are recorded at 1G because the schema's lowest access speed is 1G"
+      "verifyNote": "The last 8 downlink ports are 10M/100M half-duplex only and are recorded at 1G because the schema's lowest access speed is 1G",
+      "modelingLimitation": true
     }
   ]
 }

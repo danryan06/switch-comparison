@@ -6,8 +6,8 @@ Corrections and new models are welcome. The one rule: every value must trace to 
 
 Most people should start here. Open a GitHub issue and the maintainers will turn it into a data change:
 
-- [Correct a value](https://github.com/danryan06/switch-comparison/issues/new?template=correction.yml) — wrong figure, newer datasheet, lifecycle, or clearing a Needs checking flag
-- [Request an addition](https://github.com/danryan06/switch-comparison/issues/new?template=add-request.yml) — missing model, family, or vendor line
+- [Correct a value](https://github.com/danryan06/switch-comparison/issues/new?template=correction.yml): wrong figure, newer datasheet, lifecycle, or clearing a Needs checking flag
+- [Request an addition](https://github.com/danryan06/switch-comparison/issues/new?template=add-request.yml): missing model, family, or vendor line
 
 Link the vendor's own datasheet and name the table or page. You do not need to write JSON.
 
@@ -24,6 +24,7 @@ Prefer to edit the data yourself? Follow the steps below and open a pull request
    - On a PoE budget: add `"verify": true`.
    - On a model: add the field name to `verify` and explain in `verifyNote`.
    - On a whole family, where the value legitimately differs model to model: add the field name to the family's `verify` and explain in the family's `verifyNote`.
+   - If the flag describes something the schema cannot represent (not missing or conflicting data), also add `"modelingLimitation": true` next to `verifyNote`. It then shows under Known modeling limitations instead of the open Needs checking items.
 
    When a vendor's own documents conflict: prefer the specific table over overview text; prefer two agreeing sources over one; for PoE budgets, use the lower figure. Record the other value in a note.
 5. Run `npm run validate`. Fix every error. Read every warning and either fix it or explain it in the PR.

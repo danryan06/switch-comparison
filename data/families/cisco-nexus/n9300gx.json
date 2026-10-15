@@ -4,6 +4,9 @@
   "family": "Nexus 9300-GX",
   "role": "aggregation",
   "source": "n9300-gx",
+  "additionalSources": [
+    "n9kvsg1063"
+  ],
   "mlag": {
     "tech": "vPC",
     "note": "Two independent Nexus switches form a vPC domain for active/active multichassis link aggregation, over a peer link built from front-panel Ethernet ports. Each peer keeps its own control and management plane; this is not a stack"
@@ -29,8 +32,8 @@
     "rack"
   ],
   "fansFieldReplaceable": true,
-  "routeScale": "Shared forwarding tables; see the Cisco Verified Scalability Guide for per-release route and host scale",
-  "macTable": "Not published per model on the data sheet; see the Cisco Verified Scalability Guide",
+  "routeScale": "1,153,000 IPv4 host routes; 1,153,000 IPv4 LPM routes (default template, verified 10.6(3s)F). LPM-heavy mode raises host routes to 786,000.",
+  "macTable": "92,000 (default routing mode); 200,000 (L2-heavy mode)",
   "macsec": "Wire-rate MACsec and CloudSec support (port coverage varies by model)",
   "buffer": "Not published on the data sheet",
   "power": {
@@ -42,12 +45,10 @@
     }
   },
   "verify": [
-    "routeScale",
-    "macTable",
     "buffer",
     "macsec"
   ],
-  "verifyNote": "The N9300-GX data sheet does not publish buffer, MAC or route scale per model, and states MACsec support without naming the covered ports",
+  "verifyNote": "The N9300-GX data sheet does not publish buffer per model, and states MACsec support without naming the covered ports",
   "models": [
     {
       "sku": "N9K-C9316D-GX",

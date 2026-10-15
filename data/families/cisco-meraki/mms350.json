@@ -131,11 +131,7 @@
       "switchingGbps": 272,
       "forwardingMpps": null,
       "routeScale": "8,192 routes (256 static)",
-      "note": "UPoE (60W) on the 8 mGig ports only; the 16 1G ports are PoE+. Meraki says UPoE class 5 and 6 need current firmware and a backend change by Meraki Support",
-      "verify": [
-        "switchingGbps"
-      ],
-      "verifyNote": "The MS350 datasheet throughput table says 176 Gbps; its comparison table and the MS355 datasheet comparison table both say 272 Gbps, which also matches the port count. Using 272 (two agreeing sources)",
+      "note": "UPoE (60W) on the 8 mGig ports only; the 16 1G ports are PoE+. Meraki says UPoE class 5 and 6 need current firmware and a backend change by Meraki Support. Switching capacity 272 Gbps per the datasheet comparison table and the MS355 datasheet, and equal to the port total at full duplex. The MS350 throughput table shows 176 Gbps in the MS350-24X column, which matches the MS350-48 models and appears copied from them",
       "lifecycle": {
         "status": "endOfSale",
         "endOfSaleDate": "2025-08-08",
