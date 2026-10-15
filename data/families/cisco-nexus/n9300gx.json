@@ -5,7 +5,8 @@
   "role": "aggregation",
   "source": "n9300-gx",
   "additionalSources": [
-    "n9kvsg1063"
+    "n9kvsg1063",
+    "n9kvsg938"
   ],
   "mlag": {
     "tech": "vPC",
@@ -32,7 +33,7 @@
     "rack"
   ],
   "fansFieldReplaceable": true,
-  "routeScale": "Shared forwarding tables; see the Cisco Verified Scalability Guide for per-release route and host scale",
+  "routeScale": "470,000 IPv4 host/LPM routes; 256,000 IPv6 routes (verified, 9.3(8))",
   "macTable": "92,000 (default routing mode); 200,000 (L2-heavy mode)",
   "macsec": "Wire-rate MACsec and CloudSec support (port coverage varies by model)",
   "buffer": "Not published on the data sheet",
@@ -45,11 +46,10 @@
     }
   },
   "verify": [
-    "routeScale",
     "buffer",
     "macsec"
   ],
-  "verifyNote": "The N9300-GX data sheet does not publish buffer or route scale per model, and states MACsec support without naming the covered ports",
+  "verifyNote": "The N9300-GX data sheet does not publish buffer per model, and states MACsec support without naming the covered ports",
   "models": [
     {
       "sku": "N9K-C9316D-GX",

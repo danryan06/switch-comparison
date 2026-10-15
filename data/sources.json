@@ -553,6 +553,11 @@
     "url": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/n9300/scalability/cisco-nexus-9000-series-nx-os-verified-scalability-guide-1063sf.html",
     "retrieved": "2026-10-15"
   },
+  "n9kvsg938": {
+    "title": "Cisco Nexus 9000 Series NX-OS Verified Scalability Guide, Release 9.3(8)",
+    "url": "https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-verified-scalability-guides-list.html",
+    "retrieved": "2026-10-15"
+  },
   "n9300-fx3s": {
     "title": "Cisco N9300-FX3S Series Switch Data Sheet (updated Aug 6, 2026)",
     "url": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-744874.html",
