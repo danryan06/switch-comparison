@@ -34,8 +34,7 @@
   "fansFieldReplaceable": false,
   "licensing": "No license needed when managed by a FortiGate over FortiLink. Dynamic routing needs the Advanced Features license (FS-SW-LIC-xxx). Cloud or standalone management is a separate subscription",
   "verify": [
-    "bgp",
-    "mlag"
+    "bgp"
   ],
   "models": [
     {
@@ -120,10 +119,11 @@
       "note": "Spec table lists 1560W; the lower ordering figure is used for sizing"
     }
   ],
-  "verifyNote": "BGP listed for the campus family; not yet confirmed for 300G models. Multichassis LAG: MCLAG support is read from the FortiSwitchOS 7.6.6 Feature Matrix. Its check marks do not survive text extraction, so the supported columns were placed from the dashes in the MCLAG rows and the 'Layer-3 routing in MCLAG' row. Confirm against the PDF",
+  "verifyNote": "BGP listed for the campus family; not yet confirmed for 300G models",
   "additionalSources": [
     "fsmatrix766",
     "fsmclag",
-    "fsos766rn"
+    "fsos766rn",
+    "fsos766matrix"
   ]
 }

@@ -43,10 +43,9 @@
     "rack"
   ],
   "verify": [
-    "routing",
-    "mlag"
+    "routing"
   ],
-  "verifyNote": "The data sheet lists OSPF, RIP, VRRP, BGP, and IS-IS for FortiSwitchOS generally and refers to the FortiSwitch Feature Matrix for per-model support. BGP on the FSR-424F-POE is not yet confirmed there. Multichassis LAG: MCLAG support is read from the FortiSwitchOS 7.6.6 Feature Matrix. Its check marks do not survive text extraction, so the supported columns were placed from the dashes in the MCLAG rows and the 'Layer-3 routing in MCLAG' row. Confirm against the PDF",
+  "verifyNote": "The data sheet lists OSPF, RIP, VRRP, BGP, and IS-IS for FortiSwitchOS generally and refers to the FortiSwitch Feature Matrix for per-model support. BGP on the FSR-424F-POE is not yet confirmed there",
   "models": [
     {
       "sku": "FSR-424F-POE",
@@ -78,6 +77,7 @@
   ],
   "additionalSources": [
     "fsmatrix766",
-    "fsmclag"
+    "fsmclag",
+    "fsos766matrix"
   ]
 }

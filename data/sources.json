@@ -493,6 +493,11 @@
     "url": "https://docs.fortinet.com/document/fortiswitch/7.6.6/release-notes",
     "retrieved": "2026-10-15"
   },
+  "fsos766matrix": {
+    "title": "Fortinet FortiSwitchOS 7.6.6 Feature Matrix",
+    "url": "https://docs.fortinet.com/document/fortiswitch/7.6.6/fortiswitch-feature-matrix",
+    "retrieved": "2026-10-15"
+  },
   "ar710p": {
     "title": "Arista CCS-710P Compact Series Switches Data Sheet (03-0062-14, Aug 17, 2026)",
     "url": "https://www.arista.com/assets/data/pdf/Datasheets/CCS-710P-Datasheet.pdf",
