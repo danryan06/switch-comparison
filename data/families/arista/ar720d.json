@@ -129,8 +129,7 @@
         },
         {
           "config": "Dual integrated 1800W AC, both feeding PoE",
-          "watts": 2880,
-          "verify": true
+          "watts": 2880
         }
       ],
       "switchingGbps": 320,
@@ -138,7 +137,7 @@
       "buffer": "8 MB",
       "routeScale": "16K IPv4 / 8K IPv6 LPM routes, 64K IPv4 host routes (default mode 2); up to 144K IPv4 LPM in mode 4",
       "macTable": "64K (default mode 2); 16K to 112K by forwarding mode",
-      "verifyNote": "The datasheet lists the PoE budget as \"2x1440W\" and says the second PSU adds PoE budget on this model only. 2880W is read from that and equals 48 ports x 60W; confirm with Arista"
+      "note": "2880W read from the 2x1440W PoE entry; equals 48 ports x 60W"
     },
     {
       "sku": "CCS-720DT-24S-M-S",

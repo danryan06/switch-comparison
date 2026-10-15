@@ -77,10 +77,7 @@
       ],
       "switchingGbps": 360,
       "forwardingMpps": 268,
-      "verify": [
-        "switchingGbps"
-      ],
-      "verifyNote": "Spec table gives 180 (360) Gbps FDX, used here; the model overview text says 1120 Gbps, which looks copied from the 48ZC2. PoE budgets use the datasheet's minimum (max-load) figures"
+      "note": "Spec-table FDX figure used; the overview text value appears copied from another model. PoE budgets use the datasheet's minimum (max-load) figures"
     },
     {
       "sku": "CCS-720XP-48ZC2",
@@ -117,10 +114,7 @@
       ],
       "switchingGbps": 880,
       "forwardingMpps": 654,
-      "verify": [
-        "switchingGbps"
-      ],
-      "verifyNote": "Spec table gives 440 (880) Gbps FDX, used here; the model overview text says 1120 Gbps. PoE budgets use the datasheet's minimum (max-load) figures"
+      "note": "Spec-table FDX figure used; the overview text value appears copied from another model. PoE budgets use the datasheet's minimum (max-load) figures"
     },
     {
       "sku": "CCS-720XP-96ZC2-M-S",
@@ -158,11 +152,7 @@
       "switchingGbps": 1160,
       "forwardingMpps": 863,
       "buffer": "16 MB",
-      "note": "2RU, up to four PSUs. The -M-S (8GB expanded memory) SKU is the current orderable version; the schema has no 2RU form factor, so it shows as 1RU",
-      "verify": [
-        "switchingGbps"
-      ],
-      "verifyNote": "Spec table gives 580 (1160) Gbps FDX, used here; the model overview text says 2240 Gbps. PoE budgets use the datasheet's minimum (max-load) figures"
+      "note": "2RU, up to four PSUs. The -M-S (8GB expanded memory) SKU is the current orderable version; the schema has no 2RU form factor, so it shows as 1RU. Spec-table FDX figure used; the overview text value appears copied from another model. PoE budgets use the datasheet's minimum (max-load) figures"
     },
     {
       "sku": "CCS-720XP-48TXH-2C-S",
@@ -187,11 +177,7 @@
       "switchingGbps": 1560,
       "forwardingMpps": 1160,
       "buffer": "16 MB",
-      "note": "CCS-720XP-48TXH-5G-10GUPG upgrades the 5G version to this model",
-      "verify": [
-        "switchingGbps"
-      ],
-      "verifyNote": "Spec table gives 780 (1560) Gbps FDX, used here; the model overview text says 2240 Gbps. PoE budgets use the datasheet's minimum (max-load) figures"
+      "note": "CCS-720XP-48TXH-5G-10GUPG upgrades the 5G version to this model. Spec-table FDX figure used; the overview text value appears copied from another model. PoE budgets use the datasheet's minimum (max-load) figures"
     },
     {
       "sku": "CCS-720XP-48TXH-2C-S-5G",

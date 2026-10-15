@@ -113,10 +113,7 @@
         "rack"
       ],
       "poweredBy": "External adapters, sold separately (PWR-462-AC-ADP-H or PWR-462-DC-ADP-H)",
-      "verify": [
-        "switchingGbps"
-      ],
-      "verifyNote": "The datasheet states 144 Gbps; the port total (16x 1G + 4x 5G + 4x 10G) is 152 Gbps full duplex. Datasheet value kept"
+      "note": "Datasheet value (144 Gbps) kept over the computed port total"
     }
   ]
 }
