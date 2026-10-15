@@ -5,8 +5,7 @@
   "role": "aggregation",
   "source": "n9300-gx",
   "additionalSources": [
-    "n9kvsg1063",
-    "n9kvsg938"
+    "n9kvsg1063"
   ],
   "mlag": {
     "tech": "vPC",
@@ -33,7 +32,7 @@
     "rack"
   ],
   "fansFieldReplaceable": true,
-  "routeScale": "470,000 IPv4 host/LPM routes; 256,000 IPv6 routes (verified, 9.3(8))",
+  "routeScale": "1,153,000 IPv4 host routes; 1,153,000 IPv4 LPM routes (default template, verified 10.6(3s)F). LPM-heavy mode raises host routes to 786,000.",
   "macTable": "92,000 (default routing mode); 200,000 (L2-heavy mode)",
   "macsec": "Wire-rate MACsec and CloudSec support (port coverage varies by model)",
   "buffer": "Not published on the data sheet",

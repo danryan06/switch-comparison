@@ -32,7 +32,7 @@
     "rack"
   ],
   "fansFieldReplaceable": true,
-  "routeScale": "Shared forwarding tables; see the Cisco Verified Scalability Guide for per-release route and host scale",
+  "routeScale": "524,000 IPv4 host/LPM routes (471,000 with URPF); ARP 48,000 (32,000 with URPF). Default template, verified 10.6(3s)F.",
   "macTable": "92,000 (default routing mode); 200,000 (L2-heavy mode)",
   "macsec": "Wire-rate MACsec on all ports (9336C-FX2 and 9336C-FX2-E also support CloudSec)",
   "buffer": "40 MB shared",
@@ -44,10 +44,6 @@
       "detail": "1+1 redundant power supplies; N+1 fans"
     }
   },
-  "verify": [
-    "routeScale"
-  ],
-  "verifyNote": "Route scale is given in the Verified Scalability Guide rather than the data sheet",
   "models": [
     {
       "sku": "N9K-C9336C-FX2",

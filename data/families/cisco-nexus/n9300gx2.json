@@ -32,7 +32,7 @@
     "rack"
   ],
   "fansFieldReplaceable": true,
-  "routeScale": "Shared forwarding tables; see the Cisco Verified Scalability Guide for per-release route and host scale",
+  "routeScale": "1,153,000 IPv4 host routes; 1,153,000 IPv4 LPM routes (default template, verified 10.6(3s)F).",
   "macTable": "92,000 (default routing mode); 200,000 (L2-heavy mode)",
   "macsec": "Wire-rate MACsec on selected ports: all 48 ports on the 9348D-GX2A, the last 8 ports on the 9332D-GX2B and -M",
   "buffer": "Not published on the data sheet",
@@ -46,10 +46,9 @@
   },
   "note": "Every model has 2 fixed 1/10G SFP+ ports alongside the 400G ports. They are recorded as access ports because they run at 10G, which means these spine switches can appear in the closet sizer with 2 usable ports",
   "verify": [
-    "routeScale",
     "buffer"
   ],
-  "verifyNote": "The N9300-GX2 data sheet does not publish buffer or route scale per model",
+  "verifyNote": "The N9300-GX2 data sheet does not publish buffer per model",
   "models": [
     {
       "sku": "N9K-C9364D-GX2A",
