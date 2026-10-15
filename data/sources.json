@@ -642,5 +642,10 @@
     "title": "Juniper Networks EX3400 Ethernet Switch Datasheet",
     "url": "https://www.juniper.net/us/en/products/switches/ex-series/ex3400-ethernet-switch-datasheet.html",
     "retrieved": "2026-09-23"
+  },
+  "jex5200": {
+    "title": "HPE Networking EX5200 Switch Series QuickSpecs (a50014660enw, V1, Sep 2026)",
+    "url": "https://www.hpe.com/us/en/collaterals/collateral.a50014660enw.html",
+    "retrieved": "2026-10-07"
   }
 }

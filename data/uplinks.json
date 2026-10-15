@@ -492,6 +492,33 @@
       }
     ]
   },
+  "jex5200": {
+    "modular": true,
+    "options": [
+      {
+        "label": "No uplink module: 2x 100G QSFP28 VC ports only (rear, dedicated to stacking)",
+        "ports": []
+      },
+      {
+        "label": "EX5200-EM-8Y: 8x 25G SFP28 module",
+        "ports": [
+          {
+            "count": 8,
+            "speedGbps": 25
+          }
+        ]
+      },
+      {
+        "label": "EX5200-EM-2C: 2x 100G QSFP28 module",
+        "ports": [
+          {
+            "count": 2,
+            "speedGbps": 100
+          }
+        ]
+      }
+    ]
+  },
   "jex4000": {
     "modular": false,
     "options": [

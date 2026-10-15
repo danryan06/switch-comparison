@@ -1,0 +1,160 @@
+{
+  "id": "jex5200",
+  "vendor": "Juniper",
+  "family": "EX5200",
+  "source": "jex5200",
+  "stacking": {
+    "tech": "Virtual Chassis",
+    "bandwidthGbps": 400,
+    "maxMembers": 10,
+    "frontPanel": false,
+    "note": "Two dedicated rear 100G QSFP28 ports, 400 Gbps full-duplex per switch. Separate from the optional front uplink module, so stacking does not consume uplinks. Branded as HPE Networking EX5200, runs Junos OS"
+  },
+  "routing": {
+    "tier": "full",
+    "bgp": true,
+    "summary": "Full L3: RIP, OSPF, BGP, IS-IS, VRRP, EVPN-VXLAN with group-based policy. OSPF and BGP need a Flex Advanced or Premium license"
+  },
+  "routeScale": "Not published in the QuickSpecs (stated as high routing/ARP/ND/VRF scale)",
+  "macTable": "112,000",
+  "macsec": "AES-256 on all access and uplink module ports; not on the 100G VC ports",
+  "buffer": "Not published",
+  "power": {
+    "summary": "Two hot-swap AC PSU bays (autosensing 100-120V/200-240V); 550W on T models, 1600W on 24MP, 2000W on 48MP. One PSU required, second for redundancy. PoE budget depends on PSU count and input voltage",
+    "psuFieldReplaceable": true,
+    "redundancy": {
+      "supported": true,
+      "detail": "One PSU included; second sold separately (internal, hot-swap, load-sharing)"
+    }
+  },
+  "fansFieldReplaceable": true,
+  "licensing": "HPE Juniper Flex: Standard features included with Junos OS; Advanced or Premium (perpetual or 3 or 5-year subscription, class-based by port count) adds routing and HPE Mist Wired Assurance. Managed by HPE Mist or Junos CLI",
+  "verify": [
+    "routeScale"
+  ],
+  "verifyNote": "QuickSpecs cite high routing/ARP/ND/VRF scale but do not give the IPv4/IPv6 route-table numbers; capture them from the EX5200 datasheet when published",
+  "models": [
+    {
+      "sku": "EX5200-24T",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "jex5200",
+      "poeBudgets": [],
+      "switchingGbps": 1280,
+      "forwardingMpps": 952.38,
+      "operatingTempC": {
+        "min": 0,
+        "max": 45
+      },
+      "mounting": [
+        "rack",
+        "wall"
+      ]
+    },
+    {
+      "sku": "EX5200-48T",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 0
+        }
+      ],
+      "uplinks": "jex5200",
+      "poeBudgets": [],
+      "switchingGbps": 1760,
+      "forwardingMpps": 1309.52,
+      "operatingTempC": {
+        "min": 0,
+        "max": 45
+      },
+      "mounting": [
+        "rack",
+        "wall"
+      ]
+    },
+    {
+      "sku": "EX5200-24MP",
+      "accessPorts": [
+        {
+          "count": 24,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "jex5200",
+      "poeBudgets": [
+        {
+          "config": "1x 1600W AC, 110V input",
+          "watts": 780
+        },
+        {
+          "config": "1x 1600W AC, 220V input",
+          "watts": 1330
+        },
+        {
+          "config": "2x 1600W AC, 110V input",
+          "watts": 1751
+        },
+        {
+          "config": "2x 1600W AC, 220V input",
+          "watts": 2160
+        }
+      ],
+      "switchingGbps": 1280,
+      "forwardingMpps": 952.38,
+      "operatingTempC": {
+        "min": 0,
+        "max": 45
+      },
+      "mounting": [
+        "rack",
+        "wall"
+      ]
+    },
+    {
+      "sku": "EX5200-48MP",
+      "accessPorts": [
+        {
+          "count": 48,
+          "speedGbps": 10,
+          "poeWatts": 90
+        }
+      ],
+      "uplinks": "jex5200",
+      "poeBudgets": [
+        {
+          "config": "1x 2000W AC, 110V input",
+          "watts": 700
+        },
+        {
+          "config": "1x 2000W AC, 220V input",
+          "watts": 1650
+        },
+        {
+          "config": "2x 2000W AC, 110V input",
+          "watts": 1671
+        },
+        {
+          "config": "2x 2000W AC, 220V input",
+          "watts": 3500
+        }
+      ],
+      "switchingGbps": 1760,
+      "forwardingMpps": 1309.52,
+      "operatingTempC": {
+        "min": 0,
+        "max": 45
+      },
+      "mounting": [
+        "rack",
+        "wall"
+      ]
+    }
+  ]
+}
