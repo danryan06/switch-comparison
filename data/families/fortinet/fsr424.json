@@ -42,10 +42,6 @@
   "mounting": [
     "rack"
   ],
-  "verify": [
-    "routing"
-  ],
-  "verifyNote": "The data sheet lists OSPF, RIP, VRRP, BGP, and IS-IS for FortiSwitchOS generally and refers to the FortiSwitch Feature Matrix for per-model support. BGP on the FSR-424F-POE is not yet confirmed there",
   "models": [
     {
       "sku": "FSR-424F-POE",

@@ -17,7 +17,7 @@
   "routing": {
     "tier": "full",
     "bgp": true,
-    "summary": "Static; OSPF, RIP, VRRP, BGP, IS-IS with Advanced Features license"
+    "summary": "Static; OSPF, RIP, VRRP, BGP, IS-IS with the Advanced Features license."
   },
   "routeScale": "38,000 IPv4 / 38,000 IPv6",
   "macTable": "32,000",
@@ -33,9 +33,6 @@
   },
   "fansFieldReplaceable": false,
   "licensing": "No license needed when managed by a FortiGate over FortiLink. Dynamic routing needs the Advanced Features license (FS-SW-LIC-xxx). Cloud or standalone management is a separate subscription",
-  "verify": [
-    "bgp"
-  ],
   "models": [
     {
       "sku": "FS-324G",
@@ -119,7 +116,6 @@
       "note": "Spec table lists 1560W; the lower ordering figure is used for sizing"
     }
   ],
-  "verifyNote": "BGP listed for the campus family; not yet confirmed for 300G models",
   "additionalSources": [
     "fsmatrix766",
     "fsmclag",
