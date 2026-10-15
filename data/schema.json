@@ -57,6 +57,7 @@
     "additionalSources": { "type": "array", "items": { "type": "string" }, "description": "Further keys into data/sources.json, for vendor documents that supply values the primary source does not" },
     "verify": { "type": "array", "items": { "type": "string" }, "description": "Family-level fields that still need confirming (for example stacking, mlag, routeScale)" },
     "verifyNote": { "type": "string", "description": "Why the family-level fields are flagged" },
+    "modelingLimitation": { "type": "boolean", "description": "true when the family flag describes something the schema cannot represent rather than missing or conflicting data. Needs verify and verifyNote. Listed under Known modeling limitations instead of the active Needs checking count" },
     "lifecycle": { "$ref": "#/$defs/lifecycle", "description": "Family-wide lifecycle state. A model's own lifecycle overrides it" },
     "ruggedized": { "type": "boolean", "description": "Family default. Overridden per model" },
     "operatingTempC": { "$ref": "#/$defs/tempRange", "description": "Family default. Overridden per model" },
@@ -165,7 +166,8 @@
         "mounting": { "$ref": "#/$defs/mounting", "description": "Overrides the family value" },
         "note": { "type": "string" },
         "verify": { "type": "array", "items": { "type": "string" } },
-        "verifyNote": { "type": "string" }
+        "verifyNote": { "type": "string" },
+        "modelingLimitation": { "type": "boolean", "description": "true when the model flag describes something the schema cannot represent rather than missing or conflicting data. Needs a flag and verifyNote. Listed under Known modeling limitations instead of the active Needs checking count" }
       }
     },
     "accessoryPart": {

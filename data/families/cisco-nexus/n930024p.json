@@ -48,6 +48,7 @@
     "forwardingMpps"
   ],
   "verifyNote": "accessPorts record the 24 licensed downlinks; the hardware has 48 physical ports and a 48-port upgrade license is orderable. Cisco does not publish switching capacity or forwarding rate for the 24-port models on this data sheet",
+  "modelingLimitation": true,
   "models": [
     {
       "sku": "N9K-C93180YC-FX3H",

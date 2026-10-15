@@ -433,8 +433,8 @@ const SRC={};for(const [k,s] of Object.entries(DATA.sources))SRC[k]={t:s.title,u
 const U={};for(const [k,o] of Object.entries(DATA.uplinks))U[k]=o.options.map(x=>({n:x.label,p:x.ports.map(p=>[p.count,p.speedGbps])}));
 const FAM={},SKUS=[];
 for(const f of DATA.families){
-  FAM[f.id]={v:f.vendor,vendorSlug:f.vendorSlug||"",name:f.family,role:f.role||"access",stack:{t:f.stacking.tech,bw:f.stacking.bandwidthGbps,max:f.stacking.maxMembers,fp:f.stacking.frontPanel,note:f.stacking.note},mlag:f.mlag||null,l3:f.routing.tier,l3t:f.routing.summary,bgp:f.routing.bgp,routes:f.routeScale,mac:f.macTable,macsec:f.macsec,buf:f.buffer,psuFru:f.power.psuFieldReplaceable,red:f.power.redundancy,fanFru:f.fansFieldReplaceable,power:f.power.summary,lic:f.licensing,src:f.source,xsrc:f.additionalSources||[],famVerify:f.verify||[],fnote:f.verifyNote||""};
-  for(const m of f.models)SKUS.push({fam:f.id,sku:m.sku,ports:(m.accessPorts||[]).map(p=>[p.count,p.speedGbps,p.poeWatts,p.media||"rj45"]),fabric:(m.fabricPorts||[]).map(p=>[p.count,p.speedGbps,p.media||"qsfp"]),up:m.uplinks||null,psu:(m.poeBudgets||[]).map(b=>[b.config,b.watts,b.verify?1:0]),sw:m.switchingGbps,fwd:m.forwardingMpps,name:m.description||"",note:m.note||"",ff:m.formFactor||"1RU",src:m.source||f.source,fanless:!!m.fanless,pd:m.poweredBy||"",routes:m.routeScale||"",mac:m.macTable||"",buf:m.buffer||"",verify:[...(m.verify||[]),...(f.verify||[])],own:m.verify||[],red:m.redundancy||f.power.redundancy,vnote:m.verifyNote||"",
+  FAM[f.id]={v:f.vendor,vendorSlug:f.vendorSlug||"",name:f.family,role:f.role||"access",stack:{t:f.stacking.tech,bw:f.stacking.bandwidthGbps,max:f.stacking.maxMembers,fp:f.stacking.frontPanel,note:f.stacking.note},mlag:f.mlag||null,l3:f.routing.tier,l3t:f.routing.summary,bgp:f.routing.bgp,routes:f.routeScale,mac:f.macTable,macsec:f.macsec,buf:f.buffer,psuFru:f.power.psuFieldReplaceable,red:f.power.redundancy,fanFru:f.fansFieldReplaceable,power:f.power.summary,lic:f.licensing,src:f.source,xsrc:f.additionalSources||[],famVerify:f.verify||[],fnote:f.verifyNote||"",lim:!!f.modelingLimitation};
+  for(const m of f.models)SKUS.push({fam:f.id,sku:m.sku,ports:(m.accessPorts||[]).map(p=>[p.count,p.speedGbps,p.poeWatts,p.media||"rj45"]),fabric:(m.fabricPorts||[]).map(p=>[p.count,p.speedGbps,p.media||"qsfp"]),up:m.uplinks||null,psu:(m.poeBudgets||[]).map(b=>[b.config,b.watts,b.verify?1:0]),sw:m.switchingGbps,fwd:m.forwardingMpps,name:m.description||"",note:m.note||"",ff:m.formFactor||"1RU",src:m.source||f.source,fanless:!!m.fanless,pd:m.poweredBy||"",routes:m.routeScale||"",mac:m.macTable||"",buf:m.buffer||"",verify:[...(m.modelingLimitation?[]:m.verify||[]),...(f.modelingLimitation?[]:f.verify||[])],own:m.verify||[],lim:!!m.modelingLimitation,red:m.redundancy||f.power.redundancy,vnote:m.verifyNote||"",
     lc:m.lifecycle||f.lifecycle||{status:"current"},rug:(m.ruggedized!==undefined?m.ruggedized:f.ruggedized)||false,
     temp:m.operatingTempC||f.operatingTempC||null,ip:m.ipRating||f.ipRating||"",mount:m.mounting||f.mounting||[]});
 }
@@ -1320,11 +1320,16 @@ $("#copySizeLink").onclick=()=>{writeHash(true);copyText(location.href,$("#copyS
 const OWN_LABEL={psu:"PoE budget",poeBudgets:"PoE budget",uplinks:"Uplink options",ports:"Access ports",accessPorts:"Access ports",fabricPorts:"Fabric ports",forwardingMpps:"Forwarding rate",switchingGbps:"Switching capacity",stacking:"Stacking"};
 const FAM_LABEL={macsec:"MACsec",bgp:"BGP",routing:"Dynamic routing",routeScale:"Route scale",macTable:"MAC table",buffer:"Packet buffer",stacking:"Stacking",mlag:"Multichassis LAG"};
 (function(){
-  const rows=SKUS.filter(s=>s.own.length||s.psu.some(p=>p[2])).map(s=>{
+  const allRows=SKUS.filter(s=>s.own.length||s.psu.some(p=>p[2])).map(s=>{
     const flagged=s.psu.filter(p=>p[2]).map(p=>`${p[0]}: ${fmt(p[1])} W`);
     return {s,what:s.own.map(k=>OWN_LABEL[k]||k).join(", ")||"PoE budget",note:[s.vnote,flagged.length?"Affected: "+flagged.join("; "):""].filter(Boolean).join(". ")};
   });
-  const fams=Object.entries(FAM).filter(([k,f])=>f.famVerify.length);
+  const allFams=Object.entries(FAM).filter(([k,f])=>f.famVerify.length);
+  const rows=allRows.filter(r=>!r.s.lim),fams=allFams.filter(([k,f])=>!f.lim);
+  const lims=[
+    ...allFams.filter(([k,f])=>f.lim).map(([k,f])=>({name:`${f.v} ${f.name}`,scope:"Whole family",what:f.famVerify.map(x=>FAM_LABEL[x]||OWN_LABEL[x]||x).join(", "),note:f.fnote})),
+    ...allRows.filter(r=>r.s.lim).map(r=>({sku:r.s.sku,name:`${FAM[r.s.fam].v} ${FAM[r.s.fam].name}`,scope:"Model",what:r.what,note:r.note}))
+  ];
   const accRows=[];
   for(const a of ACCESSORIES){
     for(const p of a.parts){
@@ -1341,6 +1346,8 @@ const FAM_LABEL={macsec:"MACsec",bgp:"BGP",routing:"Dynamic routing",routeScale:
     const spec=[accSpdLabel(p.speedGbps),p.formFactor,p.reach,p.media,distLabel(p.distanceM)].filter(Boolean).join(" · ");
     return `<tr><td>${esc(a.vendor)}</td><td class="sku"><button type="button" class="linkbtn" data-acc-goto="${esc(a.id)}">${esc(p.sku)}</button></td><td>${esc(ACC_CAT_LABEL[p.category]||p.category)}</td><td style="white-space:normal">${esc(spec)}</td><td style="white-space:normal;min-width:200px">${esc(p.note||"Needs a vendor source")}</td></tr>`;
   }).join("");
+  h+=`</tbody></table></div><h3>Known modeling limitations (${lims.length})</h3><p class="small" style="margin:0 0 10px">These values match the vendor datasheet, but the schema cannot represent them exactly. They are kept for reference and are not counted as open items.</p><div class="tablewrap"><table><thead><tr><th class="nosort">Model or family</th><th class="nosort">Scope</th><th class="nosort">What</th><th class="nosort">Limitation</th></tr></thead><tbody>`;
+  h+=lims.map(l=>`<tr><td>${l.sku?`<span class="sku"><button class="linkbtn" data-open="${esc(l.sku)}">${esc(l.sku)}</button></span> `:""}${esc(l.name)}</td><td>${esc(l.scope)}</td><td style="white-space:normal">${esc(l.what)}</td><td style="white-space:normal;min-width:280px">${esc(l.note)}</td></tr>`).join("");
   h+="</tbody></table></div>";
   $("#chkBody").innerHTML=h;
 })();
