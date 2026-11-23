@@ -845,7 +845,7 @@ function clearFilters(){
   bVend.clear();
   document.querySelectorAll("#bVendors .mlist input").forEach(i=>i.checked=false);
   $("#bVendorBtn").textContent="All vendors";
-  renderBrowse();
+  renderBrowse();writeHash();
 }
 function clearSelection(){cmp.clear();updCmp();renderBrowse()}
 function updateCompareFab(){
@@ -862,10 +862,11 @@ $("#bTable").addEventListener("click",e=>{
   const tr=e.target.closest("tr[data-sku]");if(tr)openDetail(tr.dataset.sku);
 });
 function alertCmp(){const c=$("#bCount");const t=c.textContent;c.textContent="Compare holds 4 models. Untick one first.";c.style.color="var(--warn)";setTimeout(()=>{c.textContent=t;c.style.color=""},2200)}
-["q","bRole","bPorts","bSpd","bMed","bPoe","bRed","bLife","bRug","bStack"].forEach(id=>$("#"+id).addEventListener("input",renderBrowse));
+["q"].forEach(id=>$("#"+id).addEventListener("input",()=>{renderBrowse();writeHashDebounced()}));
+["bRole","bPorts","bSpd","bMed","bPoe","bRed","bLife","bRug","bStack"].forEach(id=>$("#"+id).addEventListener("input",()=>{renderBrowse();writeHash()}));
 $("#bVendors .mlist").innerHTML=VENDORS.map(v=>`<label><input type="checkbox" value="${esc(v)}">${esc(v)}</label>`).join("");
 $("#bVendors").addEventListener("change",e=>{const v=e.target.value;if(e.target.checked)bVend.add(v);else bVend.delete(v);
-  $("#bVendorBtn").textContent=!bVend.size?"All vendors":bVend.size===1?[...bVend][0]:bVend.size+" vendors";renderBrowse()});
+  $("#bVendorBtn").textContent=!bVend.size?"All vendors":bVend.size===1?[...bVend][0]:bVend.size+" vendors";renderBrowse();writeHash()});
 document.addEventListener("click",e=>{
   const d=$("#bVendors");if(d.open&&!d.contains(e.target))d.open=false;
   const cp=$("#colPick");if(cp.classList.contains("open")&&!cp.contains(e.target)){cp.classList.remove("open");$("#colBtn").setAttribute("aria-expanded","false")}
@@ -999,14 +1000,74 @@ function renderCompare(){
   document.querySelectorAll("[data-rmc]").forEach(b=>b.onclick=()=>{cmp.delete(b.dataset.rmc);updCmp();renderBrowse();writeHash()});
 }
 
-/* ---------- Detail ---------- */
-function openDetail(sku){
-  const s=SKUS.find(x=>x.sku===sku);
+/* ---------- Detail (short #sku=… hash; list return via sessionStorage / history.state) ---------- */
+const DETAIL_BACK_KEY="sw.detailBack";
+let detailClosing=false;
+function detailHash(sku){return "#sku="+encodeURIComponent(sku)}
+function readDetailSku(raw){
+  const h=String(raw||"").replace(/^#/,"");
+  if(!h.startsWith("sku="))return "";
+  try{return decodeURIComponent(h.slice(4).split("&")[0]||"")}catch(_){return ""}
+}
+function rememberListReturn(listHash){
+  try{sessionStorage.setItem(DETAIL_BACK_KEY,listHash||"")}catch(_){}
+  return listHash||"";
+}
+function peekListReturn(){
+  const st=history.state;
+  if(st&&typeof st.swReturn==="string")return st.swReturn;
+  try{return sessionStorage.getItem(DETAIL_BACK_KEY)||""}catch(_){return ""}
+}
+function clearListReturn(){
+  try{sessionStorage.removeItem(DETAIL_BACK_KEY)}catch(_){}
+}
+function applyListReturn(ret){
+  syncingHash=true;
+  try{
+    if(ret){
+      const h=/^#/.test(ret)?ret:"#"+ret;
+      if(location.hash!==h)history.replaceState(null,"",h);
+      readHash();
+    }else{
+      if(location.hash)history.replaceState(null,"",location.pathname+location.search);
+      showView("browse",true);
+    }
+  }finally{syncingHash=false}
+}
+function closeDetail(opts){
+  if(detailClosing)return;
+  detailClosing=true;
+  try{
+    const st=history.state;
+    const useBack=opts&&opts.historyBack&&st&&st.swPushed&&st.swSku;
+    const ret=peekListReturn();
+    if($("#dlg").open)$("#dlg").close();
+    if(useBack){clearListReturn();history.back();return}
+    clearListReturn();
+    applyListReturn(ret);
+  }finally{detailClosing=false}
+}
+function openDetail(sku,opts){
+  const s=SKUS.find(x=>x.sku===sku);if(!s)return;
+  const fromHash=opts&&opts.fromHash;
   const rows=specRows(s).filter(r=>!["Vendor","Family","Description","Front panel"].includes(r[0]));
   const corr=`https://github.com/danryan06/switch-comparison/issues/new?template=correction.yml&title=${encodeURIComponent("Correction: "+s.sku)}`;
   const acc=accForSwitch(s);
   const opticsAct=acc?`<button type="button" class="ghost" id="dlgOptics">Transceiver/Optics</button>`:"";
-  $("#dlgBody").innerHTML=`<button class="ghost close" id="dlgClose">Close</button>
+  if(!fromHash){
+    const listHash=currentListHash();
+    rememberListReturn(listHash);
+    if(listHash){if(location.hash!==listHash)history.replaceState(null,"",listHash)}
+    else if(location.hash&&!readDetailSku(location.hash))history.replaceState(null,"",location.pathname+location.search);
+    const dh=detailHash(sku);
+    const state={swReturn:listHash||"",swSku:sku,swPushed:true};
+    if(location.hash!==dh)history.pushState(state,"",dh);
+    else history.replaceState(state,"",dh);
+  }else if(!(history.state&&history.state.swSku===sku)){
+    history.replaceState({swReturn:peekListReturn(),swSku:sku,swPushed:false},"",detailHash(sku));
+  }
+  /* Always offer Back after list→detail; cold #sku= deep links restore Browse. */
+  $("#dlgBody").innerHTML=`<button class="ghost close" id="dlgClose">\u2190 Back</button>
     <h3>${esc(modelName(s))}</h3><div class="fam">${esc(modelSub(s))}</div>
     <div class="facewrap">${faceplate(s,1.3)}</div><div class="legend">${legendHTML(s)}</div>
     <dl class="spec">${rows.map(r=>`<dt>${esc(r[0])}</dt><dd>${r[2]?r[1]:esc(r[1])}</dd>`).join("")}</dl>
@@ -1015,13 +1076,22 @@ function openDetail(sku){
       ${opticsAct}
       <a class="ghost" href="${corr}" target="_blank" rel="noopener">Suggest a correction</a>
     </div>`;
-  $("#dlgClose").onclick=()=>$("#dlg").close();
-  $("#dlgCmp").onclick=()=>{if(cmp.has(s.sku))cmp.delete(s.sku);else{if(cmp.size>=4){$("#dlgCmp").textContent="Compare holds 4 models";return}cmp.add(s.sku)}updCmp();renderBrowse();writeHash();openDetail(sku)};
+  $("#dlgClose").onclick=()=>closeDetail({historyBack:true});
+  $("#dlgCmp").onclick=()=>{if(cmp.has(s.sku))cmp.delete(s.sku);else{if(cmp.size>=4){$("#dlgCmp").textContent="Compare holds 4 models";return}cmp.add(s.sku)}updCmp();renderBrowse();openDetail(sku,{fromHash:true})};
   const optics=$("#dlgOptics");
-  if(optics)optics.onclick=()=>{selectAccVendors([acc.id]);$("#dlg").close();showView("accessories")};
+  if(optics)optics.onclick=()=>{
+    clearListReturn();
+    detailClosing=true;
+    if($("#dlg").open)$("#dlg").close();
+    detailClosing=false;
+    if(readDetailSku(location.hash))history.replaceState(null,"",location.pathname+location.search);
+    selectAccVendors([acc.id]);
+    showView("accessories");
+  };
   if(!$("#dlg").open)$("#dlg").showModal();
 }
-$("#dlg").addEventListener("click",e=>{if(e.target.id==="dlg")$("#dlg").close()});
+$("#dlg").addEventListener("click",e=>{if(e.target.id==="dlg")closeDetail({historyBack:true})});
+$("#dlg").addEventListener("cancel",e=>{e.preventDefault();closeDetail({historyBack:true})});
 
 /* ---------- Accessories ---------- */
 let accSortKey="speed",accSortDir=1;
@@ -1171,7 +1241,7 @@ $("#accBody").addEventListener("click",e=>{
   renderAccessories();
 });
 
-/* ---------- Permalinks (hash-encoded Compare / Size state) ---------- */
+/* ---------- Permalinks (hash-encoded Compare / Size / Browse state) ---------- */
 let syncingHash=false,hashDeb;
 function currentView(){return document.querySelector("nav.tabs button[aria-selected='true']")?.dataset.v||"browse"}
 function encodeSizeState(){
@@ -1191,8 +1261,78 @@ function encodeSizeState(){
   p.set("g",groups.map(g=>[g.name,g.qty,g.w,g.spd].map(encodeURIComponent).join("~")).join(";"));
   return p;
 }
+function encodeBrowseState(){
+  const p=new URLSearchParams();
+  p.set("v","browse");
+  const q=($("#q").value||"").trim();if(q)p.set("q",q);
+  if(bVend.size)p.set("vend",[...bVend].join(","));
+  const role=$("#bRole").value;if(role!=="access")p.set("role",role);
+  const life=$("#bLife").value;if(life!=="current")p.set("life",life);
+  const poe=$("#bPoe").value;if(poe!=="-1")p.set("poe",poe);
+  const ports=$("#bPorts").value;if(ports&&ports!=="0")p.set("ports",ports);
+  const spd=$("#bSpd").value;if(spd&&spd!=="0")p.set("spd",spd);
+  const med=$("#bMed").value;if(med)p.set("med",med);
+  const red=$("#bRed").value;if(red)p.set("red",red);
+  const rug=$("#bRug").value;if(rug)p.set("rug",rug);
+  const stk=$("#bStack").value;if(stk)p.set("stack",stk);
+  /* Default browse filters → clean URL (shareable empty list). */
+  if([...p.keys()].length===1)return "";
+  return "#"+p.toString();
+}
+function currentListHash(){
+  if(readDetailSku(location.hash))return peekListReturn()||"";
+  const view=currentView();
+  if(view==="browse")return encodeBrowseState();
+  if(view==="accessories"){
+    const f=accFilterState();
+    const q=new URLSearchParams();
+    if(accVend.size>1)q.set("vend",[...accVend].join(","));
+    if(f.cat)q.set("category",f.cat);
+    if(f.spd!=="")q.set("speed",f.spd);
+    if(f.range)q.set("range",f.range);
+    if(f.media)q.set("media",f.media);
+    if(f.form)q.set("form",f.form);
+    if(f.q)q.set("q",f.q);
+    let h="#accessories";
+    if(accVend.size===1)h+="/"+[...accVend][0];
+    const qs=q.toString();if(qs)h+="?"+qs;
+    return h;
+  }
+  if(view==="compare"&&cmp.size)return "#"+new URLSearchParams({v:"compare",c:[...cmp].join(",")}).toString();
+  if(view==="size")return "#"+encodeSizeState().toString();
+  if(view==="check")return "#v=check";
+  if(view==="about")return "#v=about";
+  return location.hash||"";
+}
+function applyBrowseFromParams(p){
+  $("#q").value=p.get("q")||"";
+  $("#bRole").value=p.has("role")?p.get("role"):"access";
+  if(![...$("#bRole").options].some(o=>o.value===$("#bRole").value))$("#bRole").value="access";
+  $("#bLife").value=p.has("life")?p.get("life"):"current";
+  if(![...$("#bLife").options].some(o=>o.value===$("#bLife").value))$("#bLife").value="current";
+  $("#bPoe").value=p.has("poe")?p.get("poe"):"-1";
+  if(![...$("#bPoe").options].some(o=>o.value===$("#bPoe").value))$("#bPoe").value="-1";
+  $("#bPorts").value=p.has("ports")?p.get("ports"):"0";
+  if(![...$("#bPorts").options].some(o=>o.value===$("#bPorts").value))$("#bPorts").value="0";
+  $("#bSpd").value=p.has("spd")?p.get("spd"):"0";
+  if(![...$("#bSpd").options].some(o=>o.value===$("#bSpd").value))$("#bSpd").value="0";
+  $("#bMed").value=p.get("med")||"";
+  if(![...$("#bMed").options].some(o=>o.value===$("#bMed").value))$("#bMed").value="";
+  $("#bRed").value=p.get("red")||"";
+  if(![...$("#bRed").options].some(o=>o.value===$("#bRed").value))$("#bRed").value="";
+  $("#bRug").value=p.get("rug")||"";
+  if(![...$("#bRug").options].some(o=>o.value===$("#bRug").value))$("#bRug").value="";
+  $("#bStack").value=p.get("stack")||"";
+  if(![...$("#bStack").options].some(o=>o.value===$("#bStack").value))$("#bStack").value="";
+  bVend.clear();
+  (p.get("vend")||"").split(",").map(s=>s.trim()).filter(v=>VENDORS.includes(v)).forEach(v=>bVend.add(v));
+  document.querySelectorAll("#bVendors .mlist input").forEach(i=>{i.checked=bVend.has(i.value)});
+  $("#bVendorBtn").textContent=!bVend.size?"All vendors":bVend.size===1?[...bVend][0]:bVend.size+" vendors";
+  renderBrowse();
+}
 function writeHash(force){
   if(syncingHash&&!force)return;
+  if(readDetailSku(location.hash)&&!force)return;
   const view=currentView();
   if(view==="accessories"){
     const f=accFilterState();
@@ -1224,8 +1364,9 @@ function writeHash(force){
   }else if(view==="about"){
     p=new URLSearchParams();p.set("v","about");
   }else{
-    /* Browse stays a clean URL unless something else is shareable. */
-    if(location.hash)history.replaceState(null,"",location.pathname+location.search);
+    const h=encodeBrowseState();
+    if(h){if(location.hash!==h)history.replaceState(null,"",h)}
+    else if(location.hash)history.replaceState(null,"",location.pathname+location.search);
     return;
   }
   const h="#"+p.toString();
@@ -1257,7 +1398,18 @@ function applySizeFromParams(p){
 }
 function readHash(){
   const raw=location.hash.replace(/^#/,"");
-  if(!raw)return;
+  const detailSku=readDetailSku(location.hash);
+  if(detailSku){
+    if($("#dlg").open&&history.state&&history.state.swSku===detailSku)return;
+    openDetail(detailSku,{fromHash:true});
+    return;
+  }
+  if($("#dlg").open&&!detailClosing)$("#dlg").close();
+  if(!raw){
+    /* Default Browse (no filter hash). Do not reset filters on a no-op empty hash. */
+    if(currentView()!=="browse")showView("browse",true);
+    return;
+  }
   syncingHash=true;
   try{
     if(raw==="accessories"||raw.startsWith("accessories/")||raw.startsWith("accessories?")){
@@ -1285,6 +1437,11 @@ function readHash(){
     }
     const p=new URLSearchParams(raw);
     const view=p.get("v")||(p.has("c")?"compare":p.has("g")||p.has("d")?"size":"");
+    if(view==="browse"){
+      applyBrowseFromParams(p);
+      showView("browse",true);
+      return;
+    }
     if(p.has("c")){
       cmp.clear();
       p.get("c").split(",").map(s=>s.trim()).filter(s=>SKUS.some(x=>x.sku===s)).slice(0,4).forEach(s=>cmp.add(s));
@@ -1314,6 +1471,7 @@ document.addEventListener("click",e=>{
   $("#q").value=r.dataset.fam;$("#bLife").value="all";showView("browse");renderBrowse();
 });
 window.addEventListener("hashchange",()=>{if(!syncingHash)readHash()});
+window.addEventListener("popstate",()=>{if(!syncingHash)readHash()});
 $("#copySizeLink").onclick=()=>{writeHash(true);copyText(location.href,$("#copySizeLink"))};
 
 /* ---------- Needs checking ---------- */
