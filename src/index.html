@@ -216,10 +216,29 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
 }
 @media (max-width:520px){
   .wrap{padding:0 14px}
-  .navrow a.xlink,.navrow nav.tabs button{padding:8px 10px 9px;font-size:17px}
   .brand h1{font-size:26px}
   .facts{grid-template-columns:1fr}
 }
+/* Filter drawer: always open on wide screens (summary hidden); collapsible on phones so the table is visible without scrolling past 11 filters. */
+.filtbox>summary{display:none}
+.mobonly{display:none}
+@media (max-width:520px){
+  .filtbox>summary{display:flex;align-items:center;justify-content:space-between;list-style:none;cursor:pointer;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:9px 12px;margin-top:10px;font-weight:600}
+  .filtbox>summary::-webkit-details-marker{display:none}
+  .filtbox>summary::after{content:"";width:7px;height:7px;border:solid var(--muted);border-width:0 2px 2px 0;transform:rotate(45deg);margin-right:4px}
+  .filtbox[open]>summary::after{transform:rotate(225deg)}
+  .filtbox[open]>.filters{margin-top:4px}
+  /* Header: the two external links already sit in the footer; dropping them here lets all five tabs fit. */
+  .navrow a.xlink{display:none}
+  .navrow nav.tabs{gap:0}
+  .navrow nav.tabs button{padding:8px 7px 9px;font-size:16px}
+  /* Tabs scroll sideways on the narrowest phones; a fade on the right edge shows there is more. */
+  .navrow{scrollbar-width:none}
+  .navrow::-webkit-scrollbar{display:none}
+  .navrow.more{-webkit-mask-image:linear-gradient(to right,#000 85%,transparent);mask-image:linear-gradient(to right,#000 85%,transparent)}
+  .mobonly{display:block}
+}
+.msel .mlist{left:auto;right:0}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 @media print{
   body{background:#fff;color:#000}
@@ -259,6 +278,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
       <div class="panel">
         <h2>What does the closet need?</h2>
         <p class="sub">Describe the endpoints. Every model that can serve them is sized with the fewest switches and the smallest power supply configuration.</p>
+        <button type="button" class="ghost mobonly" id="toResults" style="margin:-4px 0 14px">See results</button>
 
         <fieldset>
           <legend>Powered devices</legend>
@@ -329,6 +349,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
 
   <!-- BROWSE -->
   <section class="view on" id="v-browse">
+    <details class="filtbox" id="bFiltBox" open><summary id="bFiltSum">Filters</summary>
     <div class="filters">
       <div class="fl"><label for="q">Search</label><input type="text" id="q" placeholder="SKU or family"></div>
       <div class="fl"><label for="bVendorBtn">Vendor</label><details class="msel" id="bVendors"><summary id="bVendorBtn">All vendors</summary><div class="mlist"></div></details></div>
@@ -342,6 +363,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
       <div class="fl"><label for="bRug">Environment</label><select id="bRug"><option value="">Any</option><option value="yes">Rugged only</option></select></div>
       <div class="fl"><label for="bStack">Stacking</label><select id="bStack"><option value="">Any</option><option value="yes">Yes</option><option value="no">No</option></select></div>
     </div>
+    </details>
     <div class="bar2">
       <span class="small" id="bCount"></span>
       <div class="barActs">
@@ -664,6 +686,7 @@ function runSize(){
   for(const s of SKUS){const r=sizeOne(s,req);if(!r)continue;if(r.rej){(rej[r.rej]=rej[r.rej]||[]).push(s.sku)}else ok.push(r)}
   ok.sort((a,b)=>a.u-b.u||(a.cfg&&b.cfg?usableW(a.s,a.cfg)-usableW(b.s,b.cfg):0)||a.ports-b.ports||b.s.sw-a.s.sw);
   $("#resTitle").textContent=ok.length?`${ok.length} models fit`:"Nothing fits yet";
+  $("#toResults").textContent=ok.length?`See results (${ok.length} fit) \u2193`:"See why nothing fits \u2193";
   $("#resSub").textContent=ok.length?"Sorted by fewest switches, then smallest power supply":"";
   const show=showAll?ok:ok.slice(0,8);
   $("#resList").innerHTML=ok.length?show.map((r,i)=>resultCard(r,i===0)).join(""):`<div class="panel empty">No model covers every requirement. The reasons are listed below, so loosen whichever one is blocking the most models.</div>`;
@@ -811,8 +834,13 @@ function renderColPanel(){
   }).join("");
   $("#colPanel").innerHTML=`${opts}<button type="button" class="ghost colReset" id="colReset">Reset</button>`;
 }
+function browseActiveFilters(){
+  const d={q:"",bRole:"access",bPorts:"0",bSpd:"0",bMed:"",bRed:"",bPoe:"-1",bLife:"current",bRug:"",bStack:""};
+  return Object.entries(d).filter(([id,v])=>$("#"+id).value.trim()!==v).length+(bVend.size?1:0);
+}
 function renderBrowse(){
   const rows=filteredBrowseRows();
+  const nf=browseActiveFilters();$("#bFiltSum").textContent=nf?`Filters (${nf} changed)`:"Filters";
   $("#bCount").textContent=`${rows.length} of ${SKUS.length} models`;
   const cols=visibleCols();
   $("#bTable thead").innerHTML="<tr>"+cols.map(c=>`<th class="${c.ns?"nosort":""}" data-col="${c.k}" data-sort="${c.ns?"":c.k}" ${c.tip?`title="${esc(c.tip)}"`:""} ${c.k===sortKey?`aria-sort="${sortDir>0?"ascending":"descending"}"`:""}>${c.t}${c.k===sortKey?(sortDir>0?" &#9650;":" &#9660;"):""}</th>`).join("")+"</tr>";
@@ -1454,8 +1482,13 @@ function readHash(){
 }
 
 /* ---------- Tabs & about ---------- */
+function navFade(){const n=$(".navrow");n.classList.toggle("more",n.scrollLeft+n.clientWidth<n.scrollWidth-2)}
+$(".navrow").addEventListener("scroll",navFade,{passive:true});addEventListener("resize",navFade);
 function showView(v,fromHash){
   document.querySelectorAll("nav.tabs button").forEach(x=>x.setAttribute("aria-selected",x.dataset.v===v));
+  const tab=document.querySelector(`nav.tabs button[data-v="${v}"]`),nav=$(".navrow");
+  if(tab&&nav.scrollWidth>nav.clientWidth)nav.scrollLeft=Math.max(0,tab.offsetLeft-nav.offsetLeft-(nav.clientWidth-tab.offsetWidth)/2);
+  navFade();
   document.querySelectorAll(".view").forEach(x=>x.classList.toggle("on",x.id==="v-"+v));
   if(v==="compare")renderCompare();
   if(v==="accessories")renderAccessories();
@@ -1472,6 +1505,7 @@ document.addEventListener("click",e=>{
 });
 window.addEventListener("hashchange",()=>{if(!syncingHash)readHash()});
 window.addEventListener("popstate",()=>{if(!syncingHash)readHash()});
+$("#toResults").onclick=()=>$("#reqSummary").scrollIntoView({behavior:"smooth",block:"start"});
 $("#copySizeLink").onclick=()=>{writeHash(true);copyText(location.href,$("#copySizeLink"))};
 
 /* ---------- Needs checking ---------- */
@@ -1520,6 +1554,8 @@ $("#coverage").textContent=`${SKUS.length} models across ${Object.keys(FAM).leng
 $("#updated").textContent="Data updated "+DATA.updated+".";
 $("#srcList").innerHTML=Object.values(SRC).map(s=>`<li><a href="${s.u}" target="_blank" rel="noopener">${esc(s.t)}</a></li>`).join("");
 
+if(matchMedia("(max-width:520px)").matches)$("#bFiltBox").open=false;
+navFade();if(document.fonts)document.fonts.ready.then(navFade);
 renderGroups();runSize();renderBrowse();updCmp();
 readHash();
 </script>
