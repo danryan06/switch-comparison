@@ -180,6 +180,7 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 .compare-fab{position:fixed;right:20px;bottom:24px;z-index:40;display:none;align-items:center;justify-content:center;border:0;border-radius:999px;padding:12px 20px;background:var(--accent);color:var(--accent-ink);font-family:var(--cond);font-size:18px;font-weight:600;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.22)}
 .compare-fab:hover{filter:brightness(1.06)}
 .compare-fab.on{display:inline-flex}
+body[data-view="compare"] .compare-fab{display:none}
 
 /* compare */
 .cmpgrid{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
@@ -201,6 +202,17 @@ dialog::backdrop{background:rgba(10,15,20,.5)}
 .psut td{padding:5px 10px;white-space:normal}
 .about{max-width:72ch;font-size:15px}
 .about h3{font-family:var(--cond);font-size:21px;margin:22px 0 6px}
+#chkBody td{white-space:normal;vertical-align:top}
+#chkBody td.sku{white-space:nowrap}
+/* Phones: each Needs checking row becomes a stacked card so the explanation is readable without sideways scrolling. */
+@media (max-width:520px){
+  #chkBody .tablewrap{overflow:visible}
+  #chkBody table,#chkBody tbody,#chkBody tr,#chkBody td{display:block;width:auto}
+  #chkBody thead{display:none}
+  #chkBody tr{padding:10px 12px;border-bottom:1px solid var(--line)}
+  #chkBody td{border:0;padding:2px 0;min-width:0!important}
+  #chkBody td:nth-child(2){color:var(--muted)}
+}
 .footin{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:flex-end}
 .footin>span{flex:1 1 320px}
 .footActs{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-left:auto}
@@ -502,8 +514,9 @@ const budText=s=>{
 };
 const poeLabel=w=>w===0?"None":w===30?"30W (PoE+)":w===60?"60W (Class 6 / UPOE)":w===90?"90W (Class 8 / UPOE+)":w+"W";
 const portsText=s=>s.ports.length?s.ports.map(p=>p[0]+"x "+spdLabel(p[1])+(p[3]==="sfp"?" SFP":"")).join(" + "):"-";
-const FAB_MEDIA={sfp:"SFP",qsfp:"QSFP28","qsfp-dd":"QSFP-DD"};
-const fabricText=s=>s.fabric.length?s.fabric.map(p=>p[0]+"x "+spdLabel(p[1])+" "+(FAB_MEDIA[p[2]]||p[2])).join(" + "):"-";
+/* "qsfp" records the cage family only. 100G implies QSFP28; a 40G "qsfp" port may be QSFP+ (MS450) or a QSFP28 cage run at 40G (C9500-32QC), so it is shown as plain QSFP. */
+const fabMedia=(m,g)=>m==="qsfp"?(g>=100?"QSFP28":"QSFP"):m==="qsfp-dd"?"QSFP-DD":m==="sfp"?(g>=50?"SFP56":"SFP"):m;
+const fabricText=s=>s.fabric.length?s.fabric.map(p=>p[0]+"x "+spdLabel(p[1])+" "+fabMedia(p[2],p[1])).join(" + "):"-";
 const spdVar=g=>g>=25?"--g25x":g>=10?"--g10":g>=5?"--g5":g>=2.5?"--g25":"--g1";
 const hasFiber=s=>s.ports.some(p=>p[3]==="sfp");
 const fmtN=n=>n===null||n===undefined?null:fmt(n);
@@ -1457,6 +1470,7 @@ function readHash(){
 function showView(v,fromHash){
   document.querySelectorAll("nav.tabs button").forEach(x=>x.setAttribute("aria-selected",x.dataset.v===v));
   document.querySelectorAll(".view").forEach(x=>x.classList.toggle("on",x.id==="v-"+v));
+  document.body.dataset.view=v;
   if(v==="compare")renderCompare();
   if(v==="accessories")renderAccessories();
   window.scrollTo(0,0);
@@ -1475,12 +1489,13 @@ window.addEventListener("popstate",()=>{if(!syncingHash)readHash()});
 $("#copySizeLink").onclick=()=>{writeHash(true);copyText(location.href,$("#copySizeLink"))};
 
 /* ---------- Needs checking ---------- */
-const OWN_LABEL={psu:"PoE budget",poeBudgets:"PoE budget",uplinks:"Uplink options",ports:"Access ports",accessPorts:"Access ports",fabricPorts:"Fabric ports",forwardingMpps:"Forwarding rate",switchingGbps:"Switching capacity",stacking:"Stacking"};
-const FAM_LABEL={macsec:"MACsec",bgp:"BGP",routing:"Dynamic routing",routeScale:"Route scale",macTable:"MAC table",buffer:"Packet buffer",stacking:"Stacking",mlag:"Multichassis LAG"};
+const OWN_LABEL={psu:"PoE budget",poeBudgets:"PoE budget",uplinks:"Uplink options",ports:"Access ports",accessPorts:"Access ports",fabricPorts:"Fabric ports",forwardingMpps:"Forwarding rate",switchingGbps:"Switching capacity",stacking:"Stacking",
+  macsec:"MACsec",bgp:"BGP",routing:"Dynamic routing",routeScale:"Route scale",macTable:"MAC table",buffer:"Packet buffer",mlag:"Multichassis LAG",lifecycle:"Lifecycle",operatingTempC:"Operating temperature",power:"Power"};
+const FAM_LABEL=OWN_LABEL;
 (function(){
   const allRows=SKUS.filter(s=>s.own.length||s.psu.some(p=>p[2])).map(s=>{
     const flagged=s.psu.filter(p=>p[2]).map(p=>`${p[0]}: ${fmt(p[1])} W`);
-    return {s,what:s.own.map(k=>OWN_LABEL[k]||k).join(", ")||"PoE budget",note:[s.vnote,flagged.length?"Affected: "+flagged.join("; "):""].filter(Boolean).join(". ")};
+    return {s,what:s.own.map(k=>OWN_LABEL[k]||k).join(", ")||"PoE budget",note:[s.vnote.replace(/\.\s*$/,""),flagged.length?"Affected: "+flagged.join("; "):""].filter(Boolean).join(". ")};
   });
   const allFams=Object.entries(FAM).filter(([k,f])=>f.famVerify.length);
   const rows=allRows.filter(r=>!r.s.lim),fams=allFams.filter(([k,f])=>!f.lim);
