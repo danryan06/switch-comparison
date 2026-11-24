@@ -54,6 +54,7 @@
     },
     "fansFieldReplaceable": { "type": "boolean" },
     "licensing": { "type": "string" },
+    "note": { "type": "string", "description": "Family-wide remark that does not fit another field (for example accessory, PSU, and fan SKUs, or licensing caveats). Not shown in the UI today" },
     "additionalSources": { "type": "array", "items": { "type": "string" }, "description": "Further keys into data/sources.json, for vendor documents that supply values the primary source does not" },
     "verify": { "type": "array", "items": { "type": "string" }, "description": "Family-level fields that still need confirming (for example stacking, mlag, routeScale)" },
     "verifyNote": { "type": "string", "description": "Why the family-level fields are flagged" },
