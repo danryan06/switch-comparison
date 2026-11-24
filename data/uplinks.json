@@ -954,20 +954,6 @@
       }
     ]
   },
-  "ext5320_8xe": {
-    "modular": false,
-    "options": [
-      {
-        "label": "8x 1/10G SFP+ (fixed; includes 2 stacking ports)",
-        "ports": [
-          {
-            "count": 8,
-            "speedGbps": 10
-          }
-        ]
-      }
-    ]
-  },
   "ext5320x8": {
     "modular": false,
     "options": [
@@ -1082,20 +1068,6 @@
         "ports": [
           {
             "count": 2,
-            "speedGbps": 100
-          }
-        ]
-      }
-    ]
-  },
-  "c8": {
-    "modular": false,
-    "options": [
-      {
-        "label": "8x 40/100G QSFP28 (fixed; uplink/stack)",
-        "ports": [
-          {
-            "count": 8,
             "speedGbps": 100
           }
         ]
