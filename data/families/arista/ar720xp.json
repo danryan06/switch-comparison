@@ -118,6 +118,7 @@
     },
     {
       "sku": "CCS-720XP-96ZC2-M-S",
+      "formFactor": "2RU",
       "accessPorts": [
         {
           "count": 80,
@@ -152,7 +153,7 @@
       "switchingGbps": 1160,
       "forwardingMpps": 863,
       "buffer": "16 MB",
-      "note": "2RU, up to four PSUs. The -M-S (8GB expanded memory) SKU is the current orderable version; the schema has no 2RU form factor, so it shows as 1RU. Spec-table FDX figure used; the overview text value appears copied from another model. PoE budgets use the datasheet's minimum (max-load) figures"
+      "note": "Up to four PSUs. The -M-S (8GB expanded memory) SKU is the current orderable version. Spec-table FDX figure used; the overview text value appears copied from another model. PoE budgets use the datasheet's minimum (max-load) figures"
     },
     {
       "sku": "CCS-720XP-48TXH-2C-S",
