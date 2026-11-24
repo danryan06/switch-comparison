@@ -1,5 +1,9 @@
-import { loadData, validate } from './lib.mjs';
-const r = validate(loadData());
+import fs from 'node:fs';
+import path from 'node:path';
+import { ROOT, loadData, validate } from './lib.mjs';
+const data = loadData();
+data.schema = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/schema.json'), 'utf8'));
+const r = validate(data);
 r.warnings.forEach(w => console.warn('warn  ' + w));
 r.errors.forEach(e => console.error('error ' + e));
 console.log(`\n${r.families} families, ${r.models} models, ${r.accessories} accessory catalogs (${r.accessoryParts} parts), ${r.errors.length} errors, ${r.warnings.length} warnings`);
