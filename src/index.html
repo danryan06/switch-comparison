@@ -936,11 +936,19 @@ function specRows(s){const f=FAM[s.fam];
   }
   return rows;
 }
+/* Union of row labels across several models, in first-seen order. */
+function specLabels(rowSets){
+  const out=[];
+  for(const rows of rowSets)rows.forEach((r,i)=>{if(out.includes(r[0]))return;
+    /* Insert after the previous label of this model so optional rows stay next to their neighbours. */
+    const prev=i?out.indexOf(rows[i-1][0]):-1;out.splice(prev+1,0,r[0])});
+  return out;
+}
+const plainText=h=>String(h).replace(/<br\s*\/?>/gi,"\n").replace(/<[^>]+>/g," ").replace(/\s+\n/g,"\n").replace(/[ \t]+/g," ").trim();
 function specPlain(s){
   return specRows(s).map(r=>{
     if(!r[2])return [r[0],r[1]];
-    const t=String(r[1]).replace(/<br\s*\/?>/gi,"\n").replace(/<[^>]+>/g," ").replace(/\s+\n/g,"\n").replace(/[ \t]+/g," ").trim();
-    return [r[0],t];
+    return [r[0],plainText(r[1])];
   });
 }
 /* Starter sets never suggest a model the sizer would hide, so any end-of-sale SKU drops the set. */
@@ -957,9 +965,10 @@ function exportCompareCsv(){
   if(!list.length)return;
   const plains=list.map(specPlain);
   const lines=[csvEscape("Spec")+","+list.map(s=>csvEscape(s.sku)).join(",")];
-  plains[0].forEach((row,i)=>{
-    if(row[0]==="Front panel")return;
-    lines.push([csvEscape(row[0]),...plains.map(p=>csvEscape(p[i][1]))].join(","));
+  /* Models can carry different rows (for example Stacking cables), so align by label, not index. */
+  specLabels(plains).forEach(label=>{
+    if(label==="Front panel")return;
+    lines.push([csvEscape(label),...plains.map(p=>{const r=p.find(x=>x[0]===label);return csvEscape(r?r[1]:"-")})].join(","));
   });
   const blob=new Blob([lines.join("\n")],{type:"text/csv;charset=utf-8"});
   const a=document.createElement("a");
@@ -988,9 +997,13 @@ function renderCompare(){
   if(!list.length){$("#cmpBody").innerHTML=`<div class="panel empty"><h2 style="font-family:var(--cond);margin:0 0 6px;color:var(--ink)">Pick models to compare</h2><p style="margin:0 0 12px">Tick up to four models in Browse, or use a starting pair below.</p><div class="presets">${CMP_SETS.map(p=>`<button class="chip" data-pair="${esc(p[1])}">${esc(p[0])}</button>`).join("")}</div></div>`;
     document.querySelectorAll("[data-pair]").forEach(b=>b.onclick=()=>{cmp.clear();b.dataset.pair.split(",").forEach(k=>cmp.add(k));updCmp();renderBrowse();writeHash()});return}
   const rows=list.map(specRows);
+  const labels=specLabels(rows);
   let h=`<div class="bar2"><span class="small">Highlighted cells differ across the selection.</span><div class="barActs"><button type="button" class="ghost" id="copyCmpLink">Copy link</button><button type="button" class="ghost" id="exportCmpCsv">Export CSV</button><button type="button" class="ghost" id="printCmp">Print</button><button class="ghost" id="clrCmp">Clear</button></div></div><div class="cmpgrid"><table><thead><tr><th class="nosort">Spec</th>${list.map(s=>`<th class="nosort"><span class="hd">${esc(s.sku)}</span><br><button class="linkbtn" data-rmc="${esc(s.sku)}">Remove</button></th>`).join("")}</tr></thead><tbody>`;
-  rows[0].forEach((r,i)=>{const vals=rows.map(x=>x[i][1]);const diff=r[2]?false:new Set(vals).size>1&&list.length>1;
-    h+=`<tr><td>${esc(r[0])}</td>${vals.map(v=>`<td class="${diff?"diff":""}">${r[2]?v:esc(v)}</td>`).join("")}</tr>`});
+  labels.forEach(label=>{
+    const cells=rows.map(x=>x.find(r=>r[0]===label)||[label,"-",0]);
+    /* HTML cells (PoE budget, uplinks, lifecycle) are compared on their text; the faceplate is never highlighted. */
+    const diff=label!=="Front panel"&&list.length>1&&new Set(cells.map(c=>c[2]?plainText(c[1]):String(c[1]))).size>1;
+    h+=`<tr><td>${esc(label)}</td>${cells.map(c=>`<td class="${diff?"diff":""}">${c[2]?c[1]:esc(c[1])}</td>`).join("")}</tr>`});
   h+="</tbody></table></div>";
   $("#cmpBody").innerHTML=h;
   $("#clrCmp").onclick=()=>{cmp.clear();updCmp();renderBrowse();writeHash()};
