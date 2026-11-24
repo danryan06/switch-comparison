@@ -636,7 +636,10 @@ function sizeOne(s,req){
   for(let u=1;u<=12;u++){
     if(!portsFeasible(s,dem,u))continue;
     const up=uplinkAvail(s,req,u);if(up.n<req.upN)continue;
-    let cfg=null;if(W>0){cfg=cfgs.find(c=>usableW(s,c)*u>=W);if(!cfg)continue}
+    /* Devices are whole: with u switches, some switch carries ceil(qty/u) of each group.
+       Size the supply for that busiest switch, not for an even split of the total watts. */
+    const perSw=req.groups.reduce((a,g)=>a+Math.ceil(g.qty/u)*g.w,0)*(1+req.head/100);
+    let cfg=null;if(W>0){cfg=cfgs.find(c=>usableW(s,c)>=perSw);if(!cfg)continue}
     const notes=[];
     if(!isCur(s))notes.push({w:1,t:lcShort(s)});
     if(req.stack&&u>1&&f.stack.max===null)notes.push({t:`No hardware stack: managed as one fabric via ${f.stack.t}`});
@@ -650,7 +653,7 @@ function sizeOne(s,req){
     if(req.l3==="ospf"&&s.fam.startsWith("c9200"))notes.push({t:"Full OSPF needs Network Advantage"});
     if(isMod(s)&&req.upN>0)notes.push({t:"Uplink module required: "+up.opt.n.split(":")[0]+" (sold separately)"});
     if(s.note)notes.push({t:s.note});
-    return {s,u,cfg,W,up,notes,ports:totalPorts(s)*u};
+    return {s,u,cfg,W,perSw,up,notes,ports:totalPorts(s)*u};
   }
   return {rej:"Needs more than 12 switches"};
 }
@@ -687,7 +690,7 @@ function resultCard(r,best){
     <div class="facewrap">${faceplate(s)}</div>
     <div class="facts">
       <div>Access ports<b>${fmt(r.ports)} total</b>${esc(portsText(s))} each</div>
-      <div>PoE${r.cfg?`<b>${fmt(Math.round(r.W))} of ${fmt(bud)} W (${pct}%)</b>${esc(r.cfg[0])} per switch<div class="bar"><i class="${pct>85?"hi":""}" style="width:${Math.min(pct,100)}%"></i></div>`:`<b>Not needed</b>`}</div>
+      <div>PoE${r.cfg?`<b>${fmt(Math.round(r.W))} of ${fmt(bud)} W (${pct}%)</b>${esc(r.cfg[0])} per switch${r.u>1?`, busiest switch ${fmt(Math.round(r.perSw))} W`:""}<div class="bar"><i class="${pct>85?"hi":""}" style="width:${Math.min(pct,100)}%"></i></div>`:`<b>Not needed</b>`}</div>
       <div>Uplinks<b>${r.up.n} available at ${spdLabel(readReq().upS)}+</b>${esc(r.up.opt?r.up.opt.n:"")}</div>
     </div>
     ${r.notes.length?`<div class="notes">${r.notes.map(n=>`<span class="note ${n.w?"w":""}">${esc(n.t)}</span>`).join("")}</div>`:""}
