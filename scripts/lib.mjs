@@ -188,5 +188,29 @@ export function validate(data, today = new Date().toISOString().slice(0, 10)) {
     }
   }
 
+  /* Housekeeping: sources and uplink sets nobody references, sources with no retrieval date,
+     and properties that data/schema.json does not declare (a typo, or a field that needs documenting). */
+  const usedSrc = new Set(), usedUp = new Set();
+  for (const f of data.families) {
+    usedSrc.add(f.source); (f.additionalSources || []).forEach(k => usedSrc.add(k));
+    for (const m of f.models || []) { if (m.source) usedSrc.add(m.source); if (m.uplinks) usedUp.add(m.uplinks); }
+  }
+  for (const a of data.accessories || []) usedSrc.add(a.source);
+  for (const [k, src] of Object.entries(data.sources)) {
+    if (!usedSrc.has(k)) warnings.push(`source ${k}: not referenced by any family, model, or accessory catalog`);
+    if (!src.retrieved) warnings.push(`source ${k}: no retrieved date`);
+    else if (!isDate(src.retrieved)) errors.push(`source ${k}: retrieved must be a YYYY-MM-DD date`);
+  }
+  for (const k of Object.keys(data.uplinks)) if (!usedUp.has(k)) warnings.push(`uplinks ${k}: not referenced by any model`);
+  if (data.schema) {
+    const S = data.schema, props = d => new Set(Object.keys(d?.properties || {}));
+    const famP = props(S), modP = props(S.$defs.model), accP = props(S.$defs.accessoryCatalog), partP = props(S.$defs.accessoryPart);
+    const undeclared = new Map();
+    const note = (where, o, allowed, extra = []) => { for (const k of Object.keys(o)) if (!allowed.has(k) && !extra.includes(k)) undeclared.set(`${where}.${k}`, (undeclared.get(`${where}.${k}`) || 0) + 1); };
+    for (const f of data.families) { note('family', f, famP, ['vendorSlug']); for (const m of f.models || []) note('model', m, modP); }
+    for (const a of data.accessories || []) { note('accessory catalog', a, accP, ['id']); for (const p of a.parts || []) note('accessory part', p, partP); }
+    for (const [k, n] of undeclared) warnings.push(`${k}: property not declared in data/schema.json (${n} file${n > 1 ? 's' : ''})`);
+  }
+
   return { errors, warnings, families: data.families.length, models: skus.size, accessories: (data.accessories || []).length, accessoryParts: accParts };
 }

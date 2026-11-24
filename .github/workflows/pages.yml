@@ -11,9 +11,12 @@ permissions:
   pages: write
   id-token: write
 
+# PR runs only build; give them their own group so opening or updating a PR
+# can never cancel an in-flight deploy from main. Deploys queue rather than
+# cancel, so a half-finished Pages deployment is never interrupted.
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.ref) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:

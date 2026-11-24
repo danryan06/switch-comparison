@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-09-23",
+  "updated": "2026-10-15",
   "families": [
     "families/cisco/c9200.json",
     "families/cisco/c9200l.json",

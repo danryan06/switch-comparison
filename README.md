@@ -4,7 +4,7 @@ A vendor-neutral site for comparing campus and aggregation Ethernet switches. Ev
 
 Live site: [switchcomparison.com](https://switchcomparison.com/)
 
-Current coverage: **56 families, 337 models** (25 past end of sale) across Cisco Catalyst (9200 through 9500, including 9350), Cisco Meraki MS (including MS130R and MS450), HPE Aruba CX (6000 through 8360, plus 4100i), Extreme Networks (5320 through 5720), Juniper EX, Ubiquiti UniFi, and Fortinet FortiSwitch (including Rugged). That spans copper and fiber access, high-speed fabric ports on aggregation SKUs, and compact, desktop, and rugged form factors.
+Coverage as of the 2026-10-15 data update: **84 families, 468 models** (31 past end of sale) across Cisco Catalyst (9200 through 9500, including 9350), Cisco Nexus 9200 and 9300, Cisco Meraki MS (including MS130R and MS450), HPE Aruba CX (6000 through 8360, plus 4100i), Arista (710P through 722XPM), Extreme Networks (4120 through 5720), Juniper EX (2300 through 5200), RUCKUS ICX (7550 through 8200), Ubiquiti UniFi, Fortinet FortiSwitch (including Rugged), and Meter. The Data tab on the site always shows the current counts. That spans copper and fiber access, high-speed fabric ports on aggregation SKUs, and compact, desktop, and rugged form factors.
 
 ## What it does
 
@@ -27,6 +27,7 @@ data/
   accessories/<vendor>.json  per-vendor optics, DAC/AOC, and stacking shortlist
 src/index.html               the app, with a placeholder where data is inlined
 scripts/
+  lib.mjs                    loads data/ and holds the validation rules
   validate.mjs               checks the data (runs in CI on every PR)
   build.mjs                  validates, then writes dist/index.html and dist/data/
 .github/workflows/pages.yml  validate on PRs, build and deploy to GitHub Pages on main
@@ -58,7 +59,7 @@ A few decisions matter more than the rest, because they are where vendors descri
 
 **Copper and fiber ports are kept apart.** Each access port group has a `media` of `rj45` (the default) or `sfp`. Powered devices and data ports can only land on copper; fiber demand can only land on SFP access ports. Fabric ports use `sfp`, `qsfp` (default), or `qsfp-dd` and never carry PoE.
 
-**Form factor matters for small sites.** Models are `1RU` (the default), `Compact`, or `Desktop`, with a `fanless` flag. Switches that can run on PoE from upstream (Catalyst 9200CX-12T and -8PT, FS-108F) describe it in `poweredBy`.
+**Form factor matters for small sites.** Models are `1RU` (the default), `1.2RU`, `2RU`, `Compact`, or `Desktop`, with a `fanless` flag. Switches that can run on PoE from upstream (Catalyst 9200CX-12T and -8PT, FS-108F) describe it in `poweredBy`.
 
 **Stacking is not one thing.** Cisco StackWise stacks over dedicated rear ports. Aruba VSF stacks over the front uplinks, so the sizer subtracts those ports from available uplinks. Fortinet has no hardware stack; a FortiGate manages switches as a fabric over FortiLink, so `maxMembers` is `null`. Switches that cannot stack at all use `maxMembers: 1`. Two-switch HA pairs (StackWise Virtual, VSX, MLAG, MCLAG) are not stacks: they go in the separate optional `mlag` field, and families that only pair (not stack) use `maxMembers: 1` in `stacking`.
 
@@ -76,7 +77,9 @@ A few decisions matter more than the rest, because they are where vendors descri
 
 Some values disagree between two places in the same datasheet, or had to be derived. These carry `verify: true` on a PoE budget, or a `verify` list plus a `verifyNote` on a model or family, and they show as an orange dot in Browse and are listed on the Needs checking page until someone confirms them. Flags that describe a limit of the schema rather than missing data also carry `modelingLimitation: true`; they are listed under Known modeling limitations, without an orange dot or a place in the open count. See CONTRIBUTING.md for the review workflow.
 
-The validator also warns when a PoE budget exceeds what the ports could physically draw (port count times per-port maximum). Several Catalyst 9200 24-port models currently trip this: Cisco lists 740W with two supplies, while its own footnote says 24-port models are capped at 720W. Family-max-only switching or forwarding figures on aggregation lines are often left `null` and flagged the same way.
+The validator also warns when a PoE budget exceeds what the ports could physically draw (port count times per-port maximum). That is expected wherever a vendor states what the supplies make available rather than what the ports can draw (for example Cisco lists 740W with two supplies on 24-port Catalyst 9200 models, while its own footnote caps them at 720W); the sizer uses the lower figure. Switching capacity the datasheet does not publish is stored as `null` and warned about the same way.
+
+It also warns about housekeeping: sources or uplink sets that nothing references, sources with no `retrieved` date, and properties that `data/schema.json` does not declare.
 
 ## License
 
