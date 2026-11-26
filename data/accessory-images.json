@@ -3,6 +3,171 @@
   "sourcing_rule": "Vendor-hosted sources only",
   "images": [
     {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-100G-1M",
+      "file": "images/accessories/cisco-meraki/ma-cbl-100g-1m.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-CBL-100G-1M row (alt text \"Photo of the MA-CBL-100G-1M accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-100G-3M",
+      "file": "images/accessories/cisco-meraki/ma-cbl-100g-3m.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-CBL-100G-3M row (alt text \"Photo of the MA-CBL-100G-3M accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-100G-50CM",
+      "file": "images/accessories/cisco-meraki/ma-cbl-100g-50cm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-CBL-100G-50CM row (alt text \"Photo of the MA-CBL-100G-50CM accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-120G-3M",
+      "file": "images/accessories/cisco-meraki/ma-cbl-120g-50cm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/Cloud_Management_with_IOS_XE/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "Cloud Management with IOS XE Accessories page, product photo in the MA-CBL-120G-3M row",
+      "retrieved": "2026-11-26",
+      "caption_note": "Meraki shows the same photo for MA-CBL-120G-50CM and MA-CBL-120G-3M; the cable length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-120G-50CM",
+      "file": "images/accessories/cisco-meraki/ma-cbl-120g-50cm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/Cloud_Management_with_IOS_XE/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "Cloud Management with IOS XE Accessories page, product photo in the MA-CBL-120G-50CM row",
+      "retrieved": "2026-11-26",
+      "caption_note": "Meraki shows the same photo for MA-CBL-120G-50CM and MA-CBL-120G-3M; the cable length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-40G-1M",
+      "file": "images/accessories/cisco-meraki/ma-cbl-40g-1m.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-CBL-40G-1M row (alt text \"Photo of the MA-CBL-40G-1M accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-40G-50CM",
+      "file": "images/accessories/cisco-meraki/ma-cbl-40g-50cm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-CBL-40G-50CM row (alt text \"Photo of the MA-CBL-40G-50CM accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-TA-1M",
+      "file": "images/accessories/cisco-meraki/ma-cbl-ta-1m.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-CBL-TA-1M row (alt text \"Photo of the MA-CBL-TA-1M accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-TA-3M",
+      "file": "images/accessories/cisco-meraki/ma-cbl-ta-3m.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-CBL-TA-3M row (alt text \"Photo of the MA-CBL-TA-3M accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-QSFP-100G-LR4",
+      "file": "images/accessories/cisco-meraki/ma-qsfp-100g-lr4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-QSFP-100G-LR4 row (alt text \"Photo of the MA-QSFP-100G-LR4 accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-QSFP-100G-SR4",
+      "file": "images/accessories/cisco-meraki/ma-qsfp-100g-sr4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the row titled \"100 GbE QSFP+ SR4 Fiber Transceiver\" (range 100 m, MS450-12); the row's part number and alt text read \"MA-QSFP-100G-SR5\"",
+      "retrieved": "2026-11-26",
+      "caption_note": "Meraki labels this row MA-QSFP-100G-SR5, an apparent typo for MA-QSFP-100G-SR4"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-QSFP-40G-LR4",
+      "file": "images/accessories/cisco-meraki/ma-qsfp-40g-lr4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-QSFP-40G-LR4 row (alt text \"Photo of the MA-QSFP-40G-LR4 accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-QSFP-40G-SR4",
+      "file": "images/accessories/cisco-meraki/ma-qsfp-40g-sr4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-QSFP-40G-SR4 row (alt text \"Photo of the MA-QSFP-40G-SR4 accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-SFP-10GB-LR",
+      "file": "images/accessories/cisco-meraki/ma-sfp-10gb-lr.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-SFP-10GB-LR row (alt text \"Photo of the MA-SFP-10GB-LR accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-SFP-10GB-LRM",
+      "file": "images/accessories/cisco-meraki/ma-sfp-10gb-lrm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-SFP-10GB-LRM row (alt text \"Photo of the MA-SFP-10GB-LRM accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-SFP-10GB-SR",
+      "file": "images/accessories/cisco-meraki/ma-sfp-10gb-sr.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/SASE_and_SD-WAN/MX/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MX Accessories page, product photo in the MA-SFP-10GB-SR row (alt text \"Photo of the MA-SFP-10GB-SR accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-SFP-1GB-SX",
+      "file": "images/accessories/cisco-meraki/ma-sfp-1gb-sx.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/SASE_and_SD-WAN/MX/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MX Accessories page, product photo in the MA-SFP-1GB-SX row (alt text \"Photo of the MA-SFP-1GB-SX accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-SFP-1GB-TX",
+      "file": "images/accessories/cisco-meraki/ma-sfp-1gb-tx.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/SASE_and_SD-WAN/MX/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MX Accessories page, product photo in the MA-SFP-1GB-TX row (alt text \"Photo of the MA-SFP-1GB-TX accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
       "vendor": "Extreme Networks",
       "sku": "10051H",
       "file": "images/accessories/extreme/sfp-1g-modules-section.jpg",
@@ -64,6 +229,21 @@
     }
   ],
   "missing": [
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-120G-1M",
+      "reason": "Not shown on Meraki's MS or IOS XE Accessories pages (they show the 50 cm and 3 m 120G cables and STACK-T1-1M-M, a different SKU); the SFP and Stacking Accessories page has tables only."
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-40G-3M",
+      "reason": "The photo Meraki posts in the MA-CBL-40G-3M row of the MS Accessories page is identical to its MA-CBL-TA-3M photo and shows SFP+ connectors, not QSFP+, so it does not show this part. No other Meraki-hosted photo found."
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-SFP-1GB-LX10",
+      "reason": "The photo Meraki posts in the MA-SFP-1GB-LX10 row of the MS Accessories page is identical to its MA-SFP-1GB-TX photo, and the module label reads \"MA-SFP-1GB-TX Active Copper 1000Base-T\", so it does not show this part. No other Meraki-hosted photo found (SFP and Stacking Accessories page has tables only)."
+    },
     {
       "vendor": "Extreme Networks",
       "sku": "10065",
