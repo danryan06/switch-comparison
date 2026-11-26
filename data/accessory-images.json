@@ -403,6 +403,231 @@
       "vendor": "Fortinet",
       "sku": "SP-CABLE-ADASFP+",
       "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-BXD-S",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-BXU-S",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-ER",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-LR-S",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-LR-SA",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-LRM",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-SR-S",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-SR-SA",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-TWX-P-0101",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-TWX-P-0301",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-TWX-P-0501",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-TX-LP-A",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-ZR",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10GE-SFPP-AOC-1001",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP-4SFP-P-0101",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP-4SFP-P-0301",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP-QSFP-AOC-1001",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP-QSFP-P-0101",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP-QSFP-P-0301",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP-QSFP-P-0501",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP28-DR1",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP28-ER4L",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP28-FR1",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP28-LR1",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP28-LR4-LP-10KM",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP28-SR4",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP28-SR4-A",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E1MG-BXD-TA",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E1MG-BXU-TA",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E1MG-LX-OM",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E1MG-SX-OM",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E1MG-TX-A",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E25G-SFP28-AOC-1001",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E25G-SFP28-LR",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E25G-SFP28-SR",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E25G-SFP28-TWX-P-0101",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E25G-SFP28-TWX-P-0301",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-4SFP-AOC-1001",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-C-0501",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-LR4",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-LR4-A",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-QSFP-P-0101",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-QSFP-P-0301",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-SR-BIDI",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-SR4",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
     }
   ]
 }
