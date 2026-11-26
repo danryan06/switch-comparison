@@ -930,6 +930,151 @@
       "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
     },
     {
+      "vendor": "HPE Aruba",
+      "sku": "J4858D",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J4859D",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J8177D",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J9150D",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J9151E",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J9153D",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J9281D",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J9283D",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JH231A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JH232A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL307A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL309A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL310A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL484A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL486A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL487A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL488A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL489A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL563C",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL856A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0M44A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0M45A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0M46A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0M47A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0Z21A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0Z25A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0Z26A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "S1J07A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "S1J08A",
+      "reason": "Blocked: arubanetworking.hpe.com answers with an Akamai \"Access Denied\" 403 and www.hpe.com (QuickSpecs, transceiver guide, product pages) did not respond to any request, so HPE's own photos could not be retrieved. Not worked around."
+    },
+    {
       "vendor": "Juniper",
       "sku": "EX-SFP-10GE-ZR",
       "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
