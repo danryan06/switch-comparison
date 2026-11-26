@@ -1,0 +1,138 @@
+{
+  "retrieved": "2026-11-26",
+  "sourcing_rule": "Vendor-hosted sources only",
+  "images": [
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10051H",
+      "file": "images/accessories/extreme/sfp-1g-modules-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/Extreme-Optics-Data-Sheet?v=0ee1a44c",
+      "source_detail": "Extreme Optics Data Sheet, page 14, photo heading the \"Extreme Networks 1000Base SFP Modules\" section, whose table lists 10051H",
+      "retrieved": "2026-11-26",
+      "caption_note": "Representative photo for the 1000Base SFP Modules section; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10052H",
+      "file": "images/accessories/extreme/sfp-1g-modules-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/Extreme-Optics-Data-Sheet?v=0ee1a44c",
+      "source_detail": "Extreme Optics Data Sheet, page 14, photo heading the \"Extreme Networks 1000Base SFP Modules\" section, whose table lists 10052H",
+      "retrieved": "2026-11-26",
+      "caption_note": "Representative photo for the 1000Base SFP Modules section; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10301",
+      "file": "images/accessories/extreme/sfp-plus-10g-modules-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/Extreme-Optics-Data-Sheet?v=0ee1a44c",
+      "source_detail": "Extreme Optics Data Sheet, page 12, photo heading the \"Extreme Networks 10Gb SFP+ Modules\" section, whose table lists 10301",
+      "retrieved": "2026-11-26",
+      "caption_note": "Representative photo for the 10Gb SFP+ Modules section; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10302",
+      "file": "images/accessories/extreme/sfp-plus-10g-modules-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/Extreme-Optics-Data-Sheet?v=0ee1a44c",
+      "source_detail": "Extreme Optics Data Sheet, page 12, photo heading the \"Extreme Networks 10Gb SFP+ Modules\" section, whose table lists 10302",
+      "retrieved": "2026-11-26",
+      "caption_note": "Representative photo for the 10Gb SFP+ Modules section; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10303",
+      "file": "images/accessories/extreme/sfp-plus-10g-modules-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/Extreme-Optics-Data-Sheet?v=0ee1a44c",
+      "source_detail": "Extreme Optics Data Sheet, page 12, photo heading the \"Extreme Networks 10Gb SFP+ Modules\" section, whose table lists 10303",
+      "retrieved": "2026-11-26",
+      "caption_note": "Representative photo for the 10Gb SFP+ Modules section; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10502",
+      "file": "images/accessories/extreme/sfp28-25g-modules-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/Extreme-Optics-Data-Sheet?v=0ee1a44c",
+      "source_detail": "Extreme Optics Data Sheet, page 10, photo heading the \"Extreme Networks 25Gb SFP28 Modules\" section, whose table lists 10502",
+      "retrieved": "2026-11-26",
+      "caption_note": "Representative photo for the 25Gb SFP28 Modules section; the data sheet does not say which part it shows"
+    }
+  ],
+  "missing": [
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10065",
+      "reason": "The Extreme Optics Data Sheet (page 14) lists 10065, but the only photo in that section shows an LC optical SFP, not the RJ45 copper module. No other Extreme-hosted photo found on optics.extremenetworks.com or extremenetworks.com."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10304",
+      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10305",
+      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10306",
+      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10307",
+      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10319",
+      "reason": "10319 does not appear in the current Extreme Optics Data Sheet (Oct 2026; its 40GBASE-SR4 row lists 40G-SR4-QSFP150M and 10329), so there is no vendor photo tied to it."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10321",
+      "reason": "10321 does not appear in the current Extreme Optics Data Sheet (Oct 2026; its 40GBASE-LR4 row lists 40G-LR4-QSFP10KM), so there is no vendor photo tied to it."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10501",
+      "reason": "10501 does not appear in the current Extreme Optics Data Sheet (Oct 2026), so there is no vendor photo tied to it; optics.extremenetworks.com has no product photos."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10G-AOC-SFP10M",
+      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10G-DACP-SFPZ5M",
+      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "20G-DACP-SFPDD1M",
+      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "20G-DACP-SFPDD3M",
+      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "20G-DACP-SFPDD5M",
+      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "20G-DACP-SFPDDZ5M",
+      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+    }
+  ]
+}
