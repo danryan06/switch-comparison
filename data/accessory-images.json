@@ -313,6 +313,96 @@
       "vendor": "Extreme Networks",
       "sku": "20G-DACP-SFPDDZ5M",
       "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-CABLE-SFP+1",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-CABLE-SFP+3",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-CABLE-SFP+5",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-GC",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-LX",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-QSFP+LR",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-QSFP+SR",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-QSFP28-LR4",
+      "reason": "No Fortinet-hosted product photo found, and the SKU itself is not in the Fortinet Transceivers Data Sheet (Oct 2026), whose 10 km QSFP28 parts are FN-TRAN-QSFP28-LR and FN-TRAN-QSFP28-LR1. The data sheet is text and tables only; fortinet.com has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-QSFP28-SR",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SFP+ER",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SFP+GC",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SFP+LR",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SFP+LRM",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SFP+SR",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SFP28-LR",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SFP28-SR",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SX",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "SP-CABLE-ADASFP+",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
     }
   ]
 }
