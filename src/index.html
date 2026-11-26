@@ -1154,7 +1154,7 @@ $("#dlg").addEventListener("click",e=>{if(e.target.id==="dlg")closeDetail({histo
 $("#dlg").addEventListener("cancel",e=>{e.preventDefault();closeDetail({historyBack:true})});
 
 /* ---------- Accessories ---------- */
-let accSortKey="speed",accSortDir=1;
+let accSortKey="vendor",accSortDir=1;
 function selectedAccCatalogs(){
   if(!accVend.size)return ACCESSORIES;
   return ACCESSORIES.filter(a=>accVend.has(a.id));
@@ -1220,10 +1220,11 @@ function sortAccParts(rows){
     if(key==="note")return p.note||"";
     return p.sku||"";
   };
+  const tie=(x,y)=>(x.a.vendor||"").localeCompare(y.a.vendor||"")||x.p.sku.localeCompare(y.p.sku,undefined,{numeric:true});
   return rows.slice().sort((x,y)=>{
     const xv=val(x),yv=val(y);
-    if(typeof xv==="number"&&typeof yv==="number")return (xv-yv)*dir||x.p.sku.localeCompare(y.p.sku);
-    return String(xv).localeCompare(String(yv),undefined,{numeric:true})*dir||x.p.sku.localeCompare(y.p.sku);
+    if(typeof xv==="number"&&typeof yv==="number")return (xv-yv)*dir||tie(x,y);
+    return String(xv).localeCompare(String(yv),undefined,{numeric:true})*dir||tie(x,y);
   });
 }
 function accTh(label,key){
