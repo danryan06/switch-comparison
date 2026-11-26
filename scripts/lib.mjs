@@ -214,3 +214,119 @@ export function validate(data, today = new Date().toISOString().slice(0, 10)) {
 
   return { errors, warnings, families: data.families.length, models: skus.size, accessories: (data.accessories || []).length, accessoryParts: accParts };
 }
+
+/* Accessory product images: data/accessory-images.json lists every catalog SKU once, either with a
+   vendor-hosted image under src/assets/ or in "missing" with the reason. Kept out of loadData() so the
+   manifest does not ship inside index.html. */
+const IMG_TYPES = ['photo', 'drawing'];
+const IMG_MAX_BYTES = 300 * 1024;
+const hostOf = u => { try { return new URL(String(u).trim().split(/\s/)[0]).hostname.toLowerCase(); } catch { return null; } };
+/* An allowed host also admits its siblings on the same vendor domain when it is the bare or www host
+   (www.cisco.com admits tmgmatrix.cisco.com), but not when it is a shared platform host. */
+function hostAllowed(host, allowed) {
+  if (!host) return false;
+  for (const a of allowed) {
+    if (host === a) return true;
+    const base = a.replace(/^www\./, '');
+    if ((a.startsWith('www.') || a.split('.').length === 2) && (host === base || host.endsWith('.' + base))) return true;
+  }
+  return false;
+}
+
+export function validateAccessoryImages(data, file = path.join(ROOT, 'data', 'accessory-images.json')) {
+  const errors = [], warnings = [];
+  const counts = { images: 0, missing: 0, files: 0 };
+  if (!fs.existsSync(file)) return { errors, warnings, counts, skipped: true };
+  let man;
+  try { man = JSON.parse(fs.readFileSync(file, 'utf8')); }
+  catch (e) { errors.push(`accessory-images: not valid JSON (${e.message})`); return { errors, warnings, counts }; }
+  const at = 'accessory-images';
+  if (!isDate(man.retrieved || '')) errors.push(`${at}: retrieved must be a YYYY-MM-DD date`);
+  if (!man.sourcing_rule) errors.push(`${at}: missing sourcing_rule`);
+  if (!Array.isArray(man.images) || !Array.isArray(man.missing)) {
+    errors.push(`${at}: images and missing must both be arrays`);
+    return { errors, warnings, counts };
+  }
+
+  /* Catalog SKUs per vendor, and the domains each vendor's catalog and families cite. */
+  const catalogs = new Map();
+  const allowed = new Set();
+  const vendorHosts = new Map();
+  for (const a of data.accessories || []) {
+    const hosts = new Set([hostOf(a.opticsMatrixUrl), hostOf(data.sources[a.source]?.url)].filter(Boolean));
+    for (const f of data.families) if (f.vendorSlug === a.id)
+      for (const k of [f.source, ...(f.additionalSources || []), ...(f.models || []).map(m => m.source)])
+        if (k && data.sources[k]) hosts.add(hostOf(data.sources[k].url));
+    catalogs.set(a.vendor, { id: a.id, skus: new Set((a.parts || []).map(p => p.sku)) });
+    vendorHosts.set(a.vendor, hosts);
+    hosts.forEach(h => h && allowed.add(h));
+  }
+  for (const s of Object.values(data.sources)) { const h = hostOf(s.url); if (h) allowed.add(h); }
+
+  const seen = new Map();
+  const mark = (where, vendor, sku) => {
+    const key = vendor + '\0' + sku;
+    if (seen.has(key)) errors.push(`${where}: ${vendor} ${sku} is already listed in ${seen.get(key)}`);
+    else seen.set(key, where.split(' ')[1]);
+  };
+  const known = (where, e) => {
+    const c = catalogs.get(e.vendor);
+    if (!c) { errors.push(`${where}: unknown vendor "${e.vendor}" (must match an accessories catalog vendor exactly)`); return null; }
+    if (!c.skus.has(e.sku)) errors.push(`${where}: SKU "${e.sku}" is not in the ${e.vendor} catalog`);
+    return c;
+  };
+
+  const files = new Set();
+  man.images.forEach((e, i) => {
+    const where = `${at} images[${i}] ${e.vendor || '?'} ${e.sku || '?'}`;
+    for (const k of ['vendor', 'sku', 'file', 'image_type', 'source_page_url', 'source_detail', 'retrieved'])
+      if (!e[k]) errors.push(`${where}: missing ${k}`);
+    const c = known(where, e);
+    mark(`${at} images`, e.vendor, e.sku);
+    if (e.image_type && !IMG_TYPES.includes(e.image_type)) errors.push(`${where}: image_type must be one of ${IMG_TYPES.join(', ')}`);
+    if (e.retrieved && !isDate(e.retrieved)) errors.push(`${where}: retrieved must be a YYYY-MM-DD date`);
+    if (e.file) {
+      if (!/^images\/accessories\/[a-z0-9-]+\/[a-z0-9-]+\.(jpg|png)$/.test(e.file))
+        errors.push(`${where}: file must look like images/accessories/<vendor-slug>/<sku-slug>.jpg (or .png)`);
+      else if (c && !e.file.startsWith(`images/accessories/${c.id}/`))
+        warnings.push(`${where}: file is stored under another vendor's folder (${e.file})`);
+      const p = path.join(ROOT, 'src', 'assets', e.file);
+      if (!fs.existsSync(p)) errors.push(`${where}: file src/assets/${e.file} does not exist`);
+      else {
+        const size = fs.statSync(p).size;
+        if (size > IMG_MAX_BYTES) errors.push(`${where}: src/assets/${e.file} is ${Math.round(size / 1024)} KB (limit ${IMG_MAX_BYTES / 1024} KB)`);
+        files.add(e.file);
+      }
+    }
+    if (e.source_page_url) {
+      const u = String(e.source_page_url);
+      const h = hostOf(u);
+      if (!u.startsWith('https://')) errors.push(`${where}: source_page_url must be https`);
+      if (!hostAllowed(h, allowed)) errors.push(`${where}: source_page_url host "${h}" is not a vendor domain from data/sources.json or an opticsMatrixUrl`);
+      else if (c && !hostAllowed(h, vendorHosts.get(e.vendor) || new Set())) warnings.push(`${where}: source_page_url host "${h}" is not one this vendor's catalog or families cite`);
+    }
+    counts.images++;
+  });
+  man.missing.forEach((e, i) => {
+    const where = `${at} missing[${i}] ${e.vendor || '?'} ${e.sku || '?'}`;
+    if (!e.vendor || !e.sku) errors.push(`${where}: missing vendor or sku`);
+    if (!e.reason) errors.push(`${where}: missing reason`);
+    known(where, e);
+    mark(`${at} missing`, e.vendor, e.sku);
+    counts.missing++;
+  });
+  for (const [vendor, c] of catalogs)
+    for (const sku of c.skus)
+      if (!seen.has(vendor + '\0' + sku)) errors.push(`${at}: ${vendor} ${sku} is in neither images nor missing`);
+
+  /* Files on disk that no manifest entry points at. */
+  const dir = path.join(ROOT, 'src', 'assets', 'images', 'accessories');
+  if (fs.existsSync(dir))
+    for (const v of fs.readdirSync(dir))
+      for (const f of fs.readdirSync(path.join(dir, v))) {
+        const rel = `images/accessories/${v}/${f}`;
+        if (!files.has(rel)) warnings.push(`${at}: src/assets/${rel} is not referenced by any image entry`);
+      }
+  counts.files = files.size;
+  return { errors, warnings, counts };
+}
