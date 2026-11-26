@@ -520,6 +520,126 @@
       "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
     },
     {
+      "vendor": "Juniper",
+      "sku": "EX-SFP-10GE-ZR",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "EX-SFP-1FE-FX",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "EX-SFP-1GE-LX40K",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-100G-DAC-1M",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-100G-DAC-3M",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-QSFP-100G-LR4",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-QSFP-100G-SR4",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-QSFP-40G-LR4",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-QSFP-40G-SR4",
+      "reason": "No Juniper-hosted photo retrievable, and the SKU is not in the Juniper Hardware Compatibility Tool sitemap (apps.juniper.net/hct). www.juniper.net disallows all automated access in robots.txt and redirects to www.hpe.com, which did not respond."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-QSFP-DAC-1M",
+      "reason": "No Juniper-hosted photo retrievable, and the SKU is not in the Juniper Hardware Compatibility Tool sitemap. www.juniper.net disallows all automated access in robots.txt and redirects to www.hpe.com, which did not respond."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-QSFP-DAC-3M",
+      "reason": "No Juniper-hosted photo retrievable, and the SKU is not in the Juniper Hardware Compatibility Tool sitemap. www.juniper.net disallows all automated access in robots.txt and redirects to www.hpe.com, which did not respond."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-SFP-10GE-DAC-1M",
+      "reason": "No Juniper-hosted photo retrievable, and the SKU is not in the Juniper Hardware Compatibility Tool sitemap (HCT lists EX-SFP-10GE-DAC-1M). www.juniper.net disallows all automated access in robots.txt and redirects to www.hpe.com, which did not respond."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-SFP-10GE-DAC-3M",
+      "reason": "No Juniper-hosted photo retrievable, and the SKU is not in the Juniper Hardware Compatibility Tool sitemap (HCT lists EX-SFP-10GE-DAC-3M). www.juniper.net disallows all automated access in robots.txt and redirects to www.hpe.com, which did not respond."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-SFP-25G-DAC-1M",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-SFP-25G-LR",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-SFP-25G-SR",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFP-10G-LRM-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFP-1G-LH-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFP-1G-LX-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFP-1G-SX-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFP-1G-T-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFPP-10G-LR-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFPP-10G-SR-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFPP-10G-USR-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
       "vendor": "RUCKUS",
       "sku": "10G-SFPP-BXD-S",
       "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
