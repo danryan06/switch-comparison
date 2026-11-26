@@ -345,6 +345,166 @@
   ],
   "missing": [
     {
+      "vendor": "Arista",
+      "sku": "AOC-Q-Q-100G-10M",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "AOC-S-S-10G-10M",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "AOC-S-S-25G-10M",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "CAB-Q-4S-100G-3M",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "CAB-Q-Q-100G-1M",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "CAB-Q-Q-100G-3M",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "CAB-S-S-25G-1M",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "CAB-S-S-25G-3M",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "CAB-SFP-SFP-1M",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "CAB-SFP-SFP-3M",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "QSFP-100G-CWDM4",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "QSFP-100G-LR4",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "QSFP-100G-SR4",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "QSFP-100G-SRBD",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-ER",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-LR",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-LR-H",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-LRL",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-SR",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-SR-H",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-SRL",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-T-RP",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-ZR",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-1G-LX",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-1G-LX-H",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-1G-SX",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-1G-T",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-25G-LR",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-25G-MR-LR",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-25G-MR-SR",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-25G-MR-XSR",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-25G-SR",
+      "reason": "Blocked: www.arista.com returns HTTP 406 to automated requests for the Transceivers and Cables pages, the optics data sheet PDF and even robots.txt (only the home page loads), so Arista's own photos could not be retrieved. Not worked around."
+    },
+    {
       "vendor": "Cisco",
       "sku": "C9200-STACK-KIT",
       "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
