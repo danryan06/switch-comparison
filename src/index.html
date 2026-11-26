@@ -25,13 +25,13 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16p
 a{color:var(--accent)}
 button,input,select{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.wrap{max-width:none;margin:0 auto;padding:0 24px}
 
 header.top{background:var(--surface);border-bottom:1px solid var(--line)}
 .topin{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;padding-top:18px}
 /* Family strip: the three sibling reference sites */
 .family{background:var(--bg);border-bottom:1px solid var(--line)}
-.family-in{max-width:1240px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none}
+.family-in{max-width:none;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none}
 .family-in::-webkit-scrollbar{display:none}
 .fam{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;padding:7px 12px 6px;font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent}
 .fam img{border-radius:4px}
@@ -80,7 +80,7 @@ input[type=text],input[type=number],select{width:100%;border:1px solid var(--lin
 .chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:14px;cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.fl label{font-size:13px;color:var(--muted);display:block;margin-bottom:3px}
+.fl label{font-size:13px;color:var(--muted);display:block;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .check{display:flex;gap:8px;align-items:center;font-size:15px;margin-top:6px}
 .check input{width:18px;height:18px;accent-color:var(--accent)}
 .summary{display:flex;gap:18px;flex-wrap:wrap;padding:12px 14px;border-radius:8px;background:var(--accent-soft);margin-bottom:14px}
@@ -130,7 +130,7 @@ svg.face .pw{fill:var(--poe)}svg.face .pw60{fill:var(--poe60)}svg.face .pw90{fil
 .legend i{width:11px;height:11px;border-radius:2px;display:inline-block}
 
 /* browse */
-.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;align-items:start;margin-bottom:14px;padding-top:10px}
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:14px;align-items:end;margin-bottom:14px;padding-top:10px}
 .filters .fl{min-width:0}
 .filters input[type=text],.filters select,.filters .msel summary{height:38px;box-sizing:border-box}
 .fchips{display:flex;flex-wrap:wrap;gap:6px}
@@ -372,7 +372,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
       <div class="fl"><label for="bPorts">Access ports</label><select id="bPorts"><option value="0">Any</option></select></div>
       <div class="fl"><label for="bSpd">Fastest access port</label><select id="bSpd"><option value="0">Any</option><option value="2.5">2.5G or faster</option><option value="5">5G or faster</option><option value="10">10G</option></select></div>
       <div class="fl"><label for="bMed">Access media</label><select id="bMed"><option value="">Any</option><option value="rj45">Copper</option><option value="sfp">Fiber (SFP)</option></select></div>
-      <div class="fl"><label for="bRed">Redundant power supplies</label><select id="bRed"><option value="">Any</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+      <div class="fl"><label for="bRed">Redundant power</label><select id="bRed"><option value="">Any</option><option value="yes">Yes</option><option value="no">No</option></select></div>
       <div class="fl"><label for="bPoe">PoE per port</label><select id="bPoe"><option value="-1">Any</option><option value="0">Non-PoE only</option><option value="30">30W or more</option><option value="60">60W or more</option><option value="90">90W</option></select></div>
       <div class="fl"><label for="bLife">Lifecycle</label><select id="bLife"><option value="current">Current only</option><option value="all">Include end of sale</option><option value="eos">End of sale only</option></select></div>
       <div class="fl"><label for="bRug">Environment</label><select id="bRug"><option value="">Any</option><option value="yes">Rugged only</option></select></div>
