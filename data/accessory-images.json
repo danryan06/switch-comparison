@@ -345,6 +345,151 @@
   ],
   "missing": [
     {
+      "vendor": "Cisco",
+      "sku": "C9200-STACK-KIT",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "C9200L-STACK-KIT",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "C9300L-STACK-KIT",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "C9300L-STACK-KIT2",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "GLC-LH-SMD",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "GLC-SX-MMD",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "GLC-T",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-100G-CU3M",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-100G-LR4-S",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-100G-SR4-S",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-40G-LR4",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-40G-SR4",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-H40G-CU3M",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-10G-AOC3M",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-10G-ER",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-10G-LR",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-10G-LRM",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-10G-SR",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-25G-LR-S",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-25G-SR-S",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-H10GB-CU1M",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-H10GB-CU3M",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-H25G-CU3M",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T1-1M",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around. Meraki's docs show STACK-T1-1M-M, a different SKU, so it was not substituted."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T1-3M",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around. Meraki's docs show STACK-T1-3M-M, a different SKU, so it was not substituted."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T1-50CM",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around. Meraki's docs show STACK-T1-50CM-M, a different SKU, so it was not substituted."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T4-1M",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T4-3M",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T4-50CM",
+      "reason": "Blocked: www.cisco.com answers every automated request (product pages, data sheets and PDFs) with an Akamai \"Access Denied\" 403, so Cisco's own photos could not be retrieved. tmgmatrix.cisco.com loads but its product data comes from internal APIs and its assets from www.cisco.com; not worked around."
+    },
+    {
       "vendor": "Cisco Meraki",
       "sku": "MA-CBL-120G-1M",
       "reason": "Not shown on Meraki's MS or IOS XE Accessories pages (they show the 50 cm and 3 m 120G cables and STACK-T1-1M-M, a different SKU); the SFP and Stacking Accessories page has tables only."
