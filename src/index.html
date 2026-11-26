@@ -4,33 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Switch Comparison</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#EDF0F2;--surface:#FFFFFF;--surface-2:#F5F7F8;--ink:#15202B;--muted:#5A6774;--line:#CFD6DC;
-  --accent:#1D5BD0;--accent-soft:#E3ECFB;--accent-ink:#FFFFFF;
-  --g1:#8C99A6;--g25:#2A9D8F;--g5:#2F6FD6;--g10:#6D4BC9;--g25x:#B23A7E;--up:#23303C;--upline:#23303C;
-  --poe:#D99A0E;--poe60:#D9541E;--poe90:#C0243A;--warn:#A9500E;--warn-soft:#FBEBDD;--ok:#1E7A4C;--ok-soft:#DDF1E6;
-  --chassis:#DDE2E6;
-  --sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  --cond:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#10161C;--surface:#18212A;--surface-2:#1E2833;--ink:#E6EBEF;--muted:#98A6B3;--line:#2E3B48;
-    --accent:#6C9BF2;--accent-soft:#1D2B45;--accent-ink:#0E1620;
-    --g1:#6E7B88;--g25:#35B3A4;--g5:#4D8AEB;--g10:#8B6BE0;--g25x:#D5609E;--up:#0A0F14;--upline:#6E7B88;
-    --poe:#E9B23A;--poe60:#F0803F;--poe90:#F0687A;--warn:#E6934F;--warn-soft:#3A2717;--ok:#52C58E;--ok-soft:#173226;--chassis:#26313C;
-  }
-}
-:root[data-theme="dark"]{
   --bg:#10161C;--surface:#18212A;--surface-2:#1E2833;--ink:#E6EBEF;--muted:#98A6B3;--line:#2E3B48;
   --accent:#6C9BF2;--accent-soft:#1D2B45;--accent-ink:#0E1620;
   --g1:#6E7B88;--g25:#35B3A4;--g5:#4D8AEB;--g10:#8B6BE0;--g25x:#D5609E;--up:#0A0F14;--upline:#6E7B88;
   --poe:#E9B23A;--poe60:#F0803F;--poe90:#F0687A;--warn:#E6934F;--warn-soft:#3A2717;--ok:#52C58E;--ok-soft:#173226;--chassis:#26313C;
+  --sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --cond:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  color-scheme:dark;
 }
+/* Dark only, like apcomparison.com and antennacomparison.com */
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}
@@ -41,6 +29,21 @@ button,input,select{font:inherit;color:inherit}
 
 header.top{background:var(--surface);border-bottom:1px solid var(--line)}
 .topin{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;padding-top:18px}
+/* Family strip: the three sibling reference sites */
+.family{background:var(--bg);border-bottom:1px solid var(--line)}
+.family-in{max-width:1240px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none}
+.family-in::-webkit-scrollbar{display:none}
+.fam{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;padding:7px 12px 6px;font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent}
+.fam img{border-radius:4px}
+.fam:hover{color:var(--ink)}
+.fam.here{color:var(--ink);border-bottom-color:var(--line)}
+.family-note{margin-left:auto;padding-left:16px;font-size:13px;color:var(--muted);white-space:nowrap}
+@media (max-width:900px){.family-note{display:none}}
+@media (max-width:640px){.family-in{padding:0 8px}.fam{padding:7px 8px 6px}}
+.brand h1 a{display:inline-flex;align-items:center;gap:10px}
+.brand h1 img{width:34px;height:34px;flex:none}
+.wrap.topin{padding-top:16px}
+@media (max-width:640px){.brand h1 img{width:28px;height:28px}.wrap.topin{padding-top:12px}}
 .brand{margin-right:auto}
 .brand h1{font-family:var(--cond);font-weight:700;font-size:30px;line-height:1;margin:0 0 12px;letter-spacing:.01em}
 .brand h1 a{color:inherit;text-decoration:none}
@@ -264,10 +267,11 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
 </style>
 </head>
 <body>
+<nav class="family" aria-label="Reference sites"><div class="family-in"><a class="fam" href="https://apcomparison.com"><img src="family/ap.png" alt="" width="18" height="18">AP Comparison</a><a class="fam here" href="#" data-goto="browse" aria-current="true"><img src="family/switch.png" alt="" width="18" height="18">Switch Comparison</a><a class="fam" href="https://antennacomparison.com"><img src="family/antenna.png" alt="" width="18" height="18">Antenna Comparison</a><span class="family-note">Vendor-sourced Wi-Fi and network references</span></div></nav>
 <header class="top">
   <div class="wrap topin">
     <div class="brand">
-      <h1><a href="#" data-goto="browse">Switch Comparison</a></h1>
+      <h1><a href="#" data-goto="browse"><img src="logo.png" alt="">Switch Comparison</a></h1>
     </div>
     <div class="navrow">
       <nav class="tabs" role="tablist">
@@ -278,7 +282,6 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
         <button role="tab" aria-selected="false" data-v="about">Data</button>
       </nav>
       <a class="xlink" href="https://github.com/danryan06/switch-comparison/issues/new/choose" target="_blank" rel="noopener">Suggest a change <span class="arr" aria-hidden="true">&#8599;</span></a>
-      <a class="xlink" href="https://apcomparison.com" target="_blank" rel="noopener">AP Comparison <span class="arr" aria-hidden="true">&#8599;</span></a>
     </div>
   </div>
 </header>
@@ -454,7 +457,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
   </section>
 </main>
 
-<footer><div class="wrap footin"><span>Vendor neutral and open source. Always confirm against the current datasheet before quoting a design. <span id="updated"></span></span><div class="footActs"><a class="xlink" href="https://apcomparison.com" target="_blank" rel="noopener">AP Comparison <span class="arr">&#8599;</span></a><a class="chklink" href="https://github.com/danryan06/switch-comparison/issues/new/choose" target="_blank" rel="noopener">Suggest a change</a><a href="#" class="chklink" data-goto="check" id="chkLink">Needs checking</a></div></div></footer>
+<footer><div class="wrap footin"><span>Maintained by Dan Ryan, CWNE #351. Vendor neutral and open source. Always confirm against the current datasheet before quoting a design. <span id="updated"></span></span><div class="footActs"><a class="chklink" href="https://github.com/danryan06/switch-comparison/issues/new/choose" target="_blank" rel="noopener">Suggest a change</a><a href="#" class="chklink" data-goto="check" id="chkLink">Needs checking</a></div></div></footer>
 
 <button type="button" class="compare-fab" id="compareFab" aria-label="Open compare">Compare (0)</button>
 

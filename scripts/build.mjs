@@ -15,5 +15,7 @@ fs.mkdirSync(dist, { recursive: true });
 fs.writeFileSync(path.join(dist, 'index.html'), tpl.replace('/*__DATA__*/null', json));
 // Publish the raw data too, so others can consume it directly.
 fs.cpSync(path.join(ROOT, 'data'), path.join(dist, 'data'), { recursive: true });
+// Icons and the favicon (family strip, brand) are served beside index.html.
+fs.cpSync(path.join(ROOT, 'src', 'assets'), dist, { recursive: true });
 fs.writeFileSync(path.join(dist, 'data', 'all.json'), JSON.stringify(data, null, 2) + '\n');
 console.log(`Built dist/index.html with ${r.families} families, ${r.models} models, ${r.accessories} accessory catalogs (${r.warnings.length} warnings).`);
