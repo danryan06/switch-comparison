@@ -226,6 +226,121 @@
       "source_detail": "Extreme Optics Data Sheet, page 10, photo heading the \"Extreme Networks 25Gb SFP28 Modules\" section, whose table lists 10502",
       "retrieved": "2026-11-26",
       "caption_note": "Representative photo for the 25Gb SFP28 Modules section; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-CM-RJ45-1G",
+      "file": "images/accessories/ubiquiti/uacc-cm-rj45.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/rj45-to-sfp-module",
+      "source_detail": "UniFi Tech Specs page for the SFP to RJ45 Adapter (UACC-CM-RJ45), product image",
+      "retrieved": "2026-11-26",
+      "caption_note": "Photo shows UACC-CM-RJ45; Ubiquiti lists this 1G SFP to RJ45 adapter without a -1G suffix"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-OM-MM-10G-D",
+      "file": "images/accessories/ubiquiti/uacc-om-mm-10g-d.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/10-gbps-multi-mode-optical-module",
+      "source_detail": "UniFi Tech Specs page for UACC-OM-MM-10G-D, product image",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-OM-MM-1G-D",
+      "file": "images/accessories/ubiquiti/uacc-om-mm-1g-d.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/1-gbps-multi-mode-optical-module",
+      "source_detail": "UniFi Tech Specs page for UACC-OM-MM-1G-D, product image",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-OM-QSFP28-LR4",
+      "file": "images/accessories/ubiquiti/uacc-om-qsfp28-lr4.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-om-qsfp28-lr4",
+      "source_detail": "UniFi Tech Specs page for UACC-OM-QSFP28-LR4, product image",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-OM-QSFP28-SR4",
+      "file": "images/accessories/ubiquiti/uacc-om-qsfp28-sr4.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-om-qsfp28-sr4",
+      "source_detail": "UniFi Tech Specs page for UACC-OM-QSFP28-SR4, product image",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-OM-SFP10-1310",
+      "file": "images/accessories/ubiquiti/uacc-om-sfp10.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-om-sfp10",
+      "source_detail": "UniFi Tech Specs page for the 10G CWDM Single-Mode Optical Module (UACC-OM-SFP10), product image; the page covers the UACC-OM-SFP10-1270~1330 and -1450~1590 wavelength variants",
+      "retrieved": "2026-11-26",
+      "caption_note": "Photo shows a UACC-OM-SFP10 CWDM module; the wavelength variant is not stated"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-OM-SM-10G-D",
+      "file": "images/accessories/ubiquiti/uacc-om-sm-10g-d.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-om-sm-10g-d",
+      "source_detail": "UniFi Tech Specs page for UACC-OM-SM-10G-D, product image",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-OM-SM-1G-S-2",
+      "file": "images/accessories/ubiquiti/uacc-om-sm-1g-s.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/1-gbps-bidirectional-single-mode-optical-module",
+      "source_detail": "UniFi Tech Specs page for UACC-OM-SM-1G-S, product image; the page lists Pack Options 2-Pack and 20-Pack",
+      "retrieved": "2026-11-26",
+      "caption_note": "Photo shows UACC-OM-SM-1G-S modules; Ubiquiti sells them as a 2-pack"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-Uplink-SFP28-0.15M",
+      "file": "images/accessories/ubiquiti/uacc-uplink-sfp28.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-uplink-sfp28",
+      "source_detail": "UniFi Tech Specs page for the Uplink Cable (UACC-Uplink-SFP28), product image; the page lists lengths 0.15, 0.3, 3 and 30 m (copper at 0.15/0.3 m, fiber at 3/30 m)",
+      "retrieved": "2026-11-26",
+      "caption_note": "Ubiquiti shows one photo for every UACC-Uplink-SFP28 length; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-Uplink-SFP28-0.3M",
+      "file": "images/accessories/ubiquiti/uacc-uplink-sfp28.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-uplink-sfp28",
+      "source_detail": "UniFi Tech Specs page for the Uplink Cable (UACC-Uplink-SFP28), product image; the page lists lengths 0.15, 0.3, 3 and 30 m (copper at 0.15/0.3 m, fiber at 3/30 m)",
+      "retrieved": "2026-11-26",
+      "caption_note": "Ubiquiti shows one photo for every UACC-Uplink-SFP28 length; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-Uplink-SFP28-30M",
+      "file": "images/accessories/ubiquiti/uacc-uplink-sfp28.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-uplink-sfp28",
+      "source_detail": "UniFi Tech Specs page for the Uplink Cable (UACC-Uplink-SFP28), product image; the page lists lengths 0.15, 0.3, 3 and 30 m (copper at 0.15/0.3 m, fiber at 3/30 m)",
+      "retrieved": "2026-11-26",
+      "caption_note": "Ubiquiti shows one photo for every UACC-Uplink-SFP28 length; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-Uplink-SFP28-3M",
+      "file": "images/accessories/ubiquiti/uacc-uplink-sfp28.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-uplink-sfp28",
+      "source_detail": "UniFi Tech Specs page for the Uplink Cable (UACC-Uplink-SFP28), product image; the page lists lengths 0.15, 0.3, 3 and 30 m (copper at 0.15/0.3 m, fiber at 3/30 m)",
+      "retrieved": "2026-11-26",
+      "caption_note": "Ubiquiti shows one photo for every UACC-Uplink-SFP28 length; the length in the photo is not stated"
     }
   ],
   "missing": [
