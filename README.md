@@ -27,7 +27,8 @@ data/
   accessories/<vendor>.json  per-vendor optics, DAC/AOC, and stacking shortlist
   accessory-images.json      vendor image (or reason there is none) for every accessory SKU
   accessory-images.schema.json  JSON Schema for the image manifest
-src/index.html               the app, with a placeholder where data is inlined
+src/index.html               the app, with placeholders where the sizer and data are inlined
+src/sizer.js                 closet sizer and data model (ES module, inlined into the page at build)
 src/assets/                  copied into dist/ as-is
   images/accessories/<vendor>/  vendor product images (see LICENSE)
   fonts/                     self-hosted Barlow and Barlow Condensed (SIL OFL 1.1)
@@ -35,6 +36,7 @@ scripts/
   lib.mjs                    loads data/ and holds the validation rules
   validate.mjs               checks the data (runs in CI on every PR)
   build.mjs                  validates, then writes dist/index.html and dist/data/
+test/                        node:test suites for the sizer, the validator, and the build
 .github/workflows/pages.yml  validate on PRs, build and deploy to GitHub Pages on main
 .github/dependabot.yml       keeps the workflow's GitHub Actions current
 ```
@@ -47,6 +49,7 @@ Requires Node 22 or newer. There are no dependencies to install. Useful when edi
 
 ```
 npm run validate   # check the data
+npm test           # run the sizer, validator and build tests (built-in node:test, no dependencies)
 npm run build      # write dist/
 npm run preview    # build and serve dist/ on http://localhost:8080
 ```
