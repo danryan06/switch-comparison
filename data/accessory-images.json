@@ -1038,6 +1038,16 @@
     },
     {
       "vendor": "Extreme Networks",
+      "sku": "10065",
+      "file": "images/accessories/extreme/copper-sfp-figure-3.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/pluggable/downloads/Pluggable_Transceivers_Installation_Guide.pdf",
+      "source_detail": "Extreme Networks Pluggable Transceivers Installation Guide, page 37, Figure 3 \"Copper SFP Module\"; 10065 is listed under \"10/100/1000BASE-T Copper SFP and Industrial Grade SFP Modules\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawing captioned \"Copper SFP Module\"; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "Extreme Networks",
       "sku": "10301",
       "file": "images/accessories/extreme/sfp-plus-10g-modules-section.jpg",
       "image_type": "photo",
@@ -1065,6 +1075,56 @@
       "source_detail": "Extreme Optics Data Sheet, page 12, photo heading the \"Extreme Networks 10Gb SFP+ Modules\" section, whose table lists 10303",
       "retrieved": "2026-11-26",
       "caption_note": "Representative photo for the 10Gb SFP+ Modules section; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10304",
+      "file": "images/accessories/extreme/sfp-plus-dac-figures-10-11.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/pluggable/downloads/Pluggable_Transceivers_Installation_Guide.pdf",
+      "source_detail": "Extreme Networks Pluggable Transceivers Installation Guide, page 82, Figures 10 and 11 \"SFP+ Direct-Attach Cable: Type A\" and \"Type B\", above Table 59 (10 Gb SFP+ Passive Copper Direct-Attach Cables) that lists 10304",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawings of the two SFP+ direct-attach cable connector types (Type A left, Type B right), placed side by side; the guide does not say which part numbers use which type or show the length"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10305",
+      "file": "images/accessories/extreme/sfp-plus-dac-figures-10-11.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/pluggable/downloads/Pluggable_Transceivers_Installation_Guide.pdf",
+      "source_detail": "Extreme Networks Pluggable Transceivers Installation Guide, page 82, Figures 10 and 11 \"SFP+ Direct-Attach Cable: Type A\" and \"Type B\", above Table 59 (10 Gb SFP+ Passive Copper Direct-Attach Cables) that lists 10305",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawings of the two SFP+ direct-attach cable connector types (Type A left, Type B right), placed side by side; the guide does not say which part numbers use which type or show the length"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10306",
+      "file": "images/accessories/extreme/sfp-plus-dac-figures-10-11.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/pluggable/downloads/Pluggable_Transceivers_Installation_Guide.pdf",
+      "source_detail": "Extreme Networks Pluggable Transceivers Installation Guide, page 82, Figures 10 and 11 \"SFP+ Direct-Attach Cable: Type A\" and \"Type B\", above Table 59 (10 Gb SFP+ Passive Copper Direct-Attach Cables) that lists 10306",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawings of the two SFP+ direct-attach cable connector types (Type A left, Type B right), placed side by side; the guide does not say which part numbers use which type or show the length"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10307",
+      "file": "images/accessories/extreme/sfp-plus-dac-figures-10-11.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/pluggable/downloads/Pluggable_Transceivers_Installation_Guide.pdf",
+      "source_detail": "Extreme Networks Pluggable Transceivers Installation Guide, page 82, Figures 10 and 11 \"SFP+ Direct-Attach Cable: Type A\" and \"Type B\", above Table 59 (10 Gb SFP+ Passive Copper Direct-Attach Cables) that lists 10307",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawings of the two SFP+ direct-attach cable connector types (Type A left, Type B right), placed side by side; the guide does not say which part numbers use which type or show the length"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10319",
+      "file": "images/accessories/extreme/qsfp-plus-optical-module-figure-4.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/pluggable/downloads/Pluggable_Transceivers_Installation_Guide.pdf",
+      "source_detail": "Extreme Networks Pluggable Transceivers Installation Guide, page 58, Figure 4 \"QSFP+ Optical Module (Release Handle)\" at the start of the 40 Gb QSFP+ Modules chapter, which lists 10319 (40 Gb SR4 QSFP+ Module, page 59)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawing captioned \"QSFP+ Optical Module (Release Handle)\"; the guide does not say which part it shows"
     },
     {
       "vendor": "Extreme Networks",
@@ -1635,73 +1695,43 @@
     },
     {
       "vendor": "Extreme Networks",
-      "sku": "10065",
-      "reason": "The Extreme Optics Data Sheet (page 14) lists 10065, but the only photo in that section shows an LC optical SFP, not the RJ45 copper module. No other Extreme-hosted photo found on optics.extremenetworks.com or extremenetworks.com."
-    },
-    {
-      "vendor": "Extreme Networks",
-      "sku": "10304",
-      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
-    },
-    {
-      "vendor": "Extreme Networks",
-      "sku": "10305",
-      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
-    },
-    {
-      "vendor": "Extreme Networks",
-      "sku": "10306",
-      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
-    },
-    {
-      "vendor": "Extreme Networks",
-      "sku": "10307",
-      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
-    },
-    {
-      "vendor": "Extreme Networks",
-      "sku": "10319",
-      "reason": "10319 does not appear in the current Extreme Optics Data Sheet (Oct 2026; its 40GBASE-SR4 row lists 40G-SR4-QSFP150M and 10329), so there is no vendor photo tied to it."
-    },
-    {
-      "vendor": "Extreme Networks",
       "sku": "10321",
-      "reason": "10321 does not appear in the current Extreme Optics Data Sheet (Oct 2026; its 40GBASE-LR4 row lists 40G-LR4-QSFP10KM), so there is no vendor photo tied to it."
+      "reason": "No vendor image of a 40G LR4 transceiver tied to this number. The Extreme Pluggable Transceivers Installation Guide lists 10321 as a 3 m 40G QSFP+ to 4x SFP+ passive breakout DAC (alias 40G-DACP-QSFP4SFP3M), not an LR4 transceiver, and the current Optics Data Sheet does not list it."
     },
     {
       "vendor": "Extreme Networks",
       "sku": "10501",
-      "reason": "10501 does not appear in the current Extreme Optics Data Sheet (Oct 2026), so there is no vendor photo tied to it; optics.extremenetworks.com has no product photos."
+      "reason": "No Extreme photo or drawing of this module. The Extreme Optics Data Sheet (Oct 2026) no longer lists 10501. The Pluggable Transceivers Installation Guide lists it as the 25 Gb SR SFP28 Module (page 53) but has no figure of an SFP28 module."
     },
     {
       "vendor": "Extreme Networks",
       "sku": "10G-AOC-SFP10M",
-      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+      "reason": "No Extreme image of this active optical cable. The Pluggable Transceivers Installation Guide lists it in Table 60 (page 83), but its SFP+ cable figures show copper direct-attach cables; the Optics Data Sheet photos show optical modules only."
     },
     {
       "vendor": "Extreme Networks",
       "sku": "10G-DACP-SFPZ5M",
-      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+      "reason": "No Extreme image of this 0.5 m cable. It is listed in the Extreme Optics Data Sheet, which has no cable photos, and it is not in the Pluggable Transceivers Installation Guide (Feb 2024)."
     },
     {
       "vendor": "Extreme Networks",
       "sku": "20G-DACP-SFPDD1M",
-      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024); the 5420 product page shows only the switch."
     },
     {
       "vendor": "Extreme Networks",
       "sku": "20G-DACP-SFPDD3M",
-      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024); the 5420 product page shows only the switch."
     },
     {
       "vendor": "Extreme Networks",
       "sku": "20G-DACP-SFPDD5M",
-      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024); the 5420 product page shows only the switch."
     },
     {
       "vendor": "Extreme Networks",
       "sku": "20G-DACP-SFPDDZ5M",
-      "reason": "No photo of this cable on Extreme's own sites. The Extreme Optics Data Sheet lists it but its only photos are of optical modules, the 5420 product page shows only the switch, and optics.extremenetworks.com is a compatibility table without product photos."
+      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024); the 5420 product page shows only the switch."
     },
     {
       "vendor": "Fortinet",
