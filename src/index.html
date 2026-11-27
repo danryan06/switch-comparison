@@ -198,6 +198,19 @@ dialog::backdrop{background:rgba(10,15,20,.5)}
 .dlg{padding:20px}
 .dlg h3{font-family:var(--cond);font-size:28px;margin:0;line-height:1.1}
 .dlg .close{float:right}
+/* accessory image button and panel */
+.accImg{display:inline-grid;place-items:center;width:26px;height:22px;margin-left:8px;padding:0;vertical-align:middle;border:1px solid var(--line);border-radius:6px;background:var(--surface-2);color:var(--muted);cursor:pointer}
+.accImg:hover,.accImg:focus-visible{color:var(--ink);border-color:var(--accent)}
+.accImg svg{display:block}
+.skuWrap{display:inline-flex;align-items:center;gap:8px}
+.skuWrap .accImg{margin-left:0}
+@media (pointer:coarse){.accImg{width:36px;height:32px}}
+#accImgDlg{max-width:680px}
+#accImgDlg .frame{background:#fff;border-radius:8px;padding:16px;margin:14px 0 12px;display:grid;place-items:center;min-height:160px}
+#accImgDlg .frame img{display:block;max-width:100%;max-height:58vh;height:auto}
+#accImgDlg .accTag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:1px 9px;font-size:13px;color:var(--muted);margin-left:4px}
+#accImgDlg .cap{margin:0 0 8px}
+#accImgDlg .src{margin:0;overflow-wrap:anywhere}
 .spec{display:grid;grid-template-columns:170px 1fr;gap:6px 16px;font-size:15px;margin-top:14px}
 .spec dt{color:var(--muted)}
 .spec dd{margin:0}
@@ -257,7 +270,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 @media print{
   body{background:#fff;color:#000}
-  header.top,.compare-fab,footer,.filters,.bar2 .barActs,.presets,.navrow,.chklink,.size .panel,.rej,.resMore,.fchips,.legend,#dlg{display:none!important}
+  header.top,.compare-fab,footer,.filters,.bar2 .barActs,.presets,.navrow,.chklink,.size .panel,.rej,.resMore,.fchips,.legend,#dlg,#accImgDlg,.accImg{display:none!important}
   .view{display:none!important}
   .view.on{display:block!important}
   .size{grid-template-columns:1fr}
@@ -461,6 +474,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
 <button type="button" class="compare-fab" id="compareFab" aria-label="Open compare">Compare (0)</button>
 
 <dialog id="dlg"><div class="dlg" id="dlgBody"></div></dialog>
+<dialog id="accImgDlg" aria-labelledby="accImgTitle"><div class="dlg" id="accImgBody"></div></dialog>
 
 <script>
 /* ---------- Data (inlined at build time from /data) ---------- */
@@ -1230,11 +1244,53 @@ function accTh(label,key){
   const on=accSortKey===key;
   return `<th data-acc-sort="${key}" aria-sort="${on?(accSortDir>0?"ascending":"descending"):"none"}">${esc(label)}${on?(accSortDir>0?" &#9650;":" &#9660;"):""}</th>`;
 }
+/* Accessory images: data/accessory-images.json is fetched when the Accessories view first renders,
+   so it does not add to index.html. Images load only when a panel opens. */
+let ACC_IMG=null,accImgPending=false,accImgTrigger=null;
+const ACC_IMG_ICON=`<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5-8 8"/></svg>`;
+const accImgKey=(v,s)=>v+"\u0000"+s;
+function loadAccImages(){
+  if(ACC_IMG||accImgPending)return;
+  accImgPending=true;
+  fetch("data/accessory-images.json").then(r=>r.ok?r.json():null).then(m=>{
+    if(!m||!Array.isArray(m.images))return;
+    ACC_IMG=new Map(m.images.map(e=>[accImgKey(e.vendor,e.sku),e]));
+    if($("#v-accessories").classList.contains("on"))renderAccessories();
+  }).catch(()=>{}).finally(()=>{accImgPending=false});
+}
+function accImgButton(a,p){
+  const e=ACC_IMG&&ACC_IMG.get(accImgKey(a.vendor,p.sku));
+  if(!e)return "";
+  const kind=e.image_type==="drawing"?"drawing":"photo";
+  return `<button type="button" class="accImg" data-img-v="${esc(a.vendor)}" data-img-s="${esc(p.sku)}" aria-label="Show ${kind} of ${esc(p.sku)}" title="Show ${kind}">${ACC_IMG_ICON}</button>`;
+}
+function accImgCell(a,p){
+  const b=accImgButton(a,p);
+  return b?`<span class="skuWrap">${esc(p.sku)}${b}</span>`:esc(p.sku);
+}
+function openAccImg(vendor,sku,trigger){
+  const e=ACC_IMG&&ACC_IMG.get(accImgKey(vendor,sku));if(!e)return;
+  const kind=e.image_type==="drawing"?"Drawing":"Photo";
+  let host="";try{host=new URL(e.source_page_url).hostname}catch{}
+  const others=[...ACC_IMG.values()].filter(x=>x.file===e.file&&!(x.vendor===e.vendor&&x.sku===e.sku)).map(x=>x.vendor===e.vendor?x.sku:`${x.sku} (${x.vendor})`);
+  accImgTrigger=trigger||null;
+  $("#accImgBody").innerHTML=`<button type="button" class="ghost close" id="accImgClose">Close</button>
+    <h3 id="accImgTitle">${esc(sku)}</h3>
+    <p class="small" style="margin:4px 0 0">${esc(vendor)} <span class="accTag">${kind}</span></p>
+    <div class="frame"><img src="${esc(e.file)}" alt="${kind} of ${esc(sku)}"></div>
+    ${e.caption_note?`<p class="cap">${esc(e.caption_note)}</p>`:""}
+    ${others.length?`<p class="small cap">Same image is used for ${esc(others.join(", "))}.</p>`:""}
+    <p class="small src">Source: <a href="${esc(e.source_page_url)}" target="_blank" rel="noopener">${esc(e.source_detail)}</a>${host?` (${esc(host)})`:""}. Retrieved ${esc(e.retrieved)}.</p>`;
+  $("#accImgClose").onclick=()=>$("#accImgDlg").close();
+  if(!$("#accImgDlg").open)$("#accImgDlg").showModal();
+}
+$("#accImgDlg").addEventListener("click",ev=>{if(ev.target.id==="accImgDlg")$("#accImgDlg").close()});
+$("#accImgDlg").addEventListener("close",()=>{if(accImgTrigger&&document.contains(accImgTrigger))accImgTrigger.focus();accImgTrigger=null});
 function accPartRow({p,a}){
   const note=esc(p.note||"")+(p.category==="stacking"?appliesToLabel(p):"");
   return `<tr>
     <td>${esc(a.vendor)}</td>
-    <td class="sku">${esc(p.sku)}</td>
+    <td class="sku">${accImgCell(a,p)}</td>
     <td>${esc(accSpdLabel(p.speedGbps))}</td>
     <td>${esc(p.formFactor)}</td>
     <td>${esc(p.reach||"-")}</td>
@@ -1261,6 +1317,7 @@ function renderAccessories(){
     $("#accCount").textContent="";
     return;
   }
+  loadAccImages();
   renderAccVendors();
   fillAccFilterOptions();
   renderAccHead();
@@ -1295,6 +1352,8 @@ $("#accVendors").addEventListener("click",e=>{
 ["accCat","accSpd","accRange","accMedia","accForm"].forEach(id=>$("#"+id).addEventListener("change",()=>{renderAccessories();writeHash()}));
 $("#accClrFilters").onclick=clearAccFilters;
 $("#accBody").addEventListener("click",e=>{
+  const ib=e.target.closest(".accImg");
+  if(ib){openAccImg(ib.dataset.imgV,ib.dataset.imgS,ib);return}
   const th=e.target.closest("th[data-acc-sort]");if(!th)return;
   const k=th.dataset.accSort;
   if(k===accSortKey)accSortDir*=-1;else{accSortKey=k;accSortDir=1}
