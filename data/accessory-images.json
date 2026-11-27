@@ -225,7 +225,8 @@
       "image_type": "photo",
       "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
       "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 3, Figure 1 \"QSFP-100G Optical modules\", the module labelled QSFP-100G-LR4-S (cropped from the four-module figure)",
-      "retrieved": "2026-11-27"
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo shows QSFP-100G-LR4-S"
     },
     {
       "vendor": "Cisco",
@@ -234,7 +235,8 @@
       "image_type": "photo",
       "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
       "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 3, Figure 1 \"QSFP-100G Optical modules\", the module labelled QSFP-100G-SR4-S (cropped from the four-module figure)",
-      "retrieved": "2026-11-27"
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo shows QSFP-100G-SR4-S"
     },
     {
       "vendor": "Cisco",
@@ -502,30 +504,32 @@
     {
       "vendor": "Cisco Meraki",
       "sku": "MA-QSFP-100G-LR4",
-      "file": "images/accessories/cisco-meraki/ma-qsfp-100g-lr4.jpg",
+      "file": "images/accessories/cisco-meraki/ma-qsfp-blank-label.jpg",
       "image_type": "photo",
       "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
       "source_detail": "MS Accessories page, product photo in the MA-QSFP-100G-LR4 row (alt text \"Photo of the MA-QSFP-100G-LR4 accessory.\")",
-      "retrieved": "2026-11-26"
+      "retrieved": "2026-11-26",
+      "caption_note": "Meraki shows the same blank-label QSFP photo for MA-QSFP-40G-LR4, MA-QSFP-100G-SR4 and MA-QSFP-100G-LR4; the label does not identify the part"
     },
     {
       "vendor": "Cisco Meraki",
       "sku": "MA-QSFP-100G-SR4",
-      "file": "images/accessories/cisco-meraki/ma-qsfp-100g-sr4.jpg",
+      "file": "images/accessories/cisco-meraki/ma-qsfp-blank-label.jpg",
       "image_type": "photo",
       "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
       "source_detail": "MS Accessories page, product photo in the row titled \"100 GbE QSFP+ SR4 Fiber Transceiver\" (range 100 m, MS450-12); the row's part number and alt text read \"MA-QSFP-100G-SR5\"",
       "retrieved": "2026-11-26",
-      "caption_note": "Meraki labels this row MA-QSFP-100G-SR5, an apparent typo for MA-QSFP-100G-SR4"
+      "caption_note": "Meraki shows the same blank-label QSFP photo for MA-QSFP-40G-LR4, MA-QSFP-100G-SR4 and MA-QSFP-100G-LR4; the label does not identify the part; Meraki labels this row MA-QSFP-100G-SR5, an apparent typo for MA-QSFP-100G-SR4"
     },
     {
       "vendor": "Cisco Meraki",
       "sku": "MA-QSFP-40G-LR4",
-      "file": "images/accessories/cisco-meraki/ma-qsfp-40g-lr4.jpg",
+      "file": "images/accessories/cisco-meraki/ma-qsfp-blank-label.jpg",
       "image_type": "photo",
       "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
       "source_detail": "MS Accessories page, product photo in the MA-QSFP-40G-LR4 row (alt text \"Photo of the MA-QSFP-40G-LR4 accessory.\")",
-      "retrieved": "2026-11-26"
+      "retrieved": "2026-11-26",
+      "caption_note": "Meraki shows the same blank-label QSFP photo for MA-QSFP-40G-LR4, MA-QSFP-100G-SR4 and MA-QSFP-100G-LR4; the label does not identify the part"
     },
     {
       "vendor": "Cisco Meraki",
@@ -610,16 +614,6 @@
       "source_detail": "Cisco SFP Modules for Gigabit Ethernet Applications Data Sheet, page 3, Figure 2 \"Cisco 1000BASE-T Copper SFP\"; GLC-TE is listed in the data sheet",
       "retrieved": "2026-11-27",
       "caption_note": "Photo captioned \"Cisco 1000BASE-T Copper SFP\"; the data sheet does not say which part it shows"
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QDD-400-AOC3M",
-      "file": "images/accessories/cisco-nexus/qdd-400-aocxm.jpg",
-      "image_type": "photo",
-      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
-      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 6 of the PDF version, Figure 4 \"QDD-400-AOCxM\"",
-      "retrieved": "2026-11-27",
-      "caption_note": "Cisco shows one photo for every length; the length in the photo is not stated"
     },
     {
       "vendor": "Cisco Nexus",
@@ -717,16 +711,6 @@
     },
     {
       "vendor": "Cisco Nexus",
-      "sku": "QDD-4ZQ100-CU1M",
-      "file": "images/accessories/cisco-nexus/qdd-4zq100-cuxm.jpg",
-      "image_type": "photo",
-      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
-      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 5 of the PDF version, Figure 2 \"QDD-4ZQ100-CUxM\"",
-      "retrieved": "2026-11-27",
-      "caption_note": "Cisco shows one photo for every length; the length in the photo is not stated"
-    },
-    {
-      "vendor": "Cisco Nexus",
       "sku": "QSFP-100G-AOC3M",
       "file": "images/accessories/cisco-nexus/qsfp-100g-aoc3m.jpg",
       "image_type": "photo",
@@ -741,7 +725,8 @@
       "image_type": "photo",
       "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
       "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 8, section \"Cisco QSFP-100G-CUxM\", Figure 2 \"QSFP-100G-CU1M cables\"; QSFP-100G-CU1M is listed in the data sheet",
-      "retrieved": "2026-11-27"
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo shows the QSFP-100G-CU1M"
     },
     {
       "vendor": "Cisco Nexus",
@@ -769,7 +754,8 @@
       "image_type": "photo",
       "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
       "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 3, Figure 1 \"QSFP-100G Optical modules\", the module labelled QSFP-100G-LR4-S (cropped from the four-module figure)",
-      "retrieved": "2026-11-27"
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo shows QSFP-100G-LR4-S"
     },
     {
       "vendor": "Cisco Nexus",
@@ -787,7 +773,8 @@
       "image_type": "photo",
       "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
       "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 3, Figure 1 \"QSFP-100G Optical modules\", the module labelled QSFP-100G-SR4-S (cropped from the four-module figure)",
-      "retrieved": "2026-11-27"
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo shows QSFP-100G-SR4-S"
     },
     {
       "vendor": "Cisco Nexus",
@@ -1229,12 +1216,12 @@
     {
       "vendor": "HPE Aruba",
       "sku": "JH232A",
-      "file": "images/accessories/hpe-aruba/qsfp-plus-lc-section.jpg",
+      "file": "images/accessories/hpe-aruba/qsfp-lc-section.jpg",
       "image_type": "photo",
       "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
       "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 109, photo at the start of the \"40G QSFP+ optical transceiver modules that use LC connectors\" section, above the models table that lists JH232A (page 110)",
       "retrieved": "2026-11-27",
-      "caption_note": "Representative photo for the \"40G QSFP+ optical transceiver modules that use LC connectors\" section; the guide does not say which part it shows"
+      "caption_note": "HPE uses this photo for both its 40G QSFP+ LC and 100G QSFP28 LC sections; the guide does not say which part it shows"
     },
     {
       "vendor": "HPE Aruba",
@@ -1259,12 +1246,12 @@
     {
       "vendor": "HPE Aruba",
       "sku": "JL310A",
-      "file": "images/accessories/hpe-aruba/qsfp28-lc-section.jpg",
+      "file": "images/accessories/hpe-aruba/qsfp-lc-section.jpg",
       "image_type": "photo",
       "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
       "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 73, photo at the start of the \"100G QSFP28 optical transceiver modules that use LC connectors\" section, above the models table that lists JL310A (page 75)",
       "retrieved": "2026-11-27",
-      "caption_note": "Representative photo for the \"100G QSFP28 optical transceiver modules that use LC connectors\" section; the guide does not say which part it shows"
+      "caption_note": "HPE uses this photo for both its 40G QSFP+ LC and 100G QSFP28 LC sections; the guide does not say which part it shows"
     },
     {
       "vendor": "HPE Aruba",
@@ -1338,26 +1325,6 @@
     },
     {
       "vendor": "HPE Aruba",
-      "sku": "R0M44A",
-      "file": "images/accessories/hpe-aruba/sfp28-aoc-section.jpg",
-      "image_type": "photo",
-      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
-      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 165, photo at the start of the \"25G SFP28 AOC (Active Optical Cable)\" section, above the models table that lists R0M44A (page 166)",
-      "retrieved": "2026-11-27",
-      "caption_note": "HPE's photo for this section shows a straight AOC and a breakout AOC; the length is not stated"
-    },
-    {
-      "vendor": "HPE Aruba",
-      "sku": "R0M45A",
-      "file": "images/accessories/hpe-aruba/sfp28-aoc-section.jpg",
-      "image_type": "photo",
-      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
-      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 165, photo at the start of the \"25G SFP28 AOC (Active Optical Cable)\" section, above the models table that lists R0M45A (page 166)",
-      "retrieved": "2026-11-27",
-      "caption_note": "HPE's photo for this section shows a straight AOC and a breakout AOC; the length is not stated"
-    },
-    {
-      "vendor": "HPE Aruba",
       "sku": "R0M46A",
       "file": "images/accessories/hpe-aruba/sfp56-dac-section.jpg",
       "image_type": "photo",
@@ -1378,16 +1345,6 @@
     },
     {
       "vendor": "HPE Aruba",
-      "sku": "R0Z21A",
-      "file": "images/accessories/hpe-aruba/sfp28-aoc-section.jpg",
-      "image_type": "photo",
-      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
-      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 165, photo at the start of the \"25G SFP28 AOC (Active Optical Cable)\" section, above the models table that lists R0Z21A (page 166)",
-      "retrieved": "2026-11-27",
-      "caption_note": "HPE's photo for this section shows a straight AOC and a breakout AOC; the length is not stated"
-    },
-    {
-      "vendor": "HPE Aruba",
       "sku": "R0Z25A",
       "file": "images/accessories/hpe-aruba/qsfp28-dac-section.jpg",
       "image_type": "photo",
@@ -1403,26 +1360,6 @@
       "image_type": "photo",
       "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
       "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 86, photo above the QSFP28 DAC models table that lists R0Z26A (page 86)",
-      "retrieved": "2026-11-27",
-      "caption_note": "HPE's photo for the QSFP28 DAC table shows a straight DAC and a breakout DAC; the guide does not say which part or length it shows"
-    },
-    {
-      "vendor": "HPE Aruba",
-      "sku": "S1J07A",
-      "file": "images/accessories/hpe-aruba/qsfp28-dac-section.jpg",
-      "image_type": "photo",
-      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
-      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 86, photo above the QSFP28 DAC models table that lists S1J07A (page 86)",
-      "retrieved": "2026-11-27",
-      "caption_note": "HPE's photo for the QSFP28 DAC table shows a straight DAC and a breakout DAC; the guide does not say which part or length it shows"
-    },
-    {
-      "vendor": "HPE Aruba",
-      "sku": "S1J08A",
-      "file": "images/accessories/hpe-aruba/qsfp28-dac-section.jpg",
-      "image_type": "photo",
-      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
-      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 86, photo above the QSFP28 DAC models table that lists S1J08A (page 86)",
       "retrieved": "2026-11-27",
       "caption_note": "HPE's photo for the QSFP28 DAC table shows a straight DAC and a breakout DAC; the guide does not say which part or length it shows"
     },
@@ -1655,8 +1592,18 @@
     },
     {
       "vendor": "Cisco Nexus",
+      "sku": "QDD-400-AOC3M",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet (downloaded manually) shows QDD-400-AOCxM in Figure 4, but the photo is the same image as the 100G data sheet's \"QSFP-100G-AOC3M cables\" figure, so it most likely shows the 100G QSFP cable, not this part."
+    },
+    {
+      "vendor": "Cisco Nexus",
       "sku": "QDD-400G-LR8-S",
       "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet (downloaded manually) lists QDD-400G-LR8-S but has no figure for it; the high-power, ER1 and coherent QSFP-DD data sheets do not cover it either."
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-4ZQ100-CU1M",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet (downloaded manually) shows this cable in Figure 2, but the photo is the same image as the 100G data sheet's QSFP-4SFP25G-CUxM figure, with SFP-size breakout ends rather than QSFP28, so it does not show this part."
     },
     {
       "vendor": "Cisco Nexus",
@@ -1822,6 +1769,31 @@
       "vendor": "Fortinet",
       "sku": "SP-CABLE-ADASFP+",
       "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0M44A",
+      "reason": "The HPE Aruba AOS-S and AOS-CX Transceiver Guide (downloaded manually; arubanetworking.hpe.com blocks automated requests from this environment) lists this SFP28 AOC under \"25G SFP28 AOC (Active Optical Cable)\", but that section's photo shows a QSFP AOC and a QSFP-to-4x-SFP breakout, not an SFP28-to-SFP28 cable, so it was not used."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0M45A",
+      "reason": "The HPE Aruba AOS-S and AOS-CX Transceiver Guide (downloaded manually; arubanetworking.hpe.com blocks automated requests from this environment) lists this SFP28 AOC under \"25G SFP28 AOC (Active Optical Cable)\", but that section's photo shows a QSFP AOC and a QSFP-to-4x-SFP breakout, not an SFP28-to-SFP28 cable, so it was not used."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0Z21A",
+      "reason": "The HPE Aruba AOS-S and AOS-CX Transceiver Guide (downloaded manually; arubanetworking.hpe.com blocks automated requests from this environment) lists this SFP28 AOC under \"25G SFP28 AOC (Active Optical Cable)\", but that section's photo shows a QSFP AOC and a QSFP-to-4x-SFP breakout, not an SFP28-to-SFP28 cable, so it was not used."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "S1J07A",
+      "reason": "The HPE Aruba AOS-S and AOS-CX Transceiver Guide (downloaded manually; arubanetworking.hpe.com blocks automated requests from this environment) lists this 50G QSFP56 to SFP56 DAC in its QSFP28 DAC table, but the photo above that table shows a straight QSFP DAC and a four-way breakout, neither of which is a QSFP56 to SFP56 cable, so it was not used."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "S1J08A",
+      "reason": "The HPE Aruba AOS-S and AOS-CX Transceiver Guide (downloaded manually; arubanetworking.hpe.com blocks automated requests from this environment) lists this 50G QSFP56 to SFP56 DAC in its QSFP28 DAC table, but the photo above that table shows a straight QSFP DAC and a four-way breakout, neither of which is a QSFP56 to SFP56 cable, so it was not used."
     },
     {
       "vendor": "Juniper",
