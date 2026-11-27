@@ -1497,17 +1497,17 @@
     {
       "vendor": "Cisco Nexus",
       "sku": "QDD-400G-DR4-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP Transceiver Modules Data Sheet (400g-qsfp-transceiver-modules-ds.pdf, downloaded manually) mentions this QSFP-DD part only in its interoperability tables; its photos show QSFP112 modules (QSFP-400G-DR4, VR4, FR4), a different form factor, so they were not used. Needs Cisco's 400G QSFP-DD data sheet."
     },
     {
       "vendor": "Cisco Nexus",
       "sku": "QDD-400G-FR4-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP Transceiver Modules Data Sheet (400g-qsfp-transceiver-modules-ds.pdf, downloaded manually) mentions this QSFP-DD part only in its interoperability tables; its photos show QSFP112 modules (QSFP-400G-DR4, VR4, FR4), a different form factor, so they were not used. Needs Cisco's 400G QSFP-DD data sheet."
     },
     {
       "vendor": "Cisco Nexus",
       "sku": "QDD-400G-LR4-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP Transceiver Modules Data Sheet (400g-qsfp-transceiver-modules-ds.pdf, downloaded manually) mentions this QSFP-DD part only in its interoperability tables; its photos show QSFP112 modules (QSFP-400G-DR4, VR4, FR4), a different form factor, so they were not used. Needs Cisco's 400G QSFP-DD data sheet."
     },
     {
       "vendor": "Cisco Nexus",
@@ -1527,7 +1527,7 @@
     {
       "vendor": "Cisco Nexus",
       "sku": "QDD-400G-VR4",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP Transceiver Modules Data Sheet (400g-qsfp-transceiver-modules-ds.pdf, downloaded manually) mentions this QSFP-DD part only in its interoperability tables; its photos show QSFP112 modules (QSFP-400G-DR4, VR4, FR4), a different form factor, so they were not used. Needs Cisco's 400G QSFP-DD data sheet."
     },
     {
       "vendor": "Cisco Nexus",
