@@ -13,5 +13,6 @@ For accessory images, follow "Accessory images" in CONTRIBUTING.md. -->
 ## Checks
 
 - [ ] `npm run validate` shows 0 errors, and I have read any new warnings
+- [ ] `npm test` passes
 - [ ] `npm run build` passes
 - [ ] Flags (`verify`, `verifyNote`) added where datasheet values disagree or were derived

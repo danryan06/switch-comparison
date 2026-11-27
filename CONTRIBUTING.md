@@ -27,7 +27,7 @@ Prefer to edit the data yourself? Follow the steps below and open a pull request
    - If the flag describes something the schema cannot represent (not missing or conflicting data), also add `"modelingLimitation": true` next to `verifyNote`. It then shows under Known modeling limitations instead of the open Needs checking items.
 
    When a vendor's own documents conflict: prefer the specific table over overview text; prefer two agreeing sources over one; for PoE budgets, use the lower figure. Record the other value in a note.
-5. Run `npm run validate`. Fix every error. Read every warning and either fix it or explain it in the PR.
+5. Run `npm run validate` and `npm test`. Fix every error and failing test. Read every warning and either fix it or explain it in the PR.
    If you changed data, set `updated` in `data/index.json` to today's date; the validator warns when it is older than the newest source `retrieved` date.
 6. In the PR description, cite the datasheet page or table for each value you changed.
 

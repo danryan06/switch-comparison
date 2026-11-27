@@ -6,6 +6,18 @@ import { fileURLToPath } from 'node:url';
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = p => JSON.parse(fs.readFileSync(path.join(ROOT, 'data', p), 'utf8'));
 
+/* Builds dist/index.html from the template: inlines src/sizer.js as a classic script (its
+   `export` keywords stripped, so its top-level declarations become page globals) and the data
+   as JSON. Function replacers keep `$&`-style sequences in the inputs from being expanded. */
+export function assembleHtml(tpl, data, sizerSrc = fs.readFileSync(path.join(ROOT, 'src', 'sizer.js'), 'utf8')) {
+  if (!tpl.includes('/*__DATA__*/null')) throw new Error('Data placeholder missing from src/index.html');
+  if (!tpl.includes('/*__SIZER__*/')) throw new Error('Sizer placeholder missing from src/index.html');
+  if (/^\s*import\s/m.test(sizerSrc)) throw new Error('src/sizer.js must not import anything; it is inlined as a classic script');
+  const sizer = sizerSrc.replace(/^export\s+(?=(?:async\s+)?(?:function|const|let|class)\b)/gm, '');
+  const json = JSON.stringify(data).replace(/</g, '\\u003c');
+  return tpl.replace('/*__SIZER__*/', () => sizer).replace('/*__DATA__*/null', () => json);
+}
+
 export function loadData() {
   const index = read('index.json');
   return {
