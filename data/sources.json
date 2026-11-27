@@ -71,47 +71,58 @@
   },
   "ui-ecs-24-poe": {
     "title": "UniFi ECS-24-PoE Tech Specs",
-    "url": "https://techspecs.ui.com/unifi/switching/ecs-24-poe?subcategory=all-switching"
+    "url": "https://techspecs.ui.com/unifi/switching/ecs-24-poe?subcategory=all-switching",
+    "retrieved": "2026-11-27"
   },
   "ui-ecs-48-poe": {
     "title": "UniFi ECS-48-PoE Tech Specs",
-    "url": "https://techspecs.ui.com/unifi/switching/ecs-48-poe?subcategory=all-switching"
+    "url": "https://techspecs.ui.com/unifi/switching/ecs-48-poe?subcategory=all-switching",
+    "retrieved": "2026-11-27"
   },
   "ui-ecs-24s": {
     "title": "UniFi ECS-24S Tech Specs",
-    "url": "https://techspecs.ui.com/unifi/switching/ecs-24s?subcategory=all-switching"
+    "url": "https://techspecs.ui.com/unifi/switching/ecs-24s?subcategory=all-switching",
+    "retrieved": "2026-11-27"
   },
   "ui-ecs-24s-poe": {
     "title": "UniFi ECS-24S-PoE Tech Specs",
-    "url": "https://techspecs.ui.com/unifi/switching/ecs-24s-poe?subcategory=all-switching"
+    "url": "https://techspecs.ui.com/unifi/switching/ecs-24s-poe?subcategory=all-switching",
+    "retrieved": "2026-11-27"
   },
   "ui-ecs-48s": {
     "title": "UniFi ECS-48S Tech Specs",
-    "url": "https://techspecs.ui.com/unifi/switching/ecs-48s?subcategory=all-switching"
+    "url": "https://techspecs.ui.com/unifi/switching/ecs-48s?subcategory=all-switching",
+    "retrieved": "2026-11-27"
   },
   "ui-ecs-48s-poe": {
     "title": "UniFi ECS-48S-PoE Tech Specs",
-    "url": "https://techspecs.ui.com/unifi/switching/ecs-48s-poe?subcategory=all-switching"
+    "url": "https://techspecs.ui.com/unifi/switching/ecs-48s-poe?subcategory=all-switching",
+    "retrieved": "2026-11-27"
   },
   "ui-usw-pro-max-48-poe": {
     "title": "UniFi USW-Pro-Max-48-PoE Tech Specs",
-    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-48-poe?subcategory=all-switching"
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-48-poe?subcategory=all-switching",
+    "retrieved": "2026-11-27"
   },
   "ui-usw-pro-max-48": {
     "title": "UniFi USW-Pro-Max-48 Tech Specs",
-    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-48?subcategory=all-switching"
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-48?subcategory=all-switching",
+    "retrieved": "2026-11-27"
   },
   "ui-usw-pro-max-24-poe": {
     "title": "UniFi USW-Pro-Max-24-PoE Tech Specs",
-    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-24-poe?subcategory=all-switching"
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-24-poe?subcategory=all-switching",
+    "retrieved": "2026-11-27"
   },
   "ui-usw-pro-max-24": {
     "title": "UniFi USW-Pro-Max-24 Tech Specs",
-    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-24?subcategory=all-switching"
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-24?subcategory=all-switching",
+    "retrieved": "2026-11-27"
   },
   "ui-usw-pro-max-16-poe": {
     "title": "UniFi USW-Pro-Max-16-PoE Tech Specs",
-    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-16-poe?subcategory=all-switching"
+    "url": "https://techspecs.ui.com/unifi/switching/usw-pro-max-16-poe?subcategory=all-switching",
+    "retrieved": "2026-11-27"
   },
   "a6000": {
     "title": "HPE Aruba Networking CX 6000 Switch Series QuickSpecs (a50002592enw)",
