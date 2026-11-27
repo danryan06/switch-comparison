@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://switchcomparison.com/data/accessory-images.schema.json",
+  "title": "Accessory images manifest",
+  "description": "Vendor-hosted images for accessory parts. Every vendor + SKU in data/accessories/*.json appears exactly once, in images or in missing. scripts/lib.mjs validateAccessoryImages() enforces the rules this schema cannot express (catalog membership, file existence and size, vendor domains).",
+  "type": "object",
+  "required": ["retrieved", "sourcing_rule", "images", "missing"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "retrieved": { "type": "string", "format": "date", "description": "Date the manifest was last updated." },
+    "sourcing_rule": { "type": "string", "description": "The rule every image follows, for example \"Vendor-hosted sources only\"." },
+    "images": { "type": "array", "items": { "$ref": "#/$defs/image" } },
+    "missing": { "type": "array", "items": { "$ref": "#/$defs/missing" } }
+  },
+  "$defs": {
+    "image": {
+      "type": "object",
+      "required": ["vendor", "sku", "file", "image_type", "source_page_url", "source_detail", "retrieved"],
+      "additionalProperties": false,
+      "properties": {
+        "vendor": { "type": "string", "description": "Must match the vendor of an accessories catalog exactly." },
+        "sku": { "type": "string", "description": "Must exist in that vendor's catalog." },
+        "file": { "type": "string", "pattern": "^images/accessories/[a-z0-9-]+/[a-z0-9-]+\\.(jpg|png)$", "description": "Path under src/assets/, served from the site root." },
+        "image_type": { "enum": ["photo", "drawing"] },
+        "source_page_url": { "type": "string", "pattern": "^https://", "description": "Vendor page or document the image comes from." },
+        "source_detail": { "type": "string", "description": "Which figure, page or section." },
+        "retrieved": { "type": "string", "format": "date" },
+        "caption_note": { "type": "string", "description": "What the image shows when it is shared or not tied to this exact SKU." }
+      }
+    },
+    "missing": {
+      "type": "object",
+      "required": ["vendor", "sku", "reason"],
+      "additionalProperties": false,
+      "properties": {
+        "vendor": { "type": "string" },
+        "sku": { "type": "string" },
+        "reason": { "type": "string", "description": "What was checked and why no vendor image was used." }
+      }
+    }
+  }
+}

@@ -6,10 +6,10 @@ on:
   pull_request:
   workflow_dispatch:
 
+# Least privilege: the workflow default is read-only, and only the deploy job
+# gets the Pages and OIDC token permissions it needs.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # PR runs only build; give them their own group so opening or updating a PR
 # can never cancel an in-flight deploy from main. Deploys queue rather than
@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
       - run: npm run validate
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
@@ -37,6 +37,9 @@ jobs:
     if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

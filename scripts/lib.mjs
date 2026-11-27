@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-export const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+/* fileURLToPath decodes %20 and handles Windows drive letters, which URL.pathname does not. */
+export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = p => JSON.parse(fs.readFileSync(path.join(ROOT, 'data', p), 'utf8'));
 
 export function loadData() {
@@ -202,6 +204,10 @@ export function validate(data, today = new Date().toISOString().slice(0, 10)) {
     else if (!isDate(src.retrieved)) errors.push(`source ${k}: retrieved must be a YYYY-MM-DD date`);
   }
   for (const k of Object.keys(data.uplinks)) if (!usedUp.has(k)) warnings.push(`uplinks ${k}: not referenced by any model`);
+  /* The data date shown on the site should move whenever a source is re-checked. */
+  const newest = Object.values(data.sources).map(s => s.retrieved).filter(isDate).sort().pop();
+  if (!isDate(data.updated || '')) errors.push('data/index.json: updated must be a YYYY-MM-DD date');
+  else if (newest && data.updated < newest) warnings.push(`data/index.json: updated (${data.updated}) is older than the newest source retrieved date (${newest}); bump it`);
   if (data.schema) {
     const S = data.schema, props = d => new Set(Object.keys(d?.properties || {}));
     const famP = props(S), modP = props(S.$defs.model), accP = props(S.$defs.accessoryCatalog), partP = props(S.$defs.accessoryPart);
@@ -241,6 +247,16 @@ export function validateAccessoryImages(data, file = path.join(ROOT, 'data', 'ac
   try { man = JSON.parse(fs.readFileSync(file, 'utf8')); }
   catch (e) { errors.push(`accessory-images: not valid JSON (${e.message})`); return { errors, warnings, counts }; }
   const at = 'accessory-images';
+  /* Fields that data/accessory-images.schema.json does not declare are probably typos. */
+  const schemaFile = path.join(ROOT, 'data', 'accessory-images.schema.json');
+  if (fs.existsSync(schemaFile)) {
+    const S = JSON.parse(fs.readFileSync(schemaFile, 'utf8'));
+    const keys = d => new Set(Object.keys(d?.properties || {}));
+    const check = (where, o, allowed) => { for (const k of Object.keys(o || {})) if (!allowed.has(k)) warnings.push(`${where}: property "${k}" not declared in data/accessory-images.schema.json`); };
+    check(at, man, keys(S));
+    (man.images || []).forEach((e, i) => check(`${at} images[${i}]`, e, keys(S.$defs?.image)));
+    (man.missing || []).forEach((e, i) => check(`${at} missing[${i}]`, e, keys(S.$defs?.missing)));
+  }
   if (!isDate(man.retrieved || '')) errors.push(`${at}: retrieved must be a YYYY-MM-DD date`);
   if (!man.sourcing_rule) errors.push(`${at}: missing sourcing_rule`);
   if (!Array.isArray(man.images) || !Array.isArray(man.missing)) {

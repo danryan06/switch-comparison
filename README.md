@@ -4,16 +4,16 @@ A vendor-neutral site for comparing campus and aggregation Ethernet switches. Ev
 
 Live site: [switchcomparison.com](https://switchcomparison.com/)
 
-Coverage as of the 2026-10-15 data update: **84 families, 468 models** (31 past end of sale) across Cisco Catalyst (9200 through 9500, including 9350), Cisco Nexus 9200 and 9300, Cisco Meraki MS (including MS130R and MS450), HPE Aruba CX (6000 through 8360, plus 4100i), Arista (710P through 722XPM), Extreme Networks (4120 through 5720), Juniper EX (2300 through 5200), RUCKUS ICX (7550 through 8200), Ubiquiti UniFi, Fortinet FortiSwitch (including Rugged), and Meter. The Data tab on the site always shows the current counts. That spans copper and fiber access, high-speed fabric ports on aggregation SKUs, and compact, desktop, and rugged form factors.
+Coverage as of the 2026-11-27 data update: **84 families, 468 models** (31 past end of sale) across Cisco Catalyst (9200 through 9500, including 9350), Cisco Nexus 9200 and 9300, Cisco Meraki MS (including MS130R and MS450), HPE Aruba CX (6000 through 8360, plus 4100i), Arista (710P through 722XPM), Extreme Networks (4120 through 5720), Juniper EX (2300 through 5200), RUCKUS ICX (7550 through 8200), Ubiquiti UniFi, Fortinet FortiSwitch (including Rugged), and Meter. The About the data page (footer link) always shows the current counts. That spans copper and fiber access, high-speed fabric ports on aggregation SKUs, and compact, desktop, and rugged form factors.
 
 ## What it does
 
 - **Browse.** Filter and sort every model by vendor, role (access vs aggregation), ports, PoE, lifecycle, environment, and more. Show or hide columns, sort any visible column, and tick up to four rows to compare. Export the visible table as CSV.
 - **Compare.** Up to four models side by side, with differing cells highlighted. Faceplates show access, fabric, and modular uplink layouts. Export the table as CSV, print it for a design doc, or share a permalink that restores the selection.
 - **Size a closet.** Optional helper: describe endpoints (APs, phones, cameras) plus copper, fiber, and uplink needs. Models that fit are sized with the fewest switches and the smallest PSU configuration; models that do not list why. Families with `role: "aggregation"` stay in Browse and Compare but drop out of the sizer, along with any pure-fabric SKU that has no `accessPorts`. Share a permalink that restores the demand inputs.
-- **Accessories.** Per-vendor shortlist of SR/LR (and related) transceivers, DACs/AOCs, and stacking cables, deep-linked at `#accessories/<vendor>`, with a link out to each vendor's full optics matrix.
+- **Accessories.** Per-vendor shortlist of SR/LR (and related) transceivers, DACs/AOCs, and stacking cables, deep-linked at `#accessories/<vendor>`, with a link out to each vendor's full optics matrix. Parts with a vendor image show an icon beside the SKU that opens the image, what it shows, and its vendor source.
 
-A **Needs checking** page (footer link) collects values that disagree inside a datasheet or had to be derived, until someone confirms them. **Accessories** lists a short per-vendor set of SR/LR optics, DACs/AOCs, and stacking cables, with a link to each vendor's full optics matrix.
+A **Needs checking** page (footer link) collects values that disagree inside a datasheet or had to be derived, until someone confirms them.
 
 ## Repository layout
 
@@ -25,19 +25,25 @@ data/
   schema.json                JSON Schema for family and accessory files
   families/<vendor>/<id>.json  one file per product family
   accessories/<vendor>.json  per-vendor optics, DAC/AOC, and stacking shortlist
+  accessory-images.json      vendor image (or reason there is none) for every accessory SKU
+  accessory-images.schema.json  JSON Schema for the image manifest
 src/index.html               the app, with a placeholder where data is inlined
+src/assets/                  copied into dist/ as-is
+  images/accessories/<vendor>/  vendor product images (see LICENSE)
+  fonts/                     self-hosted Barlow and Barlow Condensed (SIL OFL 1.1)
 scripts/
   lib.mjs                    loads data/ and holds the validation rules
   validate.mjs               checks the data (runs in CI on every PR)
   build.mjs                  validates, then writes dist/index.html and dist/data/
 .github/workflows/pages.yml  validate on PRs, build and deploy to GitHub Pages on main
+.github/dependabot.yml       keeps the workflow's GitHub Actions current
 ```
 
-The built site is a single self-contained HTML file. The raw data is also published at `/data/`, including `/data/all.json`, so others can consume it. Permalinks encode Compare and Size state in the URL hash, and Accessories at `#accessories/<vendor>`, so there is no backend.
+The app is a single HTML file with the switch and accessory data inlined, so it works without a backend. Fonts and accessory images are served beside it, and the accessory image manifest is fetched only when the Accessories view opens. The raw data is also published at `/data/`, including `/data/all.json` and `/data/accessory-images.json`, so others can consume it. Permalinks encode Compare and Size state in the URL hash, and Accessories at `#accessories/<vendor>`, so there is no backend.
 
 ## Building locally
 
-Requires Node 18 or newer. There are no dependencies to install. Useful when editing data or the UI:
+Requires Node 22 or newer. There are no dependencies to install. Useful when editing data or the UI:
 
 ```
 npm run validate   # check the data
@@ -79,8 +85,10 @@ Some values disagree between two places in the same datasheet, or had to be deri
 
 The validator also warns when a PoE budget exceeds what the ports could physically draw (port count times per-port maximum). That is expected wherever a vendor states what the supplies make available rather than what the ports can draw (for example Cisco lists 740W with two supplies on 24-port Catalyst 9200 models, while its own footnote caps them at 720W); the sizer uses the lower figure. Switching capacity the datasheet does not publish is stored as `null` and warned about the same way.
 
-It also warns about housekeeping: sources or uplink sets that nothing references, sources with no `retrieved` date, and properties that `data/schema.json` does not declare.
+It also warns about housekeeping: sources or uplink sets that nothing references, sources with no `retrieved` date, a data date in `data/index.json` older than the newest source `retrieved` date, and properties that `data/schema.json` does not declare.
+
+For accessory images it checks that every catalog SKU appears exactly once in `data/accessory-images.json` (with an image or a reason), that each image's SKU exists in its vendor's catalog, that each file exists and is under 300 KB, and that each source is an https link on a vendor domain taken from `data/sources.json` or a catalog's `opticsMatrixUrl`. The sourcing rules are in CONTRIBUTING.md.
 
 ## License
 
-MIT. See LICENSE.
+The code and data are MIT licensed. Vendor product images in `src/assets/images/accessories/` remain the property of their owners and are not covered by that license, and the bundled fonts are under the SIL Open Font License. See LICENSE.
