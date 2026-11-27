@@ -613,6 +613,120 @@
     },
     {
       "vendor": "Cisco Nexus",
+      "sku": "QDD-400-AOC3M",
+      "file": "images/accessories/cisco-nexus/qdd-400-aocxm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 6 of the PDF version, Figure 4 \"QDD-400-AOCxM\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for every length; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400-CU1M",
+      "file": "images/accessories/cisco-nexus/qdd-400-cuxm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 5 of the PDF version, Figure 1 \"QDD-400-CUxM\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for every length; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400-CU2M",
+      "file": "images/accessories/cisco-nexus/qdd-400-cuxm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 5 of the PDF version, Figure 1 \"QDD-400-CUxM\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for every length; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400G-DR4-S",
+      "file": "images/accessories/cisco-nexus/qdd-400g-dr4-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 8 of the PDF version, Figure 9 \"QDD-400G-DR4-S\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400G-FR4-S",
+      "file": "images/accessories/cisco-nexus/qdd-400g-fr4-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 9 of the PDF version, Figure 12 \"QDD-400G-FR4-S\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400G-LR4-S",
+      "file": "images/accessories/cisco-nexus/qdd-400g-lr4-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 9 of the PDF version, Figure 13 \"QDD-400G-LR4-S\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400G-SR4.2-BD",
+      "file": "images/accessories/cisco-nexus/qdd-400g-sr4-2-bd.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 7 of the PDF version, Figure 7 \"QDD-400G-SR4.2-BD\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400G-SR8-S",
+      "file": "images/accessories/cisco-nexus/qdd-400g-vr4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 7 of the PDF version, Figure 6 \"QDD-400G-SR8-S\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco uses the same photo for QDD-400G-VR4 (Figure 5) and QDD-400G-SR8-S (Figure 6)"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400G-VR4",
+      "file": "images/accessories/cisco-nexus/qdd-400g-vr4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 6 of the PDF version, Figure 5 \"QDD-400G-VR4\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco uses the same photo for QDD-400G-VR4 (Figure 5) and QDD-400G-SR8-S (Figure 6)"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-4X100G-FR-S",
+      "file": "images/accessories/cisco-nexus/qdd-4x100g-fr-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 8 of the PDF version, Figure 10 \"QDD-4X100G-FR-S\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-4X100G-LR-S",
+      "file": "images/accessories/cisco-nexus/qdd-4x100g-lr-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 9 of the PDF version, Figure 11 \"QDD-4X100G-LR-S\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-4ZQ100-CU1M",
+      "file": "images/accessories/cisco-nexus/qdd-4zq100-cuxm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 5 of the PDF version, Figure 2 \"QDD-4ZQ100-CUxM\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for every length; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
       "sku": "QSFP-100G-AOC3M",
       "file": "images/accessories/cisco-nexus/qsfp-100g-aoc3m.jpg",
       "image_type": "photo",
@@ -1481,68 +1595,8 @@
     },
     {
       "vendor": "Cisco Nexus",
-      "sku": "QDD-400-AOC3M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QDD-400-CU1M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QDD-400-CU2M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QDD-400G-DR4-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP Transceiver Modules Data Sheet (400g-qsfp-transceiver-modules-ds.pdf, downloaded manually) mentions this QSFP-DD part only in its interoperability tables; its photos show QSFP112 modules (QSFP-400G-DR4, VR4, FR4), a different form factor, so they were not used. Needs Cisco's 400G QSFP-DD data sheet."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QDD-400G-FR4-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP Transceiver Modules Data Sheet (400g-qsfp-transceiver-modules-ds.pdf, downloaded manually) mentions this QSFP-DD part only in its interoperability tables; its photos show QSFP112 modules (QSFP-400G-DR4, VR4, FR4), a different form factor, so they were not used. Needs Cisco's 400G QSFP-DD data sheet."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QDD-400G-LR4-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP Transceiver Modules Data Sheet (400g-qsfp-transceiver-modules-ds.pdf, downloaded manually) mentions this QSFP-DD part only in its interoperability tables; its photos show QSFP112 modules (QSFP-400G-DR4, VR4, FR4), a different form factor, so they were not used. Needs Cisco's 400G QSFP-DD data sheet."
-    },
-    {
-      "vendor": "Cisco Nexus",
       "sku": "QDD-400G-LR8-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QDD-400G-SR4.2-BD",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QDD-400G-SR8-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QDD-400G-VR4",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP Transceiver Modules Data Sheet (400g-qsfp-transceiver-modules-ds.pdf, downloaded manually) mentions this QSFP-DD part only in its interoperability tables; its photos show QSFP112 modules (QSFP-400G-DR4, VR4, FR4), a different form factor, so they were not used. Needs Cisco's 400G QSFP-DD data sheet."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QDD-4X100G-FR-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QDD-4X100G-LR-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QDD-4ZQ100-CU1M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet (downloaded manually) lists QDD-400G-LR8-S but has no figure for it; the high-power, ER1 and coherent QSFP-DD data sheets do not cover it either."
     },
     {
       "vendor": "Cisco Nexus",
