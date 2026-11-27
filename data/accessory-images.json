@@ -1,0 +1,2144 @@
+{
+  "retrieved": "2026-11-27",
+  "sourcing_rule": "Vendor-hosted sources only",
+  "images": [
+    {
+      "vendor": "Arista",
+      "sku": "AOC-S-S-25G-10M",
+      "file": "images/accessories/arista/25gbase-cr-aoc-sr-and-lr.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 1, photo captioned \"25GBASE-CR, AOC, SR and LR\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Group photo Arista captions \"25GBASE-CR, AOC, SR and LR\": a 25G DAC, AOC and SR and LR modules together"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "CAB-Q-4S-100G-3M",
+      "file": "images/accessories/arista/qsfp100-to-4x-sfp-plus.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 9, photo captioned \"QSFP100 to 4 x SFP+\", beside the 100G QSFP cable specifications (25GBASE-CR, QSFP to 4 x SFP)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Arista captions this breakout \"QSFP100 to 4 x SFP+\"; the length is not stated"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "CAB-Q-Q-100G-1M",
+      "file": "images/accessories/arista/100gbase-cr4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 9, photo captioned \"100GBASE-CR4\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Arista shows one photo for its 100GBASE-CR4 QSFP copper cables; the length is not stated"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "CAB-Q-Q-100G-3M",
+      "file": "images/accessories/arista/100gbase-cr4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 9, photo captioned \"100GBASE-CR4\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Arista shows one photo for its 100GBASE-CR4 QSFP copper cables; the length is not stated"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "CAB-S-S-25G-1M",
+      "file": "images/accessories/arista/25gbase-cr-aoc-sr-and-lr.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 1, photo captioned \"25GBASE-CR, AOC, SR and LR\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Group photo Arista captions \"25GBASE-CR, AOC, SR and LR\": a 25G DAC, AOC and SR and LR modules together"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "CAB-S-S-25G-3M",
+      "file": "images/accessories/arista/25gbase-cr-aoc-sr-and-lr.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 1, photo captioned \"25GBASE-CR, AOC, SR and LR\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Group photo Arista captions \"25GBASE-CR, AOC, SR and LR\": a 25G DAC, AOC and SR and LR modules together"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "CAB-SFP-SFP-1M",
+      "file": "images/accessories/arista/10gbase-cr-copper-cable.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 1, photo captioned \"10GBASE-CR Copper Cable\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Arista shows one photo for its 10GBASE-CR SFP+ copper cables; the length is not stated"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "CAB-SFP-SFP-3M",
+      "file": "images/accessories/arista/10gbase-cr-copper-cable.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 1, photo captioned \"10GBASE-CR Copper Cable\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Arista shows one photo for its 10GBASE-CR SFP+ copper cables; the length is not stated"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "QSFP-100G-LR4",
+      "file": "images/accessories/arista/qsfp-100g-lr4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 9, photo captioned \"100GBASE-LR4 QSFP\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-LR",
+      "file": "images/accessories/arista/10gbase-sr-and-lr-sfp-plus.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 1, photo captioned \"10GBASE-SR and LR SFP+\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Arista captions this photo \"10GBASE-SR and LR SFP+\"; it shows two modules and does not say which is which"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-SR",
+      "file": "images/accessories/arista/10gbase-sr-and-lr-sfp-plus.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 1, photo captioned \"10GBASE-SR and LR SFP+\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Arista captions this photo \"10GBASE-SR and LR SFP+\"; it shows two modules and does not say which is which"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-1G-T",
+      "file": "images/accessories/arista/1000base-t-sfp.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 1, photo captioned \"1000BASE-T SFP\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-25G-LR",
+      "file": "images/accessories/arista/25gbase-cr-aoc-sr-and-lr.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 1, photo captioned \"25GBASE-CR, AOC, SR and LR\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Group photo Arista captions \"25GBASE-CR, AOC, SR and LR\": a 25G DAC, AOC and SR and LR modules together"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-25G-MR-LR",
+      "file": "images/accessories/arista/sfp-25g-mr-lr.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 7, photo captioned \"SFP-25G-MR-LR\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-25G-MR-XSR",
+      "file": "images/accessories/arista/sfp-25g-mr-xsr.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 7, photo captioned \"SFP-25G-MR-XSR\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-25G-SR",
+      "file": "images/accessories/arista/25gbase-cr-aoc-sr-and-lr.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf",
+      "source_detail": "Arista Optics Modules and Cables Data Sheet, page 1, photo captioned \"25GBASE-CR, AOC, SR and LR\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Group photo Arista captions \"25GBASE-CR, AOC, SR and LR\": a 25G DAC, AOC and SR and LR modules together"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "C9200-STACK-KIT",
+      "file": "images/accessories/cisco/c9200-stacking-kit-figure-4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-stackwise-architecture-cte-en.pdf",
+      "source_detail": "Cisco StackWise Architecture on Catalyst 9200 Series Switches White Paper, page 6, section \"Stack connectors\", Figure 4 \"Cisco Catalyst 9200 Series stacking kit\"; C9200-STACK-KIT is listed in the stacking components table",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo captioned \"Cisco Catalyst 9200 Series stacking kit\": two stack adapters and a stack cable"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "C9200L-STACK-KIT",
+      "file": "images/accessories/cisco/c9200-stacking-kit-figure-4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-stackwise-architecture-cte-en.pdf",
+      "source_detail": "Cisco StackWise Architecture on Catalyst 9200 Series Switches White Paper, page 6, section \"Stack connectors\", Figure 4 \"Cisco Catalyst 9200 Series stacking kit\"; C9200L-STACK-KIT is listed in the stacking components table",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo captioned \"Cisco Catalyst 9200 Series stacking kit\": two stack adapters and a stack cable; the paper does not say whether it shows the C9200 or C9200L kit"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "GLC-LH-SMD",
+      "file": "images/accessories/cisco/optical-gigabit-sfp-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/gigabit-ethernet-gbic-sfp-modules/datasheet-c78-366584.pdf",
+      "source_detail": "Cisco SFP Modules for Gigabit Ethernet Applications Data Sheet, page 3, Figure 1 \"Cisco Optical Gigabit Ethernet SFP\"; GLC-LH-SMD is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco Optical Gigabit Ethernet SFP\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "GLC-SX-MMD",
+      "file": "images/accessories/cisco/optical-gigabit-sfp-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/gigabit-ethernet-gbic-sfp-modules/datasheet-c78-366584.pdf",
+      "source_detail": "Cisco SFP Modules for Gigabit Ethernet Applications Data Sheet, page 3, Figure 1 \"Cisco Optical Gigabit Ethernet SFP\"; GLC-SX-MMD is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco Optical Gigabit Ethernet SFP\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "GLC-T",
+      "file": "images/accessories/cisco/1000base-t-copper-sfp-figure-2.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/gigabit-ethernet-gbic-sfp-modules/datasheet-c78-366584.pdf",
+      "source_detail": "Cisco SFP Modules for Gigabit Ethernet Applications Data Sheet, page 3, Figure 2 \"Cisco 1000BASE-T Copper SFP\"; GLC-T is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo captioned \"Cisco 1000BASE-T Copper SFP\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-100G-CU3M",
+      "file": "images/accessories/cisco/qsfp-100g-cu1m.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
+      "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 8, section \"Cisco QSFP-100G-CUxM\", Figure 2 \"QSFP-100G-CU1M cables\"; QSFP-100G-CU3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo shows the QSFP-100G-CU1M"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-100G-LR4-S",
+      "file": "images/accessories/cisco/qsfp-100g-lr4-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
+      "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 3, Figure 1 \"QSFP-100G Optical modules\", the module labelled QSFP-100G-LR4-S (cropped from the four-module figure)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo shows QSFP-100G-LR4-S"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-100G-SR4-S",
+      "file": "images/accessories/cisco/qsfp-100g-sr4-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
+      "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 3, Figure 1 \"QSFP-100G Optical modules\", the module labelled QSFP-100G-SR4-S (cropped from the four-module figure)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo shows QSFP-100G-SR4-S"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-40G-LR4",
+      "file": "images/accessories/cisco/40g-qsfp-modules-overview.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 3, overview photo under \"Product overview\"; QSFP-40G-LR4 is listed in Table 1",
+      "retrieved": "2026-11-27",
+      "caption_note": "Uncaptioned overview photo of three Cisco 40G QSFP modules; the data sheet does not say which parts they are"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-40G-SR4",
+      "file": "images/accessories/cisco/40g-qsfp-modules-overview.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 3, overview photo under \"Product overview\"; QSFP-40G-SR4 is listed in Table 1",
+      "retrieved": "2026-11-27",
+      "caption_note": "Uncaptioned overview photo of three Cisco 40G QSFP modules; the data sheet does not say which parts they are"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-H40G-CU3M",
+      "file": "images/accessories/cisco/40gbase-cr4-dac-figure-2.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 7, Figure 2 \"Cisco 40GBASE-CR4 QSFP direct-attach copper cables\"; QSFP-H40G-CU3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-10G-AOC3M",
+      "file": "images/accessories/cisco/sfp-plus-aoc-figure-5.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 9, Figure 5 \"Cisco direct-attach active optical cables with SFP+ connectors\"; SFP-10G-AOC3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for its SFP+ active optical cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-10G-ER",
+      "file": "images/accessories/cisco/sfp-plus-modules-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 3, Figure 1 \"Cisco 10GBASE SFP+ modules\"; SFP-10G-ER is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco 10GBASE SFP+ modules\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-10G-LR",
+      "file": "images/accessories/cisco/sfp-plus-modules-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 3, Figure 1 \"Cisco 10GBASE SFP+ modules\"; SFP-10G-LR is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco 10GBASE SFP+ modules\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-10G-LRM",
+      "file": "images/accessories/cisco/sfp-plus-modules-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 3, Figure 1 \"Cisco 10GBASE SFP+ modules\"; SFP-10G-LRM is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco 10GBASE SFP+ modules\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-10G-SR",
+      "file": "images/accessories/cisco/sfp-plus-modules-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 3, Figure 1 \"Cisco 10GBASE SFP+ modules\"; SFP-10G-SR is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco 10GBASE SFP+ modules\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-25G-SR-S",
+      "file": "images/accessories/cisco/25g-sr-module.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 3, photo captioned \"25G Short Reach (SR) Module\"; SFP-25G-SR-S is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo captioned \"25G Short Reach (SR) Module\""
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-H10GB-CU1M",
+      "file": "images/accessories/cisco/sfp-plus-twinax-figure-4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 8, Figure 4 \"Cisco direct-attach twinax copper cable assembly with SFP+ connectors\"; SFP-H10GB-CU1M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for its SFP+ twinax cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-H10GB-CU3M",
+      "file": "images/accessories/cisco/sfp-plus-twinax-figure-4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 8, Figure 4 \"Cisco direct-attach twinax copper cable assembly with SFP+ connectors\"; SFP-H10GB-CU3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for its SFP+ twinax cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-H25G-CU3M",
+      "file": "images/accessories/cisco/25g-dac.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 3, photo captioned \"25G Direct Attached Cables (DAC)\"; SFP-H25G-CU3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T1-1M",
+      "file": "images/accessories/cisco/stack-t1-connector-figure-5.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9300-series-switches/white-paper-c11-741468.pdf",
+      "source_detail": "Cisco Catalyst 9300 StackWise System Architecture White Paper, page 7, section \"Stack connectors\", Figure 5 \"Stack connector for 9300 modular uplink models (C9300 and C9300X)\"; STACK-T1-1M is listed in Table 1",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo of the StackWise-480/1T cable connectors; the cable length is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T1-3M",
+      "file": "images/accessories/cisco/stack-t1-connector-figure-5.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9300-series-switches/white-paper-c11-741468.pdf",
+      "source_detail": "Cisco Catalyst 9300 StackWise System Architecture White Paper, page 7, section \"Stack connectors\", Figure 5 \"Stack connector for 9300 modular uplink models (C9300 and C9300X)\"; STACK-T1-3M is listed in Table 1",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo of the StackWise-480/1T cable connectors; the cable length is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T1-50CM",
+      "file": "images/accessories/cisco/stack-t1-connector-figure-5.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9300-series-switches/white-paper-c11-741468.pdf",
+      "source_detail": "Cisco Catalyst 9300 StackWise System Architecture White Paper, page 7, section \"Stack connectors\", Figure 5 \"Stack connector for 9300 modular uplink models (C9300 and C9300X)\"; STACK-T1-50CM is listed in Table 1",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo of the StackWise-480/1T cable connectors; the cable length is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T4-1M",
+      "file": "images/accessories/cisco/stack-t4-cable-c9200-hig-figure-20.png",
+      "image_type": "drawing",
+      "source_page_url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig.pdf",
+      "source_detail": "Cisco Catalyst 9200 Series Switches Hardware Installation Guide, page 48, Figure 20 \"Connecting the StackWise Cable in a StackWise Port\"; STACK-T4-1M is listed in the guide's StackWise cable list",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawing of a StackWise cable being connected to a switch; the cable length is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T4-3M",
+      "file": "images/accessories/cisco/stack-t4-cable-c9200-hig-figure-20.png",
+      "image_type": "drawing",
+      "source_page_url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig.pdf",
+      "source_detail": "Cisco Catalyst 9200 Series Switches Hardware Installation Guide, page 48, Figure 20 \"Connecting the StackWise Cable in a StackWise Port\"; STACK-T4-3M is listed in the guide's StackWise cable list",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawing of a StackWise cable being connected to a switch; the cable length is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T4-50CM",
+      "file": "images/accessories/cisco/stack-t4-cable-c9200-hig-figure-20.png",
+      "image_type": "drawing",
+      "source_page_url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig.pdf",
+      "source_detail": "Cisco Catalyst 9200 Series Switches Hardware Installation Guide, page 48, Figure 20 \"Connecting the StackWise Cable in a StackWise Port\"; STACK-T4-50CM is listed in the guide's StackWise cable list",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawing of a StackWise cable being connected to a switch; the cable length is not stated"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-100G-1M",
+      "file": "images/accessories/cisco-meraki/ma-cbl-100g-1m.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-CBL-100G-1M row (alt text \"Photo of the MA-CBL-100G-1M accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-100G-3M",
+      "file": "images/accessories/cisco-meraki/ma-cbl-100g-3m.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-CBL-100G-3M row (alt text \"Photo of the MA-CBL-100G-3M accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-100G-50CM",
+      "file": "images/accessories/cisco-meraki/ma-cbl-100g-50cm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-CBL-100G-50CM row (alt text \"Photo of the MA-CBL-100G-50CM accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-120G-3M",
+      "file": "images/accessories/cisco-meraki/ma-cbl-120g-50cm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/Cloud_Management_with_IOS_XE/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "Cloud Management with IOS XE Accessories page, product photo in the MA-CBL-120G-3M row",
+      "retrieved": "2026-11-26",
+      "caption_note": "Meraki shows the same photo for MA-CBL-120G-50CM and MA-CBL-120G-3M; the cable length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-120G-50CM",
+      "file": "images/accessories/cisco-meraki/ma-cbl-120g-50cm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/Cloud_Management_with_IOS_XE/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "Cloud Management with IOS XE Accessories page, product photo in the MA-CBL-120G-50CM row",
+      "retrieved": "2026-11-26",
+      "caption_note": "Meraki shows the same photo for MA-CBL-120G-50CM and MA-CBL-120G-3M; the cable length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-40G-1M",
+      "file": "images/accessories/cisco-meraki/ma-cbl-40g-1m.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-CBL-40G-1M row (alt text \"Photo of the MA-CBL-40G-1M accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-40G-50CM",
+      "file": "images/accessories/cisco-meraki/ma-cbl-40g-50cm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-CBL-40G-50CM row (alt text \"Photo of the MA-CBL-40G-50CM accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-TA-1M",
+      "file": "images/accessories/cisco-meraki/ma-cbl-ta-1m.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-CBL-TA-1M row (alt text \"Photo of the MA-CBL-TA-1M accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-TA-3M",
+      "file": "images/accessories/cisco-meraki/ma-cbl-ta-3m.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-CBL-TA-3M row (alt text \"Photo of the MA-CBL-TA-3M accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-QSFP-100G-LR4",
+      "file": "images/accessories/cisco-meraki/ma-qsfp-blank-label.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-QSFP-100G-LR4 row (alt text \"Photo of the MA-QSFP-100G-LR4 accessory.\")",
+      "retrieved": "2026-11-26",
+      "caption_note": "Meraki shows the same blank-label QSFP photo for MA-QSFP-40G-LR4, MA-QSFP-100G-SR4 and MA-QSFP-100G-LR4; the label does not identify the part"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-QSFP-100G-SR4",
+      "file": "images/accessories/cisco-meraki/ma-qsfp-blank-label.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the row titled \"100 GbE QSFP+ SR4 Fiber Transceiver\" (range 100 m, MS450-12); the row's part number and alt text read \"MA-QSFP-100G-SR5\"",
+      "retrieved": "2026-11-26",
+      "caption_note": "Meraki shows the same blank-label QSFP photo for MA-QSFP-40G-LR4, MA-QSFP-100G-SR4 and MA-QSFP-100G-LR4; the label does not identify the part; Meraki labels this row MA-QSFP-100G-SR5, an apparent typo for MA-QSFP-100G-SR4"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-QSFP-40G-LR4",
+      "file": "images/accessories/cisco-meraki/ma-qsfp-blank-label.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-QSFP-40G-LR4 row (alt text \"Photo of the MA-QSFP-40G-LR4 accessory.\")",
+      "retrieved": "2026-11-26",
+      "caption_note": "Meraki shows the same blank-label QSFP photo for MA-QSFP-40G-LR4, MA-QSFP-100G-SR4 and MA-QSFP-100G-LR4; the label does not identify the part"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-QSFP-40G-SR4",
+      "file": "images/accessories/cisco-meraki/ma-qsfp-40g-sr4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-QSFP-40G-SR4 row (alt text \"Photo of the MA-QSFP-40G-SR4 accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-SFP-10GB-LR",
+      "file": "images/accessories/cisco-meraki/ma-sfp-10gb-lr.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-SFP-10GB-LR row (alt text \"Photo of the MA-SFP-10GB-LR accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-SFP-10GB-LRM",
+      "file": "images/accessories/cisco-meraki/ma-sfp-10gb-lrm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/Switching/MS_-_Switches/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MS Accessories page, product photo in the MA-SFP-10GB-LRM row (alt text \"Photo of the MA-SFP-10GB-LRM accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-SFP-10GB-SR",
+      "file": "images/accessories/cisco-meraki/ma-sfp-10gb-sr.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/SASE_and_SD-WAN/MX/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MX Accessories page, product photo in the MA-SFP-10GB-SR row (alt text \"Photo of the MA-SFP-10GB-SR accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-SFP-1GB-SX",
+      "file": "images/accessories/cisco-meraki/ma-sfp-1gb-sx.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/SASE_and_SD-WAN/MX/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MX Accessories page, product photo in the MA-SFP-1GB-SX row (alt text \"Photo of the MA-SFP-1GB-SX accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-SFP-1GB-TX",
+      "file": "images/accessories/cisco-meraki/ma-sfp-1gb-tx.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://documentation.meraki.com/SASE_and_SD-WAN/MX/Product_Information/Overviews_and_Datasheets/Accessories",
+      "source_detail": "MX Accessories page, product photo in the MA-SFP-1GB-TX row (alt text \"Photo of the MA-SFP-1GB-TX accessory.\")",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "GLC-LH-SMD",
+      "file": "images/accessories/cisco/optical-gigabit-sfp-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/gigabit-ethernet-gbic-sfp-modules/datasheet-c78-366584.pdf",
+      "source_detail": "Cisco SFP Modules for Gigabit Ethernet Applications Data Sheet, page 3, Figure 1 \"Cisco Optical Gigabit Ethernet SFP\"; GLC-LH-SMD is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco Optical Gigabit Ethernet SFP\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "GLC-SX-MMD",
+      "file": "images/accessories/cisco/optical-gigabit-sfp-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/gigabit-ethernet-gbic-sfp-modules/datasheet-c78-366584.pdf",
+      "source_detail": "Cisco SFP Modules for Gigabit Ethernet Applications Data Sheet, page 3, Figure 1 \"Cisco Optical Gigabit Ethernet SFP\"; GLC-SX-MMD is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco Optical Gigabit Ethernet SFP\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "GLC-TE",
+      "file": "images/accessories/cisco/1000base-t-copper-sfp-figure-2.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/gigabit-ethernet-gbic-sfp-modules/datasheet-c78-366584.pdf",
+      "source_detail": "Cisco SFP Modules for Gigabit Ethernet Applications Data Sheet, page 3, Figure 2 \"Cisco 1000BASE-T Copper SFP\"; GLC-TE is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo captioned \"Cisco 1000BASE-T Copper SFP\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400-CU1M",
+      "file": "images/accessories/cisco-nexus/qdd-400-cuxm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 5 of the PDF version, Figure 1 \"QDD-400-CUxM\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for every length; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400-CU2M",
+      "file": "images/accessories/cisco-nexus/qdd-400-cuxm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 5 of the PDF version, Figure 1 \"QDD-400-CUxM\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for every length; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400G-DR4-S",
+      "file": "images/accessories/cisco-nexus/qdd-400g-dr4-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 8 of the PDF version, Figure 9 \"QDD-400G-DR4-S\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400G-FR4-S",
+      "file": "images/accessories/cisco-nexus/qdd-400g-fr4-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 9 of the PDF version, Figure 12 \"QDD-400G-FR4-S\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400G-LR4-S",
+      "file": "images/accessories/cisco-nexus/qdd-400g-lr4-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 9 of the PDF version, Figure 13 \"QDD-400G-LR4-S\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400G-SR4.2-BD",
+      "file": "images/accessories/cisco-nexus/qdd-400g-sr4-2-bd.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 7 of the PDF version, Figure 7 \"QDD-400G-SR4.2-BD\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400G-SR8-S",
+      "file": "images/accessories/cisco-nexus/qdd-400g-vr4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 7 of the PDF version, Figure 6 \"QDD-400G-SR8-S\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco uses the same photo for QDD-400G-VR4 (Figure 5) and QDD-400G-SR8-S (Figure 6)"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400G-VR4",
+      "file": "images/accessories/cisco-nexus/qdd-400g-vr4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 6 of the PDF version, Figure 5 \"QDD-400G-VR4\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco uses the same photo for QDD-400G-VR4 (Figure 5) and QDD-400G-SR8-S (Figure 6)"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-4X100G-FR-S",
+      "file": "images/accessories/cisco-nexus/qdd-4x100g-fr-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 8 of the PDF version, Figure 10 \"QDD-4X100G-FR-S\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-4X100G-LR-S",
+      "file": "images/accessories/cisco-nexus/qdd-4x100g-lr-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-743172.html",
+      "source_detail": "Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet, page 9 of the PDF version, Figure 11 \"QDD-4X100G-LR-S\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-100G-AOC3M",
+      "file": "images/accessories/cisco-nexus/qsfp-100g-aoc3m.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
+      "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 9, section \"Cisco QSFP-100G-AOCxM\", Figure 4 \"QSFP-100G-AOC3M cables\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-100G-CU1M",
+      "file": "images/accessories/cisco/qsfp-100g-cu1m.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
+      "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 8, section \"Cisco QSFP-100G-CUxM\", Figure 2 \"QSFP-100G-CU1M cables\"; QSFP-100G-CU1M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo shows the QSFP-100G-CU1M"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-100G-CU3M",
+      "file": "images/accessories/cisco/qsfp-100g-cu1m.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
+      "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 8, section \"Cisco QSFP-100G-CUxM\", Figure 2 \"QSFP-100G-CU1M cables\"; QSFP-100G-CU3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo shows the QSFP-100G-CU1M"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-100G-CWDM4-S",
+      "file": "images/accessories/cisco-nexus/qsfp-100g-cwdm4-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
+      "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 3, Figure 1 \"QSFP-100G Optical modules\", the module labelled QSFP-100G-CWDM4-S (cropped from the four-module figure)",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-100G-LR4-S",
+      "file": "images/accessories/cisco/qsfp-100g-lr4-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
+      "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 3, Figure 1 \"QSFP-100G Optical modules\", the module labelled QSFP-100G-LR4-S (cropped from the four-module figure)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo shows QSFP-100G-LR4-S"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-100G-PSM4-S",
+      "file": "images/accessories/cisco-nexus/qsfp-100g-psm4-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
+      "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 3, Figure 1 \"QSFP-100G Optical modules\", the module labelled QSFP-100G-PSM4-S (cropped from the four-module figure)",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-100G-SR4-S",
+      "file": "images/accessories/cisco/qsfp-100g-sr4-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
+      "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 3, Figure 1 \"QSFP-100G Optical modules\", the module labelled QSFP-100G-SR4-S (cropped from the four-module figure)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo shows QSFP-100G-SR4-S"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-40G-ER4",
+      "file": "images/accessories/cisco/40g-qsfp-modules-overview.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 3, overview photo under \"Product overview\"; QSFP-40G-ER4 is listed in Table 1",
+      "retrieved": "2026-11-27",
+      "caption_note": "Uncaptioned overview photo of three Cisco 40G QSFP modules; the data sheet does not say which parts they are"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-40G-LR4-S",
+      "file": "images/accessories/cisco/40g-qsfp-modules-overview.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 3, overview photo under \"Product overview\"; QSFP-40G-LR4-S is listed in Table 1",
+      "retrieved": "2026-11-27",
+      "caption_note": "Uncaptioned overview photo of three Cisco 40G QSFP modules; the data sheet does not say which parts they are"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-40G-SR4",
+      "file": "images/accessories/cisco/40g-qsfp-modules-overview.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 3, overview photo under \"Product overview\"; QSFP-40G-SR4 is listed in Table 1",
+      "retrieved": "2026-11-27",
+      "caption_note": "Uncaptioned overview photo of three Cisco 40G QSFP modules; the data sheet does not say which parts they are"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-4SFP25G-CU1M",
+      "file": "images/accessories/cisco-nexus/qsfp-4sfp25g-cuxm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
+      "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 8, section \"Cisco QSFP-4SFP25G-CUxM\", Figure 3 \"QSFP-4SFP25G-CUxM cables\"; QSFP-4SFP25G-CU1M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for its QSFP-4SFP25G-CUxM breakout cables; the length is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-4SFP25G-CU3M",
+      "file": "images/accessories/cisco-nexus/qsfp-4sfp25g-cuxm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736282.pdf",
+      "source_detail": "Cisco 100GBASE QSFP-100G Modules Data Sheet, page 8, section \"Cisco QSFP-4SFP25G-CUxM\", Figure 3 \"QSFP-4SFP25G-CUxM cables\"; QSFP-4SFP25G-CU3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for its QSFP-4SFP25G-CUxM breakout cables; the length is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-H40G-AOC3M",
+      "file": "images/accessories/cisco-nexus/40g-qsfp-aoc-figure-4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 8, Figure 4 \"Cisco 40G QSFP active optics cables\"; QSFP-H40G-AOC3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-H40G-CU1M",
+      "file": "images/accessories/cisco/40gbase-cr4-dac-figure-2.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 7, Figure 2 \"Cisco 40GBASE-CR4 QSFP direct-attach copper cables\"; QSFP-H40G-CU1M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-H40G-CU3M",
+      "file": "images/accessories/cisco/40gbase-cr4-dac-figure-2.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 7, Figure 2 \"Cisco 40GBASE-CR4 QSFP direct-attach copper cables\"; QSFP-H40G-CU3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-10/25G-CSR-S",
+      "file": "images/accessories/cisco-nexus/sfp-10-25g-csr-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 3, photo captioned \"10/25G Cisco Short Reach (CSR) Module\"; SFP-10/25G-CSR-S is listed in the data sheet",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-10/25G-LR-S",
+      "file": "images/accessories/cisco-nexus/sfp-10-25g-lr-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 4, photo captioned \"10/25G Long Reach (LR) Module\"; SFP-10/25G-LR-S is listed in the data sheet",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-10G-AOC3M",
+      "file": "images/accessories/cisco/sfp-plus-aoc-figure-5.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 9, Figure 5 \"Cisco direct-attach active optical cables with SFP+ connectors\"; SFP-10G-AOC3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for its SFP+ active optical cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-10G-ER-S",
+      "file": "images/accessories/cisco/sfp-plus-modules-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 3, Figure 1 \"Cisco 10GBASE SFP+ modules\"; SFP-10G-ER-S is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco 10GBASE SFP+ modules\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-10G-LR-S",
+      "file": "images/accessories/cisco/sfp-plus-modules-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 3, Figure 1 \"Cisco 10GBASE SFP+ modules\"; SFP-10G-LR-S is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco 10GBASE SFP+ modules\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-10G-LRM",
+      "file": "images/accessories/cisco/sfp-plus-modules-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 3, Figure 1 \"Cisco 10GBASE SFP+ modules\"; SFP-10G-LRM is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco 10GBASE SFP+ modules\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-10G-SR-S",
+      "file": "images/accessories/cisco/sfp-plus-modules-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 3, Figure 1 \"Cisco 10GBASE SFP+ modules\"; SFP-10G-SR-S is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco 10GBASE SFP+ modules\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-10G-T-X",
+      "file": "images/accessories/cisco-nexus/sfp-10g-t-x.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 4, section \"Cisco SFP-10G-T-X module\", Figure 2 \"Cisco SFP+ 10GBASE-T module with RJ-45 connector\"",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-10G-ZR-S",
+      "file": "images/accessories/cisco/sfp-plus-modules-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 3, Figure 1 \"Cisco 10GBASE SFP+ modules\"; SFP-10G-ZR-S is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco 10GBASE SFP+ modules\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-25G-AOC3M",
+      "file": "images/accessories/cisco-nexus/25g-aoc.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 3, photo captioned \"25G Active Optical Cables (AOC)\"; SFP-25G-AOC3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-25G-SR-S",
+      "file": "images/accessories/cisco/25g-sr-module.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 3, photo captioned \"25G Short Reach (SR) Module\"; SFP-25G-SR-S is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo captioned \"25G Short Reach (SR) Module\""
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-H10GB-CU1M",
+      "file": "images/accessories/cisco/sfp-plus-twinax-figure-4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 8, Figure 4 \"Cisco direct-attach twinax copper cable assembly with SFP+ connectors\"; SFP-H10GB-CU1M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for its SFP+ twinax cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-H10GB-CU3M",
+      "file": "images/accessories/cisco/sfp-plus-twinax-figure-4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-455693.pdf",
+      "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 8, Figure 4 \"Cisco direct-attach twinax copper cable assembly with SFP+ connectors\"; SFP-H10GB-CU3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for its SFP+ twinax cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-H25G-CU1M",
+      "file": "images/accessories/cisco/25g-dac.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 3, photo captioned \"25G Direct Attached Cables (DAC)\"; SFP-H25G-CU1M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-H25G-CU3M",
+      "file": "images/accessories/cisco/25g-dac.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 3, photo captioned \"25G Direct Attached Cables (DAC)\"; SFP-H25G-CU3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10051H",
+      "file": "images/accessories/extreme/sfp-1g-modules-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/Extreme-Optics-Data-Sheet?v=0ee1a44c",
+      "source_detail": "Extreme Optics Data Sheet, page 14, photo heading the \"Extreme Networks 1000Base SFP Modules\" section, whose table lists 10051H",
+      "retrieved": "2026-11-26",
+      "caption_note": "Representative photo for the 1000Base SFP Modules section; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10052H",
+      "file": "images/accessories/extreme/sfp-1g-modules-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/Extreme-Optics-Data-Sheet?v=0ee1a44c",
+      "source_detail": "Extreme Optics Data Sheet, page 14, photo heading the \"Extreme Networks 1000Base SFP Modules\" section, whose table lists 10052H",
+      "retrieved": "2026-11-26",
+      "caption_note": "Representative photo for the 1000Base SFP Modules section; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10065",
+      "file": "images/accessories/extreme/copper-sfp-figure-3.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/pluggable/downloads/Pluggable_Transceivers_Installation_Guide.pdf",
+      "source_detail": "Extreme Networks Pluggable Transceivers Installation Guide, page 37, Figure 3 \"Copper SFP Module\"; 10065 is listed under \"10/100/1000BASE-T Copper SFP and Industrial Grade SFP Modules\"",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawing captioned \"Copper SFP Module\"; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10301",
+      "file": "images/accessories/extreme/sfp-plus-10g-modules-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/Extreme-Optics-Data-Sheet?v=0ee1a44c",
+      "source_detail": "Extreme Optics Data Sheet, page 12, photo heading the \"Extreme Networks 10Gb SFP+ Modules\" section, whose table lists 10301",
+      "retrieved": "2026-11-26",
+      "caption_note": "Representative photo for the 10Gb SFP+ Modules section; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10302",
+      "file": "images/accessories/extreme/sfp-plus-10g-modules-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/Extreme-Optics-Data-Sheet?v=0ee1a44c",
+      "source_detail": "Extreme Optics Data Sheet, page 12, photo heading the \"Extreme Networks 10Gb SFP+ Modules\" section, whose table lists 10302",
+      "retrieved": "2026-11-26",
+      "caption_note": "Representative photo for the 10Gb SFP+ Modules section; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10303",
+      "file": "images/accessories/extreme/sfp-plus-10g-modules-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/Extreme-Optics-Data-Sheet?v=0ee1a44c",
+      "source_detail": "Extreme Optics Data Sheet, page 12, photo heading the \"Extreme Networks 10Gb SFP+ Modules\" section, whose table lists 10303",
+      "retrieved": "2026-11-26",
+      "caption_note": "Representative photo for the 10Gb SFP+ Modules section; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10304",
+      "file": "images/accessories/extreme/sfp-plus-dac-figures-10-11.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/pluggable/downloads/Pluggable_Transceivers_Installation_Guide.pdf",
+      "source_detail": "Extreme Networks Pluggable Transceivers Installation Guide, page 82, Figures 10 and 11 \"SFP+ Direct-Attach Cable: Type A\" and \"Type B\", above Table 59 (10 Gb SFP+ Passive Copper Direct-Attach Cables) that lists 10304",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawings of the two SFP+ direct-attach cable connector types (Type A left, Type B right), placed side by side; the guide does not say which part numbers use which type or show the length"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10305",
+      "file": "images/accessories/extreme/sfp-plus-dac-figures-10-11.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/pluggable/downloads/Pluggable_Transceivers_Installation_Guide.pdf",
+      "source_detail": "Extreme Networks Pluggable Transceivers Installation Guide, page 82, Figures 10 and 11 \"SFP+ Direct-Attach Cable: Type A\" and \"Type B\", above Table 59 (10 Gb SFP+ Passive Copper Direct-Attach Cables) that lists 10305",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawings of the two SFP+ direct-attach cable connector types (Type A left, Type B right), placed side by side; the guide does not say which part numbers use which type or show the length"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10306",
+      "file": "images/accessories/extreme/sfp-plus-dac-figures-10-11.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/pluggable/downloads/Pluggable_Transceivers_Installation_Guide.pdf",
+      "source_detail": "Extreme Networks Pluggable Transceivers Installation Guide, page 82, Figures 10 and 11 \"SFP+ Direct-Attach Cable: Type A\" and \"Type B\", above Table 59 (10 Gb SFP+ Passive Copper Direct-Attach Cables) that lists 10306",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawings of the two SFP+ direct-attach cable connector types (Type A left, Type B right), placed side by side; the guide does not say which part numbers use which type or show the length"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10307",
+      "file": "images/accessories/extreme/sfp-plus-dac-figures-10-11.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/pluggable/downloads/Pluggable_Transceivers_Installation_Guide.pdf",
+      "source_detail": "Extreme Networks Pluggable Transceivers Installation Guide, page 82, Figures 10 and 11 \"SFP+ Direct-Attach Cable: Type A\" and \"Type B\", above Table 59 (10 Gb SFP+ Passive Copper Direct-Attach Cables) that lists 10307",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawings of the two SFP+ direct-attach cable connector types (Type A left, Type B right), placed side by side; the guide does not say which part numbers use which type or show the length"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10319",
+      "file": "images/accessories/extreme/qsfp-plus-optical-module-figure-4.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/pluggable/downloads/Pluggable_Transceivers_Installation_Guide.pdf",
+      "source_detail": "Extreme Networks Pluggable Transceivers Installation Guide, page 58, Figure 4 \"QSFP+ Optical Module (Release Handle)\" at the start of the 40 Gb QSFP+ Modules chapter, which lists 10319 (40 Gb SR4 QSFP+ Module, page 59)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawing captioned \"QSFP+ Optical Module (Release Handle)\"; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10502",
+      "file": "images/accessories/extreme/sfp28-25g-modules-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/Extreme-Optics-Data-Sheet?v=0ee1a44c",
+      "source_detail": "Extreme Optics Data Sheet, page 10, photo heading the \"Extreme Networks 25Gb SFP28 Modules\" section, whose table lists 10502",
+      "retrieved": "2026-11-26",
+      "caption_note": "Representative photo for the 25Gb SFP28 Modules section; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J4858D",
+      "file": "images/accessories/hpe-aruba/sfp-optical-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 233, photo at the start of the \"Gigabit SFP optical transceiver modules\" section, above the models table that lists J4858D (page 234)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo for the \"Gigabit SFP optical transceiver modules\" section; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J4859D",
+      "file": "images/accessories/hpe-aruba/sfp-optical-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 233, photo at the start of the \"Gigabit SFP optical transceiver modules\" section, above the models table that lists J4859D (page 234)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo for the \"Gigabit SFP optical transceiver modules\" section; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J8177D",
+      "file": "images/accessories/hpe-aruba/sfp-rj45-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 249, photo at the start of the \"Gigabit SFP copper transceiver modules\" section, above the models table that lists J8177D (page 250)",
+      "retrieved": "2026-11-27",
+      "caption_note": "HPE uses this photo for both its SFP+ copper and Gigabit SFP copper sections; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J9150D",
+      "file": "images/accessories/hpe-aruba/sfp-plus-optical-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 172, photo at the start of the \"SFP+ optical transceiver modules\" section, above the models table that lists J9150D (page 173)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo for the \"SFP+ optical transceiver modules\" section; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J9151E",
+      "file": "images/accessories/hpe-aruba/sfp-plus-optical-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 172, photo at the start of the \"SFP+ optical transceiver modules\" section, above the models table that lists J9151E (page 174)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo for the \"SFP+ optical transceiver modules\" section; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J9153D",
+      "file": "images/accessories/hpe-aruba/sfp-plus-optical-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 172, photo at the start of the \"SFP+ optical transceiver modules\" section, above the models table that lists J9153D (page 175)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo for the \"SFP+ optical transceiver modules\" section; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J9281D",
+      "file": "images/accessories/hpe-aruba/sfp-dac-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 215, photo at the top of the page above the SFP+ DAC models table that lists J9281D",
+      "retrieved": "2026-11-27",
+      "caption_note": "HPE uses this photo for both its SFP+ and SFP28 DAC sections; the guide does not say which part or length it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "J9283D",
+      "file": "images/accessories/hpe-aruba/sfp-dac-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 215, photo at the top of the page above the SFP+ DAC models table that lists J9283D",
+      "retrieved": "2026-11-27",
+      "caption_note": "HPE uses this photo for both its SFP+ and SFP28 DAC sections; the guide does not say which part or length it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JH231A",
+      "file": "images/accessories/hpe-aruba/qsfp-plus-mpo-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 103, photo at the start of the \"40G QSFP+ optical transceiver modules that use MPO connectors\" section, above the models table that lists JH231A (page 104)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo for the \"40G QSFP+ optical transceiver modules that use MPO connectors\" section; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JH232A",
+      "file": "images/accessories/hpe-aruba/qsfp-lc-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 109, photo at the start of the \"40G QSFP+ optical transceiver modules that use LC connectors\" section, above the models table that lists JH232A (page 110)",
+      "retrieved": "2026-11-27",
+      "caption_note": "HPE uses this photo for both its 40G QSFP+ LC and 100G QSFP28 LC sections; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL307A",
+      "file": "images/accessories/hpe-aruba/qsfp28-dac-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 86, photo above the QSFP28 DAC models table that lists JL307A (page 86)",
+      "retrieved": "2026-11-27",
+      "caption_note": "HPE's photo for the QSFP28 DAC table shows a straight DAC and a breakout DAC; the guide does not say which part or length it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL309A",
+      "file": "images/accessories/hpe-aruba/qsfp28-mpo-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 67, photo at the start of the \"100G QSFP28 optical transceiver modules that use MPO connectors\" section, above the models table that lists JL309A (page 68)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo for the \"100G QSFP28 optical transceiver modules that use MPO connectors\" section; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL310A",
+      "file": "images/accessories/hpe-aruba/qsfp-lc-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 73, photo at the start of the \"100G QSFP28 optical transceiver modules that use LC connectors\" section, above the models table that lists JL310A (page 75)",
+      "retrieved": "2026-11-27",
+      "caption_note": "HPE uses this photo for both its 40G QSFP+ LC and 100G QSFP28 LC sections; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL484A",
+      "file": "images/accessories/hpe-aruba/sfp28-optical-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 143, photo at the start of the \"SFP28 optical transceiver modules\" section, above the models table that lists JL484A (page 145)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo for the \"SFP28 optical transceiver modules\" section; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL486A",
+      "file": "images/accessories/hpe-aruba/sfp28-optical-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 143, photo at the start of the \"SFP28 optical transceiver modules\" section, above the models table that lists JL486A (page 146)",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo for the \"SFP28 optical transceiver modules\" section; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL487A",
+      "file": "images/accessories/hpe-aruba/sfp-dac-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 159, photo at the top of the page above the SFP28 DAC models table that lists JL487A",
+      "retrieved": "2026-11-27",
+      "caption_note": "HPE uses this photo for both its SFP+ and SFP28 DAC sections; the guide does not say which part or length it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL488A",
+      "file": "images/accessories/hpe-aruba/sfp-dac-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 159, photo at the top of the page above the SFP28 DAC models table that lists JL488A",
+      "retrieved": "2026-11-27",
+      "caption_note": "HPE uses this photo for both its SFP+ and SFP28 DAC sections; the guide does not say which part or length it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL489A",
+      "file": "images/accessories/hpe-aruba/sfp-dac-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 159, photo at the top of the page above the SFP28 DAC models table that lists JL489A",
+      "retrieved": "2026-11-27",
+      "caption_note": "HPE uses this photo for both its SFP+ and SFP28 DAC sections; the guide does not say which part or length it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL563C",
+      "file": "images/accessories/hpe-aruba/sfp-rj45-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 206, photo at the start of the \"SFP+ copper transceiver modules\" section, above the models table that lists JL563C (page 207)",
+      "retrieved": "2026-11-27",
+      "caption_note": "HPE uses this photo for both its SFP+ copper and Gigabit SFP copper sections; the guide does not say which part it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "JL856A",
+      "file": "images/accessories/hpe-aruba/qsfp28-aoc-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 92, photo at the start of the \"100G QSFP28 AOC and breakout AOC (active optical cables)\" section, above the models table that lists JL856A (page 93)",
+      "retrieved": "2026-11-27",
+      "caption_note": "HPE's photo for this section shows a straight AOC and a breakout AOC; the length is not stated"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0M46A",
+      "file": "images/accessories/hpe-aruba/sfp56-dac-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 138, photo at the top of the page above the SFP56 DAC models table that lists R0M46A",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo above HPE's SFP56 DAC table; the guide does not say which part or length it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0M47A",
+      "file": "images/accessories/hpe-aruba/sfp56-dac-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 138, photo at the top of the page above the SFP56 DAC models table that lists R0M47A",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo above HPE's SFP56 DAC table; the guide does not say which part or length it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0Z25A",
+      "file": "images/accessories/hpe-aruba/qsfp28-dac-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 86, photo above the QSFP28 DAC models table that lists R0Z25A (page 86)",
+      "retrieved": "2026-11-27",
+      "caption_note": "HPE's photo for the QSFP28 DAC table shows a straight DAC and a breakout DAC; the guide does not say which part or length it shows"
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0Z26A",
+      "file": "images/accessories/hpe-aruba/qsfp28-dac-section.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/Switches/xcvrs/PDF/AOS-S%20and%20AOS-CX%20Transceiver%20Guide.pdf",
+      "source_detail": "AOS-S and AOS-CX Transceiver Guide, page 86, photo above the QSFP28 DAC models table that lists R0Z26A (page 86)",
+      "retrieved": "2026-11-27",
+      "caption_note": "HPE's photo for the QSFP28 DAC table shows a straight DAC and a breakout DAC; the guide does not say which part or length it shows"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-CM-RJ45-1G",
+      "file": "images/accessories/ubiquiti/uacc-cm-rj45.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/rj45-to-sfp-module",
+      "source_detail": "UniFi Tech Specs page for the SFP to RJ45 Adapter (UACC-CM-RJ45), product image",
+      "retrieved": "2026-11-26",
+      "caption_note": "Photo shows UACC-CM-RJ45; Ubiquiti lists this 1G SFP to RJ45 adapter without a -1G suffix"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-OM-MM-10G-D",
+      "file": "images/accessories/ubiquiti/uacc-om-mm-10g-d.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/10-gbps-multi-mode-optical-module",
+      "source_detail": "UniFi Tech Specs page for UACC-OM-MM-10G-D, product image",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-OM-MM-1G-D",
+      "file": "images/accessories/ubiquiti/uacc-om-mm-1g-d.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/1-gbps-multi-mode-optical-module",
+      "source_detail": "UniFi Tech Specs page for UACC-OM-MM-1G-D, product image",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-OM-QSFP28-LR4",
+      "file": "images/accessories/ubiquiti/uacc-om-qsfp28-lr4.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-om-qsfp28-lr4",
+      "source_detail": "UniFi Tech Specs page for UACC-OM-QSFP28-LR4, product image",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-OM-QSFP28-SR4",
+      "file": "images/accessories/ubiquiti/uacc-om-qsfp28-sr4.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-om-qsfp28-sr4",
+      "source_detail": "UniFi Tech Specs page for UACC-OM-QSFP28-SR4, product image",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-OM-SFP10-1310",
+      "file": "images/accessories/ubiquiti/uacc-om-sfp10.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-om-sfp10",
+      "source_detail": "UniFi Tech Specs page for the 10G CWDM Single-Mode Optical Module (UACC-OM-SFP10), product image; the page covers the UACC-OM-SFP10-1270~1330 and -1450~1590 wavelength variants",
+      "retrieved": "2026-11-26",
+      "caption_note": "Photo shows a UACC-OM-SFP10 CWDM module; the wavelength variant is not stated"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-OM-SM-10G-D",
+      "file": "images/accessories/ubiquiti/uacc-om-sm-10g-d.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-om-sm-10g-d",
+      "source_detail": "UniFi Tech Specs page for UACC-OM-SM-10G-D, product image",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-OM-SM-1G-S-2",
+      "file": "images/accessories/ubiquiti/uacc-om-sm-1g-s.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/1-gbps-bidirectional-single-mode-optical-module",
+      "source_detail": "UniFi Tech Specs page for UACC-OM-SM-1G-S, product image; the page lists Pack Options 2-Pack and 20-Pack",
+      "retrieved": "2026-11-26",
+      "caption_note": "Photo shows UACC-OM-SM-1G-S modules; Ubiquiti sells them as a 2-pack"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-Uplink-SFP28-0.15M",
+      "file": "images/accessories/ubiquiti/uacc-uplink-sfp28.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-uplink-sfp28",
+      "source_detail": "UniFi Tech Specs page for the Uplink Cable (UACC-Uplink-SFP28), product image; the page lists lengths 0.15, 0.3, 3 and 30 m (copper at 0.15/0.3 m, fiber at 3/30 m)",
+      "retrieved": "2026-11-26",
+      "caption_note": "Ubiquiti shows one photo for every UACC-Uplink-SFP28 length; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-Uplink-SFP28-0.3M",
+      "file": "images/accessories/ubiquiti/uacc-uplink-sfp28.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-uplink-sfp28",
+      "source_detail": "UniFi Tech Specs page for the Uplink Cable (UACC-Uplink-SFP28), product image; the page lists lengths 0.15, 0.3, 3 and 30 m (copper at 0.15/0.3 m, fiber at 3/30 m)",
+      "retrieved": "2026-11-26",
+      "caption_note": "Ubiquiti shows one photo for every UACC-Uplink-SFP28 length; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-Uplink-SFP28-30M",
+      "file": "images/accessories/ubiquiti/uacc-uplink-sfp28.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-uplink-sfp28",
+      "source_detail": "UniFi Tech Specs page for the Uplink Cable (UACC-Uplink-SFP28), product image; the page lists lengths 0.15, 0.3, 3 and 30 m (copper at 0.15/0.3 m, fiber at 3/30 m)",
+      "retrieved": "2026-11-26",
+      "caption_note": "Ubiquiti shows one photo for every UACC-Uplink-SFP28 length; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Ubiquiti",
+      "sku": "UACC-Uplink-SFP28-3M",
+      "file": "images/accessories/ubiquiti/uacc-uplink-sfp28.png",
+      "image_type": "photo",
+      "source_page_url": "https://techspecs.ui.com/unifi/accessories/uacc-uplink-sfp28",
+      "source_detail": "UniFi Tech Specs page for the Uplink Cable (UACC-Uplink-SFP28), product image; the page lists lengths 0.15, 0.3, 3 and 30 m (copper at 0.15/0.3 m, fiber at 3/30 m)",
+      "retrieved": "2026-11-26",
+      "caption_note": "Ubiquiti shows one photo for every UACC-Uplink-SFP28 length; the length in the photo is not stated"
+    }
+  ],
+  "missing": [
+    {
+      "vendor": "Arista",
+      "sku": "AOC-Q-Q-100G-10M",
+      "reason": "www.arista.com blocks automated requests from this environment (HTTP 406). The Arista Optics Modules and Cables Data Sheet (Transceiver-Data-Sheet.pdf, downloaded manually) lists this part but has no photo of it."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "AOC-S-S-10G-10M",
+      "reason": "www.arista.com blocks automated requests from this environment (HTTP 406). The Arista Optics Modules and Cables Data Sheet (Transceiver-Data-Sheet.pdf, downloaded manually) lists this part but has no photo of it."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "QSFP-100G-CWDM4",
+      "reason": "www.arista.com blocks automated requests from this environment (HTTP 406). The Arista Optics Modules and Cables Data Sheet (Transceiver-Data-Sheet.pdf, downloaded manually) lists this part but has no photo of it."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "QSFP-100G-SR4",
+      "reason": "www.arista.com blocks automated requests from this environment (HTTP 406). The Arista Optics Modules and Cables Data Sheet (Transceiver-Data-Sheet.pdf, downloaded manually) lists this part but has no photo of it."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "QSFP-100G-SRBD",
+      "reason": "www.arista.com blocks automated requests from this environment (HTTP 406). The Arista Optics Modules and Cables Data Sheet (Transceiver-Data-Sheet.pdf, downloaded manually) lists this part but has no photo of it."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-ER",
+      "reason": "www.arista.com blocks automated requests from this environment (HTTP 406). The Arista Optics Modules and Cables Data Sheet (Transceiver-Data-Sheet.pdf, downloaded manually) lists this part but has no photo of it; its 10G photo is captioned \"10GBASE-SR and LR SFP+\" only."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-LR-H",
+      "reason": "Not in the Arista Optics Modules and Cables Data Sheet (Sep 2026), and www.arista.com blocks automated requests from this environment, so no vendor photo tied to this SKU."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-LRL",
+      "reason": "www.arista.com blocks automated requests from this environment (HTTP 406). The Arista Optics Modules and Cables Data Sheet (Transceiver-Data-Sheet.pdf, downloaded manually) lists this part but has no photo of it; its 10G photo is captioned \"10GBASE-SR and LR SFP+\" only."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-SR-H",
+      "reason": "Not in the Arista Optics Modules and Cables Data Sheet (Sep 2026), and www.arista.com blocks automated requests from this environment, so no vendor photo tied to this SKU."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-SRL",
+      "reason": "www.arista.com blocks automated requests from this environment (HTTP 406). The Arista Optics Modules and Cables Data Sheet (Transceiver-Data-Sheet.pdf, downloaded manually) lists this part but has no photo of it; its 10G photo is captioned \"10GBASE-SR and LR SFP+\" only."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-T-RP",
+      "reason": "www.arista.com blocks automated requests from this environment (HTTP 406). The Arista Optics Modules and Cables Data Sheet (Transceiver-Data-Sheet.pdf, downloaded manually) lists this part but has no photo of it."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-10G-ZR",
+      "reason": "www.arista.com blocks automated requests from this environment (HTTP 406). The Arista Optics Modules and Cables Data Sheet (Transceiver-Data-Sheet.pdf, downloaded manually) lists this part but has no photo of it; its 10G photo is captioned \"10GBASE-SR and LR SFP+\" only."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-1G-LX",
+      "reason": "www.arista.com blocks automated requests from this environment (HTTP 406). The Arista Optics Modules and Cables Data Sheet (Transceiver-Data-Sheet.pdf, downloaded manually) lists this part but has no photo of it."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-1G-LX-H",
+      "reason": "Not in the Arista Optics Modules and Cables Data Sheet (Sep 2026), and www.arista.com blocks automated requests from this environment, so no vendor photo tied to this SKU."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-1G-SX",
+      "reason": "www.arista.com blocks automated requests from this environment (HTTP 406). The Arista Optics Modules and Cables Data Sheet (Transceiver-Data-Sheet.pdf, downloaded manually) lists this part but has no photo of it."
+    },
+    {
+      "vendor": "Arista",
+      "sku": "SFP-25G-MR-SR",
+      "reason": "www.arista.com blocks automated requests from this environment (HTTP 406). The Arista Optics Modules and Cables Data Sheet (Transceiver-Data-Sheet.pdf, downloaded manually) lists this part but has no photo of it; the 25G group photo is captioned \"25GBASE-CR, AOC, SR and LR\" and the multi-rate SR has no photo of its own."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "C9300L-STACK-KIT",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). Neither the Catalyst 9300 Hardware Installation Guide nor the Catalyst 9300 StackWise System Architecture White Paper (both downloaded manually) uses this SKU. The white paper shows the 9300 fixed-uplink stack adapters (Figure 4) and connector (Figure 6) and refers to the \"9300L Stack kit\" and \"C9300LM Stack Kit\"; the install guide calls the kits C9300L-STACK and C9300L-STACK-A."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "C9300L-STACK-KIT2",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). Neither the Catalyst 9300 Hardware Installation Guide nor the Catalyst 9300 StackWise System Architecture White Paper (both downloaded manually) uses this SKU. The white paper shows the 9300 fixed-uplink stack adapters (Figure 4) and connector (Figure 6) and refers to the \"9300L Stack kit\" and \"C9300LM Stack Kit\"; the install guide calls the kits C9300L-STACK and C9300L-STACK-A."
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-25G-LR-S",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). SFP-25G-LR-S is not in the Cisco 25GBASE SFP28 Modules Data Sheet (Sep 2026), whose 25G LR part is SFP-10/25G-LR-S, so no vendor photo is tied to this SKU."
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-120G-1M",
+      "reason": "Not shown on Meraki's MS or IOS XE Accessories pages (they show the 50 cm and 3 m 120G cables and STACK-T1-1M-M, a different SKU); the SFP and Stacking Accessories page has tables only."
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-CBL-40G-3M",
+      "reason": "The photo Meraki posts in the MA-CBL-40G-3M row of the MS Accessories page is identical to its MA-CBL-TA-3M photo and shows SFP+ connectors, not QSFP+, so it does not show this part. No other Meraki-hosted photo found."
+    },
+    {
+      "vendor": "Cisco Meraki",
+      "sku": "MA-SFP-1GB-LX10",
+      "reason": "The photo Meraki posts in the MA-SFP-1GB-LX10 row of the MS Accessories page is identical to its MA-SFP-1GB-TX photo, and the module label reads \"MA-SFP-1GB-TX Active Copper 1000Base-T\", so it does not show this part. No other Meraki-hosted photo found (SFP and Stacking Accessories page has tables only)."
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400-AOC3M",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet (downloaded manually) shows QDD-400-AOCxM in Figure 4, but the photo is the same image as the 100G data sheet's \"QSFP-100G-AOC3M cables\" figure, so it most likely shows the 100G QSFP cable, not this part."
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-400G-LR8-S",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet (downloaded manually) lists QDD-400G-LR8-S but has no figure for it; the high-power, ER1 and coherent QSFP-DD data sheets do not cover it either."
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QDD-4ZQ100-CU1M",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 400G QSFP-DD Cable and Transceiver Modules Data Sheet (downloaded manually) shows this cable in Figure 2, but the photo is the same image as the 100G data sheet's QSFP-4SFP25G-CUxM figure, with SFP-size breakout ends rather than QSFP28, so it does not show this part."
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-100G-DR-S",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 100GBASE QSFP-100G Modules Data Sheet (downloaded manually) lists this part but has no photo of it; its only module photo shows LR4-S, SR4-S, CWDM4-S and PSM4-S."
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-100G-FR-S",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 100GBASE QSFP-100G Modules Data Sheet (downloaded manually) lists this part but has no photo of it; its only module photo shows LR4-S, SR4-S, CWDM4-S and PSM4-S."
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-100G-SL4",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 100GBASE QSFP-100G Modules Data Sheet (downloaded manually) lists this part but has no photo of it; its only module photo shows LR4-S, SR4-S, CWDM4-S and PSM4-S."
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-100G-SR1.2",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 100GBASE QSFP-100G Modules Data Sheet (downloaded manually) lists this part but has no photo of it; its only module photo shows LR4-S, SR4-S, CWDM4-S and PSM4-S."
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-40/100-SRBD",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 100GBASE QSFP-100G Modules Data Sheet (downloaded manually) lists this part but has no photo of it; its only module photo shows LR4-S, SR4-S, CWDM4-S and PSM4-S."
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-40G-SR-BD",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 40GBASE QSFP Modules Data Sheet (downloaded manually) shows QSFP-40G-SR-BD only as a link diagram (Figure 1), not a picture of the module."
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-25G-SL",
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 25GBASE SFP28 Modules Data Sheet (downloaded manually) lists SFP-25G-SL but has no photo of it."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10321",
+      "reason": "No vendor image of a 40G LR4 transceiver tied to this number. The Extreme Pluggable Transceivers Installation Guide lists 10321 as a 3 m 40G QSFP+ to 4x SFP+ passive breakout DAC (alias 40G-DACP-QSFP4SFP3M), not an LR4 transceiver, and the current Optics Data Sheet does not list it."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10501",
+      "reason": "No Extreme photo or drawing of this module. The Extreme Optics Data Sheet (Oct 2026) no longer lists 10501. The Pluggable Transceivers Installation Guide lists it as the 25 Gb SR SFP28 Module (page 53) but has no figure of an SFP28 module."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10G-AOC-SFP10M",
+      "reason": "No Extreme image of this active optical cable. The Pluggable Transceivers Installation Guide lists it in Table 60 (page 83), but its SFP+ cable figures show copper direct-attach cables; the Optics Data Sheet photos show optical modules only."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "10G-DACP-SFPZ5M",
+      "reason": "No Extreme image of this 0.5 m cable. It is listed in the Extreme Optics Data Sheet, which has no cable photos, and it is not in the Pluggable Transceivers Installation Guide (Feb 2024)."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "20G-DACP-SFPDD1M",
+      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024). The 5420 Series Installation Guide (Jul 2026) says the 5420 stacks over SFP-DD cables but does not name this part number, and its stacking figures are topology diagrams, not pictures of the cable. The 5420 product page shows only the switch."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "20G-DACP-SFPDD3M",
+      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024). The 5420 Series Installation Guide (Jul 2026) says the 5420 stacks over SFP-DD cables but does not name this part number, and its stacking figures are topology diagrams, not pictures of the cable. The 5420 product page shows only the switch."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "20G-DACP-SFPDD5M",
+      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024). The 5420 Series Installation Guide (Jul 2026) says the 5420 stacks over SFP-DD cables but does not name this part number, and its stacking figures are topology diagrams, not pictures of the cable. The 5420 product page shows only the switch."
+    },
+    {
+      "vendor": "Extreme Networks",
+      "sku": "20G-DACP-SFPDDZ5M",
+      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024). The 5420 Series Installation Guide (Jul 2026) says the 5420 stacks over SFP-DD cables but does not name this part number, and its stacking figures are topology diagrams, not pictures of the cable. The 5420 product page shows only the switch."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-CABLE-SFP+1",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-CABLE-SFP+3",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-CABLE-SFP+5",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-GC",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-LX",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-QSFP+LR",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-QSFP+SR",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-QSFP28-LR4",
+      "reason": "No Fortinet-hosted product photo found, and the SKU itself is not in the Fortinet Transceivers Data Sheet (Oct 2026), whose 10 km QSFP28 parts are FN-TRAN-QSFP28-LR and FN-TRAN-QSFP28-LR1. The data sheet is text and tables only; fortinet.com has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-QSFP28-SR",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SFP+ER",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SFP+GC",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SFP+LR",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SFP+LRM",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SFP+SR",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SFP28-LR",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SFP28-SR",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "FN-TRAN-SX",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "Fortinet",
+      "sku": "SP-CABLE-ADASFP+",
+      "reason": "No Fortinet-hosted product photo found. The Fortinet Transceivers Data Sheet (Oct 2026 revision, fortinet.com) is text and tables only; the FortiSwitch Secure Campus data sheet shows switches and screenshots only; fortinet.com's sitemap has no transceiver product pages."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0M44A",
+      "reason": "The HPE Aruba AOS-S and AOS-CX Transceiver Guide (downloaded manually; arubanetworking.hpe.com blocks automated requests from this environment) lists this SFP28 AOC under \"25G SFP28 AOC (Active Optical Cable)\", but that section's photo shows a QSFP AOC and a QSFP-to-4x-SFP breakout, not an SFP28-to-SFP28 cable, so it was not used."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0M45A",
+      "reason": "The HPE Aruba AOS-S and AOS-CX Transceiver Guide (downloaded manually; arubanetworking.hpe.com blocks automated requests from this environment) lists this SFP28 AOC under \"25G SFP28 AOC (Active Optical Cable)\", but that section's photo shows a QSFP AOC and a QSFP-to-4x-SFP breakout, not an SFP28-to-SFP28 cable, so it was not used."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "R0Z21A",
+      "reason": "The HPE Aruba AOS-S and AOS-CX Transceiver Guide (downloaded manually; arubanetworking.hpe.com blocks automated requests from this environment) lists this SFP28 AOC under \"25G SFP28 AOC (Active Optical Cable)\", but that section's photo shows a QSFP AOC and a QSFP-to-4x-SFP breakout, not an SFP28-to-SFP28 cable, so it was not used."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "S1J07A",
+      "reason": "The HPE Aruba AOS-S and AOS-CX Transceiver Guide (downloaded manually; arubanetworking.hpe.com blocks automated requests from this environment) lists this 50G QSFP56 to SFP56 DAC in its QSFP28 DAC table, but the photo above that table shows a straight QSFP DAC and a four-way breakout, neither of which is a QSFP56 to SFP56 cable, so it was not used."
+    },
+    {
+      "vendor": "HPE Aruba",
+      "sku": "S1J08A",
+      "reason": "The HPE Aruba AOS-S and AOS-CX Transceiver Guide (downloaded manually; arubanetworking.hpe.com blocks automated requests from this environment) lists this 50G QSFP56 to SFP56 DAC in its QSFP28 DAC table, but the photo above that table shows a straight QSFP DAC and a four-way breakout, neither of which is a QSFP56 to SFP56 cable, so it was not used."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "EX-SFP-10GE-ZR",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "EX-SFP-1FE-FX",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "EX-SFP-1GE-LX40K",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-100G-DAC-1M",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-100G-DAC-3M",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-QSFP-100G-LR4",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-QSFP-100G-SR4",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-QSFP-40G-LR4",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-QSFP-40G-SR4",
+      "reason": "No Juniper-hosted photo retrievable, and the SKU is not in the Juniper Hardware Compatibility Tool sitemap (apps.juniper.net/hct). www.juniper.net disallows all automated access in robots.txt and redirects to www.hpe.com, which did not respond."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-QSFP-DAC-1M",
+      "reason": "No Juniper-hosted photo retrievable, and the SKU is not in the Juniper Hardware Compatibility Tool sitemap. www.juniper.net disallows all automated access in robots.txt and redirects to www.hpe.com, which did not respond."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-QSFP-DAC-3M",
+      "reason": "No Juniper-hosted photo retrievable, and the SKU is not in the Juniper Hardware Compatibility Tool sitemap. www.juniper.net disallows all automated access in robots.txt and redirects to www.hpe.com, which did not respond."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-SFP-10GE-DAC-1M",
+      "reason": "No Juniper-hosted photo retrievable, and the SKU is not in the Juniper Hardware Compatibility Tool sitemap (HCT lists EX-SFP-10GE-DAC-1M). www.juniper.net disallows all automated access in robots.txt and redirects to www.hpe.com, which did not respond."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-SFP-10GE-DAC-3M",
+      "reason": "No Juniper-hosted photo retrievable, and the SKU is not in the Juniper Hardware Compatibility Tool sitemap (HCT lists EX-SFP-10GE-DAC-3M). www.juniper.net disallows all automated access in robots.txt and redirects to www.hpe.com, which did not respond."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-SFP-25G-DAC-1M",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-SFP-25G-LR",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "JNP-SFP-25G-SR",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFP-10G-LRM-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFP-1G-LH-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFP-1G-LX-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFP-1G-SX-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFP-1G-T-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFPP-10G-LR-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFPP-10G-SR-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "Juniper",
+      "sku": "SFPP-10G-USR-C",
+      "reason": "No Juniper-hosted photo of the optic retrievable. www.juniper.net publishes robots.txt \"Disallow: /\" for all agents and its product pages now redirect to www.hpe.com, which did not respond; not fetched. The Juniper Hardware Compatibility Tool (apps.juniper.net/hct) model pages for this part show specs and platform photos only, no image of the transceiver or cable."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-BXD-S",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-BXU-S",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-ER",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-LR-S",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-LR-SA",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-LRM",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-SR-S",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-SR-SA",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-TWX-P-0101",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-TWX-P-0301",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-TWX-P-0501",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-TX-LP-A",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10G-SFPP-ZR",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "10GE-SFPP-AOC-1001",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP-4SFP-P-0101",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP-4SFP-P-0301",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP-QSFP-AOC-1001",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP-QSFP-P-0101",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP-QSFP-P-0301",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP-QSFP-P-0501",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP28-DR1",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP28-ER4L",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP28-FR1",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP28-LR1",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP28-LR4-LP-10KM",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP28-SR4",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E100G-QSFP28-SR4-A",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E1MG-BXD-TA",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E1MG-BXU-TA",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E1MG-LX-OM",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E1MG-SX-OM",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E1MG-TX-A",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E25G-SFP28-AOC-1001",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E25G-SFP28-LR",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E25G-SFP28-SR",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E25G-SFP28-TWX-P-0101",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E25G-SFP28-TWX-P-0301",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-4SFP-AOC-1001",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-C-0501",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-LR4",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-LR4-A",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-QSFP-P-0101",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-QSFP-P-0301",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-SR-BIDI",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    },
+    {
+      "vendor": "RUCKUS",
+      "sku": "E40G-QSFP-SR4",
+      "reason": "No RUCKUS-hosted product photo found on the domains the catalog cites. The RUCKUS Ethernet Optics Family Data Sheet (PA-114240.25-EN, webresources.commscope.com) is text and tables only with no images, and commscope.com's networking product sitemap has no RUCKUS optics pages. ruckusnetworks.com was not checked because it is not among the vendor domains in data/sources.json."
+    }
+  ]
+}

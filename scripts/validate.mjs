@@ -1,10 +1,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, loadData, validate } from './lib.mjs';
+import { ROOT, loadData, validate, validateAccessoryImages } from './lib.mjs';
 const data = loadData();
 data.schema = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/schema.json'), 'utf8'));
 const r = validate(data);
+const img = validateAccessoryImages(data);
+r.errors.push(...img.errors);
+r.warnings.push(...img.warnings);
 r.warnings.forEach(w => console.warn('warn  ' + w));
 r.errors.forEach(e => console.error('error ' + e));
 console.log(`\n${r.families} families, ${r.models} models, ${r.accessories} accessory catalogs (${r.accessoryParts} parts), ${r.errors.length} errors, ${r.warnings.length} warnings`);
+if (!img.skipped) console.log(`accessory images: ${img.counts.images} SKUs with an image (${img.counts.files} files), ${img.counts.missing} missing`);
 process.exit(r.errors.length ? 1 : 0);

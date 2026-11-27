@@ -1,9 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, loadData, validate } from './lib.mjs';
+import { ROOT, loadData, validate, validateAccessoryImages } from './lib.mjs';
 
 const data = loadData();
 const r = validate(data);
+r.errors.push(...validateAccessoryImages(data).errors);
 if (r.errors.length) { r.errors.forEach(e => console.error('error ' + e)); process.exit(1); }
 
 const tpl = fs.readFileSync(path.join(ROOT, 'src/index.html'), 'utf8');
