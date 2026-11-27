@@ -1716,22 +1716,22 @@
     {
       "vendor": "Extreme Networks",
       "sku": "20G-DACP-SFPDD1M",
-      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024); the 5420 product page shows only the switch."
+      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024). The 5420 Series Installation Guide (Jul 2026) says the 5420 stacks over SFP-DD cables but does not name this part number, and its stacking figures are topology diagrams, not pictures of the cable. The 5420 product page shows only the switch."
     },
     {
       "vendor": "Extreme Networks",
       "sku": "20G-DACP-SFPDD3M",
-      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024); the 5420 product page shows only the switch."
+      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024). The 5420 Series Installation Guide (Jul 2026) says the 5420 stacks over SFP-DD cables but does not name this part number, and its stacking figures are topology diagrams, not pictures of the cable. The 5420 product page shows only the switch."
     },
     {
       "vendor": "Extreme Networks",
       "sku": "20G-DACP-SFPDD5M",
-      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024); the 5420 product page shows only the switch."
+      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024). The 5420 Series Installation Guide (Jul 2026) says the 5420 stacks over SFP-DD cables but does not name this part number, and its stacking figures are topology diagrams, not pictures of the cable. The 5420 product page shows only the switch."
     },
     {
       "vendor": "Extreme Networks",
       "sku": "20G-DACP-SFPDDZ5M",
-      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024); the 5420 product page shows only the switch."
+      "reason": "No Extreme image of the SFP-DD stacking cable. Not in the Extreme Optics Data Sheet photos or the Pluggable Transceivers Installation Guide (Feb 2024). The 5420 Series Installation Guide (Jul 2026) says the 5420 stacks over SFP-DD cables but does not name this part number, and its stacking figures are topology diagrams, not pictures of the cable. The 5420 product page shows only the switch."
     },
     {
       "vendor": "Fortinet",
