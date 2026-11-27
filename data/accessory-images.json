@@ -309,6 +309,66 @@
       "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
     },
     {
+      "vendor": "Cisco",
+      "sku": "STACK-T1-1M",
+      "file": "images/accessories/cisco/stack-t1-cable-c9300-hig-figure-38.png",
+      "image_type": "drawing",
+      "source_page_url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/hardware/install/b_c9300_hig.html",
+      "source_detail": "Cisco Catalyst 9300 Series Switches Hardware Installation Guide, \"Connecting a StackWise-480/1T Cable\", Figure 38 \"Connecting the StackWise-480/1T Cable in a StackWise Port\" (PDF page 81); STACK-T1-1M is listed in Table 51",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawing of a StackWise-480/1T cable being connected to a switch; the cable length is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T1-3M",
+      "file": "images/accessories/cisco/stack-t1-cable-c9300-hig-figure-38.png",
+      "image_type": "drawing",
+      "source_page_url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/hardware/install/b_c9300_hig.html",
+      "source_detail": "Cisco Catalyst 9300 Series Switches Hardware Installation Guide, \"Connecting a StackWise-480/1T Cable\", Figure 38 \"Connecting the StackWise-480/1T Cable in a StackWise Port\" (PDF page 81); STACK-T1-3M is listed in Table 51",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawing of a StackWise-480/1T cable being connected to a switch; the cable length is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T1-50CM",
+      "file": "images/accessories/cisco/stack-t1-cable-c9300-hig-figure-38.png",
+      "image_type": "drawing",
+      "source_page_url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/hardware/install/b_c9300_hig.html",
+      "source_detail": "Cisco Catalyst 9300 Series Switches Hardware Installation Guide, \"Connecting a StackWise-480/1T Cable\", Figure 38 \"Connecting the StackWise-480/1T Cable in a StackWise Port\" (PDF page 81); STACK-T1-50CM is listed in Table 51",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawing of a StackWise-480/1T cable being connected to a switch; the cable length is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T4-1M",
+      "file": "images/accessories/cisco/stack-t4-cable-c9200-hig-figure-20.png",
+      "image_type": "drawing",
+      "source_page_url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig.pdf",
+      "source_detail": "Cisco Catalyst 9200 Series Switches Hardware Installation Guide, page 48, Figure 20 \"Connecting the StackWise Cable in a StackWise Port\"; STACK-T4-1M is listed in the guide's StackWise cable list",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawing of a StackWise cable being connected to a switch; the cable length is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T4-3M",
+      "file": "images/accessories/cisco/stack-t4-cable-c9200-hig-figure-20.png",
+      "image_type": "drawing",
+      "source_page_url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig.pdf",
+      "source_detail": "Cisco Catalyst 9200 Series Switches Hardware Installation Guide, page 48, Figure 20 \"Connecting the StackWise Cable in a StackWise Port\"; STACK-T4-3M is listed in the guide's StackWise cable list",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawing of a StackWise cable being connected to a switch; the cable length is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "STACK-T4-50CM",
+      "file": "images/accessories/cisco/stack-t4-cable-c9200-hig-figure-20.png",
+      "image_type": "drawing",
+      "source_page_url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig.pdf",
+      "source_detail": "Cisco Catalyst 9200 Series Switches Hardware Installation Guide, page 48, Figure 20 \"Connecting the StackWise Cable in a StackWise Port\"; STACK-T4-50CM is listed in the guide's StackWise cable list",
+      "retrieved": "2026-11-27",
+      "caption_note": "Install guide drawing of a StackWise cable being connected to a switch; the cable length is not stated"
+    },
+    {
       "vendor": "Cisco Meraki",
       "sku": "MA-CBL-100G-1M",
       "file": "images/accessories/cisco-meraki/ma-cbl-100g-1m.jpg",
@@ -1260,22 +1320,22 @@
     {
       "vendor": "Cisco",
       "sku": "C9200-STACK-KIT",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Catalyst 9200 Hardware Installation Guide (downloaded manually) does not name this kit SKU; it shows the StackWise adapter and cable only in installation drawings."
     },
     {
       "vendor": "Cisco",
       "sku": "C9200L-STACK-KIT",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Catalyst 9200 Hardware Installation Guide (downloaded manually) does not name this kit SKU; it shows the StackWise adapter and cable only in installation drawings."
     },
     {
       "vendor": "Cisco",
       "sku": "C9300L-STACK-KIT",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Catalyst 9300 Hardware Installation Guide (downloaded manually) does not use this SKU; it describes the StackWise-320 kit as C9300L-STACK (with STACK-T3 cables) and shows only installation drawings of the adapter and cable."
     },
     {
       "vendor": "Cisco",
       "sku": "C9300L-STACK-KIT2",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Catalyst 9300 Hardware Installation Guide (downloaded manually) does not use this SKU; it describes the kit as C9300L-STACK-A (with STACK-T3A cables) and shows only installation drawings of the adapter and cable."
     },
     {
       "vendor": "Cisco",
@@ -1296,36 +1356,6 @@
       "vendor": "Cisco",
       "sku": "SFP-25G-LR-S",
       "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). SFP-25G-LR-S is not in the Cisco 25GBASE SFP28 Modules Data Sheet (Sep 2026), whose 25G LR part is SFP-10/25G-LR-S, so no vendor photo is tied to this SKU."
-    },
-    {
-      "vendor": "Cisco",
-      "sku": "STACK-T1-1M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family. Meraki's docs show STACK-T1-1M-M, a different SKU, so it was not substituted."
-    },
-    {
-      "vendor": "Cisco",
-      "sku": "STACK-T1-3M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family. Meraki's docs show STACK-T1-3M-M, a different SKU, so it was not substituted."
-    },
-    {
-      "vendor": "Cisco",
-      "sku": "STACK-T1-50CM",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family. Meraki's docs show STACK-T1-50CM-M, a different SKU, so it was not substituted."
-    },
-    {
-      "vendor": "Cisco",
-      "sku": "STACK-T4-1M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco",
-      "sku": "STACK-T4-3M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco",
-      "sku": "STACK-T4-50CM",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
     },
     {
       "vendor": "Cisco Meraki",
