@@ -288,8 +288,8 @@ export function validateAccessoryImages(data, file = path.join(ROOT, 'data', 'ac
     if (e.file) {
       if (!/^images\/accessories\/[a-z0-9-]+\/[a-z0-9-]+\.(jpg|png)$/.test(e.file))
         errors.push(`${where}: file must look like images/accessories/<vendor-slug>/<sku-slug>.jpg (or .png)`);
-      else if (c && !e.file.startsWith(`images/accessories/${c.id}/`))
-        warnings.push(`${where}: file is stored under another vendor's folder (${e.file})`);
+      else if (![...catalogs.values()].some(k => e.file.startsWith(`images/accessories/${k.id}/`)))
+        warnings.push(`${where}: file is not under a catalog's folder (${e.file})`);
       const p = path.join(ROOT, 'src', 'assets', e.file);
       if (!fs.existsSync(p)) errors.push(`${where}: file src/assets/${e.file} does not exist`);
       else {
