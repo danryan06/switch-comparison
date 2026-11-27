@@ -3,12 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' https://switchcomparison.goatcounter.com; connect-src 'self' https://switchcomparison.goatcounter.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <title>Switch Comparison</title>
+<meta name="description" content="Vendor-neutral comparison of campus and aggregation Ethernet switches from Cisco, HPE Aruba, Juniper, Arista, Extreme, RUCKUS, Fortinet, Ubiquiti and more. Every value traced to the vendor's own datasheet, with a closet sizer and optics shortlist.">
+<link rel="canonical" href="https://switchcomparison.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Switch Comparison">
+<meta property="og:title" content="Switch Comparison">
+<meta property="og:description" content="Vendor-neutral comparison of campus and aggregation Ethernet switches from Cisco, HPE Aruba, Juniper, Arista, Extreme, RUCKUS, Fortinet, Ubiquiti and more. Every value traced to the vendor's own datasheet, with a closet sizer and optics shortlist.">
+<meta property="og:url" content="https://switchcomparison.com/">
+<meta property="og:image" content="https://switchcomparison.com/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#10161C">
 <link rel="icon" type="image/png" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/barlow-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/barlow-condensed-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+/* Barlow and Barlow Condensed (SIL Open Font License 1.1, see fonts/OFL-*.txt), self-hosted Latin subset */
+@font-face{font-family:"Barlow";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/barlow-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/barlow-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/barlow-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/barlow-condensed-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/barlow-condensed-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/barlow-condensed-latin-700-normal.woff2) format("woff2")}
 :root{
   --bg:#10161C;--surface:#18212A;--surface-2:#1E2833;--ink:#E6EBEF;--muted:#98A6B3;--line:#2E3B48;
   --accent:#6C9BF2;--accent-soft:#1D2B45;--accent-ink:#0E1620;
@@ -533,7 +550,7 @@ function stackingCablesHTML(s){
 
 /* ---------- helpers ---------- */
 const $=s=>document.querySelector(s);
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const spdLabel=g=>g>=1?(g%1?g:g)+"G":g*1000+"M";
 const spdCls=g=>g>=25?"s25x":g>=10?"s10":g>=5?"s5":g>=2.5?"s25":"s1";
 const totalPorts=s=>s.ports.reduce((a,p)=>a+p[0],0);
@@ -637,9 +654,9 @@ function renderGroups(){
   $("#groups").innerHTML=groups.map((g,i)=>`<div class="grp">
     <div class="row1"><input type="text" aria-label="Device group name" value="${esc(g.name)}" data-i="${i}" data-k="name"><button class="x" aria-label="Remove ${esc(g.name)}" data-rm="${i}">&times;</button></div>
     <div class="row2">
-      <div><label>Qty</label><input type="number" min="0" value="${g.qty}" data-i="${i}" data-k="qty"></div>
-      <div><label>PoE allocation</label><select data-i="${i}" data-k="w">${WOPTS.map(o=>`<option value="${o[0]}" ${o[0]==g.w?"selected":""}>${o[1]}</option>`).join("")}</select></div>
-      <div><label>Port speed</label><select data-i="${i}" data-k="spd">${SOPTS.map(o=>`<option value="${o[0]}" ${o[0]==g.spd?"selected":""}>${o[1]}</option>`).join("")}</select></div>
+      <div><label for="grp${i}-qty">Qty</label><input id="grp${i}-qty" type="number" min="0" value="${g.qty}" data-i="${i}" data-k="qty"></div>
+      <div><label for="grp${i}-w">PoE allocation</label><select id="grp${i}-w" data-i="${i}" data-k="w">${WOPTS.map(o=>`<option value="${o[0]}" ${o[0]==g.w?"selected":""}>${o[1]}</option>`).join("")}</select></div>
+      <div><label for="grp${i}-spd">Port speed</label><select id="grp${i}-spd" data-i="${i}" data-k="spd">${SOPTS.map(o=>`<option value="${o[0]}" ${o[0]==g.spd?"selected":""}>${o[1]}</option>`).join("")}</select></div>
     </div></div>`).join("")||`<p class="small" style="margin:0 0 8px">No powered devices yet. Add a group below.</p>`;
 }
 $("#groups").addEventListener("input",e=>{const t=e.target,i=t.dataset.i,k=t.dataset.k;if(i===undefined)return;groups[i][k]=k==="name"?t.value:parseFloat(t.value)||0;if(k!=="name")runSize();else runSizeDebounced()});

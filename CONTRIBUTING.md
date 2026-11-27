@@ -28,6 +28,7 @@ Prefer to edit the data yourself? Follow the steps below and open a pull request
 
    When a vendor's own documents conflict: prefer the specific table over overview text; prefer two agreeing sources over one; for PoE budgets, use the lower figure. Record the other value in a note.
 5. Run `npm run validate`. Fix every error. Read every warning and either fix it or explain it in the PR.
+   If you changed data, set `updated` in `data/index.json` to today's date; the validator warns when it is older than the newest source `retrieved` date.
 6. In the PR description, cite the datasheet page or table for each value you changed.
 
 ## Clearing a verification flag
@@ -51,3 +52,23 @@ When a vendor publishes a new datasheet revision:
 ## What is out of scope for now
 
 Models that have dropped off the vendor's current datasheet. High-speed fabric and aggregation models are welcome when they use `fabricPorts` (see the Catalyst 9500 examples).
+
+## Accessory images
+
+`data/accessory-images.json` lists every accessory SKU exactly once: in `images` with a file and its source, or in `missing` with what was checked. Its fields are described in `data/accessory-images.schema.json`, and `npm run validate` checks it.
+
+The sourcing rule is strict:
+
+- **Vendor sources only.** Use the vendor's own product page, datasheet, ordering guide, install guide or optics matrix, on the vendor's domain (official docs and CDN subdomains count). Never use distributors, resellers, marketplaces, compatible-optics sellers or image search results.
+- **No look-alikes.** If there is no vendor image for a part, leave it in `missing` with what you checked. Never use another vendor's photo, and never draw or generate one.
+- **Shared images.** Reuse one image across SKUs only when the vendor presents it for those SKUs, for example every length of a DAC. Add a `caption_note` saying what the image shows, such as "Photo shows the 1 m length". Store the file once and point each entry at it.
+- **Check the image.** Open it and confirm it shows the right part and form factor, not a logo, banner or different module.
+
+File layout and format:
+
+- Path: `src/assets/images/accessories/<vendor-slug>/<file>.jpg`, where `<vendor-slug>` matches the catalog file name. Name the file after the SKU it shows, lowercased, with anything that is not a letter or digit turned into a hyphen (`SFP-10G-SR` becomes `sfp-10g-sr.jpg`). When the source does not say which part an image shows, name it after the vendor's caption or section instead.
+- Photos: JPEG, longest edge about 1200 px (smaller if the source is smaller; never upscale), quality around 85, cropped to the product with a little margin. Keep PNG only when the vendor's file is a transparent PNG.
+- Line drawings: PNG, same size rule, with `"image_type": "drawing"`.
+- Aim for under 150 KB per image. The validator rejects files over 300 KB.
+- In `source_page_url`, link the vendor page or document, and say in `source_detail` which figure, page or section the image comes from.
+
