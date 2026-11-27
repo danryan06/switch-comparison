@@ -160,6 +160,66 @@
     },
     {
       "vendor": "Cisco",
+      "sku": "GLC-LH-SMD",
+      "file": "images/accessories/cisco/optical-gigabit-sfp-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/gigabit-ethernet-gbic-sfp-modules/datasheet-c78-366584.pdf",
+      "source_detail": "Cisco SFP Modules for Gigabit Ethernet Applications Data Sheet, page 3, Figure 1 \"Cisco Optical Gigabit Ethernet SFP\"; GLC-LH-SMD is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco Optical Gigabit Ethernet SFP\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "GLC-SX-MMD",
+      "file": "images/accessories/cisco/optical-gigabit-sfp-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/gigabit-ethernet-gbic-sfp-modules/datasheet-c78-366584.pdf",
+      "source_detail": "Cisco SFP Modules for Gigabit Ethernet Applications Data Sheet, page 3, Figure 1 \"Cisco Optical Gigabit Ethernet SFP\"; GLC-SX-MMD is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco Optical Gigabit Ethernet SFP\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "GLC-T",
+      "file": "images/accessories/cisco/1000base-t-copper-sfp-figure-2.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/gigabit-ethernet-gbic-sfp-modules/datasheet-c78-366584.pdf",
+      "source_detail": "Cisco SFP Modules for Gigabit Ethernet Applications Data Sheet, page 3, Figure 2 \"Cisco 1000BASE-T Copper SFP\"; GLC-T is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo captioned \"Cisco 1000BASE-T Copper SFP\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-40G-LR4",
+      "file": "images/accessories/cisco/40g-qsfp-modules-overview.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 3, overview photo under \"Product overview\"; QSFP-40G-LR4 is listed in Table 1",
+      "retrieved": "2026-11-27",
+      "caption_note": "Uncaptioned overview photo of three Cisco 40G QSFP modules; the data sheet does not say which parts they are"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-40G-SR4",
+      "file": "images/accessories/cisco/40g-qsfp-modules-overview.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 3, overview photo under \"Product overview\"; QSFP-40G-SR4 is listed in Table 1",
+      "retrieved": "2026-11-27",
+      "caption_note": "Uncaptioned overview photo of three Cisco 40G QSFP modules; the data sheet does not say which parts they are"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "QSFP-H40G-CU3M",
+      "file": "images/accessories/cisco/40gbase-cr4-dac-figure-2.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 7, Figure 2 \"Cisco 40GBASE-CR4 QSFP direct-attach copper cables\"; QSFP-H40G-CU3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco",
       "sku": "SFP-10G-AOC3M",
       "file": "images/accessories/cisco/sfp-plus-aoc-figure-5.jpg",
       "image_type": "photo",
@@ -210,6 +270,16 @@
     },
     {
       "vendor": "Cisco",
+      "sku": "SFP-25G-SR-S",
+      "file": "images/accessories/cisco/25g-sr-module.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 3, photo captioned \"25G Short Reach (SR) Module\"; SFP-25G-SR-S is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo captioned \"25G Short Reach (SR) Module\""
+    },
+    {
+      "vendor": "Cisco",
       "sku": "SFP-H10GB-CU1M",
       "file": "images/accessories/cisco/sfp-plus-twinax-figure-4.jpg",
       "image_type": "photo",
@@ -227,6 +297,16 @@
       "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 8, Figure 4 \"Cisco direct-attach twinax copper cable assembly with SFP+ connectors\"; SFP-H10GB-CU3M is listed in the data sheet",
       "retrieved": "2026-11-27",
       "caption_note": "Cisco shows one photo for its SFP+ twinax cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco",
+      "sku": "SFP-H25G-CU3M",
+      "file": "images/accessories/cisco/25g-dac.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 3, photo captioned \"25G Direct Attached Cables (DAC)\"; SFP-H25G-CU3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
     },
     {
       "vendor": "Cisco Meraki",
@@ -395,6 +475,114 @@
     },
     {
       "vendor": "Cisco Nexus",
+      "sku": "GLC-LH-SMD",
+      "file": "images/accessories/cisco/optical-gigabit-sfp-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/gigabit-ethernet-gbic-sfp-modules/datasheet-c78-366584.pdf",
+      "source_detail": "Cisco SFP Modules for Gigabit Ethernet Applications Data Sheet, page 3, Figure 1 \"Cisco Optical Gigabit Ethernet SFP\"; GLC-LH-SMD is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco Optical Gigabit Ethernet SFP\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "GLC-SX-MMD",
+      "file": "images/accessories/cisco/optical-gigabit-sfp-figure-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/gigabit-ethernet-gbic-sfp-modules/datasheet-c78-366584.pdf",
+      "source_detail": "Cisco SFP Modules for Gigabit Ethernet Applications Data Sheet, page 3, Figure 1 \"Cisco Optical Gigabit Ethernet SFP\"; GLC-SX-MMD is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Representative photo captioned \"Cisco Optical Gigabit Ethernet SFP\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "GLC-TE",
+      "file": "images/accessories/cisco/1000base-t-copper-sfp-figure-2.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/gigabit-ethernet-gbic-sfp-modules/datasheet-c78-366584.pdf",
+      "source_detail": "Cisco SFP Modules for Gigabit Ethernet Applications Data Sheet, page 3, Figure 2 \"Cisco 1000BASE-T Copper SFP\"; GLC-TE is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo captioned \"Cisco 1000BASE-T Copper SFP\"; the data sheet does not say which part it shows"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-40G-ER4",
+      "file": "images/accessories/cisco/40g-qsfp-modules-overview.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 3, overview photo under \"Product overview\"; QSFP-40G-ER4 is listed in Table 1",
+      "retrieved": "2026-11-27",
+      "caption_note": "Uncaptioned overview photo of three Cisco 40G QSFP modules; the data sheet does not say which parts they are"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-40G-LR4-S",
+      "file": "images/accessories/cisco/40g-qsfp-modules-overview.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 3, overview photo under \"Product overview\"; QSFP-40G-LR4-S is listed in Table 1",
+      "retrieved": "2026-11-27",
+      "caption_note": "Uncaptioned overview photo of three Cisco 40G QSFP modules; the data sheet does not say which parts they are"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-40G-SR4",
+      "file": "images/accessories/cisco/40g-qsfp-modules-overview.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 3, overview photo under \"Product overview\"; QSFP-40G-SR4 is listed in Table 1",
+      "retrieved": "2026-11-27",
+      "caption_note": "Uncaptioned overview photo of three Cisco 40G QSFP modules; the data sheet does not say which parts they are"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-H40G-AOC3M",
+      "file": "images/accessories/cisco-nexus/40g-qsfp-aoc-figure-4.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 8, Figure 4 \"Cisco 40G QSFP active optics cables\"; QSFP-H40G-AOC3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-H40G-CU1M",
+      "file": "images/accessories/cisco/40gbase-cr4-dac-figure-2.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 7, Figure 2 \"Cisco 40GBASE-CR4 QSFP direct-attach copper cables\"; QSFP-H40G-CU1M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "QSFP-H40G-CU3M",
+      "file": "images/accessories/cisco/40gbase-cr4-dac-figure-2.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/data_sheet_c78-660083.pdf",
+      "source_detail": "Cisco 40GBASE QSFP Modules Data Sheet, page 7, Figure 2 \"Cisco 40GBASE-CR4 QSFP direct-attach copper cables\"; QSFP-H40G-CU3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-10/25G-CSR-S",
+      "file": "images/accessories/cisco-nexus/sfp-10-25g-csr-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 3, photo captioned \"10/25G Cisco Short Reach (CSR) Module\"; SFP-10/25G-CSR-S is listed in the data sheet",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-10/25G-LR-S",
+      "file": "images/accessories/cisco-nexus/sfp-10-25g-lr-s.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 4, photo captioned \"10/25G Long Reach (LR) Module\"; SFP-10/25G-LR-S is listed in the data sheet",
+      "retrieved": "2026-11-27"
+    },
+    {
+      "vendor": "Cisco Nexus",
       "sku": "SFP-10G-AOC3M",
       "file": "images/accessories/cisco/sfp-plus-aoc-figure-5.jpg",
       "image_type": "photo",
@@ -464,6 +652,26 @@
     },
     {
       "vendor": "Cisco Nexus",
+      "sku": "SFP-25G-AOC3M",
+      "file": "images/accessories/cisco-nexus/25g-aoc.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 3, photo captioned \"25G Active Optical Cables (AOC)\"; SFP-25G-AOC3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-25G-SR-S",
+      "file": "images/accessories/cisco/25g-sr-module.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 3, photo captioned \"25G Short Reach (SR) Module\"; SFP-25G-SR-S is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Photo captioned \"25G Short Reach (SR) Module\""
+    },
+    {
+      "vendor": "Cisco Nexus",
       "sku": "SFP-H10GB-CU1M",
       "file": "images/accessories/cisco/sfp-plus-twinax-figure-4.jpg",
       "image_type": "photo",
@@ -481,6 +689,26 @@
       "source_detail": "Cisco 10GBASE SFP+ Modules Data Sheet, page 8, Figure 4 \"Cisco direct-attach twinax copper cable assembly with SFP+ connectors\"; SFP-H10GB-CU3M is listed in the data sheet",
       "retrieved": "2026-11-27",
       "caption_note": "Cisco shows one photo for its SFP+ twinax cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-H25G-CU1M",
+      "file": "images/accessories/cisco/25g-dac.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 3, photo captioned \"25G Direct Attached Cables (DAC)\"; SFP-H25G-CU1M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
+    },
+    {
+      "vendor": "Cisco Nexus",
+      "sku": "SFP-H25G-CU3M",
+      "file": "images/accessories/cisco/25g-dac.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/datasheet-c78-736950.pdf",
+      "source_detail": "Cisco 25GBASE SFP28 Modules Data Sheet, page 3, photo captioned \"25G Direct Attached Cables (DAC)\"; SFP-H25G-CU3M is listed in the data sheet",
+      "retrieved": "2026-11-27",
+      "caption_note": "Cisco shows one photo for these cables; the length in the photo is not stated"
     },
     {
       "vendor": "Extreme Networks",
@@ -1051,21 +1279,6 @@
     },
     {
       "vendor": "Cisco",
-      "sku": "GLC-LH-SMD",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco",
-      "sku": "GLC-SX-MMD",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco",
-      "sku": "GLC-T",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco",
       "sku": "QSFP-100G-CU3M",
       "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
     },
@@ -1081,33 +1294,8 @@
     },
     {
       "vendor": "Cisco",
-      "sku": "QSFP-40G-LR4",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco",
-      "sku": "QSFP-40G-SR4",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco",
-      "sku": "QSFP-H40G-CU3M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco",
       "sku": "SFP-25G-LR-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco",
-      "sku": "SFP-25G-SR-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco",
-      "sku": "SFP-H25G-CU3M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). SFP-25G-LR-S is not in the Cisco 25GBASE SFP28 Modules Data Sheet (Sep 2026), whose 25G LR part is SFP-10/25G-LR-S, so no vendor photo is tied to this SKU."
     },
     {
       "vendor": "Cisco",
@@ -1153,21 +1341,6 @@
       "vendor": "Cisco Meraki",
       "sku": "MA-SFP-1GB-LX10",
       "reason": "The photo Meraki posts in the MA-SFP-1GB-LX10 row of the MS Accessories page is identical to its MA-SFP-1GB-TX photo, and the module label reads \"MA-SFP-1GB-TX Active Copper 1000Base-T\", so it does not show this part. No other Meraki-hosted photo found (SFP and Stacking Accessories page has tables only)."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "GLC-LH-SMD",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "GLC-SX-MMD",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "GLC-TE",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
     },
     {
       "vendor": "Cisco Nexus",
@@ -1296,23 +1469,8 @@
     },
     {
       "vendor": "Cisco Nexus",
-      "sku": "QSFP-40G-ER4",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QSFP-40G-LR4-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
       "sku": "QSFP-40G-SR-BD",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QSFP-40G-SR4",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 40GBASE QSFP Modules Data Sheet (downloaded manually) shows QSFP-40G-SR-BD only as a link diagram (Figure 1), not a picture of the module."
     },
     {
       "vendor": "Cisco Nexus",
@@ -1326,53 +1484,8 @@
     },
     {
       "vendor": "Cisco Nexus",
-      "sku": "QSFP-H40G-AOC3M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QSFP-H40G-CU1M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "QSFP-H40G-CU3M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "SFP-10/25G-CSR-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "SFP-10/25G-LR-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "SFP-25G-AOC3M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
       "sku": "SFP-25G-SL",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "SFP-25G-SR-S",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "SFP-H25G-CU1M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
-    },
-    {
-      "vendor": "Cisco Nexus",
-      "sku": "SFP-H25G-CU3M",
-      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 10GBASE SFP+ Modules data sheet (data_sheet_c78-455693.pdf, downloaded manually) covers SFP+ parts only, so this part still needs the Cisco data sheet for its own module family."
+      "reason": "www.cisco.com blocks automated requests from this environment (Akamai \"Access Denied\"). The Cisco 25GBASE SFP28 Modules Data Sheet (downloaded manually) lists SFP-25G-SL but has no photo of it."
     },
     {
       "vendor": "Extreme Networks",
